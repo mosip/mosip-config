@@ -97,7 +97,7 @@
 				<to uri="vertx:bio-dedupe-bus-in" />
 			</when>
 			<when>
-				<simple>${bodyAs(String)} contains '"messageBusAddress":{"address":"abis-handler-bus-in"}'</simple>
+				<simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
 				<to uri="vertx:abis-handler-bus-in" />
 			</when>
 			<when>
@@ -119,15 +119,15 @@
 			message="abis-handler-->abis-middleware route ${bodyAs(String)}" />
 		<choice>
 			<when>
-				<simple>${bodyAs(String)} contains '"messageBusAddress":{"address":"abis-handler-bus-in"}'</simple>
+				<simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
 				<to uri="vertx:abis-middle-ware-bus-in" />
 			</when>
 			<when>
-				<simple>${bodyAs(String)} contains '"messageBusAddress":{"address":"demo-dedupe-bus-in"}'</simple>
+				<simple>${bodyAs(String)} contains '"address":"demo-dedupe-bus-in"'</simple>
 				<to uri="vertx:demo-dedupe-bus-in" />
 			</when>
 			<when>
-				<simple>${bodyAs(String)} contains '"messageBusAddress":{"address":"bio-dedupe-bus-in"}'</simple>
+				<simple>${bodyAs(String)} contains '"address":"bio-dedupe-bus-in"'</simple>
 				<to uri="vertx:bio-dedupe-bus-in"/>
 			</when>
 		</choice>
@@ -142,7 +142,7 @@
 				<to uri="vertx:uin-generator-bus-in" />
 			</when>
 			<when>
-				<simple>${bodyAs(String)} contains '"messageBusAddress":{"address":"abis-handler-bus-in"}'</simple>
+				<simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
 				<to uri="vertx:abis-handler-bus-in" />
 			</when>
 			<when>
