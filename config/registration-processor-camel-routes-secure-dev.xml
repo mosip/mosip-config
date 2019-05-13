@@ -119,7 +119,7 @@
 			message="abis-handler-->abis-middleware route ${bodyAs(String)}" />
 		<choice>
 			<when>
-				<simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
+				<simple>${bodyAs(String)} contains '"address":"abis-middle-ware-bus-in"'</simple>
 				<to uri="vertx:abis-middle-ware-bus-in" />
 			</when>
 			<when>
