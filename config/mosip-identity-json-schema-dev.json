@@ -4,7 +4,7 @@
 	"title": "MOSIP ID schema",
 	"description": "Sample ID schema",
 	"type": "object",
-	"additionalProperties": false,
+	"additionalProperties": true,
 	"properties": {
 		"identity": {
 			"title": "identity",
