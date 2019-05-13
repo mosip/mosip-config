@@ -4,13 +4,13 @@
 	"title": "MOSIP ID schema",
 	"description": "Sample ID schema",
 	"type": "object",
-	"additionalProperties": true,
+	"additionalProperties": false,
 	"properties": {
 		"identity": {
 			"title": "identity",
 			"description": "This schema holds all the attributes of an Identity",
 			"type": "object",
-			"additionalProperties": false,
+			"additionalProperties": true,
 			"properties": {
 				"IDSchemaVersion": {
 					"type": "number",
