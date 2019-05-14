@@ -1,9 +1,9 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
-	<!-- Registration connector to packet-validator Route -->
-	<route id="registration-connector-->packet-validator route">
-	<from uri="vertx:registration-connector-bus-out" />
+	<!-- packet-uploader to packet-validator Route -->
+	<route id="packet-uploader-->packet-validator route">
+	<from uri="vertx:packet-uploader-bus-out" />
 	<log
-			message="registration-connector-->packet-validator route ${bodyAs(String)}" />
+			message="packet-uploader-->packet-validator route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -24,15 +24,15 @@
 		<log
 			message="packet-validator-->osi-validator route ${bodyAs(String)}" />
 		<choice>
-			  <when>
+			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
 				<when>
-				      <simple>${bodyAs(String)} contains '"reg_type":"ACTIVATED"' or ${bodyAs(String)} contains '"reg_type":"DEACTIVATED"'</simple>
-					  <to uri="vertx:uin-generator-bus-in" />
-				 </when>
-				 <otherwise>
-                   <to uri="vertx:o-s-i-validator-bus-in" />
-				 </otherwise>
+				    <simple>${bodyAs(String)} contains '"reg_type":"ACTIVATED"' or ${bodyAs(String)} contains '"reg_type":"DEACTIVATED"'</simple>
+					<to uri="vertx:uin-generator-bus-in" />
+				</when>
+				<otherwise>
+					<to uri="vertx:o-s-i-validator-bus-in" />
+				</otherwise>
 			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
@@ -72,7 +72,7 @@
 	<route id="external-stage-->demo-dedupe route">
 		<from uri="vertx:external-bus-out" />
 		<log
-			message="external-stage-->demo-dedupe route ${bodyAs(String)}" />
+				message="external-stage-->demo-dedupe route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -147,7 +147,7 @@
 			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
-				<to uri="vertx:manual-verification-bus-in" />
+				<to uri="vertx:message-sender-bus-in" />
 			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
@@ -184,7 +184,7 @@
 	<route id="uin-generation route-->printing-stage-->message-sender-stage">
 		<from uri="vertx:uin-generator-bus-out" />
 		<log
-			message="uin-generator-->printing-stage and message-sender-stage route ${bodyAs(String)}" />
+			message="uin-generation-->printing-stage and message-sender-stage route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -200,4 +200,4 @@
 			</otherwise>
 		</choice>
 	</route>
-	</routes>
+</routes>
