@@ -109,7 +109,7 @@
 			</otherwise>
 		</choice>
 	</route>
-<!--	<route id="bio-dedupe-->uin-generation route">
+	<route id="bio-dedupe-->uin-generation route">
 		<from uri="vertx:bio-dedupe-bus-out" />
 		<log
 			message="bio-dedupe-->uin-generation route ${bodyAs(String)}" />
@@ -126,7 +126,7 @@
 				<to uri="vertx:error-bus-in" />
 			</otherwise>
 		</choice>
-	</route> -->
+	</route> 
 	<route id="manual-verification-->uin-generation route">
 		<from uri="vertx:manual-verification-bus-in" />
 		<log
