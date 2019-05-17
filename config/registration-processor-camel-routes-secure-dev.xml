@@ -31,7 +31,7 @@
 					  <to uri="vertx:uin-generator-bus-in" />
 				 </when>
 				 <otherwise>
-                   <to uri="vertx:o-s-i-validator-bus-in" />
+                   <to uri="vertx:uin-generator-bus-in" />
 				 </otherwise>
 			</when>
 			<when>

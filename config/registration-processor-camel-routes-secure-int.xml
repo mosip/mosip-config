@@ -98,7 +98,7 @@
 			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
-				<to uri="vertx:bio-dedupe-bus-in" />
+				<to uri="vertx:uin-generator-bus-in" />
 			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
@@ -126,7 +126,7 @@
 				<to uri="vertx:error-bus-in" />
 			</otherwise>
 		</choice>
-	</route>
+	</route> 
 	<route id="manual-verification-->uin-generation route">
 		<from uri="vertx:manual-verification-bus-in" />
 		<log
