@@ -72,7 +72,7 @@
 	<route id="external-stage-->demo-dedupe route">
 		<from uri="vertx:external-bus-out" />
 		<log
-				message="external-stage-->demo-dedupe route ${bodyAs(String)}" />
+			message="external-stage-->demo-dedupe route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
