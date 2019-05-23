@@ -11,32 +11,6 @@
 			"userName": "admin",
 			"password": "admin",
 		        "typeOfQueue": "ACTIVEMQ"
-		},
-		{
-			"name": "ABIS2",
-			"host": "",
-			"port": "",
-			"brokerUrl": "tcp://104.211.200.46:61616",
-			"inboundQueueName": "abis2-inbound-address_int",
-			"outboundQueueName": "abis2-outbound-address_int",
-			"pingInboundQueueName": "",
-			"pingOutboundQueueName": "",
-			"userName": "admin",
-			"password": "admin",
-			"typeOfQueue": "ACTIVEMQ"
-		},
-		{
-			"name": "ABIS3",
-			"host": "",
-			"port": "",
-			"brokerUrl": "tcp://104.211.200.46:61616",
-			"inboundQueueName": "abis3-inbound-address_int",
-			"outboundQueueName": "abis3-outbound-address_int",
-			"pingInboundQueueName": "",
-			"pingOutboundQueueName": "",
-			"userName": "admin",
-			"password": "admin",
-			"typeOfQueue": "ACTIVEMQ"
 		}
 	]
 
