@@ -4,7 +4,6 @@ import hudson.slaves.NodeProperty;
 import hudson.slaves.NodePropertyDescriptor;
 import hudson.util.DescribableList;
 import jenkins.model.Jenkins;
-
 node {
  // def mvnHome = tool name: 'M2_HOME', type: 'maven'
  def branch = 'master'
@@ -34,6 +33,5 @@ node {
   }
   // Clean the workspace to avoid GIT conflicts when next time this pipeline is triggered
   	cleanWs()
- } 
-}
-}
+ 
+
