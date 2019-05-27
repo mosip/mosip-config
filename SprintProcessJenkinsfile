@@ -33,4 +33,4 @@ stage('GIT - Create new branch') {
    }
   }
 }
-
+}
