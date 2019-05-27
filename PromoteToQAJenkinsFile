@@ -7,7 +7,7 @@ import jenkins.model.Jenkins;
 
 node {
  // def mvnHome = tool name: 'M2_HOME', type: 'maven'
- def branch = env.NEXT_BRANCH_NAME
+ def branch = 'master'
  def newVersion
  // Asking user if he wants to promote the code to QA, user will choose either proceed or abort
  stage('checkout') {
