@@ -24,23 +24,7 @@ node {
    ])
   }
  }
-  stage('GIT - Push the code and Create new tag') {
-  dir(branch) {
-      // jenkins git plugin detaches the head after checking out the code, stashing the changes to check out branch code
-	  sh "git stash"
-	  // checking out branch
-	  sh "git checkout $branch"
-	  // applying stashed changes to branch
-	  sh "git stash apply"  
-	  sh "git add ."
-	  // clearing the stash
-	  sh "git stash clear"
-	  // commiting changes to branch
-	  sh "git commit -m 'MOS-14569 updating versions and tagging the code for giving it to QA'"
-      sshagent(['fd9c5f45-e6ac-45ea-b345-f6fbeb303044']) {
-       sh "git push origin $branch"
-      }
-      // creating a git tag
+ // creating a git tag
       sh "git tag ${newVersion}"
 	  // pushing tag to github
       sshagent(['fd9c5f45-e6ac-45ea-b345-f6fbeb303044']) {
