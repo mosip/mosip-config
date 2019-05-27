@@ -6,7 +6,7 @@ import hudson.util.DescribableList;
 import jenkins.model.Jenkins;
 
 node {
- def mvnHome = tool name: 'M2_HOME', type: 'maven'
+ // def mvnHome = tool name: 'M2_HOME', type: 'maven'
  def branch = 'master'
  def newVersion = env.NEXT_BRANCH_NAME
  // Asking user if he wants to start a new sprint, user will choose either proceed or abort
