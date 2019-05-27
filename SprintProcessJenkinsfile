@@ -28,7 +28,6 @@ stage('GIT - Create new branch') {
    sh "git checkout -b ${newVersion}"
    sh "git add ."
    sh "git commit -m 'new branch created'"
-
    sshagent(['fd9c5f45-e6ac-45ea-b345-f6fbeb303044']) {
     sh "git push origin ${newVersion}"
    }
