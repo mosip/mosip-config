@@ -33,6 +33,5 @@ stage('GIT - Create new branch') {
     sh "git push origin ${newVersion}"
    }
   }
-
- }
- 
+}
+} 
