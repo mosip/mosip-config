@@ -27,9 +27,13 @@ stage('GIT - Create new branch') {
    sh "git checkout ${newVersion}"
    sh "git add ."
    sh "git commit -m 'new branch created'"
-   sshagent(['fd9c5f45-e6ac-45ea-b345-f6fbeb303044']) {
+  // sshagent(['fd9c5f45-e6ac-45ea-b345-f6fbeb303044']) {
+    //sh "git push origin ${newVersion}"
+    //}
+    git url: "ssh://git@github.com:mosip/mosip-configuration.git",
+    credentialsId: 'fd9c5f45-e6ac-45ea-b345-f6fbeb303044',
+    branch: master
     sh "git push origin ${newVersion}"
-    }
   }
 }
 }
