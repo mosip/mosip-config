@@ -17,7 +17,7 @@ node {
      [name: branch]
     ],
     userRemoteConfigs: [
-     [url: 'git@github.com:mosip/mosip-configuration.git', credentialsId: 'c6cde42a-3c71-44c2-bebf-0a2180c0f8a8']
+     [url: 'git@github.com:mosip/mosip-configuration.git', credentialsId: '4c9741a2-4c15-4aad-a13d-3a1206u05321']
     ]
    ])
   }
@@ -27,7 +27,7 @@ stage('GIT - Create new branch') {
    sh "git checkout ${newVersion}"
    sh "git add ."
    sh "git commit -m 'new branch created'"
-   sshagent(['c6cde42a-3c71-44c2-bebf-0a2180c0f8a8']) {
+   sshagent(['4c9741a2-4c15-4aad-a13d-3a1206u05321']) {
     sh "git push origin ${newVersion}"
     }
   }
