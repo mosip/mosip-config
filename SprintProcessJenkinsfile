@@ -4,7 +4,6 @@ import hudson.slaves.NodeProperty;
 import hudson.slaves.NodePropertyDescriptor;
 import hudson.util.DescribableList;
 import jenkins.model.Jenkins;
-
 node {
  // def mvnHome = tool name: 'M2_HOME', type: 'maven'
  def branch = 'master'
@@ -25,12 +24,13 @@ node {
  }
 stage('GIT - Create new branch') {
   dir(branch) {
-   sh "git checkout ${newVersion}"
+   sh "git checkout -b ${newVersion}"
    sh "git add ."
    sh "git commit -m 'new branch created'"
+
    sshagent(['fd9c5f45-e6ac-45ea-b345-f6fbeb303044']) {
     sh "git push origin ${newVersion}"
-    } 
    }
+  }
 }
-} 
+
