@@ -76,9 +76,6 @@
 		"city": {
 			"value" : "city",
 			"isMandatory" : true
-		},
-		"parentOrGuardianBiometrics": {
-			"value" : "parentOrGuardianBiometrics"
 		}
 	}
 }  
