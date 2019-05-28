@@ -22,12 +22,12 @@
 	<route id="packet-validator-->osi-validator route">
 		<from uri="vertx:packet-validator-bus-out" />
 		<log
-				message="packet-validator-->osi-validator route ${bodyAs(String)}" />
+			message="packet-validator-->osi-validator route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
 				<when>
-					<simple>${bodyAs(String)} contains '"reg_type":"ACTIVATED"' or ${bodyAs(String)} contains '"reg_type":"DEACTIVATED"'</simple>
+				    <simple>${bodyAs(String)} contains '"reg_type":"ACTIVATED"' or ${bodyAs(String)} contains '"reg_type":"DEACTIVATED"'</simple>
 					<to uri="vertx:uin-generator-bus-in" />
 				</when>
 				<otherwise>
@@ -50,7 +50,7 @@
 	<route id="osi-validator-->external-stage route">
 		<from uri="vertx:o-s-i-validator-bus-out" />
 		<log
-				message="osi-validator-->external-stage route ${bodyAs(String)}" />
+			message="osi-validator-->external-stage route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -90,15 +90,19 @@
 	<route id="demo-dedupe-->bio-dedupe route">
 		<from uri="vertx:demo-dedupe-bus-out" />
 		<log
-				message="demo-dedupe-->bio-dedupe route ${bodyAs(String)}" />
+			message="demo-dedupe-->bio-dedupe route ${bodyAs(String)}" />
 		<choice>
-			<when>
-				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
-				<to uri="vertx:manual-verification-bus-in"/>
-			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
 				<to uri="vertx:bio-dedupe-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
+				<to uri="vertx:abis-handler-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
+				<to uri="vertx:message-sender-bus-in"/>
 			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
@@ -109,14 +113,37 @@
 			</otherwise>
 		</choice>
 	</route>
+	<route id="abis-handler-->abis-middleware route">
+		<from uri="vertx:abis-handler-bus-out" />
+		<log
+			message="abis-handler-->abis-middleware route ${bodyAs(String)}" />
+		<choice>
+			<when>
+				<simple>${bodyAs(String)} contains '"address":"abis-middle-ware-bus-in"'</simple>
+				<to uri="vertx:abis-middle-ware-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"address":"demo-dedupe-bus-in"'</simple>
+				<to uri="vertx:demo-dedupe-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"address":"bio-dedupe-bus-in"'</simple>
+				<to uri="vertx:bio-dedupe-bus-in"/>
+			</when>
+		</choice>
+	</route>
 	<route id="bio-dedupe-->uin-generation route">
 		<from uri="vertx:bio-dedupe-bus-out" />
 		<log
-				message="bio-dedupe-->uin-generation route ${bodyAs(String)}" />
+			message="bio-dedupe-->uin-generation route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
 				<to uri="vertx:uin-generator-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
+				<to uri="vertx:abis-handler-bus-in" />
 			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
@@ -130,7 +157,7 @@
 	<route id="manual-verification-->uin-generation route">
 		<from uri="vertx:manual-verification-bus-in" />
 		<log
-				message="manual-verification-->uin-generation route ${bodyAs(String)}" />
+			message="manual-verification-->uin-generation route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -153,7 +180,7 @@
 	<route id="uin-generation route-->printing-stage-->message-sender-stage">
 		<from uri="vertx:uin-generator-bus-out" />
 		<log
-				message="uin-generation-->printing-stage and message-sender-stage route ${bodyAs(String)}" />
+			message="uin-generation-->printing-stage and message-sender-stage route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
