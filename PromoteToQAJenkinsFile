@@ -38,7 +38,7 @@ node {
     newVersion="${userInput}"
  }
  stage('GIT - Push the code and Create new tag') {
- 
+ dir(branch){
   sh "git checkout ${branch}"
    sh 'git status'
    sh 'ls'
@@ -49,7 +49,7 @@ node {
 sh "git tag ${newVersion}"
       sh "git push origin ${newVersion}"
       
-      
+      }
   // Clean the workspace to avoid GIT conflicts when next time this pipeline is triggered
   	cleanWs()
  }
