@@ -1,6 +1,6 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
 	<!-- packet-uploader to packet-validator Route -->
-	<route id="packet-uploader-->packet-validator route">
+	<route id="packet-uploader-->packet-validator activate route">
 	<from uri="vertx:packet-uploader-activate-bus-out" />
 	<log
 			message="packet-uploader-->packet-validator route ${bodyAs(String)}" />
@@ -19,7 +19,7 @@
 		</choice>
 	</route>
 	<!-- Packet Validator to OSI Validator Route -->
-	<route id="packet-validator-->osi-validator route">
+	<route id="packet-validator-->osi-validator activate route">
 		<from uri="vertx:packet-validator-activate-bus-out" />
 		<log
 			message="packet-validator-->osi-validator route ${bodyAs(String)}" />
@@ -47,7 +47,7 @@
 			</otherwise>
 		</choice>
 	</route>
-	<route id="osi-validator-->external-stage route">
+	<route id="osi-validator-->external-stage activate route">
 		<from uri="vertx:o-s-i-validator-activate-bus-out" />
 		<log
 			message="osi-validator-->external-stage route ${bodyAs(String)}" />
@@ -69,7 +69,7 @@
 			</otherwise>
 		</choice>
 	</route>
-	<route id="external-stage-->demo-dedupe route">
+	<route id="external-stage-->demo-dedupe activate route">
 		<from uri="vertx:external-activate-bus-out" />
 		<log
 				message="external-stage-->demo-dedupe route ${bodyAs(String)}" />
@@ -87,7 +87,7 @@
 			</otherwise>
 		</choice>
 	</route>
-	<route id="demo-dedupe-->bio-dedupe route">
+	<route id="demo-dedupe-->bio-dedupe activate route">
 		<from uri="vertx:demo-dedupe-activate-bus-out" />
 		<log
 			message="demo-dedupe-->bio-dedupe route ${bodyAs(String)}" />
@@ -113,7 +113,7 @@
 			</otherwise>
 		</choice>
 	</route>
-	<route id="abis-handler-->abis-middleware route">
+	<route id="abis-handler-->abis-middleware activate route">
 		<from uri="vertx:abis-handler-activate-bus-out" />
 		<log
 			message="abis-handler-->abis-middleware route ${bodyAs(String)}" />
@@ -132,7 +132,7 @@
 			</when>
 		</choice>
 	</route>
-	<route id="bio-dedupe-->uin-generation route">
+	<route id="bio-dedupe-->uin-generation activate route">
 		<from uri="vertx:bio-dedupe-activate-bus-out" />
 		<log
 			message="bio-dedupe-->uin-generation route ${bodyAs(String)}" />
@@ -154,7 +154,7 @@
 			</otherwise>
 		</choice>
 	</route>
-	<route id="manual-verification-->uin-generation route">
+	<route id="manual-verification-->uin-generation activate route">
 		<from uri="vertx:manual-verification-activate-bus-in" />
 		<log
 			message="manual-verification-->uin-generation route ${bodyAs(String)}" />
@@ -177,7 +177,7 @@
 		</choice>
 	</route>
 	<!-- UIN Generator to Printing and Message Sender Route -->
-	<route id="uin-generation route-->printing-stage-->message-sender-stage">
+	<route id="uin-generation route-->printing-stage-->message-sender-activate stage">
 		<from uri="vertx:uin-generator-activate-bus-out" />
 		<log
 			message="uin-generation-->printing-stage and message-sender-stage route ${bodyAs(String)}" />

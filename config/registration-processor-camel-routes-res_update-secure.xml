@@ -1,6 +1,6 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
 	<!-- packet-uploader to packet-validator Route -->
-	<route id="packet-uploader-->packet-validator route">
+	<route id="packet-uploader-->packet-validator res_update route">
 	<from uri="vertx:packet-uploader-res_update-bus-out" />
 	<log
 			message="packet-uploader-->packet-validator route ${bodyAs(String)}" />
@@ -18,7 +18,7 @@
 			</otherwise>
 		</choice>
 	</route>
-	<route id="packet-validator-->demo-dedupe route">
+	<route id="packet-validator-->demo-dedupe res_update route">
 		<from uri="vertx:packet-validator-res_update-bus-out" />
 		<log
 				message="packet-validator-->demo-dedupe route ${bodyAs(String)}" />
@@ -36,7 +36,7 @@
 			</otherwise>
 		</choice>
 	</route>
-	<route id="demo-dedupe-->uin-generation route">
+	<route id="demo-dedupe-->uin-generation res_update route">
 		<from uri="vertx:demo-dedupe-res_update-bus-out" />
 		<log
 			message="demo-dedupe-->uin-generation route ${bodyAs(String)}" />
@@ -62,7 +62,7 @@
 			</otherwise>
 		</choice>
 	</route>
-	<route id="abis-handler-->abis-middleware route">
+	<route id="abis-handler-->abis-middleware res_update route">
 		<from uri="vertx:abis-handler-res_update-bus-out" />
 		<log
 			message="abis-handler-->abis-middleware route ${bodyAs(String)}" />
@@ -81,7 +81,7 @@
 			</when>
 		</choice>
 	</route>
-	<route id="manual-verification-->uin-generation route">
+	<route id="manual-verification-->uin-generation res_update route">
 		<from uri="vertx:manual-verification-res_update-bus-in" />
 		<log
 			message="manual-verification-->uin-generation route ${bodyAs(String)}" />
@@ -104,7 +104,7 @@
 		</choice>
 	</route>
 	<!-- UIN Generator to Printing and Message Sender Route -->
-	<route id="uin-generation route-->printing-stage-->message-sender-stage">
+	<route id="uin-generation route-->printing-stage-->message-sender-res_update stage">
 		<from uri="vertx:uin-generator-res_update-bus-out" />
 		<log
 			message="uin-generation-->printing-stage and message-sender-stage route ${bodyAs(String)}" />
