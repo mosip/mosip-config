@@ -1,0 +1,177 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+	<!-- Registration connector to packet-validator Route -->
+	<route id="registration-connector-->packet-validator update route">
+	<from uri="vertx:registration-connector-update-bus-out" />
+	<log
+			message="registration-connector-->packet-validator update route ${bodyAs(String)}" />
+		<choice>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<to uri="vertx:packet-validator-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
+				<to uri="vertx:retry-bus-in" />
+			</when>
+			<otherwise>
+				<to uri="vertx:error-bus-in" />
+			</otherwise>
+		</choice>
+	</route>
+	<!-- Packet Validator to OSI Validator Route -->
+	<route id="packet-validator-->osi-validator update route">
+		<from uri="vertx:packet-validator-update-bus-out" />
+		<log
+			message="packet-validator-->osi-validator update route ${bodyAs(String)}" />
+		<choice>
+			  <when>
+				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<when>
+				      <simple>${bodyAs(String)} contains '"reg_type":"ACTIVATED"' or ${bodyAs(String)} contains '"reg_type":"DEACTIVATED"'</simple>
+					  <to uri="vertx:uin-generator-bus-in" />
+				 </when>
+				 <otherwise>
+                   <to uri="vertx:o-s-i-validator-bus-in" />
+				 </otherwise>
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
+				<to uri="vertx:message-sender-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
+				<to uri="vertx:retry-bus-in" />
+			</when>
+			<otherwise>
+				<to uri="vertx:error-bus-in" />
+			</otherwise>
+		</choice>
+	</route>
+	<!-- OSI Validator to External Stage Route -->
+	<route id="osi-validator-->external-stage update route">
+		<from uri="vertx:o-s-i-validator-update-bus-out" />
+		<log
+			message="osi-validator-->external-stage update route ${bodyAs(String)}" />
+		<choice>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<to uri="vertx:external-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
+				<to uri="vertx:message-sender-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
+				<to uri="vertx:retry-bus-in" />
+			</when>
+			<otherwise>
+				<to uri="vertx:error-bus-in" />
+			</otherwise>
+		</choice>
+	</route>
+	<!-- External Stage to Demo Dedupe Route -->
+	<route id="external-stage-->demo-dedupe update route">
+		<from uri="vertx:external-update-bus-out" />
+		<log
+			message="external-stage-->demo-dedupe update route ${bodyAs(String)}" />
+		<choice>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<to uri="vertx:demo-dedupe-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
+				<to uri="vertx:retry-bus-in" />
+			</when>
+			<otherwise>
+				<to uri="vertx:error-bus-in" />
+			</otherwise>
+		</choice>
+	</route>
+	<!-- Demo Dedupe to Bio Dedupe Route -->
+	<route id="demo-dedupe-->bio-dedupe update route">
+		<from uri="vertx:demo-dedupe-update-bus-out" />
+		<log
+			message="demo-dedupe-->bio-dedupe update route ${bodyAs(String)}" />
+		<choice>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
+				<to uri="vertx:manual-verification-bus-in"/>
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<to uri="vertx:bio-dedupe-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
+				<to uri="vertx:retry-bus-in" />
+			</when>
+			<otherwise>
+				<to uri="vertx:error-bus-in" />
+			</otherwise>
+		</choice>
+	</route>
+	<!-- Bio Dedupe to UIN Generation Route -->
+	<route id="bio-dedupe-->uin-generation update route">
+		<from uri="vertx:bio-dedupe-update-bus-out" />
+		<log
+			message="bio-dedupe-->uin-generation update route ${bodyAs(String)}" />
+		<choice>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<to uri="vertx:uin-generator-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
+				<to uri="vertx:retry-bus-in" />
+			</when>
+			<otherwise>
+				<to uri="vertx:error-bus-in" />
+			</otherwise>
+		</choice>
+	</route>
+	<!-- Manual Verification to UIN Generation Route -->
+	<route id="manual-verification-->uin-generation update route">
+		<from uri="vertx:manual-verification-update-bus-in" />
+		<log
+			message="manual-verification-->uin-generation update route ${bodyAs(String)}" />
+		<choice>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<to uri="vertx:uin-generator-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
+				<to uri="vertx:message-sender-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
+				<to uri="vertx:retry-bus-in" />
+			</when>
+			<otherwise>
+				<to uri="vertx:error-bus-in" />
+			</otherwise>
+		</choice>
+	</route>
+	<!-- UIN Generator to Printing and Message Sender Route -->
+	<route id="uin-generation route-->printing-stage-->message-sender-stage update">
+		<from uri="vertx:uin-generator-update-bus-out" />
+		<log
+			message="uin-generator-->printing-stage and message-sender-stage update route ${bodyAs(String)}" />
+		<choice>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<to uri="vertx:message-sender-bus-in" />
+				<to uri="vertx:printing-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
+				<to uri="vertx:retry-bus-in" />
+			</when>
+			<otherwise>
+				<to uri="vertx:error-bus-in" />
+			</otherwise>
+		</choice>
+	</route>
+	</routes>

@@ -1,9 +1,9 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
 	<!-- Packet-Reciever to Virus Scanner Route -->
-	<route id="packet-reciever-->virus-scanner activated route">
-		<from uri="vertx:packet-receiver-activated-bus-out" />
+	<route id="packet-reciever-->virus-scanner update route">
+		<from uri="vertx:packet-receiver-update-bus-out" />
 		<log
-			message="packet-reciever-->virus-scanner route ${bodyAs(String)} for activated packet" />
+			message="packet-reciever-->virus-scanner route ${bodyAs(String)} for update packet" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -19,10 +19,10 @@
 		</choice>
 	</route>
 	<!-- Virus Scanner to Packet Uploader Route -->
-	<route id="virus-scan-->packet-uploader activated route">
-		<from uri="vertx:virus-scanner-activated-bus-out" />
+	<route id="virus-scan-->packet-uploader update route">
+		<from uri="vertx:virus-scanner-update-bus-out" />
 		<log
-			message=" virus-scan-->packet-uploader route ${bodyAs(String)} for activated packet" />
+			message=" virus-scan-->packet-uploader route ${bodyAs(String)} for update packet" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -38,8 +38,8 @@
 		</choice>
 	</route>
 	<!-- Packet Uploader to Registration connector Route -->
-	<route id="packet-uploader-->registration-connector activated route">
-		<from uri="vertx:packet-uploader-activated-bus-out" />
+	<route id="packet-uploader-->registration-connector update route">
+		<from uri="vertx:packet-uploader-update-bus-out" />
 		<log
 			message="packet-uploader-->registration-connector route ${bodyAs(String)}" />
 		<choice>

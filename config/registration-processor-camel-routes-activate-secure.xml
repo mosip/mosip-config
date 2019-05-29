@@ -1,0 +1,64 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+	<!-- Registration connector to packet-validator Route -->
+	<route id="registration-connector-->packet-validator activated route">
+	<from uri="vertx:registration-connector-activated-bus-out" />
+	<log
+			message="registration-connector-->packet-validator activated route ${bodyAs(String)}" />
+		<choice>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<to uri="vertx:packet-validator-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
+				<to uri="vertx:retry-bus-in" />
+			</when>
+			<otherwise>
+				<to uri="vertx:error-bus-in" />
+			</otherwise>
+		</choice>
+	</route>
+	<!-- Packet Validator to UIN Generator Route -->
+	<route id="packet-validator-->uin-generator activated route">
+		<from uri="vertx:packet-validator-activated-bus-out" />
+		<log
+			message="packet-validator-->uin-generator activated route ${bodyAs(String)}" />
+		<choice>
+			  <when>
+				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<to uri="vertx:uin-generator-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
+				<to uri="vertx:message-sender-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
+				<to uri="vertx:retry-bus-in" />
+			</when>
+			<otherwise>
+				<to uri="vertx:error-bus-in" />
+			</otherwise>
+		</choice>
+	</route>
+	<!-- UIN Generator to Printing and Message Sender Route -->
+	<route id="uin-generation route-->printing-stage-->message-sender-stage activatedd">
+		<from uri="vertx:uin-generator-activated-bus-out" />
+		<log
+			message="uin-generator-->printing-stage and message-sender-stage activated route ${bodyAs(String)}" />
+		<choice>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<to uri="vertx:message-sender-bus-in" />
+				<to uri="vertx:printing-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
+				<to uri="vertx:retry-bus-in" />
+			</when>
+			<otherwise>
+				<to uri="vertx:error-bus-in" />
+			</otherwise>
+		</choice>
+	</route>
+	</routes>
