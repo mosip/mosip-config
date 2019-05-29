@@ -27,6 +27,7 @@ stage('GIT - Create new branch') {
    sh "git checkout -b ${newVersion}"
    sh 'git status'
    sh 'ls'
+   sh 'touch aruna'
    sh "git add ."
    sh "git commit -m 'new branch created'"
    sshagent(['aruna']) {
