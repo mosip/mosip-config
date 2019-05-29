@@ -27,7 +27,7 @@ stage('GIT - Create new branch') {
    sh "git checkout -b ${newVersion}"
    sh 'git status'
    sh 'ls'
-   sh 'echo "New Branch Created with Build Number -> "${BUILD_NUMBER} " >> status'
+   sh 'echo "New Branch Created with Build Number -> ${BUILD_NUMBER}" >> status'
    sh "git add ."
    sh "git commit -m 'new branch created'"
    sshagent(['aruna']) {
