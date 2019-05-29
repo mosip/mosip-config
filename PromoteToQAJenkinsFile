@@ -18,7 +18,7 @@ node {
     ],
     extensions: scm.extensions + [[$class: 'CleanCheckout']],
     userRemoteConfigs: [
-     [url: 'git@github.com:mosip/mosip-configuration.git', credentialsId: 'fd9c5f45-e6ac-45ea-b345-f6fbeb303044']
+     [url: 'git@github.com:mosip/mosip-configuration.git', credentialsId: 'aruna']
     ]
    ])
   }
@@ -26,7 +26,7 @@ node {
  // creating a git tag
       sh "git tag ${newVersion}"
 	  // pushing tag to github
-      sshagent(['fd9c5f45-e6ac-45ea-b345-f6fbeb303044']) {
+      sshagent(['aruna']) {
       sh "git push origin ${newVersion}"
       }
  
