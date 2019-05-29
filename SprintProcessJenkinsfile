@@ -25,6 +25,7 @@ node {
 stage('GIT - Create new branch') {
   dir(branch) {
    sh "git checkout -b ${newVersion}"
+   sh 'git status'
    sh "git add ."
    sh "git commit -m 'new branch created'"
    sshagent(['aruna']) {
