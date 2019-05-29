@@ -31,7 +31,6 @@ stage('GIT - Create new branch') {
    sh "git add ."
    sh "git commit -m 'new branch created'"
    sshagent(['aruna']) {
-    sh "git pull"
     sh "git push origin ${newVersion}"
     }
     
