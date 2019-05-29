@@ -7,16 +7,20 @@
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<process ref="testProcessor"/>
 				<setHeader headerName="CamelHttpMethod">
 					<constant>POST</constant>
 				</setHeader>
 				<setHeader headerName="Content-Type">
 					<constant>application/json</constant>
 				</setHeader>
+				<setHeader headerName="Cookie">
+					<simple>${header.Cookie}</simple>
+				</setHeader>
 				<setBody>
 					<simple>${bodyAs(String)}</simple>
 				</setBody>
-				<to uri="https://dev.mosip.io/registrationprocessor/v1/uploader/securezone" />
+				<to uri="http://localhost:8087/registrationprocessor/v1/uploader/securezone" />
 			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
