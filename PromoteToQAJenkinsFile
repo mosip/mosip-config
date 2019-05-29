@@ -25,7 +25,14 @@ node {
  }
  stage('tag input'){
  def userInput = input(
-    id: 'userInput', message: 'Enter tag version number')
+    id: 'userInput', message: 'Enter tag version number', 
+    parameters:[
+    string(
+      defaultValue: 'None',
+      description: 'new tag version number',
+      name: 'Version')
+    ] 
+    )
      // Save to variables. Default to empty string if not found.
    echo userInput 
  }
