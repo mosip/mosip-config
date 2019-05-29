@@ -24,7 +24,7 @@ node {
  }
 stage('GIT - Create new branch') {
   dir(branch) {
-   sh "git checkout -b ${newVersion}"
+   sh "git checkout ${newVersion}"
    sh 'git status'
    sh 'ls'
    sh 'echo "New Branch Created with Build Number : ${BUILD_NUMBER}" >> status'
