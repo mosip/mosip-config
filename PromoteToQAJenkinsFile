@@ -45,9 +45,12 @@ node {
       sshagent(['aruna']) {
       sh "git push origin ${newVersion}"
       }
+      }
+      
  
   
   // Clean the workspace to avoid GIT conflicts when next time this pipeline is triggered
   	cleanWs()
  
+}
 }
