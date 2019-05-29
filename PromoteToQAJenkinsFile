@@ -35,7 +35,7 @@ node {
     )
      // Save to variables. Default to empty string if not found.
    echo userInput 
-    newVersion=$userInput
+    newVersion=${userInput}
  }
  stage('GIT - Push the code and Create new tag') {
  
