@@ -7,7 +7,7 @@
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
-				<process ref="testProcessor"/>
+				<process ref="tokenGenerationProcessor"/>
 				<setHeader headerName="CamelHttpMethod">
 					<constant>POST</constant>
 				</setHeader>
