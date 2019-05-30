@@ -74,6 +74,9 @@
 		},
 		"city": {
 			"value" : "city"
+		},
+		"parentOrGuardianBiometrics": {
+			"value" : "parentOrGuardianBiometrics"
 		}
 	}
-}  
+}
