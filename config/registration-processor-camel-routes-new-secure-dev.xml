@@ -18,21 +18,43 @@
 			</otherwise>
 		</choice>
 	</route>
-	<!-- Packet Validator to OSI Validator Route -->
-	<route id="packet-validator-->osi-validator new route">
+	<!-- Packet Validator to Quality Checker Route -->
+	<route id="packet-validator-->quality-checker route">
 		<from uri="vertx:packet-validator-new-bus-out" />
 		<log
-			message="packet-validator-->osi-validator route ${bodyAs(String)}" />
+			message="packet-validator-->quality-checker route ${bodyAs(String)}" />
+		<choice>
+			  <when>
+				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<when>
+				      <simple>${bodyAs(String)} contains '"reg_type":"ACTIVATED"' or ${bodyAs(String)} contains '"reg_type":"DEACTIVATED"'</simple>
+					  <to uri="vertx:uin-generator-bus-in" />
+				 </when>
+				 <otherwise>
+                   <to uri="vertx:quality-checker-bus-in" />
+				 </otherwise>
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
+				<to uri="vertx:message-sender-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
+				<to uri="vertx:retry-bus-in" />
+			</when>
+			<otherwise>
+				<to uri="vertx:error-bus-in" />
+			</otherwise>
+		</choice>
+	</route>
+	<route id="quality-checker-->osi-validator route">
+		<from uri="vertx:quality-checker-new-bus-out" />
+		<log
+			message="quality-checker-->osi-validator route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
-				<when>
-				    <simple>${bodyAs(String)} contains '"reg_type":"ACTIVATED"' or ${bodyAs(String)} contains '"reg_type":"DEACTIVATED"'</simple>
-					<to uri="vertx:uin-generator-bus-in" />
-				</when>
-				<otherwise>
-					<to uri="vertx:o-s-i-validator-bus-in" />
-				</otherwise>
+				<to uri="vertx:o-s-i-validator-bus-in" />
 			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
