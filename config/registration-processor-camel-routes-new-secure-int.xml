@@ -218,4 +218,10 @@
 			</otherwise>
 		</choice>
 	</route>
+	<route id="abis-middleware route-->abis-handler">
+		<from uri="vertx:abis-middle-ware-new-bus-out" />
+		<log
+			message="abis-middleware route-->abis-handler route ${bodyAs(String)}" />
+           <to uri="vertx:abis-handler-bus-in" />
+	</route> 
 </routes>
