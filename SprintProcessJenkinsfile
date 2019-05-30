@@ -6,8 +6,8 @@ import hudson.util.DescribableList;
 import jenkins.model.Jenkins;
 node {
  // def mvnHome = tool name: 'M2_HOME', type: 'maven'
- def branch = 'master'
- def newVersion = '30'
+ def branch = env.NEXT_BRANCH_NAME
+ def newVersion 
  // Asking user if he wants to start a new sprint, user will choose either proceed or abort
  stage('checkout') {
   // input 'Do you want to start a new Sprint?'
@@ -21,6 +21,20 @@ node {
     ]
    ])
   }
+ }
+  stage('tag input'){
+ def userInput = input(
+    id: 'userInput', message: 'Enter new branch number', 
+    parameters:[
+    string(
+      defaultValue: 'None',
+      description: 'new branch number',
+      name: 'Version')
+    ] 
+    )
+     // Save to variables. Default to empty string if not found.
+   echo userInput 
+    newVersion="${userInput}"
  }
 stage('GIT - Create new branch') {
   dir(branch) {
