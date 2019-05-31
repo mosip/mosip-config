@@ -3,7 +3,7 @@
 	<route id="packet-reciever-->packet-uploader update route">
 		<from uri="vertx:packet-receiver-bus-out" />
 		<log
-			message="packet-reciever-->packet-uploader ${bodyAs(String)}" />
+			message="packet-reciever-->packet-uploader update ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>

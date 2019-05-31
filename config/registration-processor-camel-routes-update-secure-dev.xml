@@ -3,7 +3,7 @@
 	<route id="packet-uploader-->packet-validator update route">
 	<from uri="vertx:packet-uploader-update-bus-out" />
 	<log
-			message="packet-uploader-->packet-validator route ${bodyAs(String)}" />
+			message="packet-uploader-->packet-validator update route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -19,10 +19,10 @@
 		</choice>
 	</route>
 	<!-- Packet Validator to Quality Checker Route -->
-	<route id="packet-validator-->quality-checker route">
+	<route id="packet-validator-->quality-checker update route">
 		<from uri="vertx:packet-validator-update-bus-out" />
 		<log
-			message="packet-validator-->quality-checker route ${bodyAs(String)}" />
+			message="packet-validator-->quality-checker update route ${bodyAs(String)}" />
 		<choice>
 			  <when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -41,10 +41,10 @@
 			</otherwise>
 		</choice>
 	</route>
-	<route id="quality-checker-->osi-validator route">
+	<route id="quality-checker-->osi-validator update route">
 		<from uri="vertx:quality-checker-update-bus-out" />
 		<log
-			message="quality-checker-->osi-validator route ${bodyAs(String)}" />
+			message="quality-checker-->osi-validator update route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -66,7 +66,7 @@
 	<route id="osi-validator-->biometric-authentication-stage update route">
 		<from uri="vertx:o-s-i-validator-update-bus-out" />
 		<log
-			message="osi-validator-->biometric-authentication-stage route ${bodyAs(String)}" />
+			message="osi-validator-->biometric-authentication-stage update route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -88,7 +88,7 @@
 	<route id="biometric-authentication-stage-->demo-dedupe update route">
 		<from uri="vertx:biometric-authentication-update-bus-out" />
 		<log
-				message="biometric-authentication-stage-->demo-dedupe route ${bodyAs(String)}" />
+				message="biometric-authentication-stage-->demo-dedupe update route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -103,10 +103,10 @@
 			</otherwise>
 		</choice>
 	</route>
-	<route id="demo-dedupe-->bio-dedupe update route">
+	<route id="demo-dedupe-->bio-dedupe update update route">
 		<from uri="vertx:demo-dedupe-update-bus-out" />
 		<log
-			message="demo-dedupe-->bio-dedupe route ${bodyAs(String)}" />
+			message="demo-dedupe-->bio-dedupe update route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -132,7 +132,7 @@
 	<route id="abis-handler-->abis-middleware update route">
 		<from uri="vertx:abis-handler-update-bus-out" />
 		<log
-			message="abis-handler-->abis-middleware route ${bodyAs(String)}" />
+			message="abis-handler-->abis-middleware update route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"address":"abis-middle-ware-bus-in"'</simple>
@@ -151,7 +151,7 @@
 	<route id="bio-dedupe-->uin-generation update route">
 		<from uri="vertx:bio-dedupe-update-bus-out" />
 		<log
-			message="bio-dedupe-->uin-generation route ${bodyAs(String)}" />
+			message="bio-dedupe-->uin-generation update route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -173,7 +173,7 @@
 	<route id="manual-verification-->uin-generation update route">
 		<from uri="vertx:manual-verification-update-bus-in" />
 		<log
-			message="manual-verification-->uin-generation route ${bodyAs(String)}" />
+			message="manual-verification-->uin-generation update route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -193,10 +193,10 @@
 		</choice>
 	</route>
 	<!-- UIN Generator to Printing and Message Sender Route -->
-	<route id="uin-generation route-->printing-stage-->message-sender-update stage">
+	<route id="uin-generation route-->printing-stage-->message-sender update route">
 		<from uri="vertx:uin-generator-update-bus-out" />
 		<log
-			message="uin-generation-->printing-stage and message-sender-stage route ${bodyAs(String)}" />
+			message="uin-generation-->printing-stage and message-sender-stage update route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -212,10 +212,10 @@
 			</otherwise>
 		</choice>
 	</route>
-	<route id="abis-middleware route-->abis-handler update">
+	<route id="abis-middleware route-->abis-handler update route">
 		<from uri="vertx:abis-middle-ware-update-bus-out" />
 		<log
-			message="abis-middleware route-->abis-handler route ${bodyAs(String)}" />
+			message="abis-middleware route-->abis-handler update route ${bodyAs(String)}" />
            <to uri="vertx:abis-handler-bus-in" />
 	</route>
 </routes>
