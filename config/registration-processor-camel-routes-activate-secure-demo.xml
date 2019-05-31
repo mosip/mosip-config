@@ -1,7 +1,7 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
 	<!-- packet-uploader to packet-validator Route -->
 	<route id="packet-uploader-->packet-validator activate route">
-	<from uri="vertx:packet-uploader-activate-bus-out" />
+	<from uri="vertx:packet-uploader-activated-bus-out" />
 	<log
 			message="packet-uploader-->packet-validator route ${bodyAs(String)}" />
 		<choice>

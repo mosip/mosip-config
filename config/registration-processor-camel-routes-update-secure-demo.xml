@@ -26,13 +26,7 @@
 		<choice>
 			  <when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
-				<when>
-				      <simple>${bodyAs(String)} contains '"reg_type":"ACTIVATED"' or ${bodyAs(String)} contains '"reg_type":"DEACTIVATED"'</simple>
-					  <to uri="vertx:uin-generator-bus-in" />
-				 </when>
-				 <otherwise>
                    <to uri="vertx:quality-checker-bus-in" />
-				 </otherwise>
 			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
@@ -217,5 +211,11 @@
 				<to uri="vertx:error-bus-in" />
 			</otherwise>
 		</choice>
+	</route>
+	<route id="abis-middleware route-->abis-handler update">
+		<from uri="vertx:abis-middle-ware-update-bus-out" />
+		<log
+			message="abis-middleware route-->abis-handler route ${bodyAs(String)}" />
+           <to uri="vertx:abis-handler-bus-in" />
 	</route>
 </routes>

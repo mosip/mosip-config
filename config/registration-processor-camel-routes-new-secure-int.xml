@@ -218,7 +218,7 @@
 			</otherwise>
 		</choice>
 	</route>
-	<route id="abis-middleware route-->abis-handler">
+	<route id="abis-middleware route-->abis-handler new">
 		<from uri="vertx:abis-middle-ware-new-bus-out" />
 		<log
 			message="abis-middleware route-->abis-handler route ${bodyAs(String)}" />
