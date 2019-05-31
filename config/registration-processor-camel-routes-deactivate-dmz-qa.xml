@@ -7,11 +7,15 @@
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<process ref="tokenGenerationProcessor"/>
 				<setHeader headerName="CamelHttpMethod">
 					<constant>POST</constant>
 				</setHeader>
 				<setHeader headerName="Content-Type">
 					<constant>application/json</constant>
+				</setHeader>
+				<setHeader headerName="Cookie">
+					<simple>${header.Cookie}</simple>
 				</setHeader>
 				<setBody>
 					<simple>${bodyAs(String)}</simple>
