@@ -13,6 +13,9 @@
 				<setHeader headerName="Content-Type">
 					<constant>application/json</constant>
 				</setHeader>
+				<setHeader headerName="Cookie">
+					<simple>${header.Cookie}</simple>
+				</setHeader>
 				<setBody>
 					<simple>${bodyAs(String)}</simple>
 				</setBody>
