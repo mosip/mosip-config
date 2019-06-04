@@ -1,6 +1,6 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
 	<!-- Packet-Reciever to packet-uploader lost Route -->
-	<route id="packet-reciever-->packet-uploader route">
+	<route id="packet-reciever-->packet-uploader lost route">
 		<from uri="vertx:packet-receiver-lost-bus-out" />
 		<log
 			message="packet-reciever-->packet-uploader ${bodyAs(String)}" />
