@@ -18,25 +18,6 @@
 			</otherwise>
 		</choice>
 	</route>
-	<!-- Packet Validator to OSI Validator Route -->
-	<route id="packet-validator-->osi-validator lost route">
-		<from uri="vertx:packet-validator-lost-bus-out" />
-		<log
-			message="packet-validator-->osi-validator lost route ${bodyAs(String)}" />
-		<choice>
-			  <when>
-				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="vertx:o-s-i-validator-bus-in" />
-			</when>
-			<when>
-				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
-				<to uri="vertx:retry-bus-in" />
-			</when>
-			<otherwise>
-				<to uri="vertx:error-bus-in" />
-			</otherwise>
-		</choice>
-	</route>
 	<!-- Packet Validator to Quality Checker Route -->
 	<route id="packet-validator-->quality-checker lost route">
 		<from uri="vertx:packet-validator-lost-bus-out" />
@@ -138,7 +119,7 @@
 		</choice>
 	</route> 
 	<route id="uin-generation-lost-->message-sender-stage-->printing-stage lost route">
-		<from uri="vertx:uin-generation-lost-bus-out" />
+		<from uri="vertx:uin-generator-lost-bus-out" />
 		<log
 			message="uin-generation-lost-->message-sender-stage lost route ${bodyAs(String)}" />
 		<choice>
