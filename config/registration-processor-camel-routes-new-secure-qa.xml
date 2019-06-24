@@ -177,7 +177,7 @@
 		</choice>
 	</route>
 	<route id="manual-verification-->uin-generation new route">
-		<from uri="vertx:manual-verification-new-bus-out />
+		<from uri="vertx:manual-verification-new-bus-out" />
 		<log
 			message="manual-verification-->uin-generation new route ${bodyAs(String)}" />
 		<choice>
