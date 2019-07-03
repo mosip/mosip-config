@@ -38,8 +38,8 @@ registration.processor.LANDING_ZONE = ${registration.processor.DEV_DIRECTORY}/LA
 registration.processor.vm.ppk=Mosip_Private_key-{{ env_name }}.ppk
 
 #---------registration-processor-camel-bridge------------
-cluster.manager.file.name=hazelcast_secure.xml
-dmz.cluster.manager.file.name=hazelcast_dmz.xml
+cluster.manager.file.name=hazelcast_secure-{{ env_name }}.xml
+dmz.cluster.manager.file.name=hazelcast_dmz-{{ env_name }}.xml
 camel.dmz.active.flows.file.names=registration-processor-camel-routes-new-dmz.xml,registration-processor-camel-routes-update-dmz.xml,registration-processor-camel-routes-activate-dmz.xml,registration-processor-camel-routes-res_update-dmz.xml,registration-processor-camel-routes-deactivate-dmz.xml,registration-processor-camel-route-lost-dmz.xml
 camel.secure.active.flows.file.names=registration-processor-camel-routes-new-secure.xml,registration-processor-camel-routes-update-secure.xml,registration-processor-camel-routes-activate-secure.xml,registration-processor-camel-routes-res_update-secure.xml,registration-processor-camel-routes-deactivate-secure.xml,registration-processor-camel-route-lost-secure.xml
 
