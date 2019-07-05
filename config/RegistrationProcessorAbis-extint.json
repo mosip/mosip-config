@@ -1,0 +1,17 @@
+{
+	"abis": [{
+			"name": "ABIS1",
+			"host": "",
+			"port": "",
+			"brokerUrl": "tcp://10.0.2.11:61616",
+			"inboundQueueName": "abis1-inbound-address_extint",
+			"outboundQueueName": "abis1-outbound-address_extint",
+			"pingInboundQueueName": "",
+			"pingOutboundQueueName": "",
+			"userName": "admin",
+			"password": "admin",
+		        "typeOfQueue": "ACTIVEMQ"
+		}
+	]
+
+}

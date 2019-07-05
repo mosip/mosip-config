@@ -1,0 +1,241 @@
+#------registration-processor-common-properties-------
+mosip.registration.processor.database.hostname={{ db_hostname }}
+mosip.registration.processor.database.port={{ db_port }}
+# Health checker
+management.endpoint.health.show-details=always
+management.endpoints.web.exposure.include=info,health,refresh
+
+#------registration-processor-filesystem-adapter-hdfs-------
+mosip.kernel.fsadapter.hdfs.user-name=regprocessor-dev
+# enable security for hdfs
+#mosip.kernel.fsadapter.hdfs.authentication-enabled=false
+logging.level.org.apache.hadoop=warn
+
+#------packet-bio-dedupe-service--------
+registration.processor.biometric.reference.url=${mosip.base.url}/registrationprocessor/v1/bio-dedupe/biometricfile
+registration.processor.abis.maxResults=30
+registration.processor.abis.targetFPIR=30
+registration.processor.abis.threshold=60
+TESTFINGERPRINT=ns2:TestFinger
+TESTIRIS=ns2:TestIris
+TESTFACE=ns2:TestFace
+
+#------packet-info-storage-service--------
+javax.persistence.jdbc.driver=org.postgresql.Driver
+javax.persistence.jdbc.url=jdbc:postgresql://${mosip.registration.processor.database.hostname}:${mosip.registration.processor.database.port}/mosip_regprc?currentSchema=regprc
+javax.persistence.jdbc.user=regprcuser
+javax.persistence.jdbc.password={{ regprcuser_password }}
+hibernate.hbm2ddl.auto=update
+hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+hibernate.jdbc.lob.non_contextual_creation=true
+hibernate.show_sql=false
+
+#-----packet-manager----------
+registration.processor.DEV_DIRECTORY = /home/ftp1
+registration.processor.ARCHIVE_LOCATION=${registration.processor.DEV_DIRECTORY}/ARCHIVE_PACKET_LOCATION
+registration.processor.PRINT_POSTAL_SERVICE=/home/ftp1/PRINIT_POSTAL_SERVICE
+registration.processor.LANDING_ZONE = ${registration.processor.DEV_DIRECTORY}/LANDING_ZONE
+registration.processor.vm.ppk=Mosip_Private_key-{{ env_name }}.ppk
+
+#---------registration-processor-camel-bridge------------
+cluster.manager.file.name=hazelcast_secure-{{ env_name }}.xml
+dmz.cluster.manager.file.name=hazelcast_dmz-{{ env_name }}.xml
+camel.dmz.active.flows.file.names=registration-processor-camel-routes-new-dmz.xml,registration-processor-camel-routes-update-dmz.xml,registration-processor-camel-routes-activate-dmz.xml,registration-processor-camel-routes-res_update-dmz.xml,registration-processor-camel-routes-deactivate-dmz.xml,registration-processor-camel-route-lost-dmz.xml
+camel.secure.active.flows.file.names=registration-processor-camel-routes-new-secure.xml,registration-processor-camel-routes-update-secure.xml,registration-processor-camel-routes-activate-secure.xml,registration-processor-camel-routes-res_update-secure.xml,registration-processor-camel-routes-deactivate-secure.xml,registration-processor-camel-route-lost-secure.xml
+
+#-------------TOKEN GENERATION----------------
+token.request.id=io.mosip.registration.processor
+token.request.appid=registrationprocessor
+token.request.username=registrationprocessor
+token.request.password=mosip
+token.request.version=1.0
+token.request.clientId=regproc_app_user
+token.request.secretKey=80565e06e382d5e8b924123feb6ef43b
+
+#--------registration-processor-rest-client--------------
+#AUDIT SERVICES
+AUDIT=${mosip.base.url}/v1/auditmanager/audits
+#AUTH SERVICES
+PASSWORDBASEDTOKENAPI=${mosip.base.url}/v1/authmanager/authenticate/useridPwd
+KEYBASEDTOKENAPI=${mosip.base.url}/v1/authmanager/authenticate/clientidsecretkey
+EMAILNOTIFIER=${mosip.base.url}/v1/emailnotifier/email/send
+TOKENVALIDATE=${mosip.base.url}/v1/authmanager/authorize/validateToken
+GETRIDFROMUSERID=${mosip.base.url}/v1/authmanager/rid
+INTERNALAUTH=${mosip.base.url}/idauthentication/v1/internal/auth
+#MASTER DATA SERVICES
+MASTER=${mosip.base.url}/v1/masterdata
+MACHINEHISTORY=${MASTER}/machineshistories
+CENTERHISTORY=${MASTER}/registrationcentershistory
+CENTERUSERMACHINEHISTORY=${MASTER}/getregistrationmachineusermappinghistory
+REVERSEDATASYNC=${mosip.base.url}/preregistration/v1/sync/consumedPreRegIds
+CENTERDETAILS=${MASTER}/registrationcenters
+MACHINEDETAILS=${MASTER}/machines
+DEVICESHISTORIES=${MASTER}/deviceshistories
+REGISTRATIONCENTERDEVICEHISTORY=${MASTER}/registrationcenterdevicehistory
+REGISTRATIONCENTERTIMESTAMP=${MASTER}/registrationcenters/validate
+GENDER=${MASTER}/gendertypes/validate
+REGION=${MASTER}/locations/validate
+CITY=${MASTER}/locations/validate
+POSTALCODE=${MASTER}/locations/validate
+PROVINCE=${MASTER}/locations/validate
+USERDETAILS=${MASTER}/users
+## UIN genration
+IDREPOSITORY=${mosip.base.url}/idrepository/v1/identity/
+IDREPOGETIDBYUIN=${mosip.base.url}/idrepository/v1/identity/uin
+UINGENERATOR=${mosip.base.url}/v1/uingenerator/uin
+RETRIEVEIDENTITYFROMRID=${mosip.base.url}/idrepository/v1/identity/rid
+RETRIEVEIDENTITY=${mosip.base.url}/idrepository/v1/identity/uin
+CREATEVID=${mosip.base.url}/idrepository/v1/vid
+##BIODEDUPE service
+BIODEDUPE=${mosip.base.url}/registrationprocessor/v1/bio-dedupe/biometricfile
+## ABIS service
+BIODEDUPEINSERT=${mosip.base.url}/abis/v0.1/registration-processor/abis/insert
+BIODEDUPEPOTENTIAL=${mosip.base.url}/abis/v0.1/registration-processor/abis/identity
+#ENCRYPT dATA
+ENCRYPTURL=${mosip.base.url}/v1/cryptomanager/encrypt
+ENCRYPTIONSERVICE=${mosip.base.url}/v1/keymanager/publickey
+#DIGITAL SIGNATURE
+DIGITALSIGNATURE=${mosip.base.url}/v1/signature/sign
+mosip.registration.processor.digital.signature.id=io.mosip.registration.processor
+
+#--------registration-processor-rest-client-dmz--------------
+DMZAUDIT=${mosip.base.url}/v1/auditmanager/audits
+DMZCRYPTOMANAGERDECRYPT=${mosip.base.url}/v1/cryptomanager/decrypt
+# EXTERNAL SERVICE
+EISERVICE=${mosip.base.url}/registrationprocessor/v1/eis/registration-processor/external-integration-service/v1.0
+# RID GENERATION
+RIDGENERATION=${mosip.base.url}/v1/ridgenerator/generate/rid
+# REG PROC SERVICES
+SYNCSERVICE=${mosip.base.url}/registrationprocessor/v1/registrationstatus/sync
+PACKETRECEIVER=${mosip.base.url}/registrationprocessor/v1/packetreceiver/registrationpackets
+# SMS and EMAIL notification
+SMSNOTIFIER=${mosip.base.url}/v1/smsnotifier/sms/send
+EMAILNOTIFIER=${mosip.base.url}/v1/emailnotifier/email/send
+
+#---------registration-status---------
+registration.processor.max.retry=3
+mosip.registration.processor.registration.status.id=mosip.registration.status
+mosip.registration.processor.registration.sync.id=mosip.registration.sync
+mosip.registration.processor.sync.version=1.0		
+mosip.registration.processor.registration.status.version=1.0
+
+#--------demo-dedupe-stage---------
+registration.processor.demodedupe.manualverification.status=REJECTED
+application.id=REGISTRATION
+
+#-----------manual-verification-stage------------
+mosip.registration.processor.manual.verification.assignment.id=mosip.manual.verification.assignment
+mosip.registration.processor.manual.verification.decision.id=mosip.manual.verification.decision
+mosip.registration.processor.manual.verification.biometric.id=mosip.manual.verification.biometric
+mosip.registration.processor.manual.verification.demographic.id=mosip.manual.verification.demographic
+mosip.registration.processor.manual.verification.packetinfo.id=mosip.manual.verification.packetinfo
+
+#--------osi-validator-stage----------
+mosip.workinghour.validation.required=true
+registration.processor.applicant.dob.format=yyyy/MM/dd
+mosip.identity.auth.internal.requestid=mosip.identity.auth.internal
+
+#---------packet-receiver-stage------------
+registration.processor.max.file.size=5
+mosip.registration.processor.application.version=1.0
+mosip.registration.processor.datetime.pattern=yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
+mosip.registration.processor.timezone=GMT
+mosip.registration.processor.packet.id=mosip.registration.packet
+
+#-----------retry-stage-----------
+registration.processor.wait.period=1
+
+#----------uin-generator-stage------------
+registration.processor.id.repo.create=mosip.id.create
+registration.processor.id.repo.read=mosip.id.read
+registration.processor.id.repo.update=mosip.id.update
+registration.processor.id.repo.vidType=Perpetual
+registration.processor.id.repo.generate=mosip.vid.create
+registration.processor.id.repo.vidVersion=v1
+
+#---------virus-scanner-stage---------
+registration.processor.packet.ext=.zip
+mosip.kernel.virus-scanner.host={{ virus_scanner_url }}
+mosip.kernel.virus-scanner.port={{ virus_scanner_port }}
+registration.processor.application.id=REGISTRATION
+registration.processor.rid.machineidsubstring=10
+
+#---------packet-uploader-stage------------
+registration.processor.dmz.server.host={{ dmz_hostname }}
+registration.processor.dmz.server.user={{ global_username }}
+registration.processor.dmz.server.port=22
+registration.processor.dmz.server.protocal=sftp
+
+#-----------Message-sender-stage-----------
+registration.processor.identityjson=RegistrationProcessorIdentity-{{ env_name }}.json
+registration.processor.abis.json=RegistrationProcessorAbis-{{ env_name }}.json
+registration.processor.demographic.identity=identity
+registration.processor.notification.emails=
+registration.processor.uin.generated.subject=UIN Generated
+registration.processor.duplicate.uin.subject=Registration Failed because you have already Registered
+registration.processor.reregister.subject=Re-Register because there was a Technical Issue
+registration.processor.uin.activated.subject=Uin is activated successfully
+registration.processor.uin.deactivated.subject=Uin is deactivated
+registration.processor.updated.subject=UIN Details Updated
+
+#-------registration-processor-queue---------
+registration.processor.queue.username=admin
+registration.processor.queue.password=admin
+registration.processor.queue.url=tcp://{{ activemq_address }}:{{ activemq_port }} # change it after setting up active mq
+registration.processor.queue.typeOfQueue=ACTIVEMQ
+registration.processor.queue.address = print-service-dev
+registration.processor.queue.printpostaladdress = postal-service-dev
+
+#---------Packet-validator-stage---------------
+registration.processor.masterdata.validation.attributes = gender,region,province,city
+registration.processor.validateSchema=true
+registration.processor.validateFile=true
+registration.processor.validateChecksum=true
+registration.processor.validateApplicantDocument=false
+registration.processor.validateMasterData=false
+registration-processor.validatemandotary=true
+registration.processor.document.category=IDObject_DocumentCategory_Mapping-{{ env_name }}.json
+registration.processor.applicant.type=ApplicantType_Document_Mapping-{{ env_name }}.json
+
+#-----------Packet-Generator-Service-------------
+registration.processor.packet.generated=${registration.processor.DEV_DIRECTORY}/PACKET_GENERATED
+registration.processor.packet.storageLocation.decrypted =${registration.processor.packet.generated}/decrypted
+registration.processor.packet.storageLocation.encrypted=${registration.processor.packet.generated}/encrypted
+registration.processor.packet.location.dateFormat=dd-MMM-yyyy
+registration.processor.audit.applicationId=PACGEN
+registration.processor.audit.applicationName=PACKET_GENERATOR
+registration.processor.audit.hostIP=120.0.0.0
+registration.processor.audit.hostName=localhost
+mosip.registration.processor.registration.packetgenerator.id=mosip.registration.packetgenerator
+mosip.registration.processor.packetgenerator.version=1.0
+
+#-------------Printing-Service--------------------
+mosip.registration.processor.print.service.id=mosip.registration.print
+
+#--------------Reprocessor-stage----------------
+registration.processor.reprocess.fetchsize=100
+registration.processor.reprocess.elapse.time=21600
+registration.processor.reprocess.attempt.count=3
+registration.processor.reprocess.type=cron
+registration.processor.reprocess.seconds=0
+registration.processor.reprocess.minutes=0
+registration.processor.reprocess.hours=23
+registration.processor.reprocess.days_of_month=*
+registration.processor.reprocess.months=*
+registration.processor.reprocess.days_of_week=*
+
+#------quality-checker-stage----------------
+mosip.registration.iris_threshold=70
+mosip.registration.leftslap_fingerprint_threshold=80
+mosip.registration.rightslap_fingerprint_threshold=80
+mosip.registration.thumbs_fingerprint_threshold=80
+mosip.registration.facequalitythreshold=25
+
+#service Ids
+mosip.registration.processor.audit.id=mosip.applicanttype.getApplicantType
+mosip.registration.processor.crypto.decrypt.id=mosip.cryptomanager.decrypt
+mosip.registration.processor.sms.id=mosip.sms.send
+mosip.registration.processor.email.id=mosip.email.send
+
+#Kernel Crypto signature
+registration.processor.signature.isEnabled=true
