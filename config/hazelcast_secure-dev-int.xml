@@ -16,7 +16,7 @@
    <property name="hazelcast.discovery.enabled">true</property>
  </properties>
 <group>
-		<name>k8s</name>
+		<name>k8s-test</name>
 		<password/>
 	</group>
  <network>
