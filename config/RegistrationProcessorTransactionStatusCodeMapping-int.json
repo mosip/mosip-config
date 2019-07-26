@@ -1,8 +1,32 @@
 {
-"ERROR":"error",
-"SUCCESS":"success",
-"FAILED":"failed",
-"REPROCESS":"reprocess",
-"Resend":"resend",
-"PROCESSED":"processed"
+"ERROR":{
+		"eng":"error",
+		"fra":"erreur",
+		"ara":"خطأ"
+		},
+"SUCCESS":{
+		"eng":"success",
+		"fra":"succès",
+		"ara":"نجاح"
+		},
+"FAILED":{
+		"eng":"failed",
+		"fra":"échoué",
+		"ara":"فشل"
+		},
+"REPROCESS":{
+			"eng":"reprocess",
+			"fra":"retraiter",
+			"ara":"إعادة العملية"
+			},
+"Resend":{
+		"eng":"resend",
+		"fra":"renvoyer",
+		"ara":"إعادة إرسال"
+		},
+"PROCESSED":{
+			"eng":"processed",
+			"fra":"traité",
+			"ara":"المصنعة"
+			}
 }
