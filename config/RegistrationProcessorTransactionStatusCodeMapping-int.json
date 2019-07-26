@@ -28,5 +28,10 @@
 			"eng":"processed",
 			"fra":"traité",
 			"ara":"المصنعة"
-			}
+			},
+"IN_PROGRESS":{
+			 "eng":"in progress",
+			 "fra":"en cours",
+			 "ara":"في تقدم"
+			  }
 }
