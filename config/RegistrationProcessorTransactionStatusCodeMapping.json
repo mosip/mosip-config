@@ -1,0 +1,7 @@
+{
+"ERROR":"error",
+"SUCCESS":"success",
+"FAILED":"failed",
+"REPROCESS":"reprocess",
+"Resend":"resend"
+}
