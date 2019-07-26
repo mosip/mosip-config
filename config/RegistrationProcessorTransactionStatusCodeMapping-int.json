@@ -3,5 +3,6 @@
 "SUCCESS":"success",
 "FAILED":"failed",
 "REPROCESS":"reprocess",
-"Resend":"resend"
+"Resend":"resend",
+"PROCESSED":"processed"
 }
