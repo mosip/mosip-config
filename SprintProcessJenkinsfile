@@ -1,0 +1,53 @@
+import hudson.EnvVars;
+import hudson.slaves.EnvironmentVariablesNodeProperty;
+import hudson.slaves.NodeProperty;
+import hudson.slaves.NodePropertyDescriptor;
+import hudson.util.DescribableList;
+import jenkins.model.Jenkins;
+node {
+ // def mvnHome = tool name: 'M2_HOME', type: 'maven'
+ def branch = 'master'
+ def newVersion 
+ // Asking user if he wants to start a new sprint, user will choose either proceed or abort
+ stage('checkout') {
+  // input 'Do you want to start a new Sprint?'
+  dir(branch) {
+   checkout([$class: 'GitSCM',
+    branches: [
+     [name: branch]
+    ],
+    userRemoteConfigs: [
+     [url: 'git@github.com:mosip/mosip-configuration.git', credentialsId: 'aruna']
+    ]
+   ])
+  }
+ }
+  stage('tag input'){
+ def userInput = input(
+    id: 'userInput', message: 'Enter new branch number', 
+    parameters:[
+    string(
+      defaultValue: 'None',
+      description: 'new branch number',
+      name: 'Version')
+    ] 
+    )
+     // Save to variables. Default to empty string if not found.
+   echo userInput 
+    newVersion="${userInput}"
+ }
+stage('GIT - Create new branch') {
+  dir(branch) {
+   sh "git checkout -b ${newVersion}"
+   sh 'git status'
+   sh 'ls'
+   sh 'echo "New Branch Created with Build Number : ${BUILD_NUMBER}" >> status'
+   sh "git add ."
+   sh "git commit -m 'new branch created'"
+   sshagent(['aruna']) {
+    sh "git push origin ${newVersion}"
+    }
+    
+  }
+}
+}

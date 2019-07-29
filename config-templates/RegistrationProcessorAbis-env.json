@@ -1,0 +1,17 @@
+{
+	"abis": [{
+			"name": "ABIS1",
+			"host": "",
+			"port": "",
+			"brokerUrl": "tcp://{{ activemq_address }}:{{ activemq_port }}",
+			"inboundQueueName": "abis1-inbound-address_{{ env_name }}",
+			"outboundQueueName": "abis1-outbound-address_{{ env_name }}",
+			"pingInboundQueueName": "",
+			"pingOutboundQueueName": "",
+			"userName": "admin",
+			"password": "admin",
+		        "typeOfQueue": "ACTIVEMQ"
+		}
+	]
+
+}
