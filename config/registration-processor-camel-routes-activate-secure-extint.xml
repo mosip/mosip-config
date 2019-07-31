@@ -1,33 +1,14 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
-	<!-- packet-uploader to packet-validator Route -->
-	<route id="packet-uploader-->packet-validator activated route">
-	<from uri="vertx:packet-uploader-activated-bus-out" />
-	<log
-			message="packet-uploader-->packet-validator activated route ${bodyAs(String)}" />
-		<choice>
-			<when>
-				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
-				<to uri="vertx:packet-validator-bus-in" />
-			</when>
-			<when>
-				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
-				<to uri="vertx:retry-bus-in" />
-			</when>
-			<otherwise>
-				<to uri="vertx:error-bus-in" />
-			</otherwise>
-		</choice>
-	</route>
-	<!-- Packet Validator to uin-generator Route -->
-	<route id="packet-validator-->uin-generator activated route">
-		<from uri="vertx:packet-validator-activated-bus-out" />
+	<!-- Packet uploader to uin-generator Route -->
+	<route id="packet-uploader-->uin-generator activated route">
+		<from uri="vertx:packet-uploader-activated-bus-out" />
 		<log
-			message="packet-validator-->uin-generator activated route ${bodyAs(String)}" />
+			message="packet-uploader-->uin-generator activated route ${bodyAs(String)}" />
 		<choice>
 			<when>
-	          <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-              <to uri="vertx:uin-generator-bus-in" />
-            </when>
+	          		<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+             			<to uri="vertx:uin-generator-bus-in" />
+            		</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
 				<to uri="vertx:message-sender-bus-in" />
