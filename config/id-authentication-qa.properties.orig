@@ -4,14 +4,14 @@ mosip.ida.database.hostname=52.172.54.231
 # Database port
 mosip.ida.database.port=9001
 # Database user
-mosip.ida.database.user={cipher}AQBqCDGJgRVoXyWfTrT1BzSw0vqhAUD2tueijUhkFwkdkavygejlRuZZ9kZaJV0ZLF6LRdfvnEVYZq/CGKbBOjZH0WuDiWagncOt0U9was+DG45pyfP+nQ0iWVnShJhXAWh4tMZsQpJktlCf8OGjOZGzY4R+tOPfhLbx5T18HZMdMX2sMUIEEFra+lF5U810Y/0wNNU+/YTxCDA4PzjCwtPi79/o5Vdt94olckKzXAMIvPyOLt8+Kr1H0Xt5/mXvHBcI/0w7nsZEJyZs/1jeRdVNOnuli0t5R6GQyTvwJxysnqBHMMmhiL7aPTyksUGU98e1KNdbbhkd7v1Y8psmLw+hyBAxn2LjqigTr66vlrCVlu175HWI0/oOcOVOl2pn3Zw=
+mosip.ida.database.user=idauser
 # Database password (encrypted)
 mosip.ida.database.password={cipher}AQA+SFhChMT3cx15o7ne3ziROiCPJtdR1JcSJOu+ZaSQHbi9nRLUDesUFJ+Y20FLWwdcR78pz2qnF/OO3psp8uDlyxXK8fmGwl6aHkofOa2gtnPvqsHnYD/CC0BpCjmlZ0lPthtaJXGLnLh+YMjqqgZASlm/ixr17kt8I0jahd8nOsFsV+43VKrEQ+4SudVJs+oVC/U65eR7EWM21Lve2Ijlis20sxSkFKoOGgEsqgPkftdCx1z1nW71s6ESIF1Wypd+UFgH6VnEHqp19sJMn3I4+ZG5HMdCCAEAq/FvJ9OXYwvIXAYKlLlSiRxnZp9Z/+BdTYNZq2ahq6cYmUhKeqb4VmBjkjaQ6vO0N+n2G0Elxtzq4hmvcRbxPxT8OSKuRVk=
 
 # Kernel auth client ID for IDA
-mosip.ida.auth.clientId={cipher}AQA9/t6f0azvsPgWovSxOoRKvU2QBfg6x0kqCNcxzPU3exWCKgSpVO1XV/4jBHX1yn4b/99L02IFeROJAnDhFbsit141a/B/Q7/DAQJNxkmrJ4GsQX0vaQv6CD5SWA3D0X7Tre/lxi+EYfDL1PRzGoFgnqpqKEZBc+TJVWutJyh6AH0X5vboJM5zxHnJOzKjWTjx6hd24deNwTpC/+ju5AjIo83Rh4Tup9wzIOeXplrwg1ekQ9q4Dq43ywl0M8hdRsrjudOwbs8Ckm/Qbi8V5/LWRdD/2r4Yyw6kkEXqx7pQ/kwyaYhYssnNaKhTye3RgagW9pGTAGzlrljviLGyezkZYIm1/eba487rdIG2RjkHF1KpLhCInrJTU0HZthHSlp4=
+mosip.ida.auth.clientId=ida_app_user
 # Kernel auth secret key for IDA
-mosip.ida.auth.secretKey={cipher}AQBDDCbKWh9mx/oDF+TSuu9kiTiQ3Q94VQC/F83BxvdPD4hfU6X56WgZTxn/PhDriJ+8gjUch9V3Q831JB4YlXeMOJQ3lFlu9zkyVGk46CRNo49gEjgm9CiI8uWBGjlPd/mwVnwaenGQsMBlfM8tyMgW5tpFx5mrjcMW0EDbpq9QNaDSo8PzRa4YZrJ1wj8/cv9/utJtqc/hvlJN+E53dsCks+wHm3WZc7YtV85ES2+eFbW9JWzqur/YzyXk22BO8s/ZBRGK98t2jW6omQ5ag1Q8Iazt1NAJzEsDcxaGJ9q1SFeAv/qoElcaPL8l8HwshSeHt/ca+HL/ggHx2I9RRVn9rTAXmFrDLQJc+FRv8Si8vT65+5M52jXgCrzY5xQo4F8YeCBvkTPA7LZQAjlieHj1vb8bytBZBQFlbO50TBGIqg==
+mosip.ida.auth.secretKey=5debb60adbfcf8feea4a6ed6160092ec
 # Kernel auth application ID for IDA
 mosip.ida.auth.appId=ida
 
@@ -314,16 +314,28 @@ notification.date.format=dd-MM-yyyy
 notification.time.format=HH:mm:ss
 
 #********* Internal Auth Type *********
+<<<<<<< HEAD
+internal.auth.types.allowed=bio-FMR,bio-FIR,bio-IIR,bio-FID
+=======
 #Configure authentication types permissable for internal authentication 
-internal.auth.types.allowed=otp,bio-FMR,bio-FIR,bio-IIR,bio-FID
+internal.auth.types.allowed=bio-FMR,bio-IIR,bio-FID
+>>>>>>> refs/heads/0.12.0
 
 #************ E-KYC********
-#Configure authentications permissable for e-KYC for a country
+<<<<<<< HEAD
 ekyc.auth.types.allowed=otp,bio-FMR,bio-FIR,bio-IIR,bio-FID
+=======
+#Configure authentications permissable for e-KYC for a country
+ekyc.auth.types.allowed=otp,bio-FMR,bio-IIR,bio-FID
+>>>>>>> refs/heads/0.12.0
 
 #***********AuthType Enable***********
-#Configure authentications permissable for a country
+<<<<<<< HEAD
 auth.types.allowed=demo,otp,bio-FMR,bio-FIR,bio-IIR,bio-FID
+=======
+#Configure authentications permissable for a country
+auth.types.allowed=demo,otp,bio-FMR,bio-IIR,bio-FID
+>>>>>>> refs/heads/0.12.0
 
 #***********Certificate type************
 ida.jws.certificate.type=X.509
@@ -340,7 +352,6 @@ ida.api.id.otp=mosip.identity.otp
 ida.api.id.staticpin=mosip.identity.staticpin
 ida.api.id.vid=mosip.identity.vid
 ida.api.id.internal=mosip.identity.auth.internal
-ida.api.id.auth.transactions=mosip.identity.authtransactions.read
 
 #------------version's---------------------
 ida.api.version.auth=1.0
@@ -349,7 +360,6 @@ ida.api.version.otp=1.0
 ida.api.version.staticpin=1.0
 ida.api.version.vid=1.0
 ida.api.version.internal=1.0
-ida.api.version.auth.transactions=1.0
 
 #------ Static Token Configuration ---------------
 #Configure preference to turn on/off Tokenization for a Country,  as a process
