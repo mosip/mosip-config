@@ -73,11 +73,10 @@
 			"value" : "CNIENumber"
 		},
 		"city": {
-			"value" : "city",
-			"isMandatory" : true
+			"value" : "city"
 		},
 		"parentOrGuardianBiometrics": {
 			"value" : "parentOrGuardianBiometrics"
 		}
 	}
-}  
+}
