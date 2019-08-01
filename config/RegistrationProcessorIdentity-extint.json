@@ -46,8 +46,7 @@
 			"value" : "addressLine2"
 		},
 		"addressLine3": {
-			"value" : "addressLine3",
-			"isMandatory" : true
+			"value" : "addressLine3"
 		},
 		"region": {
 			"value" : "region"
