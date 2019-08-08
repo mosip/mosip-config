@@ -24,18 +24,12 @@
 		<log
 			message="packet-validator-->quality-checker new route ${bodyAs(String)}" />
 		<choice>
-			  <when>
+			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
-				<when>
-				      <simple>${bodyAs(String)} contains '"reg_type":"ACTIVATED"' or ${bodyAs(String)} contains '"reg_type":"DEACTIVATED"'</simple>
-					  <to uri="vertx:uin-generator-bus-in" />
-				 </when>
-				 <otherwise>
-                   <to uri="vertx:quality-checker-bus-in" />
-				 </otherwise>
+				<to uri="vertx:quality-checker-bus-in" />
 			</when>
 			<when>
-				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
+				<simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
 				<to uri="vertx:message-sender-bus-in" />
 			</when>
 			<when>
@@ -57,7 +51,7 @@
 				<to uri="vertx:o-s-i-validator-bus-in" />
 			</when>
 			<when>
-				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
+				<simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
 				<to uri="vertx:message-sender-bus-in" />
 			</when>
 			<when>
@@ -79,7 +73,7 @@
 				<to uri="vertx:external-bus-in" />
 			</when>
 			<when>
-				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
+				<simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
 				<to uri="vertx:message-sender-bus-in" />
 			</when>
 			<when>
@@ -123,7 +117,7 @@
 				<to uri="vertx:abis-handler-bus-in" />
 			</when>
 			<when>
-				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
+				<simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
 				<to uri="vertx:message-sender-bus-in"/>
 			</when>
 			<when>
@@ -186,7 +180,7 @@
 				<to uri="vertx:uin-generator-bus-in" />
 			</when>
 			<when>
-				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
+				<simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
 				<to uri="vertx:message-sender-bus-in" />
 			</when>
 			<when>
