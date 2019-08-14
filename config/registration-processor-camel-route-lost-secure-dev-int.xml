@@ -18,15 +18,19 @@
 			</otherwise>
 		</choice>
 	</route>
-	<!-- Packet Validator to OSI Validator Route -->
-	<route id="packet-validator-->osi-validator lost route">
+	<!-- Packet Validator to Quality Checker Route -->
+	<route id="packet-validator-->quality-checker lost route">
 		<from uri="vertx:packet-validator-lost-bus-out" />
 		<log
-			message="packet-validator-->osi-validator lost route ${bodyAs(String)}" />
+				message="packet-validator-->quality-checker lost route ${bodyAs(String)}" />
 		<choice>
-			  <when>
+			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="vertx:o-s-i-validator-bus-in" />
+				<to uri="vertx:quality-checker-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+				<to uri="vertx:message-sender-bus-in" />
 			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
@@ -47,7 +51,7 @@
 				<to uri="vertx:o-s-i-validator-bus-in" />
 			</when>
 			<when>
-				<simple>${bodyAs(String)} contains '"isValid":false'</simple>
+				<simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
 				<to uri="vertx:message-sender-bus-in" />
 			</when>
 			<when>
@@ -67,6 +71,10 @@
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
 				<to uri="vertx:bio-dedupe-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+				<to uri="vertx:message-sender-bus-in" />
 			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
@@ -141,6 +149,10 @@
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
 				<to uri="vertx:uin-generator-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+				<to uri="vertx:message-sender-bus-in" />
 			</when>
 			<when>
 				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
