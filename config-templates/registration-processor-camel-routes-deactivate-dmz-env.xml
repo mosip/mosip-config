@@ -3,7 +3,7 @@
 	<route id="packet-reciever-->packet-uploader deactivated route">
 		<from uri="vertx:packet-receiver-deactivated-bus-out" />
 		<log
-			message="packet-reciever-->packet-uploader deactivated ${bodyAs(String)}" />
+			message="packet-reciever-->packet-uploader deactivated-route ${bodyAs(String)}" />
 		<choice>
 			<when>
 				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
