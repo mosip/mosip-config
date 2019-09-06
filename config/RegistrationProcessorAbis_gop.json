@@ -1,0 +1,43 @@
+{
+	"abis": [{
+			"name": "ABIS1",
+			"host": "",
+			"port": "",
+			"brokerUrl": "tcp://52.172.10.176:61616",
+			"inboundQueueName": "abis1-inbound-address_qa",
+			"outboundQueueName": "abis1-outbound-address_qa",
+			"pingInboundQueueName": "",
+			"pingOutboundQueueName": "",
+			"userName": "admin",
+			"password": "admin",
+		        "typeOfQueue": "ACTIVEMQ"
+		},
+		{
+			"name": "ABIS2",
+			"host": "",
+			"port": "",
+			"brokerUrl": "tcp://52.172.10.176:61616",
+			"inboundQueueName": "abis2-inbound-address_qa",
+			"outboundQueueName": "abis2-outbound-address_qa",
+			"pingInboundQueueName": "",
+			"pingOutboundQueueName": "",
+			"userName": "admin",
+			"password": "admin",
+			"typeOfQueue": "ACTIVEMQ"
+		},
+		{
+			"name": "ABIS3",
+			"host": "",
+			"port": "",
+			"brokerUrl": "tcp://52.172.10.176:61616",
+			"inboundQueueName": "abis3-inbound-address_qa",
+			"outboundQueueName": "abis3-outbound-address_qa",
+			"pingInboundQueueName": "",
+			"pingOutboundQueueName": "",
+			"userName": "admin",
+			"password": "admin",
+			"typeOfQueue": "ACTIVEMQ"
+		}
+	]
+
+}
