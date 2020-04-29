@@ -1,4 +1,23 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
+<!-- securezone-notification to packet-uploader Route -->
+	<route id="securezone-notification-->packet-uploader new route">
+		<from uri="vertx:securezone-notification-new-bus-out" />
+		<log
+				message="securezone-notification-->packet-uploader new route ${bodyAs(String)}" />
+		<choice>
+			<when>
+				<simple>${bodyAs(String)} contains '"isValid":true'</simple>
+				<to uri="vertx:packet-uploader-bus-in" />
+			</when>
+			<when>
+				<simple>${bodyAs(String)} contains '"internalError":true'</simple>
+				<to uri="vertx:retry-bus-in" />
+			</when>
+			<otherwise>
+				<to uri="vertx:error-bus-in" />
+			</otherwise>
+		</choice>
+	</route>
 	<!-- packet-uploader to packet-validator Route -->
 	<route id="packet-uploader-->packet-validator new route">
 	<from uri="vertx:packet-uploader-new-bus-out" />
