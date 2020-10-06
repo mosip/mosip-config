@@ -23,7 +23,7 @@
    <join>
      <multicast enabled="false"/>
      <tcp-ip enabled="false" />
-
+     <kubernetes enabled="true" service-dns="service-hazelcast-server.default.svc.cluster.local"/>
      <discovery-strategies>
        <discovery-strategy enabled="true"
            class="com.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy">
