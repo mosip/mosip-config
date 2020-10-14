@@ -54,7 +54,7 @@
 		"localAdministrativeAuthority": {
 			"value" : "localAdministrativeAuthority"
 		},
-		"idschemaversion": {
+		"IDSchemaVersion": {
 			"value" : "IDSchemaVersion"
 		},
 		"cnienumber": {
