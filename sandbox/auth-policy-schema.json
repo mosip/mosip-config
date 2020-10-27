@@ -1,0 +1,51 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"allowedKycAttributes":{
+			"type":"array",
+			"items":[{
+				"type":"object",
+				"properties":{
+					"attributeName":{
+						"type":"string"
+					}
+				},
+				"required":[
+					"attributeName"
+				]
+			}]
+			
+		},
+		"allowedAuthTypes":{
+			"type":"array",
+			"items":[{
+				"type":"object",
+				"properties":{
+					"authType":{
+						"type":"string"
+					},
+					"authSubType":{
+						"type":"string"
+					},
+					"mandatory":{
+						"type":"boolean"
+					}
+				},
+				"required":[
+					"authType",
+					"mandatory"
+				]
+			}]
+		},
+		"authTokenType":{
+			"type":"string",
+			"enum":["random","partner","policy"]
+		}
+	},
+	"required":[
+		"authTokenType",
+		"allowedAuthTypes",
+		"allowedKycAttributes"
+	]	
+}
