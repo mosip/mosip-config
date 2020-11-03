@@ -1,0 +1,318 @@
+applicationname: MOSIP
+version: 1.0.6
+modules:
+- modulename: registration-processor
+  components:
+  - componentname: registration-processor-bio-dedupe-stage-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-request-handler-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: registration-processor-uin-generator-stage-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-abis-handler-stage-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-abis-middleware-stage-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-bio-dedupe-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-biometric-authentication-stage-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: registration-processor-camel-bridge-service-and-deployment.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-demo-dedupe-stage-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-external-integration-service-and-deployment.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-external-stage-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-manual-verification-stage-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-message-sender-stage-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-osi-validator-stage-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: registration-processor-packet-uploader-stage-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: registration-processor-packet-validator-stage-deployment-and-service.yml
+    componentversion: 1.1.0-SNAPSHOT
+    componenttype: deployable
+  - componentname: registration-processor-printing-stage-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-print-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-quality-checker-stage-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: registration-processor-reprocessor-stage-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+- modulename: kernel
+  components:
+  - componentname: kernel-uingenerator-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: kernel-masterdata-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: kernel-auditmanager-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: kernel-otpmanager-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: kernel-emailnotification-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: kernel-smsnotification-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: kernel-syncdata-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: kernel-auth-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: kernel-licensekeymanager-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: kernel-applicanttype-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: kernel-ridgenerator-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: kernel-tokenidgenerator-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: kernel-config-server
+    componentversion: 1.0.6
+    componenttype: config_deployable
+  - componentname: kernel-signature-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: kernel-cryptomanager-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: kernel-keymanager-service
+    componentversion: 1.0.6
+    componenttype: dmz_deployable
+  - componentname: kernel-vidgenarator-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: kernel-pridgenerator-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: kernel-core
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: library
+  - componentname: kernel-logger-logback
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-auth-adapter
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-dataaccess-hibernate
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-auditmanager-api
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idgenerator-prid
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idgenerator-vid
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idgenerator-tokenid
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idgenerator-machineid
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idgenerator-regcenterid
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idgenerator-mispid
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-licensekeygenerator-misp
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idgenerator-rid
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idgenerator-partnerid
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idvalidator-prid
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idvalidator-rid
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idvalidator-uin
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idvalidator-vid
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idvalidator-mispid
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-pinvalidator
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-virusscanner-clamav
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-keygenerator-bouncycastle
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-crypto-jce
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-keymanager-softhsm
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-templatemanager-velocity
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-pdfgenerator-itext
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-datamapper-orika
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-qrcodegenerator-zxing
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-cbeffutil-api
+    componentversion: 1.1.0-SNAPSHOT
+    componenttype: library
+  - componentname: kernel-fsadapter-ceph
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-fsadapter-hdfs
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-transliteration-icu4j
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-applicanttype-api
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-crypto-signature
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-idobjectvalidator
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: library
+  - componentname: kernel-bioapi-provider
+    componentversion: 1.0.6
+    componenttype: library
+  - componentname: kernel-smsserviceprovider-msg91
+    componentversion: 1.1.0
+    componenttype: library
+- modulename: pre-registration
+  components:
+  - componentname: pre-registration-booking-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: pre-registration-login-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: pre-registration-ui-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: pre-registration-batchjob-deployment.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: pre-registration-datasync-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: pre-registration-demographic-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: pre-registration-document-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: pre-registration-generateqrcode-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: pre-registration-notification-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: pre-registration-transliterate-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: pre-registration-ui-configuration.yml
+    componenttype: deployable
+  - componentname: pre-registration-application-service-impl
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: library
+  - componentname: pre-registration-core
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: library
+- modulename: id-repository
+  components:
+  - componentname: id-repository-core
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: library
+  - componentname: id-repository-identity-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: id-repository-vid-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+- modulename: authentication
+  components:
+  - componentname: authentication-core
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: library
+  - componentname: authentication-common
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: library
+  - componentname: authentication-otp-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: authentication-internal-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: authentication-kyc-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: authentication-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+- modulename: admin
+  components:
+  - componentname: admin-service-deployment-and-service.yml
+    componentversion: 1.0.6
+    componenttype: deployable
+  - componentname: admin-ui-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable
+  - componentname: admin-ui-configuration.yaml
+    componenttype: deployable
+- modulename: resident
+  components:
+  - componentname: resident-service-deployment-and-service.yml
+    componentversion: 1.0.7-SNAPSHOT
+    componenttype: deployable

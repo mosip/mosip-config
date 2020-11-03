@@ -1,0 +1,7 @@
+{
+	"name": "fullName",
+	"region": "region",
+	"zone": "zone",
+	"woreda": "woreda",
+	"phoneNumber": "phone"
+}

@@ -42,8 +42,14 @@
 		"age": {
 			"value" : "age"
 		},
-		"address": {
-			"value" : "addressLine1,addressLine2,addressLine3,region,province,postalCode"
+		"region": {
+			"value" : "region"
+		},
+		"zone": {
+			"value" : "zone"
+		},
+		"woreda": {
+			"value" : "woreda"
 		},
 		"phone": {
 			"value" : "phone"
@@ -56,12 +62,6 @@
 		},
 		"IDSchemaVersion": {
 			"value" : "IDSchemaVersion"
-		},
-		"cnienumber": {
-			"value" : "CNIENumber"
-		},
-		"city": {
-			"value" : "city"
 		},
 		"parentOrGuardianBiometrics": {
 			"value" : "parentOrGuardianBiometrics"
