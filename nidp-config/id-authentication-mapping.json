@@ -1,0 +1,45 @@
+{
+	"ida-mapping": {
+		"name": [
+			"fullName"
+		],
+		"dob": [
+			"dateOfBirth"
+		],
+		"age": [
+			"dateOfBirth"
+		],
+		"gender": [
+			"gender"
+		],
+		"phoneNumber": [
+			"phone"
+		],
+		"emailId": [
+			"email"
+		],
+		"location1": [
+			"region"
+		],
+		"location2": [
+			"zone"
+		],
+		"location3": [
+			"woreda"
+		],
+		"fullAddress": [
+			"region",
+			"zone",
+			"woreda"
+		],
+		"iris": [
+			"CBEFF"
+		],
+		"fingerprint": [
+			"CBEFF"
+		],
+		"face": [
+			"CBEFF"
+		]
+	}
+}
