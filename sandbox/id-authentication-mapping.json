@@ -19,41 +19,19 @@
 		"emailId": [
 			"email"
 		],
-		"addressLine1": [
-			"addressLine1"
-		],
-		"addressLine2": [
-			"addressLine2"
-		],
-		"addressLine3": [
-			"addressLine3"
-		],
 		"location1": [
-			"city"
-		],
-		"location2": [
 			"region"
 		],
-		"location3": [
-			"province"
+		"location2": [
+			"zone"
 		],
-		"postalCode": [
-			"postalCode"
+		"location3": [
+			"woreda"
 		],
 		"fullAddress": [
-			"addressLine1",
-			"addressLine2",
-			"addressLine3",
-			"city",
 			"region",
-			"province",
-			"postalCode"
-		],
-		"otp": [
-			"otp"
-		],
-		"pin": [
-			"pin"
+			"zone",
+			"woreda"
 		],
 		"iris": [
 			"CBEFF"

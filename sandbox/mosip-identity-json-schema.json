@@ -10,7 +10,7 @@
 			"title": "identity",
 			"description": "This schema holds all the attributes of an Identity",
 			"type": "object",
-			"additionalProperties": false,
+			"additionalProperties": true,
 			"properties": {
 				"IDSchemaVersion": {
 					"type": "number",
@@ -26,32 +26,23 @@
 				"dateOfBirth": {
 					"type": "string"
 				},
+				"dateOfBirthEC":{
+				"type": "string"
+				},
 				"age": {
 					"type": "integer"
 				},
 				"gender": {
 					"$ref": "#/definitions/simpleType"
 				},
-				"addressLine1": {
-					"$ref": "#/definitions/simpleType"
-				},
-				"addressLine2": {
-					"$ref": "#/definitions/simpleType"
-				},
-				"addressLine3": {
-					"$ref": "#/definitions/simpleType"
-				},
 				"region": {
 					"$ref": "#/definitions/simpleType"
 				},
-				"province": {
+				"zone": {
 					"$ref": "#/definitions/simpleType"
 				},
-				"city": {
+				"woreda": {
 					"$ref": "#/definitions/simpleType"
-				},
-				"postalCode": {
-					"type": "string"
 				},
 				"phone": {
 					"type": "string"
@@ -60,18 +51,6 @@
 					"type": "string"
 				},
 				"residenceStatus": {
-					"$ref": "#/definitions/simpleType"
-				},
-				"referenceIdentityNumber": {
-					"type": "string"
-				},
-				"zone": {
-					"$ref": "#/definitions/simpleType"
-				},
-				"CNIENumber": {
-					"type": "string"
-				},
-				"localAdministrativeAuthority": {
 					"$ref": "#/definitions/simpleType"
 				},
 				"parentOrGuardianName": {
