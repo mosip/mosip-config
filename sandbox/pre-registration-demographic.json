@@ -5,8 +5,7 @@
            "description":"Enter Full Name",
            "labelName":{
            "eng":"Full Name",
-           "ara":"الاسم الكامل",
-           "fra":"Nom complet"
+           "amh":"ሙሉ ስም",
            },
            "controlType":"textbox",
            "inputRequired":true,
@@ -14,7 +13,7 @@
            "validators":[
               {
                  "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
+                 "validator":"^([a-zA-Z]{2,25} [a-zA-Z]{2,25} [a-zA-Z]{2,25}( [a-zA-Z]{2,25})?)$",
                  "arguments":[
 
                  ]
@@ -27,8 +26,7 @@
            "description":"Enter DOB",
            "labelName":{
            "eng":"Date Of Birth",
-           "ara":"تاريخ الولادة",
-           "fra":"Date de naissance"
+           "amh":"የትውልድ ቀን",
            },
            "controlType":"date",
            "inputRequired":true,
@@ -42,8 +40,7 @@
            "description":"Enter Gender",
            "labelName":{
            "eng":"Gender",
-           "ara":"جنس",
-           "fra":"Le genre"
+           "amh":"ፆታ",
            },
            "controlType":"dropdown",
            "inputRequired":true,
@@ -58,8 +55,7 @@
            "description":"Residence status",
            "labelName":{
            "eng":"Residence Status",
-           "ara":"حالة الإقامة",
-           "fra":"Statut de résidence"
+           "amh":"የነዋሪነት ሁኔታ",
            },
            "controlType":"dropdown",
            "inputRequired":true,
@@ -68,80 +64,13 @@
 
            ],
            "required":true
-        },
-        {
-           "id":"addressLine1",
-           "description":"addressLine1",
-           "labelName":{
-           "eng":"Address Line1",
-           "ara":"العنوان السطر 1",
-           "fra":"Adresse 1"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"addressLine2",
-           "description":"addressLine2",
-           "labelName":{
-           "eng":"Address Line2",
-           "ara":"العنوان السطر 2",
-           "fra":"Adresse 2"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":false
-        },
-        {
-           "id":"addressLine3",
-           "description":"addressLine3",
-           "labelName":{
-           "eng":"Address Line3",
-           "ara":"العنوان السطر 3",
-           "fra":"Adresse 3"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":false
         },
         {
            "id":"region",
            "description":"region",
            "labelName":{
            "eng":"Region",
-           "ara":"منطقة",
-           "fra":"Région"
+           "amh":"ክልል",
            },
            "controlType":"dropdown",
            "inputRequired":true,
@@ -149,51 +78,7 @@
            "validators":[
               {
                  "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"province",
-           "description":"province",
-           "labelName":{
-           "eng":"Province",
-           "ara":"المحافظة",
-           "fra":"Province"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"city",
-           "description":"city",
-           "labelName":{
-           "eng":"City",
-           "ara":"مدينة",
-           "fra":"Ville"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
+                 "validator":"^[a-zA-Z0-9_/ሀ-ፖ]{3,50}$",
                  "arguments":[
 
                  ]
@@ -206,24 +91,7 @@
            "description":"zone",
            "labelName":{
            "eng":"Zone",
-           "ara":"منطقة",
-           "fra":"Zone"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"postalCode",
-           "description":"postalCode",
-           "labelName":{
-           "eng":"Postal Code",
-           "ara":"الكود البريدى",
-           "fra":"code postal"
+           "amh":"ዞን"
            },
            "controlType":"dropdown",
            "inputRequired":true,
@@ -231,7 +99,28 @@
            "validators":[
               {
                  "type":"regex",
-                 "validator":"^[(?i)A-Z0-9]{5}$|^NA$",
+                 "validator":"^[a-zA-Z0-9_/ሀ-ፖ]{3,50}$",
+                 "arguments":[
+
+                 ]
+              }
+           ],
+           "required":true
+        },
+        {
+           "id":"woreda",
+           "description":"woreda",
+           "labelName":{
+           "eng":"Woreda",
+           "amh":"ወረዳ"
+           },
+           "controlType":"dropdown",
+           "inputRequired":true,
+           "fieldType":"default",
+           "validators":[
+              {
+                 "type":"regex",
+                 "validator":"^[a-zA-Z0-9_/ሀ-ፖ]{3,50}$",
                  "arguments":[
 
                  ]
@@ -244,8 +133,7 @@
            "description":"phone",
            "labelName":{
            "eng":"Phone",
-           "ara":"هاتف",
-           "fra":"Téléphone"
+           "amh":"ስልክ"
            },
            "controlType":"textbox",
            "inputRequired":true,
@@ -253,7 +141,7 @@
            "validators":[
               {
                  "type":"regex",
-                 "validator":"^([6-9]{1})([0-9]{9})$",
+                 "validator":"^(((\+2519)[0-9]{8})||((09)[0-9]{8}))$",
                  "arguments":[
 
                  ]
@@ -266,8 +154,7 @@
            "description":"email",
            "labelName":{
            "eng":"Email",
-           "ara":"البريد الإلكتروني",
-           "fra":"Email"
+           "amh":"ኢሜል"
            },
            "controlType":"textbox",
            "inputRequired":true,
@@ -275,7 +162,7 @@
            "validators":[
               {
                  "type":"regex",
-                 "validator":"^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-zA-Z]{2,})$",
+                 "validator":"^[[a-zA-Z0-9]+[!#$%&'*+-/=?^_`{|}~]*]{2,64}@[[a-zA-Z]+[0-9-.]*]{2,64}$",
                  "arguments":[
 
                  ]
@@ -350,5 +237,5 @@
            "required":true
         }
    ],
-   "locationHierarchy": ["region", "province","city","zone","postalCode"]
+   "locationHierarchy": ["region", "zone","woreda"]
 }
