@@ -1,241 +1,246 @@
 {
-   "identity":[
-        {
-           "id":"fullName",
-           "description":"Enter Full Name",
-           "labelName":{
-           "eng":"Full Name",
-           "amh":"ሙሉ ስም",
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^([a-zA-Z]{2,25} [a-zA-Z]{2,25} [a-zA-Z]{2,25}( [a-zA-Z]{2,25})?)$",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"dateOfBirth",
-           "description":"Enter DOB",
-           "labelName":{
-           "eng":"Date Of Birth",
-           "amh":"የትውልድ ቀን",
-           },
-           "controlType":"date",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-           ],
-           "required":true
-        },
-        {
-           "id":"gender",
-           "description":"Enter Gender",
-           "labelName":{
-           "eng":"Gender",
-           "amh":"ፆታ",
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"residenceStatus",
-           "description":"Residence status",
-           "labelName":{
-           "eng":"Residence Status",
-           "amh":"የነዋሪነት ሁኔታ",
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"region",
-           "description":"region",
-           "labelName":{
-           "eng":"Region",
-           "amh":"ክልል",
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^[a-zA-Z0-9_/ሀ-ፖ]{3,50}$",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"zone",
-           "description":"zone",
-           "labelName":{
-           "eng":"Zone",
-           "amh":"ዞን"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^[a-zA-Z0-9_/ሀ-ፖ]{3,50}$",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"woreda",
-           "description":"woreda",
-           "labelName":{
-           "eng":"Woreda",
-           "amh":"ወረዳ"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^[a-zA-Z0-9_/ሀ-ፖ]{3,50}$",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"phone",
-           "description":"phone",
-           "labelName":{
-           "eng":"Phone",
-           "amh":"ስልክ"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(((\+2519)[0-9]{8})||((09)[0-9]{8}))$",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"email",
-           "description":"email",
-           "labelName":{
-           "eng":"Email",
-           "amh":"ኢሜል"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^[[a-zA-Z0-9]+[!#$%&'*+-/=?^_`{|}~]*]{2,64}@[[a-zA-Z]+[0-9-.]*]{2,64}$",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"proofOfAddress",
-           "description":"proofOfAddress",
-           "labelName":[{"value":"Address Proof","language":"eng"}],
-           "controlType":"fileupload",
-           "inputRequired":true,
-           "validators":[
-
-           ],
-           "required":false
-        },
-        {
-           "id":"proofOfIdentity",
-           "description":"proofOfIdentity",
-           "labelName": [{"value":"Identity Proof","language":"eng"}],
-           "controlType":"fileupload",
-           "inputRequired":true,
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"proofOfRelationship",
-           "description":"proofOfRelationship",
-           "labelName":[{"value":"Relationship Proof","language":"eng"}],
-           "controlType":"fileupload",
-           "inputRequired":true,
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"proofOfDateOfBirth",
-           "description":"proofOfDateOfBirth",
-           "labelName":[{"value":"DOB Proof","language":"eng"}],
-           "controlType":"fileupload",
-           "inputRequired":true,
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"proofOfException",
-           "description":"proofOfException",
-           "labelName": [{"value":"Exception Proof","language":"eng"}],
-           "controlType":"fileupload",
-           "inputRequired":true,
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"proofOfException-1",
-           "description":"proofOfException",
-           "labelName":[{"value":"Exception Proof 2","language":"eng"}],
-           "controlType":"fileupload",
-           "inputRequired":true,
-           "validators":[
-
-           ],
-           "required":true
-        }
-   ],
-   "locationHierarchy": ["region", "zone","woreda"]
+	"identity": [
+		{
+			"id": "fullName",
+			"description": "Enter Full Name",
+			"labelName": {
+				"eng": "Full Name",
+				"amh": "ሙሉ ስም"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^([a-zA-Z]{2,25} [a-zA-Z]{2,25} [a-zA-Z]{2,25}( [a-zA-Z]{2,25})?)$",
+					"arguments": []
+				}
+			],
+			"required": true
+		},
+		{
+			"id": "dateOfBirth",
+			"description": "Enter DOB",
+			"labelName": {
+				"eng": "Date Of Birth",
+				"amh": "የትውልድ ቀን"
+			},
+			"controlType": "date",
+			"inputRequired": true,
+			"fieldType": "default",
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "gender",
+			"description": "Enter Gender",
+			"labelName": {
+				"eng": "Gender",
+				"amh": "ፆታ"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "residenceStatus",
+			"description": "Residence status",
+			"labelName": {
+				"eng": "Residence Status",
+				"amh": "የነዋሪነት ሁኔታ"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "region",
+			"description": "region",
+			"labelName": {
+				"eng": "Region",
+				"amh": "ክልል"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^[a-zA-Z0-9_/ሀ-ፖ]{3,50}$",
+					"arguments": []
+				}
+			],
+			"required": true
+		},
+		{
+			"id": "zone",
+			"description": "zone",
+			"labelName": {
+				"eng": "Zone",
+				"amh": "ዞን"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^[a-zA-Z0-9_/ሀ-ፖ]{3,50}$",
+					"arguments": []
+				}
+			],
+			"required": true
+		},
+		{
+			"id": "woreda",
+			"description": "woreda",
+			"labelName": {
+				"eng": "Woreda",
+				"amh": "ወረዳ"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^[a-zA-Z0-9_/ሀ-ፖ]{3,50}$",
+					"arguments": []
+				}
+			],
+			"required": true
+		},
+		{
+			"id": "phone",
+			"description": "phone",
+			"labelName": {
+				"eng": "Phone",
+				"amh": "ስልክ"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^(((+2519)[0-9]{8})||((09)[0-9]{8}))$",
+					"arguments": []
+				}
+			],
+			"required": true
+		},
+		{
+			"id": "email",
+			"description": "email",
+			"labelName": {
+				"eng": "Email",
+				"amh": "ኢሜል"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^[[a-zA-Z0-9]+[!#$%&'*+-/=?^_`{|}~]*]{2,64}@[[a-zA-Z]+[0-9-.]*]{2,64}$",
+					"arguments": []
+				}
+			],
+			"required": true
+		},
+		{
+			"id": "proofOfAddress",
+			"description": "proofOfAddress",
+			"labelName": [
+				{
+					"value": "Address Proof",
+					"language": "eng"
+				}
+			],
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"required": false
+		},
+		{
+			"id": "proofOfIdentity",
+			"description": "proofOfIdentity",
+			"labelName": [
+				{
+					"value": "Identity Proof",
+					"language": "eng"
+				}
+			],
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "proofOfRelationship",
+			"description": "proofOfRelationship",
+			"labelName": [
+				{
+					"value": "Relationship Proof",
+					"language": "eng"
+				}
+			],
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "proofOfDateOfBirth",
+			"description": "proofOfDateOfBirth",
+			"labelName": [
+				{
+					"value": "DOB Proof",
+					"language": "eng"
+				}
+			],
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "proofOfException",
+			"description": "proofOfException",
+			"labelName": [
+				{
+					"value": "Exception Proof",
+					"language": "eng"
+				}
+			],
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "proofOfException-1",
+			"description": "proofOfException",
+			"labelName": [
+				{
+					"value": "Exception Proof 2",
+					"language": "eng"
+				}
+			],
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"required": true
+		}
+	],
+	"locationHierarchy": [
+		"region",
+		"zone",
+		"woreda"
+	]
 }
