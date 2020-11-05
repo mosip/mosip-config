@@ -6,9 +6,6 @@
 		},
 		"proofOfAddress": {
 			"value" : "proofOfAddress"
-		},
-		"postalCode": {
-			"value" : "postalCode"
 		}
 	}
 }  
