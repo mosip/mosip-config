@@ -6,7 +6,8 @@
 			"type": "object",
 			"properties": {
 				"typeOfShare": {
-					"type": "string"
+					"type": "string",
+					"enum":["dataShare","direct"]
 				},
 				"validForInMinutes": {
 					"type": "string"
@@ -15,7 +16,8 @@
 					"type": "string"
 				},
 				"encryptionType": {
-					"type": "string"
+					"type": "string",
+					"enum":["partnerBased","partnerSecret"]
 				},
 				"shareDomain": {
 					"type": "string"
@@ -35,8 +37,9 @@
 		},
 		"shareableAttributes": {
 			"type": "array",
-			"items": [{
-				"type": "object",
+			"additionalItems": false,
+			"items": {
+				"type": "object",				
 				"properties": {
 					"attributeName": {
 						"type": "string"
@@ -46,7 +49,7 @@
 					},
 					"source": {
 						"type": "array",
-						"items": [{
+						"items": {
 							"type": "object",
 							"properties": {
 								"attribute": {
@@ -94,7 +97,7 @@
 							"required": [
 								"attribute"
 							]
-						}]
+						}
 					},
 					"encrypted": {
 						"type": "boolean"
@@ -107,13 +110,14 @@
 					"attributeName",
 					"source",
 					"encrypted"
-
-				]
-			}]
+				],
+				"additionalProperties": false
+			}
 		}
 	},
 	"required": [
 		"dataSharePolicies",
 		"shareableAttributes"
-	]
+	],
+	"additionalProperties": false
 }
