@@ -147,7 +147,7 @@
 			"validators": [
 				{
 					"type": "regex",
-					"validator": "^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$",
+					"validator": "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,10})$",
 					"arguments": []
 				}
 			],
