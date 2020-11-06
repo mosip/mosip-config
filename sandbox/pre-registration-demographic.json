@@ -71,7 +71,7 @@
 			"validators": [
 				{
 					"type": "regex",
-					"validator": "^[a-zA-Z0-9_/ሀ-ፖ]{3,50}$",
+					"validator": "^[a-zA-Z0-9_/ሀ-ፖ]{1,50}$",
 					"arguments": []
 				}
 			],
