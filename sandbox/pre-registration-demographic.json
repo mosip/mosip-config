@@ -39,7 +39,7 @@
 				"eng": "Date Of Birth Ethiopian",
 				"amh": "የትውልድ ቀን"
 			},
-			"controlType": "string",
+			"controlType": "textbox",
 			"inputRequired": true,
 			"fieldType": "default",
 			"validators": [],
