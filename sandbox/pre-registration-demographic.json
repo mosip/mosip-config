@@ -33,19 +33,6 @@
 			"required": true
 		},
 		{
-			"id": "dateOfBirthEC",
-			"description": "Enter DOB",
-			"labelName": {
-				"eng": "Date Of Birth Ethiopian",
-				"amh": "የትውልድ ቀን"
-			},
-			"controlType": "ageDate",
-			"inputRequired": true,
-			"fieldType": "default",
-			"validators": [],
-			"required": true
-		},
-		{
 			"id": "gender",
 			"description": "Enter Gender",
 			"labelName": {
