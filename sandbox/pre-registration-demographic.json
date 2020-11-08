@@ -71,7 +71,7 @@
 			"validators": [
 				{
 					"type": "regex",
-					"validator": "^[a-zA-Z0-9_/ሀ-ፖ]{3,50}$",
+					"validator": "^[a-zA-Z0-9_/ሀ-ፖ]{1,50}$",
 					"arguments": []
 				}
 			],
@@ -90,7 +90,7 @@
 			"validators": [
 				{
 					"type": "regex",
-					"validator": "^[a-zA-Z0-9_/ሀ-ፖ]{3,50}$",
+					"validator": "^[a-zA-Z0-9_/ሀ-ፖ]{1,50}$",
 					"arguments": []
 				}
 			],
@@ -109,7 +109,7 @@
 			"validators": [
 				{
 					"type": "regex",
-					"validator": "^[a-zA-Z0-9_/ሀ-ፖ]{3,50}$",
+					"validator": "^[a-zA-Z0-9_/ሀ-ፖ]{1,50}$",
 					"arguments": []
 				}
 			],
@@ -128,7 +128,7 @@
 			"validators": [
 				{
 					"type": "regex",
-					"validator": "^(((+2519)[0-9]{8})||((09)[0-9]{8}))$",
+					"validator": "^(((2519)[0-9]{8})|((09)[0-9]{8}))$",
 					"arguments": []
 				}
 			],
@@ -147,7 +147,7 @@
 			"validators": [
 				{
 					"type": "regex",
-					"validator": "^[[a-zA-Z0-9]+[!#$%&'*+-/=?^_`{|}~]*]{2,64}@[[a-zA-Z]+[0-9-.]*]{2,64}$",
+					"validator": "^[A-Za-z0-9_\\-]+(\\.[A-Za-z0-9_]+)*@[A-Za-z0-9_-]+(\\.[A-Za-z0-9_]+)*(\\.[a-zA-Z]{2,})$",
 					"arguments": []
 				}
 			],
