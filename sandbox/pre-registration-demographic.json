@@ -85,7 +85,7 @@
 				"amh": "ዞን"
 			},
 			"controlType": "dropdown",
-			"inputRequired": false,
+			"inputRequired": true,
 			"fieldType": "default",
 			"validators": [],
 			"required": true
