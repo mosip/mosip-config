@@ -85,10 +85,10 @@
 				"amh": "ዞን"
 			},
 			"controlType": "dropdown",
-			"inputRequired": true,
+			"inputRequired": false,
 			"fieldType": "default",
 			"validators": [],
-			"required": true
+			"required": false
 		},
 		{
 			"id": "woreda",
@@ -98,7 +98,7 @@
 				"amh": "ወረዳ"
 			},
 			"controlType": "dropdown",
-			"inputRequired": true,
+			"inputRequired": false,
 			"fieldType": "default",
 			"validators": [
 				{
@@ -107,7 +107,7 @@
 					"arguments": []
 				}
 			],
-			"required": true
+			"required": false
 		},
 		{
 			"id": "phone",
