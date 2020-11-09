@@ -88,7 +88,7 @@
 			"inputRequired": false,
 			"fieldType": "default",
 			"validators": [],
-			"required": false
+			"required": true
 		},
 		{
 			"id": "woreda",
@@ -107,7 +107,7 @@
 					"arguments": []
 				}
 			],
-			"required": false
+			"required": true
 		},
 		{
 			"id": "phone",
@@ -159,7 +159,7 @@
 			"controlType": "fileupload",
 			"inputRequired": true,
 			"validators": [],
-			"required": false
+			"required": true
 		},
 		{
 			"id": "proofOfIdentity",
