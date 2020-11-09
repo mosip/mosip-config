@@ -4,7 +4,9 @@
 	"properties": {
 		"allowedKycAttributes":{
 			"type":"array",
-			"items":[{
+			"additionalItems": false,
+			"items":
+			{
 				"type":"object",
 				"properties":{
 					"attributeName":{
@@ -13,13 +15,16 @@
 				},
 				"required":[
 					"attributeName"
-				]
-			}]
+				],
+				"additionalProperties": false				
+			}
 			
 		},
 		"allowedAuthTypes":{
 			"type":"array",
-			"items":[{
+			"additionalItems": false,
+			"items":
+			{
 				"type":"object",
 				"properties":{
 					"authType":{
@@ -35,8 +40,10 @@
 				"required":[
 					"authType",
 					"mandatory"
-				]
-			}]
+				],
+				"additionalProperties": false
+			}
+			
 		},
 		"authTokenType":{
 			"type":"string",
@@ -47,5 +54,6 @@
 		"authTokenType",
 		"allowedAuthTypes",
 		"allowedKycAttributes"
-	]	
+	],
+	"additionalProperties": false	
 }
