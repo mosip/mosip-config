@@ -87,13 +87,7 @@
 			"controlType": "dropdown",
 			"inputRequired": true,
 			"fieldType": "default",
-			"validators": [
-				{
-					"type": "regex",
-					"validator": "^[a-zA-Z0-9_/ሀ-ፖ]{1,50}$",
-					"arguments": []
-				}
-			],
+			"validators": [],
 			"required": true
 		},
 		{
