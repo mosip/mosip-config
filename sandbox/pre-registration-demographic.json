@@ -98,7 +98,7 @@
 				"amh": "ወረዳ"
 			},
 			"controlType": "dropdown",
-			"inputRequired": false,
+			"inputRequired": true,
 			"fieldType": "default",
 			"validators": [
 				{
