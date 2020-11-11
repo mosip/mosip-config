@@ -1,82 +1,15 @@
 {
    "identity":[
         {
-           "id":"firstName",
-           "description":"First Name",
+           "id":"fullName",
+           "description":"Enter Full Name",
            "labelName":{
-           "eng":"First Name",
+           "eng":"Full Name",
            "ara":"الاسم الكامل",
            "fra":"Nom complet"
            },
            "controlType":"textbox",
            "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-		{
-           "id":"middleName",
-           "description":"Middle Name",
-           "labelName":{
-           "eng":"Middle Name",
-           "ara":"الاسم الكامل",
-           "fra":"Nom complet"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-		{
-           "id":"lastName",
-           "description":"Last Name",
-           "labelName":{
-           "eng":"Last Name",
-           "ara":"الاسم الكامل",
-           "fra":"Nom complet"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-		{
-           "id":"suffix",
-           "description":"Suffix",
-           "labelName":{
-           "eng":"Suffix",
-           "ara":"الاسم الكامل",
-           "fra":"Nom complet"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -98,7 +31,6 @@
            },
            "controlType":"date",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
            ],
            "required":true
@@ -113,7 +45,6 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
 
            ],
@@ -129,55 +60,21 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-
-           ],
-           "required":false
-        },
-		{
-           "id":"bloodType",
-           "description":"Blood type",
-           "labelName":{
-           "eng":"Blood type",
-           "ara":"حالة الإقامة",
-           "fra":"Blood type"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"dynamic",
            "validators":[
 
            ],
            "required":true
         },
-		{
-           "id":"maritalStatus",
-           "description":"Marital status",
-           "labelName":{
-           "eng":"Marital status",
-           "ara":"حالة الإقامة",
-           "fra":"Marital status"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"dynamic",
-           "validators":[
-
-           ],
-           "required":false
-        },
         {
            "id":"addressLine1",
            "description":"addressLine1",
            "labelName":{
-           "eng":"Permanent Rm/Flr/Unit No. Bldg Name",
+           "eng":"Address Line1",
            "ara":"العنوان السطر 1",
            "fra":"Adresse 1"
            },
            "controlType":"textbox",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -193,13 +90,12 @@
            "id":"addressLine2",
            "description":"addressLine2",
            "labelName":{
-           "eng":"Permanent House/Lot/Block no.",
+           "eng":"Address Line2",
            "ara":"العنوان السطر 2",
            "fra":"Adresse 2"
            },
            "controlType":"textbox",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -215,13 +111,12 @@
            "id":"addressLine3",
            "description":"addressLine3",
            "labelName":{
-           "eng":"Permanent Street",
+           "eng":"Address Line3",
            "ara":"العنوان السطر 3",
            "fra":"Adresse 3"
            },
            "controlType":"textbox",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -231,41 +126,18 @@
                  ]
               }
            ],
-           "required":true
-        },
-		{
-           "id":"addressLine4",
-           "description":"addressLine4",
-           "labelName":{
-           "eng":"Permanent Subdivision",
-           "ara":"العنوان السطر 3",
-           "fra":"Adresse 3"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
+           "required":false
         },
         {
            "id":"region",
            "description":"region",
            "labelName":{
-           "eng":"Barangay",
+           "eng":"Region",
            "ara":"منطقة",
            "fra":"Région"
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -287,7 +159,6 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -309,7 +180,6 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -331,7 +201,6 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
 
            ],
@@ -347,7 +216,6 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -369,7 +237,6 @@
            },
            "controlType":"textbox",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -379,7 +246,7 @@
                  ]
               }
            ],
-           "required":false
+           "required":true
         },
         {
            "id":"email",
@@ -391,7 +258,6 @@
            },
            "controlType":"textbox",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
