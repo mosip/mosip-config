@@ -1,10 +1,76 @@
 {
    "identity":[
         {
-           "id":"fullName",
-           "description":"Enter Full Name",
+           "id":"firstName",
+           "description":"First Name",
            "labelName":{
-           "eng":"Full Name",
+           "eng":"First Name",
+           "ara":"الاسم الكامل",
+           "fra":"Nom complet"
+           },
+           "controlType":"textbox",
+           "inputRequired":true,
+           "fieldType":"default",
+           "validators":[
+              {
+                 "type":"regex",
+                 "validator":"^(?=.{0,50}$).*",
+                 "arguments":[
+
+                 ]
+              }
+           ],
+           "required":true
+        },
+		{
+           "id":"middleName",
+           "description":"Middle Name",
+           "labelName":{
+           "eng":"Middle Name",
+           "ara":"الاسم الكامل",
+           "fra":"Nom complet"
+           },
+           "controlType":"textbox",
+           "inputRequired":true,
+           "fieldType":"default",
+           "validators":[
+              {
+                 "type":"regex",
+                 "validator":"^(?=.{0,50}$).*",
+                 "arguments":[
+
+                 ]
+              }
+           ],
+           "required":true
+        },
+		{
+           "id":"lastName",
+           "description":"Last Name",
+           "labelName":{
+           "eng":"Last Name",
+           "ara":"الاسم الكامل",
+           "fra":"Nom complet"
+           },
+           "controlType":"textbox",
+           "inputRequired":true,
+           "fieldType":"default",
+           "validators":[
+              {
+                 "type":"regex",
+                 "validator":"^(?=.{0,50}$).*",
+                 "arguments":[
+
+                 ]
+              }
+           ],
+           "required":true
+        },
+		{
+           "id":"suffix",
+           "description":"Suffix",
+           "labelName":{
+           "eng":"Suffix",
            "ara":"الاسم الكامل",
            "fra":"Nom complet"
            },
@@ -67,13 +133,45 @@
            "validators":[
 
            ],
+           "required":false
+        },
+		{
+           "id":"bloodType",
+           "description":"Blood type",
+           "labelName":{
+           "eng":"Blood type",
+           "ara":"حالة الإقامة",
+           "fra":"Blood type"
+           },
+           "controlType":"dropdown",
+           "inputRequired":true,
+           "fieldType":"dynamic",
+           "validators":[
+
+           ],
            "required":true
+        },
+		{
+           "id":"maritalStatus",
+           "description":"Marital status",
+           "labelName":{
+           "eng":"Marital status",
+           "ara":"حالة الإقامة",
+           "fra":"Marital status"
+           },
+           "controlType":"dropdown",
+           "inputRequired":true,
+           "fieldType":"dynamic",
+           "validators":[
+
+           ],
+           "required":false
         },
         {
            "id":"addressLine1",
            "description":"addressLine1",
            "labelName":{
-           "eng":"Address Line1",
+           "eng":"Permanent Rm/Flr/Unit No. Bldg Name",
            "ara":"العنوان السطر 1",
            "fra":"Adresse 1"
            },
@@ -95,7 +193,7 @@
            "id":"addressLine2",
            "description":"addressLine2",
            "labelName":{
-           "eng":"Address Line2",
+           "eng":"Permanent House/Lot/Block no.",
            "ara":"العنوان السطر 2",
            "fra":"Adresse 2"
            },
@@ -117,7 +215,7 @@
            "id":"addressLine3",
            "description":"addressLine3",
            "labelName":{
-           "eng":"Address Line3",
+           "eng":"Permanent Street",
            "ara":"العنوان السطر 3",
            "fra":"Adresse 3"
            },
@@ -133,13 +231,35 @@
                  ]
               }
            ],
-           "required":false
+           "required":true
+        },
+		{
+           "id":"addressLine4",
+           "description":"addressLine4",
+           "labelName":{
+           "eng":"Permanent Subdivision",
+           "ara":"العنوان السطر 3",
+           "fra":"Adresse 3"
+           },
+           "controlType":"textbox",
+           "inputRequired":true,
+           "fieldType":"default",
+           "validators":[
+              {
+                 "type":"regex",
+                 "validator":"^(?=.{0,50}$).*",
+                 "arguments":[
+
+                 ]
+              }
+           ],
+           "required":true
         },
         {
            "id":"region",
            "description":"region",
            "labelName":{
-           "eng":"Region",
+           "eng":"Barangay",
            "ara":"منطقة",
            "fra":"Région"
            },
@@ -259,7 +379,7 @@
                  ]
               }
            ],
-           "required":true
+           "required":false
         },
         {
            "id":"email",
