@@ -7,7 +7,7 @@
 			"properties": {
 				"typeOfShare": {
 					"type": "string",
-					"enum":["dataShare","direct"]
+					"enum":["Data Share","direct"]
 				},
 				"validForInMinutes": {
 					"type": "string"
@@ -17,7 +17,7 @@
 				},
 				"encryptionType": {
 					"type": "string",
-					"enum":["partnerBased","partnerSecret"]
+					"enum":["Partner Based","none"]
 				},
 				"shareDomain": {
 					"type": "string"
