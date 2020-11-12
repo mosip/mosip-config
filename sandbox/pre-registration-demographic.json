@@ -87,13 +87,7 @@
 			"controlType": "dropdown",
 			"inputRequired": true,
 			"fieldType": "default",
-			"validators": [
-				{
-					"type": "regex",
-					"validator": "^[a-zA-Z0-9_/ሀ-ፖ]{1,50}$",
-					"arguments": []
-				}
-			],
+			"validators": [],
 			"required": true
 		},
 		{
@@ -147,7 +141,7 @@
 			"validators": [
 				{
 					"type": "regex",
-					"validator": "^[A-Za-z0-9_\\-]+(\\.[A-Za-z0-9_]+)*@[A-Za-z0-9_-]+(\\.[A-Za-z0-9_]+)*(\\.[a-zA-Z]{2,})$",
+					"validator": "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-zA-Z]{2,})$",
 					"arguments": []
 				}
 			],
@@ -165,7 +159,7 @@
 			"controlType": "fileupload",
 			"inputRequired": true,
 			"validators": [],
-			"required": false
+			"required": true
 		},
 		{
 			"id": "proofOfIdentity",
