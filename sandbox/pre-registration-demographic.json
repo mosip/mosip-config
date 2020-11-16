@@ -109,7 +109,7 @@
 			],
 			"required": true
 		},
-    	{
+		{
 			"id":"postalCode",
 			"description":"postalCode",
 			"labelName":{
