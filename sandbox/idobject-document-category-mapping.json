@@ -21,6 +21,9 @@
 		"woreda": {
 			"documentCategory" : "proofOfAddress"
 		},
+		"postalCode": {
+			"documentCategory" : "proofOfAddress"
+		},
 		"localAdministrativeAuthority": {
 			"documentCategory" : "proofOfAddress"
 		},
