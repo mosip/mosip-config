@@ -8,7 +8,7 @@
 			"value" : "proofOfAddress"
 		},
 		"postalCode": {
-		        "value": null
+		        "value": "woreda"
 		}
 	}
 }  
