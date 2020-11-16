@@ -109,7 +109,7 @@
 			],
 			"required": true
 		},
-        	{
+    	{
 			"id":"postalCode",
 			"description":"postalCode",
 			"labelName":{
@@ -119,8 +119,16 @@
 			"controlType":"dropdown",
 			"inputRequired":true,
 			"fieldType": "default",
-			"validators":[],
-			"required":true
+			"validators":[
+				{
+				   "type":"regex",
+				   "validator":"^[(?i)A-Z0-9]{4}$|^NA$",
+				   "arguments":[
+  
+				   ]
+				}
+			 ],
+			 "required":true
 		},
 		{
 			"id": "phone",
