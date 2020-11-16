@@ -44,6 +44,9 @@
 				"woreda": {
 					"$ref": "#/definitions/simpleType"
 				},
+                                "postalCode": {
+                                        "type": "string"
+                                },
 				"phone": {
 					"type": "string"
 				},

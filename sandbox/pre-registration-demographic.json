@@ -110,6 +110,18 @@
 			"required": true
 		},
 		{
+			"id": "postalCode",
+			"description": "postalCode",
+			"labelName": {
+				"eng": "Postal Code",
+				"amh": "Postal Code"
+			},
+			"inputRequired": true,
+			"fieldType": "default",
+			"validators": [],
+			"required": true
+		},
+		{
 			"id": "phone",
 			"description": "phone",
 			"labelName": {
