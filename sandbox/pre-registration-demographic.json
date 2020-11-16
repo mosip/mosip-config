@@ -109,7 +109,7 @@
 			],
 			"required": true
 		},
-        {
+        	{
 			"id":"postalCode",
 			"description":"postalCode",
 			"labelName":{
@@ -118,6 +118,7 @@
 			},
 			"controlType":"dropdown",
 			"inputRequired":true,
+			"fieldType": "default",
 			"validators":[],
 			"required":true
 		},
