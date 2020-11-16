@@ -119,15 +119,7 @@
 			"controlType":"dropdown",
 			"inputRequired":true,
 			"fieldType": "default",
-			"validators":[
-				{
-				   "type":"regex",
-				   "validator":"^[(?i)A-Z0-9]{4}$|^NA$",
-				   "arguments":[
-  
-				   ]
-				}
-			 ],
+			"validators":[],
 			 "required":true
 		},
 		{
