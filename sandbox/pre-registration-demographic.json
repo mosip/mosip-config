@@ -110,19 +110,6 @@
 			"required": true
 		},
 		{
-			"id":"postalCode",
-			"description":"postalCode",
-			"labelName":{
-				"eng":"Postal Code",
-				"amh": "ፖስታል ኮድ"
-			},
-			"controlType":"dropdown",
-			"inputRequired":true,
-			"fieldType": "default",
-			"validators":[],
-			 "required":true
-		},
-		{
 			"id": "phone",
 			"description": "phone",
 			"labelName": {
@@ -248,7 +235,6 @@
 	"locationHierarchy": [
 		"region",
 		"zone",
-		"woreda",
-		"postalCode"
+		"woreda"
 	]
 }
