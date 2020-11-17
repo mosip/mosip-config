@@ -28,14 +28,10 @@
 		"location3": [
 			"woreda"
 		],
-		"postalCode": [
-			"postalCode"
-		],
 		"fullAddress": [
 			"region",
 			"zone",
-			"woreda",
-			"postalCode"
+			"woreda"
 		],
 		"iris": [
 			"CBEFF"
