@@ -14,6 +14,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
  <properties>
    <property name="hazelcast.discovery.enabled">true</property>
+   <property name="hazelcast.logging.type">slf4j</property>
  </properties>
 <group>
 		<name>k8s</name>
