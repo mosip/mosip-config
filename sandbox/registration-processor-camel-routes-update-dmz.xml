@@ -1,7 +1,7 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
     <!-- Packet-Reciever to packet-uploader Route -->
     <route id="packet-reciever-->packet-uploader update route">
-        <from uri="vertx:packet-receiver-update-bus-out" />
+        <from uri="eventbus:packet-receiver-update-bus-out" />
         <log
             message="packet-reciever-->packet-uploader update ${bodyAs(String)}" />
         <choice>
@@ -24,10 +24,10 @@
             </when>
             <when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
-                <to uri="vertx:retry-bus-in" />
+                <to uri="eventbus:retry-bus-in" />
             </when>
             <otherwise>
-                <to uri="vertx:error-bus-in" />
+                <to uri="eventbus:error-bus-in" />
             </otherwise>
         </choice>
     </route>
