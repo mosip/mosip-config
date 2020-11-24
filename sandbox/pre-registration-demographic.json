@@ -10,7 +10,6 @@
            },
            "controlType":"textbox",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -32,7 +31,6 @@
            },
            "controlType":"date",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
            ],
            "required":true
@@ -47,7 +45,6 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
 
            ],
@@ -63,7 +60,6 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
 
            ],
@@ -79,7 +75,6 @@
            },
            "controlType":"textbox",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -101,7 +96,6 @@
            },
            "controlType":"textbox",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -123,7 +117,6 @@
            },
            "controlType":"textbox",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -145,7 +138,6 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -167,7 +159,6 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -189,7 +180,6 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -211,7 +201,6 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
 
            ],
@@ -227,7 +216,6 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -249,7 +237,6 @@
            },
            "controlType":"textbox",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
@@ -271,7 +258,6 @@
            },
            "controlType":"textbox",
            "inputRequired":true,
-           "fieldType":"default",
            "validators":[
               {
                  "type":"regex",
