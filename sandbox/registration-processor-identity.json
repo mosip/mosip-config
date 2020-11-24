@@ -73,21 +73,8 @@
             "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
          ]
       },
-	  "blood_group_update":{
-         "value":"blood_group",
-         "provider":[
-			"source:REGISTRATION_CLIENT,process:UPDATE",
-			"source:RESIDENT,process:RES_UPDATE"
-         ]
-      },
-	  "blood_group_record":{
-         "value":"blood_group",
-         "provider":[
-			"source:IDREPO,process:current_record"
-         ]
-      },
-	  "phone":{
-         "value":"phone",
+	"phone":{
+        "value":"phone",
          "provider":[
 			"source:RESIDENT,process:RES_CORRECTION",
             "source:REGISTRATION_CLIENT,process:CORRECTION|NEW|UPDATE",
@@ -149,6 +136,18 @@
          "provider":[
             "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
             "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
+         ]
+      },
+      "officerBiometricFileName":{
+         "value":"officerBiometricFileName",
+         "provider":[
+            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST"
+         ]
+      },
+      "supervisorBiometricFileName":{
+         "value":"supervisorBiometricFileName",
+         "provider":[
+            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST"
          ]
       }
    },
