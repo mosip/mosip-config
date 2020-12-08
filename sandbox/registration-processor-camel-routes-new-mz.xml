@@ -19,14 +19,14 @@
         </choice>
     </route>
     <!-- packet-uploader to packet-validator Route -->
-    <route id="packet-uploader-->uin-generation new route">
+    <route id="packet-uploader-->osi-validator new route">
         <from uri="vertx:packet-uploader-new-bus-out" />
         <log
-                message="packet-uploader-->uin-generation new route ${bodyAs(String)}" />
+                message="packet-uploader-->osi-validator new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="vertx:uin-generator-bus-in" />
+                <to uri="vertx:o-s-i-validator-bus-in" />
             </when>
             <when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
@@ -37,7 +37,115 @@
             </otherwise>
         </choice>
     </route>
+    <!-- Packet Validator to Quality Checker Route -->
 
+    <route id="osi-validator-->external-stage new route">
+        <from uri="vertx:o-s-i-validator-new-bus-out" />
+        <log
+                message="osi-validator-->external-stage new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="vertx:external-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="vertx:message-sender-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="vertx:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="vertx:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <route id="external-stage-->demo-dedupe new route">
+        <from uri="vertx:external-new-bus-out" />
+        <log
+                message="external-stage-->demo-dedupe new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="vertx:demo-dedupe-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="vertx:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="vertx:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <route id="demo-dedupe-->bio-dedupe new route">
+        <from uri="vertx:demo-dedupe-new-bus-out" />
+        <log
+                message="demo-dedupe-->bio-dedupe new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="vertx:bio-dedupe-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
+                <to uri="vertx:abis-handler-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="vertx:message-sender-bus-in"/>
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="vertx:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="vertx:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <route id="abis-handler-->abis-middleware new route">
+        <from uri="vertx:abis-handler-new-bus-out" />
+        <log
+                message="abis-handler-->abis-middleware new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"address":"abis-middle-ware-bus-in"'</simple>
+                <to uri="vertx:abis-middle-ware-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"address":"demo-dedupe-bus-in"'</simple>
+                <to uri="vertx:demo-dedupe-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"address":"bio-dedupe-bus-in"'</simple>
+                <to uri="vertx:bio-dedupe-bus-in"/>
+            </when>
+        </choice>
+    </route>
+    <route id="bio-dedupe-->uin-generation new route">
+        <from uri="vertx:bio-dedupe-new-bus-out" />
+        <log
+                message="bio-dedupe-->uin-generation new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="vertx:uin-generator-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
+                <to uri="vertx:abis-handler-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="vertx:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="vertx:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
     <route id="manual-verification-->uin-generation new route">
         <from uri="vertx:manual-verification-new-bus-out" />
         <log
@@ -80,5 +188,10 @@
             </otherwise>
         </choice>
     </route>
-
+    <route id="abis-middleware route-->abis-handler new route">
+        <from uri="vertx:abis-middle-ware-new-bus-out" />
+        <log
+                message="abis-middleware route-->abis-handler new route ${bodyAs(String)}" />
+        <to uri="vertx:abis-handler-bus-in" />
+    </route>
 </routes>
