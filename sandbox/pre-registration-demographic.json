@@ -1,471 +1,376 @@
 {
-   "id": null,
-   "version": null,
-   "responsetime": null,
-   "response": {
-      "idSchema": {
-         "locationHierarchy": [
-            "country",
-            "province",
-            "city",
-            "zone",
-            "postalcode"
-
-         ],
-         "identity": [
-            {
-               "id": "IDSchemaVersion",
-               "description": "ID Schema Version 1.0",
-               "labelName": {
-                  "primary": "ID Schema Version 1.0"
-               },
-               "type": "number",
-
-               "controlType": null,
-               "fieldType": "default",
-               "format": "none",
-
-               "inputRequired": false,
-               "validators": [],
-               "bioAttributes": null,
-               "requiredOn": [],
-               "subType": "IdSchemaVersion",
-               "contactType": null,
-               "group": null,
-               "required": true
-            },
-            {
-               "id": "fullName",
-               "description": "First Name of Registrant",
-               "labelName": {
-                  "eng": "First Name (Mandatory)"
-               },
-
-               "controlType": "textbox",
-
-
-               "inputRequired": true,
-               "validators": [
-                  {
-                     "type": "regex",
-                     "validator": "^(?=.{1,50}$).*",
-                     "arguments": []
-                  }
-               ],
-
-
-               "required": true
-            },
-
-            {
-               "id": "middleName",
-               "description": "Middle Name of Registrant",
-               "labelName": {
-                  "eng": "Middle Name"
-               },
-
-
-               "controlType": "textbox",
-
-               "inputRequired": true,
-               "validators": [],
-
-               "required": false
-            },
-
-            {
-               "id": "lastName",
-               "description": "Last Name of Registrant",
-               "labelName": {
-                  "eng": "Last Name"
-               },
-
-               "controlType": "textbox",
-
-
-
-               "inputRequired": true,
-               "validators": [],
-
-               "required": false
-            },
-
-            {
-               "id": "suffix",
-               "description": "Suffix of Registrant",
-               "labelName": {
-                  "eng": "Suffix"
-               },
-
-               "controlType": "textbox",
-
-               "inputRequired": true,
-               "validators": [
-                  {
-                     "type": "regex",
-                     "validator": "^(?=.{1,50}$).*",
-                     "arguments": []
-                  }
-               ],
-
-               "required": true
-            },
-
-            {
-               "id": "gender",
-               "description": "Sex of Registrant",
-               "labelName": {
-                  "eng": "Sex (Mandatory)"
-               },
-
-               "controlType": "dropdown",
-
-               "inputRequired": true,
-               "validators": [],
-
-               "required": true
-            },
-
-            {
-               "id": "dateOfBirth",
-               "description": "Date of Birth",
-               "labelName": {
-                  "eng": "Date of Birth (Mandatory)"
-               },
-
-               "controlType": "date",
-
-               "inputRequired": true,
-               "validators": [
-                  {
-                     "type": "regex",
-                     "validator": "^(1869|18[7-9][0-9]|19[0-9][0-9]|20[0-9][0-9])/([0][1-9]|1[0-2])/([0][1-9]|[1-2][0-9]|3[01])$",
-                     "arguments": []
-                  }
-               ],
-
-               "required": true
-            },
-
-            {
-               "id": "placeOfBirth",
-               "description": "Place of Birth",
-               "labelName": {
-                  "eng": "Birth of Place (Mandatory)"
-               },
-
-               "controlType": "textbox",
-
-               "inputRequired": true,
-               "validators": [],
-
-               "required": true
-            },
-
-            {
-               "id": "bloodType",
-               "description": "Blood Type",
-               "labelName": {
-                  "eng": "Blood Type (Mandatory)"
-               },
-               "type": "simpleType",
-               "minimum": 0,
-               "maximum": 0,
-               "controlType": "dropdown",
-               "fieldType": "dynamic",
-               "format": null,
-               "fieldCategory": null,
-               "inputRequired": true,
-               "validators": [],
-               "bioAttributes": null,
-               "requiredOn": null,
-               "subType": "none",
-               "contactType": null,
-               "group": null,
-               "required": true
-            },
-
-            {
-               "id": "maritalStatus",
-               "description": "Marital Status",
-               "labelName": {
-                  "eng": "Marital Status (Mandatory)"
-               },
-
-               "controlType": "dropdown",
-               "fieldType": "dynamic",
-
-               "inputRequired": true,
-               "validators": [],
-
-               "required": false
-            },
-
-            {
-               "id": "residenceStatus",
-               "description": "Filipino / Resident Alien",
-               "labelName": {
-                  "eng": "Resident Type (Mandatory)"
-               },
-
-               "controlType": "dropdown",
-
-               "inputRequired": true,
-               "validators": [],
-
-               "required": true
-            },
-
-            {
-               "id": "country",
-               "description": "region",
-               "labelName": {
-                  "eng": "BirthCountry (Mandatory)"
-               },
-
-               "controlType": "dropdown",
-
-               "inputRequired": true,
-               "validators": [
-                  {
-                     "type": "regex",
-                     "validator": "^(?=.{0,50}$).*",
-                     "arguments": []
-                  }
-               ],
-
-               "required": true
-            },
-
-            {
-               "id": "permanentAddressLine1OC",
-               "description": "Address line ",
-               "labelName": {
-                  "eng": "Permanent Address Line (Mandatory) "
-               },
-
-               "controlType": "textbox",
-
-               "inputRequired": true,
-               "validators": [],
-
-               "requiredOn": [
-                  {
-                     "engine": "MVEL",
-                     "expr": "identity.country[0].value != 'Philippines'"
-                  }
-               ],
-
-               "required": false
-            },
-            {
-               "id": "permanentAddressLine2OC",
-               "description": "Address line ",
-               "labelName": {
-                  "eng": "Permanent Address Line 2"
-               },
-
-               "controlType": "textbox",
-
-               "inputRequired": true,
-               "validators": [],
-
-               "requiredOn": [
-                  {
-                     "engine": "MVEL",
-                     "expr": "identity.country[0].value != 'Philippines'"
-                  }
-               ],
-
-               "required": false
-            },
-            {
-               "id": "permanentAddressLine3OC",
-               "description": "Address line ",
-               "labelName": {
-                  "eng": "Permanent Address Line 3 "
-               },
-
-               "controlType": "textbox",
-
-               "inputRequired": true,
-               "validators": [],
-
-               "requiredOn": [
-                  {
-                     "engine": "MVEL",
-                     "expr": "identity.country[0].value != 'Philippines'"
-                  }
-               ],
-
-               "required": false
-            },
-
-
-
-            {
-               "id": "province",
-               "description": "region",
-               "labelName": {
-                  "eng": " BirthProvince (Mandatory)"
-               },
-
-               "controlType": "dropdown",
-
-               "inputRequired": true,
-               "validators": [
-                  {
-                     "type": "regex",
-                     "validator": "^(?=.{0,50}$).*",
-                     "arguments": []
-                  }
-               ],
-
-               "required": false
-            },
-
-            {
-               "id": "city",
-               "description": "region",
-               "labelName": {
-                  "eng": "BirthMunicipalCity (Mandatory)"
-               },
-               "controlType": "dropdown",
-
-               "inputRequired": true,
-               "validators": [
-                  {
-                     "type": "regex",
-                     "validator": "^(?=.{0,50}$).*",
-                     "arguments": []
-                  }
-               ],
-
-               "required": false
-            },
-
-            {
-               "id": "zone",
-               "description": "region",
-               "labelName": {
-                  "eng": "Barangay (Mandatory)"
-               },
-
-               "controlType": "dropdown",
-
-               "inputRequired": true,
-               "validators": [
-                  {
-                     "type": "regex",
-                     "validator": "^(?=.{0,50}$).*",
-                     "arguments": []
-                  }
-               ],
-
-               "required": false
-            },
-            {
-               "id": "postalcode",
-               "description": "region",
-               "labelName": {
-                  "eng": "Zip Code (Mandatory)"
-               },
-
-               "controlType": "dropdown",
-
-               "inputRequired": true,
-               "validators": [
-                  {
-                     "type": "regex",
-                     "validator": "^(?=.{0,50}$).*",
-                     "arguments": []
-                  }
-               ],
-
-               "required": false
-            },
-
-            {
-               "id": "mobileno",
-               "description": "Mobile Number",
-               "labelName": {
-                  "eng": "Mobile Number (Mandatory)"
-               },
-
-               "controlType": "textbox",
-
-
-               "inputRequired": true,
-               "validators": [
-                  {
-                     "type": "regex",
-                     "validator": "^[+]*([0]{1})([0-9]{10})$",
-                     "arguments": []
-                  }
-               ],
-
-
-               "required": true
-            },
-            {
-               "id": "email",
-               "description": "Email Address",
-               "labelName": {
-                  "eng": "Email Address (Mandatory)"
-               },
-
-               "controlType": "textbox",
-               "inputRequired": true,
-               "validators": [
-                  {
-                     "type": "regex",
-                     "validator": "^[A-Za-z0-9_\\-]+(\\.[A-Za-z0-9_]+)*@[A-Za-z0-9_-]+(\\.[A-Za-z0-9_]+)*(\\.[a-zA-Z]{2,})$",
-                     "arguments": []
-                  }
-               ],
-
-               "required": false
-            },
-            {"id": "proofOfAddress",
-               "inputRequired": true,
-               "type": "documentType",
-               "minimum": 0,
-               "maximum": 0,
-               "description": "Upload Document 1",
-               "labelName": {
-                  "eng": "POA"
-               },
-               "controlType": "fileupload",
-               "fieldType": "default",
-               "format": "none",
-               "validators": [],
-               "fieldCategory": "optional",
-               "required": false,
-               "subType" : "POA"
-            },
-
-            {
-               "id": "proofOfIdentity",
-               "inputRequired": true,
-               "type": "documentType",
-               "minimum": 0,
-               "maximum": 0,
-               "description": "Upload Document 2",
-               "labelName": {
-                  "eng": "POI"
-               },
-
-               "controlType": "fileupload",
-               "fieldType": "default",
-               "format": "none",
-               "validators": [],
-               "fieldCategory": "evidence",
-               "required": false,
-               "subType" : "POI"
-            }
-
-         ]
-      }
-   },
-   "errors": null
+  "identity": [
+    {
+      "id": "IDSchemaVersion",
+      "description": "ID Schema Version 1.0",
+      "labelName": {
+        "primary": "ID Schema Version 1.0"
+      },
+      "type": "number",
+      "controlType": null,
+      "fieldType": "default",
+      "format": "none",
+      "inputRequired": false,
+      "validators": [],
+      "bioAttributes": null,
+      "requiredOn": [],
+      "subType": "IdSchemaVersion",
+      "contactType": null,
+      "group": null,
+      "required": true
+    },
+    {
+      "id": "fullName",
+      "description": "First Name of Registrant",
+      "labelName": {
+        "eng": "First Name (Mandatory)"
+      },
+      "controlType": "textbox",
+      "inputRequired": true,
+      "validators": [
+        {
+          "type": "regex",
+          "validator": "^(?=.{1,50}$).*",
+          "arguments": []
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "middleName",
+      "description": "Middle Name of Registrant",
+      "labelName": {
+        "eng": "Middle Name"
+      },
+      "controlType": "textbox",
+      "inputRequired": true,
+      "validators": [],
+      "required": false
+    },
+    {
+      "id": "lastName",
+      "description": "Last Name of Registrant",
+      "labelName": {
+        "eng": "Last Name"
+      },
+      "controlType": "textbox",
+      "inputRequired": true,
+      "validators": [],
+      "required": false
+    },
+    {
+      "id": "suffix",
+      "description": "Suffix of Registrant",
+      "labelName": {
+        "eng": "Suffix"
+      },
+      "controlType": "textbox",
+      "inputRequired": true,
+      "validators": [
+        {
+          "type": "regex",
+          "validator": "^(?=.{1,50}$).*",
+          "arguments": []
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "gender",
+      "description": "Sex of Registrant",
+      "labelName": {
+        "eng": "Sex (Mandatory)"
+      },
+      "controlType": "dropdown",
+      "inputRequired": true,
+      "validators": [],
+      "required": true
+    },
+    {
+      "id": "dateOfBirth",
+      "description": "Date of Birth",
+      "labelName": {
+        "eng": "Date of Birth (Mandatory)"
+      },
+      "controlType": "date",
+      "inputRequired": true,
+      "validators": [
+        {
+          "type": "regex",
+          "validator": "^(1869|18[7-9][0-9]|19[0-9][0-9]|20[0-9][0-9])/([0][1-9]|1[0-2])/([0][1-9]|[1-2][0-9]|3[01])$",
+          "arguments": []
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "placeOfBirth",
+      "description": "Place of Birth",
+      "labelName": {
+        "eng": "Birth of Place (Mandatory)"
+      },
+      "controlType": "textbox",
+      "inputRequired": true,
+      "validators": [],
+      "required": true
+    },
+    {
+      "id": "bloodType",
+      "description": "Blood Type",
+      "labelName": {
+        "eng": "Blood Type (Mandatory)"
+      },
+      "type": "simpleType",
+      "minimum": 0,
+      "maximum": 0,
+      "controlType": "dropdown",
+      "fieldType": "dynamic",
+      "format": null,
+      "fieldCategory": null,
+      "inputRequired": true,
+      "validators": [],
+      "bioAttributes": null,
+      "requiredOn": null,
+      "subType": "none",
+      "contactType": null,
+      "group": null,
+      "required": true
+    },
+    {
+      "id": "maritalStatus",
+      "description": "Marital Status",
+      "labelName": {
+        "eng": "Marital Status (Mandatory)"
+      },
+      "controlType": "dropdown",
+      "fieldType": "dynamic",
+      "inputRequired": true,
+      "validators": [],
+      "required": false
+    },
+    {
+      "id": "residenceStatus",
+      "description": "Filipino / Resident Alien",
+      "labelName": {
+        "eng": "Resident Type (Mandatory)"
+      },
+      "controlType": "dropdown",
+      "inputRequired": true,
+      "validators": [],
+      "required": true
+    },
+    {
+      "id": "country",
+      "description": "region",
+      "labelName": {
+        "eng": "BirthCountry (Mandatory)"
+      },
+      "controlType": "dropdown",
+      "inputRequired": true,
+      "validators": [
+        {
+          "type": "regex",
+          "validator": "^(?=.{0,50}$).*",
+          "arguments": []
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "permanentAddressLine1OC",
+      "description": "Address line ",
+      "labelName": {
+        "eng": "Permanent Address Line (Mandatory) "
+      },
+      "controlType": "textbox",
+      "inputRequired": true,
+      "validators": [],
+      "requiredOn": [
+        {
+          "engine": "MVEL",
+          "expr": "identity.country[0].value != 'Philippines'"
+        }
+      ],
+      "required": false
+    },
+    {
+      "id": "permanentAddressLine2OC",
+      "description": "Address line ",
+      "labelName": {
+        "eng": "Permanent Address Line 2"
+      },
+      "controlType": "textbox",
+      "inputRequired": true,
+      "validators": [],
+      "requiredOn": [
+        {
+          "engine": "MVEL",
+          "expr": "identity.country[0].value != 'Philippines'"
+        }
+      ],
+      "required": false
+    },
+    {
+      "id": "permanentAddressLine3OC",
+      "description": "Address line ",
+      "labelName": {
+        "eng": "Permanent Address Line 3 "
+      },
+      "controlType": "textbox",
+      "inputRequired": true,
+      "validators": [],
+      "requiredOn": [
+        {
+          "engine": "MVEL",
+          "expr": "identity.country[0].value != 'Philippines'"
+        }
+      ],
+      "required": false
+    },
+    {
+      "id": "province",
+      "description": "region",
+      "labelName": {
+        "eng": " BirthProvince (Mandatory)"
+      },
+      "controlType": "dropdown",
+      "inputRequired": true,
+      "validators": [
+        {
+          "type": "regex",
+          "validator": "^(?=.{0,50}$).*",
+          "arguments": []
+        }
+      ],
+      "required": false
+    },
+    {
+      "id": "city",
+      "description": "region",
+      "labelName": {
+        "eng": "BirthMunicipalCity (Mandatory)"
+      },
+      "controlType": "dropdown",
+      "inputRequired": true,
+      "validators": [
+        {
+          "type": "regex",
+          "validator": "^(?=.{0,50}$).*",
+          "arguments": []
+        }
+      ],
+      "required": false
+    },
+    {
+      "id": "zone",
+      "description": "region",
+      "labelName": {
+        "eng": "Barangay (Mandatory)"
+      },
+      "controlType": "dropdown",
+      "inputRequired": true,
+      "validators": [
+        {
+          "type": "regex",
+          "validator": "^(?=.{0,50}$).*",
+          "arguments": []
+        }
+      ],
+      "required": false
+    },
+    {
+      "id": "postalcode",
+      "description": "region",
+      "labelName": {
+        "eng": "Zip Code (Mandatory)"
+      },
+      "controlType": "dropdown",
+      "inputRequired": true,
+      "validators": [
+        {
+          "type": "regex",
+          "validator": "^(?=.{0,50}$).*",
+          "arguments": []
+        }
+      ],
+      "required": false
+    },
+    {
+      "id": "mobileno",
+      "description": "Mobile Number",
+      "labelName": {
+        "eng": "Mobile Number (Mandatory)"
+      },
+      "controlType": "textbox",
+      "inputRequired": true,
+      "validators": [
+        {
+          "type": "regex",
+          "validator": "^[+]*([0]{1})([0-9]{10})$",
+          "arguments": []
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "email",
+      "description": "Email Address",
+      "labelName": {
+        "eng": "Email Address (Mandatory)"
+      },
+      "controlType": "textbox",
+      "inputRequired": true,
+      "validators": [
+        {
+          "type": "regex",
+          "validator": "^[A-Za-z0-9_\\-]+(\\.[A-Za-z0-9_]+)*@[A-Za-z0-9_-]+(\\.[A-Za-z0-9_]+)*(\\.[a-zA-Z]{2,})$",
+          "arguments": []
+        }
+      ],
+      "required": false
+    },
+    {
+      "id": "proofOfAddress",
+      "inputRequired": true,
+      "type": "documentType",
+      "minimum": 0,
+      "maximum": 0,
+      "description": "Upload Document 1",
+      "labelName": {
+        "eng": "POA"
+      },
+      "controlType": "fileupload",
+      "fieldType": "default",
+      "format": "none",
+      "validators": [],
+      "fieldCategory": "optional",
+      "required": false,
+      "subType": "POA"
+    },
+    {
+      "id": "proofOfIdentity",
+      "inputRequired": true,
+      "type": "documentType",
+      "minimum": 0,
+      "maximum": 0,
+      "description": "Upload Document 2",
+      "labelName": {
+        "eng": "POI"
+      },
+      "controlType": "fileupload",
+      "fieldType": "default",
+      "format": "none",
+      "validators": [],
+      "fieldCategory": "evidence",
+      "required": false,
+      "subType": "POI"
+    }
+  ],
+  "locationHierarchy": [
+    "country",
+    "province",
+    "city",
+    "zone",
+    "postalcode"
+  ]
 }
