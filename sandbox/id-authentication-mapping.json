@@ -1,7 +1,7 @@
 {
 	"ida-mapping": {
 		"name": [
-			"fullName"
+			"firstName","middleName","lastName"
 		],
 		"dob": [
 			"dateOfBirth"
