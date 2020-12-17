@@ -213,6 +213,7 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
+           "type": "simpleType",
            "fieldType":"dynamic",
            "validators":[
 
@@ -536,8 +537,8 @@
            "required":true
         },
                 {
-           "id":"presentcountry",
-           "description":"presentcountry",
+           "id":"presentCountry",
+           "description":"presentCountry",
            "labelName":{
            "eng":"Present Country",
            "ara":"المحافظة",
@@ -559,7 +560,7 @@
            "required":true
         },
                 {
-           "id":"presentProvince",
+           "id":"cprovince",
            "description":"presentProvince",
            "labelName":{
            "eng":"Present Province",
@@ -582,10 +583,10 @@
            "required":true
         },
         {
-           "id":"presentMunicipal",
+           "id":"ccity",
            "description":"presentMunicipal",
            "labelName":{
-           "eng":"Present Municipal",
+           "eng":"Present City",
            "ara":"مدينة",
            "fra":"Present Municipal"
            },
@@ -605,7 +606,7 @@
            "required":true
         },
         {
-           "id":"presentBarangay",
+           "id":"cbarangay",
            "description":"presentBarangay",
            "labelName":{
            "eng":"Present Barangay",
@@ -628,7 +629,7 @@
            "required":true
         },
         {
-           "id":"presentPostalCode",
+           "id":"cpostalcode",
            "description":"presentPostalCode",
            "labelName":{
            "eng":"Present Postal Code",
@@ -641,8 +642,6 @@
            "type": "simpleType",
            "validators":[
               {
-                 "type":"regex",
-                 "validator":"^[(?i)A-Z0-9]{5}$|^NA$",
                  "arguments":[
 
                  ]
@@ -651,7 +650,7 @@
            "required":false
         },
         {
-           "id":"mobileno",
+           "id":"phone",
            "description":"mobileno",
            "labelName":{
            "eng":"Mobile Number",
@@ -763,6 +762,5 @@
            "required":true
         }
    ],
-   "locationHierarchy": ["region", "province","city","zone","postalCode"]
-
+   "locationHierarchy": ["presentCountry","cprovince","ccity","cbarangay","cpostalcode"]
 }

@@ -1,14 +1,14 @@
 {
 	"identity": {
 		"name": {
-			"value": "fullName",
+			"value": "firstName",
 			"isMandatory" : true
 		},
 		"proofOfAddress": {
 			"value" : "proofOfAddress"
 		},
 		"postalCode": {
-			"value" : "postalCode"
+			"value" : "cpostalcode"
 		}
 	}
 }  
