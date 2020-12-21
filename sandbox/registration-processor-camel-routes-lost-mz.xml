@@ -117,6 +117,10 @@
                 <simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
                 <to uri="vertx:abis-handler-bus-in" />
             </when>
+			<when>
+                <simple>${bodyAs(String)} contains '"address":"manual-verification-bus-in"'</simple>
+                <to uri="vertx:manual-verification-bus-in" />
+            </when>
             <when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
                 <to uri="vertx:retry-bus-in" />
