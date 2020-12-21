@@ -13,7 +13,7 @@
 			"validators": [
 				{
 					"type": "regex",
-					"validator": "^([a-zA-Z]{2,25} [a-zA-Z]{2,25} [a-zA-Z]{2,25}( [a-zA-Z]{2,25})?)$",
+					"validator":"^(?=.{0,50}$).*",
 					"arguments": []
 				}
 			],
