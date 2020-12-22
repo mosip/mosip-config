@@ -90,13 +90,13 @@
                  ]
               }
            ],
-           "required":true
+           "required":false
         },
         {
            "id":"dateOfBirth",
-           "description":"Enter DOB",
+           "description":"dateofBirth",
            "labelName":{
-           "eng":"Date Of Birth",
+           "eng":"DOB",
            "ara":"تاريخ الولادة",
            "fra":"Date de naissance"
            },
@@ -110,9 +110,9 @@
         },
         {
            "id":"pobCountry",
-           "description":"birthcountry",
+           "description":"Country",
            "labelName":{
-           "eng":"birthcountry",
+           "eng":"Birth Country",
            "ara":"مدينة",
            "fra":"birthcountry"
            },
@@ -131,9 +131,9 @@
         },
                 {
            "id":"pobprovince",
-           "description":"birthprovince",
+           "description":"Birth Province",
            "labelName":{
-           "eng":"birthprovince",
+           "eng":"Birth Province",
            "ara":"مدينة",
            "fra":"birthprovince"
            },
@@ -151,12 +151,12 @@
            "required":false
         },
         {
-           "id":"pobcity",
-           "description":"birthmunicipal",
+           "id":"pobCity",
+           "description":"Birth City",
            "labelName":{
-           "eng":"Birth Municipal",
+           "eng":"Birth City",
            "ara":"مدينة",
-           "fra":"Birth Municipal"
+           "fra":"Birth City"
            },
            "controlType":"dropdown",
            "inputRequired":false,
@@ -175,7 +175,7 @@
            "id":"gender",
            "description":"gender",
            "labelName":{
-           "eng":"Sex",
+           "eng":"Gender",
            "ara":"جنس",
            "fra":"Le genre"
            },
@@ -189,11 +189,11 @@
         },
             {
            "id":"residenceStatus",
-           "description":"FilipinoOrResidentAlien",
+           "description":"Resident Status",
            "labelName":{
-           "eng":"Filipino/Resident Alien",
+           "eng":"Resident Status",
            "ara":"حالة الإقامة",
-           "fra":"Filipino/Resident Alien"
+           "fra":"Filipino/Resident Status"
            },
            "controlType":"dropdown",
            "inputRequired":true,
@@ -207,9 +207,9 @@
            "id":"bloodType",
            "description":"Blood type",
            "labelName":{
-           "eng":"Blood type",
+           "eng":"Blood Group",
            "ara":"حالة الإقامة",
-           "fra":"Blood type"
+           "fra":"Blood Group"
            },
            "controlType":"dropdown",
            "inputRequired":true,
@@ -224,7 +224,7 @@
            "id":"maritalStatus",
            "description":"Marital status",
            "labelName":{
-           "eng":"Marital status",
+           "eng":"Marital Status",
            "ara":"حالة الإقامة",
            "fra":"Marital status"
            },
@@ -238,10 +238,10 @@
            "required":false
         },
         {
-           "id":"addressLine1",
-           "description":"addressLine1",
+           "id":"permanentAddressLine1",
+           "description":"Permanent AddressLine1",
            "labelName":{
-           "eng":"permanentAddressLine1",
+           "eng":"Permanent Address Line",
            "ara":"العنوان السطر 1",
            "fra":"Adresse 1"
            },
@@ -261,10 +261,10 @@
            "required":false
         },
         {
-           "id":"addressLine2",
-           "description":"addressLine2",
+           "id":"permanentAddressLine2",
+           "description":"Permanent AddressLine2",
            "labelName":{
-           "eng":"permanentAddressLine2",
+           "eng":"Permanent Add. Address",
            "ara":"العنوان السطر 2",
            "fra":"permanentAddressLine2"
            },
@@ -284,10 +284,10 @@
            "required":false
         },
         {
-           "id":"addressLine3",
-           "description":"addressLine3",
+           "id":"permanentAddressLine3",
+           "description":"Permanent AddressLine3",
            "labelName":{
-           "eng":"permanentAddressLine3",
+           "eng":"Permanent Add. Address",
            "ara":"العنوان السطر 3",
            "fra":"Adresse 3"
            },
@@ -307,10 +307,10 @@
            "required":false
         },
                 {
-           "id":"addressLine4",
-           "description":"addressLine4",
+           "id":"permanentAddressLine4",
+           "description":"Permanent AddressLine4",
            "labelName":{
-           "eng":"permanentAddressLine4",
+           "eng":"Permanent Add. Address",
            "ara":"عنوان السطر 3",
            "fra":"Adresse 4"
            },
@@ -331,7 +331,7 @@
         },
         {
            "id":"permanentCountry",
-           "description":"permanentCountry",
+           "description":"Country",
            "labelName":{
            "eng":"Permanent Country",
            "ara":"المحافظة",
@@ -376,12 +376,12 @@
            "required":false
         },
         {
-           "id":"permanentMunicipal",
-           "description":"permanentMunicipal",
+           "id":"permanentCity",
+           "description":"permanentCity",
            "labelName":{
-           "eng":"permanentMunicipal",
+           "eng":"Permanent City / Municipality",
            "ara":"مدينة",
-           "fra":"permanentMunicipal"
+           "fra":"Permanent City / Municipality"
            },
            "controlType":"dropdown",
            "inputRequired":false,
@@ -399,12 +399,12 @@
            "required":false
         },
         {
-           "id":"permananentBarangay",
-           "description":"permananentBarangay",
+           "id":"permanentBarangay",
+           "description":"permanentBarangay",
            "labelName":{
-           "eng":"Permananent Barangay",
+           "eng":"Permanent Barangay",
            "ara":"منطقة",
-           "fra":"Permananent Barangay"
+           "fra":"Permanent Barangay"
            },
            "controlType":"dropdown",
            "inputRequired":false,
@@ -422,12 +422,12 @@
            "required":false
         },
                 {
-           "id":"permananentPostalCode",
-           "description":"permananentPostalCode",
+           "id":"permananentZipCode",
+           "description":"permananentZipCode",
            "labelName":{
-           "eng":"Permananent PostalCode",
+           "eng":"Permananent ZIP Code",
            "ara":"الكود البريدى",
-           "fra":"Permananent PostalCode"
+           "fra":"Permananent ZIP Code"
            },
            "controlType":"dropdown",
            "inputRequired":false,
@@ -445,10 +445,10 @@
            "required":false
         },
                 {
-           "id":"caddressLine1",
-           "description":"presentaddressLine1",
+           "id":"presentAddressLine1",
+           "description":"Present AddressLine1",
            "labelName":{
-           "eng":"Present AddressLine1",
+           "eng":"Address Line",
            "ara":"العنوان السطر 1",
            "fra":"Present Adresse 1"
            },
@@ -465,13 +465,13 @@
                  ]
               }
            ],
-           "required":true
+           "required":false
         },
         {
-           "id":"caddressLine2",
+           "id":"presentAddressLine2",
            "description":"Present AddressLine2",
            "labelName":{
-           "eng":"Present AddressLine2",
+           "eng":"Additional Address",
            "ara":"العنوان السطر 2",
            "fra":"Present Adresse 2"
            },
@@ -488,13 +488,13 @@
                  ]
               }
            ],
-           "required":true
+           "required":false
         },
         {
-           "id":"caddressLine3",
+           "id":"presentAddressLine3",
            "description":"Present AddressLine3",
            "labelName":{
-           "eng":"Present AddressLine3",
+           "eng":"Additional Address",
            "ara":"العنوان السطر 3",
            "fra":"Adresse 3"
            },
@@ -511,13 +511,13 @@
                  ]
               }
            ],
-           "required":true
+           "required":false
         },
                 {
-           "id":"caddressLine4",
+           "id":"presentAddressLine4",
            "description":"Present AddressLine4",
            "labelName":{
-           "eng":"Present AddressLine4",
+           "eng":"Additional Address",
            "ara":"العنوان السطر 3",
            "fra":"Adresse 4"
            },
@@ -534,7 +534,7 @@
                  ]
               }
            ],
-           "required":true
+           "required":false
         },
                 {
            "id":"presentCountry",
@@ -560,8 +560,8 @@
            "required":true
         },
                 {
-           "id":"cprovince",
-           "description":"presentProvince",
+           "id":"presentProvince",
+           "description":"Province",
            "labelName":{
            "eng":"Present Province",
            "ara":"المحافظة",
@@ -580,13 +580,13 @@
                  ]
               }
            ],
-           "required":true
+           "required":false
         },
         {
-           "id":"ccity",
-           "description":"presentMunicipal",
+           "id":"presentCity",
+           "description":"City",
            "labelName":{
-           "eng":"Present City",
+           "eng":"Present City / Municipality",
            "ara":"مدينة",
            "fra":"Present Municipal"
            },
@@ -603,11 +603,11 @@
                  ]
               }
            ],
-           "required":true
+           "required":false
         },
         {
-           "id":"cbarangay",
-           "description":"presentBarangay",
+           "id":"presentBarangay",
+           "description":"Barangay",
            "labelName":{
            "eng":"Present Barangay",
            "ara":"منطقة",
@@ -626,13 +626,13 @@
                  ]
               }
            ],
-           "required":true
+           "required":false
         },
         {
-           "id":"cpostalcode",
-           "description":"presentPostalCode",
+           "id":"presentZipcode",
+           "description":"Present Zipcode",
            "labelName":{
-           "eng":"Present Postal Code",
+           "eng":"Present ZIP Code",
            "ara":"الكود البريدى",
            "fra":"code postal"
            },
@@ -650,10 +650,10 @@
            "required":false
         },
         {
-           "id":"phone",
-           "description":"mobileno",
+           "id":"mobileno",
+           "description":"phone",
            "labelName":{
-           "eng":"Mobile Number",
+           "eng":"Mobile Number(Optional)",
            "ara":"هاتف",
            "fra":"Téléphone"
            },
@@ -762,5 +762,5 @@
            "required":true
         }
    ],
-   "locationHierarchy": ["presentCountry","cprovince","ccity","cbarangay","cpostalcode"]
+   "locationHierarchy": ["presentCountry","presentProvince","presentCity","presentBarangay","presentZipcode"]
 }

@@ -46,54 +46,39 @@
          ]
       },
       "parentOrGuardianUIN":{
-         "value":"parentOrGuardianUIN",
+         "value":"guardianCredentialID",
          "provider":[
             "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
             "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
          ]
       },
       "parentOrGuardianName":{
-         "value":"parentOrGuardianName",
+         "value":"guardianFirstName,guardianMiddleName,guardianLastName",
          "provider":[
             "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
             "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
          ]
       },
       "address":{
-         "value":"addressLine1,addressLine2,addressLine3,region,province,postalCode",
+         "value":"presentAddressLine1,presentAddressLine2,presentAddressLine3,presentAddressLine4,presentCity,presentProvince,presentBarangay,presentZipcode",
          "provider":[
             "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
             "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
          ]
       },
       "city":{
-         "value":"city",
+         "value":"presentCountry",
          "provider":[
             "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
             "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
          ]
       },
 	"phone":{
-        "value":"phone",
+        "value":"mobileno",
          "provider":[
 			"source:RESIDENT,process:RES_CORRECTION",
             "source:REGISTRATION_CLIENT,process:CORRECTION|NEW|UPDATE",
 			"source:RESIDENT,process:RES_UPDATE"
-         ]
-      },
-      "phone_user_provided":{
-         "value":"phone",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE",
-            "source:RESIDENT,process:RES_UPDATE",
-			"source:REGISTRATION_CLIENT,process:LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_REPRINT"
-         ]
-      },
-	  "phone_validation_source":{
-         "value":"phone",
-         "provider":[
-			"source:CNIE,process:CORRECTION2|CORRECTION1|VALIDATION"
          ]
       },
       "email":{

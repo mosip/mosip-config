@@ -13,40 +13,42 @@
 			"gender"
 		],
 		"phoneNumber": [
-			"phone"
+			"mobileno"
 		],
 		"emailId": [
 			"email"
 		],
 		"addressLine1": [
-			"addressLine1"
+			"presentAddressLine1"
 		],
 		"addressLine2": [
-			"addressLine2"
+			"presentAddressLine2"
 		],
 		"addressLine3": [
-			"addressLine3"
+			"presentAddressLine3"
 		],
 		"location1": [
-			"city"
+			"presentProvince"
 		],
 		"location2": [
-			"region"
+			"presentCity"
 		],
 		"location3": [
-			"province"
+			"presentBarangay"
 		],
 		"postalCode": [
-			"postalCode"
+			"presentZipcode"
 		],
 		"fullAddress": [
-			"addressLine1",
-			"addressLine2",
-			"addressLine3",
-			"city",
-			"region",
-			"province",
-			"postalCode"
+			"presentAddressLine1",
+			"presentAddressLine2",
+			"presentAddressLine3",
+                        "presentAddressLine4",
+			"presentCountry",
+			"presentProvince",
+                        "presentCity",
+			"presentBarangay",
+			"presentZipcode"
 		],
 		"iris": [
 			"CBEFF"
