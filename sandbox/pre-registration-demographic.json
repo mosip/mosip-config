@@ -65,7 +65,7 @@
         "eng": "Suffix"
       },
       "controlType": "textbox",
-      "inputRequired": false,
+      "inputRequired": true,
       "validators": [
         {
           "type": "regex",
@@ -302,7 +302,7 @@
         "eng": "Mobile Number (Optional)"
       },
       "controlType": "textbox",
-      "inputRequired": false,
+      "inputRequired": true,
       "validators": [
         {
           "type": "regex",
@@ -310,7 +310,7 @@
           "arguments": []
         }
       ],
-      "required": true
+      "required": false
     },
     {
       "id": "email",
@@ -319,7 +319,7 @@
         "eng": "Email Address (Optional)"
       },
       "controlType": "textbox",
-      "inputRequired": false,
+      "inputRequired": true,
       "validators": [
         {
           "type": "regex",
