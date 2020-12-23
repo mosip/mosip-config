@@ -65,7 +65,7 @@
         "eng": "Suffix"
       },
       "controlType": "textbox",
-      "inputRequired": true,
+      "inputRequired": false,
       "validators": [
         {
           "type": "regex",
@@ -73,7 +73,7 @@
           "arguments": []
         }
       ],
-      "required": true
+      "required": false
     },
     {
       "id": "gender",
@@ -178,7 +178,7 @@
     },
     {
       "id": "permanentAddressLine1OC",
-      "description": "Address line ",
+      "description": "Address line 1 ",
       "labelName": {
         "eng": "Permanent Address Line (Mandatory) "
       },
@@ -299,14 +299,14 @@
       "id": "mobileno",
       "description": "Mobile Number",
       "labelName": {
-        "eng": "Mobile Number (Mandatory)"
+        "eng": "Mobile Number (Optional)"
       },
       "controlType": "textbox",
-      "inputRequired": true,
+      "inputRequired": false,
       "validators": [
         {
           "type": "regex",
-          "validator": "^[+]*([0]{1})([0-9]{10})$",
+          "validator": "^(639)\\d{9}$",
           "arguments": []
         }
       ],
@@ -316,10 +316,10 @@
       "id": "email",
       "description": "Email Address",
       "labelName": {
-        "eng": "Email Address (Mandatory)"
+        "eng": "Email Address (Optional)"
       },
       "controlType": "textbox",
-      "inputRequired": true,
+      "inputRequired": false,
       "validators": [
         {
           "type": "regex",
