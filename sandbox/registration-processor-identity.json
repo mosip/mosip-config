@@ -13,7 +13,7 @@
             "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
             "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
          ],
-         "isMandatory":true
+         "isMandatory":false
       },
       "gender":{
          "value":"gender",
