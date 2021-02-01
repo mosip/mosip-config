@@ -185,6 +185,10 @@
                 <to uri="eventbus:abis-handler-bus-in" />
             </when>
             <when>
+                <simple>${bodyAs(String)} contains '"address":"manual-verification-bus-in"'</simple>
+                <to uri="vertx:manual-verification-bus-in" />
+            </when>
+            <when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
                 <to uri="eventbus:retry-bus-in" />
             </when>
