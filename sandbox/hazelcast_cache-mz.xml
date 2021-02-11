@@ -34,87 +34,20 @@
     <cluster-name>dev</cluster-name>
 
     <network>
-        <port auto-increment="true" port-count="100">5701</port>
-        <outbound-ports>
-            <!--
-            Allowed port range when connecting to other nodes.
-            0 or * means use system provided port.
-            -->
-            <ports>0</ports>
-        </outbound-ports>
         <join>
-            <multicast enabled="false">
-                <multicast-group>127.0.0.1</multicast-group>
-                <multicast-port>54327</multicast-port>
-            </multicast>
-            <tcp-ip enabled="true">
-                <interface>127.0.0.1</interface>
-                <!--<member-list>
-                    <member>127.0.0.1</member>
-                </member-list>-->
-            </tcp-ip>
-            <aws enabled="false">
-                <access-key>my-access-key</access-key>
-                <secret-key>my-secret-key</secret-key>
-                <!--optional, default is us-east-1 -->
-                <region>us-west-1</region>
-                <!--optional, default is ec2.amazonaws.com. If set, region shouldn't be set as it will override this property -->
-                <host-header>ec2.amazonaws.com</host-header>
-                <!-- optional, only instances belonging to this group will be discovered, default will try all running instances -->
-                <security-group-name>hazelcast-sg</security-group-name>
-                <tag-key>type</tag-key>
-                <tag-value>hz-nodes</tag-value>
-            </aws>
-            <gcp enabled="false">
-                <zones>us-east1-b,us-east1-c</zones>
-            </gcp>
-            <azure enabled="false">
-                <client-id>CLIENT_ID</client-id>
-                <client-secret>CLIENT_SECRET</client-secret>
-                <tenant-id>TENANT_ID</tenant-id>
-                <subscription-id>SUB_ID</subscription-id>
-                <cluster-id>HZLCAST001</cluster-id>
-                <group-name>RESOURCE-GROUP-NAME</group-name>
-            </azure>
-            <kubernetes enabled="false">
-                <namespace>MY-KUBERNETES-NAMESPACE</namespace>
-                <service-name>MY-SERVICE-NAME</service-name>
-                <service-label-name>MY-SERVICE-LABEL-NAME</service-label-name>
-                <service-label-value>MY-SERVICE-LABEL-VALUE</service-label-value>
-            </kubernetes>
-            <eureka enabled="false">
-                <self-registration>true</self-registration>
-                <namespace>hazelcast</namespace>
-            </eureka>
+            <multicast enabled="false"/>
+            <tcp-ip enabled="false" />
             <discovery-strategies>
+                <discovery-strategy enabled="true"
+                                    class="com.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy">
+                    <properties>
+                        <property name="service-dns">service-hazelcast-server.default.svc.cluster.local</property>
+                    </properties>
+                </discovery-strategy>
             </discovery-strategies>
         </join>
-        <interfaces enabled="true">
-            <interface>127.0.0.1</interface>
-        </interfaces>
-        <ssl enabled="false"/>
-        <socket-interceptor enabled="false"/>
-        <symmetric-encryption enabled="false">
-            <!--
-               encryption algorithm such as
-               DES/ECB/PKCS5Padding,
-               PBEWithMD5AndDES,
-               AES/CBC/PKCS5Padding,
-               Blowfish,
-               DESede
-            -->
-            <algorithm>PBEWithMD5AndDES</algorithm>
-            <!-- salt value to use when generating the secret key -->
-            <salt>thesalt</salt>
-            <!-- pass phrase to use when generating the secret key -->
-            <password>thepass</password>
-            <!-- iteration count to use when generating the secret key -->
-            <iteration-count>19</iteration-count>
-        </symmetric-encryption>
-        <failure-detector>
-            <icmp enabled="false"/>
-        </failure-detector>
     </network>
+
     <partition-group enabled="false"/>
     <executor-service name="default">
         <pool-size>16</pool-size>
