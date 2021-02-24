@@ -160,12 +160,14 @@
 
    },
    "metaInfo":{
+      "value":"metaInfo",
       "provider":[
          "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
          "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
       ]
    },
    "audits":{
+      "value":"audits",
       "provider":[
          "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
          "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
