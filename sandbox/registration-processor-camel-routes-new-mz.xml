@@ -246,15 +246,4 @@
             message="abis-middleware route-->abis-handler new route ${bodyAs(String)}" />
            <to uri="eventbus:abis-handler-bus-in" />
     </route>
-    <route id="reprocessor route-->printing-stage new route">
-        <from uri="eventbus:print-new-bus-in" />
-        <log
-            message="reprocessor-->printing-stage route ${bodyAs(String)}" />
-        <choice>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:printing-bus-in" />
-            </when>
-        </choice>
-    </route>
 </routes>
