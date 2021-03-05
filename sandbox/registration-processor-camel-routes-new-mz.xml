@@ -247,7 +247,7 @@
            <to uri="eventbus:abis-handler-bus-in" />
     </route>
         <route id="reprocessor route-->printing-stage new route">
-        <from uri="vertx:print-new-bus-in" />
+        <from uri="vertx:print-bus-in" />
        <log
             message="reprocessor-->printing-stage route ${bodyAs(String)}" />
             <to uri="vertx:printing-bus-in" />
