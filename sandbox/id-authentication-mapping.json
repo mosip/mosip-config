@@ -6,7 +6,6 @@
 		"dob": [
 			"dateOfBirth"
 		],
-		"dobType": [],
 		"age": [
 			"dateOfBirth"
 		],
@@ -48,12 +47,6 @@
 			"region",
 			"province",
 			"postalCode"
-		],
-		"otp": [
-			"otp"
-		],
-		"pin": [
-			"pin"
 		],
 		"iris": [
 			"CBEFF"
