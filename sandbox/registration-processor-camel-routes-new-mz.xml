@@ -123,14 +123,14 @@
             </otherwise>
         </choice>
     </route>
-    <route id="demo-dedupe-->bio-dedupe new route">
+    <route id="demo-dedupe-->uin-generation new route">
         <from uri="eventbus:demo-dedupe-new-bus-out" />
         <log
             message="demo-dedupe-->bio-dedupe new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:bio-dedupe-bus-in" />
+                <to uri="eventbus:uin-generation-bus-in" />
             </when>
             <when>
                 <simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
