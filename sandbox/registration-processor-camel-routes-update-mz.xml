@@ -1,0 +1,271 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <!-- securezone-notification to packet-uploader Route -->
+    <route id="securezone-notification-->packet-uploader update route">
+        <from uri="eventbus:securezone-notification-update-bus-out" />
+        <log
+                message="securezone-notification-->packet-uploader update route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:packet-uploader-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <!-- packet-uploader to packet-validator Route -->
+    <route id="packet-uploader-->packet-validator update route">
+    <from uri="eventbus:packet-uploader-update-bus-out" />
+    <log
+            message="packet-uploader-->packet-validator update route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:packet-validator-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <!-- Packet Validator to Packet Classifier Route -->
+    <route id="packet-validator-->packet-classifier update route">
+        <from uri="eventbus:packet-validator-update-bus-out" />
+        <log
+            message="packet-validator-->packet-classifier update route ${bodyAs(String)}" />
+        <choice>
+              <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                   <to uri="eventbus:packet-classifier-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <!-- Packet Classifier to Quality Checker Route -->
+    <route id="packet-classifier-->quality-checker update route">
+        <from uri="eventbus:packet-classifier-update-bus-out" />
+        <log
+            message="packet-classifier-->quality-checker update route ${bodyAs(String)}" />
+        <choice>
+              <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                   <to uri="eventbus:quality-checker-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <route id="quality-checker-->osi-validator update route">
+        <from uri="eventbus:quality-checker-update-bus-out" />
+        <log
+            message="quality-checker-->osi-validator update route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:o-s-i-validator-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <route id="osi-validator-->biometric-authentication-stage update route">
+        <from uri="eventbus:o-s-i-validator-update-bus-out" />
+        <log
+            message="osi-validator-->biometric-authentication-stage update route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:biometric-authentication-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <route id="biometric-authentication-stage-->demo-dedupe update route">
+        <from uri="eventbus:biometric-authentication-update-bus-out" />
+        <log
+                message="biometric-authentication-stage-->demo-dedupe update route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:demo-dedupe-bus-in" />
+            </when>
+            <when>
+               <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+               <to uri="eventbus:message-sender-bus-in" />
+            </when>
+             <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <route id="demo-dedupe-->bio-dedupe update update route">
+        <from uri="eventbus:demo-dedupe-update-bus-out" />
+        <log
+            message="demo-dedupe-->bio-dedupe update route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:bio-dedupe-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
+                <to uri="eventbus:abis-handler-bus-in" />
+            </when>
+			<when>
+                <simple>${bodyAs(String)} contains '"address":"manual-verification-bus-in"'</simple>
+                <to uri="eventbus:manual-verification-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:message-sender-bus-in"/>
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <route id="abis-handler-->abis-middleware update route">
+        <from uri="eventbus:abis-handler-update-bus-out" />
+        <log
+            message="abis-handler-->abis-middleware update route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"address":"abis-middle-ware-bus-in"'</simple>
+                <to uri="eventbus:abis-middle-ware-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"address":"demo-dedupe-bus-in"'</simple>
+                <to uri="eventbus:demo-dedupe-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"address":"bio-dedupe-bus-in"'</simple>
+                <to uri="eventbus:bio-dedupe-bus-in"/>
+            </when>
+        </choice>
+    </route>
+    <route id="bio-dedupe-->uin-generation update route">
+        <from uri="eventbus:bio-dedupe-update-bus-out" />
+        <log
+            message="bio-dedupe-->uin-generation update route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:uin-generator-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
+                <to uri="eventbus:abis-handler-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <route id="manual-verification-->uin-generation update route">
+        <from uri="eventbus:manual-verification-update-bus-out" />
+        <log
+            message="manual-verification-->uin-generation update route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:uin-generator-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <!-- UIN Generator to Printing and Message Sender Route -->
+    <route id="uin-generation route-->printing-stage-->message-sender update route">
+        <from uri="eventbus:uin-generator-update-bus-out" />
+        <log
+            message="uin-generation-->printing-stage and message-sender-stage update route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+                <to uri="eventbus:printing-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <route id="abis-middleware route-->abis-handler update route">
+        <from uri="eventbus:abis-middle-ware-update-bus-out" />
+        <log
+            message="abis-middleware route-->abis-handler update route ${bodyAs(String)}" />
+           <to uri="eventbus:abis-handler-bus-in" />
+    </route>
+</routes>
