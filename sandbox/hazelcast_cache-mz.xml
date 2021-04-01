@@ -93,10 +93,24 @@
     </network>
     <partition-group enabled="false"/>
     <executor-service name="default">
-        <pool-size>16</pool-size>
         <!--Queue capacity. 0 means Integer.MAX_VALUE.-->
         <queue-capacity>0</queue-capacity>
+        <pool-size>16</pool-size>
+        <statistics-enabled>true</statistics-enabled>
     </executor-service>
+    <durable-executor-service name="default">
+        <capacity>100</capacity>
+        <durability>1</durability>
+        <pool-size>16</pool-size>
+        <statistics-enabled>true</statistics-enabled>
+    </durable-executor-service>
+    <scheduled-executor-service name="default">
+        <capacity>100</capacity>
+        <durability>1</durability>
+        <pool-size>16</pool-size>
+        <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
+        <statistics-enabled>true</statistics-enabled>
+    </scheduled-executor-service>
     <security>
         <client-block-unmapped-actions>true</client-block-unmapped-actions>
     </security>
@@ -108,24 +122,21 @@
             Any integer between 0 and Integer.MAX_VALUE. 0 means
             Integer.MAX_VALUE. Default is 0.
         -->
-        <max-size>1000</max-size>
+        <max-size>0</max-size>
         <!--
             Number of backups. If 1 is set as the backup-count for example,
             then all entries of the map will be copied to another JVM for
             fail-safety. 0 means no backup.
         -->
         <backup-count>0</backup-count>
-
         <!--
             Number of async backups. 0 means no backup.
         -->
         <async-backup-count>0</async-backup-count>
-
         <empty-queue-ttl>-1</empty-queue-ttl>
-
         <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
     </queue>
-    <map name="packets">
+    <map name="default">
         <!--
            Data type that will be used for storing recordMap.
            Possible values:
@@ -144,7 +155,6 @@
             OFF: No metadata is created.
         -->
         <metadata-policy>CREATE_ON_UPDATE</metadata-policy>
-
         <!--
             Number of backups. If 1 is set as the backup-count for example,
             then all entries of the map will be copied to another JVM for
@@ -211,7 +221,6 @@
             com.hazelcast.map.merge.LatestUpdateMapMergePolicy ; entry with the latest update wins.
         -->
         <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
-
         <!--
            Control caching of de-serialized values. Caching makes query evaluation faster, but it cost memory.
            Possible Values:
@@ -220,7 +229,6 @@
                         ALWAYS: Always cache deserialized values.
         -->
         <cache-deserialized-values>ALWAYS</cache-deserialized-values>
-
     </map>
 
     <!--
@@ -256,8 +264,7 @@
         <value-collection-type>SET</value-collection-type>
         <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
     </multimap>
-
-    <replicatedmap name="packets">
+    <replicatedmap name="default">
         <in-memory-format>OBJECT</in-memory-format>
         <async-fillup>true</async-fillup>
         <statistics-enabled>true</statistics-enabled>
@@ -295,7 +302,6 @@
         <topic-overload-policy>BLOCK</topic-overload-policy>
         <statistics-enabled>true</statistics-enabled>
     </reliable-topic>
-
     <ringbuffer name="default">
         <capacity>10000</capacity>
         <backup-count>0</backup-count>
@@ -304,7 +310,6 @@
         <in-memory-format>BINARY</in-memory-format>
         <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
     </ringbuffer>
-
     <flake-id-generator name="default">
         <prefetch-count>100</prefetch-count>
         <prefetch-validity-millis>600000</prefetch-validity-millis>
@@ -330,30 +335,19 @@
     <services enable-defaults="true"/>
 
     <lite-member enabled="false"/>
-
     <cardinality-estimator name="default">
         <backup-count>0</backup-count>
         <async-backup-count>0</async-backup-count>
         <merge-policy batch-size="100">HyperLogLogMergePolicy</merge-policy>
     </cardinality-estimator>
-
-    <scheduled-executor-service name="default">
-        <capacity>100</capacity>
-        <durability>1</durability>
-        <pool-size>16</pool-size>
-        <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
-    </scheduled-executor-service>
-
     <crdt-replication>
         <replication-period-millis>1000</replication-period-millis>
         <max-concurrent-replication-targets>1</max-concurrent-replication-targets>
     </crdt-replication>
-
     <pn-counter name="default">
         <replica-count>2147483647</replica-count>
         <statistics-enabled>true</statistics-enabled>
     </pn-counter>
-
     <cp-subsystem>
         <cp-member-count>0</cp-member-count>
         <group-size>0</group-size>
@@ -372,4 +366,3 @@
         </raft-algorithm>
     </cp-subsystem>
 </hazelcast>
-
