@@ -1,0 +1,87 @@
+def getApplicantType(map,a) {
+                 import java.time.LocalDate;
+                 import java.time.LocalDateTime;
+                 import java.time.format.DateTimeFormatter;
+                 import java.time.Period;
+                String itc = null;
+                String dob = null;
+                String genderType = null;
+                boolean isBioExPresent = false;
+                String NonResident = "102";
+                String Resident = "101";
+                String MALE = "101";
+                String FEMALE = "102";
+                String Others = "103";
+                String CHILD = "CHL";
+                String ADULT = "ADL";
+                String ATTR_INDIVIDUAL_TYPE = "individualTypeCode";
+                String ATTR_DATE_OF_BIRTH = "dateofbirth";
+                String ATTR_GENDER_TYPE = "genderCode";
+                String ATTR_BIOMETRIC_EXCEPTION_TYPE = "biometricAvailable";
+                String UTC_DATETIME_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+                itc= (String) map[ATTR_INDIVIDUAL_TYPE];
+                dob= (String) map[ATTR_DATE_OF_BIRTH];
+                if(dob == empty || dob == null ){
+               return "KER-MSD-147";
+             }
+                int age = -1;
+                LocalDate currentDate = LocalDate.now();
+                LocalDate birthDate = LocalDateTime.parse(dob, DateTimeFormatter.ofPattern(UTC_DATETIME_PATTERN)).toLocalDate();
+                if (birthDate != null && currentDate != null && !birthDate.isAfter(currentDate)) {
+                        age = Period.between(birthDate, currentDate).getYears();
+                }
+                else{
+                   return age;
+                   }
+                genderType=(String) map[ATTR_GENDER_TYPE];
+                isBioExPresent =(Boolean)map[ATTR_BIOMETRIC_EXCEPTION_TYPE];
+                if (((itc == empty || itc == null) && (dob == -1 ) && (genderType == empty || genderType == null ) && (isBioExPresent == empty || isBioExPresent
+== null)))
+          return "KER-MSD-147";
+        if(age >= agelimit)
+           ageCode=ADULT;
+        else if( age >= 0 && age < agelimit)
+           ageCode=CHILD;
+                if (itc == NonResident && genderType == MALE && ageCode == CHILD && !isBioExPresent ) {
+                        return "001";
+                } else if (itc == NonResident && genderType == MALE && ageCode == ADULT && !isBioExPresent ) {
+                        return "002";
+                } else if (itc == Resident && genderType == MALE && ageCode == CHILD && !isBioExPresent ) {
+                        return "003";
+                } else if (itc == Resident && genderType == MALE && ageCode == ADULT && !isBioExPresent ) {
+                        return "004";
+                } else if (itc == NonResident && genderType == FEMALE && ageCode == CHILD && !isBioExPresent ) {
+                        return "005";
+                } else if (itc == NonResident && genderType == FEMALE && ageCode == ADULT && !isBioExPresent ) {
+                        return "006";
+                } else if (itc == Resident && genderType == FEMALE && ageCode == CHILD && !isBioExPresent ) {
+                        return "007";
+                } else if (itc == Resident && genderType == FEMALE && ageCode == ADULT && !isBioExPresent ) {
+                        return "008";
+                } else if (itc == NonResident && genderType == MALE && ageCode == CHILD && isBioExPresent ) {
+                        return "009";
+                } else if (itc == NonResident && genderType == MALE && ageCode == ADULT && isBioExPresent ) {
+                        return "010";
+                } else if (itc == Resident && genderType == MALE && ageCode == CHILD && isBioExPresent ) {
+                        return "011";
+                } else if (itc == Resident && genderType == MALE && ageCode == ADULT && isBioExPresent ) {
+                        return "012";
+                } else if (itc == NonResident && genderType == FEMALE && ageCode == CHILD && isBioExPresent ) {
+                        return "013";
+                } else if (itc == NonResident && genderType == FEMALE && ageCode == ADULT && isBioExPresent ) {
+                        return "014";
+                } else if (itc == Resident && genderType == FEMALE && ageCode == CHILD && isBioExPresent ) {
+                        return "015";
+                } else if (itc == Resident && genderType == FEMALE && ageCode == ADULT && isBioExPresent ) {
+                        return "016";
+                } else if (itc == Resident && genderType == Others && ageCode == ADULT && !isBioExPresent ) {
+                        return "017";
+                } else if (itc == NonResident && genderType == Others && ageCode == ADULT && !isBioExPresent ) {
+                        return "012";
+                }else if (itc == Resident && genderType == Others && ageCode == CHILD && !isBioExPresent ) {
+                        return "013";
+                }else if (itc == NonResident && genderType == Others && ageCode == CHILD && !isBioExPresent ) {
+                        return "014";
+                }
+                return null;
+};
