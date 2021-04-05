@@ -1,6 +1,16 @@
 {
    "identity":[
         {
+          "id": "IDSchemaVersion",
+          "description": "ID Schema Version",
+          "type": "number",
+          "controlType": null,
+          "fieldType": "default",
+          "inputRequired": false,
+          "validators": [],
+          "required": true
+        },
+        {
            "id":"fullName",
            "description":"Enter Full Name",
            "labelName":{
@@ -49,7 +59,7 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
+           "fieldType":"dynamic",
            "type":"simpleType",
            "validators":[
 
@@ -66,7 +76,7 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"default",
+           "fieldType":"dynamic",
            "type":"simpleType",
            "validators":[
 
