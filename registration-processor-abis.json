@@ -1,11 +1,11 @@
 {
     "abis": [{
-        "name": "ABIS1",
+        "name": "ABIS",
         "host": "",
         "port": "",
-        "brokerUrl": "tcp://${keycloak.host}:30616",
-        "inboundQueueName": "mosip-to-abis1",
-        "outboundQueueName": "abis1-to-mosip",
+        "brokerUrl": "tcp://${activemq.host}:${activemq.core.port}",
+        "inboundQueueName": "mosip-to-abis",
+        "outboundQueueName": "abis-to-mosip",
         "pingInboundQueueName": "",
         "pingOutboundQueueName": "",
         "userName": "admin",
