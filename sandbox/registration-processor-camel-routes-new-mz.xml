@@ -105,32 +105,10 @@
             </otherwise>
         </choice>
     </route>
-    <route id="osi-validator-->external-stage new route">
+    <route id="osi-validator-->demo-dedupe new route">
         <from uri="eventbus:o-s-i-validator-new-bus-out" />
         <log
-            message="osi-validator-->external-stage new route ${bodyAs(String)}" />
-        <choice>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:external-bus-in" />
-            </when>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
-                <to uri="eventbus:message-sender-bus-in" />
-            </when>
-            <when>
-                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
-                <to uri="eventbus:retry-bus-in" />
-            </when>
-            <otherwise>
-                <to uri="eventbus:error-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <route id="external-stage-->demo-dedupe new route">
-        <from uri="eventbus:external-new-bus-out" />
-        <log
-                message="external-stage-->demo-dedupe new route ${bodyAs(String)}" />
+            message="osi-validator-->demo-dedupe new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":true'</simple>
