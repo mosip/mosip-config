@@ -170,7 +170,7 @@
             then all entries of the map will be copied to another JVM for
             fail-safety. 0 means no backup.
         -->
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
 
         <!--
             Number of async backups. 0 means no backup.
@@ -189,7 +189,7 @@
            OBJECT : values will be stored in their object forms
            NATIVE : values will be stored in non-heap region of JVM
         -->
-        <in-memory-format>OBJECT</in-memory-format>
+        <in-memory-format>BINARY</in-memory-format>
 
         <!--
             Metadata creation policy for this map. Hazelcast may process objects of supported types ahead of time to
@@ -206,7 +206,7 @@
             then all entries of the map will be copied to another JVM for
             fail-safety. 0 means no backup.
         -->
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
         <!--
             Number of async backups. 0 means no backup.
         -->
@@ -239,7 +239,7 @@
             Any integer between 0 and Integer.MAX_VALUE. 0 means
             Integer.MAX_VALUE. Default is 0.
         -->
-        <max-size policy="PER_NODE">0</max-size>
+        <max-size policy="USED_HEAP_SIZE">2500</max-size>
         <!--
             `eviction-percentage` property is deprecated and will be ignored when it is set.
             As of version 3.7, eviction mechanism changed.
@@ -338,7 +338,7 @@
     </merkle-tree>
 
     <multimap name="default">
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
         <value-collection-type>SET</value-collection-type>
         <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
     </multimap>
@@ -351,12 +351,12 @@
     </replicatedmap>
 
     <list name="default">
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
         <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
     </list>
 
     <set name="default">
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
         <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
     </set>
 
@@ -372,7 +372,7 @@
 
     <semaphore name="default">
         <initial-permits>0</initial-permits>
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
         <async-backup-count>0</async-backup-count>
     </semaphore>
 
@@ -384,7 +384,7 @@
 
     <ringbuffer name="default">
         <capacity>10000</capacity>
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
         <async-backup-count>0</async-backup-count>
         <time-to-live-seconds>0</time-to-live-seconds>
         <in-memory-format>BINARY</in-memory-format>
@@ -418,7 +418,7 @@
     <lite-member enabled="false"/>
 
     <cardinality-estimator name="default">
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
         <async-backup-count>0</async-backup-count>
         <merge-policy batch-size="100">HyperLogLogMergePolicy</merge-policy>
     </cardinality-estimator>
