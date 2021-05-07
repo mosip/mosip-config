@@ -7,11 +7,11 @@ def getApplicantType(map,a) {
                 String dob = null;
                 String genderType = null;
                 boolean isBioExPresent = false;
-                String NonResident = "102";
-                String Resident = "101";
-                String MALE = "101";
-                String FEMALE = "102";
-                String Others = "103";
+                String NonResident = "FR";
+                String Resident = "NFR";
+                String MALE = "MLE";
+                String FEMALE = "FLE";
+                String Others = "OTH";
                 String CHILD = "CHL";
                 String ADULT = "ADL";
                 String ATTR_INDIVIDUAL_TYPE = "individualTypeCode";
