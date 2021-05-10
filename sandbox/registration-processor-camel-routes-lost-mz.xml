@@ -83,14 +83,14 @@
             </otherwise>
         </choice>
     </route>
-    <route id="quality-checker-->osi-validator lost route">
+	<route id="quality-checker-->cmd-validator lost route">
         <from uri="eventbus:quality-checker-lost-bus-out" />
         <log
-                message="quality-checker-->osi-validator lost route ${bodyAs(String)}" />
+            message="quality-checker-->cmd-validator lost route ${bodyAs(String)}" />
         <choice>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:o-s-i-validator-bus-in" />
+                <to uri="eventbus:c-m-d-validator-bus-in" />
             </when>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
@@ -105,10 +105,98 @@
             </otherwise>
         </choice>
     </route>
-    <route id="osi-validator-lost-->bio-dedupe lost route">
-        <from uri="eventbus:o-s-i-validator-lost-bus-out" />
+	<route id="cmd-validator-->operator-validator lost route">
+        <from uri="eventbus:c-m-d-validator-lost-bus-out" />
         <log
-                message="osi-validator-lost-->bio-dedupe lost route ${bodyAs(String)}" />
+            message="cmd-validator-->operator-validator lost route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:operator-validator-bus-in" />
+            </when>
+			<when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+	<route id="operator-validator-->supervisor-validator lost route">
+        <from uri="eventbus:operator-validator-lost-bus-out" />
+        <log
+            message="operator-validator-->supervisor-validator lost route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:supervisor-validator-bus-in" />
+            </when>
+			<when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+	<route id="supervisor-validator-->introducer-validator lost route">
+        <from uri="eventbus:supervisor-validator-lost-bus-out" />
+        <log
+            message="supervisor-validator-->introducer-validator lost route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:introducer-validator-bus-in" />
+            </when>
+			<when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+	<route id="introducer-validator-->demo-dedupe new route">
+        <from uri="eventbus:introducer-validator-new-bus-out" />
+        <log
+            message="introducer-validator-->demo-dedupe new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:demo-dedupe-bus-in" />
+            </when>
+			<when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <route id="introducer-validator-lost-->bio-dedupe lost route">
+        <from uri="eventbus:introducer-validator-lost-bus-out" />
+        <log
+                message="introducer-validator-->bio-dedupe lost route ${bodyAs(String)}" />
         <choice>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":true'</simple>
