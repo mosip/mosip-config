@@ -58,6 +58,14 @@ def getApplicantType(map,a) {
                         return "007";
                 } else if (itc == Resident && genderType == FEMALE && ageCode == ADULT && !isBioExPresent ) {
                         return "008";
+                } else if (itc == NonResident && genderType == Others && ageCode == CHILD && !isBioExPresent ) {
+                        return "005";
+                } else if (itc == NonResident && genderType == Others && ageCode == ADULT && !isBioExPresent ) {
+                        return "006";
+                } else if (itc == Resident && genderType == Others && ageCode == CHILD && !isBioExPresent ) {
+                        return "007";
+                } else if (itc == Resident && genderType == Others && ageCode == ADULT && !isBioExPresent ) {
+                        return "008";
                 } else if (itc == NonResident && genderType == MALE && ageCode == CHILD && isBioExPresent ) {
                         return "009";
                 } else if (itc == NonResident && genderType == MALE && ageCode == ADULT && isBioExPresent ) {
@@ -74,14 +82,14 @@ def getApplicantType(map,a) {
                         return "015";
                 } else if (itc == Resident && genderType == FEMALE && ageCode == ADULT && isBioExPresent ) {
                         return "016";
-                } else if (itc == Resident && genderType == Others && ageCode == ADULT && !isBioExPresent ) {
-                        return "016";
-                } else if (itc == NonResident && genderType == Others && ageCode == ADULT && !isBioExPresent ) {
-                        return "012";
-                } else if (itc == Resident && genderType == Others && ageCode == CHILD && !isBioExPresent ) {
+                } else if (itc == NonResident && genderType == Others && ageCode == CHILD && isBioExPresent ) {
                         return "013";
-                } else if (itc == NonResident && genderType == Others && ageCode == CHILD && !isBioExPresent ) {
+                } else if (itc == NonResident && genderType == Others && ageCode == ADULT && isBioExPresent ) {
                         return "014";
+                } else if (itc == Resident && genderType == Others && ageCode == CHILD && isBioExPresent ) {
+                        return "015";
+                } else if (itc == Resident && genderType == Others && ageCode == ADULT && isBioExPresent ) {
+                        return "016";
                 }
                 return null;
 };
