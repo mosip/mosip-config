@@ -75,12 +75,12 @@ def getApplicantType(map,a) {
                 } else if (itc == Resident && genderType == FEMALE && ageCode == ADULT && isBioExPresent ) {
                         return "016";
                 } else if (itc == Resident && genderType == Others && ageCode == ADULT && !isBioExPresent ) {
-                        return "017";
+                        return "016";
                 } else if (itc == NonResident && genderType == Others && ageCode == ADULT && !isBioExPresent ) {
                         return "012";
-                }else if (itc == Resident && genderType == Others && ageCode == CHILD && !isBioExPresent ) {
+                } else if (itc == Resident && genderType == Others && ageCode == CHILD && !isBioExPresent ) {
                         return "013";
-                }else if (itc == NonResident && genderType == Others && ageCode == CHILD && !isBioExPresent ) {
+                } else if (itc == NonResident && genderType == Others && ageCode == CHILD && !isBioExPresent ) {
                         return "014";
                 }
                 return null;
