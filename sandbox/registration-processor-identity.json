@@ -4,16 +4,13 @@
          "value":"IDSchemaVersion"
       },
       "name":{
-         "value":"fullName",
-         "isMandatory":true
+         "value":"fullName"
       },
       "gender":{
-         "value":"gender",
-         "isMandatory":true
+         "value":"gender"
       },
       "dob":{
-         "value":"dateOfBirth",
-         "isMandatory":true
+         "value":"dateOfBirth"
       },
       "age":{
          "value":"age"
