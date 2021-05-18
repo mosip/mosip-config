@@ -151,12 +151,16 @@
     </route>
 	<route id="supervisor-validator-->introducer-validator new route">
         <from uri="eventbus:supervisor-validator-new-bus-out" />
-        <log
-            message="supervisor-validator-->introducer-validator new route ${bodyAs(String)}" />
+		<log
+            message="supervisor-validator-->introducer-validator/demo-dedupe new route ${bodyAs(String)}" />
         <choice>
+			<when>
+				<jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'CHILD' &amp;&amp; @['isValid'] == 'true')]</jsonpath>
+				<to uri="eventbus:introducer-validator-bus-in" />
+			</when>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:introducer-validator-bus-in" />
+                <to uri="eventbus:demo-dedupe-bus-in" />
             </when>
 			<when>
                 <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
