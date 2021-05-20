@@ -134,7 +134,7 @@
 	<route id="operator-validator-->supervisor-validator new route">
         <from uri="eventbus:operator-validator-new-bus-out" />
         <log
-            message="operator-validator-->supervisor-validator/bio-dedupe new route ${bodyAs(String)}" />
+            message="operator-validator-->supervisor-validator/bio-dedupe lost route ${bodyAs(String)}" />
         <choice>
 			<when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
