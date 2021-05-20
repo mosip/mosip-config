@@ -108,20 +108,24 @@
 	<route id="cmd-validator-->operator-validator new route">
         <from uri="eventbus:c-m-d-validator-new-bus-out" />
         <log
-            message="cmd-validator-->operator-validator new route ${bodyAs(String)}" />
+            message="cmd-validator-->operator-validator/supervisor-validator new route ${bodyAs(String)}" />
         <choice>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:operator-validator-bus-in" />
-            </when>
-			<when>
-                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
-                <to uri="eventbus:message-sender-bus-in" />
-            </when>
             <when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
                 <to uri="eventbus:retry-bus-in" />
             </when>
+			<when>
+                <simple>${bodyAs(String)} contains '"isValid":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+			<when>
+				<jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
+				<to uri="eventbus:operator-validator-bus-in" />
+			</when>
+			<when>
+				<jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
+				<to uri="eventbus:supervisor-validator-bus-in" />
+			</when>
             <otherwise>
                 <to uri="eventbus:error-bus-in" />
             </otherwise>
@@ -130,22 +134,22 @@
 	<route id="operator-validator-->supervisor-validator new route">
         <from uri="eventbus:operator-validator-new-bus-out" />
         <log
-            message="operator-validator-->supervisor-validator new route ${bodyAs(String)}" />
+            message="operator-validator-->supervisor-validator/introducer-validator new route ${bodyAs(String)}" />
         <choice>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:supervisor-validator-bus-in" />
-            </when>
 			<when>
-                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
-                <to uri="eventbus:message-sender-bus-in" />
-            </when>
-            <when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
                 <to uri="eventbus:retry-bus-in" />
             </when>
+			<when>
+                <simple>${bodyAs(String)} contains '"isValid":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+			<when>
+				<jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
+				<to uri="eventbus:supervisor-validator-bus-in" />
+			</when>
             <otherwise>
-                <to uri="eventbus:error-bus-in" />
+                <to uri="eventbus:introducer-validator-bus-in" />
             </otherwise>
         </choice>
     </route>
