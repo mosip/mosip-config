@@ -1,4 +1,24 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
+    <!-- packet-receiver to securezone notifiation -->
+    <route id="packet-receiver->securezone-notification new route">
+        <from uri="eventbus:packet-receiver-new-bus-out" />
+        <log
+                message="packet-receiver-->securezone-notification new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:securezone-notification-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+
     <!-- securezone-notification to packet-uploader Route -->
     <route id="securezone-notification-->packet-uploader new route">
         <from uri="eventbus:securezone-notification-new-bus-out" />
