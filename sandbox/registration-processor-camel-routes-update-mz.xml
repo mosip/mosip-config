@@ -89,7 +89,7 @@
             message="quality-checker-->cmd-validator update route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] != 'Poor' &amp;&amp; @['tags']['Biometric_Quality-Finger'] != 'Poor' &amp;&amp; @['tags']['Biometric_Quality-Face'] != 'Poor' &amp;&amp; @['isValid'] == true)]</jsonpath>
                 <to uri="eventbus:c-m-d-validator-bus-in" />
             </when>
             <when>
