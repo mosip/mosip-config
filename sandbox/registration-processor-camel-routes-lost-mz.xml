@@ -207,6 +207,10 @@
                 message="abis-handler-->abis-middleware lost route ${bodyAs(String)}" />
         <choice>
             <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' </simple>
+				<to uri="eventbus:error-bus-in"/>
+            </when>
+            <when>
                 <simple>${bodyAs(String)} contains '"address":"abis-middle-ware-bus-in"'</simple>
                 <to uri="eventbus:abis-middle-ware-bus-in" />
             </when>
