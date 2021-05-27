@@ -131,8 +131,8 @@
             </otherwise>
         </choice>
     </route>
-	<route id="operator-validator-->supervisor-validator new route">
-        <from uri="eventbus:operator-validator-new-bus-out" />
+	<route id="operator-validator-->supervisor-validator lost route">
+        <from uri="eventbus:operator-validator-lost-bus-out" />
         <log
             message="operator-validator-->supervisor-validator/bio-dedupe lost route ${bodyAs(String)}" />
         <choice>
