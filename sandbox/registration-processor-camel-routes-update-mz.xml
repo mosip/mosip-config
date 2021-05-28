@@ -89,16 +89,16 @@
             message="quality-checker-->cmd-validator update route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <when>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] != 'Poor' &amp;&amp; @['tags']['Biometric_Quality-Finger'] != 'Poor' &amp;&amp; @['tags']['Biometric_Quality-Face'] != 'Poor' &amp;&amp; @['isValid'] == true)]</jsonpath>
                 <to uri="eventbus:c-m-d-validator-bus-in" />
             </when>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
                 <to uri="eventbus:message-sender-bus-in" />
-            </when>
-            <when>
-                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
-                <to uri="eventbus:retry-bus-in" />
             </when>
             <otherwise>
                 <to uri="eventbus:error-bus-in" />
@@ -108,20 +108,24 @@
 	<route id="cmd-validator-->operator-validator update route">
         <from uri="eventbus:c-m-d-validator-update-bus-out" />
         <log
-            message="cmd-validator-->operator-validator update route ${bodyAs(String)}" />
+            message="cmd-validator-->operator-validator/supervisor-validator update route ${bodyAs(String)}" />
         <choice>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:operator-validator-bus-in" />
-            </when>
-			<when>
-                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
-                <to uri="eventbus:message-sender-bus-in" />
-            </when>
             <when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
                 <to uri="eventbus:retry-bus-in" />
             </when>
+			<when>
+                <simple>${bodyAs(String)} contains '"isValid":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+			<when>
+				<jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
+				<to uri="eventbus:operator-validator-bus-in" />
+			</when>
+			<when>
+				<jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
+				<to uri="eventbus:supervisor-validator-bus-in" />
+			</when>
             <otherwise>
                 <to uri="eventbus:error-bus-in" />
             </otherwise>
@@ -130,32 +134,36 @@
 	<route id="operator-validator-->supervisor-validator update route">
         <from uri="eventbus:operator-validator-update-bus-out" />
         <log
-            message="operator-validator-->supervisor-validator update route ${bodyAs(String)}" />
+            message="operator-validator-->supervisor-validator/introducer-validator/biometric-authentication-stage update route ${bodyAs(String)}" />
         <choice>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:supervisor-validator-bus-in" />
-            </when>
 			<when>
-                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
-                <to uri="eventbus:message-sender-bus-in" />
-            </when>
-            <when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
                 <to uri="eventbus:retry-bus-in" />
             </when>
+			<when>
+                <simple>${bodyAs(String)} contains '"isValid":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+			<when>
+				<jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
+				<to uri="eventbus:supervisor-validator-bus-in" />
+			</when>
+			<when>
+				<jsonpath suppressExceptions="true">$.[?((@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true') &amp;&amp; @['isValid'] == 'true')]</jsonpath>
+				<to uri="eventbus:introducer-validator-bus-in" />
+			</when>
             <otherwise>
-                <to uri="eventbus:error-bus-in" />
+                <to uri="eventbus:biometric-authentication-bus-in" />
             </otherwise>
         </choice>
     </route>
 	<route id="supervisor-validator-->introducer-validator update route">
         <from uri="eventbus:supervisor-validator-update-bus-out" />
 		<log
-            message="supervisor-validator-->introducer-validator/biometric-authentication-stage new route ${bodyAs(String)}" />
+            message="supervisor-validator-->introducer-validator/biometric-authentication-stage update route ${bodyAs(String)}" />
         <choice>
 			<when>
-				<jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'CHILD' &amp;&amp; @['isValid'] == 'true')]</jsonpath>
+				<jsonpath suppressExceptions="true">$.[?((@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true') &amp;&amp; @['isValid'] == 'true')]</jsonpath>
 				<to uri="eventbus:introducer-validator-bus-in" />
 			</when>
             <when>
