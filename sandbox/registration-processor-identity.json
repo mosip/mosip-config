@@ -15,13 +15,16 @@
       "age":{
          "value":"age"
       },
-      "parentOrGuardianRID":{
+      "introducerRID":{
          "value":"parentOrGuardianRID"
       },
-      "parentOrGuardianUIN":{
+      "introducerUIN":{
          "value":"parentOrGuardianUIN"
       },
-      "parentOrGuardianName":{
+      "introducerVID":{
+         "value":"parentOrGuardianVID"
+      },
+      "introducerName":{
          "value":"parentOrGuardianName"
       },
       "address":{
@@ -45,7 +48,7 @@
       "individualBiometrics":{
          "value":"individualBiometrics"
       },
-      "parentOrGuardianBiometrics":{
+      "introducerBiometrics":{
          "value":"parentOrGuardianBiometrics"
       },
       "individualAuthBiometrics":{
