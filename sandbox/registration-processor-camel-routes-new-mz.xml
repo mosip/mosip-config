@@ -239,7 +239,11 @@
         <from uri="eventbus:abis-handler-new-bus-out" />
         <log
             message="abis-handler-->abis-middleware new route ${bodyAs(String)}" />
-        <choice>
+        <choice> 
+        	<when>
+                <simple>${bodyAs(String)} contains '"isValid":false' </simple>
+				<to uri="eventbus:error-bus-in"/>
+            </when>
             <when>
                 <simple>${bodyAs(String)} contains '"address":"abis-middle-ware-bus-in"'</simple>
                 <to uri="eventbus:abis-middle-ware-bus-in" />
