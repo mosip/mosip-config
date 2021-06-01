@@ -16,7 +16,6 @@
            "description":"Enter Full Name",
            "labelName":{
            "eng":"Full Name",
-           "ara":"الاسم الكامل",
            "fra":"Nom complet"
            },
            "controlType":"textbox",
@@ -39,7 +38,6 @@
            "description":"Enter DOB",
            "labelName":{
            "eng":"Date Of Birth",
-           "ara":"تاريخ الولادة",
            "fra":"Date de naissance"
            },
            "controlType":"date",
@@ -55,7 +53,6 @@
            "description":"Enter Gender",
            "labelName":{
            "eng":"Gender",
-           "ara":"جنس",
            "fra":"Le genre"
            },
            "controlType":"dropdown",
@@ -72,7 +69,6 @@
            "description":"Residence status",
            "labelName":{
            "eng":"Residence Status",
-           "ara":"حالة الإقامة",
            "fra":"Statut de résidence"
            },
            "controlType":"dropdown",
@@ -89,7 +85,6 @@
            "description":"addressLine1",
            "labelName":{
            "eng":"Address Line1",
-           "ara":"العنوان السطر 1",
            "fra":"Adresse 1"
            },
            "controlType":"textbox",
@@ -112,7 +107,6 @@
            "description":"addressLine2",
            "labelName":{
            "eng":"Address Line2",
-           "ara":"العنوان السطر 2",
            "fra":"Adresse 2"
            },
            "controlType":"textbox",
@@ -135,7 +129,6 @@
            "description":"addressLine3",
            "labelName":{
            "eng":"Address Line3",
-           "ara":"العنوان السطر 3",
            "fra":"Adresse 3"
            },
            "controlType":"textbox",
@@ -158,7 +151,6 @@
            "description":"region",
            "labelName":{
            "eng":"Region",
-           "ara":"منطقة",
            "fra":"Région"
            },
            "controlType":"dropdown",
@@ -181,7 +173,6 @@
            "description":"province",
            "labelName":{
            "eng":"Province",
-           "ara":"المحافظة",
            "fra":"Province"
            },
            "controlType":"dropdown",
@@ -204,7 +195,6 @@
            "description":"city",
            "labelName":{
            "eng":"City",
-           "ara":"مدينة",
            "fra":"Ville"
            },
            "controlType":"dropdown",
@@ -227,7 +217,6 @@
            "description":"zone",
            "labelName":{
            "eng":"Zone",
-           "ara":"منطقة",
            "fra":"Zone"
            },
            "controlType":"dropdown",
@@ -244,7 +233,6 @@
            "description":"postalCode",
            "labelName":{
            "eng":"Postal Code",
-           "ara":"الكود البريدى",
            "fra":"code postal"
            },
            "controlType":"dropdown",
@@ -267,7 +255,6 @@
            "description":"phone",
            "labelName":{
            "eng":"Phone",
-           "ara":"هاتف",
            "fra":"Téléphone"
            },
            "controlType":"textbox",
@@ -290,7 +277,6 @@
            "description":"email",
            "labelName":{
            "eng":"Email",
-           "ara":"البريد الإلكتروني",
            "fra":"Email"
            },
            "controlType":"textbox",
