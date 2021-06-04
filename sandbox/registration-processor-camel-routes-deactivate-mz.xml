@@ -1,71 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <routes xmlns="http://camel.apache.org/schema/spring">
-    <route id="securezone-notification-->packet-uploader deactivated route">
-        <from uri="workflow-cmd://securezone-notification-deactivated-bus-out" />
-        <log
-                message="securezone-notification-->packet-uploader deactivated route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-            <otherwise>
-                <to uri="workflow-cmd://packet-uploader-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <!-- Packet uploader to uin-generator Route -->
-    <route id="packet-uploader-->uin-generator deactivated route">
-        <from uri="workflow-cmd://packet-uploader-deactivated-bus-out" />
-        <log
-            message="packet-uploader-->uin-generator deactivated route ${bodyAs(String)}" />
-        <choice>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-            <otherwise>
-                <to uri="workflow-cmd://uin-generator-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <!-- UIN Generator to Printing and Message Sender Route -->
-    <route id="uin-generation route-->printing-stage-->message-sender deactivated route">
-        <from uri="workflow-cmd://uin-generator-deactivated-bus-out" />
-        <log
-            message="uin-generation-->printing-stage and message-sender-stage deactivated route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<otherwise>
-                <to uri="workflow-cmd://printing-bus-in" />
-				<to uri="workflow-cmd://complete-as-processed" />
-            </otherwise>
-        </choice>
-    </route>
+   <route id="securezone-notification-->packet-uploader deactivated route">
+      <from uri="eventbus://securezone-notification-deactivated-bus-out" />
+      <log message="securezone-notification-->packet-uploader deactivated route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://packet-uploader-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <!-- Packet uploader to uin-generator Route -->
+   <route id="packet-uploader-->uin-generator deactivated route">
+      <from uri="eventbus://packet-uploader-deactivated-bus-out" />
+      <log message="packet-uploader-->uin-generator deactivated route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://uin-generator-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <!-- UIN Generator to Printing and Message Sender Route -->
+   <route id="uin-generation route-->printing-stage-->message-sender deactivated route">
+      <from uri="eventbus://uin-generator-deactivated-bus-out" />
+      <log message="uin-generation-->printing-stage and message-sender-stage deactivated route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://printing-bus-in" />
+            <to uri="workflow-cmd://complete-as-processed" />
+         </otherwise>
+      </choice>
+   </route>
 </routes>

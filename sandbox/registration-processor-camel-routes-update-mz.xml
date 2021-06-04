@@ -1,405 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <routes xmlns="http://camel.apache.org/schema/spring">
-    <!-- securezone-notification to packet-uploader Route -->
-    <route id="securezone-notification-->packet-uploader update route">
-        <from uri="workflow-cmd://securezone-notification-update-bus-out" />
-        <log
-                message="securezone-notification-->packet-uploader update route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-            <otherwise>
-                <to uri="workflow-cmd://packet-uploader-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <!-- packet-uploader to packet-validator Route -->
-    <route id="packet-uploader-->packet-validator update route">
-    <from uri="workflow-cmd://packet-uploader-update-bus-out" />
-    <log
-            message="packet-uploader-->packet-validator update route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-            <otherwise>
-                <to uri="workflow-cmd://packet-validator-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <!-- Packet Validator to Packet Classifier Route -->
-    <route id="packet-validator-->packet-classifier update route">
-        <from uri="workflow-cmd://packet-validator-update-bus-out" />
-        <log
-            message="packet-validator-->packet-classifier update route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-            <otherwise>
-                <to uri="workflow-cmd://packet-classifier-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <!-- Packet Classifier to Quality Checker Route -->
-    <route id="packet-classifier-->quality-checker update route">
-        <from uri="workflow-cmd://packet-classifier-update-bus-out" />
-        <log
-            message="packet-classifier-->quality-checker update route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-            <otherwise>
-                <to uri="workflow-cmd://quality-checker-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <route id="quality-checker-->cmd-validator update route">
-        <from uri="workflow-cmd://quality-checker-update-bus-out" />
-        <log
-            message="quality-checker-->cmd-validator update route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-            <when>
-                <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] != 'Poor' &amp;&amp; @['tags']['Biometric_Quality-Finger'] != 'Poor' &amp;&amp; @['tags']['Biometric_Quality-Face'] != 'Poor')]</jsonpath>
-                <to uri="workflow-cmd://c-m-d-validator-bus-in" />
-            </when>
-            <otherwise>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </otherwise>
-        </choice>
-    </route>
-	<route id="cmd-validator-->operator-validator update route">
-        <from uri="workflow-cmd://c-m-d-validator-update-bus-out" />
-        <log
-            message="cmd-validator-->operator-validator/supervisor-validator update route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
-				<to uri="workflow-cmd://operator-validator-bus-in" />
-			</when>
-			<when>
-				<jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
-				<to uri="workflow-cmd://supervisor-validator-bus-in" />
-			</when>
-            <otherwise>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </otherwise>
-        </choice>
-    </route>
-	<route id="operator-validator-->supervisor-validator update route">
-        <from uri="workflow-cmd://operator-validator-update-bus-out" />
-        <log
-            message="operator-validator-->supervisor-validator/introducer-validator/biometric-authentication-stage update route ${bodyAs(String)}" />
-        <choice>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
-				<to uri="workflow-cmd://supervisor-validator-bus-in" />
-			</when>
-            <when>
-				<jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true')]</jsonpath>
-				<to uri="workflow-cmd://introducer-validator-bus-in" />
-			</when>
-            <otherwise>
-                <to uri="workflow-cmd://biometric-authentication-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-	<route id="supervisor-validator-->introducer-validator update route">
-        <from uri="workflow-cmd://supervisor-validator-update-bus-out" />
-		<log
-            message="supervisor-validator-->introducer-validator/biometric-authentication-stage update route ${bodyAs(String)}" />
-        <choice>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true')]</jsonpath>
-				<to uri="workflow-cmd://introducer-validator-bus-in" />
-			</when>
-			<otherwise>
-                <to uri="workflow-cmd://biometric-authentication-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <route id="introducer-validator-->biometric-authentication-stage update route">
-        <from uri="workflow-cmd://introducer-validator-update-bus-out" />
-        <log
-            message="introducer-validator-->biometric-authentication-stage update route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-rejected" />
-            </when>
-			<otherwise>
-                <to uri="workflow-cmd://biometric-authentication-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <route id="biometric-authentication-stage-->demo-dedupe update route">
-        <from uri="workflow-cmd://biometric-authentication-update-bus-out" />
-        <log
-                message="biometric-authentication-stage-->demo-dedupe update route ${bodyAs(String)}" />
-        <choice>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-rejected" />
-            </when>
-			<otherwise>
-                <to uri="workflow-cmd://demo-dedupe-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <route id="demo-dedupe-->bio-dedupe update update route">
-        <from uri="workflow-cmd://demo-dedupe-update-bus-out" />
-        <log
-            message="demo-dedupe-->bio-dedupe update route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-rejected" />
-            </when>
-			<when>
-                <jsonpath suppressExceptions="true">$.[?(@['address'] == 'abis-handler-bus-in')]</jsonpath>
-                <to uri="workflow-cmd://abis-handler-bus-in" />
-            </when>
-			<when>
-                <jsonpath suppressExceptions="true">$.[?(@['address'] == 'manual-verification-bus-in')]</jsonpath>
-                <to uri="workflow-cmd://manual-verification-bus-in" />
-            </when>
-			<otherwise>
-                <to uri="workflow-cmd://bio-dedupe-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <route id="abis-handler-->abis-middleware update route">
-        <from uri="workflow-cmd://abis-handler-update-bus-out" />
-        <log
-            message="abis-handler-->abis-middleware update route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-                <jsonpath suppressExceptions="true">$.[?(@['address'] == 'abis-middle-ware-bus-in')]</jsonpath>
-                <to uri="workflow-cmd://abis-middle-ware-bus-in" />
-            </when>
-			<when>
-                <jsonpath suppressExceptions="true">$.[?(@['address'] == 'demo-dedupe-bus-in')]</jsonpath>
-                <to uri="workflow-cmd://demo-dedupe-bus-in" />
-            </when>
-			<when>
-                <jsonpath suppressExceptions="true">$.[?(@['address'] == 'bio-dedupe-bus-in')]</jsonpath>
-                <to uri="workflow-cmd://bio-dedupe-bus-in" />
-            </when>
-        </choice>
-    </route>
-    <route id="bio-dedupe-->uin-generation update route">
-        <from uri="workflow-cmd://bio-dedupe-update-bus-out" />
-        <log
-            message="bio-dedupe-->uin-generation update route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-rejected" />
-            </when>
-            <when>
-                <jsonpath suppressExceptions="true">$.[?(@['address'] == 'abis-handler-bus-in')]</jsonpath>
-                <to uri="workflow-cmd://abis-handler-bus-in" />
-            </when>
-			<otherwise>
-                <to uri="workflow-cmd://uin-generator-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-	<route id="abis-middleware route-->abis-handler update route">
-        <from uri="workflow-cmd://abis-middle-ware-update-bus-out" />
-        <log
-            message="abis-middleware route-->abis-handler update route ${bodyAs(String)}" />
-        <choice>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<otherwise>
-                <to uri="workflow-cmd://abis-handler-bus-in" />
-            </otherwise>
-        </choice>   
-    </route>
-    <route id="manual-verification-->uin-generation update route">
-        <from uri="workflow-cmd://manual-verification-update-bus-out" />
-        <log
-            message="manual-verification-->uin-generation update route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<otherwise>
-                <to uri="workflow-cmd://uin-generator-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <!-- UIN Generator to Printing and Message Sender Route -->
-    <route id="uin-generation route-->printing-stage-->message-sender update route">
-        <from uri="workflow-cmd://uin-generator-update-bus-out" />
-        <log
-            message="uin-generation-->printing-stage and message-sender-stage update route ${bodyAs(String)}" />
-        <choice>
-            <when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
-            </when>
-			<when>
-				<jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
-            </when>
-			<otherwise>
-                <to uri="workflow-cmd://printing-bus-in" />
-				<to uri="workflow-cmd://complete-as-processed" />
-            </otherwise>
-        </choice>
-    </route>
+   <!-- securezone-notification to packet-uploader Route -->
+   <route id="securezone-notification-->packet-uploader update route">
+      <from uri="eventbus://securezone-notification-update-bus-out" />
+      <log message="securezone-notification-->packet-uploader update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://packet-uploader-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <!-- packet-uploader to packet-validator Route -->
+   <route id="packet-uploader-->packet-validator update route">
+      <from uri="eventbus://packet-uploader-update-bus-out" />
+      <log message="packet-uploader-->packet-validator update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://packet-validator-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <!-- Packet Validator to Packet Classifier Route -->
+   <route id="packet-validator-->packet-classifier update route">
+      <from uri="eventbus://packet-validator-update-bus-out" />
+      <log message="packet-validator-->packet-classifier update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://packet-classifier-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <!-- Packet Classifier to Quality Checker Route -->
+   <route id="packet-classifier-->quality-checker update route">
+      <from uri="eventbus://packet-classifier-update-bus-out" />
+      <log message="packet-classifier-->quality-checker update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://quality-checker-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="quality-checker-->cmd-validator update route">
+      <from uri="eventbus://quality-checker-update-bus-out" />
+      <log message="quality-checker-->cmd-validator update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] != 'Poor' &amp;&amp; @['tags']['Biometric_Quality-Finger'] != 'Poor' &amp;&amp; @['tags']['Biometric_Quality-Face'] != 'Poor')]</jsonpath>
+            <to uri="eventbus://c-m-d-validator-bus-in" />
+         </when>
+         <otherwise>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="cmd-validator-->operator-validator update route">
+      <from uri="eventbus://c-m-d-validator-update-bus-out" />
+      <log message="cmd-validator-->operator-validator/supervisor-validator update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
+            <to uri="eventbus://operator-validator-bus-in" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
+            <to uri="eventbus://supervisor-validator-bus-in" />
+         </when>
+         <otherwise>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="operator-validator-->supervisor-validator update route">
+      <from uri="eventbus://operator-validator-update-bus-out" />
+      <log message="operator-validator-->supervisor-validator/introducer-validator/biometric-authentication-stage update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
+            <to uri="eventbus://supervisor-validator-bus-in" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true')]</jsonpath>
+            <to uri="eventbus://introducer-validator-bus-in" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://biometric-authentication-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="supervisor-validator-->introducer-validator update route">
+      <from uri="eventbus://supervisor-validator-update-bus-out" />
+      <log message="supervisor-validator-->introducer-validator/biometric-authentication-stage update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true')]</jsonpath>
+            <to uri="eventbus://introducer-validator-bus-in" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://biometric-authentication-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="introducer-validator-->biometric-authentication-stage update route">
+      <from uri="eventbus://introducer-validator-update-bus-out" />
+      <log message="introducer-validator-->biometric-authentication-stage update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-rejected" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://biometric-authentication-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="biometric-authentication-stage-->demo-dedupe update route">
+      <from uri="eventbus://biometric-authentication-update-bus-out" />
+      <log message="biometric-authentication-stage-->demo-dedupe update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-rejected" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://demo-dedupe-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="demo-dedupe-->bio-dedupe update update route">
+      <from uri="eventbus://demo-dedupe-update-bus-out" />
+      <log message="demo-dedupe-->bio-dedupe update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-rejected" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'abis-handler-bus-in')]</jsonpath>
+            <to uri="eventbus://abis-handler-bus-in" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'manual-verification-bus-in')]</jsonpath>
+            <to uri="eventbus://manual-verification-bus-in" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://bio-dedupe-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="abis-handler-->abis-middleware update route">
+      <from uri="eventbus://abis-handler-update-bus-out" />
+      <log message="abis-handler-->abis-middleware update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'abis-middle-ware-bus-in')]</jsonpath>
+            <to uri="eventbus://abis-middle-ware-bus-in" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'demo-dedupe-bus-in')]</jsonpath>
+            <to uri="eventbus://demo-dedupe-bus-in" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'bio-dedupe-bus-in')]</jsonpath>
+            <to uri="eventbus://bio-dedupe-bus-in" />
+         </when>
+      </choice>
+   </route>
+   <route id="bio-dedupe-->uin-generation update route">
+      <from uri="eventbus://bio-dedupe-update-bus-out" />
+      <log message="bio-dedupe-->uin-generation update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-rejected" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'abis-handler-bus-in')]</jsonpath>
+            <to uri="eventbus://abis-handler-bus-in" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://uin-generator-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="abis-middleware route-->abis-handler update route">
+      <from uri="eventbus://abis-middle-ware-update-bus-out" />
+      <log message="abis-middleware route-->abis-handler update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://abis-handler-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="manual-verification-->uin-generation update route">
+      <from uri="eventbus://manual-verification-update-bus-out" />
+      <log message="manual-verification-->uin-generation update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://uin-generator-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <!-- UIN Generator to Printing and Message Sender Route -->
+   <route id="uin-generation route-->printing-stage-->message-sender update route">
+      <from uri="eventbus://uin-generator-update-bus-out" />
+      <log message="uin-generation-->printing-stage and message-sender-stage update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://printing-bus-in" />
+            <to uri="workflow-cmd://complete-as-processed" />
+         </otherwise>
+      </choice>
+   </route>
 </routes>
