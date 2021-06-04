@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <routes xmlns="http://camel.apache.org/schema/spring">
    <!-- Packet-Reciever to packet-uploader Route -->
    <route id="packet-reciever-->packet-uploader res_reprint route">
