@@ -4,27 +4,27 @@
          "value":"IDSchemaVersion"
       },
       "name":{
-         "value":"fullName",
-         "isMandatory":true
+         "value":"fullName"
       },
       "gender":{
-         "value":"gender",
-         "isMandatory":true
+         "value":"gender"
       },
       "dob":{
-         "value":"dateOfBirth",
-         "isMandatory":true
+         "value":"dateOfBirth"
       },
       "age":{
          "value":"age"
       },
-      "parentOrGuardianRID":{
+      "introducerRID":{
          "value":"parentOrGuardianRID"
       },
-      "parentOrGuardianUIN":{
+      "introducerUIN":{
          "value":"parentOrGuardianUIN"
       },
-      "parentOrGuardianName":{
+      "introducerVID":{
+         "value":"parentOrGuardianVID"
+      },
+      "introducerName":{
          "value":"parentOrGuardianName"
       },
       "address":{
@@ -48,7 +48,7 @@
       "individualBiometrics":{
          "value":"individualBiometrics"
       },
-      "parentOrGuardianBiometrics":{
+      "introducerBiometrics":{
          "value":"parentOrGuardianBiometrics"
       },
       "individualAuthBiometrics":{
