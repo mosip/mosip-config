@@ -42,10 +42,10 @@
          </otherwise>
       </choice>
    </route>
-   <!-- UIN Generator to Printing and Message Sender Route -->
-   <route id="uin-generation route-->printing-stage-->message-sender deactivated route">
+   <!-- UIN Generator to Printing Route -->
+   <route id="uin-generation route-->printing-stage deactivated route">
       <from uri="eventbus://uin-generator-deactivated-bus-out" />
-      <log message="uin-generation-->printing-stage and message-sender-stage deactivated route ${bodyAs(String)}" />
+      <log message="uin-generation-->printing-stage deactivated route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>

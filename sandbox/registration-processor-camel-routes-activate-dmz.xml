@@ -1,8 +1,8 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
-   <!-- Packet-Reciever to packet-uploader Route -->
-   <route id="packet-reciever-->packet-uploader activated route">
+   <!-- Packet-Reciever to securezone-notification Route -->
+   <route id="packet-reciever-->securezone-notification activated route">
       <from uri="eventbus://packet-receiver-activated-bus-out" />
-      <log message="packet-reciever-->packet-uploader activated-route ${bodyAs(String)}" />
+      <log message="packet-reciever-->securezone-notification activated-route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>

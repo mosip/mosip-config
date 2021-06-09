@@ -104,7 +104,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] != 'Poor' &amp;&amp; @['tags']['Biometric_Quality-Finger'] != 'Poor' &amp;&amp; @['tags']['Biometric_Quality-Face'] != 'Poor')]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Average', 'Good'] &amp;&amp; @['tags']['Biometric_Quality-Finger'] in ['Average', 'Good'] &amp;&amp; @['tags']['Biometric_Quality-Face'] in ['Average', 'Good'])]</jsonpath>
             <to uri="eventbus://c-m-d-validator-bus-in" />
          </when>
          <otherwise>
@@ -240,6 +240,9 @@
             <jsonpath suppressExceptions="true">$.[?(@['address'] == 'bio-dedupe-bus-in')]</jsonpath>
             <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
+		 <otherwise>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </otherwise>
       </choice>
    </route>
    <route id="abis-middleware route-->abis-handler lost route">
@@ -275,16 +278,16 @@
          </when>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://complete-as-rejected" />
          </when>
          <otherwise>
             <to uri="eventbus://uin-generator-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="uin-generation-lost-->message-sender-stage-->printing-stage lost route">
+   <route id="uin-generation-lost-->printing-stage lost route">
       <from uri="eventbus://uin-generator-lost-bus-out" />
-      <log message="uin-generation-lost-->message-sender-stage lost route ${bodyAs(String)}" />
+      <log message="uin-generation-lost-->printing-stage lost route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>

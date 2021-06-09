@@ -117,6 +117,9 @@
             <jsonpath suppressExceptions="true">$.[?(@['address'] == 'bio-dedupe-bus-in')]</jsonpath>
             <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
+		 <otherwise>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </otherwise>
       </choice>
    </route>
    <route id="manual-verification-->uin-generation res_update route">
@@ -133,17 +136,17 @@
          </when>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://complete-as-rejected" />
          </when>
          <otherwise>
             <to uri="eventbus://uin-generator-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <!-- UIN Generator to Printing and Message Sender Route -->
-   <route id="uin-generation route-->printing-stage-->message-sender res_update route">
+   <!-- UIN Generator to Printing Route -->
+   <route id="uin-generation route-->printing-stage res_update route">
       <from uri="eventbus://uin-generator-res_update-bus-out" />
-      <log message="uin-generation-->printing-stage and message-sender-stage res_update route ${bodyAs(String)}" />
+      <log message="uin-generation-->printing-stage res_update route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>

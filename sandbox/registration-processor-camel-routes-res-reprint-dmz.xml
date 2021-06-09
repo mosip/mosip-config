@@ -1,8 +1,8 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
-   <!-- Packet-Reciever to packet-uploader Route -->
-   <route id="packet-reciever-->packet-uploader res_reprint route">
+   <!-- Packet-Reciever to securezone-notification Route -->
+   <route id="packet-reciever-->securezone-notification res_reprint route">
       <from uri="eventbus://packet-receiver-res_reprint-bus-out" />
-      <log message="packet-reciever-->packet-uploader res_reprint ${bodyAs(String)}" />
+      <log message="packet-reciever-->securezone-notification res_reprint ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
