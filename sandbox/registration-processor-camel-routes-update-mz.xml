@@ -65,10 +65,10 @@
          </otherwise>
       </choice>
    </route>
-   <!-- Packet Classifier to Quality Checker Route -->
-   <route id="packet-classifier-->quality-checker update route">
+   <!-- Packet Classifier to Quality Classifier Route -->
+   <route id="packet-classifier-->quality-classifier update route">
       <from uri="eventbus://packet-classifier-update-bus-out" />
-      <log message="packet-classifier-->quality-checker update route ${bodyAs(String)}" />
+      <log message="packet-classifier-->quality-classifier update route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -83,13 +83,13 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="eventbus://quality-checker-bus-in" />
+            <to uri="eventbus://quality-classifier-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="quality-checker-->cmd-validator update route">
-      <from uri="eventbus://quality-checker-update-bus-out" />
-      <log message="quality-checker-->cmd-validator update route ${bodyAs(String)}" />
+   <route id="quality-classifier-->cmd-validator update route">
+      <from uri="eventbus://quality-classifier-update-bus-out" />
+      <log message="quality-classifier-->cmd-validator update route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
