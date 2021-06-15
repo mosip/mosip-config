@@ -81,7 +81,7 @@
             <to uri="workflow-cmd://complete-as-rejected" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'abis-handler-bus-in')]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
             <to uri="eventbus://abis-handler-bus-in" />
          </when>
          <otherwise>
@@ -106,15 +106,15 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'abis-middle-ware-bus-in')]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-middle-ware-bus-in')]</jsonpath>
             <to uri="eventbus://abis-middle-ware-bus-in" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'demo-dedupe-bus-in')]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'demo-dedupe-bus-in')]</jsonpath>
             <to uri="eventbus://demo-dedupe-bus-in" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'bio-dedupe-bus-in')]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'bio-dedupe-bus-in')]</jsonpath>
             <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
 		 <otherwise>
