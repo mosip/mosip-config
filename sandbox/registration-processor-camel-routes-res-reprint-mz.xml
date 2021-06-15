@@ -43,8 +43,8 @@
          </otherwise>
       </choice>
    </route>
-   <route id="printing-stage--> new route">
-      <from uri="eventbus://printing-stage-new-bus-out" />
+   <route id="printing-stage--> res_reprint route">
+      <from uri="eventbus://printing-stage-res_reprint-bus-out" />
       <log message="printing-stage--> route ${bodyAs(String)}" />
       <choice>
          <when>

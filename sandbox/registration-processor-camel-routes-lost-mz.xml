@@ -204,11 +204,11 @@
             <to uri="workflow-cmd://complete-as-rejected" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'abis-handler-bus-in')]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
             <to uri="eventbus://abis-handler-bus-in" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'manual-verification-bus-in')]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-verification-bus-in')]</jsonpath>
             <to uri="eventbus://manual-verification-bus-in" />
          </when>
          <otherwise>
@@ -233,11 +233,11 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'abis-middle-ware-bus-in')]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-middle-ware-bus-in')]</jsonpath>
             <to uri="eventbus://abis-middle-ware-bus-in" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['address'] == 'bio-dedupe-bus-in')]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'bio-dedupe-bus-in')]</jsonpath>
             <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
 		 <otherwise>
@@ -306,8 +306,8 @@
          </otherwise>
       </choice>
    </route>
-   <route id="printing-stage--> new route">
-      <from uri="eventbus://printing-stage-new-bus-out" />
+   <route id="printing-stage--> lost route">
+      <from uri="eventbus://printing-stage-lost-bus-out" />
       <log message="printing-stage--> route ${bodyAs(String)}" />
       <choice>
          <when>
