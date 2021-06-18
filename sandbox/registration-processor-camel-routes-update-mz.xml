@@ -104,7 +104,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Average', 'Good'] &amp;&amp; @['tags']['Biometric_Quality-Finger'] in ['Average', 'Good'] &amp;&amp; @['tags']['Biometric_Quality-Face'] in ['Average', 'Good'])]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Average', 'Good','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Finger'] in ['Average', 'Good', '--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Face'] in ['Average', 'Good', '--Biometrics-Not-Available--'])]</jsonpath>
             <to uri="eventbus://c-m-d-validator-bus-in" />
          </when>
          <otherwise>
