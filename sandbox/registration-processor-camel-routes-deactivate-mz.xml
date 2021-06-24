@@ -42,9 +42,10 @@
          </otherwise>
       </choice>
    </route>
-   <route id="uin-generation route--> deactivated route">
+   <!-- UIN Generator to Printing Route -->
+   <route id="uin-generation route-->printing-stage deactivated route">
       <from uri="eventbus://uin-generator-deactivated-bus-out" />
-      <log message="uin-generation--> deactivated route ${bodyAs(String)}" />
+      <log message="uin-generation-->printing-stage deactivated route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -59,6 +60,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
+            <to uri="eventbus://printing-bus-in" />
             <to uri="workflow-cmd://complete-as-processed" />
          </otherwise>
       </choice>
