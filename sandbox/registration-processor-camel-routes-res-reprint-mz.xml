@@ -1,40 +1,67 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
-    <!-- securezone-notification to packet-uploader Route -->
-    <route id="securezone-notification-->packet-uploader res_reprint route">
-        <from uri="eventbus:securezone-notification-res_reprint-bus-out" />
-        <log
-                message="securezone-notification-->packet-uploader res_reprint route ${bodyAs(String)}" />
-        <choice>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:packet-uploader-bus-in" />
-            </when>
-            <when>
-                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
-                <to uri="eventbus:retry-bus-in" />
-            </when>
-            <otherwise>
-                <to uri="eventbus:error-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <!-- packet-uploader to printing-stage Route -->
-    <route id="packet-uploader-->printing-stage res_reprint route">
-    <from uri="eventbus:packet-uploader-res_reprint-bus-out" />
-    <log
-            message="packet-uploader-->printing-stage res_reprint route ${bodyAs(String)}" />
-        <choice>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:printing-bus-in" />
-            </when>
-            <when>
-                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
-                <to uri="eventbus:retry-bus-in" />
-            </when>
-            <otherwise>
-                <to uri="eventbus:error-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
+   <!-- securezone-notification to packet-uploader Route -->
+   <route id="securezone-notification-->packet-uploader res_reprint route">
+      <from uri="eventbus://securezone-notification-res_reprint-bus-out" />
+      <log message="securezone-notification-->packet-uploader res_reprint route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://packet-uploader-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <!-- packet-uploader to printing-stage Route -->
+   <route id="packet-uploader-->printing-stage res_reprint route">
+      <from uri="eventbus://packet-uploader-res_reprint-bus-out" />
+      <log message="packet-uploader-->printing-stage res_reprint route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://printing-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="printing-stage--> res_reprint route">
+      <from uri="eventbus://printing-stage-res_reprint-bus-out" />
+      <log message="printing-stage--> route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="workflow-cmd://complete-as-processed" />
+         </otherwise>
+      </choice>
+   </route>
 </routes>
