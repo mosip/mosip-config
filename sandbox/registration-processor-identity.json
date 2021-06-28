@@ -16,16 +16,16 @@
          "value":"age"
       },
       "introducerRID":{
-         "value":"parentOrGuardianRID"
+         "value":"introducerRID"
       },
       "introducerUIN":{
-         "value":"parentOrGuardianUIN"
+         "value":"introducerUIN"
       },
       "introducerVID":{
-         "value":"parentOrGuardianVID"
+         "value":"introducerVID"
       },
       "introducerName":{
-         "value":"parentOrGuardianName"
+         "value":"introducerName"
       },
       "address":{
          "value":"permanentAddressLine1,permanentAddressLine2,permanentAddressLine3,permanentRegion,permanentProvince,permanentZone,permanentPostalcode"
@@ -49,7 +49,7 @@
          "value":"individualBiometrics"
       },
       "introducerBiometrics":{
-         "value":"parentOrGuardianBiometrics"
+         "value":"introducerBiometrics"
       },
       "individualAuthBiometrics":{
          "value":"individualAuthBiometrics"
