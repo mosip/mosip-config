@@ -110,6 +110,7 @@
 		  <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Poor'] || @['tags']['Biometric_Quality-Finger'] in ['Poor'] || @['tags']['Biometric_Quality-Face'] in ['Poor'])]</jsonpath>
             <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
+			 <!-- PAUSE_FOR is in seconds -->
             <setProperty propertyName="PAUSE_FOR"><constant>200</constant></setProperty>
             <to uri="workflow-cmd://pause-and-request-additional-info" />
          </when>
