@@ -246,7 +246,7 @@
            "fra":"Adresse 1"
            },
            "controlType":"textbox",
-           "inputRequired":false,
+           "inputRequired":true,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -269,7 +269,7 @@
            "fra":"permanentAddressLine2"
            },
            "controlType":"textbox",
-           "inputRequired":false,
+           "inputRequired":true,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -292,7 +292,7 @@
            "fra":"Adresse 3"
            },
            "controlType":"textbox",
-           "inputRequired":false,
+           "inputRequired":true,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -315,7 +315,7 @@
            "fra":"Adresse 4"
            },
            "controlType":"textbox",
-           "inputRequired":false,
+           "inputRequired":true,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -338,7 +338,7 @@
            "fra":"Permanent Country"
            },
            "controlType":"dropdown",
-           "inputRequired":false,
+           "inputRequired":true,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -350,7 +350,7 @@
                  ]
               }
            ],
-           "required":false
+           "required":true
         },
                 {
            "id":"permanentProvince",
@@ -361,7 +361,7 @@
            "fra":"Permanent Province"
            },
            "controlType":"dropdown",
-           "inputRequired":false,
+           "inputRequired":true,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -373,7 +373,7 @@
                  ]
               }
            ],
-           "required":false
+           "required":true
         },
         {
            "id":"permanentCity",
@@ -384,7 +384,7 @@
            "fra":"Permanent City / Municipality"
            },
            "controlType":"dropdown",
-           "inputRequired":false,
+           "inputRequired":true,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -396,7 +396,7 @@
                  ]
               }
            ],
-           "required":false
+           "required":true
         },
         {
            "id":"permanentBarangay",
@@ -407,7 +407,7 @@
            "fra":"Permanent Barangay"
            },
            "controlType":"dropdown",
-           "inputRequired":false,
+           "inputRequired":true,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -419,7 +419,7 @@
                  ]
               }
            ],
-           "required":false
+           "required":true
         },
                 {
            "id":"permananentZipCode",
@@ -430,7 +430,7 @@
            "fra":"Permananent ZIP Code"
            },
            "controlType":"dropdown",
-           "inputRequired":false,
+           "inputRequired":true,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -442,7 +442,7 @@
                  ]
               }
            ],
-           "required":false
+           "required":true
         },
                 {
            "id":"presentAddressLine1",
@@ -453,7 +453,7 @@
            "fra":"Present Adresse 1"
            },
            "controlType":"textbox",
-           "inputRequired":true,
+           "inputRequired":false,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -476,7 +476,7 @@
            "fra":"Present Adresse 2"
            },
            "controlType":"textbox",
-           "inputRequired":true,
+           "inputRequired":false,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -499,7 +499,7 @@
            "fra":"Adresse 3"
            },
            "controlType":"textbox",
-           "inputRequired":true,
+           "inputRequired":false,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -522,7 +522,7 @@
            "fra":"Adresse 4"
            },
            "controlType":"textbox",
-           "inputRequired":true,
+           "inputRequired":false,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -545,7 +545,7 @@
            "fra":"Present Country"
            },
            "controlType":"dropdown",
-           "inputRequired":true,
+           "inputRequired":false,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -557,7 +557,7 @@
                  ]
               }
            ],
-           "required":true
+           "required":false
         },
                 {
            "id":"presentProvince",
@@ -568,7 +568,7 @@
            "fra":"Present Province"
            },
            "controlType":"dropdown",
-           "inputRequired":true,
+           "inputRequired":false,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -591,7 +591,7 @@
            "fra":"Present Municipal"
            },
            "controlType":"dropdown",
-           "inputRequired":true,
+           "inputRequired":false,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -614,7 +614,7 @@
            "fra":"Région"
            },
            "controlType":"dropdown",
-           "inputRequired":true,
+           "inputRequired":false,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -637,7 +637,7 @@
            "fra":"code postal"
            },
            "controlType":"dropdown",
-           "inputRequired":true,
+           "inputRequired":false,
            "fieldType":"default",
            "type": "simpleType",
            "validators":[
@@ -762,5 +762,5 @@
            "required":true
         }
    ],
-   "locationHierarchy": ["presentCountry","presentProvince","presentCity","presentBarangay","presentZipcode"]
+   "locationHierarchy": ["permanentCountry","permanentProvince","permanentCity","permanentBarangay","permanentZipcode"]
 }

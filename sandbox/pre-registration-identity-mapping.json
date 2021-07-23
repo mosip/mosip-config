@@ -8,7 +8,7 @@
 			"value" : "proofOfAddress"
 		},
 		"postalCode": {
-			"value" : "presentCountry"
+			"value" : "permanentCountry"
 		}
 	}
 }  
