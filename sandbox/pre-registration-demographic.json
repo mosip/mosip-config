@@ -422,10 +422,10 @@
            "required":true
         },
                 {
-           "id":"permananentZipCode",
+           "id":"permanentZipcode",
            "description":"permananentZipCode",
            "labelName":{
-           "eng":"Permananent ZIP Code",
+           "eng":"Permanent ZIP Code",
            "ara":"الكود البريدى",
            "fra":"Permananent ZIP Code"
            },
