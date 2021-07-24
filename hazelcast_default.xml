@@ -13,7 +13,7 @@
 	xmlns="http://www.hazelcast.com/schema/config"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
  <properties>
-   <property name="hazelcast.discovery.enabled">true</property>
+   <property name="hazelcast.discovery.enabled">false</property>
    <property name="hazelcast.logging.type">slf4j</property>
  </properties>
 <group>
@@ -25,7 +25,7 @@
      <multicast enabled="false"/>
      <tcp-ip enabled="false" />
      <discovery-strategies>
-       <discovery-strategy enabled="true"
+       <discovery-strategy enabled="false"
            class="com.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy">
          <properties>
            <property name="service-dns">service-hazelcast-server.default.svc.cluster.local</property>
