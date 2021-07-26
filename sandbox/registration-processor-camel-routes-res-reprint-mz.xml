@@ -44,7 +44,7 @@
       </choice>
    </route>
    <route id="printing-stage--> res_reprint route">
-      <from uri="eventbus://printing-stage-res_reprint-bus-out" />
+      <from uri="eventbus://printing-res_reprint-bus-out" />
       <log message="printing-stage--> route ${bodyAs(String)}" />
       <choice>
          <when>
