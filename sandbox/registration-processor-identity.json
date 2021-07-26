@@ -12,6 +12,9 @@
       "dob":{
          "value":"dateOfBirth"
       },
+      "preferredLang":{
+		   "value":"preferredLang"
+	   },
       "age":{
          "value":"age"
       },
