@@ -13,8 +13,8 @@
          "value":"dateOfBirth"
       },
       "preferredLang":{
-		   "value":"preferredLang"
-	   },
+	 "value":"preferredLang"
+      },
       "age":{
          "value":"age"
       },
