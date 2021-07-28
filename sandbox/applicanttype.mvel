@@ -18,7 +18,7 @@ def getApplicantType(map,a) {
                 String ATTR_DATE_OF_BIRTH = "dateofbirth";
                 String ATTR_GENDER_TYPE = "genderCode";
                 String ATTR_BIOMETRIC_EXCEPTION_TYPE = "biometricAvailable";
-                String UTC_DATETIME_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+                String UTC_DATETIME_PATTERN = "uuuu/MM/dd";
                 itc= (String) map[ATTR_INDIVIDUAL_TYPE];
                 dob= (String) map[ATTR_DATE_OF_BIRTH];
                 if(dob == empty || dob == null ){
@@ -26,7 +26,7 @@ def getApplicantType(map,a) {
              }
                 int age = -1;
                 LocalDate currentDate = LocalDate.now();
-                LocalDate birthDate = LocalDateTime.parse(dob, DateTimeFormatter.ofPattern(UTC_DATETIME_PATTERN)).toLocalDate();
+                LocalDate birthDate = LocalDate.parse(dob, DateTimeFormatter.ofPattern(UTC_DATETIME_PATTERN));
                 if (birthDate != null && currentDate != null && !birthDate.isAfter(currentDate)) {
                         age = Period.between(birthDate, currentDate).getYears();
                 }

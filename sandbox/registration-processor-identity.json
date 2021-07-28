@@ -4,8 +4,14 @@
          "value":"IDSchemaVersion"
       },
       "name":{
-         "value":"fullName",
+         "value":"firstName,lastName",
          "isMandatory":true
+      },
+      "firstName": {
+         "value": "firstName"
+      },
+      "lastName": {
+         "value": "lastName"
       },
       "gender":{
          "value":"gender",
@@ -28,10 +34,10 @@
          "value":"parentOrGuardianName"
       },
       "address":{
-         "value":"permanentAddressLine1,permanentAddressLine2,permanentAddressLine3,permanentRegion,permanentProvince,permanentZone,permanentPostalcode"
+         "value":"additionalAddressDetails,sector,district,subPrefectureOrCommune,prefecture,region"
       },
       "city":{
-         "value":"permanentCity"
+         "value":"district"
       },
       "phone":{
          "value":"phone"
@@ -40,7 +46,7 @@
          "value":"email"
       },
       "localAdministrativeAuthority":{
-         "value":"localAdministrativeAuthority"
+         "value":""
       },
       "uin":{
          "value":"UIN"
@@ -86,6 +92,9 @@
       },
       "poe":{
          "value":"proofOfException"
+      },
+      "poc":{
+         "value":"proofOfConsent"
       }
    }
 }

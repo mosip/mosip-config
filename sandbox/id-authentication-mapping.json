@@ -1,7 +1,8 @@
 {
 	"ida-mapping": {
 		"name": [
-			"fullName"
+			"firstName",
+			"lastName"
 		],
 		"dob": [
 			"dateOfBirth"
@@ -19,34 +20,32 @@
 			"email"
 		],
 		"addressLine1": [
-			"addressLine1"
+			"additionalAddressDetails"
 		],
 		"addressLine2": [
-			"addressLine2"
+			""
 		],
 		"addressLine3": [
-			"addressLine3"
+			""
 		],
 		"location1": [
-			"city"
+			"district"
 		],
 		"location2": [
-			"region"
+			"prefecture"
 		],
 		"location3": [
-			"province"
+			"region"
 		],
 		"postalCode": [
-			"postalCode"
+			""
 		],
 		"fullAddress": [
-			"addressLine1",
-			"addressLine2",
-			"addressLine3",
-			"city",
-			"region",
-			"province",
-			"postalCode"
+			"sector",
+			"district",
+			"subPrefectureOrCommune",
+			"prefecture",
+			"region"
 		],
 		"iris": [
 			"CBEFF"
