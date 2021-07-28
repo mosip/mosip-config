@@ -307,7 +307,7 @@
       </choice>
    </route>
    <route id="printing-stage--> lost route">
-      <from uri="eventbus://printing-stage-lost-bus-out" />
+      <from uri="eventbus://printing-lost-bus-out" />
       <log message="printing-stage--> route ${bodyAs(String)}" />
       <choice>
          <when>

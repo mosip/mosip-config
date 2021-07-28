@@ -389,7 +389,7 @@
       </choice>
    </route>
    <route id="printing-stage--> update route">
-      <from uri="eventbus://printing-stage-update-bus-out" />
+      <from uri="eventbus://printing-update-bus-out" />
       <log message="printing-stage--> route ${bodyAs(String)}" />
       <choice>
          <when>
