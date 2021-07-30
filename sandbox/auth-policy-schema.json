@@ -59,8 +59,7 @@
 	"required":[
 		"authTokenType",
 		"allowedAuthTypes",
-		"allowedKycAttributes",
-		"kycLanguages"
+		"allowedKycAttributes"
 	],
 	"additionalProperties": false	
 }
