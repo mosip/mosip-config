@@ -106,7 +106,7 @@
 	  <when>
              <jsonpath suppressExceptions="true">$.[?(@['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['FAILED'] || @['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['REJECTED'])]</jsonpath>
              <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
-             <setProperty propertyName="PAUSE_FOR"><constant>200</constant></setProperty>
+             <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
              <to uri="workflow-cmd://pause-and-request-additional-info" />
          </when>
          <when>
