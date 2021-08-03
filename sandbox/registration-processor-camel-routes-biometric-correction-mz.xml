@@ -44,7 +44,7 @@
       </choice>
    </route>
    <!-- Packet Validator to Packet classifier Route -->
-   <route id="packet-validator-->packet-classifier new route">
+   <route id="packet-validator-->packet-classifier biometric_correction route">
       <from uri="eventbus://packet-validator-biometric_correction-bus-out" />
       <log message="packet-validator-->packet-classifier new route ${bodyAs(String)}" />
       <choice>
@@ -66,9 +66,9 @@
       </choice>
    </route>
    <!-- Packet Classifier to cmd-validator Route -->
-   <route id="packet-validator-->cmd-validator biometric_correction route">
+   <route id="packet-classifier-->cmd-validator biometric_correction route">
       <from uri="eventbus://packet-classifier-biometric_correction-bus-out" />
-      <log message="packet-validator-->packet-classifier biometric_correction route ${bodyAs(String)}" />
+      <log message="packet-classifier-->cmd-validator biometric_correction route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
