@@ -3,6 +3,7 @@ def getApplicantType(map,a) {
                  import java.time.LocalDateTime;
                  import java.time.format.DateTimeFormatter;
                  import java.time.Period;
+                 import java.util.List;
                 String itc = null;
                 String dob = null;
                 String genderType = null;
@@ -14,12 +15,13 @@ def getApplicantType(map,a) {
                 String Others = "OTH";
                 String CHILD = "CHL";
                 String ADULT = "ADL";
-                String ATTR_INDIVIDUAL_TYPE = "individualTypeCode";
-                String ATTR_DATE_OF_BIRTH = "dateofbirth";
-                String ATTR_GENDER_TYPE = "genderCode";
+                String ATTR_INDIVIDUAL_TYPE = "residenceStatus";
+                String ATTR_DATE_OF_BIRTH = "dateOfBirth";
+                String ATTR_GENDER_TYPE = "gender";
                 String ATTR_BIOMETRIC_EXCEPTION_TYPE = "biometricAvailable";
                 String UTC_DATETIME_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
-                itc= (String) map[ATTR_INDIVIDUAL_TYPE];
+                itc= (String)((List) map[ATTR_INDIVIDUAL_TYPE]).get(0).value;
+                System.out.print("\nIndidualTypeCode ------>>> "+itc);
                 dob= (String) map[ATTR_DATE_OF_BIRTH];
                 if(dob == empty || dob == null ){
                return "KER-MSD-147";
@@ -33,7 +35,8 @@ def getApplicantType(map,a) {
                 else{
                    return age;
                    }
-                genderType=(String) map[ATTR_GENDER_TYPE];
+                 genderType= (String) ((List) map[ATTR_GENDER_TYPE]).get(0).value;
+                 System.out.print("\nGenderType -----------> "+genderType);
                 isBioExPresent =(Boolean)map[ATTR_BIOMETRIC_EXCEPTION_TYPE];
                 if (((itc == empty || itc == null) && (dob == -1 ) && (genderType == empty || genderType == null ) && (isBioExPresent == empty || isBioExPresent
 == null)))
