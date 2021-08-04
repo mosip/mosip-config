@@ -28,7 +28,7 @@
          "value":"introducerName"
       },
       "address":{
-         "value":"permanentAddressLine1,permanentAddressLine2,permanentAddressLine3,permanentRegion,permanentProvince,permanentZone,permanentPostalcode"
+         "value":"addressLine1,addressLine2,addressLine3,region,province,zone,postalcode"
       },
       "city":{
          "value":"permanentCity"
