@@ -3,11 +3,12 @@ def getApplicantType(map, agelimit) {
   import java.time.LocalDateTime;
   import java.time.format.DateTimeFormatter;
   import java.time.Period;
-
+  import java.util.List;
   String itc = null;
   String dob = null;
   String genderType = null;
-  Boolean isBioExPresent = false;
+  String isboolean=null;
+  boolean isBioExPresent = false;
   String NonResident = "FR";
   String Resident = "NFR";
   String MALE = "MLE";
@@ -16,23 +17,51 @@ def getApplicantType(map, agelimit) {
   String CHILD = "CHL";
   String ADULT = "ADL";
   String ATTR_INDIVIDUAL_TYPE = "individualTypeCode";
-  String ATTR_DATE_OF_BIRTH = "dateofbirth";
+  String ATTR_DATE_OF_BIRTH = "dateOfBirth";
   String ATTR_GENDER_TYPE = "genderCode";
   String ATTR_BIOMETRIC_EXCEPTION_TYPE = "biometricAvailable";
+  
+  if(map.containsKey("residenceStatus"))
+  {
+  ATTR_INDIVIDUAL_TYPE = "residenceStatus";
+  }
+  
+  if(map.containsKey("gender"))
+  {
+  ATTR_GENDER_TYPE = "gender";
+  }
+  
+   if(map.containsKey("dateofbirth"))
+  {
+  ATTR_DATE_OF_BIRTH = "dateofbirth";
+  }
+  String ATTR_BIOMETRIC_EXCEPTION_TYPE = "biometricAvailable";
   String UTC_DATETIME_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
-  itc = (String) map[ATTR_INDIVIDUAL_TYPE];
-  dob = (String) map[ATTR_DATE_OF_BIRTH];
-  genderType = (String) map[ATTR_GENDER_TYPE];
-
+   
+   if(map.get(ATTR_INDIVIDUAL_TYPE) instanceof String){
+     itc=map.get(ATTR_INDIVIDUAL_TYPE).toString();
+     }
+	 else{
+     itc = (String)((List) map.get(ATTR_INDIVIDUAL_TYPE)).get(0).value;
+     }
+  
+  if(map.get(ATTR_GENDER_TYPE) instanceof String){
+      genderType = map.get(ATTR_GENDER_TYPE).toString();
+     }else{
+  genderType = (String)((List) map.get(ATTR_GENDER_TYPE)).get(0).value;
+  }
+  isboolean = map.get(ATTR_BIOMETRIC_EXCEPTION_TYPE).toString();
+  dob=map.get(ATTR_DATE_OF_BIRTH).toString();
+  
   if (((itc.isEmpty() || itc == null) || (dob.isEmpty() || dob == null) || (genderType.isEmpty() || genderType == null) || (map[ATTR_BIOMETRIC_EXCEPTION_TYPE].toString().isEmpty() || map[ATTR_BIOMETRIC_EXCEPTION_TYPE] == null))) {
     return "KER-MSD-147";
   }
-
-  if (!((map[ATTR_BIOMETRIC_EXCEPTION_TYPE].equalsIgnoreCase("true") || map[ATTR_BIOMETRIC_EXCEPTION_TYPE].equalsIgnoreCase("false")) && (genderType.equalsIgnoreCase("FLE") || genderType.equalsIgnoreCase("MLE") || genderType.equalsIgnoreCase("OTH")) && (itc.equalsIgnoreCase("NFR") || itc.equalsIgnoreCase("FR")))) {
+  if (!((isboolean.equalsIgnoreCase("true") || isboolean.equalsIgnoreCase("false")) && (genderType.equalsIgnoreCase("FLE") || genderType.equalsIgnoreCase("MLE") || genderType.equalsIgnoreCase("OTH")) && (itc.equalsIgnoreCase("NFR") || itc.equalsIgnoreCase("FR")))) {
     return "KER-MSD-147";
   }
-  isBioExPresent = (Boolean) map[ATTR_BIOMETRIC_EXCEPTION_TYPE];
-
+  isBioExPresent=Boolean.parseBoolean(isboolean);
+  dob = (String) map[ATTR_DATE_OF_BIRTH];
+  
   int age = -1;
   LocalDate currentDate = LocalDate.now();
 
