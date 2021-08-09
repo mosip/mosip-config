@@ -8,10 +8,6 @@
         <name>dev</name>
     </group>
 
-	 <properties>
-	   <property name="hazelcast.discovery.enabled">true</property>
-	   <property name="hazelcast.logging.type">slf4j</property>
-	 </properties>
     <network>
         <port auto-increment="true" port-count="100">5701</port>
         <outbound-ports>
@@ -115,6 +111,7 @@
             fail-safety. 0 means no backup.
         -->
         <backup-count>0</backup-count>
+
         <!--
             Number of async backups. 0 means no backup.
         -->
@@ -160,14 +157,14 @@
             will get automatically evicted from the map.
             Any integer between 0 and Integer.MAX_VALUE. 0 means infinite. Default is 0
         -->
-        <time-to-live-seconds>120</time-to-live-seconds>
+        <time-to-live-seconds>300</time-to-live-seconds>
         <!--
             Maximum number of seconds for each entry to stay idle in the map. Entries that are
             idle(not touched) for more than <max-idle-seconds> will get
             automatically evicted from the map. Entry is touched if get, put or containsKey is called.
             Any integer between 0 and Integer.MAX_VALUE. 0 means infinite. Default is 0.
         -->
-        <max-idle-seconds>120</max-idle-seconds>
+        <max-idle-seconds>300</max-idle-seconds>
         <!--
             Valid values are:
             NONE (no eviction),
@@ -336,7 +333,17 @@
         <merge-policy batch-size="100">HyperLogLogMergePolicy</merge-policy>
     </cardinality-estimator>
 
-    <lite-member enabled="false"/>
+    <scheduled-executor-service name="default">
+        <capacity>100</capacity>
+        <durability>1</durability>
+        <pool-size>16</pool-size>
+        <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
+    </scheduled-executor-service>
+
+    <crdt-replication>
+        <replication-period-millis>1000</replication-period-millis>
+        <max-concurrent-replication-targets>1</max-concurrent-replication-targets>
+    </crdt-replication>
 
     <pn-counter name="default">
         <replica-count>2147483647</replica-count>
