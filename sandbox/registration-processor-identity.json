@@ -27,20 +27,11 @@
       "introducerName":{
          "value":"introducerName"
       },
-      "address":{
-         "value":"permanentAddressLine1,permanentAddressLine2,permanentAddressLine3,permanentRegion,permanentProvince,permanentZone,permanentPostalcode"
-      },
-      "city":{
-         "value":"permanentCity"
-      },
       "phone":{
          "value":"phone"
       },
       "email":{
          "value":"email"
-      },
-      "localAdministrativeAuthority":{
-         "value":"localAdministrativeAuthority"
       },
       "uin":{
          "value":"UIN"

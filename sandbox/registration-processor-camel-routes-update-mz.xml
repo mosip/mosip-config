@@ -103,9 +103,22 @@
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
+	  <when>
+             <jsonpath suppressExceptions="true">$.[?(@['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['FAILED'] || @['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['REJECTED'])]</jsonpath>
+             <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
+             <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
+             <to uri="workflow-cmd://pause-and-request-additional-info" />
+         </when>
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Average', 'Good','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Finger'] in ['Average', 'Good', '--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Face'] in ['Average', 'Good', '--Biometrics-Not-Available--'])]</jsonpath>
             <to uri="eventbus://c-m-d-validator-bus-in" />
+         </when>
+		  <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Poor'] || @['tags']['Biometric_Quality-Finger'] in ['Poor'] || @['tags']['Biometric_Quality-Face'] in ['Poor'])]</jsonpath>
+            <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
+			 <!-- PAUSE_FOR is in seconds -->
+            <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
+            <to uri="workflow-cmd://pause-and-request-additional-info" />
          </when>
          <otherwise>
             <to uri="workflow-cmd://complete-as-failed" />
@@ -384,6 +397,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
+	    <to uri="workflow-cmd://complete-as-processed" />
             <to uri="eventbus://printing-bus-in" />
          </otherwise>
       </choice>

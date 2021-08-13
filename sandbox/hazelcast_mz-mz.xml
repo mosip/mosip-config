@@ -21,7 +21,17 @@
 		<password/>
 	</group>
  <network>
-   <join>
+  <join>
+        <multicast enabled="false"/>
+        <tcp-ip enabled="true">
+            <interface>127.0.0.1</interface>
+        </tcp-ip>
+    </join>
+    <interfaces enabled="true">
+        <interface>127.0.0.1</interface>
+    </interfaces>
+<!-- For vertx uncomment the below join section and comment the above join and interfaces section. -->
+<!--   <join>
      <multicast enabled="false"/>
      <tcp-ip enabled="false" />
      <discovery-strategies>
@@ -32,6 +42,6 @@
          </properties>
        </discovery-strategy>
      </discovery-strategies>
-   </join>
+   </join>  -->
  </network>
 </hazelcast>
