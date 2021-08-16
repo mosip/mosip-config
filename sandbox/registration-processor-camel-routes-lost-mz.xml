@@ -66,9 +66,9 @@
       </choice>
    </route>
    <!-- Packet classifier to Quality Classifier Route -->
-   <route id="packet-classifier-->quality-classifier lost route">
+   <route id="packet-classifier-->cmd-validator lost route">
       <from uri="eventbus://packet-classifier-lost-bus-out" />
-      <log message="packet-classifier-->quality-classifier lost route ${bodyAs(String)}" />
+      <log message="packet-classifier-->cmd-validator lost route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -83,45 +83,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="eventbus://quality-classifier-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
-   <route id="quality-classifier-->cmd-validator lost route">
-      <from uri="eventbus://quality-classifier-lost-bus-out" />
-      <log message="quality-classifier-->cmd-validator lost route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-         </when>
-	  <when>
-             <jsonpath suppressExceptions="true">$.[?(@['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['FAILED'] || @['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['REJECTED'])]</jsonpath>
-           <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
-           <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
-           <to uri="workflow-cmd://pause-and-request-additional-info" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Average', 'Good','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Finger'] in ['Average', 'Good', '--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Face'] in ['Average', 'Good', '--Biometrics-Not-Available--'])]</jsonpath>
             <to uri="eventbus://c-m-d-validator-bus-in" />
-         </when>
-		 <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Poor'] || @['tags']['Biometric_Quality-Finger'] in ['Poor'] || @['tags']['Biometric_Quality-Face'] in ['Poor'])]</jsonpath>
-            <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
-			 <!-- PAUSE_FOR is in seconds -->
-            <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
-            <to uri="workflow-cmd://pause-and-request-additional-info" />
-         </when>
-         <otherwise>
-            <to uri="workflow-cmd://complete-as-failed" />
          </otherwise>
       </choice>
    </route>
@@ -175,13 +137,13 @@
             <to uri="eventbus://supervisor-validator-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://bio-dedupe-bus-in" />
+            <to uri="eventbus://quality-classifier-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="supervisor-validator-->bio-dedupe lost route">
-      <from uri="eventbus://supervisor-validator-lost-bus-out" />
-      <log message="supervisor-validator-->bio-dedupe lost route ${bodyAs(String)}" />
+   <route id="quality-classifier-->bio-dedupe lost route">
+      <from uri="eventbus://quality-classifier-lost-bus-out" />
+      <log message="quality-classifier-->bio-dedupe lost route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -195,8 +157,25 @@
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
-         <otherwise>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['FAILED'] || @['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['REJECTED'])]</jsonpath>
+            <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
+            <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
+            <to uri="workflow-cmd://pause-and-request-additional-info" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Average', 'Good','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Finger'] in ['Average', 'Good', '--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Face'] in ['Average', 'Good', '--Biometrics-Not-Available--'])]</jsonpath>
             <to uri="eventbus://bio-dedupe-bus-in" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Poor'] || @['tags']['Biometric_Quality-Finger'] in ['Poor'] || @['tags']['Biometric_Quality-Face'] in ['Poor'])]</jsonpath>
+            <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
+            <!-- PAUSE_FOR is in seconds -->
+            <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
+            <to uri="workflow-cmd://pause-and-request-additional-info" />
+         </when>
+         <otherwise>
+            <to uri="workflow-cmd://complete-as-failed" />
          </otherwise>
       </choice>
    </route>
