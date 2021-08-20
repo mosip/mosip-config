@@ -28,7 +28,7 @@
        <discovery-strategy enabled="false"
            class="com.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy">
          <properties>
-           <property name="service-dns">service-hazelcast-server.default.svc.cluster.local</property>
+           <property name="service-dns">service-hazelcast-server.default</property>
          </properties>
        </discovery-strategy>
      </discovery-strategies>
