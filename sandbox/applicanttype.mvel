@@ -109,5 +109,4 @@ def getApplicantType(map, agelimit) {
     return "016";
   }
   return null;
-  
 };
