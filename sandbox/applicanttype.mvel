@@ -94,4 +94,3 @@ def getApplicantType(map,a) {
                 }
                 return null;
 };
-
