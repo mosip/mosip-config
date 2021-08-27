@@ -49,10 +49,16 @@ def getAgeCode(identity) {
 
     String dob = identity.get('dateOfBirth');
     LocalDate date = LocalDate.parse(dob, DateTimeFormatter.ofPattern(DATE_PATTERN));
+    LocalDate currentDate = LocalDate.now(ZoneId.of("UTC"));
+     int  ageInYears = -1;
+     if (!date.isAfter(currentDate)) {
+         ageInYears = Period.between(date, currentDate).getYears();
+    } else {
+            return "KER-MSD-151";
+     }
     String ageGroup = null;
     for(String groupName : ageGroups.keySet()) {
         String[] range = ((String)ageGroups.get(groupName)).split('-');
-        int ageInYears = Period.between(date, LocalDate.now(ZoneId.of("UTC"))).getYears();
         if(ValueRange.of(Long.valueOf(range[0]), Long.valueOf(range[1])).isValidIntValue(ageInYears)) {
             ageGroup = groupName;
         }
@@ -60,6 +66,7 @@ def getAgeCode(identity) {
 
    return ageGroup == null ? null : (ageGroup == 'INFANT' ? CHILD : ADULT);
 }
+
 
 def getBioExceptionFlag(identity) {
     return identity.containsKey('isBioException') ? (Boolean) identity.get('isBioException') : false;
