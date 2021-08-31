@@ -43,7 +43,7 @@
       </choice>
    </route>
    <!-- UIN Generator to biometric-extraction Route -->
-   <route id="uin-generation route-->biometric-extraction-stage new route">
+   <route id="uin-generation route-->biometric-extraction-stage deactivated route">
       <from uri="eventbus://uin-generator-deactivated-bus-out" />
       <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
       <choice>
@@ -66,7 +66,7 @@
       </choice>
    </route>
  <!-- biometric-extraction to finalization Route -->
-   <route id="biometric-extraction route-->finalization-stage new route">
+   <route id="biometric-extraction route-->finalization-stage deactivated route">
       <from uri="eventbus://biometric-extraction-deactivated-bus-out" />
       <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
       <choice>
