@@ -28,7 +28,7 @@ def getApplicantType(map,a) {
              }
                 int age = -1;
                 LocalDate currentDate = LocalDate.now();
-                LocalDate birthDate = LocalDateTime.parse(dob, DateTimeFormatter.ofPattern(UTC_DATETIME_PATTERN)).toLocalDate();
+                LocalDate birthDate = LocalDate.parse(dob, DateTimeFormatter.ofPattern(UTC_DATETIME_PATTERN));
                 if (birthDate != null && currentDate != null && !birthDate.isAfter(currentDate)) {
                         age = Period.between(birthDate, currentDate).getYears();
                 }
