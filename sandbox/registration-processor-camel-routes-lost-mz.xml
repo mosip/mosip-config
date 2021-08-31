@@ -278,7 +278,7 @@
       </choice>
    </route>
 	<!-- UIN Generator to biometric-extraction Route -->
-   <route id="uin-generation route-->biometric-extraction-stage new route">
+   <route id="uin-generation route-->biometric-extraction-stage lost route">
       <from uri="eventbus://uin-generator-new-lost-out" />
       <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
       <choice>
@@ -295,13 +295,12 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="workflow-cmd://complete-as-processed" />
             <to uri="eventbus://biometric-extraction-bus-in" />
          </otherwise>
       </choice>
    </route>
  <!-- biometric-extraction to finalization Route -->
-   <route id="biometric-extraction route-->finalization-stage new route">
+   <route id="biometric-extraction route-->finalization-stage lost route">
       <from uri="eventbus://biometric-extraction-lost-bus-out" />
       <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
       <choice>
@@ -318,7 +317,6 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="workflow-cmd://complete-as-processed" />
             <to uri="eventbus://finalization-bus-in" />
          </otherwise>
       </choice>
