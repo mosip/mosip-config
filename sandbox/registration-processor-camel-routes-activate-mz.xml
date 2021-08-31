@@ -61,7 +61,6 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="workflow-cmd://complete-as-processed" />
             <to uri="eventbus://biometric-extraction-bus-in" />
          </otherwise>
       </choice>
