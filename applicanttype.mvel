@@ -19,7 +19,7 @@ def getApplicantType(map,a) {
                 String ATTR_DATE_OF_BIRTH = "dateOfBirth";
                 String ATTR_GENDER_TYPE = "gender";
                 String ATTR_BIOMETRIC_EXCEPTION_TYPE = "biometricAvailable";
-                String UTC_DATETIME_PATTERN = ""yyyy/MM/dd";
+                String UTC_DATETIME_PATTERN = "yyyy/MM/dd";
               //itc= (String)((List) map[ATTR_INDIVIDUAL_TYPE]).get(0).value;
 
                 dob= (String) map[ATTR_DATE_OF_BIRTH];
