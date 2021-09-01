@@ -44,53 +44,53 @@ def getApplicantType(map,a) {
         else if( age >= 0 && age < agelimit)
            ageCode=CHILD;
                 if ( genderType == MALE && ageCode == CHILD && !isBioExPresent ) {
-                        return "001";
+                        return "A001";
                 } else if (genderType == MALE && ageCode == ADULT && !isBioExPresent ) {
-                        return "002";
+                        return "A002";
                 } else if (genderType == MALE && ageCode == CHILD && !isBioExPresent ) {
-                        return "003";
+                        return "A003";
                 } else if (genderType == MALE && ageCode == ADULT && !isBioExPresent ) {
-                        return "004";
+                        return "A004";
                 } else if ( genderType == FEMALE && ageCode == CHILD && !isBioExPresent ) {
-                        return "005";
+                        return "A005";
                 } else if ( genderType == FEMALE && ageCode == ADULT && !isBioExPresent ) {
-                        return "006";
+                        return "A006";
                 } else if (genderType == FEMALE && ageCode == CHILD && !isBioExPresent ) {
-                        return "007";
+                        return "A007";
                 } else if (genderType == FEMALE && ageCode == ADULT && !isBioExPresent ) {
-                        return "008";
+                        return "A008";
                 } else if ( genderType == Others && ageCode == CHILD && !isBioExPresent ) {
-                        return "005";
+                        return "A005";
                 } else if ( genderType == Others && ageCode == ADULT && !isBioExPresent ) {
-                        return "006";
+                        return "A006";
                 } else if (genderType == Others && ageCode == CHILD && !isBioExPresent ) {
-                        return "007";
+                        return "A007";
                 } else if (genderType == Others && ageCode == ADULT && !isBioExPresent ) {
-                        return "008";
+                        return "A008";
                 } else if ( genderType == MALE && ageCode == CHILD && isBioExPresent ) {
-                        return "009";
+                        return "A009";
                 } else if ( genderType == MALE && ageCode == ADULT && isBioExPresent ) {
-                        return "010";
+                        return "A010";
                 } else if (genderType == MALE && ageCode == CHILD && isBioExPresent ) {
-                        return "011";
+                        return "A011";
                 } else if (genderType == MALE && ageCode == ADULT && isBioExPresent ) {
-                        return "012";
+                        return "A012";
                 } else if ( genderType == FEMALE && ageCode == CHILD && isBioExPresent ) {
-                        return "013";
+                        return "A013";
                 } else if ( genderType == FEMALE && ageCode == ADULT && isBioExPresent ) {
-                        return "014";
+                        return "A014";
                 } else if (genderType == FEMALE && ageCode == CHILD && isBioExPresent ) {
-                        return "015";
+                        return "A015";
                 } else if (genderType == FEMALE && ageCode == ADULT && isBioExPresent ) {
-                        return "016";
+                        return "A016";
                 } else if ( genderType == Others && ageCode == CHILD && isBioExPresent ) {
-                        return "013";
+                        return "A013";
                 } else if ( genderType == Others && ageCode == ADULT && isBioExPresent ) {
-                        return "014";
+                        return "A014";
                 } else if (genderType == Others && ageCode == CHILD && isBioExPresent ) {
-                        return "015";
+                        return "A015";
                 } else if (genderType == Others && ageCode == ADULT && isBioExPresent ) {
-                        return "016";
+                        return "A016";
                 }
                 return null;
 };
