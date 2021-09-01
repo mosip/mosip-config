@@ -1,188 +1,92 @@
 {
    "identity":{
       "IDSchemaVersion":{
-         "value":"IDSchemaVersion",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"IDSchemaVersion"
       },
       "name":{
-         "value":"firstName,middleName,lastName",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ],
-         "isMandatory":false
+         "value":"fullName",
+         "isMandatory":true
       },
       "gender":{
          "value":"gender",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ],
          "isMandatory":true
       },
       "dob":{
          "value":"dateOfBirth",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ],
          "isMandatory":true
       },
       "age":{
-         "value":"age",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"age"
       },
       "parentOrGuardianRID":{
-         "value":"parentOrGuardianRID",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"parentOrGuardianRID"
       },
       "parentOrGuardianUIN":{
-         "value":"guardianCredentialID",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"parentOrGuardianUIN"
       },
       "parentOrGuardianName":{
-         "value":"guardianFirstName,guardianMiddleName,guardianLastName",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"parentOrGuardianName"
       },
       "address":{
-         "value":"presentAddressLine1,presentAddressLine2,presentAddressLine3,presentAddressLine4,presentCity,presentProvince,presentBarangay,presentZipcode",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"permanentAddressLine1,permanentAddressLine2,permanentAddressLine3,permanentRegion,permanentProvince,permanentZone,permanentPostalcode"
       },
       "city":{
-         "value":"presentCountry",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"permanentCity"
       },
-	"phone":{
-        "value":"mobileno",
-         "provider":[
-			"source:RESIDENT,process:RES_CORRECTION",
-            "source:REGISTRATION_CLIENT,process:CORRECTION|NEW|UPDATE",
-			"source:RESIDENT,process:RES_UPDATE"
-         ]
+      "phone":{
+         "value":"phone"
       },
       "email":{
-         "value":"email",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"email"
       },
       "localAdministrativeAuthority":{
-         "value":"localAdministrativeAuthority",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"localAdministrativeAuthority"
       },
       "uin":{
-         "value":"UIN",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"UIN"
       },
-	  "individualBiometrics":{
-         "value":"individualBiometrics",
-         "provider":[	
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+      "individualBiometrics":{
+         "value":"individualBiometrics"
       },
       "parentOrGuardianBiometrics":{
-         "value":"guardianBiometrics",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"parentOrGuardianBiometrics"
       },
       "individualAuthBiometrics":{
-         "value":"individualAuthBiometrics",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"individualAuthBiometrics"
       },
       "officerBiometricFileName":{
-         "value":"officerBiometricFileName",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST"
-         ]
+         "value":"officerBiometricFileName"
       },
       "supervisorBiometricFileName":{
-         "value":"supervisorBiometricFileName",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST"
-         ]
+         "value":"supervisorBiometricFileName"
+      },
+      "residenceStatus":{
+         "value":"residenceStatus"
       }
+
    },
    "metaInfo":{
-      "provider":[
-         "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-         "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-      ]
+      "value":"metaInfo"
    },
    "audits":{
-      "provider":[
-         "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-         "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-      ]
+      "value":"audits"
    },
    "documents":{
       "poa":{
-         "value":"proofOfAddress",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"proofOfAddress"
       },
       "poi":{
-         "value":"proofOfIdentity",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"proofOfIdentity"
       },
       "por":{
-         "value":"proofOfRelationship",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"proofOfRelationship"
       },
       "pob":{
-         "value":"proofOfDateOfBirth",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"proofOfDateOfBirth"
       },
       "poe":{
-         "value":"proofOfException",
-         "provider":[
-            "source:REGISTRATION_CLIENT,process:NEW|UPDATE|LOST",
-            "source:RESIDENT,process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT"
-         ]
+         "value":"proofOfException"
       }
    }
 }
+
