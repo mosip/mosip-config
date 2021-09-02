@@ -9,7 +9,6 @@ def getApplicantType(map, agelimit) {
   String genderType = null;
   String isboolean=null;
   boolean isBioExPresent = false;
-  String passportNo = "";
   String NonResident = "FR";
   String Resident = "NFR";
   String MALE = "MLE";
@@ -17,7 +16,6 @@ def getApplicantType(map, agelimit) {
   String Others = "OTH";
   String CHILD = "CHL";
   String ADULT = "ADL";
-  String ATTR_PASSPORT_NUMBER = "passportNumber";
   String ATTR_INDIVIDUAL_TYPE = "residenceStatus";
   String ATTR_DATE_OF_BIRTH = "dateOfBirth";
   String ATTR_GENDER_TYPE = "gender";
@@ -29,8 +27,6 @@ def getApplicantType(map, agelimit) {
   genderType = (String)((List) map[ATTR_GENDER_TYPE]).get(0).value;
   
   isboolean = map[ATTR_BIOMETRIC_EXCEPTION_TYPE].toString();
-  
-  passportNo = map[ATTR_PASSPORT_NUMBER].toString();
   
   dob=map[ATTR_DATE_OF_BIRTH].toString();
 
@@ -65,9 +61,7 @@ def getApplicantType(map, agelimit) {
     
   if (itc == NonResident && genderType == MALE && ageCode == CHILD && !isBioExPresent) {
     return "001";
-  } else if (itc == NonResident && genderType == MALE && ageCode == ADULT && passportNo == "A123456D"  && !isBioExPresent) {
-    return "001";
-  } else if (itc == NonResident && genderType == MALE && ageCode == ADULT && passportNo != "A123456D"  && !isBioExPresent) {
+  } else if (itc == NonResident && genderType == MALE && ageCode == ADULT && !isBioExPresent) {
     return "002";
   } else if (itc == Resident && genderType == MALE && ageCode == CHILD && !isBioExPresent) {
     return "003";
