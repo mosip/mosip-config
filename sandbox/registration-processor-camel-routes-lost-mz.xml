@@ -279,7 +279,7 @@
    </route>
 	<!-- UIN Generator to biometric-extraction Route -->
    <route id="uin-generation route-->biometric-extraction-stage lost route">
-      <from uri="eventbus://uin-generator-new-lost-out" />
+      <from uri="eventbus://uin-generator-lost-bus-out" />
       <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
       <choice>
          <when>
