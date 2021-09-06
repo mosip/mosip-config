@@ -12,20 +12,23 @@
 		"gender": [
 			"gender"
 		],
+		"fatherName": [
+			"fatherName"
+		],
+		"NIC": [
+			"nationalIdentityNumber"
+		],
 		"phoneNumber": [
 			"phone"
 		],
 		"emailId": [
 			"email"
 		],
-		"addressLine1": [
-			"addressLine1"
+		"permanentAddress": [
+			"permanentAddress"
 		],
-		"addressLine2": [
-			"addressLine2"
-		],
-		"addressLine3": [
-			"addressLine3"
+		"temporaryAddress": [
+			"temporaryAddress"
 		],
 		"location1": [
 			"city"
@@ -40,9 +43,7 @@
 			"postalCode"
 		],
 		"fullAddress": [
-			"addressLine1",
-			"addressLine2",
-			"addressLine3",
+			"permanentAddress",
 			"city",
 			"region",
 			"province",
