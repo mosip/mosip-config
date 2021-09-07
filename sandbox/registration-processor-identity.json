@@ -4,8 +4,8 @@
          "value":"IDSchemaVersion"
       },
       "name":{
-         "value":"fullName",
-         "isMandatory":true
+         "value":"firstName,middleName,lastName",
+         "isMandatory":false
       },
       "gender":{
          "value":"gender",
@@ -22,19 +22,19 @@
          "value":"parentOrGuardianRID"
       },
       "parentOrGuardianUIN":{
-         "value":"parentOrGuardianUIN"
+         "value":"guardianCredentialID"
       },
       "parentOrGuardianName":{
-         "value":"parentOrGuardianName"
+         "value":"guardianFirstName,guardianMiddleName,guardianLastName"
       },
       "address":{
-         "value":"permanentAddressLine1,permanentAddressLine2,permanentAddressLine3,permanentRegion,permanentProvince,permanentZone,permanentPostalcode"
+         "value":"presentAddressLine1,presentAddressLine2,presentAddressLine3,presentAddressLine4,presentCity,presentProvince,presentBarangay,presentZipcode"
       },
       "city":{
-         "value":"permanentCity"
+         "value":"presentCountry"
       },
       "phone":{
-         "value":"phone"
+         "value":"mobileno"
       },
       "email":{
          "value":"email"
@@ -59,17 +59,13 @@
       },
       "supervisorBiometricFileName":{
          "value":"supervisorBiometricFileName"
-      },
-      "residenceStatus":{
-         "value":"residenceStatus"
       }
-
    },
    "metaInfo":{
-      "value":"metaInfo"
+      
    },
    "audits":{
-      "value":"audits"
+      
    },
    "documents":{
       "poa":{
@@ -89,4 +85,3 @@
       }
    }
 }
-
