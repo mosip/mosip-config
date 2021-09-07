@@ -43,9 +43,54 @@
          </otherwise>
       </choice>
    </route>
-   <route id="uin-generation route--> activated route">
+   <!-- UIN Generator to biometric-extraction Route -->
+   <route id="uin-generation route-->biometric-extraction-stage activated route">
       <from uri="eventbus://uin-generator-activated-bus-out" />
-      <log message="uin-generation--> activated route ${bodyAs(String)}" />
+      <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://biometric-extraction-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+ <!-- biometric-extraction to finalization Route -->
+   <route id="biometric-extraction route-->finalization-stage activated route">
+      <from uri="eventbus://biometric-extraction-activated-bus-out" />
+      <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://finalization-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <!-- finalization to activated Route -->
+   <route id="finalization route--> activated route">
+      <from uri="eventbus://finalization-activated-bus-out" />
+      <log message="finalization--> activated route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
