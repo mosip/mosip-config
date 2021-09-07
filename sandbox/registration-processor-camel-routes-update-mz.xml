@@ -425,7 +425,7 @@
 	 <!-- finalization to Printing Route -->
    <route id="finalization route-->printing-stage update route">
       <from uri="eventbus://finalization-update-bus-out" />
-      <log message="uin-generation-->printing-stage update route ${bodyAs(String)}" />
+      <log message="finalization-->printing-stage update route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
