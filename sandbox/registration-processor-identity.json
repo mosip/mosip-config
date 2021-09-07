@@ -59,6 +59,9 @@
 		},
 		"supervisorBiometricFileName": {
 			"value": "supervisorBiometricFileName"
+		},
+		"residenceStatus": {
+			"value": "residenceStatus"
 		}
 	},
 	"metaInfo": {
