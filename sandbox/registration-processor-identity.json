@@ -1,88 +1,87 @@
 {
-   "identity":{
-      "IDSchemaVersion":{
-         "value":"IDSchemaVersion"
-      },
-      "name":{
-         "value":"firstName,middleName,lastName",
-         "isMandatory":false
-      },
-      "gender":{
-         "value":"gender",
-         "isMandatory":true
-      },
-      "dob":{
-         "value":"dateOfBirth",
-         "isMandatory":true
-      },
-      "age":{
-         "value":"age"
-      },
-      "parentOrGuardianRID":{
-         "value":"parentOrGuardianRID"
-      },
-      "parentOrGuardianUIN":{
-         "value":"guardianCredentialID"
-      },
-      "parentOrGuardianName":{
-         "value":"guardianFirstName,guardianMiddleName,guardianLastName"
-      },
-      "address":{
-         "value":"presentAddressLine1,presentAddressLine2,presentAddressLine3,presentAddressLine4,presentCity,presentProvince,presentBarangay,presentZipcode"
-      },
-      "city":{
-         "value":"presentCountry"
-      },
-      "phone":{
-         "value":"mobileno"
-      },
-      "email":{
-         "value":"email"
-      },
-      "localAdministrativeAuthority":{
-         "value":"localAdministrativeAuthority"
-      },
-      "uin":{
-         "value":"UIN"
-      },
-      "individualBiometrics":{
-         "value":"individualBiometrics"
-      },
-      "parentOrGuardianBiometrics":{
-         "value":"parentOrGuardianBiometrics"
-      },
-      "individualAuthBiometrics":{
-         "value":"individualAuthBiometrics"
-      },
-      "officerBiometricFileName":{
-         "value":"officerBiometricFileName"
-      },
-      "supervisorBiometricFileName":{
-         "value":"supervisorBiometricFileName"
-      }
-   },
-   "metaInfo":{
-      
-   },
-   "audits":{
-      
-   },
-   "documents":{
-      "poa":{
-         "value":"proofOfAddress"
-      },
-      "poi":{
-         "value":"proofOfIdentity"
-      },
-      "por":{
-         "value":"proofOfRelationship"
-      },
-      "pob":{
-         "value":"proofOfDateOfBirth"
-      },
-      "poe":{
-         "value":"proofOfException"
-      }
-   }
+	"identity": {
+		"IDSchemaVersion": {
+			"value": "IDSchemaVersion"
+		},
+		"name": {
+			"value": "firstName,middleName,lastName",
+			"isMandatory": false
+		},
+		"gender": {
+			"value": "gender",
+			"isMandatory": true
+		},
+		"dob": {
+			"value": "dateOfBirth",
+			"isMandatory": true
+		},
+		"age": {
+			"value": "age"
+		},
+		"parentOrGuardianRID": {
+			"value": "parentOrGuardianRID"
+		},
+		"parentOrGuardianUIN": {
+			"value": "guardianCredentialID"
+		},
+		"parentOrGuardianName": {
+			"value": "guardianFirstName,guardianMiddleName,guardianLastName"
+		},
+		"address": {
+			"value": "presentAddressLine1,presentAddressLine2,presentAddressLine3,presentAddressLine4,presentCity,presentProvince,presentBarangay,presentZipcode"
+		},
+		"city": {
+			"value": "presentCountry"
+		},
+		"phone": {
+			"value": "mobileno"
+		},
+		"email": {
+			"value": "email"
+		},
+		"localAdministrativeAuthority": {
+			"value": "localAdministrativeAuthority"
+		},
+		"uin": {
+			"value": "UIN"
+		},
+		"individualBiometrics": {
+			"value": "individualBiometrics"
+		},
+		"parentOrGuardianBiometrics": {
+			"value": "parentOrGuardianBiometrics"
+		},
+		"individualAuthBiometrics": {
+			"value": "individualAuthBiometrics"
+		},
+		"officerBiometricFileName": {
+			"value": "officerBiometricFileName"
+		},
+		"supervisorBiometricFileName": {
+			"value": "supervisorBiometricFileName"
+		}
+	},
+	"metaInfo": {
+		"value": "metaInfo"
+	},
+	"audits": {
+		"value": "audits"
+	},
+	"documents": {
+		"poa": {
+			"value": "proofOfAddress"
+		},
+		"poi": {
+			"value": "proofOfIdentity"
+		},
+		"por": {
+			"value": "proofOfRelationship"
+		},
+		"pob": {
+			"value": "proofOfDateOfBirth"
+		},
+		"poe": {
+			"value": "proofOfException"
+		}
+	}
 }
-
