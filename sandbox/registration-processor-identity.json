@@ -53,6 +53,9 @@
       },
       "residenceStatus":{
          "value":"residenceStatus"
+      },
+	  "preferredLanguages":{
+         "value":"preferredLanguages"
       }
 
    },
