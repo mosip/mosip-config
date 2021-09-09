@@ -19,7 +19,7 @@
 		"preferredLanguages": {
 			"value": "preferredLang"
 		},
-		"address": {
+		"addressHierarchy": {
 			"value": "region,province,city"
 		},
 		"phone": {
