@@ -16,10 +16,10 @@
 		"gender": {
 			"value": "gender"
 		},
-		"preferredLanguages": {
+		"preferredLanguage": {
 			"value": "preferredLang"
 		},
-		"addressHierarchy": {
+		"locationHierarchyForProfiling": {
 			"value": "region,province,city"
 		},
 		"phone": {
