@@ -58,7 +58,7 @@
 			"value": "preferredLang"
 		},
 		"locationHierarchyForProfiling": {
-			"value": "City,Country"
+			"value": "zone,postalCode"
 		}
 	},
 	"metaInfo": {
