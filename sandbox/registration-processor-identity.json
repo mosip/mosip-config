@@ -53,6 +53,12 @@
       },
       "residenceStatus":{
          "value":"residenceStatus"
+      },
+      "preferredLanguage": {
+         "value": "preferredLang"
+      },
+      "locationHierarchyForProfiling": {
+         "value": "zone,postalCode"
       }
 
    },
