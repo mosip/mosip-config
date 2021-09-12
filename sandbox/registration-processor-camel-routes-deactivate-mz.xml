@@ -105,6 +105,7 @@
          </when>
          <otherwise>
             <to uri="workflow-cmd://complete-as-processed" />
+			<to uri="workflow-cmd://anonymous_profile" />
          </otherwise>
       </choice>
    </route>
