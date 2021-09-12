@@ -55,8 +55,11 @@
          "value":"residenceStatus"
       },
       "preferredLanguage": {
-			"value": "preferredLang"
-		}
+         "value": "preferredLang"
+      },
+      "locationHierarchyForProfiling": {
+         "value": "zone,postalCode"
+      }
 
    },
    "metaInfo":{
