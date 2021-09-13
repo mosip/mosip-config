@@ -162,6 +162,7 @@
          </when>
          <otherwise>
             <to uri="eventbus://biometric-extraction-bus-in" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
@@ -205,6 +206,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
+			<to uri="workflow-cmd://anonymous-profile" />
             <to uri="eventbus://printing-bus-in" />
          </otherwise>
       </choice>

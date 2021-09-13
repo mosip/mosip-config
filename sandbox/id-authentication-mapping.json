@@ -58,6 +58,13 @@
 			"CBEFF"
 		],
 		"location4" : [ "zone" ],
-		"residenceStatus" : ["residenceStatus" ]
+		"residenceStatus" : ["residenceStatus" ],
+		"preferredLanguage" : ["preferredLang" ],
+		"locationProfile": [
+			"city",
+			"region",
+			"province",
+			"zone"
+		]
 	}
 }
