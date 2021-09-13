@@ -15,6 +15,11 @@ String Resident = "NFR";
 String Others = "OTH";
 String DATE_PATTERN = "yyyy/MM/dd";
 
+def isUpdateFlow(identity) {
+  Object val = identity.getOrDefault('isUpdate', false);
+  return val == null ? false : (Boolean) val;
+}
+
 def getResidenceStatus(identity) {
     if(identity.containsKey('residenceStatusCode')) {
         return identity.getOrDefault('residenceStatusCode', null);
@@ -73,17 +78,13 @@ def getBioExceptionFlag(identity) {
 }
 
 def getApplicantType() {
-  System.out.println("AgeGroups:" + ageGroups);
   String itc = getResidenceStatus(identity);
-  System.out.println("Resident Status:" + itc);
   String genderType = getGenderType(identity);
-  System.out.println("Gender Type:" + genderType);
   String ageCode = getAgeCode(identity);
-  System.out.println("AgeCode:" + ageCode);
   boolean isBioExPresent = getBioExceptionFlag(identity);
 
   if(itc == null || genderType == null || ageCode == null)
-    return "KER-MSD-147";
+    return isUpdateFlow(identity) ? "000" : "KER-MSD-147";
 
   if (itc == NonResident && genderType == MALE && ageCode == CHILD && !isBioExPresent) {
     return "001";
@@ -134,5 +135,5 @@ def getApplicantType() {
   } else if (itc == Resident && genderType == Others && ageCode == ADULT && isBioExPresent) {
     return "016";
   }
-  return "KER-MSD-147";
+  return "000";
 }
