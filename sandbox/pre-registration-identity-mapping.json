@@ -2,13 +2,31 @@
 	"identity": {
 		"name": {
 			"value": "fullName",
-			"isMandatory" : true
+			"isMandatory": true
 		},
 		"proofOfAddress": {
-			"value" : "proofOfAddress"
+			"value": "proofOfAddress"
 		},
 		"postalCode": {
-			"value" : "postalCode"
+			"value": "postalCode"
+		},
+		"dateOfBirth": {
+			"value": "dateOfBirth"
+		},
+		"gender": {
+			"value": "gender"
+		},
+		"preferredLanguage": {
+			"value": "preferredLang"
+		},
+		"locationHierarchyForProfiling": {
+			"value": "region,province,city"
+		},
+		"phone": {
+			"value": "phone"
+		},
+		"email": {
+			"value": "email"
 		}
 	}
-}  
+}
