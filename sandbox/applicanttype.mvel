@@ -18,7 +18,12 @@ String DATE_PATTERN = "yyyy/MM/dd";
 
 def isUpdateFlow(identity) {
   Object val = identity.get('_flow');
-  return ( val != null && ((String)val).equals('Update') ) ? true : false;
+  if(val != null) {
+    return ((String)val).equals('Update') ? true : false;
+  }
+
+  val = identity.getOrDefault('isUpdate', false);
+  return val == null ? false : (Boolean) val;  
 }
 
 def getResidenceStatus(identity) {
