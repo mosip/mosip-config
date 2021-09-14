@@ -9,6 +9,12 @@
 		"age": [
 			"dateOfBirth"
 		],
+		"fatherName": [
+			"fatherName"
+		],
+		"NIC": [
+			"nationalIdentityNumber"
+		],
 		"gender": [
 			"gender"
 		],
@@ -18,14 +24,11 @@
 		"emailId": [
 			"email"
 		],
-		"addressLine1": [
-			"addressLine1"
+		"permanentAddress": [
+			"permanentAddress"
 		],
-		"addressLine2": [
-			"addressLine2"
-		],
-		"addressLine3": [
-			"addressLine3"
+		"temporaryAddress": [
+			"temporaryAddress"
 		],
 		"location1": [
 			"city"
@@ -36,13 +39,14 @@
 		"location3": [
 			"province"
 		],
+		"location4" : [
+			"zone"
+		],
 		"postalCode": [
 			"postalCode"
 		],
 		"fullAddress": [
-			"addressLine1",
-			"addressLine2",
-			"addressLine3",
+			"permanentAddress",
 			"city",
 			"region",
 			"province",
@@ -57,14 +61,6 @@
 		"face": [
 			"CBEFF"
 		],
-		"location4" : [ "zone" ],
-		"residenceStatus" : ["residenceStatus" ],
-		"preferredLanguage" : ["preferredLang" ],
-		"locationProfile": [
-			"city",
-			"region",
-			"province",
-			"zone"
-		]
+		"residenceStatus" : ["residenceStatus" ]
 	}
 }
