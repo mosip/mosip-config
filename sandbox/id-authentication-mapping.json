@@ -61,6 +61,10 @@
 		"face": [
 			"CBEFF"
 		],
-		"residenceStatus" : ["residenceStatus" ]
+		"residenceStatus" : ["residenceStatus" ],
+		"dualCitizenshipAvailability" : ["dualCitizenshipAvailability" ],
+		"fatherName" : ["fatherName" ],
+		"layName" : ["layName" ],
+		"profession" : ["profession" ]
 	}
 }
