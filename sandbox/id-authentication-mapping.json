@@ -64,6 +64,7 @@
 		"residenceStatus" : ["residenceStatus" ],
 		"dualCitizenshipAvailability" : ["dualCitizenshipAvailability" ],
 		"fatherName" : ["fatherName" ],
+		"shortenedPrintedName" : ["shortenedPrintedName" ],
 		"layName" : ["layName" ],
 		"profession" : ["profession" ]
 	}
