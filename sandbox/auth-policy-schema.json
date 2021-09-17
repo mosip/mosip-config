@@ -51,10 +51,10 @@
 		},
 		"kycLanguages":{
 			"type":"array",
-			"items":{
-				"type":"string"
-			}
-		}		
+			 "items":{
+				 "type":"string"
+			 }
+		}
 	},
 	"required":[
 		"authTokenType",

@@ -298,7 +298,7 @@
         <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
             <to uri="workflow-cmd://complete-as-failed" />
-         </when>
+         </when> 
          <when>
             <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
             <to uri="workflow-cmd://mark-as-reprocess" />
