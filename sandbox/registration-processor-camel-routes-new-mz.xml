@@ -380,7 +380,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="eventbus://biometric-extraction-bus-in" />
+            <to uri="eventbus://biometric-extraction-bus-inn" />
             <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
