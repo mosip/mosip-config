@@ -403,7 +403,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="eventbus://finalization-bus-inn" />
+            <to uri="eventbus://finalization-bus-in" />
          </otherwise>
       </choice>
    </route>
