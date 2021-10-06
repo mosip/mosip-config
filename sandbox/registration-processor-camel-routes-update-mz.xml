@@ -184,6 +184,7 @@
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
             <to uri="eventbus://quality-classifier-bus-in" />
@@ -243,6 +244,7 @@
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
             <to uri="eventbus://demo-dedupe-bus-in" />
@@ -264,6 +266,7 @@
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
@@ -326,6 +329,7 @@
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
@@ -372,6 +376,7 @@
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
             <to uri="eventbus://uin-generator-bus-in" />
@@ -397,7 +402,6 @@
          </when>
          <otherwise>
             <to uri="eventbus://biometric-extraction-bus-in" />
-            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
@@ -441,9 +445,8 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-			<to uri="workflow-cmd://complete-as-processed" />
-			<to uri="workflow-cmd://anonymous-profile" />
             <to uri="eventbus://printing-bus-in" />
+            <to uri="workflow-cmd://complete-as-processed" />
          </otherwise>
       </choice>
    </route>
@@ -465,6 +468,7 @@
          </when>
          <otherwise>
             <to uri="workflow-cmd://complete-as-processed" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
