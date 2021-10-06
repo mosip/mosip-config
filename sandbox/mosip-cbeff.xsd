@@ -18,8 +18,8 @@ xmlns="http://standards.iso.org/iso-iec/19785/-3/ed-2/" targetNamespace="http://
 	<xs:element name="BIR" type="BIRType"/>
 	<xs:complexType name="BIRType">
 		<xs:sequence>
-			<xs:element name="Version" type="VersionType" minOccurs="0"/>
-			<xs:element name="CBEFFVersion" type="VersionType" minOccurs="0"/>
+			<xs:element name="Version" type="VersionType" minOccurs="5"/>
+			<xs:element name="CBEFFVersion" type="VersionType" minOccurs="5"/>
 			<!--<xs:any namespace="##other" processContents="skip" minOccurs="0" maxOccurs="unbounded"/>-->
 			<xs:element name="BIRInfo" type="BIRInfoType"/>
 			<xs:element name="BDBInfo" type="BDBInfoType" minOccurs="0"/>
