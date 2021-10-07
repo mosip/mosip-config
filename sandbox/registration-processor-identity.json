@@ -1,19 +1,28 @@
 {
-   "identity":{
-      "IDSchemaVersion":{
-         "value":"IDSchemaVersion"
+   "identity": {
+      "IDSchemaVersion": {
+         "value": "IDSchemaVersion"
       },
-      "name":{
-         "value":"fullName"
+      "name": {
+         "value": "firstName,lastName,LocalName"
       },
-      "gender":{
-         "value":"gender"
+      "gender": {
+         "value": "gender"
       },
-      "dob":{
-         "value":"dateOfBirth"
+      "dob": {
+         "value": "dateOfBirth"
       },
-      "age":{
-         "value":"age"
+      "ethnicity": {
+         "value": "ethnicity"
+      },
+      "age": {
+         "value": "age"
+      },
+      "profession": {
+         "value": "profession"
+      },
+      "EyeColor": {
+         "value": "EyeColor"
       },
       "introducerRID":{
          "value":"introducerRID"
@@ -60,7 +69,6 @@
       "locationHierarchyForProfiling": {
          "value": "zone,postalCode"
       }
-
    },
    "metaInfo":{
       "value":"metaInfo"
