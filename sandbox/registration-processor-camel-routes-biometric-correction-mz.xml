@@ -185,6 +185,7 @@
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </when>
         <otherwise>
                  <to uri="workflow-cmd://complete-as-processed" />
