@@ -1,7 +1,7 @@
 {
 	"ida-mapping": {
 		"name": [
-			"fullName"
+			"firstName,lastName,LocalName"
 		],
 		"dob": [
 			"dateOfBirth"
@@ -12,20 +12,26 @@
 		"gender": [
 			"gender"
 		],
+		"EyeColor": [
+			"EyeColor"
+		],
 		"phoneNumber": [
 			"phone"
 		],
 		"emailId": [
 			"email"
 		],
-		"addressLine1": [
-			"addressLine1"
+		"permanentAddress": [
+			"permanentAddress"
 		],
-		"addressLine2": [
-			"addressLine2"
+		"temporaryAddress": [
+			"temporaryAddress"
 		],
-		"addressLine3": [
-			"addressLine3"
+		"ethnicity": [
+			"ethnicity"
+		],
+		"profession": [
+			"profession"
 		],
 		"location1": [
 			"city"
@@ -40,9 +46,7 @@
 			"postalCode"
 		],
 		"fullAddress": [
-			"addressLine1",
-			"addressLine2",
-			"addressLine3",
+			"permanentAddress",
 			"city",
 			"region",
 			"province",
