@@ -9,6 +9,18 @@
 		"gender": {
 			"value": "gender"
 		},
+		"profession": {
+			"value": "profession"
+		},
+		"ethnicity": {
+			"value": "ethnicity"
+		},
+		"modeOfdelivery": {
+			"value": "modeOfdelivery"
+		},
+		"EyeColor": {
+			"value": "EyeColor"
+		},
 		"dob": {
 			"value": "dateOfBirth"
 		},
