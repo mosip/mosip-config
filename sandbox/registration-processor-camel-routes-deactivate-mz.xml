@@ -42,8 +42,7 @@
          </otherwise>
       </choice>
    </route>
-   <!-- UIN Generator to biometric-extraction Route -->
-   <route id="uin-generation route-->biometric-extraction-stage deactivated route">
+   <route id="uin-generation route--> deactivated route">
       <from uri="eventbus://uin-generator-deactivated-bus-out" />
       <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
       <choice>
@@ -61,6 +60,7 @@
          </when>
          <otherwise>
             <to uri="eventbus://biometric-extraction-bus-in" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
