@@ -118,6 +118,15 @@
 		"passportNumber": {
 			"value": "passportNumber"
 		},
+		"iris": {
+			"value": "CBEFF"
+		},
+		"fingerprint": {
+			"value": "CBEFF"
+		},
+		"face": {
+			"value": "CBEFF"
+		},
 
 
 		"fullAddress": {
