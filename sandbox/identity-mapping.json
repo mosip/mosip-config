@@ -1,69 +1,154 @@
 {
-	"ida-mapping": {
-		"name": [
-			"fullName"
-		],
-		"dob": [
-			"dateOfBirth"
-		],
-		"age": [
-			"dateOfBirth"
-		],
+	"identity": {
+		"IDSchemaVersion": {
+			"value": "IDSchemaVersion"
+		},
+		"name": {
+			"value": "fullName"
+		},
+		"gender": {
+			"value": "gender"
+		},
+		"dob": {
+			"value": "dateOfBirth"
+		},
+		"age": {
+			"value": "age"
+		},
+		"NIC": {
+			"value": "nationalIdentityNumber"
+		},
 
-		"NIC": [
-			"nationalIdentityNumber"
-		],
-		"gender": [
-			"gender"
-		],
-		"phoneNumber": [
-			"phone"
-		],
-		"emailId": [
-			"email"
-		],
-		"permanentAddress": [
-			"permanentAddress"
-		],
-		"temporaryAddress": [
-			"temporaryAddress"
-		],
-		"location1": [
-			"city"
-		],
-		"location2": [
-			"region"
-		],
-		"location3": [
-			"province"
-		],
-		"location4": [
-			"zone"
-		],
-		"postalCode": [
-			"postalCode"
-		],
-		"fullAddress": [
-			"permanentAddress",
-			"city",
-			"region",
-			"province",
-			"postalCode"
-		],
-		"iris": [
-			"CBEFF"
-		],
-		"fingerprint": [
-			"CBEFF"
-		],
-		"face": [
-			"CBEFF"
-		],
-		"residenceStatus": ["residenceStatus"],
-		"dualCitizenshipAvailability": ["dualCitizenshipAvailability"],
-		"fatherName": ["fatherName"],
-		"shortenedPrintedName": ["shortenedPrintedName"],
-		"layName": ["layName"],
-		"profession": ["profession"]
+		"introducerRID": {
+			"value": "introducerRID"
+		},
+		"introducerUIN": {
+			"value": "introducerUIN"
+		},
+		"introducerVID": {
+			"value": "introducerVID"
+		},
+		"introducerName": {
+			"value": "introducerName"
+		},
+		"phone": {
+			"value": "phone"
+		},
+		"phoneNumber": {
+			"value": "phone"
+		},
+		"email": {
+			"value": "email"
+		},
+		"emailId": {
+			"value": "email"
+		},
+		"permanentAddress": {
+			"value": "permanentAddress"
+		},
+		"temporaryAddress": {
+			"value": "temporaryAddress"
+		},
+		"uin": {
+			"value": "UIN"
+		},
+		"individualBiometrics": {
+			"value": "individualBiometrics"
+		},
+		"introducerBiometrics": {
+			"value": "introducerBiometrics"
+		},
+		"individualAuthBiometrics": {
+			"value": "individualAuthBiometrics"
+		},
+		"officerBiometricFileName": {
+			"value": "officerBiometricFileName"
+		},
+		"supervisorBiometricFileName": {
+			"value": "supervisorBiometricFileName"
+		},
+		"residenceStatus": {
+			"value": "residenceStatus"
+		},
+		"dualCitizenshipAvailability": {
+			"value": "dualCitizenshipAvailability"
+		},
+		"fatherName": {
+			"value": "fatherName"
+		},
+		"shortenedPrintedName": {
+			"value": "shortenedPrintedName"
+		},
+		"layName": {
+			"value": "layName"
+		},
+		"profession": {
+			"value": "profession"
+		},
+		"preferredLanguage": {
+			"value": "preferredLang"
+		},
+		"locationHierarchyForProfiling": {
+			"value": "zone,postalCode"
+		},
+		"addressLine1": {
+			"value": "addressLine1"
+		},
+		"addressLine2": {
+			"value": "addressLine2"
+		},
+		"addressLine3": {
+			"value": "addressLine3"
+		},
+		"location1": {
+			"value": "city"
+		},
+		"location2": {
+			"value": "region"
+		},
+		"location3": {
+			"value": "province"
+		},
+		"postalCode": {
+			"value": "postalCode"
+		},
+		"location4": {
+			"value": "zone"
+		},
+		"iris": {
+			"value": "CBEFF"
+		},
+		"fingerprint": {
+			"value": "CBEFF"
+		},
+		"face": {
+			"value": "CBEFF"
+		},
+		"fullAddress": {
+			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+		}
+	},
+	"metaInfo": {
+		"value": "metaInfo"
+	},
+	"audits": {
+		"value": "audits"
+	},
+	"documents": {
+		"poa": {
+			"value": "proofOfAddress"
+		},
+		"poi": {
+			"value": "proofOfIdentity"
+		},
+		"por": {
+			"value": "proofOfRelationship"
+		},
+		"pob": {
+			"value": "proofOfDateOfBirth"
+		},
+		"poe": {
+			"value": "proofOfException"
+		}
 	}
 }
