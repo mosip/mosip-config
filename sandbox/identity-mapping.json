@@ -21,6 +21,12 @@
 		"EyeColor": {
 			"value": "EyeColor"
 		},
+		"permanentAddress": {
+			"value": "permanentAddress"
+		},
+		"temporaryAddress": {
+			"value": "temporaryAddress"
+		},
 		"dob": {
 			"value": "dateOfBirth"
 		},
