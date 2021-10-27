@@ -140,8 +140,6 @@ def getApplicantType() {
     return "015";
   } else if (itc == Resident && genderType == Others && ageCode == ADULT && isBioExPresent) {
     return "016";
-  } else if (itc == Resident && provinceType == Kenitra && ageCode == ADULT && !isBioExPresent) {
-    return "017";
   }
   return "000";
 }
