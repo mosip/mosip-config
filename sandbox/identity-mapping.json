@@ -12,9 +12,7 @@
 		"dob": {
 			"value": "dateOfBirth"
 		},
-		"dateOfBirth": {
-			"value": "dateOfBirth"
-		},
+		
 		"age": {
 			"value": "age"
 		},
