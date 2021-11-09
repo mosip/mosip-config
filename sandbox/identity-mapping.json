@@ -29,14 +29,8 @@
 		"introducerName": {
 			"value": "introducerName"
 		},
-		"phone": {
-			"value": "phone"
-		},
 		"phoneNumber": {
 			"value": "phone"
-		},
-		"email": {
-			"value": "email"
 		},
 		"emailId": {
 			"value": "email"
@@ -128,8 +122,6 @@
 		"face": {
 			"value": "CBEFF"
 		},
-
-
 		"fullAddress": {
 			"value": "fullName,city,region,province,postalCode"
 		}
