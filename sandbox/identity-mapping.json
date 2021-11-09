@@ -131,7 +131,7 @@
 
 
 		"fullAddress": {
-			"value": "city,region,province,postalCode"
+			"value": "fullName,city,region,province,postalCode"
 		}
 	},
 	"metaInfo": {
