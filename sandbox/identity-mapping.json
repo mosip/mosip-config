@@ -32,7 +32,13 @@
 		"phoneNumber": {
 			"value": "phone"
 		},
+		"phone": {
+			"value": "phone"
+		},
 		"emailId": {
+			"value": "email"
+		},
+		"email": {
 			"value": "email"
 		},
 		"uin": {
