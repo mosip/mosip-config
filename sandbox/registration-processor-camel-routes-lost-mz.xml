@@ -141,6 +141,52 @@
          </otherwise>
       </choice>
    </route>
+   <route id="supervisor-validator-->introducer-validator lost route">
+      <from uri="eventbus://supervisor-validator-lost-bus-out" />
+      <log message="supervisor-validator-->introducer-validator/quality-classifier lost route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true')]</jsonpath>
+            <to uri="eventbus://introducer-validator-bus-in" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://quality-classifier-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="introducer-validator-->quality-classifier lost route">
+      <from uri="eventbus://introducer-validator-lost-bus-out" />
+      <log message="packet-classifier-->quality-classifier lost route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://quality-classifier-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
    <route id="quality-classifier-->bio-dedupe lost route">
       <from uri="eventbus://quality-classifier-lost-bus-out" />
       <log message="quality-classifier-->bio-dedupe lost route ${bodyAs(String)}" />
