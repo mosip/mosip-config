@@ -33,6 +33,7 @@
          </otherwise>
       </choice>
    </route>
+   <!-- securezone-notification to packet-uploader Route -->
    <route id="securezone-notification-->packet-uploader new route">
       <from uri="eventbus://securezone-notification-new-bus-out" />
       <log message="securezone-notification-->packet-uploader new route ${bodyAs(String)}" />
@@ -54,10 +55,10 @@
          </otherwise>
       </choice>
    </route>
-    <!-- packet-uploader to packet-validator Route -->
-    <route id="packet-uploader-->packet-validator new route">
-    <from uri="eventbus:packet-uploader-new-bus-out" />
-    <log message="packet-uploader-->packet-validator new route ${bodyAs(String)}" />
+   <!-- packet-uploader to packet-validator Route -->
+   <route id="packet-uploader-->packet-validator new route">
+      <from uri="eventbus://packet-uploader-new-bus-out" />
+      <log message="packet-uploader-->packet-validator new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -75,12 +76,11 @@
             <to uri="eventbus://packet-validator-bus-in" />
          </otherwise>
       </choice>
-    </route>
-
-    <!-- Packet Validator to Packet classifier Route -->
-    <route id="packet-validator-->packet-classifier new route">
-        <from uri="eventbus:packet-validator-new-bus-out" />
-        <log message="packet-validator-->packet-classifier new route ${bodyAs(String)}" />
+   </route>
+   <!-- Packet Validator to Packet classifier Route -->
+   <route id="packet-validator-->packet-classifier new route">
+      <from uri="eventbus://packet-validator-new-bus-out" />
+      <log message="packet-validator-->packet-classifier new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -98,12 +98,11 @@
             <to uri="eventbus://packet-classifier-bus-in" />
          </otherwise>
       </choice>
-    </route>
-
-    <!-- Packet Classifier to Quality Checker Route -->
-    <route id="packet-classifier-->quality-checker new route">
-        <from uri="eventbus:packet-classifier-new-bus-out" />
-        <log message="packet-classifier-->quality-checker new route ${bodyAs(String)}" />
+   </route>
+   <!-- Packet Classifier to Quality Classifier Route -->
+   <route id="packet-classifier-->cmd-validator new route">
+      <from uri="eventbus://packet-classifier-new-bus-out" />
+      <log message="packet-classifier-->quality-classifier new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -118,46 +117,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="eventbus://quality-classifier-bus-in" />
-         </otherwise>
-      </choice>
-    </route>
-
-   <route id="quality-classifier-->cmd-validator new route">
-      <from uri="eventbus://quality-classifier-new-bus-out" />
-      <log message="quality-classifier-->cmd-validator new route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-         </when>
-	  <when>
-             <jsonpath suppressExceptions="true">$.[?(@['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['FAILED'] || @['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['REJECTED'])]</jsonpath>
-           <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
-           <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
-           <to uri="workflow-cmd://pause-and-request-additional-info" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Average', 'Good','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Finger'] in ['Average', 'Good', '--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Face'] in ['Average', 'Good', '--Biometrics-Not-Available--'])]</jsonpath>
             <to uri="eventbus://c-m-d-validator-bus-in" />
-         </when>
-		  <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Poor'] || @['tags']['Biometric_Quality-Finger'] in ['Poor'] || @['tags']['Biometric_Quality-Face'] in ['Poor'])]</jsonpath>
-           <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
-		    <!-- PAUSE_FOR is in seconds -->
-           <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
-           <to uri="workflow-cmd://pause-and-request-additional-info" />
-         </when>
-         <otherwise>
-            <to uri="workflow-cmd://complete-as-failed" />
          </otherwise>
       </choice>
    </route>
@@ -215,7 +175,7 @@
             <to uri="eventbus://introducer-validator-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://demo-dedupe-bus-in" />
+            <to uri="eventbus://quality-classifier-bus-in" />
          </otherwise>
       </choice>
    </route>
@@ -240,13 +200,13 @@
             <to uri="eventbus://introducer-validator-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://demo-dedupe-bus-in" />
+            <to uri="eventbus://quality-classifier-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="introducer-validator-->demo-dedupe new route">
+   <route id="introducer-validator-->quality-classifier new route">
       <from uri="eventbus://introducer-validator-new-bus-out" />
-      <log message="introducer-validator-->demo-dedupe new route ${bodyAs(String)}" />
+      <log message="packet-classifier-->quality-classifier new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -258,10 +218,48 @@
          </when>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
+            <to uri="eventbus://quality-classifier-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="quality-classifier-->demo-dedupe new route">
+      <from uri="eventbus://quality-classifier-new-bus-out" />
+      <log message="quality-classifier-->demo-dedupe new route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['FAILED'] || @['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['REJECTED'])]</jsonpath>
+            <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
+            <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
+            <to uri="workflow-cmd://pause-and-request-additional-info" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Average', 'Good','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Finger'] in ['Average', 'Good', '--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Face'] in ['Average', 'Good', '--Biometrics-Not-Available--'])]</jsonpath>
             <to uri="eventbus://demo-dedupe-bus-in" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['Poor'] || @['tags']['Biometric_Quality-Finger'] in ['Poor'] || @['tags']['Biometric_Quality-Face'] in ['Poor'])]</jsonpath>
+            <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
+            <!-- PAUSE_FOR is in seconds -->
+            <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
+            <to uri="workflow-cmd://pause-and-request-additional-info" />
+         </when>
+         <otherwise>
+            <to uri="workflow-cmd://complete-as-failed" />
          </otherwise>
       </choice>
    </route>
@@ -398,10 +396,55 @@
          </otherwise>
       </choice>
    </route>
-   <!-- UIN Generator to Printing Route -->
-   <route id="uin-generation route-->printing-stage new route">
+   <!-- UIN Generator to biometric-extraction Route -->
+   <route id="uin-generation route-->biometric-extraction-stage new route">
       <from uri="eventbus://uin-generator-new-bus-out" />
-      <log message="uin-generation-->printing-stage route ${bodyAs(String)}" />
+      <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://biometric-extraction-bus-in" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </otherwise>
+      </choice>
+   </route>
+ <!-- biometric-extraction to finalization Route -->
+   <route id="biometric-extraction route-->finalization-stage new route">
+      <from uri="eventbus://biometric-extraction-new-bus-out" />
+      <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://finalization-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+	 <!-- finalization to Printing Route -->
+   <route id="finalization route-->printing-stage new route">
+      <from uri="eventbus://finalization-new-bus-out" />
+      <log message="finalization-->printing-stage route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -417,6 +460,7 @@
          </when>
          <otherwise>
             <to uri="workflow-cmd://complete-as-processed" />
+			<to uri="workflow-cmd://anonymous-profile" />
             <to uri="eventbus://printing-bus-in" />
          </otherwise>
       </choice>
@@ -443,4 +487,3 @@
       </choice>
    </route>
 </routes>
-
