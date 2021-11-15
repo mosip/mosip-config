@@ -79,7 +79,7 @@ def getBioExceptionFlag(identity) {
     Object val = identity.containsKey('isBioException');
     if(val == 'true') { return true; }
     if(val == 'false') { return false; }
-    return null;
+    return false;
 }
 
 def getApplicantType() {
