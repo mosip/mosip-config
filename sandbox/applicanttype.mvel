@@ -5,8 +5,6 @@ import java.time.Period;
 import java.util.List;
 import java.time.ZoneId;
 import java.time.temporal.ValueRange;
-import java.lang.Exception;
-import java.lang.ClassCastException;
 
 String CHILD = "CHL";
 String ADULT = "ADL";
@@ -19,15 +17,12 @@ String DATE_PATTERN = "yyyy/MM/dd";
 
 def isUpdateFlow(identity) {
   Object val = identity.getOrDefault('isUpdate', false);
-  try {
-    return val == null ? false : (Boolean) val;
-  } catch(ClassCastException e) {
-      throw new Exception("KER-MVEL-001");
-  }
+  if(val == null || val == empty) { return false; }
+  if(val == 'true') { return true; }
+  return false;
 }
 
 def getResidenceStatus(identity) {
-
     if(identity.containsKey('residenceStatusCode')) {
         return identity.getOrDefault('residenceStatusCode', null);
     }
@@ -62,12 +57,11 @@ def getAgeCode(identity) {
     String dob = identity.get('dateOfBirth');
     LocalDate date = LocalDate.parse(dob, DateTimeFormatter.ofPattern(DATE_PATTERN));
     LocalDate currentDate = LocalDate.now(ZoneId.of("UTC"));
-     int  ageInYears = -1;
-     if (!date.isAfter(currentDate)) {
-         ageInYears = Period.between(date, currentDate).getYears();
-    } else {
-           throw new Exception("KER-MSD-151");
-     }
+    
+    if(date.isAfter(currentDate)) { return 'KER-MSD-151'; }
+    
+    int ageInYears = Period.between(date, currentDate).getYears();
+    
     String ageGroup = null;
     for(String groupName : ageGroups.keySet()) {
         String[] range = ((String)ageGroups.get(groupName)).split('-');
@@ -81,11 +75,11 @@ def getAgeCode(identity) {
 
 
 def getBioExceptionFlag(identity) {
-    try {
-       return identity.containsKey('isBioException') ? (Boolean) identity.get('isBioException') : false;
-    } catch(ClassCastException e) {
-      throw new Exception("KER-MVEL-002");
-    }
+    if(!identity.containsKey('isBioException')) { return null; }
+    Object val = identity.containsKey('isBioException');
+    if(val == 'true') { return true; }
+    if(val == 'false') { return false; }
+    return null;
 }
 
 def getApplicantType() {
@@ -93,9 +87,10 @@ def getApplicantType() {
   String genderType = getGenderType(identity);
   String ageCode = getAgeCode(identity);
   boolean isBioExPresent = getBioExceptionFlag(identity);
-
-  if(itc == null || genderType == null || ageCode == null)
-    return isUpdateFlow(identity) ? "000" : "KER-MSD-147";
+  
+  if( ageCode == 'KER-MSD-151' ) { return "KER-MSD-151"; }
+  
+  if(itc == null || genderType == null || ageCode == null) { return isUpdateFlow(identity) ? "000" : "KER-MSD-147"; }
 
   if (itc == NonResident && genderType == MALE && ageCode == CHILD && !isBioExPresent) {
     return "001";
