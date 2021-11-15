@@ -5,6 +5,8 @@ import java.time.Period;
 import java.util.List;
 import java.time.ZoneId;
 import java.time.temporal.ValueRange;
+import java.lang.Exception;
+import java.lang.ClassCastException;
 
 String CHILD = "CHL";
 String ADULT = "ADL";
@@ -17,10 +19,15 @@ String DATE_PATTERN = "yyyy/MM/dd";
 
 def isUpdateFlow(identity) {
   Object val = identity.getOrDefault('isUpdate', false);
-  return val == null ? false : (Boolean) val;
+  try {
+    return val == null ? false : (Boolean) val;
+  } catch(ClassCastException e) {
+      throw new Exception("KER-MVEL-001");
+  }
 }
 
 def getResidenceStatus(identity) {
+
     if(identity.containsKey('residenceStatusCode')) {
         return identity.getOrDefault('residenceStatusCode', null);
     }
@@ -59,7 +66,7 @@ def getAgeCode(identity) {
      if (!date.isAfter(currentDate)) {
          ageInYears = Period.between(date, currentDate).getYears();
     } else {
-            return "KER-MSD-151";
+           throw new Exception("KER-MSD-151");
      }
     String ageGroup = null;
     for(String groupName : ageGroups.keySet()) {
@@ -74,7 +81,11 @@ def getAgeCode(identity) {
 
 
 def getBioExceptionFlag(identity) {
-    return identity.containsKey('isBioException') ? (Boolean) identity.get('isBioException') : false;
+    try {
+       return identity.containsKey('isBioException') ? (Boolean) identity.get('isBioException') : false;
+    } catch(ClassCastException e) {
+      throw new Exception("KER-MVEL-002");
+    }
 }
 
 def getApplicantType() {
