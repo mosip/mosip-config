@@ -58,7 +58,7 @@ def getAgeCode(identity) {
         return null;
 
     String dob = identity.get('dateOfBirth');
-    if(pattern.matcher(dob).matches())
+    if(!pattern.matcher(dob).matches())
         return null;
         
     LocalDate date = LocalDate.parse(dob, DateTimeFormatter.ofPattern(DATE_PATTERN));
