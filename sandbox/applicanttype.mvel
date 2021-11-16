@@ -74,7 +74,7 @@ def getAgeCode(identity) {
 
 def getBioExceptionFlag(identity) {
     if(!identity.containsKey('isBioException')) { return false; }
-    Object val = identity.containsKey('isBioException');
+    Object val = identity.getOrDefault('isBioException', null);
     return (val == 'true') ? true : (( val == 'false' ) ? false : null);
 }
 
