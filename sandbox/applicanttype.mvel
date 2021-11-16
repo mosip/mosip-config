@@ -6,6 +6,9 @@ import java.util.List;
 import java.time.ZoneId;
 import java.time.temporal.ValueRange;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 String CHILD = "CHL";
 String ADULT = "ADL";
 String MALE = 'MLE';
@@ -14,6 +17,8 @@ String NonResident = "FR";
 String Resident = "NFR";
 String Others = "OTH";
 String DATE_PATTERN = "yyyy/MM/dd";
+String regex = "^\\d{4}(\\/)(((0){0,1}[1-9])|((1)[0-2]))(\\/)([0-2][0-9]|(3)[0-1])$";
+Pattern pattern = Pattern.compile(regex);
 
 def isUpdateFlow(identity) {
   Object val = identity.getOrDefault('isUpdate', false);
@@ -53,6 +58,9 @@ def getAgeCode(identity) {
         return null;
 
     String dob = identity.get('dateOfBirth');
+    if(pattern.matcher(dob).matches())
+        return null;
+        
     LocalDate date = LocalDate.parse(dob, DateTimeFormatter.ofPattern(DATE_PATTERN));
     LocalDate currentDate = LocalDate.now(ZoneId.of("UTC"));
     
