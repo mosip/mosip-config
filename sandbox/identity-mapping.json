@@ -15,7 +15,9 @@
 		"age": {
 			"value": "age"
 		},
-		
+		"NIC": {
+			"value": "nationalIdentityNumber"
+		},
 		"introducerRID": {
 			"value": "introducerRID"
 		},
