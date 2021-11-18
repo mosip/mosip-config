@@ -15,9 +15,7 @@
 		"age": {
 			"value": "age"
 		},
-		"NIC": {
-			"value": "nationalIdentityNumber"
-		},
+		
 
 		"introducerRID": {
 			"value": "introducerRID"
@@ -73,9 +71,7 @@
 		"dualCitizenshipAvailability": {
 			"value": "dualCitizenshipAvailability"
 		},
-		"fatherName": {
-			"value": "fatherName"
-		},
+		
 		"shortenedPrintedName": {
 			"value": "shortenedPrintedName"
 		},
