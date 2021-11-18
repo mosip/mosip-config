@@ -21,8 +21,8 @@ String regex = "^\\d{4}(\\/)(((0){0,1}[1-9])|((1)[0-2]))(\\/)([0-2][0-9]|(3)[0-1
 Pattern pattern = Pattern.compile(regex);
 
 def isUpdateFlow(identity) {
-  Object val = identity.getOrDefault('isUpdate', false);
-  return (val == 'true') ? true : (( val == 'false' ) ? false : false);
+  Object val = identity.getOrDefault('_flow', null);
+  return (val == 'Update') ? true : false;
 }
 
 def getResidenceStatus(identity) {
