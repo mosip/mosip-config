@@ -15,7 +15,7 @@
     }]
 }
 {
-    "abis": [{
+    "abis2": [{
         "name": "ABIS2",
         "host": "",
         "port": "",
