@@ -14,19 +14,3 @@
         "inboundMessageTTL": 2700
     }]
 }
-{
-    "abis2": [{
-        "name": "ABIS2",
-        "host": "",
-        "port": "",
-        "brokerUrl": "tcp://mz.ingress:30616",
-        "inboundQueueName": "mosip-to-abis2",
-        "outboundQueueName": "abis2-to-mosip",
-        "pingInboundQueueName": "",
-        "pingOutboundQueueName": "",
-        "userName": "admin",
-        "password": "admin",
-        "typeOfQueue": "ACTIVEMQ",
-        "inboundMessageTTL": 2700
-    }]
-}
