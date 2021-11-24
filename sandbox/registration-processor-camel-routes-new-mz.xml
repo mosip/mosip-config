@@ -322,7 +322,7 @@
             <to uri="eventbus://manual-verification-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://uin-generator-bus-in" />
+            <to uri="eventbus://uin-generator-bus-inn" />
          </otherwise>
       </choice>
    </route>
