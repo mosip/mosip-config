@@ -315,7 +315,7 @@
          </when>
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
-            <to uri="eventbus://abis-handler-bus-inn" />
+            <to uri="eventbus://abis-handler-bus-in" />
          </when>
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-verification-bus-in')]</jsonpath>
