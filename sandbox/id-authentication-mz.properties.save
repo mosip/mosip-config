@@ -449,7 +449,7 @@ request.idtypes.allowed.internalauth=UIN,USERID,VID
 #------ Encrypted Credential Attributes list -----------
 #The list of attributes in identity that are Zero Knowledge encrpted in IDA while storing the credential in DB.
 #This list is used to identify the attributes to decrypt when fetching the records from DB
-ida-zero-knowledge-encrypted-credential-attributes=individualBiometrics,fullName,dateOfBirth,gender,phone,email,addressLine1,addressLine2,addressLine3,region,province,city,postalCode
+ida-zero-knowledge-encrypted-credential-attributes=individualBiometrics,fullName,
 
 #### Cryptograpic/Signature verificate related configurations
 mosip.ida.auth.trust-validation-required=true
@@ -548,7 +548,8 @@ mosip.kernel.keymanager.certificate.default.location=BANGALORE
 mosip.kernel.keymanager.certificate.default.state=KA
 mosip.kernel.keymanager.certificate.default.country=IN
 
-# Zero Knowledge Master & Public Key identifier.
+# 
+Zero Knowledge Master & Public Key identifier.
 mosip.kernel.zkcrypto.masterkey.application.id=${application.id}
 mosip.kernel.zkcrypto.masterkey.reference.id=${identity-cache.reference.id}
 mosip.kernel.zkcrypto.publickey.application.id=${application.id}
