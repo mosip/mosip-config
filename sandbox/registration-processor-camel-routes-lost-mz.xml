@@ -141,6 +141,52 @@
          </otherwise>
       </choice>
    </route>
+   <route id="supervisor-validator-->introducer-validator lost route">
+      <from uri="eventbus://supervisor-validator-lost-bus-out" />
+      <log message="supervisor-validator-->introducer-validator/quality-classifier lost route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true')]</jsonpath>
+            <to uri="eventbus://introducer-validator-bus-in" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://quality-classifier-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="introducer-validator-->quality-classifier lost route">
+      <from uri="eventbus://introducer-validator-lost-bus-out" />
+      <log message="packet-classifier-->quality-classifier lost route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://quality-classifier-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
    <route id="quality-classifier-->bio-dedupe lost route">
       <from uri="eventbus://quality-classifier-lost-bus-out" />
       <log message="quality-classifier-->bio-dedupe lost route ${bodyAs(String)}" />
@@ -194,6 +240,11 @@
         <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'verification-bus-in')]</jsonpath>
+            <to uri="eventbus://verification-bus-in" />
          </when>
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
@@ -202,6 +253,27 @@
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-verification-bus-in')]</jsonpath>
             <to uri="eventbus://manual-verification-bus-in" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://uin-generator-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="verification route-->uin-generator lost route">
+      <from uri="eventbus://verification-lost-bus-out" />
+      <log message="verification route-->uin-generator lost route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
             <to uri="eventbus://uin-generator-bus-in" />
@@ -271,6 +343,7 @@
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
             <to uri="eventbus://uin-generator-bus-in" />
@@ -296,7 +369,6 @@
          </when>
          <otherwise>
             <to uri="eventbus://biometric-extraction-bus-in" />
-            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
@@ -340,9 +412,8 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="workflow-cmd://complete-as-processed" />
-			<to uri="workflow-cmd://anonymous-profile" />
             <to uri="eventbus://printing-bus-in" />
+            <to uri="workflow-cmd://complete-as-processed" />
          </otherwise>
       </choice>
    </route>
@@ -364,6 +435,7 @@
          </when>
          <otherwise>
             <to uri="workflow-cmd://complete-as-processed" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
