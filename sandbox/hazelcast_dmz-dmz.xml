@@ -21,14 +21,14 @@
 		<password/>
 	</group>
  <network>
- <join>	
-        <multicast enabled="false"/>	
-        <tcp-ip enabled="true">	
-            <interface>127.0.0.1</interface>	
-        </tcp-ip>	
-    </join>	
-    <interfaces enabled="true">	
-        <interface>127.0.0.1</interface>	
+ <join>
+        <multicast enabled="false"/>
+        <tcp-ip enabled="true">
+            <interface>127.0.0.1</interface>
+        </tcp-ip>
+    </join>
+    <interfaces enabled="true">
+        <interface>127.0.0.1</interface>
     </interfaces>
 <!-- For vertx uncomment the below join section and comment the above join and interfaces section. -->
 <!--   <join>
