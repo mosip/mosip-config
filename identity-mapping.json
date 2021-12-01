@@ -30,7 +30,13 @@
         "phone": {
             "value": "phone"
         },
+        "phoneNumber": {
+            "value": "phone"
+        },
         "email": {
+            "value": "email"
+        },
+        "emailId": {
             "value": "email"
         },
         "uin": {
@@ -59,6 +65,33 @@
         },
         "locationHierarchyForProfiling": {
             "value": "zone,postalCode"
+        },
+        "addressLine1": {
+            "value": "addressLine1"
+        },
+        "addressLine2": {
+            "value": "addressLine2"
+        },
+        "addressLine3": {
+            "value": "addressLine3"
+        },
+        "location1": {
+            "value": "city"
+        },
+        "location2": {
+            "value": "region"
+        },
+        "location3": {
+            "value": "province"
+        },
+        "postalCode": {
+            "value": "postalCode"
+        },
+        "location4": {
+            "value": "zone"
+        },
+        "fullAddress": {
+            "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
         }
     },
     "metaInfo": {
