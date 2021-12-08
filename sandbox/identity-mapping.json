@@ -4,35 +4,19 @@
 			"value": "IDSchemaVersion"
 		},
 		"name": {
-			"value": "firstName,lastName"
+			"value": "fullName"
 		},
 		"gender": {
 			"value": "gender"
 		},
-		"profession": {
-			"value": "profession"
-		},
-		"ethnicity": {
-			"value": "ethnicity"
-		},
-		"modeOfdelivery": {
-			"value": "modeOfdelivery"
-		},
-		"EyeColor": {
-			"value": "EyeColor"
-		},
-		"permanentAddress": {
-			"value": "permanentAddress"
-		},
-		"temporaryAddress": {
-			"value": "temporaryAddress"
-		},
 		"dob": {
 			"value": "dateOfBirth"
 		},
+
 		"age": {
 			"value": "age"
 		},
+
 		"introducerRID": {
 			"value": "introducerRID"
 		},
@@ -45,16 +29,16 @@
 		"introducerName": {
 			"value": "introducerName"
 		},
-		"phone": {
-			"value": "phone"
-		},
 		"phoneNumber": {
 			"value": "phone"
 		},
-		"email": {
-			"value": "email"
+		"phone": {
+			"value": "phone"
 		},
 		"emailId": {
+			"value": "email"
+		},
+		"email": {
 			"value": "email"
 		},
 		"uin": {
@@ -108,8 +92,44 @@
 		"location4": {
 			"value": "zone"
 		},
+		"civilRegistryNumber": {
+			"value": "civilRegistryNumber"
+		},
+		"birthCertificateNumber": {
+			"value": "birthCertificateNumber"
+		},
+		"flagidcs": {
+			"value": "flagidcs"
+		},
+		"listCountry": {
+			"value": "listCountry"
+		},
+		"placeOfBirth": {
+			"value": "placeOfBirth"
+		},
+		"flagb": {
+			"value": "flagb"
+		},
+		"referenceResidencyNumber": {
+			"value": "referenceResidencyNumber"
+		},
+		"resOuPass": {
+			"value": "resOuPass"
+		},
+		"passportNumber": {
+			"value": "passportNumber"
+		},
+		"iris": {
+			"value": "CBEFF"
+		},
+		"fingerprint": {
+			"value": "CBEFF"
+		},
+		"face": {
+			"value": "CBEFF"
+		},
 		"fullAddress": {
-			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+			"value": "fullName,city,region,province,postalCode"
 		}
 	},
 	"metaInfo": {
