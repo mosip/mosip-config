@@ -39,7 +39,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="workflow-cmd://mark-as-reprocess" />
+            <to uri="eventbus://packet-validator-bus-in" />
          </otherwise>
       </choice>
    </route>
