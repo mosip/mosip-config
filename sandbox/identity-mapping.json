@@ -46,10 +46,10 @@
 			"value": "introducerName"
 		},
 		"phone": {
-			"value": "phone"
+			"value": "mobileno"
 		},
 		"phoneNumber": {
-			"value": "phone"
+			"value": "mobileno"
 		},
 		"email": {
 			"value": "email"
