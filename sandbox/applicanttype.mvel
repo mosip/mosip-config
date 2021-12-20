@@ -60,14 +60,14 @@ def getAgeCode(identity) {
     String dob = identity.get('dateOfBirth');
     if(!pattern.matcher(dob).matches())
         return null;
-        
+
     LocalDate date = LocalDate.parse(dob, DateTimeFormatter.ofPattern(DATE_PATTERN));
     LocalDate currentDate = LocalDate.now(ZoneId.of("UTC"));
-    
+
     if(date.isAfter(currentDate)) { return 'KER-MSD-151'; }
-    
+
     int ageInYears = Period.between(date, currentDate).getYears();
-    
+
     String ageGroup = null;
     for(String groupName : ageGroups.keySet()) {
         String[] range = ((String)ageGroups.get(groupName)).split('-');
@@ -91,13 +91,13 @@ def getApplicantType() {
   String genderType = getGenderType(identity);
   String ageCode = getAgeCode(identity);
   boolean isBioExPresent = getBioExceptionFlag(identity);
-  
+
   if( ageCode == 'KER-MSD-151' ) { return "KER-MSD-151"; }
-  
-  if(itc == null || genderType == null || ageCode == null || isBioExPresent == null ) { 
+
+  if(itc == null || genderType == null || ageCode == null || isBioExPresent == null ) {
       return isUpdateFlow(identity) ? "000" : "KER-MSD-147";
   }
-  
+
   System.out.println(itc + " - " + genderType + " - " + ageCode + " - " + isBioExPresent);
 
   if (itc == NonResident && genderType == MALE && ageCode == CHILD && !isBioExPresent) {
