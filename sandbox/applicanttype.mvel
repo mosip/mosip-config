@@ -9,8 +9,9 @@ import java.time.temporal.ValueRange;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-String CHILD = "CHL";
-String ADULT = "ADL";
+String CHILD = "INFANT";
+String ADULT = "ADULT";
+String MINOR = "MINOR";
 String MALE = 'MLE';
 String FEMALE = 'FLE';
 String NonResident = "FR";
@@ -76,7 +77,7 @@ def getAgeCode(identity) {
         }
     }
 
-   return ageGroup == null ? null : (ageGroup == 'INFANT' ? CHILD : ADULT);
+   return ageGroup == null ? null : ageGroup;
 }
 
 
@@ -148,6 +149,44 @@ def getApplicantType() {
     return "015";
   } else if (itc == Resident && genderType == Others && ageCode == ADULT && isBioExPresent) {
     return "016";
+  } 
+    
+	else if (itc == NonResident && genderType == MALE && ageCode == MINOR && isBioExPresent) {
+    return "014";
+  } else if (itc == Resident && genderType == MALE && ageCode == MINOR && isBioExPresent) {
+    return "015";
   }
+  
+  else if (itc == NonResident && genderType == FEMALE && ageCode == MINOR && isBioExPresent) {
+    return "014";
+  } else if (itc == Resident && genderType == FEMALE && ageCode == MINOR && isBioExPresent) {
+    return "015";
+  }
+  
+  else if (itc == NonResident && genderType == Others && ageCode == MINOR && isBioExPresent) {
+    return "014";
+  } else if (itc == Resident && genderType == Others && ageCode == MINOR && isBioExPresent) {
+    return "015";
+  }
+  
+  else if (itc == NonResident && genderType == MALE && ageCode == MINOR && !isBioExPresent) {
+    return "014";
+  } else if (itc == Resident && genderType == MALE && ageCode == MINOR && !isBioExPresent) {
+    return "015";
+  }
+  
+   else if (itc == NonResident && genderType == FEMALE && ageCode == MINOR && !isBioExPresent) {
+    return "014";
+  } else if (itc == Resident && genderType == FEMALE && ageCode == MINOR && !isBioExPresent) {
+    return "015";
+  }
+  
+  else if (itc == NonResident && genderType == Others && ageCode == MINOR && !isBioExPresent) {
+    return "014";
+  } else if (itc == Resident && genderType == Others && ageCode == MINOR && !isBioExPresent) {
+    return "015";
+  }
+  
+  
   return "000";
 }
