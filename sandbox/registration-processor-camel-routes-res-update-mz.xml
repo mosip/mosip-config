@@ -123,9 +123,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="manual-verification-->uin-generation res_update route">
-      <from uri="eventbus://manual-verification-res_update-bus-out" />
-      <log message="manual-verification-->uin-generation res_update route ${bodyAs(String)}" />
+   <route id="manual-adjudication-->uin-generation res_update route">
+      <from uri="eventbus://manual-adjudication-res_update-bus-out" />
+      <log message="manual-adjudication-->uin-generation res_update route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
