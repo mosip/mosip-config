@@ -4,7 +4,7 @@
 			"value": "IDSchemaVersion"
 		},
 		"name": {
-			"value": "fullName"
+			"value": "firstName,middleName,lastName"
 		},
 		"gender": {
 			"value": "gender"
@@ -15,28 +15,19 @@
 		"age": {
 			"value": "age"
 		},
-		"introducerRID": {
-			"value": "introducerRID"
+		"introducerFirstName": {
+			"value": "introducerFirstName"
 		},
-		"introducerUIN": {
-			"value": "introducerUIN"
+		"introducerMiddleName": {
+			"value": "introducerMiddleName"
 		},
-		"introducerVID": {
-			"value": "introducerVID"
-		},
-		"introducerName": {
-			"value": "introducerName"
+		"introducerLastName": {
+			"value": "introducerLastName"
 		},
 		"phone": {
 			"value": "phone"
 		},
-		"phoneNumber": {
-			"value": "phone"
-		},
 		"email": {
-			"value": "email"
-		},
-		"emailId": {
 			"value": "email"
 		},
 		"uin": {
@@ -45,35 +36,17 @@
 		"individualBiometrics": {
 			"value": "individualBiometrics"
 		},
-		"introducerBiometrics": {
-			"value": "introducerBiometrics"
-		},
-		"individualAuthBiometrics": {
-			"value": "individualAuthBiometrics"
-		},
-		"officerBiometricFileName": {
-			"value": "officerBiometricFileName"
-		},
-		"supervisorBiometricFileName": {
-			"value": "supervisorBiometricFileName"
-		},
 		"residenceStatus": {
 			"value": "residenceStatus"
 		},
-		"preferredLanguage": {
-			"value": "preferredLang"
+		"permanentAddressLine1": {
+			"value": "permanentAddressLine1"
 		},
-		"locationHierarchyForProfiling": {
-			"value": "zone,postalCode"
+		"permanentAddressLine2": {
+			"value": "permanentAddressLine2"
 		},
-		"addressLine1": {
-			"value": "addressLine1"
-		},
-		"addressLine2": {
-			"value": "addressLine2"
-		},
-		"addressLine3": {
-			"value": "addressLine3"
+		"presentAddressLine1": {
+			"value": "presentAddressLine1"
 		},
 		"location1": {
 			"value": "city"
