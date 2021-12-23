@@ -251,8 +251,8 @@
             <to uri="eventbus://abis-handler-bus-in" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-verification-bus-in')]</jsonpath>
-            <to uri="eventbus://manual-verification-bus-in" />
+            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
+            <to uri="eventbus://manual-adjudication-bus-in" />
          </when>
          <otherwise>
             <to uri="eventbus://bio-dedupe-bus-in" />
@@ -318,8 +318,8 @@
             <to uri="eventbus://abis-handler-bus-in" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-verification-bus-in')]</jsonpath>
-            <to uri="eventbus://manual-verification-bus-in" />
+            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
+            <to uri="eventbus://manual-adjudication-bus-in" />
          </when>
          <otherwise>
             <to uri="eventbus://uin-generator-bus-in" />
@@ -368,9 +368,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="manual-verification-->uin-generation new route">
-      <from uri="eventbus://manual-verification-new-bus-out" />
-      <log message="manual-verification-->uin-generation new route ${bodyAs(String)}" />
+   <route id="manual-adjudication-->uin-generation new route">
+      <from uri="eventbus://manual-adjudication-new-bus-out" />
+      <log message="manual-adjudication-->uin-generation new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
