@@ -322,7 +322,7 @@
             <to uri="eventbus://manual-verification-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://uin-generator-bus-inn" />
+            <to uri="eventbus://uin-generator-bus-in" />
          </otherwise>
       </choice>
    </route>
@@ -386,7 +386,7 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://uin-generator-bus-inn" />
+            <to uri="eventbus://uin-generator-bus-in" />
          </otherwise>
       </choice>
    </route>
