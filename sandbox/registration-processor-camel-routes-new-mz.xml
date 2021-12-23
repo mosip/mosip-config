@@ -386,7 +386,7 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://uin-generator-bus-in" />
+            <to uri="eventbus://uin-generator-bus-inn" />
          </otherwise>
       </choice>
    </route>
