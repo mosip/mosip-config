@@ -340,7 +340,7 @@
             <to uri="eventbus://abis-handler-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://uin-generator-bus-inn" />
+            <to uri="eventbus://uin-generator-bus-in" />
          </otherwise>
       </choice>
    </route>
