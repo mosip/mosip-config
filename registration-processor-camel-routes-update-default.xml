@@ -537,6 +537,7 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
+            <to uri="workflow-cmd://complete-as-processed" />
             <to uri="eventbus://printing-bus-in" />
          </otherwise>
       </choice>
@@ -558,8 +559,8 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="workflow-cmd://complete-as-processed" />
             <to uri="workflow-cmd://anonymous-profile" />
+            <to uri="workflow-cmd://complete-as-processed" />
          </otherwise>
       </choice>
    </route>
