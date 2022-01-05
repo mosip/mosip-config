@@ -67,7 +67,7 @@
             "value": "zone,postalCode"
         },
         "addressLine1": {
-            "value": "addressLine1"
+            "value": "permanentAddress"
         },
         "addressLine2": {
             "value": "addressLine2"
