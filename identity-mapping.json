@@ -4,11 +4,30 @@
             "value": "IDSchemaVersion"
         },
         "name": {
-            "value": "firstName"
+            "value": "firstName,lastName"
         },
         "gender": {
             "value": "gender"
         },
+        "profession": {
+            "value": "profession"
+        },
+        "ethnicity": {
+            "value": "ethnicity"
+        },
+        "modeOfdelivery": {
+            "value": "modeOfdelivery"
+        },
+        "EyeColor": {
+            "value": "EyeColor"
+        },
+        "permanentAddress": {
+            "value": "permanentAddress"
+        },
+        "temporaryAddress": {
+            "value": "temporaryAddress"
+        },
+            
         "dob": {
             "value": "dateOfBirth"
         },
@@ -28,10 +47,10 @@
             "value": "introducerName"
         },
         "phone": {
-            "value": "phone"
+            "value": "mobileno"
         },
         "phoneNumber": {
-            "value": "phone"
+            "value": "mobileno"
         },
         "email": {
             "value": "email"
