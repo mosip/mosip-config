@@ -90,24 +90,33 @@
         "location4": {
             "value": "zone"
         },
-        	"civilRegistryNumber": {
+        "civilRegistryNumber": {
 			"value": "civilRegistryNumber"
-		},
-		"birthCertificateNumber": {
+	},
+	"birthCertificateNumber": {
 			"value": "birthCertificateNumber"
-		},
-		"flagidcs": {
+	},
+	"flagidcs": {
 			"value": "flagidcs"
-		},
-		"listCountry": {
+	},
+	"listCountry": {
 			"value": "listCountry"
-		},
-		"placeOfBirth": {
+	},
+	"placeOfBirth": {
 			"value": "placeOfBirth"
-		},
-		"flagb": {
+	},
+	"flagb": {
 			"value": "flagb"
-		},
+	},
+	"referenceResidencyNumber": {
+			"value": "referenceResidencyNumber"
+	},
+	"resOuPass": {
+			"value": "resOuPass"
+	},
+	"passportNumber": {
+			"value": "passportNumber"
+	},
         "fullAddress": {
             "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
         }
