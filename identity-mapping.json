@@ -90,6 +90,24 @@
         "location4": {
             "value": "zone"
         },
+        	"civilRegistryNumber": {
+			"value": "civilRegistryNumber"
+		},
+		"birthCertificateNumber": {
+			"value": "birthCertificateNumber"
+		},
+		"flagidcs": {
+			"value": "flagidcs"
+		},
+		"listCountry": {
+			"value": "listCountry"
+		},
+		"placeOfBirth": {
+			"value": "placeOfBirth"
+		},
+		"flagb": {
+			"value": "flagb"
+		},
         "fullAddress": {
             "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
         }
