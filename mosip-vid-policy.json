@@ -2,21 +2,21 @@
     "vidPolicies": [{
             "vidType": "Perpetual",
             "vidPolicy": {
-                "validForInMinutes": 15,
-                "transactionsAllowed": 0,
+                "validForInMinutes": null,
+                "transactionsAllowed": null,
                 "instancesAllowed": 1,
-                "autoRestoreAllowed": false,
-                "restoreOnAction": "REGENERATE"
+                "autoRestoreAllowed": true,
+                "restoreOnAction": "REVOKED"
             }
         },
         {
             "vidType": "Temporary",
             "vidPolicy": {
-                "validForInMinutes": 5,
-                "transactionsAllowed": 2,
-                "instancesAllowed": 4,
-                "autoRestoreAllowed": true,
-                "restoreOnAction": "REVOKED"
+                "validForInMinutes": 30,
+                "transactionsAllowed": 1,
+                "instancesAllowed": 5,
+                "autoRestoreAllowed": false,
+                "restoreOnAction": "REGENERATE"
             }
         },
         {
