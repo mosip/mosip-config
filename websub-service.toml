@@ -39,7 +39,7 @@ MESSAGE_DELIVERY_RETRY_INTERVAL = 3.0
 MESSAGE_DELIVERY_COUNT = 3
 
 # The message delivery timeout
-MESSAGE_DELIVERY_TIMEOUT = 10.0
+MESSAGE_DELIVERY_TIMEOUT = 60.0
 
 # The base URL of IDP
 MOSIP_AUTH_BASE_URL = "${mosip.api.internal.url}/v1/authmanager"
