@@ -24,7 +24,7 @@ WEBSUB_SUBSCRIBERS_TOPIC = "registered-websub-subscribers"
 CONSOLIDATED_WEBSUB_SUBSCRIBERS_TOPIC = "consolidated-websub-subscribers"
 
 # The interval in which Kafka consumers wait for new messages
-POLLING_INTERVAL = 1000.0
+POLLING_INTERVAL = 500.0
 
 # The period in which Kafka close method waits to complete
 GRACEFUL_CLOSE_PERIOD = 5.0
