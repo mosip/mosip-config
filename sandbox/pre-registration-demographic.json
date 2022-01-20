@@ -1,5 +1,15 @@
 {
    "identity":[
+       {
+      "id": "IDSchemaVersion",
+      "description": "ID Schema Version",
+      "type": "number",
+      "controlType": null,
+      "fieldType": "default",
+      "inputRequired": false,
+      "validators": [],
+      "required": true
+        }, 
         {
            "id":"firstName",
            "description":"First Name",
