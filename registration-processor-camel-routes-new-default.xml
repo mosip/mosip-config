@@ -184,7 +184,7 @@
             <to uri="eventbus://introducer-validator-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://quality-classifier-bus-in" />
+            <to uri="eventbus://quality-classifier-bus-inn" />
          </otherwise>
       </choice>
    </route>
