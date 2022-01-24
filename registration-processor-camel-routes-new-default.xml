@@ -97,7 +97,7 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://packet-classifier-bus-inn" />
+            <to uri="eventbus://packet-classifier-bus-in" />
          </otherwise>
       </choice>
    </route>
