@@ -10,6 +10,7 @@
         "pingOutboundQueueName": "",
         "userName": "admin",
         "password": "admin",
-        "typeOfQueue": "ACTIVEMQ"
+        "typeOfQueue": "ACTIVEMQ",
+        "inboundMessageTTL": 2700
     }]
 }
