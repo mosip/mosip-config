@@ -37,11 +37,34 @@
             </otherwise>
         </choice>
     </route>
-    <!-- Packet Validator to Quality Checker Route -->
-    <route id="packet-validator-->quality-checker new route">
+    <!-- Packet Validator to Packet classifier Route -->
+    <route id="packet-validator-->packet-classifier new route">
         <from uri="eventbus:packet-validator-new-bus-out" />
         <log
-            message="packet-validator-->quality-checker new route ${bodyAs(String)}" />
+            message="packet-validator-->packet-classifier new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:packet-classifier-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <!-- Packet Classifier to Quality Checker Route -->
+    <route id="packet-classifier-->quality-checker new route">
+        <from uri="eventbus:packet-classifier-new-bus-out" />
+        <log
+            message="packet-classifier-->quality-checker new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":true'</simple>
@@ -135,6 +158,10 @@
                 <simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
                 <to uri="eventbus:abis-handler-bus-in" />
             </when>
+			<when>
+                <simple>${bodyAs(String)} contains '"address":"manual-verification-bus-in"'</simple>
+                <to uri="eventbus:manual-verification-bus-in" />
+            </when>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
                 <to uri="eventbus:message-sender-bus-in"/>
@@ -179,6 +206,10 @@
             <when>
                 <simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
                 <to uri="eventbus:abis-handler-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"address":"manual-verification-bus-in"'</simple>
+                <to uri="eventbus:manual-verification-bus-in" />
             </when>
             <when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
