@@ -293,17 +293,17 @@
             <to uri="workflow-cmd://mark-as-reprocess" />
          </when>
          <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-rejected" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
             <to uri="eventbus://abis-handler-bus-in" />
          </when>
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
             <to uri="eventbus://manual-adjudication-bus-in" />
+         </when>
+	 <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
             <to uri="eventbus://bio-dedupe-bus-in" />
