@@ -25,9 +25,15 @@
 			"value": "introducerLastName"
 		},
 		"phone": {
-			"value": "phone"
+			"value": "mobileno"
+		},
+		"phoneNumber": {
+			"value": "mobileno"
 		},
 		"email": {
+			"value": "email"
+		},
+		"emailId": {
 			"value": "email"
 		},
 		"uin": {
