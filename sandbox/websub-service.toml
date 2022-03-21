@@ -1,6 +1,6 @@
 [kafkaHub.config]
 # Flag to check whether to enable/disable security
-SECURITY_ON = true
+SECURITY_ON = false
 
 # Server ID is is used to uniquely identify each server
 # Each server must have a unique ID
@@ -42,7 +42,7 @@ MESSAGE_DELIVERY_COUNT = 3
 MESSAGE_DELIVERY_TIMEOUT = 60.0
 
 # The base URL of IDP
-MOSIP_AUTH_BASE_URL = "${mosip.api.internal.url}/v1/authmanager"
+MOSIP_AUTH_BASE_URL = "${mosipbox.public.url}/v1/authmanager"
 
 # The token validation URL of IDP
 MOSIP_AUTH_VALIDATE_TOKEN_URL = "/authorize/admin/validateToken"
