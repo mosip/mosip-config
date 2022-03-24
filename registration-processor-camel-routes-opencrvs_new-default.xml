@@ -214,13 +214,13 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://printing-bus-in" />
+            <to uri="eventbus://opencrvs-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="printing-stage-->opencrvs-stage opencrvs_new route">
-      <from uri="eventbus://printing-opencrvs_new-bus-out" />
-      <log message="printing-stage-->opencrvs-stage opencrvs_new route ${bodyAs(String)}" />
+   <route id="opencrvs-stage--> opencrvs_new route">
+      <from uri="eventbus://opencrvs-opencrvs_new-bus-out" />
+      <log message="opencrvs-stage--> opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -235,19 +235,6 @@
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://opencrvs-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
-   <route id="opencrvs-stage--> opencrvs_new route">
-      <from uri="eventbus://opencrvs-opencrvs_new-bus-out" />
-      <log message="opencrvs-stage--> opencrvs_new route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
          </when>
          <otherwise>
             <to uri="workflow-cmd://complete-as-processed" />
