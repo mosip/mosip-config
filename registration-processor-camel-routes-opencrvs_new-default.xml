@@ -195,9 +195,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="finalization-->printing-stage opencrvs_new route">
+   <route id="finalization-->opencrvs-stage opencrvs_new route">
       <from uri="eventbus://finalization-opencrvs_new-bus-out" />
-      <log message="finalization-->printing-stage opencrvs_new route ${bodyAs(String)}" />
+      <log message="finalization-->opencrvs-stage opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
