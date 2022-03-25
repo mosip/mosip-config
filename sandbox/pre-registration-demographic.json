@@ -251,13 +251,7 @@
            "fieldType":"default",
            "type":"string",
            "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^[(?i)A-Z0-9]{5}$|^NA$",
-                 "arguments":[
-
-                 ]
-              }
+              
            ],
            "required":true
         },
