@@ -10,30 +10,71 @@
           "validators": [],
           "required": true
         },
-        {
-           "id":"fullName",
-           "description":"Enter Full Name",
-           "labelName":{
-           "eng":"Full Name",
-           "ara":"الاسم الكامل",
-           "fra":"Nom complet"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "type":"simpleType",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
 
-                 ]
-              }
-           ],
-           "required":true
-        },
+      
         {
+        	"id": "firstName",
+        	"description": "First Name",
+        	"labelName": {
+        		"eng": "First Name",
+        		"ara": "الاسم الكامل",
+        		"fra": "Nom complet"
+        	},
+        	"controlType": "textbox",
+        	"inputRequired": true,
+        	"fieldType": "default",
+        	"type": "simpleType",
+        	"validators": [{
+        		"type": "regex",
+        		"validator": "^(?=.{0,50}$).*",
+        		"arguments": [
+        		]
+        	}],
+        	"required": true
+        }, 
+		{
+        	"id": "middleName",
+        	"description": "Middle Name",
+        	"labelName": {
+        		"eng": "Middle Name",
+        		"ara": "الاسم الكامل",
+        		"fra": "Nom complet"
+        	},
+        	"controlType": "textbox",
+        	"inputRequired": true,
+        	"fieldType": "default",
+        	"type": "simpleType",
+        	"validators": [{
+        		"type": "regex",
+        		"validator": "^(?=.{0,50}$).*",
+        		"arguments": [
+        		]
+        	}],
+        	"required": true
+        }, {
+        	"id": "lastName",
+        	"description": "Last Name",
+        	"labelName": {
+        		"eng": "Last Name",
+        		"ara": "الاسم الكامل",
+        		"fra": "Nom complet"
+        	},
+        	"controlType": "textbox",
+        	"inputRequired": true,
+        	"fieldType": "default",
+        	"type": "simpleType",
+        	"validators": [{
+        		"type": "regex",
+        		"validator": "^(?=.{0,50}$).*",
+        		"arguments": [
+        		]
+        	}],
+        	"required": true
+        },      
+      
+      
+      
+      {
            "id":"dateOfBirth",
            "description":"Enter DOB",
            "labelName":{
