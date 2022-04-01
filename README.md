@@ -1,6 +1,6 @@
-# mosip-config
+# MOSIP Configuration
 
-Configuration files for mosip-platform.
+Refer [MOSIP Docs](https://docs.mosip.io/1.2.0/modules/module-configuration).
 
-MOSIP uses Spring CLoud Config Server to read the properties files. So, to use the properties files in this repo, please updated the IP addresses, keys and passwords and then point to this repo in spring cloud config in kernel module.
-
+## License
+This project is licensed under the terms of [Mozilla Public License 2.0](LICENSE).
