@@ -20,6 +20,17 @@
 		<name>k8s</name>
 		<password/>
 	</group>
+    <network>
+        <join>
+            <multicast enabled="false"/>
+            <tcp-ip enabled="true">
+                <interface>127.0.0.1</interface>
+            </tcp-ip>
+        </join>
+        <interfaces enabled="true">
+            <interface>127.0.0.1</interface>
+        </interfaces>
+    </network>
  <network>
  <join>
         <multicast enabled="false"/>

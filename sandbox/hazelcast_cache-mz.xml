@@ -110,7 +110,7 @@
             then all entries of the map will be copied to another JVM for
             fail-safety. 0 means no backup.
         -->
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
 
         <!--
             Number of async backups. 0 means no backup.
@@ -129,7 +129,7 @@
            OBJECT : values will be stored in their object forms
            NATIVE : values will be stored in non-heap region of JVM
         -->
-        <in-memory-format>OBJECT</in-memory-format>
+        <in-memory-format>BINARY</in-memory-format>
 
         <!--
             Metadata creation policy for this map. Hazelcast may process objects of supported types ahead of time to
@@ -146,7 +146,7 @@
             then all entries of the map will be copied to another JVM for
             fail-safety. 0 means no backup.
         -->
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
         <!--
             Number of async backups. 0 means no backup.
         -->
@@ -164,6 +164,34 @@
             automatically evicted from the map. Entry is touched if get, put or containsKey is called.
             Any integer between 0 and Integer.MAX_VALUE. 0 means infinite. Default is 0.
         -->
+        <max-idle-seconds>300</max-idle-seconds>
+        <!--
+            Valid values are:
+            NONE (no eviction),
+            LRU (Least Recently Used),
+            LFU (Least Frequently Used).
+            NONE is the default.
+        -->
+        <eviction-policy>LRU</eviction-policy>
+        <!--
+            Maximum size of the map. When max size is reached,
+            map is evicted based on the policy defined.
+            Any integer between 0 and Integer.MAX_VALUE. 0 means
+            Integer.MAX_VALUE. Default is 0.
+        -->
+        <max-size policy="USED_HEAP_SIZE">2500</max-size>
+        <!--
+            `eviction-percentage` property is deprecated and will be ignored when it is set.
+            As of version 3.7, eviction mechanism changed.
+            It uses a probabilistic algorithm based on sampling. Please see documentation for further details
+        -->
+        <eviction-percentage>25</eviction-percentage>
+        <!--
+            `min-eviction-check-millis` property is deprecated  and will be ignored when it is set.
+            As of version 3.7, eviction mechanism changed.
+            It uses a probabilistic algorithm based on sampling. Please see documentation for further details
+        -->
+        <min-eviction-check-millis>100</min-eviction-check-millis>
         <max-idle-seconds>300</max-idle-seconds>
         <!--
             Valid values are:
@@ -248,7 +276,7 @@
     </merkle-tree>
 
     <multimap name="default">
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
         <value-collection-type>SET</value-collection-type>
         <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
     </multimap>
@@ -261,14 +289,30 @@
     </replicatedmap>
 
     <list name="default">
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
         <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
     </list>
 
     <set name="default">
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
         <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
     </set>
+
+    <jobtracker name="default">
+        <max-thread-size>0</max-thread-size>
+        <!-- Queue size 0 means number of partitions * 2 -->
+        <queue-size>0</queue-size>
+        <retry-count>0</retry-count>
+        <chunk-size>1000</chunk-size>
+        <communicate-stats>true</communicate-stats>
+        <topology-changed-strategy>CANCEL_RUNNING_OPERATION</topology-changed-strategy>
+    </jobtracker>
+
+    <semaphore name="default">
+        <initial-permits>0</initial-permits>
+        <backup-count>0</backup-count>
+        <async-backup-count>0</async-backup-count>
+    </semaphore>
 
     <jobtracker name="default">
         <max-thread-size>0</max-thread-size>
@@ -294,7 +338,7 @@
 
     <ringbuffer name="default">
         <capacity>10000</capacity>
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
         <async-backup-count>0</async-backup-count>
         <time-to-live-seconds>0</time-to-live-seconds>
         <in-memory-format>BINARY</in-memory-format>
@@ -328,7 +372,7 @@
     <lite-member enabled="false"/>
 
     <cardinality-estimator name="default">
-        <backup-count>1</backup-count>
+        <backup-count>0</backup-count>
         <async-backup-count>0</async-backup-count>
         <merge-policy batch-size="100">HyperLogLogMergePolicy</merge-policy>
     </cardinality-estimator>
