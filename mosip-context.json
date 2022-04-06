@@ -23,6 +23,11 @@
         "@id": "${mosip.api.internal.url}/mosip#city",
         "@context": {"value": "rdf:value", "lang": "@language"}
     },
+    "gender": {
+        "@id": "https://qa-triple-rc2.mosip.net/mosip#gender",
+        "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "passportNumber": "mosip:passportNumber",
     "dateOfBirth": "mosip:dateOfBirth",
     "email": "mosip:email",
     "fullName": {
