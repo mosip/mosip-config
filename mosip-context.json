@@ -29,11 +29,7 @@
         "@id": "${mosip.api.internal.url}/mosip#fullName",
         "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "gender": {
-        "@id": "${mosip.api.internal.url}/mosip#gender",
-        "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "phone": "mosip:phone",
+   "phone": "mosip:phone",
     "postalCode": "mosip:postalCode",
     "province": {
         "@id": "${mosip.api.internal.url}/mosip#province",
