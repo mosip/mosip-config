@@ -27,7 +27,11 @@
         "@id": "${mosip.api.internal.url}/mosip#gender",
         "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "passportNumber": "mosip:passportNumber",
+     "residenceStatus": {
+        "@id": "${mosip.api.internal.url}/mosip#residenceStatus",
+        "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    
     "dateOfBirth": "mosip:dateOfBirth",
     "email": "mosip:email",
     "fullName": {
