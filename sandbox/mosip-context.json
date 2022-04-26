@@ -34,10 +34,7 @@
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "phone": "mosip:phone",
-    "postalCode": {
-      "@id": "${mosip.api.internal.url}/mosip#postalCode",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
+    "postalCode": "mosip:postalCode",
     "province": {
       "@id": "${mosip.api.internal.url}/mosip#province",
       "@context": {"value": "rdf:value", "lang": "@language"}
