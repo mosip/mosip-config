@@ -1,0 +1,51 @@
+{
+  "@context": [{
+    "@version": 1.1
+  },"https://www.w3.org/ns/odrl.jsonld", {
+    "mosip": "${mosipbox.public.url}/mosip#",
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "vcVer": "mosip:vcVer",
+    "UIN": "mosip:UIN",
+    "addressLine1": {
+      "@id": "${mosipbox.public.url}/mosip#addressLine1",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "addressLine2": {
+      "@id": "${mosipbox.public.url}/mosip#addressLine2",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "addressLine3": {
+      "@id": "${mosipbox.public.url}/mosip#addressLine3",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "city": {
+      "@id": "${mosipbox.public.url}/mosip#city",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "dateOfBirth": "mosip:dateOfBirth",
+    "email": "mosip:email",
+    "fullName": {
+      "@id": "${mosipbox.public.url}/mosip#fullName",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "gender": {
+      "@id": "${mosipbox.public.url}/mosip#gender",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "phone": "mosip:phone",
+     "postalCode": {
+      "@id": "${mosipbox.public.url}/mosip#postalCode",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "province": {
+      "@id": "${mosipbox.public.url}/mosip#province",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "region": {
+      "@id": "${mosipbox.public.url}/mosip#region",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "biometrics": "mosip:biometrics"
+  }]
+}
