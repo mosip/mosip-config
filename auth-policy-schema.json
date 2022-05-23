@@ -50,6 +50,12 @@
       "enum":["random","partner","policy"]
     }
   },
+  "kycLanguages": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
   "required":[
     "authTokenType",
     "allowedAuthTypes",
