@@ -16,16 +16,16 @@
             "value": "age"
         },
         "introducerRID": {
-            "value": "introducerRID"
+            "value": "parentOrGuardianRID"
         },
         "introducerUIN": {
-            "value": "introducerUIN"
+            "value": "parentOrGuardianUIN"
         },
         "introducerVID": {
-            "value": "introducerVID"
+            "value": "parentOrGuardianVID"
         },
         "introducerName": {
-            "value": "introducerName"
+            "value": "parentOrGuardianName"
         },
         "phone": {
             "value": "phone"
@@ -46,7 +46,7 @@
             "value": "individualBiometrics"
         },
         "introducerBiometrics": {
-            "value": "introducerBiometrics"
+            "value": "parentOrGuardianBiometrics"
         },
         "individualAuthBiometrics": {
             "value": "individualAuthBiometrics"
