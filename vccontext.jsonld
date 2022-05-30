@@ -1,7 +1,7 @@
 {
    "context" : [
     "https://www.w3.org/2018/credentials/v1",
-    "${mosip.file.server.url}/mosipvc/mosip-context.json",
+    "${mosip.file.server.url}/.well-known/mosip-context.json",
     {
        "sec": "https://w3id.org/security#"
     }
