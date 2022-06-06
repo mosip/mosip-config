@@ -289,10 +289,6 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
             <to uri="workflow-cmd://anonymous-profile" />
@@ -304,6 +300,11 @@
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
             <to uri="eventbus://manual-adjudication-bus-in" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
             <to uri="eventbus://bio-dedupe-bus-in" />
@@ -475,7 +476,7 @@
          </otherwise>
       </choice>
    </route>
- <!-- biometric-extraction to finalization Route -->
+   <!-- biometric-extraction to finalization Route -->
    <route id="biometric-extraction route-->finalization-stage new route">
       <from uri="eventbus://biometric-extraction-new-bus-out" />
       <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
@@ -499,7 +500,7 @@
          </otherwise>
       </choice>
    </route>
-	 <!-- finalization to Printing Route -->
+   <!-- finalization to Printing Route -->
    <route id="finalization route-->printing-stage new route">
       <from uri="eventbus://finalization-new-bus-out" />
       <log message="finalization-->printing-stage route ${bodyAs(String)}" />
@@ -519,7 +520,6 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="workflow-cmd://complete-as-processed" />
             <to uri="eventbus://printing-bus-in" />
          </otherwise>
       </choice>
