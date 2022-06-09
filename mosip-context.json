@@ -40,7 +40,7 @@
     },
   "phone": "mosip:phone",
     "fullName": {
-      "@id": "https://${mosip.api.host}/mosip#fullName",
+      "@id": "https://${mosip.api.public.host}/mosip#fullName",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "phone": "mosip:phone",
@@ -54,11 +54,11 @@
         "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "province": {
-      "@id": "https://${mosip.api.host}/mosip#province",
+      "@id": "https://${mosip.api.public.host}/mosip#province",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "region": {
-      "@id": "https://${mosip.api.host}/mosip#region",
+      "@id": "https://${mosip.api.public.host}/mosip#region",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "biometrics": "mosip:biometrics"
