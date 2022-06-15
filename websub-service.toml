@@ -46,3 +46,6 @@ MOSIP_AUTH_BASE_URL = "${mosip.api.internal.url}/v1/authmanager"
 
 # The token validation URL of IDP
 MOSIP_AUTH_VALIDATE_TOKEN_URL = "/authorize/admin/validateToken"
+
+[ballerina.log]
+level = "DEBUG"
