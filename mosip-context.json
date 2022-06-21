@@ -23,12 +23,12 @@
         "@id": "https://${mosip.api.public.host}/mosip#city",
         "@context": {"value": "rdf:value", "lang": "@language"}
     },
-     "residenceStatus": {
-        "@id": "https://${mosip.api.public.host}/mosip#residenceStatus",
+     "gender": {
+        "@id": "https://${mosip.api.public.host}/mosip#gender",
         "@context": {"value": "rdf:value", "lang": "@language"}
     },
-     "zone": {
-        "@id": "https://${mosip.api.public.host}/mosip#zone",
+     "residenceStatus": {
+        "@id": "https://${mosip.api.public.host}/mosip#residenceStatus",
         "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "dateOfBirth": "mosip:dateOfBirth",
