@@ -99,7 +99,7 @@
 			"required": true
 		},
 		{
-			"id": "pobprovince",
+			"id": "pobProvince",
 			"description": "province",
 			"labelName": {
 				"eng": "Province",
@@ -117,7 +117,7 @@
 			"required": true
 		},
 		{
-			"id": "pobcity",
+			"id": "pobCity",
 			"description": "city",
 			"labelName": {
 				"eng": "City",
@@ -145,6 +145,21 @@
 			"controlType": "dropdown",
 			"inputRequired": true,
 			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": false
+		},
+		{
+			"id": "bloodType",
+			"description": "bloodType",
+			"labelName": {
+				"eng": "bloodType",
+				"ara": "جنس",
+				"fra": "Le genre"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
 			"type": "simpleType",
 			"validators": [],
 			"required": false
@@ -277,21 +292,7 @@
 			"required": false
 		},
 		{
-			"id": "permanentZone",
-			"description": "Permanent Zone",
-			"labelName": {
-				"eng": "Permanent Zone",
-				"ara": "المنطقة الدائمة"
-			},
-			"controlType": "dropdown",
-			"inputRequired": true,
-			"fieldType": "default",
-			"type": "simpleType",
-			"validators": [],
-			"required": false
-		},
-		{
-			"id": "permanentPostalcode",
+			"id": "permanentZipcode",
 			"description": "Permanent Postalcode",
 			"labelName": {
 				"eng": "Permanent Postal Code",
@@ -315,7 +316,7 @@
 			"inputRequired": true,
 			"fieldType": "default",
 			"type": "string",
-			"changeAction": "copy&disable:permanentCountry=presentCountry,permanentAddressLine1=presentAddressLine1,permanentAddressLine2=presentAddressLine2,permanentAddressLine3=presentAddressLine3,permanentAddressLine4=presentAddressLine4,permanentCity=presentCity,permanentProvince=presentProvince,permanentZone=presentZone,permanentPostalcode=presentPostalcode",
+			"changeAction": "copy&disable:permanentCountry=presentCountry,permanentAddressLine1=presentAddressLine1,permanentAddressLine2=presentAddressLine2,permanentAddressLine3=presentAddressLine3,permanentAddressLine4=presentAddressLine4,permanentCity=presentCity,permanentProvince=presentProvince=permanentPostalcode=presentPostalcode",
 			"validators": [{
 				"type": "regex",
 				"validator": "^(?=.{0,50}$).*",
@@ -450,21 +451,7 @@
 			"required": false
 		},
 		{
-			"id": "presentZone",
-			"description": "Present Zone",
-			"labelName": {
-				"eng": "Present Zone",
-				"ara": "المنطقة الحالية"
-			},
-			"controlType": "dropdown",
-			"inputRequired": true,
-			"fieldType": "default",
-			"type": "simpleType",
-			"validators": [],
-			"required": false
-		},
-		{
-			"id": "presentPostalcode",
+			"id": "presentZipcode",
 			"description": "Present Postalcode",
 			"labelName": {
 				"eng": "Present Postal Code",
@@ -573,7 +560,7 @@
 			}
 		},
 		{
-			"id": "phone",
+			"id": "mobileno",
 			"description": "phone",
 			"labelName": {
 				"eng": "Phone",
@@ -684,8 +671,8 @@
 		}
 	],
 	"locationHierarchy": [
-		["presentCountry", "presentProvince", "presentCity", "presentZone", "presentPostalcode"],
-		["permanentCountry", "permanentProvince", "permanentCity", "permanentZone", "permanentPostalcode"],
-		["pobCountry", "pobprovince", "pobcity"]
+		["presentCountry", "presentProvince", "presentCity", "presentZipcode"],
+		["permanentCountry", "permanentProvince", "permanentCity", "permanentZipcode"],
+		["pobCountry", "pobProvince", "pobCity"]
 	]
 }
