@@ -1,413 +1,691 @@
 {
-   "identity":[
-        {
-          "id": "IDSchemaVersion",
-          "description": "ID Schema Version",
-          "type": "number",
-          "controlType": null,
-          "fieldType": "default",
-          "inputRequired": false,
-          "validators": [],
-          "required": true
-        },
-
-      
-        {
-        	"id": "firstName",
-        	"description": "First Name",
-        	"labelName": {
-        		"eng": "First Name",
-        		"ara": "الاسم الكامل",
-        		"fra": "Nom complet"
-        	},
-        	"controlType": "textbox",
-        	"inputRequired": true,
-        	"fieldType": "default",
-        	"type": "simpleType",
-        	"validators": [{
-        		"type": "regex",
-        		"validator": "^(?=.{0,50}$).*",
-        		"arguments": [
-        		]
-        	}],
-        	"required": true
-        }, 
+	"identity": [{
+			"id": "IDSchemaVersion",
+			"description": "ID Schema Version",
+			"type": "number",
+			"controlType": null,
+			"fieldType": "default",
+			"inputRequired": false,
+			"validators": [],
+			"required": true
+		},
 		{
-        	"id": "middleName",
-        	"description": "Middle Name",
-        	"labelName": {
-        		"eng": "Middle Name",
-        		"ara": "الاسم الكامل",
-        		"fra": "Nom complet"
-        	},
-        	"controlType": "textbox",
-        	"inputRequired": true,
-        	"fieldType": "default",
-        	"type": "simpleType",
-        	"validators": [{
-        		"type": "regex",
-        		"validator": "^(?=.{0,50}$).*",
-        		"arguments": [
-        		]
-        	}],
-        	"required": true
-        }, {
-        	"id": "lastName",
-        	"description": "Last Name",
-        	"labelName": {
-        		"eng": "Last Name",
-        		"ara": "الاسم الكامل",
-        		"fra": "Nom complet"
-        	},
-        	"controlType": "textbox",
-        	"inputRequired": true,
-        	"fieldType": "default",
-        	"type": "simpleType",
-        	"validators": [{
-        		"type": "regex",
-        		"validator": "^(?=.{0,50}$).*",
-        		"arguments": [
-        		]
-        	}],
-        	"required": true
-        },      
-      
-      
-      
-      {
-           "id":"dateOfBirth",
-           "description":"Enter DOB",
-           "labelName":{
-           "eng":"Date Of Birth",
-           "ara":"تاريخ الولادة",
-           "fra":"Date de naissance"
-           },
-           "controlType":"date",
-           "inputRequired":true,
-           "fieldType":"default",
-           "type":"string",
-           "validators":[
-           ],
-           "required":true
-        },
-        {
-           "id":"gender",
-           "description":"Enter Gender",
-           "labelName":{
-           "eng":"Gender",
-           "ara":"جنس",
-           "fra":"Le genre"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"dynamic",
-           "type":"simpleType",
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"residenceStatus",
-           "description":"Residence status",
-           "labelName":{
-           "eng":"Residence Status",
-           "ara":"حالة الإقامة",
-           "fra":"Statut de résidence"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"dynamic",
-           "type":"simpleType",
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"addressLine1",
-           "description":"addressLine1",
-           "labelName":{
-           "eng":"Address Line1",
-           "ara":"العنوان السطر 1",
-           "fra":"Adresse 1"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "type":"simpleType",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"addressLine2",
-           "description":"addressLine2",
-           "labelName":{
-           "eng":"Address Line2",
-           "ara":"العنوان السطر 2",
-           "fra":"Adresse 2"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "type":"simpleType",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":false
-        },
-        {
-           "id":"addressLine3",
-           "description":"addressLine3",
-           "labelName":{
-           "eng":"Address Line3",
-           "ara":"العنوان السطر 3",
-           "fra":"Adresse 3"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "type":"simpleType",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":false
-        },
-        {
-           "id":"region",
-           "description":"region",
-           "labelName":{
-           "eng":"Region",
-           "ara":"منطقة",
-           "fra":"Région"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"default",
-           "type":"simpleType",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"province",
-           "description":"province",
-           "labelName":{
-           "eng":"Province",
-           "ara":"المحافظة",
-           "fra":"Province"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"default",
-           "type":"simpleType",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"city",
-           "description":"city",
-           "labelName":{
-           "eng":"City",
-           "ara":"مدينة",
-           "fra":"Ville"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"default",
-           "type":"simpleType",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^(?=.{0,50}$).*",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"zone",
-           "description":"zone",
-           "labelName":{
-           "eng":"Zone",
-           "ara":"منطقة",
-           "fra":"Zone"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"default",
-           "type":"simpleType",
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"postalCode",
-           "description":"postalCode",
-           "labelName":{
-           "eng":"Postal Code",
-           "ara":"الكود البريدى",
-           "fra":"code postal"
-           },
-           "controlType":"dropdown",
-           "inputRequired":true,
-           "fieldType":"default",
-           "type":"string",
-           "validators":[
-              
-           ],
-           "required":true
-        },
-        {
-           "id":"phone",
-           "description":"phone",
-           "labelName":{
-           "eng":"Phone",
-           "ara":"هاتف",
-           "fra":"Téléphone"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "type":"string",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^([6-9]{1})([0-9]{9})$",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"email",
-           "description":"email",
-           "labelName":{
-           "eng":"Email",
-           "ara":"البريد الإلكتروني",
-           "fra":"Email"
-           },
-           "controlType":"textbox",
-           "inputRequired":true,
-           "fieldType":"default",
-           "type":"string",
-           "validators":[
-              {
-                 "type":"regex",
-                 "validator":"^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-zA-Z]{2,})$",
-                 "arguments":[
-
-                 ]
-              }
-           ],
-           "required":true
-        },
-        {
-           "id":"proofOfAddress",
-           "description":"proofOfAddress",
-           "labelName":[{"value":"Address Proof","language":"eng"}],
-           "controlType":"fileupload",
-           "inputRequired":true,
-           "validators":[
-
-           ],
-           "required":false
-        },
-        {
-           "id":"proofOfIdentity",
-           "description":"proofOfIdentity",
-           "labelName": [{"value":"Identity Proof","language":"eng"}],
-           "controlType":"fileupload",
-           "inputRequired":true,
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"proofOfRelationship",
-           "description":"proofOfRelationship",
-           "labelName":[{"value":"Relationship Proof","language":"eng"}],
-           "controlType":"fileupload",
-           "inputRequired":true,
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"proofOfDateOfBirth",
-           "description":"proofOfDateOfBirth",
-           "labelName":[{"value":"DOB Proof","language":"eng"}],
-           "controlType":"fileupload",
-           "inputRequired":true,
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"proofOfException",
-           "description":"proofOfException",
-           "labelName": [{"value":"Exception Proof","language":"eng"}],
-           "controlType":"fileupload",
-           "inputRequired":true,
-           "validators":[
-
-           ],
-           "required":true
-        },
-        {
-           "id":"proofOfException-1",
-           "description":"proofOfException",
-           "labelName":[{"value":"Exception Proof 2","language":"eng"}],
-           "controlType":"fileupload",
-           "inputRequired":true,
-           "validators":[
-
-           ],
-           "required":true
-        }
-   ],
-   "locationHierarchy": ["region", "province","city","zone","postalCode"]
+			"id": "firstName",
+			"description": "First Name",
+			"labelName": {
+				"eng": "First Name",
+				"ara": "الاسم الكامل",
+				"fra": "Nom complet"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": true
+		},
+		{
+			"id": "middleName",
+			"description": "Middle Name",
+			"labelName": {
+				"eng": "Middle Name",
+				"ara": "الاسم الكامل",
+				"fra": "Nom complet"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": true
+		}, {
+			"id": "lastName",
+			"description": "Last Name",
+			"labelName": {
+				"eng": "Last Name",
+				"ara": "الاسم الكامل",
+				"fra": "Nom complet"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": true
+		},
+		{
+			"id": "dateOfBirth",
+			"description": "Enter DOB",
+			"labelName": {
+				"eng": "Date Of Birth",
+				"ara": "تاريخ الولادة",
+				"fra": "Date de naissance"
+			},
+			"controlType": "date",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "pobCountry",
+			"description": "Country",
+			"labelName": {
+				"eng": "Country",
+				"ara": "تاريخ الولادة"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": true
+		},
+		{
+			"id": "pobprovince",
+			"description": "province",
+			"labelName": {
+				"eng": "Province",
+				"ara": "مقاطعة"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": true
+		},
+		{
+			"id": "pobcity",
+			"description": "city",
+			"labelName": {
+				"eng": "City",
+				"ara": "مدينة"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": true
+		},
+		{
+			"id": "gender",
+			"description": "gender",
+			"labelName": {
+				"eng": "Gender",
+				"ara": "جنس",
+				"fra": "Le genre"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": false
+		},
+		{
+			"id": "permanentCountry",
+			"description": "Country",
+			"labelName": {
+				"eng": "Permanent Country",
+				"ara": "دولة دائمة"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": true
+		},
+		{
+			"id": "permanentAddressLine1",
+			"description": "Permanent AddressLine1",
+			"labelName": {
+				"eng": "Address Line",
+				"ara": "خط عنوان",
+				"fra": "Address Line"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,255}$).*",
+				"arguments": []
+			}],
+			"required": true
+		},
+		{
+			"id": "permanentAddressLine2",
+			"description": "Permanent AddressLine2",
+			"labelName": {
+				"eng": "Add. Address",
+				"ara": "يضيف. تبوك"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,255}$).*",
+				"arguments": []
+			}],
+			"required": false
+		},
+		{
+			"id": "permanentAddressLine3",
+			"description": "Permanent AddressLine3",
+			"labelName": {
+				"eng": "Add. Address",
+				"ara": "يضيف. تبوك"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,255}$).*",
+				"arguments": []
+			}],
+			"required": false
+		},
+		{
+			"id": "permanentAddressLine4",
+			"description": "Permanent AddressLine4",
+			"labelName": {
+				"eng": "Add. Address",
+				"ara": "يضيف. تبوك"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,255}$).*",
+				"arguments": []
+			}],
+			"required": false
+		},
+		{
+			"id": "permanentProvince",
+			"description": "Permanent Province",
+			"labelName": {
+				"eng": "Permanent Province",
+				"ara": "المقاطعة الدائمة"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": false
+		},
+		{
+			"id": "permanentCity",
+			"description": "Permanent City",
+			"labelName": {
+				"eng": "Permanent City",
+				"ara": "المدينة الدائمة"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": false
+		},
+		{
+			"id": "permanentZone",
+			"description": "Permanent Zone",
+			"labelName": {
+				"eng": "Permanent Zone",
+				"ara": "المنطقة الدائمة"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [],
+			"required": false
+		},
+		{
+			"id": "permanentPostalcode",
+			"description": "Permanent Postalcode",
+			"labelName": {
+				"eng": "Permanent Postal Code",
+				"ara": "الرمز البريدي الدائم"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [],
+			"required": false
+		},
+		{
+			"id": "addressCopy",
+			"description": "addressCopy flag",
+			"labelName": {
+				"eng": "Tick mark this box to copy permanent address to present address",
+				"ara": "ضع علامة على هذا المربع لنسخ العنوان الدائم إلى العنوان الحالي"
+			},
+			"controlType": "checkbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"changeAction": "copy&disable:permanentCountry=presentCountry,permanentAddressLine1=presentAddressLine1,permanentAddressLine2=presentAddressLine2,permanentAddressLine3=presentAddressLine3,permanentAddressLine4=presentAddressLine4,permanentCity=presentCity,permanentProvince=presentProvince,permanentZone=presentZone,permanentPostalcode=presentPostalcode",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": false
+		},
+		{
+			"id": "presentCountry",
+			"description": "Country",
+			"labelName": {
+				"eng": "Present Country",
+				"ara": "دوله حاليه"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": true
+		},
+		{
+			"id": "presentAddressLine1",
+			"description": "Present AddressLine1",
+			"labelName": {
+				"eng": "Present Address Line",
+				"ara": "سطر العنوان الحالي"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,255}$).*",
+				"arguments": []
+			}],
+			"required": true
+		},
+		{
+			"id": "presentAddressLine2",
+			"description": "Present AddressLine2",
+			"labelName": {
+				"eng": "Present Add. Address",
+				"ara": "سطر العنوان الحالي"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,255}$).*",
+				"arguments": []
+			}],
+			"required": false
+		},
+		{
+			"id": "presentAddressLine3",
+			"description": "Present AddressLine3",
+			"labelName": {
+				"eng": "Present Add. Address",
+				"ara": "سطر العنوان الحالي"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,255}$).*",
+				"arguments": []
+			}],
+			"required": false
+		},
+		{
+			"id": "presentAddressLine4",
+			"description": "Present AddressLine4",
+			"labelName": {
+				"eng": "Present Add. Address",
+				"ara": "سطر العنوان الحالي"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,255}$).*",
+				"arguments": []
+			}],
+			"required": false
+		},
+		{
+			"id": "presentProvince",
+			"description": "Present Province",
+			"labelName": {
+				"eng": "Present Province",
+				"ara": "المقاطعة الحالية"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": false
+		},
+		{
+			"id": "presentCity",
+			"description": "Present City",
+			"labelName": {
+				"eng": "Present City",
+				"ara": "المدينة الحالية"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": false
+		},
+		{
+			"id": "presentZone",
+			"description": "Present Zone",
+			"labelName": {
+				"eng": "Present Zone",
+				"ara": "المنطقة الحالية"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [],
+			"required": false
+		},
+		{
+			"id": "presentPostalcode",
+			"description": "Present Postalcode",
+			"labelName": {
+				"eng": "Present Postal Code",
+				"ara": "الرمز البريدي الحالي"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [],
+			"required": false
+		},
+		{
+			"id": "residenceStatus",
+			"description": "residence status",
+			"labelName": {
+				"eng": "Residence Status",
+				"ara": "حالة الإقامة",
+				"fra": "Statut de résidence"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "parentOrGuardianName",
+			"description": "parentOrGuardianName",
+			"labelName": {
+				"eng": "Parent Name",
+				"ara": "اسم الوالدين"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [],
+			"required": false,
+			"visibleCondition": {
+				"all": [{
+					"fact": "identity",
+					"operator": "lessThanInclusive",
+					"value": "10",
+					"path": "$.age.0.value"
+				}]
+			}
+		},
+		{
+			"id": "parentOrGuardianRID",
+			"description": "parentOrGuardianRID",
+			"labelName": {
+				"eng": "Parent RID",
+				"ara": "الوالد RID"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [],
+			"required": false,
+			"visibleCondition": {
+				"any": [{
+						"fact": "identity",
+						"operator": "lessThanInclusive",
+						"value": "10",
+						"path": "$.age.0.value"
+					},
+					{
+						"fact": "identity",
+						"operator": "doesNotContain",
+						"value": "",
+						"path": "$.parentOrGuardianUIN.0.value"
+					}
+				]
+			}
+		},
+		{
+			"id": "parentOrGuardianUIN",
+			"description": "parentOrGuardianUIN",
+			"labelName": {
+				"eng": "Parent UIN",
+				"ara": "الأصل UIN"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [],
+			"required": false,
+			"visibleCondition": {
+				"any": [{
+						"fact": "identity",
+						"operator": "lessThanInclusive",
+						"value": "10",
+						"path": "$.age.0.value"
+					},
+					{
+						"fact": "identity",
+						"operator": "doesNotContain",
+						"value": "",
+						"path": "$.parentOrGuardianRID.0.value"
+					}
+				]
+			}
+		},
+		{
+			"id": "phone",
+			"description": "phone",
+			"labelName": {
+				"eng": "Phone",
+				"ara": "هاتف",
+				"fra": "Téléphone"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [{
+				"type": "regex",
+				"validator": "^([6-9]{1})([0-9]{9})$",
+				"arguments": []
+			}],
+			"required": true
+		},
+		{
+			"id": "email",
+			"description": "email",
+			"labelName": {
+				"eng": "Email",
+				"ara": "البريد الإلكتروني",
+				"fra": "Email"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [{
+				"type": "regex",
+				"validator": "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-zA-Z]{2,})$",
+				"arguments": []
+			}],
+			"required": true
+		},
+		{
+			"id": "proofOfAddress",
+			"description": "proofOfAddress",
+			"labelName": [{
+				"value": "Address Proof",
+				"language": "eng"
+			}],
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"required": false
+		},
+		{
+			"id": "proofOfIdentity",
+			"description": "proofOfIdentity",
+			"labelName": [{
+				"value": "Identity Proof",
+				"language": "eng"
+			}],
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "proofOfRelationship",
+			"description": "proofOfRelationship",
+			"labelName": [{
+				"value": "Relationship Proof",
+				"language": "eng"
+			}],
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"required": false
+		},
+		{
+			"id": "proofOfDateOfBirth",
+			"description": "proofOfDateOfBirth",
+			"labelName": [{
+				"value": "DOB Proof",
+				"language": "eng"
+			}],
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"required": false
+		},
+		{
+			"id": "proofOfException",
+			"description": "proofOfException",
+			"labelName": [{
+				"value": "Exception Proof",
+				"language": "eng"
+			}],
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"required": false
+		},
+		{
+			"id": "proofOfException-1",
+			"description": "proofOfException",
+			"labelName": [{
+				"value": "Exception Proof 2",
+				"language": "eng"
+			}],
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"required": false
+		}
+	],
+	"locationHierarchy": [
+		["presentCountry", "presentProvince", "presentCity", "presentZone", "presentPostalcode"],
+		["permanentCountry", "permanentProvince", "permanentCity", "permanentZone", "permanentPostalcode"],
+		["pobCountry", "pobprovince", "pobcity"]
+	]
 }
