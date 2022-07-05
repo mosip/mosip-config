@@ -42,10 +42,6 @@
       "@id": "${mosip.api.internal.url}/mosip#province",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "region": {
-      "@id": "${mosip.api.internal.url}/mosip#region",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
     "biometrics": "mosip:biometrics"
   }]
 }
