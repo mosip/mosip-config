@@ -7,6 +7,7 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "vcVer": "mosip:vcVer",
     "UIN": "mosip:UIN",
+    "PCN": "mosip:PCN",
     "addressLine1": {
       "@id": "${mosip.api.internal.url}/mosip#addressLine1",
       "@context": {"value": "rdf:value", "lang": "@language"}
