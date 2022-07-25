@@ -7,7 +7,7 @@
 			"value": "firstName,middleName,lastName"
 		},
 		 "fullName": {
-                        "value": "fullName"
+                        "value": "fun"
                 },
 
 		"gender": {
@@ -78,6 +78,18 @@
 		},
 		"fullAddress": {
 			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+		},
+		"dateOfBirth": {
+			"value": "dob"
+		},
+		"address": {
+			"value": "adL1,adL2,adL3,cit,reg,pro,poCo"
+		},
+		"gender1": {
+			"value": "gen"
+		},
+		"bestTwoFingers": {
+			"value": "BF"
 		}
 	},
 	"metaInfo": {
