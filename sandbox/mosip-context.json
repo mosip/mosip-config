@@ -8,41 +8,43 @@
     "vcVer": "mosip:vcVer",
     "UIN": "mosip:UIN",
     "PCN": "mosip:PCN",
-    "addressLine1": {
-      "@id": "${mosip.api.internal.url}/mosip#addressLine1",
+    "adL1": {
+      "@id": "${mosip.api.internal.url}/mosip#adL1",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "addressLine2": {
-      "@id": "${mosip.api.internal.url}/mosip#addressLine2",
+    "adL2": {
+      "@id": "${mosip.api.internal.url}/mosip#adL2",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "addressLine3": {
-      "@id": "${mosip.api.internal.url}/mosip#addressLine3",
+    "adL3": {
+      "@id": "${mosip.api.internal.url}/mosip#adL3",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "city": {
-      "@id": "${mosip.api.internal.url}/mosip#city",
+    "cit": {
+      "@id": "${mosip.api.internal.url}/mosip#cit",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "dateOfBirth": "mosip:dateOfBirth",
-    "email": "mosip:email",
-    "fullName": {
-      "@id": "${mosip.api.internal.url}/mosip#fullName",
+    "dob": "mosip:dob",
+    "em": "mosip:em",
+    "fun": {
+      "@id": "${mosip.api.internal.url}/mosip#fun",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "gender": {
-      "@id": "${mosip.api.internal.url}/mosip#gender",
+    "gen": {
+      "@id": "${mosip.api.internal.url}/mosip#gen",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "phone": "mosip:phone",
-     "postalCode": {
-      "@id": "${mosip.api.internal.url}/mosip#postalCode",
+    "ph": "mosip:ph",
+     "poco": {
+      "@id": "${mosip.api.internal.url}/mosip#poco",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "province": {
-      "@id": "${mosip.api.internal.url}/mosip#province",
+    "pro": {
+      "@id": "${mosip.api.internal.url}/mosip#pro",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "biometrics": "mosip:biometrics"
+    "biometrics": "mosip:biometrics",
+    "BF": "mosip:BF"
+
   }]
 }
