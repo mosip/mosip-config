@@ -43,6 +43,9 @@
 		"uin": {
 			"value": "UIN"
 		},
+		"vid": {
+			"value": "PCN"
+		},
 		"individualBiometrics": {
 			"value": "individualBiometrics"
 		},
