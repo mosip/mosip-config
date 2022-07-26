@@ -1,7 +1,7 @@
 {
   "@context": [{
     "@version": 1.1
-  },"https://www.w3.org/ns/odrl.jsonld", {
+  }, "https://www.w3.org/ns/odrl.jsonld", {
     "mosip": "${mosip.api.internal.url}/mosip#",
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -10,41 +10,98 @@
     "PCN": "mosip:PCN",
     "adL1": {
       "@id": "${mosip.api.internal.url}/mosip#adL1",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
     "adL2": {
       "@id": "${mosip.api.internal.url}/mosip#adL2",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
     "adL3": {
       "@id": "${mosip.api.internal.url}/mosip#adL3",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
     "cit": {
       "@id": "${mosip.api.internal.url}/mosip#cit",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
     "dob": "mosip:dob",
     "em": "mosip:em",
-    "fun": {
-      "@id": "${mosip.api.internal.url}/mosip#fun",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+    "fn": {
+      "@id": "${mosip.api.internal.url}/mosip#fn",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+    "mn": {
+      "@id": "${mosip.api.internal.url}/mosip#mn",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+    "ln": {
+      "@id": "${mosip.api.internal.url}/mosip#ln",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+    "pob": {
+      "@id": "${mosip.api.internal.url}/mosip#pob",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+    "ms": {
+      "@id": "${mosip.api.internal.url}/mosip#ms",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+    "bt": {
+      "@id": "${mosip.api.internal.url}/mosip#bt",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
     "gen": {
       "@id": "${mosip.api.internal.url}/mosip#gen",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
     "ph": "mosip:ph",
-     "poco": {
+    "poco": {
       "@id": "${mosip.api.internal.url}/mosip#poco",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
     "pro": {
       "@id": "${mosip.api.internal.url}/mosip#pro",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
-    "biometrics": "mosip:biometrics",
-    "BF": "mosip:BF"
-
+    "biometrics": "mosip:biometrics"
   }]
 }
