@@ -81,12 +81,10 @@
 		},
 		"dateOfBirth": {
 			"value": "dob"
-		},
-		"address": {
-			"value": "adL1,adL2,adL3,cit,reg,pro,poCo"
-		},
-		"gender1": {
-			"value": "gen"
+		}
+		,
+		"digitalCardAttributes": {
+			"value": "gen,fn,ln,mn,pob,ms,bt,adL1,adL2,adL3,cit,pro,poco"
 		},
 		"bestTwoFingers": {
 			"value": "BF"
