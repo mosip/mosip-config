@@ -102,6 +102,15 @@
         "lang": "@language"
       }
     },
+   "BF": {
+      "@id": "https://qa3.mosip.net/mosip#BF",
+      "@context": {
+        "id": "@id",
+        "type": "@type",
+        "subType": "https://qa3.mosip.net/mosip#subType",
+        "rank": "https://qa3.mosip.net/mosip#rank"
+      }
+    },
     "biometrics": "mosip:biometrics"
   }]
 }
