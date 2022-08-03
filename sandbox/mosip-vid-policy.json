@@ -19,6 +19,16 @@
         "autoRestoreAllowed": false,
 	"restoreOnAction": "REGENERATE"
       }
-    }
+    },
+    {
+            "vidType": "OneTimeUse",
+            "vidPolicy": {
+                "validForInMinutes": null,
+                "transactionsAllowed": 1,
+                "instancesAllowed": 1,
+                "autoRestoreAllowed": true,
+                "restoreOnAction": "REVOKED"
+            }
+        }  
   ]
 }
