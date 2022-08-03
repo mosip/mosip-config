@@ -13,8 +13,6 @@
     "addressLine1": {
       "@id": "https://${mosip.api.public.host}/mosip#addressLine1",
       "@context": {"value": "rdf:value", "lang": "@language"}
-        "@id": "https://${mosip.api.public.host}/mosip#addressLine1",
-        "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "addressLine2": {
       "@id": "https://${mosip.api.public.host}/mosip#addressLine2",
