@@ -90,9 +90,15 @@
 		"location4": {
 			"value": "zone"
 		},
+		"fullName": {
+			"value": "firstName,middleName,lastName"
+		},
 		"fullAddress": {
 			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+		},"bestTwoFingers": {
+			"value": "bestTwoFingers"
 		}
+
 	},
 	"metaInfo": {
 		"value": "metaInfo"
