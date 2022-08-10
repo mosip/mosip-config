@@ -39,6 +39,18 @@
       "@id": "https://${mosip.api.public.host}/mosip#fullName",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
+    "firstName": {
+      "@id": "https://${mosip.api.public.host}/mosip#firstName",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "middleName": {
+      "@id": "https://${mosip.api.public.host}/mosip#middleName",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "lastName": {
+      "@id": "https://${mosip.api.public.host}/mosip#lastName",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
     "phone": "mosip:phone",
     "postalCode": "mosip:postalCode",
     "province": {
@@ -49,6 +61,15 @@
       "@id": "https://${mosip.api.public.host}/mosip#region",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
+      "bestTwoFingers": {
+      "@id": "https://${mosip.api.public.host}/mosip#bestTwoFingers",
+      "@context": {
+        "id": "@id",
+        "type": "@type",
+        "subType": "https://${mosip.api.public.host}/mosip#subType",
+        "rank": "https://${mosip.api.public.host}/mosip#rank"
+      }
+  },
     "biometrics": "mosip:biometrics"
   }]
 }
