@@ -58,40 +58,40 @@ console = false              # Default is false
 
 
 # The token validation URL of IDP
-DISK_SPACE_THRESHOLD = 10485760;
+DISK_SPACE_THRESHOLD = 10485760
 
 # The token validation URL of IDP
-PARTNER_USER_ID_PREFIX = "service-account-";
+PARTNER_USER_ID_PREFIX = "service-account-"
 
 
-CURRENT_WORKING_DIR = "user.dir";
-
-# The period between retry requests
-INTENT_VERIFICATION_RETRY_INTERVAL = 3;
-
-# The maximum retry count
-INTENT_VERIFICATION_COUNT = 3;
+CURRENT_WORKING_DIR = "user.dir"
 
 # The period between retry requests
-INTENT_VERIFICATION_BACKOFF_FACTOR = 2.0;
+INTENT_VERIFICATION_RETRY_INTERVAL = 3
 
 # The maximum retry count
-INTENT_VERIFICATION_MAX_INTERVAL = 20;
+INTENT_VERIFICATION_COUNT = 3
+
+# The period between retry requests
+INTENT_VERIFICATION_BACKOFF_FACTOR = 2.0
 
 # The maximum retry count
-KAFKA_CONSUMER_MAX_POLL_RECORDS = 50;
+INTENT_VERIFICATION_MAX_INTERVAL = 20
 
 # The maximum retry count
-KAFKA_CONSUMER_FETCH_MAX_BYTES = 3145728;
+KAFKA_CONSUMER_MAX_POLL_RECORDS = 50
 
 # The maximum retry count
-KAFKA_CONSUMER_MAX_PARTITION_FETCH_BYTES = 524288;
+KAFKA_CONSUMER_FETCH_MAX_BYTES = 3145728
+
+# The maximum retry count
+KAFKA_CONSUMER_MAX_PARTITION_FETCH_BYTES = 524288
 
 # Kafka topic which is stores consolidated websub subscribers for this server
 META_TOPICS = "registered-websub-topics,consolidated-websub-topics,registered-websub-subscribers,consolidated-websub-subscribers";
 
 # consolidator base url
-CONSOLIDATOR_BASE_URL = "${mosip.consolidator.url}";
+CONSOLIDATOR_BASE_URL = "${mosip.consolidator.url}"
 
 # consolidator health endpoint
-CONSOLIDATOR_HEALTH_ENDPOINT = "/consolidator/actuator/health";
+CONSOLIDATOR_HEALTH_ENDPOINT = "/consolidator/actuator/health"
