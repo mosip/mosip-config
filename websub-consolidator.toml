@@ -22,6 +22,7 @@ POLLING_INTERVAL = 10.0
 # The period in which Kafka close method waits to complete
 GRACEFUL_CLOSE_PERIOD = 5.0
 
+CURRENT_WORKING_DIR = "user.dir"
 
 # The disk space threshold for healthcheck
 DISK_SPACE_THRESHOLD = 10485760
