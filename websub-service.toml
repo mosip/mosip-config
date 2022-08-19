@@ -91,7 +91,7 @@ KAFKA_CONSUMER_MAX_PARTITION_FETCH_BYTES = 524288;
 META_TOPICS = "registered-websub-topics,consolidated-websub-topics,registered-websub-subscribers,consolidated-websub-subscribers";
 
 # consolidator base url
-CONSOLIDATOR_BASE_URL = "http://websub-consolidator";
+CONSOLIDATOR_BASE_URL = "${mosip.consolidator.url}";
 
 # consolidator health endpoint
 CONSOLIDATOR_HEALTH_ENDPOINT = "/consolidator/actuator/health";
