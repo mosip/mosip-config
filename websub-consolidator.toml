@@ -31,4 +31,4 @@ DISK_SPACE_THRESHOLD = 10485760
 CONSOLIDATOR_PORT = 9192
 
 # consolidator health endpoint
-#CONSOLIDATOR_HEALTH_ENDPOINT = "/consolidator/actuator/health"
+# CONSOLIDATOR_HEALTH_ENDPOINT = "/consolidator/actuator/health"
