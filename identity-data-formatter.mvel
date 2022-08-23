@@ -11,15 +11,15 @@ return inputEmailAddr.replaceAll("(^[^@]{3}|(?!^)\\G)[^@]", "$1*");
 
 def convertToMaskDataFormat(maskData) {
 	int maskDataLength = 0;
-	char ch = '*';		
+	char ch = '*';
 	if (maskData.indexOf("@") > 0){
 		maskDataLength = maskData.indexOf("@");
-	} else {			
+	} else {
 		maskDataLength = maskData.length();
 	}
 	maskDataLength -= 2;
 	for (int i = 1; i < maskDataLength; ++i) {
 		maskData = maskData.substring(0, i) + ch + maskData.substring(i + 1);
-	}	
-	return maskData;		
+	}
+	return maskData;
 };
