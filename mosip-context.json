@@ -3,9 +3,6 @@
     "@version": 1.1
   },"https://www.w3.org/ns/odrl.jsonld", {
     "mosip": "https://${mosip.api.public.host}/mosip#",
-       "@version": 1.1
-    },"https://www.w3.org/ns/odrl.jsonld", {
-    "mosip": "https://${mosip.api.public.host}/mosip#",
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "vcVer": "mosip:vcVer",
