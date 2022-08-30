@@ -1,0 +1,7 @@
+{
+    "@context": "https://w3id.org/security/v2",
+    "id": "${mosipbox.public.url}/.well-known/controller.json",
+    "assertionMethod": [
+        "${mosipbox.public.url}/.well-known/public-key.json"
+    ]
+}
