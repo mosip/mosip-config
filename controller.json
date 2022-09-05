@@ -1,7 +1,7 @@
 {
-    "@context": "https://w3id.org/security/v2",
-    "id": "${mosipbox.public.url}/.well-known/controller.json",
-    "assertionMethod": [
-        "${mosipbox.public.url}/.well-known/public-key.json"
-    ]
+  "@context": "https://w3id.org/security/v2",
+  "id": "https://${mosip.api.public.host}/.well-known/controller.json",
+  "assertionMethod": [
+    "https://${mosip.api.public.host}/.well-known/public-key.json"
+  ]
 }
