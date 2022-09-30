@@ -29,7 +29,7 @@
             <setBody>
                <simple>${bodyAs(String)}</simple>
             </setBody>
-            <to uri="http://regproc-group2.regproc/registrationprocessor/v1/securezone/notification" />
+            <to uri="http://regprc-group2.regprc/registrationprocessor/v1/securezone/notification" />
          </otherwise>
       </choice>
    </route>
