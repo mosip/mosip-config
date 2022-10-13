@@ -102,6 +102,27 @@
         "lang": "@language"
       }
     },
+     "pobProvince": {
+      "@id": "${mosip.api.internal.url}/mosip#pobProvince",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+     "pobCountry": {
+      "@id": "${mosip.api.internal.url}/mosip#pobCountry",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+     "pobCity": {
+      "@id": "${mosip.api.internal.url}/mosip#pobCity",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
    "BF": {
       "@id": "https://qa3.mosip.net/mosip#BF",
       "@context": {
