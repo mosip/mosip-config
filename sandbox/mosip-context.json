@@ -1,50 +1,136 @@
 {
   "@context": [{
     "@version": 1.1
-  },"https://www.w3.org/ns/odrl.jsonld", {
+  }, "https://www.w3.org/ns/odrl.jsonld", {
     "mosip": "${mosip.api.internal.url}/mosip#",
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "vcVer": "mosip:vcVer",
     "UIN": "mosip:UIN",
-    "addressLine1": {
-      "@id": "${mosip.api.internal.url}/mosip#addressLine1",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+    "PCN": "mosip:PCN",
+    "adL1": {
+      "@id": "${mosip.api.internal.url}/mosip#adL1",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
-    "addressLine2": {
-      "@id": "${mosip.api.internal.url}/mosip#addressLine2",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+    "adL2": {
+      "@id": "${mosip.api.internal.url}/mosip#adL2",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
-    "addressLine3": {
-      "@id": "${mosip.api.internal.url}/mosip#addressLine3",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+    "adL3": {
+      "@id": "${mosip.api.internal.url}/mosip#adL3",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
-    "city": {
-      "@id": "${mosip.api.internal.url}/mosip#city",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+    "cit": {
+      "@id": "${mosip.api.internal.url}/mosip#cit",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
-    "dateOfBirth": "mosip:dateOfBirth",
-    "email": "mosip:email",
-    "fullName": {
-      "@id": "${mosip.api.internal.url}/mosip#fullName",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+    "dob": "mosip:dob",
+    "em": "mosip:em",
+    "fn": {
+      "@id": "${mosip.api.internal.url}/mosip#fn",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
-    "gender": {
-      "@id": "${mosip.api.internal.url}/mosip#gender",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+    "mn": {
+      "@id": "${mosip.api.internal.url}/mosip#mn",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
-    "phone": "mosip:phone",
-    "postalCode": {
-      "@id": "${mosip.api.internal.url}/mosip#postalCode",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+    "ln": {
+      "@id": "${mosip.api.internal.url}/mosip#ln",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
-    "province": {
-      "@id": "${mosip.api.internal.url}/mosip#province",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+    "pob": {
+      "@id": "${mosip.api.internal.url}/mosip#pob",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
     },
-    "region": {
-      "@id": "${mosip.api.internal.url}/mosip#region",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+    "ms": {
+      "@id": "${mosip.api.internal.url}/mosip#ms",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+    "bt": {
+      "@id": "${mosip.api.internal.url}/mosip#bt",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+    "gen": {
+      "@id": "${mosip.api.internal.url}/mosip#gen",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+    "ph": "mosip:ph",
+    "poco": {
+      "@id": "${mosip.api.internal.url}/mosip#poco",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+    "pro": {
+      "@id": "${mosip.api.internal.url}/mosip#pro",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+     "pobProvince": {
+      "@id": "${mosip.api.internal.url}/mosip#pobProvince",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+     "pobCountry": {
+      "@id": "${mosip.api.internal.url}/mosip#pobCountry",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+     "pobCity": {
+      "@id": "${mosip.api.internal.url}/mosip#pobCity",
+      "@context": {
+        "value": "rdf:value",
+        "lang": "@language"
+      }
+    },
+   "BF": {
+      "@id": "https://qa3.mosip.net/mosip#BF",
+      "@context": {
+        "id": "@id",
+        "type": "@type",
+        "subType": "https://qa3.mosip.net/mosip#subType",
+        "rank": "https://qa3.mosip.net/mosip#rank"
+      }
     },
     "biometrics": "mosip:biometrics"
   }]

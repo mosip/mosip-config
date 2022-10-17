@@ -6,6 +6,10 @@
 		"name": {
 			"value": "firstName,middleName,lastName"
 		},
+		 "fullName": {
+                        "value": "fun"
+                },
+
 		"gender": {
 			"value": "gender"
 		},
@@ -39,6 +43,9 @@
 		"uin": {
 			"value": "UIN"
 		},
+		"vid": {
+			"value": "PCN"
+		},
 		"individualBiometrics": {
 			"value": "individualBiometrics"
 		},
@@ -71,6 +78,16 @@
 		},
 		"fullAddress": {
 			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+		},
+		"dateOfBirth": {
+			"value": "dob"
+		}
+		,
+		"digitalCardAttributes": {
+			"value": "gen,fn,ln,mn,pob,ms,bt,adL1,adL2,adL3,cit,pro,poco,pobProvince,pobCountry,pobCity"
+		},
+		"bestTwoFingers": {
+			"value": "BF"
 		}
 	},
 	"metaInfo": {
