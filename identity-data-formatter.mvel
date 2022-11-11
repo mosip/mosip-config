@@ -25,7 +25,6 @@ def convertToMaskDataFormat(maskData) {
 };
 
 def getPassword(attributeValues) {
-    System.out.println("enter into getPassword method");
     String pdfPwd = "";
     for(String attribute:attributeValues) {
         attribute = getFormattedPasswordAttribute(attribute);
