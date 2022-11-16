@@ -76,22 +76,22 @@
             "value": "addressLine3"
         },
         "location1": {
-            "value": "city"
+            "value": "Country"
         },
         "location2": {
-            "value": "region"
+            "value": "Province"
         },
         "location3": {
-            "value": "province"
+            "value": "City"
         },
         "postalCode": {
-            "value": "postalCode"
+            "value": "Postal Code"
         },
         "location4": {
-            "value": "zone"
+            "value": "Municipality"
         },
         "fullAddress": {
-            "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+            "value": "addressLine1,addressLine2,addressLine3,Country,City,province,Municipality,Postal Code"
         }
     },
     "metaInfo": {
