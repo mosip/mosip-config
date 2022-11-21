@@ -71,24 +71,6 @@
 			"required": true
 		},
 		{
-			"id": "gender",
-			"description": "Enter Gender",
-			"labelName": {
-				"eng": "Gender",
-				"ara": "جنس",
-				"fra": "Le genre",
-				"hin": "लिंग",
-				"kan": "ಲಿಂಗ",
-				"tam": "பாலினம்"
-			},
-			"controlType": "dropdown",
-			"inputRequired": true,
-			"fieldType": "dynamic",
-			"type": "simpleType",
-			"validators": [],
-			"required": true
-		},
-		{
 			"id": "nationality",
 			"description": "nationality",
 			"labelName": {
