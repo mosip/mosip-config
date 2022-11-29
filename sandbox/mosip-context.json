@@ -2,35 +2,35 @@
   "@context": [{
     "@version": 1.1
   }, "https://www.w3.org/ns/odrl.jsonld", {
-    "mosip": "${mosip.api.internal.url}/mosip#",
+    "mosip": "${mosipbox.public.url}/mosip#",
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "vcVer": "mosip:vcVer",
     "UIN": "mosip:UIN",
     "PCN": "mosip:PCN",
     "adL1": {
-      "@id": "${mosip.api.internal.url}/mosip#adL1",
+      "@id": "${mosipbox.public.url}/mosip#adL1",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
     "adL2": {
-      "@id": "${mosip.api.internal.url}/mosip#adL2",
+      "@id": "${mosipbox.public.url}/mosip#adL2",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
     "adL3": {
-      "@id": "${mosip.api.internal.url}/mosip#adL3",
+      "@id": "${mosipbox.public.url}/mosip#adL3",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
     "cit": {
-      "@id": "${mosip.api.internal.url}/mosip#cit",
+      "@id": "${mosipbox.public.url}/mosip#cit",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
@@ -39,49 +39,49 @@
     "dob": "mosip:dob",
     "em": "mosip:em",
     "fn": {
-      "@id": "${mosip.api.internal.url}/mosip#fn",
+      "@id": "${mosipbox.public.url}/mosip#fn",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
     "mn": {
-      "@id": "${mosip.api.internal.url}/mosip#mn",
+      "@id": "${mosipbox.public.url}/mosip#mn",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
     "ln": {
-      "@id": "${mosip.api.internal.url}/mosip#ln",
+      "@id": "${mosipbox.public.url}/mosip#ln",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
     "pob": {
-      "@id": "${mosip.api.internal.url}/mosip#pob",
+      "@id": "${mosipbox.public.url}/mosip#pob",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
     "ms": {
-      "@id": "${mosip.api.internal.url}/mosip#ms",
+      "@id": "${mosipbox.public.url}/mosip#ms",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
     "bt": {
-      "@id": "${mosip.api.internal.url}/mosip#bt",
+      "@id": "${mosipbox.public.url}/mosip#bt",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
     "gen": {
-      "@id": "${mosip.api.internal.url}/mosip#gen",
+      "@id": "${mosipbox.public.url}/mosip#gen",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
@@ -89,47 +89,47 @@
     },
     "ph": "mosip:ph",
     "poco": {
-      "@id": "${mosip.api.internal.url}/mosip#poco",
+      "@id": "${mosipbox.public.url}/mosip#poco",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
     "pro": {
-      "@id": "${mosip.api.internal.url}/mosip#pro",
+      "@id": "${mosipbox.public.url}/mosip#pro",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
      "pobProvince": {
-      "@id": "${mosip.api.internal.url}/mosip#pobProvince",
+      "@id": "${mosipbox.public.url}/mosip#pobProvince",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
      "pobCountry": {
-      "@id": "${mosip.api.internal.url}/mosip#pobCountry",
+      "@id": "${mosipbox.public.url}/mosip#pobCountry",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
      "pobCity": {
-      "@id": "${mosip.api.internal.url}/mosip#pobCity",
+      "@id": "${mosipbox.public.url}/mosip#pobCity",
       "@context": {
         "value": "rdf:value",
         "lang": "@language"
       }
     },
    "BF": {
-      "@id": "https://qa3.mosip.net/mosip#BF",
+      "@id": "${mosipbox.public.url}/mosip#BF",
       "@context": {
         "id": "@id",
         "type": "@type",
-        "subType": "https://qa3.mosip.net/mosip#subType",
-        "rank": "https://qa3.mosip.net/mosip#rank"
+        "subType": "${mosipbox.public.url}/mosip#subType",
+        "rank": "${mosipbox.public.url}/mosip#rank"
       }
     },
     "biometrics": "mosip:biometrics"
