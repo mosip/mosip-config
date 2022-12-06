@@ -98,6 +98,15 @@
 		},
 		"bestTwoFingers": {
 			"value": "bestTwoFingers"
+		},
+		"birthdate": {
+		    "value": "dateOfBirth"
+		},
+		"profile_photo": {
+		    "value": "face"
+		},
+		"address": {
+		   "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
 		}
 	},
 	"metaInfo": {
