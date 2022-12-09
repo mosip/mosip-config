@@ -2,15 +2,19 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "properties": {
-      "allowOTPRequestDelegation": {
+      "allowAuthRequestDelegation": {
         "type": "boolean"
       },
       "allowKycRequestDelegation": {
         "type": "boolean"
+      },
+      "trustBindedAuthVerificationToken": {
+        "type": "boolean"
       }
+
     },
     "required": [
-      "allowOTPRequestDelegation",
+      "allowAuthRequestDelegation",
       "allowKycRequestDelegation"
     ]
   }
