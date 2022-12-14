@@ -92,7 +92,16 @@
         },
         "fullAddress": {
             "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
-        }
+        },
+	"birthdate": {
+	    "value": "dateOfBirth"
+	},
+	"picture": {
+	    "value": "face"
+	},
+	"address": {
+	   "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+	}
     },
     "metaInfo": {
         "value": "metaInfo"
