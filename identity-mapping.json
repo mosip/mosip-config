@@ -102,7 +102,7 @@
 		"birthdate": {
 		    "value": "dateOfBirth"
 		},
-		"profile_photo": {
+		"picture": {
 		    "value": "face"
 		},
 		"address": {
