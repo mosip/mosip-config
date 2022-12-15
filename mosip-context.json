@@ -7,6 +7,7 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "vcVer": "mosip:vcVer",
     "UIN": "mosip:UIN",
+    "VID": "mosip:VID",
     "addressLine1": {
         "@id": "https://${mosip.api.public.host}/mosip#addressLine1",
         "@context": {"value": "rdf:value", "lang": "@language"}
@@ -52,6 +53,15 @@
 
         "@context": {"value": "rdf:value", "lang": "@language"}
     },
+      "bestTwoFingers": {
+        "@id": "https://${mosip.api.public.host}/mosip#bestTwoFingers",
+        "@context": {
+          "id": "@id",
+          "type": "@type",
+          "subType": "https://${mosip.api.public.host}/mosip#subType",
+          "rank": "https://${mosip.api.public.host}/mosip#rank"
+        }
+    },
     "biometrics": "mosip:biometrics"
-  }]
+    }]
 }
