@@ -15,7 +15,7 @@
         "phone": {
             "attributeName":  "phone"
         },
-        "profilePhoto": {
+        "picture": {
             "attributeName":  "face"
         },
         "address": {
