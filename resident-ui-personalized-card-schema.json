@@ -891,5 +891,31 @@
 		"city",
 		"zone",
 		"postalCode"
-	]
+	],
+		{
+			"attributeName": "UIN",
+			"maskRequired": true,
+			"formatRequired": false,
+			"label": {
+				"eng": "UIN"
+			},
+			"maskRequiredLabel": {
+				"eng": "Mask It"
+			},
+			"displaykeyinsharewithpartner":true,
+			"displaykeyinpersonalisedcard":false
+		},
+		{
+			"attributeName": "perpetualVID",
+			"maskRequired": true,
+			"formatRequired": false,
+			"label": {
+				"eng": "Perpetual VID"
+			},
+			"maskRequiredLabel": {
+				"eng": "Mask It"
+			},
+			"displaykeyinsharewithpartner":true,
+			"displaykeyinpersonalisedcard":false
+		}
 }
