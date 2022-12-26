@@ -42,6 +42,9 @@
         "uin": {
             "value": "UIN"
         },
+        "vid": {
+            "value": "VID"
+        },
         "individualBiometrics": {
             "value": "individualBiometrics"
         },
@@ -92,6 +95,18 @@
         },
         "fullAddress": {
             "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+        },
+        "bestTwoFingers": {
+            "value": "bestTwoFingers"
+        },
+        "birthdate": {
+            "value": "dateOfBirth"
+        },
+        "picture": {
+            "value": "face"
+        },
+        "address": {
+            "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
         }
     },
     "metaInfo": {
@@ -116,5 +131,11 @@
         "poe": {
             "value": "proofOfException"
         }
+    },
+    "attributeUpdateCountLimit": {
+        "fullName": 2,
+        "gender": 1,
+        "dob": 1,
+        "age": 1
     }
 }
