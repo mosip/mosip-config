@@ -12,11 +12,14 @@
         "email": {
             "attributeName":  "email"
         },
-        "phone": {
+        "phone_number": {
             "attributeName":  "phone"
         },
         "picture": {
             "attributeName":  "face"
+        },
+        "individual_id" : {
+            "attributeName":  "UIN,VID"
         },
         "address": {
            "attributeName":  "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
