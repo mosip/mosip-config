@@ -89,6 +89,32 @@
 			"required": true
 		},
 		{
+			"id": "UIN",
+			"description": "Enter UIN",
+			"labelName": {
+				"eng": "UIN"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "perpetualVID",
+			"description": "Enter perpetualVID",
+			"labelName": {
+				"eng": "perpetualVID"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": true
+		},
+		{
 			"id": "nationality",
 			"description": "nationality",
 			"labelName": {
