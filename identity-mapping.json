@@ -106,7 +106,7 @@
             "value": "face"
         },
         "address": {
-            "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+            "value": "city,region,province,postalCode"
         }
     },
     "metaInfo": {
