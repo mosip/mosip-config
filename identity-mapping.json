@@ -104,9 +104,6 @@
         },
         "picture": {
             "value": "face"
-        },
-        "address": {
-            "value": "city,region,province,postalCode"
         }
     },
     "metaInfo": {
