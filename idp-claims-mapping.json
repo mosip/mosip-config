@@ -16,7 +16,7 @@
             "attributeName":  "phone"
         },
         "picture": {
-            "attributeName":  "face"
+            "attributeName":  "photo"
         },
         "individual_id" : {
             "attributeName":  "individual_id"
