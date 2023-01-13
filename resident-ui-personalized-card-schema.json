@@ -96,6 +96,10 @@
 			},
 			"controlType": "textbox",
 			"inputRequired": true,
+			"maskRequired": true,
+			"maskRequiredLabel": {
+				"eng": "Mask It"
+			},
 			"fieldType": "dynamic",
 			"type": "simpleType",
 			"validators": [],
@@ -109,6 +113,10 @@
 			},
 			"controlType": "textbox",
 			"inputRequired": true,
+			"maskRequired": true,
+			"maskRequiredLabel": {
+				"eng": "Mask It"
+			},
 			"fieldType": "dynamic",
 			"type": "simpleType",
 			"validators": [],
@@ -636,6 +644,10 @@
 			},
 			"controlType": "textbox",
 			"inputRequired": true,
+			"maskRequired": true,
+			"maskRequiredLabel": {
+				"eng": "Mask It"
+			},
 			"fieldType": "default",
 			"type": "string",
 			"validators": [
@@ -660,6 +672,10 @@
 			},
 			"controlType": "textbox",
 			"inputRequired": true,
+			"maskRequired": true,
+			"maskRequiredLabel": {
+				"eng": "Mask It"
+			},
 			"fieldType": "default",
 			"type": "string",
 			"validators": [
