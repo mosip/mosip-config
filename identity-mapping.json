@@ -42,6 +42,9 @@
         "uin": {
             "value": "UIN"
         },
+		"vid": {
+			"value": "VID"
+		},
         "individualBiometrics": {
             "value": "individualBiometrics"
         },
@@ -131,5 +134,11 @@
         "poe": {
             "value": "proofOfException"
         }
+	},
+	"attributeUpdateCountLimit": {
+		"fullName": 2,
+		"gender": 1,
+		"dob": 1,
+		"age": 1
     }
 }
