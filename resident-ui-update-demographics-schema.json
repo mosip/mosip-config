@@ -1,895 +1,923 @@
 {
-  "identity": [
-    {
-      "id": "IDSchemaVersion",
-      "description": "ID Schema Version",
-      "type": "number",
-      "controlType": null,
-      "fieldType": "default",
-      "inputRequired": false,
-      "validators": [],
-      "required": true
-    },
-    {
-      "id": "title",
-      "description": "Title",
-      "labelName": {
-        "eng": "Title",
-        "ara": "عنوان",
-        "hin": "पशीर्षक",
-        "kan": "ಶೀರ್ಷಿಕೆ",
-        "tam": "தலைப்பு"
-      },
-      "controlType": "dropdown",
-      "inputRequired": true,
-      "fieldType": "dynamic",
-      "type": "simpleType",
-      "validators": [],
-      "required": true
-    },
-    {
-      "id": "fullName",
-      "description": "Enter Full Name",
-      "labelName": {
-        "eng": "Full Name",
-        "ara": "الاسم الكامل",
-        "fra": "Nom complet",
-        "hin": "पूरा नाम",
-        "kan": "ಪೂರ್ಣ ಹೆಸರು",
-        "tam": "முழு பெயர்"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "simpleType",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^(?!.*[ ]{4})(?=.{3,50}$).*",
-          "arguments": []
-        }
-      ],
-      "required": true,
-      "transliteration": true
-    },
-    {
-      "id": "dateOfBirth",
-      "description": "Enter DOB",
-      "labelName": {
-        "eng": "Date Of Birth",
-        "ara": "تاريخ الولادة",
-        "fra": "Date de naissance",
-        "hin": "जन्म की तारीख",
-        "kan": "ಹುಟ್ತಿದ ದಿನ",
-        "tam": "பிறந்த தேதி"
-      },
-      "controlType": "ageDate",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "validators": [],
-      "required": true
-    },
-    {
-      "id": "gender",
-      "description": "Enter Gender",
-      "labelName": {
-        "eng": "Gender",
-        "ara": "جنس",
-        "fra": "Le genre",
-        "hin": "लिंग",
-        "kan": "ಲಿಂಗ",
-        "tam": "பாலினம்"
-      },
-      "controlType": "dropdown",
-      "inputRequired": true,
-      "fieldType": "dynamic",
-      "type": "simpleType",
-      "validators": [],
-      "required": true
-    },
-    {
-      "id": "nationality",
-      "description": "nationality",
-      "labelName": {
-        "fra": "Nationalité",
-        "ara": "الجنسية",
-        "eng": "Nationality",
-        "hin": "राष्ट्रीयता",
-        "kan": "ರಾಷ್ಟ್ರೀಯತೆ",
-        "tam": "தேசியம்"
-      },
-      "controlType": "dropdown",
-      "inputRequired": true,
-      "fieldType": "dynamic",
-      "type": "simpleType",
-      "validators": [],
-      "required": true,
-      "visible": false,
-      "group": "personal_info",
-      "preview": true
-    },
-    {
-      "id": "flagb",
-      "description": "Je suis né(e) au maroc",
-      "labelName": {
-        "fra": "Je suis né(e) au maroc",
-        "ara": "ولدت في المغرب",
-        "eng": "I was born in Morocco",
-        "hin": "झंडाब",
-        "kan": "ಧ್ವಜ",
-        "tam": "கொடி"
-      },
-      "controlType": "dropdown",
-      "subtype": "radio",
-      "inputRequired": true,
-      "fieldType": "dynamic",
-      "type": "simpleType",
-      "validators": [],
-      "required": true,
-      "visible": true,
-      "group": "personal_info",
-      "preview": true
-    },
-    {
-      "id": "placeOfBirth",
-      "description": "Lieu de naissance",
-      "labelName": {
-        "fra": "Lieu de naissance",
-        "ara": "مكان الإزدياد",
-        "eng": "Place of birth",
-        "hin": "जन्म स्थान",
-        "kan": "ಹುಟ್ಟಿದ ಸ್ಥಳ",
-        "tam": "பிறந்த இடம்"
-      },
-      "controlType": "dropdown",
-      "inputRequired": true,
-      "fieldType": "dynamic",
-      "type": "simpleType",
-      "validators": [],
-      "required": true,
-      "visible": false,
-      "group": "personal_info",
-      "preview": true
-    },
-    {
-      "id": "listCountry",
-      "description": "Pay de naissance",
-      "labelName": {
-        "fra": "Pay de naissance",
-        "ara": "بلد الإزدياد",
-        "eng": "Birth Pay",
-        "hin": "सूचीदेश",
-        "kan": "ಪಟ್ಟಿ ದೇಶ",
-        "tam": "பட்டியல் நாடு"
-      },
-      "controlType": "dropdown",
-      "inputRequired": true,
-      "fieldType": "dynamic",
-      "type": "simpleType",
-      "validators": [],
-      "required": true,
-      "visible": false,
-      "group": "personal_info",
-      "preview": true
-    },
-    {
-      "id": "region",
-      "description": "region",
-      "labelName": {
-        "eng": "Region",
-        "ara": "منطقة",
-        "fra": "Région",
-        "hin": "ऊपरी क्षेत्र",
-        "kan": "ಪ್ರದೇಶ",
-        "tam": "பிராந்தியம்"
-      },
-      "controlType": "dropdown",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "simpleType",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^(?=.{3,50}$).*",
-          "arguments": []
-        }
-      ],
-      "locationHierarchyLevel": 1,
-      "parentLocCode": "MOR",
-      "required": true
-    },
-    {
-      "id": "province",
-      "description": "province",
-      "labelName": {
-        "eng": "Province",
-        "ara": "المحافظة",
-        "fra": "Province",
-        "hin": "प्रांत",
-        "kan": "ಪ್ರಾಂತ್ಯ",
-        "tam": "மாகாணம்"
-      },
-      "controlType": "dropdown",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "simpleType",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^(?=.{3,50}$).*",
-          "arguments": []
-        }
-      ],
-      "locationHierarchyLevel": 2,
-      "required": true
-    },
-    {
-      "id": "city",
-      "description": "city",
-      "labelName": {
-        "eng": "City",
-        "ara": "مدينة",
-        "fra": "Ville",
-        "hin": "शहर",
-        "kan": "ನಗರ",
-        "tam": "நகரம்"
-      },
-      "controlType": "dropdown",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "simpleType",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^(?=.{3,50}$).*",
-          "arguments": []
-        }
-      ],
-      "locationHierarchyLevel": 3,
-      "required": true
-    },
-    {
-      "id": "zone",
-      "description": "zone",
-      "labelName": {
-        "eng": "Zone",
-        "ara": "منطقة",
-        "fra": "Zone",
-        "hin": "क्षेत्र",
-        "kan": "ವಲಯ",
-        "tam": "மண்டலம்"
-      },
-      "controlType": "dropdown",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "simpleType",
-      "validators": [],
-      "locationHierarchyLevel": 4,
-      "required": true
-    },
-    {
-      "id": "postalCode",
-      "description": "postalCode",
-      "labelName": {
-        "eng": "Postal Code",
-        "ara": "الكود البريدى",
-        "fra": "code postal",
-        "hin": "डाक कोड",
-        "kan": "ಅಂಚೆ ಕೋಡ್",
-        "tam": "அஞ்சல் குறியீடு"
-      },
-      "controlType": "dropdown",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^[(?i)A-Z0-9]{5}$|^NA$",
-          "arguments": []
-        }
-      ],
-      "locationHierarchyLevel": 5,
-      "required": true
-    },
-    {
-      "id": "residenceStatus",
-      "description": "Quartier/Résidence/Douar",
-      "labelName": {
-        "fra": "Quartier/Résidence/Douar",
-        "ara": "الحي / السكن / الدوار",
-        "eng": "Residence Status",
-        "hin": "निवास स्थान",
-        "kan": "ನಿವಾಸ",
-        "tam": "குடியிருப்பு"
-      },
-      "controlType": "dropdown",
-      "inputRequired": true,
-      "fieldType": "dynamic",
-      "type": "simpleType",
-      "validators": [],
-      "required": true,
-      "visible": true,
-      "group": "address_info",
-      "preview": true
-    },
-    {
-      "id": "addressType",
-      "description": "Type d'habitat",
-      "labelName": {
-        "fra": "Type d'habitat",
-        "ara": "نوع السكن",
-        "eng": "Habitat type",
-        "kan": "ವಿಳಾಸದ ವಿಧ",
-        "hin": "पता मुद्रलेख",
-        "tam": "முகவரி வகை"
-      },
-      "controlType": "dropdown",
-      "subtype": "radio",
-      "inputRequired": true,
-      "fieldType": "dynamic",
-      "type": "simpleType",
-      "validators": [],
-      "required": true,
-      "visible": true,
-      "group": "address_info",
-      "preview": true,
-      "tooltip": false
-    },
-    {
-      "id": "portNo",
-      "description": "N Porte",
-      "labelName": {
-        "fra": "N° Porte",
-        "ara": "رقم الباب",
-        "eng": "Port No",
-        "kan": "ಪೋರ್ಟ್ ಸಂಖ್ಯೆ",
-        "hin": "पोर्ट नंबर",
-        "tam": "துறை எண்"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^(?=.{0,10}$).*",
-          "arguments": []
-        }
-      ],
-      "required": false,
-      "visible": true,
-      "group": "address_info",
-      "preview": true
-    },
-    {
-      "id": "apptNo",
-      "description": "N immeuble",
-      "labelName": {
-        "fra": "N° immeuble",
-        "ara": "رقم المبنى",
-        "eng": "Appt no",
-        "kan": "appt ಸಂಖ್ಯೆ",
-        "hin": "उपयुक्त संख्या",
-        "tam": "appt எண்"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^(?=.{0,10}$).*",
-          "arguments": []
-        }
-      ],
-      "required": false,
-      "visible": false,
-      "group": "address_info",
-      "preview": true
-    },
-    {
-      "id": "addressLine1",
-      "description": "Adresse de résidence",
-      "labelName": {
-        "fra": "Adresse de résidence",
-        "ara": "عنوان السكن",
-        "eng": "Adresse Line1",
-        "hin": "पता पंक्ति 1",
-        "kan": "ವಿಳಾಸ 1",
-        "tam": "முகவரி வரி 1"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "simpleType",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^(?=.{0,100}$).*",
-          "arguments": []
-        }
-      ],
-      "required": true,
-      "visible": true,
-      "group": "address_info",
-      "preview": true
-    },
-    {
-      "id": "referenceCNIENumber",
-      "description": "CNIE",
-      "labelName": {
-        "fra": "CNIE",
-        "ara": "رقم البطاقة الوطنية",
-        "eng": "CNIE",
-        "kan": "ಉಲ್ಲೇಖ CNIE ಸಂಖ್ಯೆ",
-        "hin": "संदर्भ सीएनआईई नंबर",
-        "tam": "குறிப்பு CNIE எண்"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "(^[A-Z]{2}[0-9]{1,6}$)|(^[A-Z]{1}[0-9]{1,7}$)|(^[a-z]{2}[0-9]{1,6}$)|(^[a-z]{1}[0-9]{1,7}$)",
-          "arguments": []
-        }
-      ],
-      "required": true,
-      "visible": true,
-      "group": "card_info",
-      "preview": true
-    },
-    {
-      "id": "resOuPass",
-      "description": "Je dispose",
-      "labelName": {
-        "fra": "Je dispose",
-        "ara": "أملك",
-        "eng": "I have",
-        "kan": "resOuPass",
-        "hin": "resOuPass",
-        "tam": "resOuPass"
-      },
-      "controlType": "dropdown",
-      "subtype": "radio",
-      "inputRequired": true,
-      "fieldType": "dynamic",
-      "type": "simpleType",
-      "validators": [],
-      "required": true,
-      "visible": false,
-      "group": "card_info",
-      "preview": false,
-      "tooltip": false
-    },
-    {
-      "id": "referenceResidencyNumber",
-      "description": "Numéro d'identité du résident étranger",
-      "labelName": {
-        "fra": "Numéro d'identité du résident étranger",
-        "ara": "رقم هوية المقيم الأجنبي",
-        "eng": "Identity number of the foreign resident",
-        "kan": "ರೆಸಿಡೆನ್ಸಿ ಸಂಖ್ಯೆ ಉಲ್ಲೇಖ",
-        "hin": "संदर्भ निवास संख्या",
-        "tam": "குறிப்பு குடியிருப்பு எண்"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "[A-Za-z][0-9]{6}[A-Za-z]",
-          "arguments": []
-        }
-      ],
-      "required": true,
-      "visible": false,
-      "group": "card_info",
-      "preview": true,
-      "tooltip": true
-    },
-    {
-      "id": "passportNumber",
-      "description": "Numéro de passport",
-      "labelName": {
-        "fra": "Numéro de Passeport",
-        "ara": "رقم جواز السفر",
-        "eng": "Passport number",
-        "kan": "ಪಾಸ್ಪೋರ್ಟ್ ಸಂಖ್ಯೆ",
-        "hin": "पासपोर्ट संख्या",
-        "tam": "கடவுச்சீட்டு எண்"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^(?=.{1,20}$).*",
-          "arguments": []
-        }
-      ],
-      "required": true,
-      "visible": false,
-      "group": "card_info",
-      "preview": true,
-      "tooltip": false
-    },
-    {
-      "id": "flagidcs",
-      "description": "Je dispose d'un IDCS",
-      "labelName": {
-        "fra": "Je dispose d'un IDCS",
-        "ara": "أملك المعرف المدني والاجتماعي الرقمي",
-        "eng": "I have an IDCS",
-        "kan": "ಧ್ವಜಗಳು",
-        "hin": "फ्लैगिड्स",
-        "tam": "கொடிகள்"
-      },
-      "controlType": "dropdown",
-      "subtype": "radio",
-      "inputRequired": true,
-      "fieldType": "dynamic",
-      "type": "simpleType",
-      "validators": [],
-      "required": true,
-      "visible": true,
-      "group": "card_info",
-      "preview": true,
-      "tooltip": true
-    },
-    {
-      "id": "birthCertificateNumber",
-      "description": "Numéro Acte de Naissance",
-      "labelName": {
-        "fra": "Numéro Acte de Naissance",
-        "ara": "رقم شهادة الميلاد",
-        "eng": "Birth Certificate Number",
-        "kan": "ಜನನ ಪ್ರಮಾಣಪತ್ರ ಸಂಖ್ಯೆ",
-        "hin": "जन्म प्रमाणपत्र संख्या",
-        "tam": "பிறப்புச் சான்றிதழ் எண்"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^(?=.{1,20}$).*",
-          "arguments": []
-        }
-      ],
-      "required": true,
-      "visible": false,
-      "group": "card_info",
-      "preview": true
-    },
-    {
-      "id": "civilRegistryNumber",
-      "description": "Numéro Acte de Naissance digitalisé",
-      "labelName": {
-        "fra": "Numéro Acte de Naissance digitalisé",
-        "ara": "رقم شهادة الميلاد الرقمي",
-        "eng": "Digital Birth Certificate Number",
-        "kan": "ನಾಗರಿಕ ನೋಂದಣಿ ಸಂಖ್ಯೆ",
-        "hin": "सिविल रजिस्ट्री नंबर",
-        "tam": "சிவில் பதிவு எண்"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "checksum": true,
-      "validators": [],
-      "required": true,
-      "visible": false,
-      "group": "card_info",
-      "preview": true,
-      "tooltip": true
-    },
-    {
-      "id": "phone",
-      "description": "phone",
-      "labelName": {
-        "eng": "Phone",
-        "ara": "هاتف",
-        "fra": "Téléphone",
-        "hin": "फ़ोन",
-        "kan": "ದೂರವಾಣಿ",
-        "tam": "தொலைபேசி"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^[+]*([0-9]{1})([0-9]{9})$",
-          "arguments": []
-        }
-      ],
-      "required": true
-    },
-    {
-      "id": "email",
-      "description": "email",
-      "labelName": {
-        "eng": "Email",
-        "ara": "البريد الإلكتروني",
-        "fra": "Email",
-        "hin": "ईमेल",
-        "kan": "ಇಮೇಲ್",
-        "tam": "மின்னஞ்சல்"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-zA-Z]{2,})$",
-          "arguments": []
-        }
-      ],
-      "required": true
-    },
-    {
-      "id": "guardianType",
-      "description": "Type de Tuteur",
-      "labelName": {
-        "fra": "Type de Tuteur",
-        "ara": "نوع الوصي",
-        "eng": "Tutor type",
-        "kan": "ರಕ್ಷಕ ವಿಧ",
-        "hin": "संरक्षक प्रकार",
-        "tam": "பாதுகாவலர் வகை"
-      },
-      "controlType": "dropdown",
-      "subtype": "radio",
-      "inputRequired": true,
-      "fieldType": "dynamic",
-      "type": "simpleType",
-      "validators": [],
-      "required": false,
-      "visible": false,
-      "group": "guardian_info",
-      "preview": true,
-      "tooltip": false
-    },
-    {
-      "id": "introducerName",
-      "description": "Prénom du tuteur",
-      "labelName": {
-        "eng": "introducer Name",
-        "ara": "مقدم Name",
-        "fra": "introducteur Name",
-        "kan": "ಪರಿಚಯಕಾರ Name",
-        "hin": "परिचयकर्ता  Name",
-        "tam": "அறிமுகம் Name"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "simpleType",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^[a-zA-ZÀ-ÿء-ي٠-٩ ]{2,47}$",
-          "arguments": []
-        }
-      ],
-      "required": false,
-      "visible": false,
-      "group": "guardian_info",
-      "preview": true
-    },
-    {
-      "id": "introducerUIN",
-      "description": "Identifiant digital civil et social du tuteur",
-      "labelName": {
-        "eng": "introducer UIN",
-        "ara": "مقدم UIN",
-        "fra": "introducteur UIN",
-        "kan": "ಪರಿಚಯಕಾರ UIN",
-        "hin": "परिचयकर्ता  UIN",
-        "tam": "அறிமுகம் UIN"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "checksum": true,
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^[0-9]{10}$",
-          "arguments": []
-        }
-      ],
-      "required": false,
-      "visible": false,
-      "group": "guardian_info",
-      "preview": true,
-      "tooltip": true
-    },
-    {
-      "id": "introduceRID",
-      "description": "Identifiant RNP RID du tuteur",
-      "labelName": {
-        "eng": "introducer RID",
-        "ara": "مقدم RID",
-        "fra": "introducteur RID",
-        "kan": "ಪರಿಚಯಕಾರ RID",
-        "hin": "परिचयकर्ता  RID",
-        "tam": "அறிமுகம் RID"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^[0-9]{29}$",
-          "arguments": []
-        }
-      ],
-      "required": false,
-      "visible": false,
-      "group": "guardian_info",
-      "preview": true,
-      "tooltip": true
-    },
-    {
-      "id": "introduceCNIE",
-      "description": "Numéro d'identité du tuteur",
-      "labelName": {
-        "eng": "introducer CNIE",
-        "ara": "مقدم CNIE",
-        "fra": "introducteur CNIE",
-        "kan": "ಪರಿಚಯಕಾರ CNIE",
-        "hin": "परिचयकर्ता  CNIE",
-        "tam": "அறிமுகம் CNIE"
-      },
-      "controlType": "textbox",
-      "inputRequired": true,
-      "fieldType": "default",
-      "type": "string",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "(^[A-Z]{2}[0-9]{1,6}$)|(^[A-Z]{1}[0-9]{1,7}$)",
-          "arguments": []
-        }
-      ],
-      "required": false,
-      "visible": false,
-      "group": "guardian_info",
-      "preview": true
-    },
-    {
-      "id": "relationWithChild",
-      "description": "Lien de parenté",
-      "labelName": {
-        "fra": "Lien de parenté",
-        "ara": "صلة القرابة",
-        "eng": "Relationship",
-        "kan": "ಮಗುವಿನೊಂದಿಗೆ ಸಂಬಂಧ",
-        "hin": "बच्चे के साथ संबंध",
-        "tam": "குழந்தையுடன் உறவு"
-      },
-      "controlType": "dropdown",
-      "inputRequired": true,
-      "fieldType": "dynamic",
-      "type": "simpleType",
-      "validators": [],
-      "required": false,
-      "visible": false,
-      "group": "guardian_info",
-      "preview": true
-    },
-    {
-      "id": "proofOfAddress",
-      "description": "proofOfAddress",
-      "labelName": {
-        "ara": "إثبات العنوان",
-        "fra": "Preuve d'adresse",
-        "eng": "Address Proof",
-        "hin": "निवास प्रमाण पत्र",
-        "kan": "ವಿಳಾಸ ಪುರಾವೆ",
-        "tam": "முகவரி சான்று"
-      },
-      "controlType": "fileupload",
-      "inputRequired": true,
-      "validators": [],
-      "subType": "POA",
-      "required": false
-    },
-    {
-      "id": "proofOfIdentity",
-      "description": "proofOfIdentity",
-      "labelName": {
-        "ara": "إثبات الهوية",
-        "fra": "Preuve d'identité",
-        "eng": "Identity Proof",
-        "hin": "पहचान प्रमाण",
-        "kan": "ಗುರುತಿನ ಪುರಾವೆ",
-        "tam": "அடையாள சான்று"
-      },
-      "controlType": "fileupload",
-      "inputRequired": true,
-      "validators": [],
-      "subType": "POI",
-      "required": true
-    },
-    {
-      "id": "proofOfRelationship",
-      "description": "proofOfRelationship",
-      "labelName": {
-        "ara": "إثبات العلاقة",
-        "fra": "Preuve de relation",
-        "eng": "Relationship Proof",
-        "hin": "संबंध प्रमाण",
-        "kan": "ಸಂಬಂಧ ಪುರಾವೆ",
-        "tam": "உறவு சான்று"
-      },
-      "controlType": "fileupload",
-      "inputRequired": true,
-      "validators": [],
-      "subType": "POR",
-      "required": true
-    },
-    {
-      "id": "proofOfDateOfBirth",
-      "description": "proofOfDateOfBirth",
-      "labelName": {
-        "ara": "دليل DOB",
-        "fra": "Preuve de date de naissance",
-        "eng": "DOB Proof",
-        "hin": "जन्मतिथि प्रमाण",
-        "kan": "DOB ಪ್ರೂಫ್",
-        "tam": "DOB ஆதாரம்"
-      },
-      "controlType": "fileupload",
-      "inputRequired": true,
-      "validators": [],
-      "subType": "POB",
-      "required": true
-    },
-    {
-      "id": "proofOfException",
-      "description": "proofOfException",
-      "labelName": {
-        "ara": "إثبات الاستثناء",
-        "fra": "Preuve d'exception",
-        "eng": "Exception Proof",
-        "kan": "ಎಕ್ಸೆಪ್ಶನ್ ಪ್ರೂಫ್",
-        "tam": "விதிவிலக்கு சான்று"
-      },
-      "controlType": "fileupload",
-      "inputRequired": true,
-      "validators": [],
-      "subType": "POE",
-      "required": true
-    }
-  ],
-  "locationHierarchy": [
-    "region",
-    "province",
-    "city",
-    "zone",
-    "postalCode"
-  ]
+	"identity": [
+		{
+			"id": "IDSchemaVersion",
+			"description": "ID Schema Version",
+			"type": "number",
+			"controlType": null,
+			"fieldType": "default",
+			"inputRequired": false,
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "title",
+			"description": "Title",
+			"labelName": {
+				"eng": "Title",
+				"ara": "عنوان",
+				"hin": "पशीर्षक",
+				"kan": "ಶೀರ್ಷಿಕೆ",
+				"tam": "தலைப்பு"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "fullName",
+			"description": "Enter Full Name",
+			"labelName": {
+				"eng": "Full Name",
+				"ara": "الاسم الكامل",
+				"fra": "Nom complet",
+				"hin": "पूरा नाम",
+				"kan": "ಪೂರ್ಣ ಹೆಸರು",
+				"tam": "முழு பெயர்"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^(?!.*[ ]{4})(?=.{3,50}$).*",
+					"arguments": []
+				}
+			],
+			"required": true,
+			"transliteration": true
+		},
+		{
+			"id": "dateOfBirth",
+			"description": "Enter DOB",
+			"labelName": {
+				"eng": "Date Of Birth",
+				"ara": "تاريخ الولادة",
+				"fra": "Date de naissance",
+				"hin": "जन्म की तारीख",
+				"kan": "ಹುಟ್ತಿದ ದಿನ",
+				"tam": "பிறந்த தேதி"
+			},
+			"controlType": "ageDate",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "gender",
+			"description": "Enter Gender",
+			"labelName": {
+				"eng": "Gender",
+				"ara": "جنس",
+				"fra": "Le genre",
+				"hin": "लिंग",
+				"kan": "ಲಿಂಗ",
+				"tam": "பாலினம்"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": true
+		},
+		{
+			"id": "nationality",
+			"description": "nationality",
+			"labelName": {
+				"fra": "Nationalité",
+				"ara": "الجنسية",
+				"eng": "Nationality",
+				"hin": "राष्ट्रीयता",
+				"kan": "ರಾಷ್ಟ್ರೀಯತೆ",
+				"tam": "தேசியம்"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": true,
+			"visible": false,
+			"group": "personal_info",
+			"preview": true
+		},
+		{
+			"id": "flagb",
+			"description": "Je suis né(e) au maroc",
+			"labelName": {
+				"fra": "Je suis né(e) au maroc",
+				"ara": "ولدت في المغرب",
+				"eng": "I was born in Morocco",
+				"hin": "झंडाब",
+				"kan": "ಧ್ವಜ",
+				"tam": "கொடி"
+			},
+			"controlType": "dropdown",
+			"subtype": "radio",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": true,
+			"visible": true,
+			"group": "personal_info",
+			"preview": true
+		},
+		{
+			"id": "placeOfBirth",
+			"description": "Lieu de naissance",
+			"labelName": {
+				"fra": "Lieu de naissance",
+				"ara": "مكان الإزدياد",
+				"eng": "Place of birth",
+				"hin": "जन्म स्थान",
+				"kan": "ಹುಟ್ಟಿದ ಸ್ಥಳ",
+				"tam": "பிறந்த இடம்"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": true,
+			"visible": false,
+			"group": "personal_info",
+			"preview": true
+		},
+		{
+			"id": "listCountry",
+			"description": "Pay de naissance",
+			"labelName": {
+				"fra": "Pay de naissance",
+				"ara": "بلد الإزدياد",
+				"eng": "Birth Pay",
+				"hin": "सूचीदेश",
+				"kan": "ಪಟ್ಟಿ ದೇಶ",
+				"tam": "பட்டியல் நாடு"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": true,
+			"visible": false,
+			"group": "personal_info",
+			"preview": true
+		},
+		{
+			"id": "region",
+			"description": "region",
+			"labelName": {
+				"eng": "Region",
+				"ara": "منطقة",
+				"fra": "Région",
+				"hin": "ऊपरी क्षेत्र",
+				"kan": "ಪ್ರದೇಶ",
+				"tam": "பிராந்தியம்"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^(?=.{3,50}$).*",
+					"arguments": []
+				}
+			],
+			"locationHierarchyLevel": 1,
+			"parentLocCode": "MOR",
+			"required": true
+		},
+		{
+			"id": "province",
+			"description": "province",
+			"labelName": {
+				"eng": "Province",
+				"ara": "المحافظة",
+				"fra": "Province",
+				"hin": "प्रांत",
+				"kan": "ಪ್ರಾಂತ್ಯ",
+				"tam": "மாகாணம்"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^(?=.{3,50}$).*",
+					"arguments": []
+				}
+			],
+			"locationHierarchyLevel": 2,
+			"required": true
+		},
+		{
+			"id": "city",
+			"description": "city",
+			"labelName": {
+				"eng": "City",
+				"ara": "مدينة",
+				"fra": "Ville",
+				"hin": "शहर",
+				"kan": "ನಗರ",
+				"tam": "நகரம்"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^(?=.{3,50}$).*",
+					"arguments": []
+				}
+			],
+			"locationHierarchyLevel": 3,
+			"required": true
+		},
+		{
+			"id": "zone",
+			"description": "zone",
+			"labelName": {
+				"eng": "Zone",
+				"ara": "منطقة",
+				"fra": "Zone",
+				"hin": "क्षेत्र",
+				"kan": "ವಲಯ",
+				"tam": "மண்டலம்"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [],
+			"locationHierarchyLevel": 4,
+			"required": true
+		},
+		{
+			"id": "postalCode",
+			"description": "postalCode",
+			"labelName": {
+				"eng": "Postal Code",
+				"ara": "الكود البريدى",
+				"fra": "code postal",
+				"hin": "डाक कोड",
+				"kan": "ಅಂಚೆ ಕೋಡ್",
+				"tam": "அஞ்சல் குறியீடு"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^[(?i)A-Z0-9]{5}$|^NA$",
+					"arguments": []
+				}
+			],
+			"locationHierarchyLevel": 5,
+			"required": true
+		},
+		{
+			"id": "residenceStatus",
+			"description": "Quartier/Résidence/Douar",
+			"labelName": {
+				"fra": "Quartier/Résidence/Douar",
+				"ara": "الحي / السكن / الدوار",
+				"eng": "Residence Status",
+				"hin": "निवास स्थान",
+				"kan": "ನಿವಾಸ",
+				"tam": "குடியிருப்பு"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": true,
+			"visible": true,
+			"group": "address_info",
+			"preview": true
+		},
+		{
+			"id": "addressType",
+			"description": "Type d'habitat",
+			"labelName": {
+				"fra": "Type d'habitat",
+				"ara": "نوع السكن",
+				"eng": "Habitat type",
+				"kan": "ವಿಳಾಸದ ವಿಧ",
+				"hin": "पता मुद्रलेख",
+				"tam": "முகவரி வகை"
+			},
+			"controlType": "dropdown",
+			"subtype": "radio",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": true,
+			"visible": true,
+			"group": "address_info",
+			"preview": true,
+			"tooltip": false
+		},
+		{
+			"id": "portNo",
+			"description": "N Porte",
+			"labelName": {
+				"fra": "N° Porte",
+				"ara": "رقم الباب",
+				"eng": "Port No",
+				"kan": "ಪೋರ್ಟ್ ಸಂಖ್ಯೆ",
+				"hin": "पोर्ट नंबर",
+				"tam": "துறை எண்"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^(?=.{0,10}$).*",
+					"arguments": []
+				}
+			],
+			"required": false,
+			"visible": true,
+			"group": "address_info",
+			"preview": true
+		},
+		{
+			"id": "apptNo",
+			"description": "N immeuble",
+			"labelName": {
+				"fra": "N° immeuble",
+				"ara": "رقم المبنى",
+				"eng": "Appt no",
+				"kan": "appt ಸಂಖ್ಯೆ",
+				"hin": "उपयुक्त संख्या",
+				"tam": "appt எண்"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^(?=.{0,10}$).*",
+					"arguments": []
+				}
+			],
+			"required": false,
+			"visible": false,
+			"group": "address_info",
+			"preview": true
+		},
+		{
+			"id": "addressLine1",
+			"description": "Adresse de résidence",
+			"labelName": {
+				"fra": "Adresse de résidence",
+				"ara": "عنوان السكن",
+				"eng": "Adresse Line1",
+				"hin": "पता पंक्ति 1",
+				"kan": "ವಿಳಾಸ 1",
+				"tam": "முகவரி வரி 1"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^(?=.{0,100}$).*",
+					"arguments": []
+				}
+			],
+			"required": true,
+			"visible": true,
+			"group": "address_info",
+			"preview": true
+		},
+		{
+			"id": "referenceCNIENumber",
+			"description": "CNIE",
+			"labelName": {
+				"fra": "CNIE",
+				"ara": "رقم البطاقة الوطنية",
+				"eng": "CNIE",
+				"kan": "ಉಲ್ಲೇಖ CNIE ಸಂಖ್ಯೆ",
+				"hin": "संदर्भ सीएनआईई नंबर",
+				"tam": "குறிப்பு CNIE எண்"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "(^[A-Z]{2}[0-9]{1,6}$)|(^[A-Z]{1}[0-9]{1,7}$)|(^[a-z]{2}[0-9]{1,6}$)|(^[a-z]{1}[0-9]{1,7}$)",
+					"arguments": []
+				}
+			],
+			"required": true,
+			"visible": true,
+			"group": "card_info",
+			"preview": true
+		},
+		{
+			"id": "resOuPass",
+			"description": "Je dispose",
+			"labelName": {
+				"fra": "Je dispose",
+				"ara": "أملك",
+				"eng": "I have",
+				"kan": "resOuPass",
+				"hin": "resOuPass",
+				"tam": "resOuPass"
+			},
+			"controlType": "dropdown",
+			"subtype": "radio",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": true,
+			"visible": false,
+			"group": "card_info",
+			"preview": false,
+			"tooltip": false
+		},
+		{
+			"id": "referenceResidencyNumber",
+			"description": "Numéro d'identité du résident étranger",
+			"labelName": {
+				"fra": "Numéro d'identité du résident étranger",
+				"ara": "رقم هوية المقيم الأجنبي",
+				"eng": "Identity number of the foreign resident",
+				"kan": "ರೆಸಿಡೆನ್ಸಿ ಸಂಖ್ಯೆ ಉಲ್ಲೇಖ",
+				"hin": "संदर्भ निवास संख्या",
+				"tam": "குறிப்பு குடியிருப்பு எண்"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "[A-Za-z][0-9]{6}[A-Za-z]",
+					"arguments": []
+				}
+			],
+			"required": true,
+			"visible": false,
+			"group": "card_info",
+			"preview": true,
+			"tooltip": true
+		},
+		{
+			"id": "passportNumber",
+			"description": "Numéro de passport",
+			"labelName": {
+				"fra": "Numéro de Passeport",
+				"ara": "رقم جواز السفر",
+				"eng": "Passport number",
+				"kan": "ಪಾಸ್ಪೋರ್ಟ್ ಸಂಖ್ಯೆ",
+				"hin": "पासपोर्ट संख्या",
+				"tam": "கடவுச்சீட்டு எண்"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^(?=.{1,20}$).*",
+					"arguments": []
+				}
+			],
+			"required": true,
+			"visible": false,
+			"group": "card_info",
+			"preview": true,
+			"tooltip": false
+		},
+		{
+			"id": "flagidcs",
+			"description": "Je dispose d'un IDCS",
+			"labelName": {
+				"fra": "Je dispose d'un IDCS",
+				"ara": "أملك المعرف المدني والاجتماعي الرقمي",
+				"eng": "I have an IDCS",
+				"kan": "ಧ್ವಜಗಳು",
+				"hin": "फ्लैगिड्स",
+				"tam": "கொடிகள்"
+			},
+			"controlType": "dropdown",
+			"subtype": "radio",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": true,
+			"visible": true,
+			"group": "card_info",
+			"preview": true,
+			"tooltip": true
+		},
+		{
+			"id": "birthCertificateNumber",
+			"description": "Numéro Acte de Naissance",
+			"labelName": {
+				"fra": "Numéro Acte de Naissance",
+				"ara": "رقم شهادة الميلاد",
+				"eng": "Birth Certificate Number",
+				"kan": "ಜನನ ಪ್ರಮಾಣಪತ್ರ ಸಂಖ್ಯೆ",
+				"hin": "जन्म प्रमाणपत्र संख्या",
+				"tam": "பிறப்புச் சான்றிதழ் எண்"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^(?=.{1,20}$).*",
+					"arguments": []
+				}
+			],
+			"required": true,
+			"visible": false,
+			"group": "card_info",
+			"preview": true
+		},
+		{
+			"id": "civilRegistryNumber",
+			"description": "Numéro Acte de Naissance digitalisé",
+			"labelName": {
+				"fra": "Numéro Acte de Naissance digitalisé",
+				"ara": "رقم شهادة الميلاد الرقمي",
+				"eng": "Digital Birth Certificate Number",
+				"kan": "ನಾಗರಿಕ ನೋಂದಣಿ ಸಂಖ್ಯೆ",
+				"hin": "सिविल रजिस्ट्री नंबर",
+				"tam": "சிவில் பதிவு எண்"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"checksum": true,
+			"validators": [],
+			"required": true,
+			"visible": false,
+			"group": "card_info",
+			"preview": true,
+			"tooltip": true
+		},
+		{
+			"id": "phone",
+			"description": "phone",
+			"labelName": {
+				"eng": "Phone",
+				"ara": "هاتف",
+				"fra": "Téléphone",
+				"hin": "फ़ोन",
+				"kan": "ದೂರವಾಣಿ",
+				"tam": "தொலைபேசி"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^[+]*([0-9]{1})([0-9]{9})$",
+					"arguments": []
+				}
+			],
+			"required": true
+		},
+		{
+			"id": "email",
+			"description": "email",
+			"labelName": {
+				"eng": "Email",
+				"ara": "البريد الإلكتروني",
+				"fra": "Email",
+				"hin": "ईमेल",
+				"kan": "ಇಮೇಲ್",
+				"tam": "மின்னஞ்சல்"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-zA-Z]{2,})$",
+					"arguments": []
+				}
+			],
+			"required": true
+		},
+		{
+			"id": "guardianType",
+			"description": "Type de Tuteur",
+			"labelName": {
+				"fra": "Type de Tuteur",
+				"ara": "نوع الوصي",
+				"eng": "Tutor type",
+				"kan": "ರಕ್ಷಕ ವಿಧ",
+				"hin": "संरक्षक प्रकार",
+				"tam": "பாதுகாவலர் வகை"
+			},
+			"controlType": "dropdown",
+			"subtype": "radio",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": false,
+			"visible": false,
+			"group": "guardian_info",
+			"preview": true,
+			"tooltip": false
+		},
+		{
+			"id": "introducerName",
+			"description": "Prénom du tuteur",
+			"labelName": {
+				"eng": "introducer Name",
+				"ara": "مقدم Name",
+				"fra": "introducteur Name",
+				"kan": "ಪರಿಚಯಕಾರ Name",
+				"hin": "परिचयकर्ता  Name",
+				"tam": "அறிமுகம் Name"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^[a-zA-ZÀ-ÿء-ي٠-٩ ]{2,47}$",
+					"arguments": []
+				}
+			],
+			"required": false,
+			"visible": false,
+			"group": "guardian_info",
+			"preview": true
+		},
+		{
+			"id": "introducerUIN",
+			"description": "Identifiant digital civil et social du tuteur",
+			"labelName": {
+				"eng": "introducer UIN",
+				"ara": "مقدم UIN",
+				"fra": "introducteur UIN",
+				"kan": "ಪರಿಚಯಕಾರ UIN",
+				"hin": "परिचयकर्ता  UIN",
+				"tam": "அறிமுகம் UIN"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"checksum": true,
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^[0-9]{10}$",
+					"arguments": []
+				}
+			],
+			"required": false,
+			"visible": false,
+			"group": "guardian_info",
+			"preview": true,
+			"tooltip": true
+		},
+		{
+			"id": "introduceRID",
+			"description": "Identifiant RNP RID du tuteur",
+			"labelName": {
+				"eng": "introducer RID",
+				"ara": "مقدم RID",
+				"fra": "introducteur RID",
+				"kan": "ಪರಿಚಯಕಾರ RID",
+				"hin": "परिचयकर्ता  RID",
+				"tam": "அறிமுகம் RID"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "^[0-9]{29}$",
+					"arguments": []
+				}
+			],
+			"required": false,
+			"visible": false,
+			"group": "guardian_info",
+			"preview": true,
+			"tooltip": true
+		},
+		{
+			"id": "introduceCNIE",
+			"description": "Numéro d'identité du tuteur",
+			"labelName": {
+				"eng": "introducer CNIE",
+				"ara": "مقدم CNIE",
+				"fra": "introducteur CNIE",
+				"kan": "ಪರಿಚಯಕಾರ CNIE",
+				"hin": "परिचयकर्ता  CNIE",
+				"tam": "அறிமுகம் CNIE"
+			},
+			"controlType": "textbox",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "string",
+			"validators": [
+				{
+					"type": "regex",
+					"validator": "(^[A-Z]{2}[0-9]{1,6}$)|(^[A-Z]{1}[0-9]{1,7}$)",
+					"arguments": []
+				}
+			],
+			"required": false,
+			"visible": false,
+			"group": "guardian_info",
+			"preview": true
+		},
+		{
+			"id": "relationWithChild",
+			"description": "Lien de parenté",
+			"labelName": {
+				"fra": "Lien de parenté",
+				"ara": "صلة القرابة",
+				"eng": "Relationship",
+				"kan": "ಮಗುವಿನೊಂದಿಗೆ ಸಂಬಂಧ",
+				"hin": "बच्चे के साथ संबंध",
+				"tam": "குழந்தையுடன் உறவு"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "dynamic",
+			"type": "simpleType",
+			"validators": [],
+			"required": false,
+			"visible": false,
+			"group": "guardian_info",
+			"preview": true
+		},
+		{
+			"id": "proofOfAddress",
+			"description": "proofOfAddress",
+			"labelName": {
+				"ara": "إثبات العنوان",
+				"fra": "Preuve d'adresse",
+				"eng": "Address Proof",
+				"hin": "निवास प्रमाण पत्र",
+				"kan": "ವಿಳಾಸ ಪುರಾವೆ",
+				"tam": "முகவரி சான்று"
+			},
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"subType": "POA",
+			"required": false
+		},
+		{
+			"id": "proofOfIdentity",
+			"description": "proofOfIdentity",
+			"labelName": {
+				"ara": "إثبات الهوية",
+				"fra": "Preuve d'identité",
+				"eng": "Identity Proof",
+				"hin": "पहचान प्रमाण",
+				"kan": "ಗುರುತಿನ ಪುರಾವೆ",
+				"tam": "அடையாள சான்று"
+			},
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"subType": "POI",
+			"required": true
+		},
+		{
+			"id": "proofOfRelationship",
+			"description": "proofOfRelationship",
+			"labelName": {
+				"ara": "إثبات العلاقة",
+				"fra": "Preuve de relation",
+				"eng": "Relationship Proof",
+				"hin": "संबंध प्रमाण",
+				"kan": "ಸಂಬಂಧ ಪುರಾವೆ",
+				"tam": "உறவு சான்று"
+			},
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"subType": "POR",
+			"required": true
+		},
+		{
+			"id": "proofOfDateOfBirth",
+			"description": "proofOfDateOfBirth",
+			"labelName": {
+				"ara": "دليل DOB",
+				"fra": "Preuve de date de naissance",
+				"eng": "DOB Proof",
+				"hin": "जन्मतिथि प्रमाण",
+				"kan": "DOB ಪ್ರೂಫ್",
+				"tam": "DOB ஆதாரம்"
+			},
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"subType": "POB",
+			"required": true
+		},
+		{
+			"id": "proofOfException",
+			"description": "proofOfException",
+			"labelName": {
+				"ara": "إثبات الاستثناء",
+				"fra": "Preuve d'exception",
+				"eng": "Exception Proof",
+				"kan": "ಎಕ್ಸೆಪ್ಶನ್ ಪ್ರೂಫ್",
+				"tam": "விதிவிலக்கு சான்று"
+			},
+			"controlType": "fileupload",
+			"inputRequired": true,
+			"validators": [],
+			"subType": "POE",
+			"required": true
+		},
+		{
+			"controlType": "dropdown",
+			"description": "",
+			"id": "preferredLang",
+			"labelName": {
+				"ara": [
+					"Current Notification Language_ara",
+					"New Notification Language_ara"
+				],
+				"eng": [
+					"Current Notification Language",
+					"New Notification Language"
+				],
+				"fra": [
+					"Current Notification Language_fra",
+					"New Notification Language_fra"
+				],
+				"kan": [
+					"Current Notification Language_kan",
+					"New Notification Language_kan"
+				],
+				"tam": [
+					"Current Notification Language_tam",
+					"New Notification Language_tam"
+				]
+			},
+			"tabgroup": "notificationLanguage"
+		}
+	],
+	"locationHierarchy": [
+		"region",
+		"province",
+		"city",
+		"zone",
+		"postalCode"
+	]
 }
