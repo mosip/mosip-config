@@ -610,10 +610,6 @@
 			},
 			"controlType": "textbox",
 			"inputRequired": true,
-			"maskRequired": true,
-			"maskRequiredLabel": {
-				"eng": "Mask It"
-			},
 			"fieldType": "default",
 			"type": "string",
 			"validators": [
@@ -638,10 +634,6 @@
 			},
 			"controlType": "textbox",
 			"inputRequired": true,
-			"maskRequired": true,
-			"maskRequiredLabel": {
-				"eng": "Mask It"
-			},
 			"fieldType": "default",
 			"type": "string",
 			"validators": [
@@ -892,34 +884,34 @@
 			"subType": "POE",
 			"required": true
 		},
-        {
-            "controlType": "dropdown",
-            "description": "",
-            "id": "preferredLang",
-            "labelName": {
-                "ara": [
-                    "Current Notification Language_ara",
-                    "New Notification Language_ara"
-                ],
-                "eng": [
-                    "Current Notification Language",
-                    "New Notification Language"
-                ],
-                "fra": [
-                    "Current Notification Language_fra",
-                    "New Notification Language_fra"
-                ],
-                "kan": [
-                    "Current Notification Language_kan",
-                    "New Notification Language_kan"
-                ],
-                "tam": [
-                    "Current Notification Language_tam",
-                    "New Notification Language_tam"
-                ]
-            },
-            "tabgroup": "notificationLanguage"
-        }
+		{
+			"controlType": "dropdown",
+			"description": "",
+			"id": "preferredLang",
+			"labelName": {
+				"ara": [
+					"Current Notification Language_ara",
+					"New Notification Language_ara"
+				],
+				"eng": [
+					"Current Notification Language",
+					"New Notification Language"
+				],
+				"fra": [
+					"Current Notification Language_fra",
+					"New Notification Language_fra"
+				],
+				"kan": [
+					"Current Notification Language_kan",
+					"New Notification Language_kan"
+				],
+				"tam": [
+					"Current Notification Language_tam",
+					"New Notification Language_tam"
+				]
+			},
+			"tabgroup": "notificationLanguage"
+		}
 	],
 	"locationHierarchy": [
 		"region",
