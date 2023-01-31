@@ -110,6 +110,9 @@
 		},
 		"phone_number": {
 			"value": "phone"
+		},
+		"individual_id": {
+			"value": "individual_id"
 		}
 	},
 	"metaInfo": {
