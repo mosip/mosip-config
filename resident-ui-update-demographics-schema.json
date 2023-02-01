@@ -301,7 +301,7 @@
       "tabgroup": "contact"
     },
     {
-      "id": "notificationLanguage",
+      "id": "preferredLang",
       "description": "",
       "labelName": {
         "eng": [
