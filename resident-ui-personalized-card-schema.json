@@ -121,6 +121,90 @@
 			"checked":false
 		},
 		{
+			"attributeName": "addressLine2",
+			"maskRequired": false,
+			"formatRequired": false,
+			"label": {
+				"eng": "Address Line2"
+			},
+			"maskRequiredLabel": {
+				"eng": "Mask It"
+			},
+			"displaykeyinsharewithpartner":true,
+			"displaykeyinpersonalisedcard":true,
+			"checked":false
+		},
+		{
+			"attributeName": "addressLine3",
+			"maskRequired": false,
+			"formatRequired": false,
+			"label": {
+				"eng": "Address Line3"
+			},
+			"maskRequiredLabel": {
+				"eng": "Mask It"
+			},
+			"displaykeyinsharewithpartner":true,
+			"displaykeyinpersonalisedcard":true,
+			"checked":false
+		},
+		{
+			"attributeName": "city",
+			"maskRequired": false,
+			"formatRequired": false,
+			"label": {
+				"eng": "City"
+			},
+			"maskRequiredLabel": {
+				"eng": "Mask It"
+			},
+			"displaykeyinsharewithpartner":true,
+			"displaykeyinpersonalisedcard":true,
+			"checked":false
+		},
+		{
+			"attributeName": "region",
+			"maskRequired": false,
+			"formatRequired": false,
+			"label": {
+				"eng": "Region"
+			},
+			"maskRequiredLabel": {
+				"eng": "Mask It"
+			},
+			"displaykeyinsharewithpartner":true,
+			"displaykeyinpersonalisedcard":true,
+			"checked":false
+		},
+		{
+			"attributeName": "province",
+			"maskRequired": false,
+			"formatRequired": false,
+			"label": {
+				"eng": "Province"
+			},
+			"maskRequiredLabel": {
+				"eng": "Mask It"
+			},
+			"displaykeyinsharewithpartner":true,
+			"displaykeyinpersonalisedcard":true,
+			"checked":false
+		},
+		{
+			"attributeName": "postalCode",
+			"maskRequired": false,
+			"formatRequired": false,
+			"label": {
+				"eng": "Postal Code"
+			},
+			"maskRequiredLabel": {
+				"eng": "Mask It"
+			},
+			"displaykeyinsharewithpartner":true,
+			"displaykeyinpersonalisedcard":true,
+			"checked":false
+		},
+		{
 			"attributeName": "gender",
 			"maskRequired": false,
 			"formatRequired": false,
