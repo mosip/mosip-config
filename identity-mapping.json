@@ -110,7 +110,23 @@
 		},
 		"phone_number": {
 			"value": "phone"
-		}
+		},
+        "street_address": {
+           "value":  "addressLine1,addressLine2,addressLine3"
+        },
+        "locality": {
+           "value":  "city"
+        },
+        "region": {
+           "value":  "region"
+        },
+        "postal_code": {
+           "value":  "postalCode"
+        },
+        "country": {
+           "value":  "province"
+        }
+
 	},
 	"metaInfo": {
 		"value": "metaInfo"
