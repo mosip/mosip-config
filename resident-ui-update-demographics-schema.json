@@ -1,7 +1,7 @@
 {
   "identity": [
     {
-      "id": "fullName",
+      "attributeName": "fullName",
       "description": "",
       "labelName": {
         "eng": [
@@ -21,7 +21,7 @@
       "tabgroup": "identity"
     },
     {
-      "id": "dateOfBirth",
+      "attributeName": "dateOfBirth",
       "description": "",
       "labelName": {
         "eng": [
@@ -41,7 +41,7 @@
       "tabgroup": "identity"
     },
     {
-      "id": "gender",
+      "attributeName": "gender",
       "description": "",
       "labelName": {
         "eng": [
@@ -61,7 +61,7 @@
       "tabgroup": "identity"
     },
     {
-      "id": "proofOfIdentity",
+      "attributeName": "proofOfIdentity",
       "description": "",
       "labelName": {
         "eng": [
@@ -90,7 +90,7 @@
       "tabgroup": "identity"
     },
     {
-      "id": "addressLine1",
+      "attributeName": "addressLine1",
       "description": "",
       "labelName": {
         "eng": [
@@ -110,7 +110,7 @@
       "tabgroup": "address"
     },
     {
-      "id": "region",
+      "attributeName": "region",
       "name": "Region",
       "description": "",
       "labelName": {
@@ -132,7 +132,7 @@
       "locationHierarchyLevel": 1
     },
     {
-      "id": "province",
+      "attributeName": "province",
       "name": "Province",
       "description": "",
       "labelName": {
@@ -154,7 +154,7 @@
       "locationHierarchyLevel": 2
     },
     {
-      "id": "city",
+      "attributeName": "city",
       "name": "City",
       "description": "",
       "labelName": {
@@ -176,7 +176,7 @@
       "locationHierarchyLevel": 3
     },
     {
-      "id": "zone",
+      "attributeName": "zone",
       "name": "Zone",
       "description": "",
       "labelName": {
@@ -198,7 +198,7 @@
       "locationHierarchyLevel": 4
     },
     {
-      "id": "postalCode",
+      "attributeName": "postalCode",
       "name": "Postal Code",
       "description": "",
       "labelName": {
@@ -220,7 +220,7 @@
       "locationHierarchyLevel": 5
     },
     {
-      "id": "proofOfAddress",
+      "attributeName": "proofOfAddress",
       "description": "",
       "labelName": {
         "eng": [
@@ -249,7 +249,7 @@
       "tabgroup": "address"
     },
     {
-      "id": "email",
+      "attributeName": "email",
       "description": "",
       "labelName": {
         "eng": [
@@ -275,7 +275,7 @@
       "tabgroup": "contact"
     },
     {
-      "id": "phone",
+      "attributeName": "phone",
       "description": "",
       "labelName": {
         "eng": [
@@ -301,7 +301,7 @@
       "tabgroup": "contact"
     },
     {
-      "id": "preferredLang",
+      "attributeName": "preferredLang",
       "description": "",
       "labelName": {
         "eng": [
