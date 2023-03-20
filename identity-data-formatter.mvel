@@ -30,7 +30,7 @@ def getPassword(attributeValues) {
         attribute = getFormattedPasswordAttribute(attribute);
         pdfPwd = pdfPwd.concat(attribute.substring(0, 4));
     }
-    return pdfPwd;
+     return pdfPwd.toUpperCase();
 };
 
 def getFormattedPasswordAttribute(password){
@@ -41,6 +41,6 @@ def getFormattedPasswordAttribute(password){
     }else if(password.length()==1) {
         return password=password.repeat(4);
     }else {
-        return password;
+         return password.toUpperCase();
     }
 };
