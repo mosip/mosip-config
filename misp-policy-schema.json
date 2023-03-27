@@ -10,11 +10,14 @@
       },
       "trustBindedAuthVerificationToken": {
         "type": "boolean"
+      },
+      "allowKeyBindingDelegation": {
+        "type": "boolean"
       }
-
     },
     "required": [
       "allowAuthRequestDelegation",
-      "allowKycRequestDelegation"
+      "allowKycRequestDelegation",
+      "allowKeyBindingDelegation"
     ]
   }
