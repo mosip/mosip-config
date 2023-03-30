@@ -5,8 +5,8 @@
                 "validForInMinutes": null,
                 "transactionsAllowed": null,
                 "instancesAllowed": 2,
-                "autoRestoreAllowed": true,
-                "restoreOnAction": "REVOKED"
+                "autoRestoreAllowed": false,
+                "restoreOnAction": "REGENERATE"
             }
         },
         {
