@@ -55,6 +55,8 @@ DISK_SPACE_THRESHOLD = 10485760
 PARTNER_USER_ID_PREFIX = "service-account-"
 
 
+#CURRENT_WORKING_DIR = "user.dir"
+
 # The period between retry requests
 INTENT_VERIFICATION_RETRY_INTERVAL = 3.0
 
