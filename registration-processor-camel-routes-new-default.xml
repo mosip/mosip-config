@@ -33,7 +33,6 @@
          </otherwise>
       </choice>
    </route>
-   <!-- securezone-notification to packet-uploader Route -->
    <route id="securezone-notification-->packet-uploader new route">
       <from uri="eventbus://securezone-notification-new-bus-out" />
       <log message="securezone-notification-->packet-uploader new route ${bodyAs(String)}" />
@@ -55,7 +54,6 @@
          </otherwise>
       </choice>
    </route>
-   <!-- packet-uploader to packet-validator Route -->
    <route id="packet-uploader-->packet-validator new route">
       <from uri="eventbus://packet-uploader-new-bus-out" />
       <log message="packet-uploader-->packet-validator new route ${bodyAs(String)}" />
@@ -77,7 +75,6 @@
          </otherwise>
       </choice>
    </route>
-   <!-- Packet Validator to Packet classifier Route -->
    <route id="packet-validator-->packet-classifier new route">
       <from uri="eventbus://packet-validator-new-bus-out" />
       <log message="packet-validator-->packet-classifier new route ${bodyAs(String)}" />
@@ -101,7 +98,6 @@
          </otherwise>
       </choice>
    </route>
-   <!-- Packet Classifier to Quality Classifier Route -->
    <route id="packet-classifier-->cmd-validator new route">
       <from uri="eventbus://packet-classifier-new-bus-out" />
       <log message="packet-classifier-->quality-classifier new route ${bodyAs(String)}" />
@@ -289,6 +285,10 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
             <to uri="workflow-cmd://anonymous-profile" />
@@ -300,11 +300,6 @@
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
             <to uri="eventbus://manual-adjudication-bus-in" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-rejected" />
-            <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
             <to uri="eventbus://bio-dedupe-bus-in" />
@@ -451,7 +446,6 @@
          </otherwise>
       </choice>
    </route>
-   <!-- UIN Generator to biometric-extraction Route -->
    <route id="uin-generation route-->biometric-extraction-stage new route">
       <from uri="eventbus://uin-generator-new-bus-out" />
       <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
@@ -476,7 +470,6 @@
          </otherwise>
       </choice>
    </route>
-   <!-- biometric-extraction to finalization Route -->
    <route id="biometric-extraction route-->finalization-stage new route">
       <from uri="eventbus://biometric-extraction-new-bus-out" />
       <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
@@ -500,7 +493,6 @@
          </otherwise>
       </choice>
    </route>
-   <!-- finalization to Printing Route -->
    <route id="finalization route-->printing-stage new route">
       <from uri="eventbus://finalization-new-bus-out" />
       <log message="finalization-->printing-stage route ${bodyAs(String)}" />
@@ -520,6 +512,7 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
+            <to uri="workflow-cmd://complete-as-processed" />
             <to uri="eventbus://printing-bus-in" />
          </otherwise>
       </choice>
