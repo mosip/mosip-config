@@ -55,13 +55,6 @@
 				 "type":"string"
 			 }
 		}
-    },
-	  "kycLanguages": {
-			"type": "array",
-			"items": {
-				"type": "string"
-			}
-		}
   },
   "required":[
     "authTokenType",
