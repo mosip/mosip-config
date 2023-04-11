@@ -1,16 +1,23 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "allowOTPRequestDelegation": {
-      "type": "boolean"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "allowAuthRequestDelegation": {
+        "type": "boolean"
+      },
+      "allowKycRequestDelegation": {
+        "type": "boolean"
+      },
+      "trustBindedAuthVerificationToken": {
+        "type": "boolean"
+      },
+      "allowKeyBindingDelegation": {
+        "type": "boolean"
+      }
     },
-    "allowKycRequestDelegation": {
-      "type": "boolean"
-    }
-  },
-  "required": [
-    "allowOTPRequestDelegation",
-    "allowKycRequestDelegation"
-  ]
-}
+    "required": [
+      "allowAuthRequestDelegation",
+      "allowKycRequestDelegation",
+      "allowKeyBindingDelegation"
+    ]
+  }
