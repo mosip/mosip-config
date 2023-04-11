@@ -1,7 +1,7 @@
 {
   "@context": [{
-    "@version": 1.1
-  },"https://www.w3.org/ns/odrl.jsonld", {
+       "@version": 1.1
+    },"https://www.w3.org/ns/odrl.jsonld", {
     "mosip": "https://${mosip.api.public.host}/mosip#",
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -9,55 +9,59 @@
     "UIN": "mosip:UIN",
     "VID": "mosip:VID",
     "addressLine1": {
-      "@id": "https://${mosip.api.public.host}/mosip#addressLine1",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+        "@id": "https://${mosip.api.public.host}/mosip#addressLine1",
+        "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "addressLine2": {
-      "@id": "https://${mosip.api.public.host}/mosip#addressLine2",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+        "@id": "https://${mosip.api.public.host}/mosip#addressLine2",
+        "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "addressLine3": {
-      "@id": "https://${mosip.api.public.host}/mosip#addressLine3",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+        "@id": "https://${mosip.api.public.host}/mosip#addressLine3",
+        "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "city": {
-      "@id": "https://${mosip.api.public.host}/mosip#city",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+        "@id": "https://${mosip.api.public.host}/mosip#city",
+        "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "gender": {
-      "@id": "https://${mosip.api.public.host}/mosip#gender",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+     "gender": {
+        "@id": "https://${mosip.api.public.host}/mosip#gender",
+        "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "residenceStatus": {
-      "@id": "https://${mosip.api.public.host}/mosip#residenceStatus",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+     "residenceStatus": {
+        "@id": "https://${mosip.api.public.host}/mosip#residenceStatus",
+        "@context": {"value": "rdf:value", "lang": "@language"}
     },
 
     "dateOfBirth": "mosip:dateOfBirth",
     "email": "mosip:email",
     "fullName": {
-      "@id": "https://${mosip.api.public.host}/mosip#fullName",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+
+        "@id": "https://${mosip.api.public.host}/mosip#fullName",
+
+        "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    "phone": "mosip:phone",
+  "phone": "mosip:phone",
     "postalCode": "mosip:postalCode",
     "province": {
-      "@id": "https://${mosip.api.public.host}/mosip#province",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+
+        "@id": "https://${mosip.api.public.host}/mosip#province",
+        "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "region": {
-      "@id": "https://${mosip.api.public.host}/mosip#region",
-      "@context": {"value": "rdf:value", "lang": "@language"}
+        "@id": "https://${mosip.api.public.host}/mosip#region",
+
+        "@context": {"value": "rdf:value", "lang": "@language"}
     },
       "bestTwoFingers": {
-      "@id": "https://${mosip.api.public.host}/mosip#bestTwoFingers",
-      "@context": {
-        "id": "@id",
-        "type": "@type",
-        "subType": "https://${mosip.api.public.host}/mosip#subType",
-        "rank": "https://${mosip.api.public.host}/mosip#rank"
-      }
-  },
+        "@id": "https://${mosip.api.public.host}/mosip#bestTwoFingers",
+        "@context": {
+          "id": "@id",
+          "type": "@type",
+          "subType": "https://${mosip.api.public.host}/mosip#subType",
+          "rank": "https://${mosip.api.public.host}/mosip#rank"
+        }
+    },
     "biometrics": "mosip:biometrics"
-  }]
+    }]
 }
