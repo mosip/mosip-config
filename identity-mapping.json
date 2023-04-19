@@ -102,6 +102,9 @@
 		"birthdate": {
 			"value": "dateOfBirth"
 		},
+		"picture": {
+			"value": "face"
+		},
 		"phone_number": {
 			"value": "phone"
 		},
