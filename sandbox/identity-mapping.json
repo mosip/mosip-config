@@ -108,5 +108,11 @@
 		"poe": {
 			"value": "proofOfException"
 		}
+	},
+	"attributeUpdateCountLimit": {
+		"fullName": 2,
+		"gender": 1,
+		"dob": 1,
+		"age": 1
 	}
 } 
