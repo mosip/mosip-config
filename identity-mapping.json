@@ -105,30 +105,29 @@
 		"picture": {
 			"value": "face"
 		},
-		"phone_number": {
-			"value": "phone"
-		},
 		"address": {
 			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
 		},
-
+		"phone_number": {
+			"value": "phone"
+		},
 		"individual_id": {
 			"value": "individual_id"
 		},
 		"street_address": {
-			"value": "addressLine1,addressLine2,addressLine3"
+			"value":  "addressLine1,addressLine2,addressLine3"
 		},
 		"locality": {
-			"value": "city"
+			"value":  "city"
 		},
 		"region": {
-			"value": "region"
+			"value":  "region"
 		},
 		"postal_code": {
-			"value": "postalCode"
+			"value":  "postalCode"
 		},
 		"country": {
-			"value": "province"
+			"value":  "province"
 		}
 	},
 	"metaInfo": {
