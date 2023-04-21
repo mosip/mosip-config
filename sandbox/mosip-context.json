@@ -7,6 +7,7 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "vcVer": "mosip:vcVer",
     "UIN": "mosip:UIN",
+    "PCN": "mosip:PCN",
     "addressLine1": {
       "@id": "${mosipbox.public.url}/mosip#addressLine1",
       "@context": {"value": "rdf:value", "lang": "@language"}
@@ -29,6 +30,18 @@
       "@id": "${mosipbox.public.url}/mosip#fullName",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
+    "firstName": {
+      "@id": "${mosipbox.public.url}/mosip#firstName",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "middleName": {
+      "@id": "${mosipbox.public.url}/mosip#middleName",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "lastName": {
+      "@id": "${mosipbox.public.url}/mosip#lastName",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
     "gender": {
       "@id": "${mosipbox.public.url}/mosip#gender",
       "@context": {"value": "rdf:value", "lang": "@language"}
@@ -45,6 +58,15 @@
     "region": {
       "@id": "${mosipbox.public.url}/mosip#region",
       "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+      "bestTwoFingers": {
+      "@id": "https://qa3.mosip.net/mosip#bestTwoFingers",
+      "@context": {
+        "id": "@id",
+        "type": "@type",
+        "subType": "https://qa3.mosip.net/mosip#subType",
+        "rank": "https://qa3.mosip.net/mosip#rank"
+      }
     },
     "biometrics": "mosip:biometrics"
   }]
