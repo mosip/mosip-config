@@ -59,7 +59,7 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"dynamic",
+           "fieldType":"default",
            "type":"simpleType",
            "validators":[
 
@@ -76,7 +76,7 @@
            },
            "controlType":"dropdown",
            "inputRequired":true,
-           "fieldType":"dynamic",
+           "fieldType":"default",
            "type":"simpleType",
            "validators":[
 
