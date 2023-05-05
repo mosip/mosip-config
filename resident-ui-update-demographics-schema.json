@@ -18,7 +18,8 @@
         ]
       },
       "controlType": "textbox",
-      "tabgroup": "identity"
+      "tabgroup": "identity",
+      "dataType": "notString"
     },
     {
       "attributeName": "dateOfBirth",
@@ -38,7 +39,8 @@
         ]
       },
       "controlType": "calendar",
-      "tabgroup": "identity"
+      "tabgroup": "identity",
+      "dataType": "string"
     },
     {
       "attributeName": "gender",
@@ -58,7 +60,8 @@
         ]
       },
       "controlType": "dropdown",
-      "tabgroup": "identity"
+      "tabgroup": "identity",
+      "dataType": "notString"
     },
     {
       "attributeName": "proofOfIdentity",
@@ -87,7 +90,8 @@
         ]
       },
       "controlType": "fileupload",
-      "tabgroup": "identity"
+      "tabgroup": "identity",
+      "dataType": "notString"
     },
     {
       "attributeName": "addressLine1",
@@ -107,7 +111,8 @@
         ]
       },
       "controlType": "textbox",
-      "tabgroup": "address"
+      "tabgroup": "address",
+      "dataType": "notString"
     },
     {
       "attributeName": "region",
@@ -129,7 +134,8 @@
       },
       "controlType": "dropdown",
       "tabgroup": "address",
-      "locationHierarchyLevel": 1
+      "locationHierarchyLevel": 1,
+      "dataType": "notString"
     },
     {
       "attributeName": "province",
@@ -151,7 +157,8 @@
       },
       "controlType": "dropdown",
       "tabgroup": "address",
-      "locationHierarchyLevel": 2
+      "locationHierarchyLevel": 2,
+      "dataType": "notString"
     },
     {
       "attributeName": "city",
@@ -173,7 +180,8 @@
       },
       "controlType": "dropdown",
       "tabgroup": "address",
-      "locationHierarchyLevel": 3
+      "locationHierarchyLevel": 3,
+      "dataType": "notString"
     },
     {
       "attributeName": "zone",
@@ -195,7 +203,8 @@
       },
       "controlType": "dropdown",
       "tabgroup": "address",
-      "locationHierarchyLevel": 4
+      "locationHierarchyLevel": 4,
+      "dataType": "string"
     },
     {
       "attributeName": "postalCode",
@@ -217,7 +226,8 @@
       },
       "controlType": "dropdown",
       "tabgroup": "address",
-      "locationHierarchyLevel": 5
+      "locationHierarchyLevel": 5,
+      "dataType": "notString"
     },
     {
       "attributeName": "proofOfAddress",
@@ -246,7 +256,8 @@
         ]
       },
       "controlType": "fileupload",
-      "tabgroup": "address"
+      "tabgroup": "address",
+      "dataType": "notString"
     },
     {
       "attributeName": "email",
@@ -272,7 +283,8 @@
         ]
       },
       "controlType": "textbox",
-      "tabgroup": "contact"
+      "tabgroup": "contact",
+      "dataType": "string"
     },
     {
       "attributeName": "phone",
@@ -298,7 +310,8 @@
         ]
       },
       "controlType": "textbox",
-      "tabgroup": "contact"
+      "tabgroup": "contact",
+      "dataType": "string"
     },
     {
       "attributeName": "preferredLang",
@@ -318,7 +331,8 @@
         ]
       },
       "controlType": "dropdown",
-      "tabgroup": "notificationLanguage"
+      "tabgroup": "notificationLanguage",
+      "dataType": "string"
     }
   ]
 }
