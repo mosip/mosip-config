@@ -94,7 +94,7 @@
 			"value": "zone"
 		},
 		"fullAddress": {
-			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+			"value": "addressLine1,addressLine2,addressLine3,city,region,province,zone,postalCode"
 		},
 		"bestTwoFingers": {
 			"value": "bestTwoFingers"
@@ -106,7 +106,7 @@
 			"value": "face"
 		},
 		"address": {
-			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+			"value": "addressLine1,addressLine2,addressLine3,city,region,province,zone,postalCode"
 		},
 		"phone_number": {
 			"value": "phone"
