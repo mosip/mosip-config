@@ -1,380 +1,380 @@
 {
-  "identity": [
-    {
-      "attributeName": "fullName",
-      "label": {
-				"eng": "Name"
-			},
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Current Name",
-          "New Name"
-        ],
-        "ara": [
-          "Current Name_ara",
-          "New Name_ara"
-        ],
-        "fra": [
-          "Current Name_fra",
-          "New Name_fra"
-        ]
-      },
-      "controlType": "textbox",
-      "tabgroup": "identity",
-      "dataType": "notString"
-    },
-    {
-      "attributeName": "dateOfBirth",
-      "label": {
-				"eng": "DOB"
-			},
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Current DOB",
-          "New DOB"
-        ],
-        "ara": [
-          "Current DOB_ara",
-          "New DOB_ara"
-        ],
-        "fra": [
-          "Current DOB_fra",
-          "New DOB_fra"
-        ]
-      },
-      "controlType": "calendar",
-      "tabgroup": "identity",
-      "dataType": "string"
-    },
-    {
-      "attributeName": "gender",
-      "label": {
-				"eng": "Gender"
-			},
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Current Gender",
-          "New Gender"
-        ],
-        "ara": [
-          "Current Gender_ara",
-          "New Gender_ara"
-        ],
-        "fra": [
-          "Current Gender_fra",
-          "New Gender_fra"
-        ]
-      },
-      "controlType": "dropdown",
-      "tabgroup": "identity",
-      "dataType": "notString"
-    },
-    {
-      "attributeName": "proofOfIdentity",
-      "label": {
-				"eng": "Proof Of Identity"
-			},
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Identity Proof",
-          "Document Type",
-          "Document Reference ID",
-          "Proof Of Document",
-          "Allowed file type : pdf,jpeg,png,jpg and allowed file size : 2mb"
-        ],
-        "ara": [
-          "Identity Proof_ara",
-          "Document Type_ara",
-          "Document Reference ID_ara",
-          "Proof Of Document_ara",
-          "Allowed file type_ara : pdf,jpeg,png,jpg and allowed file size : 2mb"
-        ],
-        "fra": [
-          "Identity Proof_fra",
-          "Document Type_fra",
-          "Document Reference ID_fra",
-          "Proof Of Document_fra",
-          "Allowed file type_fra : pdf,jpeg,png,jpg and allowed file size : 2mb"
-        ]
-      },
-      "controlType": "fileupload",
-      "tabgroup": "identity",
-      "dataType": "notString"
-    },
-    {
-      "attributeName": "addressLine1",
-      "label": {
-				"eng": "Address line1"
-			},
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Current Address Line1",
-          "New Address Line1"
-        ],
-        "ara": [
-          "Current Address Line1_ara",
-          "New Address Line1_ara"
-        ],
-        "fra": [
-          "Current Address Line1_fra",
-          "New Address Line1_fra"
-        ]
-      },
-      "controlType": "textbox",
-      "tabgroup": "address",
-      "dataType": "notString"
-    },
-    {
-      "attributeName": "region",
-      "label": {
-				"eng": "Region"
-			},
-      "name": "Region",
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Current Region",
-          "New Region"
-        ],
-        "ara": [
-          "Current Region_ara",
-          "New Region_ara"
-        ],
-        "fra": [
-          "Current Region_fra",
-          "New Region_fra"
-        ]
-      },
-      "controlType": "dropdown",
-      "tabgroup": "address",
-      "locationHierarchyLevel": 1,
-      "dataType": "notString"
-    },
-    {
-      "attributeName": "province",
-      "label": {
-				"eng": "Province"
-			},
-      "name": "Province",
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Current Province",
-          "New Province"
-        ],
-        "ara": [
-          "Current Province_ara",
-          "New Province_ara"
-        ],
-        "fra": [
-          "Current Province_fra",
-          "New Province_fra"
-        ]
-      },
-      "controlType": "dropdown",
-      "tabgroup": "address",
-      "locationHierarchyLevel": 2,
-      "dataType": "notString"
-    },
-    {
-      "attributeName": "city",
-      "label": {
-				"eng": "City"
-			},
-      "name": "City",
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Current City",
-          "New City"
-        ],
-        "ara": [
-          "Current City_ara",
-          "New City_ara"
-        ],
-        "fra": [
-          "Current City_fra",
-          "New City_fra"
-        ]
-      },
-      "controlType": "dropdown",
-      "tabgroup": "address",
-      "locationHierarchyLevel": 3,
-      "dataType": "notString"
-    },
-    {
-      "attributeName": "zone",
-      "label": {
-				"eng": "Zone"
-			},
-      "name": "Zone",
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Current Zone",
-          "New Zone"
-        ],
-        "ara": [
-          "Current Zone_ara",
-          "New Zone_ara"
-        ],
-        "fra": [
-          "Current Zone_fra",
-          "New Zone_fra"
-        ]
-      },
-      "controlType": "dropdown",
-      "tabgroup": "address",
-      "locationHierarchyLevel": 4,
-      "dataType": "string"
-    },
-    {
-      "attributeName": "postalCode",
-      "label": {
-				"eng": "Postal Code"
-			},
-      "name": "Postal Code",
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Current Postal Code",
-          "New Postal Code"
-        ],
-        "ara": [
-          "Current Postal Code_ara",
-          "New Postal Code_ara"
-        ],
-        "fra": [
-          "Current Postal Code_fra",
-          "New Postal Code_fra"
-        ]
-      },
-      "controlType": "dropdown",
-      "tabgroup": "address",
-      "locationHierarchyLevel": 5,
-      "dataType": "notString"
-    },
-    {
-      "attributeName": "proofOfAddress",
-      "label": {
-				"eng": "Proof Of Address"
-			},
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Address Proof",
-          "Document Type",
-          "Document Reference ID",
-          "Proof Of Document",
-          "Allowed file type : pdf,jpeg,png,jpg and allowed file size : 2mb"
-        ],
-        "ara": [
-          "Address Proof_ara",
-          "Document Type_ara",
-          "Document Reference ID_ara",
-          "Proof Of Document_ara",
-          "Allowed file type_ara : pdf,jpeg,png,jpg and allowed file size : 2mb"
-        ],
-        "fra": [
-          "Address Proof_fra",
-          "Document Type_fra",
-          "Document Reference ID_fra",
-          "Proof Of Document_fra",
-          "Allowed file type_fra : pdf,jpeg,png,jpg and allowed file size : 2mb"
-        ]
-      },
-      "controlType": "fileupload",
-      "tabgroup": "address",
-      "dataType": "notString"
-    },
-    {
-      "attributeName": "email",
-      "label": {
-				"eng": "Email ID"
-			},
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Current email ID",
-          "New email ID",
-          "Confirm New email ID",
-          "Send OTP"
-        ],
-        "ara": [
-          "Current email ID_ara",
-          "New email ID_ara",
-          "Confirm New email ID_ara",
-          "Send OTP_ara"
-        ],
-        "fra": [
-          "Current email ID_fra",
-          "New email ID_fra",
-          "Confirm New email ID_fra",
-          "Send OTP_fra"
-        ]
-      },
-      "controlType": "textbox",
-      "tabgroup": "contact",
-      "dataType": "string"
-    },
-    {
-      "attributeName": "phone",
-      "label": {
-				"eng": "Phone Number"
-			},
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Current Phone Number",
-          "New Phone Number",
-          "Confirm New Phone Number",
-          "Send OTP"
-        ],
-        "ara": [
-          "Current Phone Number_ara",
-          "New Phone Number_ara",
-          "Confirm New Phone Number_ara",
-          "Send OTP_ara"
-        ],
-        "fra": [
-          "Current Phone Number_fra",
-          "New Phone Number_fra",
-          "Confirm New Phone Number_fra",
-          "Send OTP_fra"
-        ]
-      },
-      "controlType": "textbox",
-      "tabgroup": "contact",
-      "dataType": "string"
-    },
-    {
-      "attributeName": "preferredLang",
-      "label": {
-				"eng": "Preferred Language"
-			},
-      "description": "",
-      "labelName": {
-        "eng": [
-          "Current Notification Language",
-          "New Notification Language"
-        ],
-        "ara": [
-          "Current Notification Language_ara",
-          "New Notification Language_ara"
-        ],
-        "fra": [
-          "Current Notification Language_fra",
-          "New Notification Language_fra"
-        ]
-      },
-      "controlType": "dropdown",
-      "tabgroup": "notificationLanguage",
-      "dataType": "string"
-    }
-  ]
+    "identity": [
+        {
+            "attributeName": "fullName",
+            "label": {
+                "eng": "Name"
+            },
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current Name",
+                    "New Name"
+                ],
+                "ara": [
+                    "Current Name_ara",
+                    "New Name_ara"
+                ],
+                "fra": [
+                    "Current Name_fra",
+                    "New Name_fra"
+                ]
+            },
+            "controlType": "textbox",
+            "tabgroup": "identity",
+            "dataType": "notString"
+        },
+        {
+            "attributeName": "dateOfBirth",
+            "label": {
+                "eng": "DOB"
+            },
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current DOB",
+                    "New DOB"
+                ],
+                "ara": [
+                    "Current DOB_ara",
+                    "New DOB_ara"
+                ],
+                "fra": [
+                    "Current DOB_fra",
+                    "New DOB_fra"
+                ]
+            },
+            "controlType": "calendar",
+            "tabgroup": "identity",
+            "dataType": "string"
+        },
+        {
+            "attributeName": "gender",
+            "label": {
+                "eng": "Gender"
+            },
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current Gender",
+                    "New Gender"
+                ],
+                "ara": [
+                    "Current Gender_ara",
+                    "New Gender_ara"
+                ],
+                "fra": [
+                    "Current Gender_fra",
+                    "New Gender_fra"
+                ]
+            },
+            "controlType": "dropdown",
+            "tabgroup": "identity",
+            "dataType": "notString"
+        },
+        {
+            "attributeName": "proofOfIdentity",
+            "label": {
+                "eng": "Proof Of Identity"
+            },
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Identity Proof",
+                    "Document Type",
+                    "Document Reference ID",
+                    "Proof Of Document",
+                    "Allowed file type : pdf,jpeg,png,jpg and allowed file size : 2mb"
+                ],
+                "ara": [
+                    "Identity Proof_ara",
+                    "Document Type_ara",
+                    "Document Reference ID_ara",
+                    "Proof Of Document_ara",
+                    "Allowed file type_ara : pdf,jpeg,png,jpg and allowed file size : 2mb"
+                ],
+                "fra": [
+                    "Identity Proof_fra",
+                    "Document Type_fra",
+                    "Document Reference ID_fra",
+                    "Proof Of Document_fra",
+                    "Allowed file type_fra : pdf,jpeg,png,jpg and allowed file size : 2mb"
+                ]
+            },
+            "controlType": "fileupload",
+            "tabgroup": "identity",
+            "dataType": "notString"
+        },
+        {
+            "attributeName": "addressLine1",
+            "label": {
+                "eng": "Address line1"
+            },
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current Address Line1",
+                    "New Address Line1"
+                ],
+                "ara": [
+                    "Current Address Line1_ara",
+                    "New Address Line1_ara"
+                ],
+                "fra": [
+                    "Current Address Line1_fra",
+                    "New Address Line1_fra"
+                ]
+            },
+            "controlType": "textbox",
+            "tabgroup": "address",
+            "dataType": "notString"
+        },
+        {
+            "attributeName": "region",
+            "label": {
+                "eng": "Region"
+            },
+            "name": "Region",
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current Region",
+                    "New Region"
+                ],
+                "ara": [
+                    "Current Region_ara",
+                    "New Region_ara"
+                ],
+                "fra": [
+                    "Current Region_fra",
+                    "New Region_fra"
+                ]
+            },
+            "controlType": "dropdown",
+            "tabgroup": "address",
+            "locationHierarchyLevel": 1,
+            "dataType": "notString"
+        },
+        {
+            "attributeName": "province",
+            "label": {
+                "eng": "Province"
+            },
+            "name": "Province",
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current Province",
+                    "New Province"
+                ],
+                "ara": [
+                    "Current Province_ara",
+                    "New Province_ara"
+                ],
+                "fra": [
+                    "Current Province_fra",
+                    "New Province_fra"
+                ]
+            },
+            "controlType": "dropdown",
+            "tabgroup": "address",
+            "locationHierarchyLevel": 2,
+            "dataType": "notString"
+        },
+        {
+            "attributeName": "city",
+            "label": {
+                "eng": "City"
+            },
+            "name": "City",
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current City",
+                    "New City"
+                ],
+                "ara": [
+                    "Current City_ara",
+                    "New City_ara"
+                ],
+                "fra": [
+                    "Current City_fra",
+                    "New City_fra"
+                ]
+            },
+            "controlType": "dropdown",
+            "tabgroup": "address",
+            "locationHierarchyLevel": 3,
+            "dataType": "notString"
+        },
+        {
+            "attributeName": "zone",
+            "label": {
+                "eng": "Zone"
+            },
+            "name": "Zone",
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current Zone",
+                    "New Zone"
+                ],
+                "ara": [
+                    "Current Zone_ara",
+                    "New Zone_ara"
+                ],
+                "fra": [
+                    "Current Zone_fra",
+                    "New Zone_fra"
+                ]
+            },
+            "controlType": "dropdown",
+            "tabgroup": "address",
+            "locationHierarchyLevel": 4,
+            "dataType": "string"
+        },
+        {
+            "attributeName": "postalCode",
+            "label": {
+                "eng": "Postal Code"
+            },
+            "name": "Postal Code",
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current Postal Code",
+                    "New Postal Code"
+                ],
+                "ara": [
+                    "Current Postal Code_ara",
+                    "New Postal Code_ara"
+                ],
+                "fra": [
+                    "Current Postal Code_fra",
+                    "New Postal Code_fra"
+                ]
+            },
+            "controlType": "dropdown",
+            "tabgroup": "address",
+            "locationHierarchyLevel": 5,
+            "dataType": "notString"
+        },
+        {
+            "attributeName": "proofOfAddress",
+            "label": {
+                "eng": "Proof Of Address"
+            },
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Address Proof",
+                    "Document Type",
+                    "Document Reference ID",
+                    "Proof Of Document",
+                    "Allowed file type : pdf,jpeg,png,jpg and allowed file size : 2mb"
+                ],
+                "ara": [
+                    "Address Proof_ara",
+                    "Document Type_ara",
+                    "Document Reference ID_ara",
+                    "Proof Of Document_ara",
+                    "Allowed file type_ara : pdf,jpeg,png,jpg and allowed file size : 2mb"
+                ],
+                "fra": [
+                    "Address Proof_fra",
+                    "Document Type_fra",
+                    "Document Reference ID_fra",
+                    "Proof Of Document_fra",
+                    "Allowed file type_fra : pdf,jpeg,png,jpg and allowed file size : 2mb"
+                ]
+            },
+            "controlType": "fileupload",
+            "tabgroup": "address",
+            "dataType": "notString"
+        },
+        {
+            "attributeName": "email",
+            "label": {
+                "eng": "Email ID"
+            },
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current email ID",
+                    "New email ID",
+                    "Confirm New email ID",
+                    "Send OTP"
+                ],
+                "ara": [
+                    "Current email ID_ara",
+                    "New email ID_ara",
+                    "Confirm New email ID_ara",
+                    "Send OTP_ara"
+                ],
+                "fra": [
+                    "Current email ID_fra",
+                    "New email ID_fra",
+                    "Confirm New email ID_fra",
+                    "Send OTP_fra"
+                ]
+            },
+            "controlType": "textbox",
+            "tabgroup": "contact",
+            "dataType": "string"
+        },
+        {
+            "attributeName": "phone",
+            "label": {
+                "eng": "Phone Number"
+            },
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current Phone Number",
+                    "New Phone Number",
+                    "Confirm New Phone Number",
+                    "Send OTP"
+                ],
+                "ara": [
+                    "Current Phone Number_ara",
+                    "New Phone Number_ara",
+                    "Confirm New Phone Number_ara",
+                    "Send OTP_ara"
+                ],
+                "fra": [
+                    "Current Phone Number_fra",
+                    "New Phone Number_fra",
+                    "Confirm New Phone Number_fra",
+                    "Send OTP_fra"
+                ]
+            },
+            "controlType": "textbox",
+            "tabgroup": "contact",
+            "dataType": "string"
+        },
+        {
+            "attributeName": "preferredLang",
+            "label": {
+                "eng": "Preferred Language"
+            },
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current Notification Language",
+                    "New Notification Language"
+                ],
+                "ara": [
+                    "Current Notification Language_ara",
+                    "New Notification Language_ara"
+                ],
+                "fra": [
+                    "Current Notification Language_fra",
+                    "New Notification Language_fra"
+                ]
+            },
+            "controlType": "dropdown",
+            "tabgroup": "notificationLanguage",
+            "dataType": "string"
+        }
+    ]
 }
