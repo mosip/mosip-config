@@ -16,20 +16,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <process ref="tokenGenerationProcessor" />
-            <setHeader headerName="CamelHttpMethod">
-               <constant>POST</constant>
-            </setHeader>
-            <setHeader headerName="Content-Type">
-               <constant>application/json</constant>
-            </setHeader>
-            <setHeader headerName="Cookie">
-               <simple>${header.Cookie}</simple>
-            </setHeader>
-            <setBody>
-               <simple>${bodyAs(String)}</simple>
-            </setBody>
-            <to uri="http://regproc-group2.regproc/registrationprocessor/v1/securezone/notification" />
+            <to uri="eventbus://securezone-notification-bus-in" />
          </otherwise>
       </choice>
    </route>
