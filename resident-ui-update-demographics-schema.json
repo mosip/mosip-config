@@ -2,6 +2,9 @@
   "identity": [
     {
       "attributeName": "fullName",
+      "label": {
+				"eng": "Name"
+			},
       "description": "",
       "labelName": {
         "eng": [
@@ -23,6 +26,9 @@
     },
     {
       "attributeName": "dateOfBirth",
+      "label": {
+				"eng": "DOB"
+			},
       "description": "",
       "labelName": {
         "eng": [
@@ -44,6 +50,9 @@
     },
     {
       "attributeName": "gender",
+      "label": {
+				"eng": "Gender"
+			},
       "description": "",
       "labelName": {
         "eng": [
@@ -65,6 +74,9 @@
     },
     {
       "attributeName": "proofOfIdentity",
+      "label": {
+				"eng": "Proof Of Identity"
+			},
       "description": "",
       "labelName": {
         "eng": [
@@ -95,6 +107,9 @@
     },
     {
       "attributeName": "addressLine1",
+      "label": {
+				"eng": "Address line1"
+			},
       "description": "",
       "labelName": {
         "eng": [
@@ -116,6 +131,9 @@
     },
     {
       "attributeName": "region",
+      "label": {
+				"eng": "Region"
+			},
       "name": "Region",
       "description": "",
       "labelName": {
@@ -139,6 +157,9 @@
     },
     {
       "attributeName": "province",
+      "label": {
+				"eng": "Province"
+			},
       "name": "Province",
       "description": "",
       "labelName": {
@@ -162,6 +183,9 @@
     },
     {
       "attributeName": "city",
+      "label": {
+				"eng": "City"
+			},
       "name": "City",
       "description": "",
       "labelName": {
@@ -185,6 +209,9 @@
     },
     {
       "attributeName": "zone",
+      "label": {
+				"eng": "Zone"
+			},
       "name": "Zone",
       "description": "",
       "labelName": {
@@ -208,6 +235,9 @@
     },
     {
       "attributeName": "postalCode",
+      "label": {
+				"eng": "Postal Code"
+			},
       "name": "Postal Code",
       "description": "",
       "labelName": {
@@ -231,6 +261,9 @@
     },
     {
       "attributeName": "proofOfAddress",
+      "label": {
+				"eng": "Proof Of Address"
+			},
       "description": "",
       "labelName": {
         "eng": [
@@ -261,6 +294,9 @@
     },
     {
       "attributeName": "email",
+      "label": {
+				"eng": "Email ID"
+			},
       "description": "",
       "labelName": {
         "eng": [
@@ -288,6 +324,9 @@
     },
     {
       "attributeName": "phone",
+      "label": {
+				"eng": "Phone Number"
+			},
       "description": "",
       "labelName": {
         "eng": [
@@ -315,6 +354,9 @@
     },
     {
       "attributeName": "preferredLang",
+      "label": {
+				"eng": "Preferred Language"
+			},
       "description": "",
       "labelName": {
         "eng": [
