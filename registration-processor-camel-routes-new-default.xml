@@ -290,7 +290,7 @@
          </when>
 		   <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR')]</jsonpath>
-            <to uri="eventbus://manual-adjudication-bus-in" />
+            <to uri="eventbus://verification-bus-in" />
          </when>
          <otherwise>
             <to uri="eventbus://bio-dedupe-bus-in" />
