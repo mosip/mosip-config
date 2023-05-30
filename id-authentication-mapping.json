@@ -65,6 +65,44 @@
             "region",
             "province",
             "zone"
-        ]
+        ],
+        "birthdate": [
+            "dateOfBirth"
+        ],
+         "phone_number": [
+            "mobileno"
+        ],
+         "email": [
+            "email"
+        ],
+         "address": [
+            "presentAddressLine1",
+            "presentAddressLine2",
+            "presentAddressLine3",
+            "presentCity",
+            "presentBarangay",
+            "presentProvince",
+            "presentZipcode"
+        ],
+        "street_address": [
+            "presentAddressLine1",
+            "presentAddressLine2",
+            "presentAddressLine3"
+        ],
+	    "locality": {
+	       "value":  "presentCity"
+	    },
+	    "region": {
+	       "value":  "presentBarangay"
+	    },
+	    "postal_code": {
+	       "value":  "presentZipcode"
+	    },
+        "individual_id": [
+            "individual_id"
+        ],
+        "picture": {
+           "value": "face"
+        }
     }
 }
