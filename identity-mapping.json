@@ -107,6 +107,12 @@
         },
         "phone_number": {
             "value": "phone"
+        },
+        "address": {
+            "value": "region,postal_code"
+        },
+        "individual_id": {
+            "value": "individual_id"
         }
     },
     "metaInfo": {
