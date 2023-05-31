@@ -32,7 +32,7 @@
         "@id": "https://${mosip.api.public.host}/mosip#residenceStatus",
         "@context": {"value": "rdf:value", "lang": "@language"}
     },
-    
+
     "dateOfBirth": "mosip:dateOfBirth",
     "email": "mosip:email",
     "fullName": {
