@@ -109,7 +109,7 @@
             "value": "phone"
         },
         "address": {
-            "value": "region,postal_code"
+            "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
         },
         "individual_id": {
             "value": "individual_id"
