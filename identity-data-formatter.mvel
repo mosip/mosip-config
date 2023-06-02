@@ -1,7 +1,7 @@
 
 def maskPhone(inputPhoneNum) {
 
-return inputPhoneNum.replaceAll(".(?=.{5})", "*");
+return inputPhoneNum.replaceAll(".(?=.{4})", "*");
 };
 
 def maskEmail(inputEmailAddr) {
@@ -17,7 +17,7 @@ def convertToMaskDataFormat(maskData) {
 	} else {
 		maskDataLength = maskData.length();
 	}
-	maskDataLength -= 2;
+	maskDataLength -= 3;
 	for (int i = 1; i < maskDataLength; ++i) {
 		maskData = maskData.substring(0, i) + ch + maskData.substring(i + 1);
 	}
