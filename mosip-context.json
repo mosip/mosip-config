@@ -58,6 +58,43 @@
         "rank": "https://${mosip.api.public.host}/mosip#rank"
       }
   },
-    "biometrics": "mosip:biometrics"
+    "biometrics": "mosip:biometrics",
+    "dob": "mosip:dob",
+    "fln": {
+      "@id": "https://${mosip.api.public.host}/mosip#fln",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+     "ad1": {
+      "@id": "https://${mosip.api.public.host}/mosip#ad1",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "ad2": {
+      "@id": "https://${mosip.api.public.host}/mosip#ad2",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "ad3": {
+      "@id": "https://${mosip.api.public.host}/mosip#ad3",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "cit": {
+      "@id": "https://${mosip.api.public.host}/mosip#cit",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "gen": {
+      "@id": "https://${mosip.api.public.host}/mosip#gen",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "em": "mosip:em",
+    "ph": "mosip:ph",
+    "poc": "mosip:poc",
+    "pro": {
+      "@id": "https://${mosip.api.public.host}/mosip#pro",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "reg": {
+      "@id": "https://${mosip.api.public.host}/mosip#reg",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "cph": "mosip:cph"
   }]
 }
