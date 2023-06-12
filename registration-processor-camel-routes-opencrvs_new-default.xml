@@ -162,9 +162,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="verification route-->uin-generator new route">
-      <from uri="eventbus://verification-new-bus-out" />
-      <log message="verification route-->uin-generator new route ${bodyAs(String)}" />
+   <route id="verification route-->uin-generator opencrvs_new route">
+      <from uri="eventbus://verification-opencrvs_new-bus-out" />
+      <log message="verification route-->uin-generator opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
