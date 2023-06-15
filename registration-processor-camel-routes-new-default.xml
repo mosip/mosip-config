@@ -294,7 +294,7 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
 		  <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR')]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT')]</jsonpath>
             <to uri="eventbus://verification-bus-in" />
          </when>
          <otherwise>
