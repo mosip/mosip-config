@@ -9,7 +9,7 @@
 				"eng": "Name"
 			},
 			"maskRequiredLabel": {
-				"eng": "Mask It"
+				"eng": "Mask it"
 			},
 			"formatOptionLabel": {
 				"eng": "Name Format"
@@ -36,7 +36,7 @@
 				"eng": "DOB"
 			},
 			"maskRequiredLabel": {
-				"eng": "Mask It"
+				"eng": "Mask it"
 			},
 			"formatOptionLabel": {
 				"eng": "Date Format"
@@ -68,7 +68,7 @@
 				"eng": "UIN"
 			},
 			"maskRequiredLabel": {
-				"eng": "Mask It"
+				"eng": "Mask it"
 			},
 			"displaykeyinsharewithpartner": true,
 			"displaykeyinpersonalisedcard": false,
@@ -83,7 +83,7 @@
 				"eng": "Perpetual VID"
 			},
 			"maskRequiredLabel": {
-				"eng": "Mask It"
+				"eng": "Mask it"
 			},
 			"displaykeyinsharewithpartner": true,
 			"displaykeyinpersonalisedcard": false,
@@ -98,7 +98,7 @@
 				"eng": "Phone Number"
 			},
 			"maskRequiredLabel": {
-				"eng": "Mask It"
+				"eng": "Mask it"
 			},
 			"displaykeyinsharewithpartner": true,
 			"displaykeyinpersonalisedcard": true,
@@ -113,7 +113,7 @@
 				"eng": "Email ID"
 			},
 			"maskRequiredLabel": {
-				"eng": "Mask It"
+				"eng": "Mask it"
 			},
 			"displaykeyinsharewithpartner": true,
 			"displaykeyinpersonalisedcard": true,
@@ -128,7 +128,7 @@
 				"eng": "Address"
 			},
 			"maskRequiredLabel": {
-				"eng": "Mask It"
+				"eng": "Mask it"
 			},
 			"formatOptionLabel": {
 				"eng": "Address Format"
@@ -194,7 +194,7 @@
 				"eng": "Gender"
 			},
 			"maskRequiredLabel": {
-				"eng": "Mask It"
+				"eng": "Mask it"
 			},
 			"displaykeyinsharewithpartner": true,
 			"displaykeyinpersonalisedcard": true,
@@ -208,7 +208,7 @@
 				"eng": "Image"
 			},
 			"maskRequiredLabel": {
-				"eng": "Mask It"
+				"eng": "Mask it"
 			},
 			"displaykeyinsharewithpartner": true,
 			"displaykeyinpersonalisedcard": true,
