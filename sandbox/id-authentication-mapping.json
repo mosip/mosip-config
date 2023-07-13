@@ -18,6 +18,12 @@
 		"emailId": [
 			"email"
 		],
+		"residenceStatus": [
+			"residenceStatus"
+		],
+		"bloodGroup": [
+			"bloodGroup"
+		],
 		"addressLine1": [
 			"addressLine1"
 		],
