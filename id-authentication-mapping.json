@@ -6,6 +6,9 @@
         "dob": [
             "dateOfBirth"
         ],
+        "yearOfBirth": [
+            "yearOfBirth"
+        ],
         "age": [
             "dateOfBirth"
         ],
