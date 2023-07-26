@@ -151,9 +151,6 @@
 		},
 		"poe": {
 			"value": "proofOfException"
-		},
-		"yearOfBirth": {
-			"value": "yearOfBirth"
 		}
 	},
 	"attributeUpdateCountLimit": {
