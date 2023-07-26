@@ -33,7 +33,6 @@
     },
     
     "dateOfBirth": "mosip:dateOfBirth",
-    "yearOfBirth": "mosip:yearOfBirth",
     "email": "mosip:email",
     "fullName": {
 
