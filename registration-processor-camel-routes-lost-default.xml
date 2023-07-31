@@ -191,7 +191,7 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true')]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'CHILD' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true')]</jsonpath>
             <to uri="eventbus://introducer-validator-bus-in" />
          </when>
          <otherwise>
