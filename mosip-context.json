@@ -10,19 +10,19 @@
     "UIN": "mosip:UIN",
     "VID": "mosip:VID",
     "addressLine1": {
-      "@id": "address#addressLine1",
+      "@id": "address:addressLine1",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "addressLine2": {
-      "@id": "address#addressLine2",
+      "@id": "address:addressLine2",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "addressLine3": {
-      "@id": "address#addressLine3",
+      "@id": "address:addressLine3",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "city": {
-      "@id": "address#city",
+      "@id": "address:city",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "gender": {
@@ -43,11 +43,11 @@
     "phone": "mosip:phone",
     "postalCode": "mosip:postalCode",
     "province": {
-      "@id": "address#province",
+      "@id": "address:province",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "region": {
-      "@id": "address#region",
+      "@id": "address:region",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
       "bestTwoFingers": {
