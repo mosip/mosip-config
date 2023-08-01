@@ -3,25 +3,26 @@
     "@version": 1.1
   },"https://www.w3.org/ns/odrl.jsonld", {
     "mosip": "https://${mosip.api.public.host}/mosip#",
+    "address": "https://${mosip.api.public.host}/mosip/address#",
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "vcVer": "mosip:vcVer",
     "UIN": "mosip:UIN",
     "VID": "mosip:VID",
     "addressLine1": {
-      "@id": "https://${mosip.api.public.host}/mosip#addressLine1",
+      "@id": "address#addressLine1",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "addressLine2": {
-      "@id": "https://${mosip.api.public.host}/mosip#addressLine2",
+      "@id": "address#addressLine2",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "addressLine3": {
-      "@id": "https://${mosip.api.public.host}/mosip#addressLine3",
+      "@id": "address#addressLine3",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "city": {
-      "@id": "https://${mosip.api.public.host}/mosip#city",
+      "@id": "address#city",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "gender": {
@@ -42,11 +43,11 @@
     "phone": "mosip:phone",
     "postalCode": "mosip:postalCode",
     "province": {
-      "@id": "https://${mosip.api.public.host}/mosip#province",
+      "@id": "address#province",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
     "region": {
-      "@id": "https://${mosip.api.public.host}/mosip#region",
+      "@id": "address#region",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
       "bestTwoFingers": {
