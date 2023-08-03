@@ -40,6 +40,18 @@
 
         "@context": {"value": "rdf:value", "lang": "@language"}
     },
+    "firstName": {
+      "@id": "https://${mosip.api.public.host}/mosip#firstName",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "middleName": {
+      "@id": "https://${mosip.api.public.host}/mosip#middleName",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "lastName": {
+      "@id": "https://${mosip.api.public.host}/mosip#lastName",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
   "phone": "mosip:phone",
     "postalCode": "mosip:postalCode",
     "province": {
