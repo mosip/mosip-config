@@ -88,6 +88,9 @@
 		},
 		"bestTwoFingers": {
 			"value": "BF"
+		},
+		"presentCityHandle": {
+			"value": "presentCity"
 		}
 	},
 	"metaInfo": {
