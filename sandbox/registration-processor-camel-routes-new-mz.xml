@@ -173,7 +173,7 @@
                 message="osi-validator-->demo-dedupe new route ${bodyAs(String)}" />
         <choice>
 	 <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] == 'Bangued (Capital)')]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCityHandle'] == 'Bangued (Capital)')]</jsonpath>
             <to uri="eventbus://tagging-success-bus-in" />
          </when>
             <when>
