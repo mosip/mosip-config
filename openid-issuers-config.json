@@ -1,0 +1,23 @@
+{
+  "issuers": [
+    {
+      "id": "id1",
+      "displayName": "Issuer 1",
+      "logoUrl": "logo url",
+      "clientId": 123,
+      "redirectionUri": "",
+      "serviceConfiguration": {
+        "authorizationEndpoint": "https://github.com/login/oauth/authorize",
+        "tokenEndpoint": "https://github.com/login/oauth/access_token",
+        "revocationEndpoint": "https://github.com/settings/connections/applications/c578665bb6dea8ba01be"
+      }
+    },
+    {
+      "id": "id2",
+      "displayName": "Issuer 2",
+      "logoUrl": "logo url",
+      "clientId": 123,
+      "wellKnownEndpoint": ""
+    }
+  ]
+}
