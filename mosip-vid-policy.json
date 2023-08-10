@@ -13,7 +13,7 @@
             "vidType": "Temporary",
             "vidPolicy": {
                 "validForInMinutes": 30,
-                "transactionsAllowed": 5,
+                "transactionsAllowed": 1,
                 "instancesAllowed": 5,
                 "autoRestoreAllowed": false,
                 "restoreOnAction": "REGENERATE"
@@ -23,7 +23,7 @@
             "vidType": "OneTimeUse",
             "vidPolicy": {
                 "validForInMinutes": null,
-                "transactionsAllowed": 5,
+                "transactionsAllowed": 3,
                 "instancesAllowed": 4,
                 "autoRestoreAllowed": false,
                 "restoreOnAction": "REVOKED"
