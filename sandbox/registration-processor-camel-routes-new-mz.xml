@@ -225,7 +225,7 @@
                 <to uri="eventbus:abis-middle-ware-bus-in" />
             </when>
             <when>
-                <simple>${bodyAs(String)} contains '"address":"demo-dedupe-bus-in"'</simple>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Bangued (Capital)' &amp;&amp; @['address'] == 'demo-dedupe-bus-in')]</jsonpath>
                 <to uri="eventbus:demo-dedupe-bus-in" />
             </when>
             <when>
@@ -248,7 +248,7 @@
                 <to uri="eventbus:abis-handler-bus-in" />
             </when>
             <when>
-                <simple>${bodyAs(String)} contains '"address":"manual-verification-bus-in"'</simple>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Luba' &amp;&amp; @['address'] == 'manual-verification-bus-in')]</jsonpath>
                 <to uri="eventbus:manual-verification-bus-in" />
             </when>
             <when>
