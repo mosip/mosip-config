@@ -133,7 +133,7 @@
                 message="bio-dedupe-->uin-generation lost route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tineg' &amp;&amp; @['isValid'] == true)]</jsonpath>
                 <to uri="eventbus:uin-generator-bus-in" />
             </when>
             <when>
@@ -159,7 +159,7 @@
                 message="abis-handler-->abis-middleware lost route ${bodyAs(String)}" />
         <choice>
             <when>
-                <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['address'] == 'aabis-middle-ware-bus-in')]</jsonpath>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['address'] == 'abis-middle-ware-bus-in')]</jsonpath>
                 <to uri="eventbus:abis-middle-ware-bus-in" />
             </when>
             <when>
