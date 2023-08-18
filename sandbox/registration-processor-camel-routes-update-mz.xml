@@ -67,7 +67,7 @@
             message="packet-classifier-->quality-checker update route ${bodyAs(String)}" />
         <choice>
               <when>
-		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Pilor' &amp;&amp; @['isValid'] == true)]</jsonpath>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Pilar' &amp;&amp; @['isValid'] == true)]</jsonpath>
                    <to uri="eventbus:quality-checker-bus-in" />
             </when>
             <when>
@@ -111,8 +111,7 @@
             message="osi-validator-->biometric-authentication-stage update route ${bodyAs(String)}" />
         <choice>
             <when>
-		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['isValid'] == true)]</jsonpath>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Lacub' &amp;&amp; @['isValid'] == true)]</jsonpath>
                 <to uri="eventbus:biometric-authentication-bus-in" />
             </when>
             <when>
