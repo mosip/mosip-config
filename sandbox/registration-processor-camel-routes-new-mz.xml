@@ -129,7 +129,7 @@
             message="packet-classifier-->quality-checker new route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Pilar' &amp;&amp; @['isValid'] == true)]</jsonpath>
                 <to uri="eventbus:quality-checker-bus-in" />
             </when>
             <when>
@@ -151,7 +151,7 @@
             message="quality-checker-->osi-validator new route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tayum' &amp;&amp; @['isValid'] == true)]</jsonpath>
                 <to uri="eventbus:o-s-i-validator-bus-in" />
             </when>
             <when>
@@ -173,9 +173,9 @@
                 message="osi-validator-->demo-dedupe new route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:demo-dedupe-bus-in" />
-            </when>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Bangued (Capital)' &amp;&amp; @['isValid'] == true)]</jsonpath>
+           	 <to uri="eventbus://demo-dedupe-bus-in" />
+        	</when>
             <when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
                 <to uri="eventbus:retry-bus-in" />
@@ -191,11 +191,11 @@
             message="demo-dedupe-->bio-dedupe new route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['isValid'] == true)]</jsonpath> 
                 <to uri="eventbus:bio-dedupe-bus-in" />
             </when>
             <when>
-                <simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['address'] == 'abis-handler-bus-in')]</jsonpath>
                 <to uri="eventbus:abis-handler-bus-in" />
             </when>
 			<when>
@@ -221,15 +221,15 @@
             message="abis-handler-->abis-middleware new route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"address":"abis-middle-ware-bus-in"'</simple>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['address'] == 'abis-middle-ware-bus-in')]</jsonpath>
                 <to uri="eventbus:abis-middle-ware-bus-in" />
             </when>
             <when>
-                <simple>${bodyAs(String)} contains '"address":"demo-dedupe-bus-in"'</simple>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Bangued (Capital)' &amp;&amp; @['address'] == 'demo-dedupe-bus-in')]</jsonpath>
                 <to uri="eventbus:demo-dedupe-bus-in" />
             </when>
             <when>
-                <simple>${bodyAs(String)} contains '"address":"bio-dedupe-bus-in"'</simple>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['address'] == 'bio-dedupe-bus-in')]</jsonpath>
                 <to uri="eventbus:bio-dedupe-bus-in"/>
             </when>
         </choice>
@@ -240,15 +240,15 @@
             message="bio-dedupe-->uin-generation new route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tineg' &amp;&amp; @['isValid'] == true)]</jsonpath> 
                 <to uri="eventbus:uin-generator-bus-in" />
             </when>
             <when>
-                <simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['address'] == 'abis-handler-bus-in')]</jsonpath> 
                 <to uri="eventbus:abis-handler-bus-in" />
             </when>
             <when>
-                <simple>${bodyAs(String)} contains '"address":"manual-verification-bus-in"'</simple>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Luba' &amp;&amp; @['address'] == 'manual-verification-bus-in')]</jsonpath>
                 <to uri="eventbus:manual-verification-bus-in" />
             </when>
             <when>
@@ -266,7 +266,7 @@
             message="manual-verification-->uin-generation new route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tineg' &amp;&amp; @['isValid'] == true)]</jsonpath>
                 <to uri="eventbus:uin-generator-bus-in" />
             </when>
             <when>
@@ -289,7 +289,7 @@
             message="uin-generation-->printing-stage and message-sender-stage route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Villaviciosa' &amp;&amp; @['isValid'] == true)]</jsonpath>
                 <to uri="eventbus:message-sender-bus-in" />
                 <to uri="eventbus:printing-bus-in" />
             </when>
