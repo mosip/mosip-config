@@ -173,8 +173,8 @@
                 message="osi-validator-->demo-dedupe new route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:demo-dedupe-bus-in" />
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Bangued (Capital)' &amp;&amp; @['isValid'] == true)]</jsonpath>
+                <to uri="eventbus://demo-dedupe-bus-in" />
             </when>
             <when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
