@@ -84,21 +84,24 @@
                     "Document Type",
                     "Document Reference ID",
                     "Proof Of Document",
-                    "Allowed file type : pdf,jpeg,png,jpg and allowed file size : 2mb"
+                    "Allowed File types: pdf, jpeg, png, jpg",
+                    "Allowed File size: 2 MB"
                 ],
                 "ara": [
                     "Identity Proof_ara",
                     "Document Type_ara",
                     "Document Reference ID_ara",
                     "Proof Of Document_ara",
-                    "Allowed file type_ara : pdf,jpeg,png,jpg and allowed file size : 2mb"
+                    "Allowed File types: pdf, jpeg, png, jpg",
+                    "Allowed File size: 2 MB"
                 ],
                 "fra": [
                     "Identity Proof_fra",
                     "Document Type_fra",
                     "Document Reference ID_fra",
                     "Proof Of Document_fra",
-                    "Allowed file type_fra : pdf,jpeg,png,jpg and allowed file size : 2mb"
+                    "Allowed File types: pdf, jpeg, png, jpg",
+                    "Allowed File size: 2 MB"
                 ]
             },
             "controlType": "fileupload",
@@ -271,21 +274,24 @@
                     "Document Type",
                     "Document Reference ID",
                     "Proof Of Document",
-                    "Allowed file type : pdf,jpeg,png,jpg and allowed file size : 2mb"
+                    "Allowed File types: pdf, jpeg, png, jpg",
+                    "Allowed File size: 2 MB"
                 ],
                 "ara": [
                     "Address Proof_ara",
                     "Document Type_ara",
                     "Document Reference ID_ara",
                     "Proof Of Document_ara",
-                    "Allowed file type_ara : pdf,jpeg,png,jpg and allowed file size : 2mb"
+                    "Allowed File types: pdf, jpeg, png, jpg",
+                    "Allowed File size: 2 MB"
                 ],
                 "fra": [
                     "Address Proof_fra",
                     "Document Type_fra",
                     "Document Reference ID_fra",
                     "Proof Of Document_fra",
-                    "Allowed file type_fra : pdf,jpeg,png,jpg and allowed file size : 2mb"
+                    "Allowed File types: pdf, jpeg, png, jpg",
+                    "Allowed File size: 2 MB"
                 ]
             },
             "controlType": "fileupload",
