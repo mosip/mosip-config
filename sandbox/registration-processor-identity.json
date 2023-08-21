@@ -62,6 +62,9 @@
 		},
 		"residenceStatus": {
 			"value": "residenceStatus"
+		},
+		"presentCityHandle": {
+			"value": "presentCity"
 		}
 	},
 	"metaInfo": {
