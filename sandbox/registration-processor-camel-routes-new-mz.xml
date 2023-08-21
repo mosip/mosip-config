@@ -195,7 +195,7 @@
                 <to uri="eventbus:bio-dedupe-bus-in" />
             </when>
             <when>
-		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['address'] == 'abis-handler-bus-in')]</jsonpath>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
                 <to uri="eventbus:abis-handler-bus-in" />
             </when>
 			<when>
@@ -221,15 +221,15 @@
             message="abis-handler-->abis-middleware new route ${bodyAs(String)}" />
         <choice>
             <when>
-                <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['address'] == 'abis-middle-ware-bus-in')]</jsonpath>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['messageBusAddress']['address'] == 'abis-middle-ware-bus-in')]</jsonpath>
                 <to uri="eventbus:abis-middle-ware-bus-in" />
             </when>
             <when>
-                <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Bangued (Capital)' &amp;&amp; @['address'] == 'demo-dedupe-bus-in')]</jsonpath>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Bangued (Capital)' &amp;&amp; @['messageBusAddress']['address'] == 'demo-dedupe-bus-in')]</jsonpath>
                 <to uri="eventbus:demo-dedupe-bus-in" />
             </when>
             <when>
-		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['address'] == 'bio-dedupe-bus-in')]</jsonpath>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['messageBusAddress']['address'] == 'bio-dedupe-bus-in')]</jsonpath>
                 <to uri="eventbus:bio-dedupe-bus-in"/>
             </when>
         </choice>
@@ -244,11 +244,11 @@
                 <to uri="eventbus:uin-generator-bus-in" />
             </when>
             <when>
-		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['address'] == 'abis-handler-bus-in')]</jsonpath> 
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath> 
                 <to uri="eventbus:abis-handler-bus-in" />
             </when>
             <when>
-		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Luba' &amp;&amp; @['address'] == 'manual-verification-bus-in')]</jsonpath>
+		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Luba' &amp;&amp; @['messageBusAddress']['address'] == 'manual-verification-bus-in')]</jsonpath>
                 <to uri="eventbus:manual-verification-bus-in" />
             </when>
             <when>
