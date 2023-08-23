@@ -37,7 +37,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="eventbus://packet-uploader-bus-in" />
+             <to uri="eventbus://packet-uploader-bus-in" />
          </otherwise>
       </choice>
    </route>
