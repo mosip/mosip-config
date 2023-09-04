@@ -5,7 +5,10 @@
       "displayName": "Enter the mentioned ID and get your card",
       "logoUrl": "logo url",
       "clientId": "7-j3xRzU3SODdoNgSGvO_cD8UijH3AIWRDAg1x-M",
-      "redirectionUri": "io.mosip.residentapp.inji://oauthredirect",
+      "scopes": ["SampleVerifiableCredential_ldp"],
+      "additionalHeaders": { "Accept": "application/json" },
+      "wellKnownEndpoint": null,
+      "redirectUrl": "io.mosip.residentapp.inji://oauthredirect",
       "serviceConfiguration": {
         "authorizationEndpoint": "https://esignet.dev1.mosip.net/authorize",
         "tokenEndpoint": "https://api.dev2.mosip.net/residentmobileapp/get-token"
