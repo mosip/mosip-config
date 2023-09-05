@@ -5,7 +5,7 @@
       "displayName": "Enter the mentioned ID and get your card",
       "logoUrl": "logo url",
       "clientId": "7-j3xRzU3SODdoNgSGvO_cD8UijH3AIWRDAg1x-M",
-      "scopes": ["SampleVerifiableCredential_ldp"],
+      "scopes": ["sample_vc_ldp"],
       "additionalHeaders": { "Accept": "application/json" },
       "wellKnownEndpoint": null,
       "redirectUrl": "io.mosip.residentapp.inji://oauthredirect",
