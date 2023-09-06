@@ -3,7 +3,7 @@
     {
       "id": "Download Via Esignet",
       "displayName": "Enter the mentioned ID and get your card",
-      "logoUrl": "logo url",
+      "logoUrl": "https://esignet.dev1.mosip.net/logo.png",
       "clientId": "7-j3xRzU3SODdoNgSGvO_cD8UijH3AIWRDAg1x-M",
       "scopes": ["sample_vc_ldp"],
       "additionalHeaders": { "Accept": "application/json" },
