@@ -820,14 +820,14 @@
                 "kan": "ಆದ್ಯತೆಯ ಭಾಷೆ",
                 "spa": "Idioma preferido"
             },
-            "placeHolder": {
-                "eng": "Enter Preferred Language",
-                "ara": "أدخل اللغة المفضلة",
-                "fra": "Entrez la langue préférée",
-                "hin": "पसंदीदा भाषा दर्ज करें",
-                "tam": "விருப்பமான மொழியை உள்ளிடவும்",
-                "kan": "ಆದ್ಯತೆಯ ಭಾಷೆಯನ್ನು ನಮೂದಿಸಿ",
-                "spa": "Ingrese el idioma preferidos"
+             "placeHolder": {
+                  "eng": "Select Preferred Language",
+                  "ara": "اختر اللغة المفضلة",
+                  "fra": "Sélectionner la langue préférée",
+                  "hin": "पसंदीदा भाषा चुनें",
+                  "tam": "விருப்பிக்குதிக்கான மொழி தேர்ந்தெடுக்கவும்.",
+                  "kan": "ಆಯ್ಕೆಯಾದ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ.",
+                  "spa": "Seleccionar Idioma Preferido"
             },
             "description": "",
             "labelName": {
