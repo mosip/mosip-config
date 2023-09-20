@@ -28,10 +28,10 @@
 			"value": "parentOrGuardianName"
 		},
 		"phone": {
-			"value": "phone"
+			"value": "mobileno"
 		},
 		"phoneNumber": {
-			"value": "phone"
+			"value": "mobileno"
 		},
 		"email": {
 			"value": "email"
@@ -106,7 +106,7 @@
 			"value": "face"
 		},
 		"phone_number": {
-			"value": "phone"
+			"value": "mobileno"
 		},
 		"address": {
 			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
