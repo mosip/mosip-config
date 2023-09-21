@@ -46,3 +46,7 @@ MOSIP_AUTH_BASE_URL = "https://dev.mosip.net/v1/authmanager"
 
 # The token validation URL of IDP
 MOSIP_AUTH_VALIDATE_TOKEN_URL = "/authorize/admin/validateToken"
+
+[ballerina.http.accessLogConfig]
+# Enable printing access logs in console
+console = true              # Default is false
