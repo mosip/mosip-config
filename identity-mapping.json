@@ -22,7 +22,7 @@
 			"value": "introducerCredentialID"
 		},
 		"introducerVID": {
-			"value": "introducerCredentialID"
+			"value": "parentOrGuardianVID"
 		},
 		"introducerName": {
 			"value": "parentOrGuardianName"
