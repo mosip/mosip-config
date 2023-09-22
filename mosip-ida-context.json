@@ -49,7 +49,7 @@
       "@id": "https://${mosip.api.public.host}/mosip#region",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
-      "bestTwoFingers": {
+    "bestTwoFingers": {
       "@id": "https://${mosip.api.public.host}/mosip#bestTwoFingers",
       "@context": {
         "id": "@id",
@@ -57,14 +57,14 @@
         "subType": "https://${mosip.api.public.host}/mosip#subType",
         "rank": "https://${mosip.api.public.host}/mosip#rank"
       }
-  },
+    },
     "biometrics": "mosip:biometrics",
     "dob": "mosip:dob",
     "fln": {
       "@id": "https://${mosip.api.public.host}/mosip#fln",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
-     "ad1": {
+    "ad1": {
       "@id": "https://${mosip.api.public.host}/mosip#ad1",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
