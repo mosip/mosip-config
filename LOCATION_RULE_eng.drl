@@ -1,0 +1,80 @@
+import java.util.Map
+import java.util.List
+import java.time.LocalDateTime;
+import java.lang.Object;
+global java.time.LocalDateTime currentDateTime;
+
+rule "BengaluruCityRenameRule"
+when
+    $jsonData: Map(this["city"] != null)
+    $cityItem: Map(
+        this.containsKey("language") &&
+        this.containsKey("value") &&
+        this["language"] == "eng" &&
+        this["value"] == "Bangalore"
+    ) from (List) $jsonData["city"]
+then
+    System.out.println("Rule fired: BengaluruCityRenameRule");
+    $cityItem.put("value", "Bengaluru");
+    update($jsonData);
+end
+//------------------------------------------------------------------------------------------------
+rule "SomeDistrictOfYalahankaMovedToBengaluruRule"
+when
+    $jsonData: Map(this["city"] != null)
+    $pinCode: Map(this["pincode"] == "560010" || this["pincode"] == "560011" || this["pincode"] == "560012")
+    $cityItem: Map(
+            this.containsKey("language") &&
+            this.containsKey("value") &&
+            this["language"] == "eng" &&
+            this["value"] == "Yalahanka"
+        ) from (List) $jsonData["city"]
+then
+    System.out.println("Rule fired: SomeDistrictOfYalahankaMovedToBengaluruRule");
+    $cityItem.put("value", "Bengaluru");
+    update($jsonData);
+end
+//------------------------------------------------------------------------------------------------
+rule "NewKempegowdaDistrictCreation"
+when
+    $jsonData: Map(this["pincode"] != null)
+    $pinCode: Map(this["pincode"] == "5600101" || this["pincode"] == "5600102" || this["pincode"] == "5600103")
+    $zoneItem: Map(
+                this.containsKey("language") &&
+                this.containsKey("value") &&
+                this["language"] == "eng" &&
+                this["value"] == "Karnataka"
+            ) from (List) $jsonData["zone"]
+    $regionItem: Map(
+            this.containsKey("language") &&
+            this.containsKey("value") &&
+            this["language"] == "eng" &&
+            this["value"] == "Bengaluru Urban"
+        ) from (List) $jsonData["region"]
+then
+    System.out.println("Rule fired: NewKempegowdaDistrictCreation");
+    $regionItem.put("value", "Kempegowda District");
+    update($jsonData);
+end
+//------------------------------------------------------------------------------------------------
+rule "NewTelenganaStateCreation"
+when
+    $jsonData: Map(this["zone"] != null)
+    $regionItem: Map(
+            this.containsKey("language") &&
+            this.containsKey("value") &&
+            this["language"] == "eng" &&
+            (this["value"] == "Nizamabad" || this["value"] == "Hyderabad"
+            || this["value"] == "Warangel" || this["value"] == "Rangareddy")
+        ) from (List) $jsonData["region"]
+    $zoneItem: Map(
+            this.containsKey("language") &&
+            this.containsKey("value") &&
+            this["language"] == "eng" &&
+            this["value"] == "Andhra Pradesh"
+        ) from (List) $jsonData["zone"]
+then
+    System.out.println("Rule fired: NewTelenganaStateCreation");
+    $zoneItem.put("value", "Telangana");
+    update($jsonData);
+end
