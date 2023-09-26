@@ -12,8 +12,8 @@
       "redirectUrl": "io.mosip.residentapp.inji://oauthredirect",
       "serviceConfiguration": {
         "authorizationEndpoint": "https://${mosip.esignet.host}/authorize",
-        "tokenEndpoint": "https://${mosip.api.host}/residentmobileapp/get-token",
-        "credentialEndpoint": "https://${mosip.api.host}/v1/esignet/vci/credential",
+        "tokenEndpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token",
+        "credentialEndpoint": "https://${mosip.api.public.host}/v1/esignet/vci/credential",
         "credentialAudience": "https://${mosip.esignet.host}/v1/esignet"
       }
     }
