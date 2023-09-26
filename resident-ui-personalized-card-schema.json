@@ -42,13 +42,13 @@
 			"formatRequired": true,
 			"defaultFormat":"DD/MMM/YYYY",
 			"label": {
-				"eng": "DOB",
-				"ara": "DOB",
-				"fra": "DOB",
-				"hin": "DOB",
-				"tam": "DOB",
-				"kan": "DOB",
-				"spa": "DOB"
+				"eng": "Date of birth",
+                                "ara": "تاريخ الميلاد",
+                                "fra": "date de naissance",
+                                "hin": "जन्म की तारीख",
+                                "tam": "பிறந்த தேதி",
+                                "kan": "ಹುಟ್ತಿದ ದಿನ",
+                                "spa": "fecha de nacimiento"
 			},
 			"formatOptionLabel":{
 				"eng": "Date Format",
