@@ -5,7 +5,7 @@
       "displayName": "e-Signet",
       "protocol": "OpenId4VCI",
       "logoUrl": "https://${mosip.esignet.host}/logo.png",
-      "clientId": "4iznb_W0q-N4WFbmHuEeJnm_bilNnQSM0oFChInv27U",
+      "clientId": "${mimoto.oidc.partner.clientid}",
       "scopes": ["mosip_identity_vc_ldp"],
       "additionalHeaders": { "Accept": "application/json" },
       "wellKnownEndpoint": null,
