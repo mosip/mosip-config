@@ -1,6 +1,6 @@
 {
   "amr" : {
-    "PWD" : [{"type" : "PWD" }],
+    "PWD" :  [{ "type": "PWD" }],
     "PIN" :  [{ "type": "PIN" }],
     "OTP" :  [{ "type": "OTP" }],
     "Wallet" :  [{ "type": "WLA" }],
