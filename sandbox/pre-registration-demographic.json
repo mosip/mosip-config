@@ -81,7 +81,7 @@
 			"required": true
 		},
 		{
-			"id": "pobCountry",
+			"id": "country",
 			"description": "Country",
 			"labelName": {
 				"eng": "Country",
@@ -99,7 +99,7 @@
 			"required": true
 		},
 		{
-			"id": "pobProvince",
+			"id": "province",
 			"description": "province",
 			"labelName": {
 				"eng": "Province",
@@ -117,11 +117,47 @@
 			"required": true
 		},
 		{
-			"id": "pobCity",
+			"id": "city",
 			"description": "city",
 			"labelName": {
 				"eng": "City",
 				"ara": "مدينة"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": true
+		},
+		{
+			"id": "barangay",
+			"description": "barangay",
+			"labelName": {
+				"eng": "Zone",
+				"ara": "منطقة"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": true
+		},
+		{
+			"id": "postalCode",
+			"description": "postalCode",
+			"labelName": {
+				"eng": "Postal Code",
+				"ara": "الكود البريدى"
 			},
 			"controlType": "dropdown",
 			"inputRequired": true,
@@ -415,56 +451,6 @@
 			"required": false
 		},
 		{
-			"id": "presentProvince",
-			"description": "Present Province",
-			"labelName": {
-				"eng": "Present Province",
-				"ara": "المقاطعة الحالية"
-			},
-			"controlType": "dropdown",
-			"inputRequired": true,
-			"fieldType": "default",
-			"type": "simpleType",
-			"validators": [{
-				"type": "regex",
-				"validator": "^(?=.{0,50}$).*",
-				"arguments": []
-			}],
-			"required": false
-		},
-		{
-			"id": "presentCity",
-			"description": "Present City",
-			"labelName": {
-				"eng": "Present City",
-				"ara": "المدينة الحالية"
-			},
-			"controlType": "dropdown",
-			"inputRequired": true,
-			"fieldType": "default",
-			"type": "simpleType",
-			"validators": [{
-				"type": "regex",
-				"validator": "^(?=.{0,50}$).*",
-				"arguments": []
-			}],
-			"required": false
-		},
-		{
-			"id": "presentZipcode",
-			"description": "Present Postalcode",
-			"labelName": {
-				"eng": "Present Postal Code",
-				"ara": "الرمز البريدي الحالي"
-			},
-			"controlType": "dropdown",
-			"inputRequired": true,
-			"fieldType": "default",
-			"type": "simpleType",
-			"validators": [],
-			"required": false
-		},
-		{
 			"id": "residenceStatus",
 			"description": "residence status",
 			"labelName": {
@@ -671,8 +657,7 @@
 		}
 	],
 	"locationHierarchy": [
-		["presentCountry", "presentProvince", "presentCity", "presentZipcode"],
-		["permanentCountry", "permanentProvince", "permanentCity", "permanentZipcode"],
-		["pobCountry", "pobProvince", "pobCity"]
+		["country","province","city","barangay","postalCode"],
+		["permanentCountry", "permanentProvince", "permanentCity", "permanentZipcode"]
 	]
 }
