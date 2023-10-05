@@ -4,7 +4,7 @@
 			"value": "IDSchemaVersion"
 		},
 		"name": {
-			"value": "fullName"
+			"value": "firstName,middleName,lastName"
 		},
 		"gender": {
 			"value": "gender"
