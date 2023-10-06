@@ -82,7 +82,7 @@
 		},
 		{
 			"id": "country",
-			"description": "Country",
+			"description": "country",
 			"labelName": {
 				"eng": "Country",
 				"ara": "تاريخ الولادة"
@@ -359,24 +359,6 @@
 				"arguments": []
 			}],
 			"required": false
-		},
-		{
-			"id": "presentCountry",
-			"description": "Country",
-			"labelName": {
-				"eng": "Present Country",
-				"ara": "دوله حاليه"
-			},
-			"controlType": "dropdown",
-			"inputRequired": true,
-			"fieldType": "default",
-			"type": "simpleType",
-			"validators": [{
-				"type": "regex",
-				"validator": "^(?=.{0,50}$).*",
-				"arguments": []
-			}],
-			"required": true
 		},
 		{
 			"id": "presentAddressLine1",
