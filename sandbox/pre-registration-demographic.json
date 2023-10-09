@@ -292,6 +292,24 @@
 			"required": false
 		},
 		{
+			"id": "permanentBarangay",
+			"description": "Permanent Barangay",
+			"labelName": {
+				"eng": "Permanent Barangay",
+				"ara": "ابارانجاي الدائم"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": false
+		},
+		{
 			"id": "permanentZipcode",
 			"description": "Permanent Postalcode",
 			"labelName": {
@@ -438,6 +456,24 @@
 			"labelName": {
 				"eng": "Present City",
 				"ara": "المدينة الحالية"
+			},
+			"controlType": "dropdown",
+			"inputRequired": true,
+			"fieldType": "default",
+			"type": "simpleType",
+			"validators": [{
+				"type": "regex",
+				"validator": "^(?=.{0,50}$).*",
+				"arguments": []
+			}],
+			"required": false
+		},
+		{
+			"id": "presentBarangay",
+			"description": "Present Barangay",
+			"labelName": {
+				"eng": "Present Barangay",
+				"ara": "بارانجاي الحالية"
 			},
 			"controlType": "dropdown",
 			"inputRequired": true,
@@ -671,8 +707,8 @@
 		}
 	],
 	"locationHierarchy": [
-		["presentCountry", "presentProvince", "presentCity", "presentZipcode"],
-		["permanentCountry", "permanentProvince", "permanentCity", "permanentZipcode"],
+		["presentCountry", "presentProvince", "presentCity", "presentBarangay", "presentZipcode"],
+		["permanentCountry", "permanentProvince", "permanentCity","permanentBarangay", "permanentZipcode"],
 		["pobCountry", "pobProvince", "pobCity"]
 	]
 }
