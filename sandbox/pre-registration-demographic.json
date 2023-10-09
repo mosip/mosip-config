@@ -658,7 +658,6 @@
 	],
 	"locationHierarchy": [
 		["country","province","city","barangay","postalCode"],
-		["presentCountry","permanentCountry", "permanentProvince", "permanentCity", "permanentZipcode"]
-		
+		["permanentCountry", "permanentProvince", "permanentCity", "permanentZipcode"]
 	]
 }
