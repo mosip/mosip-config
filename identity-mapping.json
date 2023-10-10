@@ -69,14 +69,59 @@
 		"locationHierarchyForProfiling": {
 			"value": "zone,postalCode"
 		},
-		"addressLine1": {
-			"value": "addressLine1"
+		"presentAddressLine1": {
+			"value": "presentAddressLine1"
 		},
-		"addressLine2": {
-			"value": "addressLine2"
+		"presentAddressLine2": {
+			"value": "presentAddressLine2"
 		},
-		"addressLine3": {
-			"value": "addressLine3"
+		"presentAddressLine3": {
+			"value": "presentAddressLine3"
+		},
+		"presentAddressLine4": {
+			"value": "presentAddressLine4"
+		},
+		"permanentAddressLine1": {
+			"value": "permanentAddressLine1"
+		},
+		"permanentAddressLine2": {
+			"value": "permanentAddressLine2"
+		},
+		"permanentAddressLine3": {
+			"value": "permanentAddressLine3"
+		},
+		"permanentAddressLine4": {
+			"value": "permanentAddressLine4"
+		},
+		"permanentCountry": {
+			"value": "permanentCountry"
+		},
+		"permanentProvince": {
+			"value": "permanentProvince"
+		},
+		"permanentCity": {
+			"value": "permanentCity"
+		},
+		"permanentBarangay": {
+			"value": "permanentBarangay"
+		},
+		"permanentZipcode": {
+			"value": "permanentZipcode"
+		},
+		"presentCountry": {
+			"value": "presentCountry"
+		},
+		"presentProvince": {
+			"value": "presentProvince"
+		},
+		"presentCity": {
+			"value": "presentCity"
+		},
+		"presentBarangay": {
+			"value": "presentBarangay"
+		},
+		"presentZipcode": {
+			"value": "presentZipcode"
 		},
 		"location1": {
 			"value": "city"
@@ -94,7 +139,7 @@
 			"value": "zone"
 		},
 		"fullAddress": {
-			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+			"value": "presentAddressLine1,presentAddressLine2,presentAddressLine3,city,region,province,postalCode"
 		},
 		"bestTwoFingers": {
 			"value": "bestTwoFingers"
@@ -109,14 +154,14 @@
 			"value": "mobileno"
 		},
 		"address": {
-			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+			"value": "presentAddressLine1,presentAddressLine2,presentAddressLine3,city,region,province,postalCode"
 		},
 
 		"individual_id": {
 			"value": "individual_id"
 		},
 		"street_address": {
-			"value": "addressLine1,addressLine2,addressLine3"
+			"value": "presentAddressLine1,presentAddressLine2,presentAddressLine3"
 		},
 		"locality": {
 			"value": "city"
@@ -129,6 +174,24 @@
 		},
 		"country": {
 			"value": "province"
+		},
+		"suffix": {
+			"value": "suffix"
+		},
+		"bloodType": {
+			"value": "bloodType"
+		},
+		"maritalStatus": {
+			"value": "maritalStatus"
+		},
+		"pobCountry": {
+			"value": "pobCountry"
+		},
+		"pobProvince": {
+			"value": "pobProvince"
+		},
+		"pobCity": {
+			"value": "pobCity"
 		}
 	},
 	"metaInfo": {
