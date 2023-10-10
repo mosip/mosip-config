@@ -69,16 +69,16 @@
 		"locationHierarchyForProfiling": {
 			"value": "zone,postalCode"
 		},
-		"presentAddressLine1": {
+		"addressLine1": {
 			"value": "presentAddressLine1"
 		},
-		"presentAddressLine2": {
+		"addressLine2": {
 			"value": "presentAddressLine2"
 		},
-		"presentAddressLine3": {
+		"addressLine3": {
 			"value": "presentAddressLine3"
 		},
-		"presentAddressLine4": {
+		"addressLine4": {
 			"value": "presentAddressLine4"
 		},
 		"permanentAddressLine1": {
