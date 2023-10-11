@@ -139,14 +139,8 @@
 		"country": {
 			"value": "province"
 		},
-		"suffix": {
-			"value": "suffix"
-		},
 		"bloodType": {
 			"value": "bloodType"
-		},
-		"maritalStatus": {
-			"value": "maritalStatus"
 		},
 		"pobCountry": {
 			"value": "pobCountry"
