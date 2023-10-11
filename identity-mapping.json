@@ -1,184 +1,163 @@
 {
-	"identity": {
-		"IDSchemaVersion": {
-			"value": "IDSchemaVersion"
-		},
-		"name": {
-			"value": "firstName,middleName,lastName"
-		},
-		"gender": {
-			"value": "gender"
-		},
-		"dob": {
-			"value": "dateOfBirth"
-		},
-		"age": {
-			"value": "age"
-		},
-		"introducerRID": {
-			"value": "parentOrGuardianRID"
-		},
-		"introducerUIN": {
-			"value": "introducerCredentialID"
-		},
-		"introducerVID": {
-			"value": "parentOrGuardianVID"
-		},
-		"introducerName": {
-			"value": "parentOrGuardianName"
-		},
-		"phone": {
-			"value": "mobileno"
-		},
-		"phoneNumber": {
-			"value": "mobileno"
-		},
-		"email": {
-			"value": "email"
-		},
-		"emailId": {
-			"value": "email"
-		},
-		"uin": {
-			"value": "UIN"
-		},
-		"vid": {
-			"value": "VID"
-		},
-		"individualBiometrics": {
-			"value": "individualBiometrics"
-		},
-		"introducerBiometrics": {
-			"value": "guardianBiometrics"
-		},
-		"individualAuthBiometrics": {
-			"value": "individualAuthBiometrics"
-		},
-		"officerBiometricFileName": {
-			"value": "officerBiometricFileName"
-		},
-		"supervisorBiometricFileName": {
-			"value": "supervisorBiometricFileName"
-		},
-		"residenceStatus": {
-			"value": "residenceStatus"
-		},
-		"preferredLanguage": {
-			"value": "preferredLang"
-		},
-		"locationHierarchyForProfiling": {
-			"value": "zone,postalCode"
-		},
-		"addressLine1": {
-			"value": "presentAddressLine1"
-		},
-		"addressLine2": {
-			"value": "presentAddressLine2"
-		},
-		"addressLine3": {
-			"value": "presentAddressLine3"
-		},
-		"permanentAddressLine1": {
-			"value": "permanentAddressLine1"
-		},
-		"permanentCountry": {
-			"value": "permanentCountry"
-		},
-		"presentCountry": {
-			"value": "presentCountry"
-		},
-		"location1": {
-			"value": "city"
-		},
-		"location2": {
-			"value": "region"
-		},
-		"location3": {
-			"value": "province"
-		},
-		"postalCode": {
-			"value": "postalCode"
-		},
-		"location4": {
-			"value": "zone"
-		},
-		"fullAddress": {
-			"value": "presentAddressLine1,presentAddressLine2,presentAddressLine3,city,region,province,postalCode"
-		},
-		"bestTwoFingers": {
-			"value": "bestTwoFingers"
-		},
-		"birthdate": {
-			"value": "dateOfBirth"
-		},
-		"picture": {
-			"value": "face"
-		},
-		"phone_number": {
-			"value": "mobileno"
-		},
-		"address": {
-			"value": "presentAddressLine1,presentAddressLine2,presentAddressLine3,city,region,province,postalCode"
-		},
+  "identity": {
+    "IDSchemaVersion": {
+      "value": "IDSchemaVersion"
+    },
+    "name": {
+      "value": "firstName,middleName,lastName"
+    },
+    "gender": {
+      "value": "gender"
+    },
+    "dob": {
+      "value": "dateOfBirth"
+    },
+    "age": {
+      "value": "age"
+    },
+    "introducerRID": {
+      "value": "parentOrGuardianRID"
+    },
+    "introducerUIN": {
+      "value": "introducerCredentialID"
+    },
+    "introducerVID": {
+      "value": "parentOrGuardianVID"
+    },
+    "introducerName": {
+      "value": "parentOrGuardianName"
+    },
+    "phone": {
+      "value": "mobileno"
+    },
+    "phoneNumber": {
+      "value": "mobileno"
+    },
+    "email": {
+      "value": "email"
+    },
+    "emailId": {
+      "value": "email"
+    },
+    "uin": {
+      "value": "UIN"
+    },
+    "vid": {
+      "value": "VID"
+    },
+    "individualBiometrics": {
+      "value": "individualBiometrics"
+    },
+    "introducerBiometrics": {
+      "value": "guardianBiometrics"
+    },
+    "individualAuthBiometrics": {
+      "value": "individualAuthBiometrics"
+    },
+    "officerBiometricFileName": {
+      "value": "officerBiometricFileName"
+    },
+    "supervisorBiometricFileName": {
+      "value": "supervisorBiometricFileName"
+    },
+    "residenceStatus": {
+      "value": "residenceStatus"
+    },
+    "preferredLanguage": {
+      "value": "preferredLang"
+    },
+    "locationHierarchyForProfiling": {
+      "value": "zone,postalCode"
+    },
+    "addressLine1": {
+      "value": "presentAddressLine1"
+    },
+    "addressLine2": {
+      "value": "presentAddressLine2"
+    },
+    "addressLine3": {
+      "value": "presentAddressLine3"
+    },
+    "location1": {
+      "value": "city"
+    },
+    "location2": {
+      "value": "region"
+    },
+    "location3": {
+      "value": "province"
+    },
+    "postalCode": {
+      "value": "postalCode"
+    },
+    "location4": {
+      "value": "zone"
+    },
+    "fullAddress": {
+      "value": "presentAddressLine1,presentAddressLine2,presentAddressLine3,city,region,province,postalCode"
+    },
+    "bestTwoFingers": {
+      "value": "bestTwoFingers"
+    },
+    "birthdate": {
+      "value": "dateOfBirth"
+    },
+    "picture": {
+      "value": "face"
+    },
+    "phone_number": {
+      "value": "mobileno"
+    },
+    "address": {
+      "value": "presentAddressLine1,presentAddressLine2,presentAddressLine3,city,region,province,postalCode"
+    },
 
-		"individual_id": {
-			"value": "individual_id"
-		},
-		"street_address": {
-			"value": "presentAddressLine1,presentAddressLine2,presentAddressLine3"
-		},
-		"locality": {
-			"value": "city"
-		},
-		"region": {
-			"value": "region"
-		},
-		"postal_code": {
-			"value": "postalCode"
-		},
-		"country": {
-			"value": "province"
-		},
-		"bloodType": {
-			"value": "bloodType"
-		},
-		"pobCountry": {
-			"value": "pobCountry"
-		},
-		"pobProvince": {
-			"value": "pobProvince"
-		},
-		"pobCity": {
-			"value": "pobCity"
-		}
-	},
-	"metaInfo": {
-		"value": "metaInfo"
-	},
-	"audits": {
-		"value": "audits"
-	},
-	"documents": {
-		"poa": {
-			"value": "proofOfAddress"
-		},
-		"poi": {
-			"value": "proofOfIdentity"
-		},
-		"por": {
-			"value": "proofOfRelationship"
-		},
-		"pob": {
-			"value": "proofOfDateOfBirth"
-		},
-		"poe": {
-			"value": "proofOfException"
-		}
-	},
-	"attributeUpdateCountLimit": {
-		"fullName": 2,
-		"gender": 1,
-		"dob": 1,
-		"age": 1
-	}
+    "individual_id": {
+      "value": "individual_id"
+    },
+    "street_address": {
+      "value": "presentAddressLine1,presentAddressLine2,presentAddressLine3"
+    },
+    "locality": {
+      "value": "city"
+    },
+    "region": {
+      "value": "region"
+    },
+    "postal_code": {
+      "value": "postalCode"
+    },
+    "country": {
+      "value": "province"
+    }
+  },
+  "metaInfo": {
+    "value": "metaInfo"
+  },
+  "audits": {
+    "value": "audits"
+  },
+  "documents": {
+    "poa": {
+      "value": "proofOfAddress"
+    },
+    "poi": {
+      "value": "proofOfIdentity"
+    },
+    "por": {
+      "value": "proofOfRelationship"
+    },
+    "pob": {
+      "value": "proofOfDateOfBirth"
+    },
+    "poe": {
+      "value": "proofOfException"
+    }
+  },
+  "attributeUpdateCountLimit": {
+    "fullName": 2,
+    "gender": 1,
+    "dob": 1,
+    "age": 1
+  }
 }
