@@ -78,50 +78,14 @@
 		"addressLine3": {
 			"value": "presentAddressLine3"
 		},
-		"addressLine4": {
-			"value": "presentAddressLine4"
-		},
 		"permanentAddressLine1": {
 			"value": "permanentAddressLine1"
-		},
-		"permanentAddressLine2": {
-			"value": "permanentAddressLine2"
-		},
-		"permanentAddressLine3": {
-			"value": "permanentAddressLine3"
-		},
-		"permanentAddressLine4": {
-			"value": "permanentAddressLine4"
 		},
 		"permanentCountry": {
 			"value": "permanentCountry"
 		},
-		"permanentProvince": {
-			"value": "permanentProvince"
-		},
-		"permanentCity": {
-			"value": "permanentCity"
-		},
-		"permanentBarangay": {
-			"value": "permanentBarangay"
-		},
-		"permanentZipcode": {
-			"value": "permanentZipcode"
-		},
 		"presentCountry": {
 			"value": "presentCountry"
-		},
-		"presentProvince": {
-			"value": "presentProvince"
-		},
-		"presentCity": {
-			"value": "presentCity"
-		},
-		"presentBarangay": {
-			"value": "presentBarangay"
-		},
-		"presentZipcode": {
-			"value": "presentZipcode"
 		},
 		"location1": {
 			"value": "city"
