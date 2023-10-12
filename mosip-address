@@ -1,0 +1,91 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "mosip": "https://raw.githubusercontent.com/mosip/mosip-config/develop-v3/mosip-address#"
+  },
+  "@type": "rdfs:Class",
+  "@id": "mosip:Address",
+  "rdfs:subClassOf": {
+    "@type": "rdfs:Class",
+    "@id": "schema:Place"
+  },
+  "mosip:country": {
+    "@type": "rdf:Property",
+    "rdfs:domain": "mosip:Address",
+    "rdfs:range": {
+      "@list": {
+        "@type": "rdf:langString"
+      }
+    }
+  },
+  "mosip:region": {
+    "@type": "rdf:Property",
+    "rdfs:domain": "mosip:Address",
+    "rdfs:range": {
+      "@list": {
+        "@type": "rdf:langString"
+      }
+    }
+  },
+  "mosip:town": {
+    "@type": "rdf:Property",
+    "rdfs:domain": "mosip:Address",
+    "rdfs:range": {
+      "@list": {
+        "@type": "rdf:langString"
+      }
+    }
+  },
+  "mosip:district": {
+    "@type": "rdf:Property",
+    "rdfs:domain": "mosip:Address",
+    "rdfs:range": {
+      "@list": {
+        "@type": "rdf:langString"
+      }
+    }
+  },
+  "mosip:postcode": {
+    "@type": "rdf:Property",
+    "rdfs:domain": "mosip:Address",
+    "rdfs:range": "rdf:PlainLiteral"
+  },
+  "mosip:streetNumber": {
+    "@type": "rdf:Property",
+    "rdfs:domain": "mosip:Address",
+    "rdfs:range": "rdf:PlainLiteral"
+  },
+  "mosip:floor": {
+    "@type": "rdf:Property",
+    "rdfs:domain": "mosip:Address",
+    "rdfs:range": "rdf:PlainLiteral"
+  },
+  "mosip:wing": {
+    "@type": "rdf:Property",
+    "rdfs:domain": "mosip:Address",
+    "rdfs:range": "rdf:PlainLiteral"
+  },
+  "mosip:door": {
+    "@type": "rdf:Property",
+    "rdfs:domain": "mosip:Address",
+    "rdfs:range": "rdf:PlainLiteral"
+  },
+  "mosip:sectorType": {
+    "@type": "rdf:Property",
+    "rdfs:domain": "mosip:Address",
+    "rdfs:range": {
+      "@list": {
+        "@type": "rdf:langString"
+      }
+    }
+  },
+  "mosip:thoroughFareName": {
+    "@type": "rdf:Property",
+    "rdfs:domain": "mosip:Address",
+    "rdfs:range": {
+      "@list": {
+        "@type": "rdf:langString"
+      }
+    }
+  }
+}
