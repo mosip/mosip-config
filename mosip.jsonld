@@ -10,14 +10,14 @@
     },
 	"@graph" : [
 	{
-      "@id": "custom:ResidentAddress",
+      "@id": "mosip:ResidentAddress",
       "@type": "rdfs:Class",
       "rdfs:subClassOf": {
         "@id": "schema:Place"
        }
     },
 	{
-      "@id": "custom:Barangey",
+      "@id": "mosip:Barangey",
       "@type": "rdfs:Class",
       "rdfs:label": "Barangey",
       "rdfs:subClassOf": {
@@ -25,10 +25,10 @@
       }
     },
     {
-      "@id": "custom:streetNumber",
+      "@id": "mosip:streetNumber",
       "@type": "rdf:Property",
       "schema:domainIncludes": {
-        "@id": "custom:ResidentAddress"
+        "@id": "mosip:ResidentAddress"
       },
       "schema:rangeIncludes": [
         {
@@ -37,10 +37,10 @@
       ]
     },
     {
-      "@id": "custom:streetName",
+      "@id": "mosip:streetName",
       "@type": "rdf:Property",
       "schema:domainIncludes": {
-        "@id": "custom:ResidentAddress"
+        "@id": "mosip:ResidentAddress"
       },
       "schema:rangeIncludes": [
         {
@@ -49,14 +49,14 @@
       ]
     },
     {
-      "@id": "custom:barangey",
+      "@id": "mosip:barangey",
       "@type": "rdf:Property",
       "schema:domainIncludes": {
-        "@id": "custom:ResidentAddress"
+        "@id": "mosip:ResidentAddress"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "custom:Barangey"
+          "@id": "mosip:Barangey"
         }
       ]
     }
