@@ -3,12 +3,7 @@
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     	  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
 		    "schema": "https://schema.org/",
-        "custom": "https://raw.githubusercontent.com/mosip/mosip-config/develop-v3/mosip-address",
-        "ResidentAddress": { "@id": "custom:ResidentAddress"},
-        "Barangey": { "@id": "custom:Barangey"},
-        "streetNumber" : { "@id" : "custom:streetNumber" },
-        "streetName" : { "@id" : "custom:streetName" }
-        "barangey" : { "@id" : "custom:barangey" }
+        "custom": "https://raw.githubusercontent.com/mosip/mosip-config/develop-v3/mosip-address"
     },
 	"@graph" : [
 	{
