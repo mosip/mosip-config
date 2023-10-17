@@ -9,7 +9,7 @@
             "url": "https://${mosip.esignet.host}/logo.png",
             "alt_text": "esignet-logo"
           },
-          "language": "eng"
+          "language": "en"
         }
       ],
       "protocol": "OpenId4VCI",
