@@ -9,13 +9,13 @@ import java.time.temporal.ValueRange;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-String CHILD = "INFANT";
-String ADULT = "ADULT";
-String MINOR = "MINOR";
+String CHILD = "CHILD";
+String ADULT = "SENIOR_CITIZEN";
+String MINOR = "ADULT";
 String MALE = 'MLE';
 String FEMALE = 'FLE';
-String NonResident = "FR";
-String Resident = "NFR";
+String NonResident = "NFR";
+String Resident = "FR";
 String Others = "OTH";
 String DATE_PATTERN = "yyyy/MM/dd";
 String regex = "^\\d{4}(\\/)(((0)[1-9])|((1)[0-2]))(\\/)([0-2][0-9]|(3)[0-1])$";
