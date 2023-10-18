@@ -1,6 +1,20 @@
 {
   "issuers": [
     {
+      "credential_issuer": "Mosip",
+      "display": [
+        {
+          "name": "UIN, VID, AID",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
+            "alt_text": "digits-icon"
+          },
+          "language": "en"
+        }
+      ],
+      "protocol": "OTP"
+    },
+    {
       "credential_issuer": "ESignet",
       "display": [
         {
@@ -22,20 +36,6 @@
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token",
       "credential_endpoint": "https://${mosip.api.public.host}/v1/esignet/vci/credential",
       "credential_audience": "https://${mosip.esignet.host}/v1/esignet"
-    },
-    {
-      "credential_issuer": "Mosip",
-      "display": [
-        {
-          "name": "UIN, VID, AID",
-          "logo": {
-            "url": "https://esignet.dev1.mosip.net/logo.png",
-            "alt_text": "digits-logo"
-          },
-          "language": "en"
-        }
-      ],
-      "protocol": "OTP"
     }
   ]
 }
