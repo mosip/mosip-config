@@ -4,7 +4,7 @@
             "value": "IDSchemaVersion"
         },
         "name": {
-            "value": "fullName"
+            "value": "firstName,lastName"
         },
         "gender": {
             "value": "gender"
@@ -64,7 +64,7 @@
             "value": "preferredLang"
         },
         "locationHierarchyForProfiling": {
-            "value": "zone,postalCode"
+            "value": "preProvince,preZipCode"
         },
         "addressLine1": {
             "value": "addressLine1"
@@ -72,26 +72,20 @@
         "addressLine2": {
             "value": "addressLine2"
         },
-        "addressLine3": {
-            "value": "addressLine3"
-        },
         "location1": {
-            "value": "city"
+            "value": "preProvince"
         },
         "location2": {
-            "value": "region"
+            "value": "preLocality"
         },
         "location3": {
-            "value": "province"
+            "value": "preMunicipality"
         },
         "postalCode": {
-            "value": "postalCode"
-        },
-        "location4": {
-            "value": "zone"
+            "value": "preZipCode"
         },
         "fullAddress": {
-            "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+            "value": "addressLine1,addressLine2,preProvince,preLocality,preMunicipality,preZipCode"
         }
     },
     "metaInfo": {
