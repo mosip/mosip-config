@@ -247,62 +247,7 @@
             "controlType": "fileupload",
             "tabgroup": "identity",
             "dataType": "notString"
-        },
-        {
-            "attributeName": "addressLine1",
-            "label": {
-                "eng": "Address line1",
-                "ara": "العنوان سطر 1",
-                "fra": "Adresse 1",
-                "hin": "पता पंक्ति 1",
-                "tam": "முகவரி வரி 1",
-                "kan": "ವಿಳಾಸ ಸಾಲು 1",
-                "spa": "Dirección Línea 1"
-            },
-            "placeHolder": {
-                "eng": "Enter Address line1",
-                "ara": "أدخل سطر العنوان1",
-                "fra": "Entrez l'adresse ligne1",
-                "hin": "पता पंक्ति 1 दर्ज करें",
-                "tam": "முகவரி வரி 1 ஐ உள்ளிடவும்",
-                "kan": "ವಿಳಾಸ ಸಾಲು 1 ಅನ್ನು ನಮೂದಿಸಿ",
-                "spa": "Introducir dirección línea 1"
-            },
-            "description": "",
-            "labelName": {
-                "eng": [
-                    "Current Address Line1",
-                    "New Address Line1"
-                ],
-                "ara": [
-                    "سطر العنوان الحالي 1",
-                    "سطر العنوان الجديد 1"
-                ],
-                "fra": [
-                    "Ligne d'adresse actuelle1",
-                    "Nouvelle ligne d'adresse1"
-                ],
-                "hin": [
-                    "वर्तमान पता पंक्ति1",
-                    "नया पता पंक्ति1"
-                ],
-                "tam": [
-                    "தற்போதைய முகவரி வரி 1",
-                    "புதிய முகவரி வரி 1"
-                ],
-                "kan": [
-                    "ಪ್ರಸ್ತುತ ವಿಳಾಸ ಸಾಲು 1",
-                    "ಹೊಸ ವಿಳಾಸ ಸಾಲು 1"
-                ],
-                "spa": [
-                    "Línea 1 de dirección actual",
-                    "Nueva línea de dirección 1"
-                ]
-            },
-            "controlType": "textbox",
-            "tabgroup": "address",
-            "dataType": "notString"
-        },
+        },        
         {
             "attributeName": "region",
             "label": {
