@@ -13,6 +13,9 @@
       },
       "allowKeyBindingDelegation": {
         "type": "boolean"
+      },
+      "allowVciRequestDelegation": {
+        "type": "boolean"
       }
     },
     "required": [
