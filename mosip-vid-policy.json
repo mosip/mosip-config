@@ -23,8 +23,8 @@
             "vidType": "OneTimeUse",
             "vidPolicy": {
                 "validForInMinutes": null,
-                "transactionsAllowed": 3,
-                "instancesAllowed": 4,
+                "transactionsAllowed": 4,
+                "instancesAllowed": 5,
                 "autoRestoreAllowed": false,
                 "restoreOnAction": "REVOKED"
             }
