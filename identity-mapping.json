@@ -105,6 +105,9 @@
 		"picture": {
 			"value": "face"
 		},
+		"attributes": {
+		   "value": "fln,ad1,ad2,ad3,cit,reg,pro,poc,cph,em,ph,gen,dob"
+		},
 		"phone_number": {
 			"value": "phone"
 		},
@@ -157,7 +160,6 @@
 	"attributeUpdateCountLimit": {
 		"fullName": 2,
 		"gender": 1,
-		"dob": 1,
-		"age": 1
+		"dateOfBirth": 1
 	}
 }
