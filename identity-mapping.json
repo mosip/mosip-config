@@ -4,7 +4,7 @@
 			"value": "IDSchemaVersion"
 		},
 		"name": {
-			"value": "firstName,lastName"
+			"value": "fullName"
 		},
 		"gender": {
 			"value": "gender"
@@ -154,7 +154,7 @@
 		}
 	},
 	"attributeUpdateCountLimit": {
-		"firstName": 2,
+		"fullName": 2,
 		"gender": 1,
 		"dateOfBirth": 1,
 		"addressLine1": 1,
