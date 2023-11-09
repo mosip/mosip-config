@@ -3,9 +3,6 @@
 		"IDSchemaVersion": {
 			"value": "IDSchemaVersion"
 		},
-		"fullName": {
-			"value": "firstName,lastName"
-		},
 		"name": {
 			"value": "fullName"
 		},
