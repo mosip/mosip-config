@@ -131,6 +131,9 @@
     },
     "country": {
        "value":  "province"
+    },
+    "password": {
+    	 "value": "password"
     }
 	},
 	"metaInfo": {
