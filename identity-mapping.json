@@ -154,10 +154,10 @@
 		}
 	},
 	"attributeUpdateCountLimit": {
-		"fullName": 2,
-		"gender": 1,
-		"dateOfBirth": 1,
-		"addressLine1": 1,
-		"email": 1
+		"fullName": 4,
+		"gender": 2,
+		"dateOfBirth": 2,
+		"addressLine1": 2,
+		"email": 2
 	}
 }
