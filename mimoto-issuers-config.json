@@ -36,6 +36,29 @@
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token",
       "credential_endpoint": "https://${mosip.esignet.host}/v1/esignet/vci/credential",
       "credential_audience": "https://${mosip.esignet.host}/v1/esignet"
+    },
+    {
+      "credential_issuer": "ESignet_Mock",
+      "display": [
+        {
+          "name": "e-Signet Mock",
+          "logo": {
+            "url": "https://${mosip.esignet.mock.host}/logo.png",
+            "alt_text": "esignet-logo"
+          },
+          "language": "en"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.partner.clientid}",
+      "scopes_supported": ["mosip_identity_vc_ldp"],
+      "additional_headers": { "Accept": "application/json" },
+      ".well-known": null,
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.mock.host}/authorize",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/mock",
+      "credential_endpoint": "https://${mosip.esignet.mock.host}/v1/esignet/vci/credential",
+      "credential_audience": "https://${mosip.esignet.mock.host}/v1/esignet"
     }
   ]
 }
