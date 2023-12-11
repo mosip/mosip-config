@@ -203,7 +203,7 @@
                 <to uri="eventbus:manual-verification-bus-in" />
             </when>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false' and ${bodyAs(String)} not contains '"address":"manual-verification-bus-in"'</simple>
                 <to uri="eventbus:message-sender-bus-in"/>
             </when>
             <when>
