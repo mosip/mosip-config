@@ -333,8 +333,8 @@
 			"controlType": "checkbox",
 			"inputRequired": true,
 			"fieldType": "default",
-			"type": "string",
-			"changeAction": "copy&disable:permanentCountry=presentCountry,permanentAddressLine1=presentAddressLine1,permanentAddressLine2=presentAddressLine2,permanentAddressLine3=presentAddressLine3,permanentAddressLine4=presentAddressLine4,permanentCity=presentCity,permanentProvince=presentProvince,permanentBarangay=presentBarangay,permanentZipcode=presentZipcode",
+			"type": "boolean",
+			"changeAction": "copy&disable:permanentCountry=presentCountry,permanentAddressLine1=presentAddressLine1,permanentAddressLine2=presentAddressLine2,permanentAddressLine3=presentAddressLine3,permanentAddressLine4=presentAddressLine4,permanentProvince=presentProvince,permanentCity=presentCity,permanentBarangay=presentBarangay,permanentZipcode=presentZipcode",
 			"validators": [{
 				"type": "regex",
 				"validator": "^(?=.{0,50}$).*",
