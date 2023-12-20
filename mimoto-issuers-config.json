@@ -10,7 +10,7 @@
             "alt_text": "digits-icon"
           },
           "title": "Santhosh via UIN, VID, AID",
-          "description":"Enter your national ID to download your card.",
+          "description":"Enter your passport ID to download your card.",
           "language": "en"
         },
         {
@@ -66,7 +66,7 @@
             "alt_text": "esignet-logo"
           },
           "title": "Aswin via e-Signet",
-          "description": "Enter your national ID to download your card.",
+          "description": "Enter your pasport ID to download your card.",
           "language": "en"
         },
         {
