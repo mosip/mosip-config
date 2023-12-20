@@ -9,7 +9,7 @@
             "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
             "alt_text": "digits-icon"
           },
-          "title": "Santhosh via UIN, VID, AID",
+          "title": "Download via UIN, VID, AID",
           "description":"Enter your passport ID to download your card.",
           "language": "en"
         },
@@ -65,7 +65,7 @@
             "url": "https://${mosip.esignet.host}/logo.png",
             "alt_text": "esignet-logo"
           },
-          "title": "Aswin via e-Signet",
+          "title": "Download via e-Signet",
           "description": "Enter your pasport ID to download your card.",
           "language": "en"
         },
