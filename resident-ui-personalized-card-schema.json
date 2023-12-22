@@ -87,13 +87,13 @@
 				"spa":"UIN"
 			},
 			"maskRequiredLabel": {
-				"eng": "Mask It",
-				"ara": "إخفاء ذلك",
-				"fra":"Masquez-le",
-				"hin":"इसे छिपाओ",
-				"tam":"மாஸ்க் இட்",
-				"kan":"ಅದನ್ನು ಮಾಸ್ಕ್ ಮಾಡಿ",
-				"spa":"Enmascararlo"
+				"eng": "Mask UIN",
+				"ara": "قناع UIN",
+				"fra":"Masque UIN",
+				"hin":"मास्क UIN",
+				"tam":"UIN-ஐ மறைக்கவும்",
+				"kan":"ಮಾಸ್ಕ್ UIN",
+				"spa":"Máscara UIN"
 			},
 			"displaykeyinsharewithpartner":true,
 			"displaykeyinpersonalisedcard":false,
@@ -108,19 +108,19 @@
 				"eng": "Perpetual VID",
 				"ara": "دائم VID",
 				"fra":"VID perpétuel",
-				"hin":"सतत वी.आई.डी",
-				"tam":"நிரந்தர விஐடி",
-				"kan":"ಶಾಶ್ವತ ವಿಐಡಿ",
-				"spa":"vídeo perpetuo"
+				"hin":"सतत VID",
+				"tam":"நிரந்தர VID",
+				"kan":"ಶಾಶ್ವತ VID",
+				"spa":"VID perpetuo"
 			},
 			"maskRequiredLabel": {
-				"eng": "Mask It",
-				"ara": "إخفاء ذلك",
-				"fra":"Masquez-le",
-				"hin":"इसे छिपाओ",
-				"tam":"மாஸ்க் இட்",
-				"kan":"ಅದನ್ನು ಮಾಸ್ಕ್ ಮಾಡಿ",
-				"spa":"Enmascararlo"
+				"eng": "Mask Perpetual VID",
+				"ara": "قناع VID الدائم",
+				"fra":"Masque perpétuel VID",
+				"hin":"मास्क सदा VID",
+				"tam":"நிரந்தர VID-ஐ மறைக்கவும்",
+				"kan":"ಮಾಸ್ಕ್ ಶಾಶ್ವತ VID",
+				"spa":"Máscara Perpetuo VID"
 			},
 			"displaykeyinsharewithpartner":true,
 			"displaykeyinpersonalisedcard":false,
@@ -141,13 +141,13 @@
 				"spa":"Número de teléfono"
 			},
 			"maskRequiredLabel": {
-				"eng": "Mask It",
-				"ara": "إخفاء ذلك",
-				"fra":"Masquez-le",
-				"hin":"इसे छिपाओ",
-				"tam":"மாஸ்க் இட்",
-				"kan":"ಅದನ್ನು ಮಾಸ್ಕ್ ಮಾಡಿ",
-				"spa":"Enmascararlo"
+				"eng": "Mask Phone Number",
+				"ara": "رقم هاتف القناع",
+				"fra":"Masquer le numéro de téléphone",
+				"hin":"मास्क फ़ोन नंबर",
+				"tam":"தொலைபேசி எண்ணை மறைக்கவும்",
+				"kan":"ಮಾಸ್ಕ್ ಫೋನ್ ಸಂಖ್ಯೆ",
+				"spa":"Máscara Número de teléfono"
 			},
 			"displaykeyinsharewithpartner":true,
 			"displaykeyinpersonalisedcard":true,
@@ -162,19 +162,19 @@
 				"eng": "Email ID",
 				"ara": "عنوان الايميل",
 				"fra":"Identifiant de messagerie",
-				"hin":"ईमेल आईडी",
-				"tam":"மின்னஞ்சல் முகவரி",
-				"kan":"ಇಮೇಲ್ ಐಡಿ",
+				"hin":"ईमेल ID",
+				"tam":"மின்னஞ்சல் ID",
+				"kan":"ಇಮೇಲ್ ID",
 				"spa":"Identificación de correo"
 			},
 			"maskRequiredLabel": {
-				"eng": "Mask It",
-				"ara": "إخفاء ذلك",
-				"fra":"Masquez-le",
-				"hin":"इसे छिपाओ",
-				"tam":"மாஸ்க் இட்",
-				"kan":"ಅದನ್ನು ಮಾಸ್ಕ್ ಮಾಡಿ",
-				"spa":"Enmascararlo"
+				"eng": "Mask Email ID",
+				"ara": "قناع البريد الإلكتروني ID",
+				"fra":"Masquer ID de messagerie",
+				"hin":"मास्क ईमेल",
+				"tam":"மின்னஞ்சல் ID-ஐ மறைக்கவும்",
+				"kan":"ಮಾಸ್ಕ್ ಇಮೇಲ್ ID",
+				"spa":"Enmascarar ID de correo electrónico"
 			},
 			"displaykeyinsharewithpartner":true,
 			"displaykeyinpersonalisedcard":true,

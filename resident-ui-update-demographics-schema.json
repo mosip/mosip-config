@@ -247,7 +247,172 @@
             "controlType": "fileupload",
             "tabgroup": "identity",
             "dataType": "notString"
-        },        
+        },
+        {
+            "attributeName": "addressLine1",
+            "label": {
+                "eng": "Address line1",
+                "ara": "العنوان سطر 1",
+                "fra": "Adresse 1",
+                "hin": "पता पंक्ति 1",
+                "tam": "முகவரி வரி 1",
+                "kan": "ವಿಳಾಸ ಸಾಲು 1",
+                "spa": "Dirección Línea 1"
+            },
+            "placeHolder": {
+                "eng": "Enter Address line1",
+                "ara": "أدخل سطر العنوان1",
+                "fra": "Entrez l'adresse ligne1",
+                "hin": "पता पंक्ति 1 दर्ज करें",
+                "tam": "முகவரி வரி 1 ஐ உள்ளிடவும்",
+                "kan": "ವಿಳಾಸ ಸಾಲು 1 ಅನ್ನು ನಮೂದಿಸಿ",
+                "spa": "Introducir dirección línea 1"
+            },
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current Address Line1",
+                    "New Address Line1"
+                ],
+                "ara": [
+                    "سطر العنوان الحالي 1",
+                    "سطر العنوان الجديد 1"
+                ],
+                "fra": [
+                    "Ligne d'adresse actuelle1",
+                    "Nouvelle ligne d'adresse1"
+                ],
+                "hin": [
+                    "वर्तमान पता पंक्ति1",
+                    "नया पता पंक्ति1"
+                ],
+                "tam": [
+                    "தற்போதைய முகவரி வரி 1",
+                    "புதிய முகவரி வரி 1"
+                ],
+                "kan": [
+                    "ಪ್ರಸ್ತುತ ವಿಳಾಸ ಸಾಲು 1",
+                    "ಹೊಸ ವಿಳಾಸ ಸಾಲು 1"
+                ],
+                "spa": [
+                    "Línea 1 de dirección actual",
+                    "Nueva línea de dirección 1"
+                ]
+            },
+            "controlType": "textbox",
+            "tabgroup": "address",
+            "dataType": "notString"
+        },
+        {
+            "attributeName": "addressLine2",
+            "label": {
+                "eng": "Address line2",
+                "ara": "سطر العنوان 2",
+                "fra": "Adresse 2",
+                "hin": "पता पंक्ति 2",
+                "tam": "முகவரி வரி 2",
+                "kan": "ವಿಳಾಸ ಸಾಲು 2",
+                "spa": "Dirección Línea 2"
+            },
+            "placeHolder": {
+                "eng": "Enter Address line2",
+                "ara": "أدخل سطر العنوان2",
+                "fra": "Entrez l'adresse ligne2",
+                "hin": "पता पंक्ति 2 दर्ज करें",
+                "tam": "முகவரி வரி 2 ஐ உள்ளிடவும்",
+                "kan": "ವಿಳಾಸ ಸಾಲು 2 ಅನ್ನು ನಮೂದಿಸಿ",
+                "spa": "Introducir dirección línea 2"
+            },
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current Address Line2",
+                    "New Address Line2"
+                ],
+                "ara": [
+                    "سطر العنوان الحالي2",
+                    "سطر العنوان الجديد2"
+                ],
+                "fra": [
+                    "Ligne d'adresse actuelle2",
+                    "Nouvelle ligne d'adresse2"
+                ],
+                "hin": [
+                    "वर्तमान पता पंक्ति2",
+                    "नया पता पंक्ति2"
+                ],
+                "tam": [
+                    "தற்போதைய முகவரி வரி 2",
+                    "புதிய முகவரி வரி 2"
+                ],
+                "kan": [
+                    "ಪ್ರಸ್ತುತ ವಿಳಾಸ ಸಾಲು 2",
+                    "ಹೊಸ ವಿಳಾಸ ಸಾಲು 2"
+                ],
+                "spa": [
+                    "Línea 2 de dirección actual",
+                    "Nueva línea de dirección 2"
+                ]
+            },
+            "controlType": "textbox",
+            "tabgroup": "address",
+            "dataType": "notString"
+        },
+        {
+            "attributeName": "addressLine3",
+            "label": {
+                "eng": "Address line3",
+                "ara": "سطر العنوان3",
+                "fra": "Adresse 3",
+                "hin": "पता पंक्ति 3",
+                "tam": "முகவரி வரி 3",
+                "kan": "ವಿಳಾಸ ಸಾಲು 3",
+                "spa": "Dirección Línea 3"
+            },
+            "placeHolder": {
+                "eng": "Enter Address line3",
+                "ara": "أدخل سطر العنوان3",
+                "fra": "Entrez l'adresse ligne3",
+                "hin": "पता पंक्ति 3 दर्ज करें",
+                "tam": "முகவரி வரி 3 ஐ உள்ளிடவும்",
+                "kan": "ವಿಳಾಸ ಸಾಲು 3 ಅನ್ನು ನಮೂದಿಸಿ",
+                "spa": "Introducir dirección línea 3"
+            },
+            "description": "",
+            "labelName": {
+                "eng": [
+                    "Current Address Line3",
+                    "New Address Line3"
+                ],
+                "ara": [
+                    "سطر العنوان الحالي3",
+                    "سطر العنوان الجديد3"
+                ],
+                "fra": [
+                    "Ligne d'adresse actuelle3",
+                    "Nouvelle ligne d'adresse3"
+                ],
+                "hin": [
+                    "वर्तमान पता पंक्ति3",
+                    "नया पता पंक्ति3"
+                ],
+                "tam": [
+                    "தற்போதைய முகவரி வரி 3",
+                    "புதிய முகவரி வரி 3"
+                ],
+                "kan": [
+                    "ಪ್ರಸ್ತುತ ವಿಳಾಸ ಸಾಲು 3",
+                    "ಹೊಸ ವಿಳಾಸ ಸಾಲು 3"
+                ],
+                "spa": [
+                    "Línea 3 de dirección actual",
+                    "Nueva línea de dirección 3"
+                ]
+            },
+            "controlType": "textbox",
+            "tabgroup": "address",
+            "dataType": "notString"
+        },
         {
             "attributeName": "region",
             "label": {
