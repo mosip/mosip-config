@@ -80,6 +80,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
+
          <otherwise>
             <to uri="eventbus://packet-classifier-bus-in" />
          </otherwise>
@@ -152,6 +153,10 @@
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
             <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT')]</jsonpath>
+            <to uri="eventbus://verification-bus-in" />
          </when>
          <otherwise>
             <to uri="eventbus://uin-generator-bus-in" />
