@@ -120,6 +120,29 @@
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token",
       "credential_endpoint": "https://${mosip.api.public.host}/v1/esignet/vci/credential",
       "credential_audience": "https://${mosip.esignet.host}/v1/esignet"
+    },
+    {
+      "credential_issuer": "Sunbird",
+      "display": [
+        {
+          "name": "Sunbird RC Insurance Verifiable Credential",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "a square logo of a Sunbird"
+          },
+          "language": "en"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.partner.clientid}",
+      "scopes_supported": ["sunbird_rc_insurance_vc_ldp"],
+      "additional_headers": { "Accept": "application/json" },
+      ".well-known": null,
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.mock.host}/authorize",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird",
+      "credential_endpoint": "https://${mosip.esignet.mock.host}/v1/esignet/vci/credential",
+      "credential_audience": "https://${mosip.esignet.mock.host}/v1/esignet"
     }
   ]
 }
