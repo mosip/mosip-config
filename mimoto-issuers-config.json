@@ -132,7 +132,7 @@
           },
           "language": "en",
           "title": "Download Sunbird Credential",
-          "description": "Enter your Policy Number to download your card.",
+          "description": "Enter your Policy Number to download your card."
         }
       ],
       "protocol": "OpenId4VCI",
