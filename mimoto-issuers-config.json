@@ -130,7 +130,9 @@
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "a square logo of a Sunbird"
           },
-          "language": "en"
+          "language": "en",
+          "title": "Download Sunbird Credential",
+          "description": "Enter your Policy Number to download your card.",
         }
       ],
       "protocol": "OpenId4VCI",
