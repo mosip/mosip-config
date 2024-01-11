@@ -137,7 +137,7 @@
       ],
       "protocol": "OpenId4VCI",
       "client_id": "${mimoto.oidc.sunbird.partner.clientid}",
-      "scopes_supported": ["sunbird_rc_insurance_vc_ldp"],
+      "scopes_supported": ["mock_identity_vc_ldp"],
       "additional_headers": { "Accept": "application/json" },
       ".well-known": null,
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
