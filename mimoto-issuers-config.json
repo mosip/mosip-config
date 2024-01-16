@@ -119,6 +119,7 @@
       "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token",
       "credential_endpoint": "https://${mosip.api.public.host}/v1/esignet/vci/credential",
+      "credential_type": ['VerifiableCredential', 'MOSIPVerifiableCredential'],
       "credential_audience": "https://${mosip.esignet.host}/v1/esignet"
     },
     {
@@ -144,6 +145,7 @@
       "authorization_endpoint": "https://${mosip.esignet.mock.host}/authorize",
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird",
       "credential_endpoint": "https://${mosip.esignet.mock.host}/v1/esignet/vci/credential",
+      "credential_type": ['VerifiableCredential', 'InsuranceCredential']
       "credential_audience": "https://${mosip.esignet.mock.host}/v1/esignet"
     }
   ]
