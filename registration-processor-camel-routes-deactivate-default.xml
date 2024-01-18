@@ -17,20 +17,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <process ref="tokenGenerationProcessor" />
-            <setHeader headerName="CamelHttpMethod">
-               <constant>POST</constant>
-            </setHeader>
-            <setHeader headerName="Content-Type">
-               <constant>application/json</constant>
-            </setHeader>
-            <setHeader headerName="Cookie">
-               <simple>${header.Cookie}</simple>
-            </setHeader>
-            <setBody>
-               <simple>${bodyAs(String)}</simple>
-            </setBody>
-            <to uri="http://regproc-group2.regproc/registrationprocessor/v1/securezone/notification" />
+            <to uri="eventbus://securezone-notification-bus-in" />
          </otherwise>
       </choice>
    </route>
@@ -103,7 +90,7 @@
          </otherwise>
       </choice>
    </route>
- <!-- biometric-extraction to finalization Route -->
+   <!-- biometric-extraction to finalization Route -->
    <route id="biometric-extraction route-->finalization-stage deactivated route">
       <from uri="eventbus://biometric-extraction-deactivated-bus-out" />
       <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
@@ -127,7 +114,7 @@
          </otherwise>
       </choice>
    </route>
-	 <!-- finalization to deactivated Route -->
+   <!-- finalization to deactivated Route -->
    <route id="finalization route--> deactivated route">
       <from uri="eventbus://finalization-deactivated-bus-out" />
       <log message="finalization--> deactivated route ${bodyAs(String)}" />
@@ -148,7 +135,7 @@
          </when>
          <otherwise>
             <to uri="workflow-cmd://complete-as-processed" />
-			<to uri="workflow-cmd://anonymous-profile" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
