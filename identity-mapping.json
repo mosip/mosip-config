@@ -3,6 +3,9 @@
 		"IDSchemaVersion": {
 			"value": "IDSchemaVersion"
 		},
+		"selectedHandles" : {
+			"value" : "selectedHandles"
+		},
 		"name": {
 			"value": "fullName"
 		},
@@ -129,7 +132,8 @@
 		},
 		"country": {
 			"value": "province"
-		}
+		},
+		"password" : { "value" : "password" }
 	},
 	"metaInfo": {
 		"value": "metaInfo"
