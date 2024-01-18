@@ -126,7 +126,7 @@
       "credential_audience": "https://${mosip.esignet.host}/v1/esignet"
     },
     {
-      "credential_issuer": "Sunbird1",
+      "credential_issuer": "Sunbird",
       "display": [
         {
           "name": "Sunbird RC Insurance Verifiable Credential",
