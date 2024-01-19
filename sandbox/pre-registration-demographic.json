@@ -147,7 +147,7 @@
 			"fieldType": "dynamic",
 			"type": "simpleType",
 			"validators": [],
-			"required": false
+			"required": true
 		},
 		{
 			"id": "bloodType",
