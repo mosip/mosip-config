@@ -6,11 +6,11 @@
         {
           "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
+            "url": "https://mosip.io/images/footer/foot-logo-b.png",
             "alt_text": "digits-icon"
           },
-          "title": "Download via UIN, VID, AID",
-          "description":"Enter your national ID to download your card.",
+          "title": "Download MOSIP Credentials via OTP",
+          "description":"Download your MOSIP credentials by providing UIN, VID or AID.",
           "language": "en"
         },
         {
@@ -62,11 +62,11 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://${mosip.esignet.host}/logo.png",
+            "url": "https://mosip.io/images/footer/foot-logo-b.png",
             "alt_text": "esignet-logo"
           },
-          "title": "Download via e-Signet",
-          "description": "Enter your national ID to download your card.",
+          "title": "Download Credentials issued by MOSIP",
+          "description": "Download your credentials by providing UIN or VID",
           "language": "en"
         },
         {
@@ -135,8 +135,8 @@
             "alt_text": "a square logo of a Sunbird"
           },
           "language": "en",
-          "title": "Download Sunbird Credential",
-          "description": "Enter your Policy Number to download your card."
+          "title": "Download Credentials issued by Sunbird",
+          "description": "Download your credentials by providing Policy Number"
         }
       ],
       "protocol": "OpenId4VCI",
