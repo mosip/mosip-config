@@ -137,6 +137,56 @@
           "language": "en",
           "title": "Download Credentials issued by Sunbird",
           "description": "Download your credentials by providing Policy Number"
+        },
+        {
+          "name": "بيانات الاعتماد التي يمكن التحقق منها للتأمين Sunbird RC",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "شعار مربع لطائر الشمس"
+          },
+          "language": "ar",
+          "title": "قم بتنزيل بيانات الاعتماد الصادرة عن Sunbird",
+          "description": "قم بتنزيل بيانات الاعتماد الخاصة بك عن طريق توفير رقم السياسة"
+        },
+        {
+          "name": "सनबर्ड आरसी बीमा सत्यापन योग्य क्रेडेंशियल",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "सनबर्ड का एक चौकोर लोगो"
+          },
+          "language": "hi",
+          "title": "सनबर्ड द्वारा जारी क्रेडेंशियल डाउनलोड करें",
+          "description": "पॉलिसी नंबर प्रदान करके अपना क्रेडेंशियल डाउनलोड करें"
+        },
+        {
+          "name": "ಸನ್ಬರ್ಡ್ ಆರ್ಸಿ ವಿಮೆ ಪರಿಶೀಲಿಸಬಹುದಾದ ರುಜುವಾತು",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "ಸನ್ ಬರ್ಡ್ ನ ಚೌಕಾಕಾರದ ಲೋಗೋ"
+          },
+          "language": "kn",
+          "title": "ಸನ್ಬರ್ಡ್ ನೀಡಿದ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
+          "description": "ನೀತಿ ಸಂಖ್ಯೆಯನ್ನು ಒದಗಿಸುವ ಮೂಲಕ ನಿಮ್ಮ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ"
+        },
+        {
+          "name": "Sunbird RC இன்சூரன்ஸ் சரிபார்க்கக்கூடிய நற்சான்றிதழ்",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "சூரிய பறவையின் சதுர சின்னம்"
+          },
+          "language": "ta",
+          "title": "Sunbird வழங்கிய நற்சான்றிதழ்களைப் பதிவிறக்கவும்",
+          "description": "பாலிசி எண்ணை வழங்குவதன் மூலம் உங்கள் நற்சான்றிதழ்களைப் பதிவிறக்கவும்"
+        },
+        {
+          "name": "Kredensyal na Nabe-verify ng Sunbird RC Insurance",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "isang parisukat na logo ng isang Sunbird"
+          },
+          "language": "fi",
+          "title": "I-download ang Mga Kredensyal na ibinigay ng Sunbird",
+          "description": "I-download ang iyong mga kredensyal sa pamamagitan ng pagbibigay ng Numero ng Patakaran"
         }
       ],
       "protocol": "OpenId4VCI",
