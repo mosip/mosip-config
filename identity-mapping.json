@@ -132,7 +132,8 @@
 		},
 		"country": {
 			"value": "province"
-		}
+		},
+		"password" : { "value" : "password" }
 	},
 	"metaInfo": {
 		"value": "metaInfo"
