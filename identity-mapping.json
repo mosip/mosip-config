@@ -159,8 +159,6 @@
 	"attributeUpdateCountLimit": {
 		"fullName": 2,
 		"gender": 4,
-		"dateOfBirth": 3,
-		"addressLine1": 5,
-		"email": 5
+		"dateOfBirth": 3
 	}
 }
