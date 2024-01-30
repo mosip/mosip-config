@@ -214,7 +214,7 @@
       "client_alias": "esignet-sunbird-partner",
       "scopes_supported": ["sunbird_rc_insurance_vc_ldp"],
       "additional_headers": { "Accept": "application/json" },
-      ".well-known": "https://vijay151096.github.io/did-testing/openid-credential-issuer.json",
+      ".well-known": "https://santhoshsunder.github.io/testing/openid-credential-issuer.json",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.mock.host}/authorize",
       "authorization_audience": "https://${mosip.esignet.mock.host}/v1/esignet/oauth/v2/token",
