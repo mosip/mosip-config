@@ -60,4 +60,4 @@ console = true              # Default is false
 console = false              # Default is false
 
 #Encryption key that will be used to encrypt / decrypt the hub secret
-HUB_SECRET_ENCRYPTION_KEY = "${hub-secret-encryption-key}"
+#HUB_SECRET_ENCRYPTION_KEY = "${hub-secret-encryption-key}"
