@@ -24,7 +24,10 @@
 				},
 				"source": {
 					"type": "string"
-				}
+				},
+			        "protocol": {
+			          "type": "string"
+			        }
 			},
 			"required": [
 				"typeOfShare",
