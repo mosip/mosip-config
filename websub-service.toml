@@ -52,7 +52,7 @@ MOSIP_AUTH_BASE_URL = "${mosip.kernel.authmanager.url}/v1/authmanager"
 MOSIP_AUTH_VALIDATE_TOKEN_URL = "/authorize/admin/validateToken"
 
 #Encryption key that will be used to encrypt / decrypt the hub secret
-HUB_SECRET_ENCRYPTION_KEY = ${hub-secret-encryption-key}
+HUB_SECRET_ENCRYPTION_KEY = "${hub.secret.encryption.key}"
 
 [ballerina.http.accessLogConfig]
 # Enable printing access logs in console
