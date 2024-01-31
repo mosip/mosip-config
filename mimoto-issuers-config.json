@@ -155,8 +155,8 @@
             "alt_text": "a square logo of a Sunbird"
           },
           "language": "en",
-          "title": "Download Sunbird Credentials",
-          "description": "Download credentials with your Policy Number"
+          "title": "Aswin Sunbird Credentials",
+          "description": "Aswin Download credentials with your Policy Number"
         },
         {
           "name": "بيانات الاعتماد التي يمكن التحقق منها للتأمين Sunbird RC",
@@ -165,8 +165,8 @@
             "alt_text": "شعار مربع لطائر الشمس"
           },
           "language": "ar",
-          "title": "قم بتنزيل بيانات اعتماد Sunbird",
-          "description": "قم بتنزيل بيانات الاعتماد باستخدام رقم السياسة الخاص بك"
+          "title": "Aswin قم بتنزيل بيانات اعتماد Sunbird",
+          "description": "aswin قم بتنزيل بيانات الاعتماد باستخدام رقم السياسة الخاص بك"
         },
         {
           "name": "सनबर्ड आरसी बीमा सत्यापन योग्य क्रेडेंशियल",
@@ -175,8 +175,8 @@
             "alt_text": "सनबर्ड का एक चौकोर लोगो"
           },
           "language": "hi",
-          "title": "सनबर्ड क्रेडेंशियल्स डाउनलोड करेंं",
-          "description": "अपने पॉलिसी नंबर के साथ क्रेडेंशियल डाउनलोड करें"
+          "title": "Aswin सनबर्ड क्रेडेंशियल्स डाउनलोड करेंं",
+          "description": " aswin अपने पॉलिसी नंबर के साथ क्रेडेंशियल डाउनलोड करें"
         },
         {
           "name": "ಸನ್ಬರ್ಡ್ ಆರ್ಸಿ ವಿಮೆ ಪರಿಶೀಲಿಸಬಹುದಾದ ರುಜುವಾತು",
@@ -185,8 +185,8 @@
             "alt_text": "ಸನ್ ಬರ್ಡ್ ನ ಚೌಕಾಕಾರದ ಲೋಗೋ"
           },
           "language": "kn",
-          "title": "ಸನ್ಬರ್ಡ್ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
-          "description": "ನಿಮ್ಮ ಪಾಲಿಸಿ ಸಂಖ್ಯೆಯೊಂದಿಗೆ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ"
+          "title": "aswin ಸನ್ಬರ್ಡ್ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
+          "description": "aswin ನಿಮ್ಮ ಪಾಲಿಸಿ ಸಂಖ್ಯೆಯೊಂದಿಗೆ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ"
         },
         {
           "name": "Sunbird RC இன்சூரன்ஸ் சரிபார்க்கக்கூடிய நற்சான்றிதழ்",
@@ -195,7 +195,7 @@
             "alt_text": "சூரிய பறவையின் சதுர சின்னம்"
           },
           "language": "ta",
-          "title": "Sunbird சான்றுகளைப் பதிவிறக்கவும்",
+          "title": "aswin Sunbird சான்றுகளைப் பதிவிறக்கவும்",
           "description": "உங்கள் பாலிசி எண்ணுடன் நற்சான்றிதழ்களைப் பதிவிறக்கவும்"
         },
         {
@@ -205,8 +205,8 @@
             "alt_text": "isang parisukat na logo ng isang Sunbird"
           },
           "language": "fil",
-          "title": "I-download ang Mga Kredensyal ng Sunbird",
-          "description": "Mag-download ng mga kredensyal gamit ang iyong Numero ng Patakaran"
+          "title": "Aswin I-download ang Mga Kredensyal ng Sunbird",
+          "description": "Aswin Mag-download ng mga kredensyal gamit ang iyong Numero ng Patakaran"
         }
       ],
       "protocol": "OpenId4VCI",
