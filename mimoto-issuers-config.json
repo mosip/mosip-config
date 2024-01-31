@@ -139,7 +139,7 @@
       "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token",
       "credential_endpoint": "https://${mosip.esignet.host}/v1/esignet/vci/credential",
-      "credential_audience": "https://${mosip.esignet.host}/v1/esignet"
+      "credential_audience": "https://${mosip.esignet.host}"
     }
   ]
 }
