@@ -114,6 +114,12 @@
 	"phone_number": {
             "value": "phone"
         },
+	"phone_number_verified": {
+            "value": "phoneVerified"
+        },
+	"registration_type": {
+            "value": "registrationType"
+        },
 	"individual_id": {
 	    "value": "individual_id"
 	},
