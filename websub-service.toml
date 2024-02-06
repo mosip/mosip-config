@@ -38,6 +38,9 @@ MESSAGE_DELIVERY_RETRY_INTERVAL = 3.0
 # The maximum retry count
 MESSAGE_DELIVERY_COUNT = 3
 
+# The maximum retry count
+KAFKA_CONSUMER_MAX_POLL_RECORDS = 1
+
 # The message delivery timeout
 MESSAGE_DELIVERY_TIMEOUT = 60.0
 
@@ -47,6 +50,9 @@ MOSIP_AUTH_BASE_URL = "${mosip.kernel.authmanager.url}/v1/authmanager"
 
 # The token validation URL of IDP
 MOSIP_AUTH_VALIDATE_TOKEN_URL = "/authorize/admin/validateToken"
+
+#Encryption key that will be used to encrypt / decrypt the hub secret
+HUB_SECRET_ENCRYPTION_KEY = "${hub.secret.encryption.key}"
 
 [ballerina.http.accessLogConfig]
 # Enable printing access logs in console
