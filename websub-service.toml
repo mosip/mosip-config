@@ -42,7 +42,7 @@ MESSAGE_DELIVERY_COUNT = 3
 KAFKA_CONSUMER_MAX_POLL_RECORDS = 3
 
 # The message delivery timeout
-MESSAGE_DELIVERY_TIMEOUT = 60.0
+MESSAGE_DELIVERY_TIMEOUT = 30.0
 
 # The base URL of IDP
 MOSIP_AUTH_BASE_URL = "${mosip.kernel.authmanager.url}/v1/authmanager"
