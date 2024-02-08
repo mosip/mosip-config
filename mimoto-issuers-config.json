@@ -6,7 +6,7 @@
         {
           "name": "UIN, VID, AID",
           "logo": {
-            "url": "",
+            "url": "https://${mosip.api.public.host}/inji/mosip_logo.png",
             "alt_text": "mosip logo"
           },
           "title": "Download MOSIP Credentials via OTP",
