@@ -58,7 +58,6 @@
         "rank": "https://${mosip.api.public.host}/mosip#rank"
       }
     },
-    "face": "mosip:face",
     "dob": "mosip:dob",
     "fln": {
       "@id": "https://${mosip.api.public.host}/mosip#fln",
