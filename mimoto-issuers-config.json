@@ -6,7 +6,7 @@
         {
           "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://mosip.io/images/footer/foot-logo-b.png",
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "mosip logo"
           },
           "title": "Download MOSIP Credentials via OTP",
@@ -16,7 +16,7 @@
         {
           "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://mosip.io/images/footer/foot-logo-b.png",
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "شعار موسيب"
           },
           "title": "قم بتنزيل بيانات اعتماد MOSIP عبر OTP",
@@ -26,7 +26,7 @@
         {
           "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://mosip.io/images/footer/foot-logo-b.png",
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "मोसिप लोगो"
           },
           "title": "OTP के माध्यम से MOSIP क्रेडेंशियल डाउनलोड करें",
@@ -36,7 +36,7 @@
         {
           "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://mosip.io/images/footer/foot-logo-b.png",
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "mosip ಲೋಗೋ"
           },
           "title": "OTP ಮೂಲಕ MOSIP ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
@@ -46,7 +46,7 @@
         {
           "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://mosip.io/images/footer/foot-logo-b.png",
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "mosip சின்னம்"
           },
           "title": "OTP வழியாக MOSIP சான்றுகளைப் பதிவிறக்கவும்",
@@ -56,7 +56,7 @@
         {
           "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://mosip.io/images/footer/foot-logo-b.png",
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "logo ng mosip"
           },
           "title": "I-download ang Mga Kredensyal ng MOSIP sa pamamagitan ng OTP",
@@ -72,7 +72,7 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://mosip.io/images/footer/foot-logo-b.png",
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "mosip-logo"
           },
           "title": "Download MOSIP Credentials",
@@ -82,7 +82,7 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://mosip.io/images/footer/foot-logo-b.png",
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "شعار موسيب"
           },
           "title": "قم بتنزيل بيانات اعتماد MOSIP",
@@ -92,7 +92,7 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://mosip.io/images/footer/foot-logo-b.png",
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "मोसिप लोगो"
           },
           "title": "MOSIP क्रेडेंशियल डाउनलोड करेंं",
@@ -102,7 +102,7 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://mosip.io/images/footer/foot-logo-b.png",
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "mosip ಲೋಗೋ"
           },
           "title": "MOSIP ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
@@ -112,7 +112,7 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://mosip.io/images/footer/foot-logo-b.png",
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "mosip லோகோ"
           },
           "title": "MOSIP சான்றுகளைப் பதிவிறக்கவும்",
@@ -122,7 +122,7 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://mosip.io/images/footer/foot-logo-b.png",
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "logo ng mosip"
           },
           "title": "I-download ang Mga Kredensyal ng MOSIP",
@@ -155,7 +155,7 @@
             "alt_text": "a square logo of a Sunbird"
           },
           "language": "en",
-          "title": "Sunbird Credentials",
+          "title": "Download Sunbird Credentials",
           "description": "Download credentials with your Policy Number"
         },
         {
@@ -201,7 +201,7 @@
         {
           "name": "Kredensyal na Nabe-verify ng Sunbird RC Insurance",
           "logo": {
-            "url": "https://freepngimg.com/thumb/google/66907-images-logo-google-free-download-png-hd.png",
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "isang parisukat na logo ng isang Sunbird"
           },
           "language": "fil",
@@ -214,7 +214,7 @@
       "client_alias": "esignet-sunbird-partner",
       "scopes_supported": ["sunbird_rc_insurance_vc_ldp"],
       "additional_headers": { "Accept": "application/json" },
-      ".well-known": "https://santhoshsunder.github.io/testing/openid-credential-issuer.json",
+      ".well-known": "https://${mosip.esignet.mock.host}/.well-known/openid-credential-issuer",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.mock.host}/authorize",
       "authorization_audience": "https://${mosip.esignet.mock.host}/v1/esignet/oauth/v2/token",
