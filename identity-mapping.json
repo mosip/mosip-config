@@ -3,6 +3,9 @@
         "IDSchemaVersion": {
             "value": "IDSchemaVersion"
         },
+        "selectedHandles" : {
+            "value" : "selectedHandles"
+        },
         "name": {
             "value": "fullName"
         },
@@ -94,7 +97,7 @@
             "value": "zone"
         },
         "fullAddress": {
-            "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+            "value": "addressLine1,addressLine2,addressLine3,city,region,province,zone,postalCode"
         },
         "bestTwoFingers": {
             "value": "bestTwoFingers"
@@ -105,29 +108,29 @@
         "picture": {
             "value": "face"
         },
+        "address": {
+            "value": "addressLine1,addressLine2,addressLine3,city,region,province,zone,postalCode"
+        },
         "phone_number": {
             "value": "phone"
-        },
-        "address": {
-            "value": "city,region,province,postalCode"
         },
         "individual_id": {
             "value": "individual_id"
         },
         "street_address": {
-            "value": "addressLine1,addressLine2,addressLine3"
+            "value":  "addressLine1,addressLine2,addressLine3"
         },
         "locality": {
-            "value": "city"
+            "value":  "city"
         },
         "region": {
-            "value": "region"
+            "value":  "region"
         },
         "postal_code": {
-            "value": "postalCode"
+            "value":  "postalCode"
         },
         "country": {
-            "value": "province"
+            "value":  "province"
         }
     },
     "metaInfo": {
@@ -155,9 +158,7 @@
     },
     "attributeUpdateCountLimit": {
         "fullName": 2,
-        "gender": 1,
-        "dob": 1,
-        "age": 1
+        "gender": 4,
+        "dateOfBirth": 3
     }
 }
-
