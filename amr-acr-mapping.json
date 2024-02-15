@@ -1,6 +1,7 @@
 {
   "amr" : {
     "PWD" : [{"type" : "PWD" }],
+    "TOTP" : [{"type" : "TOTP" }],
     "PIN" :  [{ "type": "PIN" }],
     "OTP" :  [{ "type": "OTP" }],
     "Wallet" :  [{ "type": "WLA" }],
@@ -11,6 +12,7 @@
     "mosip:idp:acr:static-code" : ["PIN"],
     "mosip:idp:acr:generated-code" : ["OTP"],
     "mosip:idp:acr:linked-wallet" : [ "Wallet" ],
-    "mosip:idp:acr:biometrics" : [ "L1-bio-device" ]
+    "mosip:idp:acr:biometrics" : [ "L1-bio-device" ],
+    "mosip:idp:acr:time-generated-code" : [ "TOTP" ]
   }
 }
