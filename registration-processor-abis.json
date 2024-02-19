@@ -3,7 +3,7 @@
         "name": "ABIS",
         "host": "",
         "port": "",
-        "brokerUrl": "${activemq.host}:${activemq.core.port}",
+        "brokerUrl": "tcp://${activemq.host}:${activemq.core.port}",
         "inboundQueueName": "mosip-to-abis",
         "outboundQueueName": "abis-to-mosip",
         "pingInboundQueueName": "",

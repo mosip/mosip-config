@@ -42,7 +42,7 @@
 
     "target":             {"@type": "@id", "@id": "odrl:target"},
     "output":             {"@type": "@id", "@id": "odrl:output"},
-    
+
     "partOf":            {"@type": "@id", "@id": "odrl:partOf"},
 	"source":            {"@type": "@id", "@id": "odrl:source"},
 
@@ -72,7 +72,7 @@
     "action":                {"@type": "@vocab", "@id": "odrl:action"},
     "includedIn":            {"@type": "@id", "@id": "odrl:includedIn"},
     "implies":               {"@type": "@id", "@id": "odrl:implies"},
-    
+
     "Permission":            "odrl:Permission",
     "permission":            {"@type": "@id", "@id": "odrl:permission"},
 
@@ -110,7 +110,7 @@
     "transfer":              "odrl:transfer",
     "transform":             "odrl:transform",
     "translate":             "odrl:translate",
-    
+
     "Duty":                 "odrl:Duty",
     "duty":                 {"@type": "@id", "@id": "odrl:duty"},
     "consequence":          {"@type": "@id", "@id": "odrl:consequence"},
@@ -128,7 +128,7 @@
     "reviewPolicy":         "odrl:reviewPolicy",
     "uninstall":            "odrl:uninstall",
     "watermark":            "odrl:watermark",
-    
+
     "Constraint":           "odrl:Constraint",
 	"LogicalConstraint":    "odrl:LogicalConstraint",
     "constraint":           {"@type": "@id", "@id": "odrl:constraint"},
@@ -195,6 +195,6 @@
     "andSequence":          "odrl:andSequence",
 
     "policyUsage":                "odrl:policyUsage"
-    
+
     }
 }
