@@ -3,6 +3,9 @@
 		"IDSchemaVersion": {
 			"value": "IDSchemaVersion"
 		},
+		"selectedHandles" : {
+			"value" : "selectedHandles"
+		},
 		"name": {
 			"value": "fullName"
 		},
@@ -115,6 +118,9 @@
 		"individual_id": {
 			"value": "individual_id"
 		},
+		"attributes": {
+			"value": "fln,ad1,ad2,ad3,cit,reg,pro,poc,cph,em,ph,gen,dob"
+		},
 		"street_address": {
 			"value": "addressLine1,addressLine2,addressLine3"
 		},
@@ -129,6 +135,9 @@
 		},
 		"country": {
 			"value": "province"
+		},
+		"password": {
+			"value": "password"
 		}
 	},
 	"metaInfo": {
@@ -157,7 +166,6 @@
 	"attributeUpdateCountLimit": {
 		"fullName": 2,
 		"gender": 1,
-		"dob": 1,
-		"age": 1
+		"dob": 1
 	}
 }
