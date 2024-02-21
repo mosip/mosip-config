@@ -81,19 +81,19 @@
 		"addressLine3": {
 			"value": "addressLine3"
 		},
-		"location1": {
+		"city": {
 			"value": "city"
 		},
-		"location2": {
+		"region": {
 			"value": "region"
 		},
-		"location3": {
+		"province": {
 			"value": "province"
 		},
 		"postalCode": {
 			"value": "postalCode"
 		},
-		"location4": {
+		"zone": {
 			"value": "zone"
 		},
 		"fullAddress": {
