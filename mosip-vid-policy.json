@@ -24,7 +24,7 @@
             "vidPolicy": {
                 "validForInMinutes": null,
                 "transactionsAllowed": 1,
-                "instancesAllowed": 20,
+                "instancesAllowed": 5,
                 "autoRestoreAllowed": false,
                 "restoreOnAction": "REVOKED"
             }

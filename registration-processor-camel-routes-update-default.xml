@@ -315,7 +315,7 @@
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
             <to uri="eventbus://manual-adjudication-bus-in" />
          </when>
-		 <when>
+		  <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT')]</jsonpath>
             <to uri="eventbus://verification-bus-in" />
          </when>
