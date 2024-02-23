@@ -1,0 +1,170 @@
+{
+  "credential_issuer": "InsuranceDepartment",
+  "credential_endpoint": "https://${mosip.api.public.host}/v1/esignet/vci/credential",
+  "credentials_supported": [
+    {
+      "format": "ldp_vc",
+      "id": "InsuranceCredential",
+      "scope": "sunbird_rc_insurance_vc_ldp",
+      "cryptographic_binding_methods_supported": [
+        "did:jwk"
+      ],
+      "cryptographic_suites_supported": [
+        "RsaSignature2018"
+      ],
+      "proof_types_supported": [
+        "jwt"
+      ],
+      "credential_definition": {
+        "type": [
+          "VerifiableCredential",
+          "InsuranceCredential"
+        ],
+        "credentialSubject": {
+          "policyNumber": {
+            "display": [
+              {
+                "name": "Policy Number",
+                "locale": "en"
+              }
+            ]
+          },
+          "fullName": {
+            "display": [
+              {
+                "name": "Full Name",
+                "locale": "en"
+              }
+            ]
+          },
+          "policyName": {
+            "display": [
+              {
+                "name": "Policy Name",
+                "locale": "en"
+              }
+            ]
+          },
+          "dob": {
+            "display": [
+              {
+                "name": "Date Of Birth",
+                "locale": "en"
+              }
+            ]
+          },
+          "gender": {
+            "display": [
+              {
+                "name": "Gender",
+                "locale": "en"
+              }
+            ]
+          },
+          "expiresOn": {
+            "display": [
+              {
+                "name": "Expiry Date",
+                "locale": "en"
+              }
+            ]
+          }
+        }
+      },
+      "display": [
+        {
+          "name": "Insurance Credential",
+          "locale": "en",
+          "logo": {
+            "url": "https://image.similarpng.com/very-thumbnail/2021/06/Medical-health-care-logo-design-template-on-transparent-background-PNG.png",
+            "alt_text": "insurance logo"
+          },
+          "background_color": "#76b5c5",
+          "text_color": "#716E6D"
+        }
+      ]
+    },
+    {
+      "format": "ldp_vc",
+      "id": "LifeInsuranceCredential_ldp",
+      "scope": "life_insurance_vc_ldp",
+      "cryptographic_binding_methods_supported": [
+        "did:jwk"
+      ],
+      "cryptographic_suites_supported": [
+        "RsaSignature2018"
+      ],
+      "proof_types_supported": [
+        "jwt"
+      ],
+      "credential_definition": {
+        "type": [
+          "VerifiableCredential",
+          "LifeInsuranceCredential"
+        ],
+        "credentialSubject": {
+          "policyNumber": {
+            "display": [
+              {
+                "name": "Policy Number",
+                "locale": "en"
+              }
+            ]
+          },
+          "fullName": {
+            "display": [
+              {
+                "name": "Full Name",
+                "locale": "en"
+              }
+            ]
+          },
+          "policyName": {
+            "display": [
+              {
+                "name": "Policy Name",
+                "locale": "en"
+              }
+            ]
+          },
+          "dob": {
+            "display": [
+              {
+                "name": "Date Of Birth",
+                "locale": "en"
+              }
+            ]
+          },
+          "gender": {
+            "display": [
+              {
+                "name": "Gender",
+                "locale": "en"
+              }
+            ]
+          },
+          "expiresOn": {
+            "display": [
+              {
+                "name": "Expiry Date",
+                "locale": "en"
+              }
+            ]
+          }
+        }
+      },
+      "display": [
+        {
+          "name": "Life Insurance Credentials",
+          "locale": "en",
+          "logo": {
+            "url": "https://image.similarpng.com/very-thumbnail/2021/06/Family-care-logo-template-on-transparent-background-PNG.png",
+            "alt_text": "life insurance logo"
+          },
+          "background_color": "#B34622",
+          "text_color": "#FFFFFF"
+        }
+      ]
+    }
+  ]
+}
