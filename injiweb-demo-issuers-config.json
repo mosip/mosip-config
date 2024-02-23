@@ -15,7 +15,7 @@
         }
       ],
       "protocol": "OpenId4VCI",
-      "client_id": "${mimoto.oidc.partner.clientid}",
+      "client_id": "${mimoto.injiweb.oidc.partner.clientid}",
       "client_alias": "mpartner-default-mimotooidc",
       "scopes_supported": ["mosip_identity_vc_ldp"],
       "additional_headers": { "Accept": "application/json" },
