@@ -1,5 +1,5 @@
 {
-  "credential_issuer": "Insurance Department",
+  "credential_issuer": "InsuranceDepartment",
   "credential_endpoint": "https://${mosip.api.public.host}/v1/esignet/vci/credential",
   "credentials_supported": [
     {
