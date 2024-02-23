@@ -161,6 +161,9 @@
 		},
 		"poe": {
 			"value": "proofOfException"
+		},
+		"pop": {
+			"value": "proofOfPhoto"
 		}
 	},
 	"attributeUpdateCountLimit": {
