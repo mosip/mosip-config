@@ -214,7 +214,7 @@
       "client_alias": "mpartner-default-mimotooidc",
       "scopes_supported": ["sunbird_rc_insurance_vc_ldp"],
       "additional_headers": { "Accept": "application/json" },
-      ".well-known": "https://${mosip.esignet.host}/.well-known/openid-credential-issuer",
+      ".well-known": "https://esignet-insurance.dev1.mosip.net/.well-known/openid-credential-issuer",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
       "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
