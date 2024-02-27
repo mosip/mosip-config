@@ -220,9 +220,9 @@
       "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird",
       "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
-      "credential_endpoint": "https://esignet-mock.dev1.mosip.net/v1/esignet/vci/credential",
+      "credential_endpoint": "https://esignet-insurance.dev1.mosip.net/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "InsuranceCredential"],
-      "credential_audience": "https://esignet-mock.dev1.mosip.net"
+      "credential_audience": "https://esignet-insurance.dev1.mosip.net"
     }
   ]
 }
