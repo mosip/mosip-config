@@ -16,7 +16,7 @@
       ],
       "protocol": "OpenId4VCI",
       "client_id": "${mimoto.injiweb.oidc.partner.clientid}",
-      "client_alias": "mpartner-default-mimotooidc",
+      "client_alias": "mpartner-default-mosip-injiweb",
       "scopes_supported": ["mosip_identity_vc_ldp"],
       "additional_headers": { "Accept": "application/json" },
       ".well-known": "https://${mosip.esignet.injiweb.host}/.well-known/openid-credential-issuer",
