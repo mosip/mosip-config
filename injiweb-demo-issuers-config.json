@@ -19,15 +19,15 @@
       "client_alias": "mpartner-default-mimotooidc",
       "scopes_supported": ["mosip_identity_vc_ldp"],
       "additional_headers": { "Accept": "application/json" },
-      ".well-known": "https://${mosip.esignet.host}/.well-known/openid-credential-issuer",
+      ".well-known": "https://${mosip.esignet.injiweb.host}/.well-known/openid-credential-issuer",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
-      "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
-      "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "authorization_endpoint": "https://${mosip.esignet.injiweb.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.injiweb.host}/v1/esignet/oauth/v2/token",
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/InsuranceDepartment",
       "proxy_token_endpoint": "https://${mosip.api.public.host}/v1/esignet/oauth/v2/token",
       "credential_endpoint": "https://${mosip.api.public.host}/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "InsuranceCredential", "LifeInsuranceCredential"],
-      "credential_audience": "https://${mosip.esignet.host}/v1/esignet"
+      "credential_audience": "https://${mosip.esignet.injiweb.host}/v1/esignet"
     }
   ]
 }
