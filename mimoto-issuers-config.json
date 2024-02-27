@@ -210,8 +210,8 @@
         }
       ],
       "protocol": "OpenId4VCI",
-      "client_id": "${mimoto.oidc.sunbird.partner.clientid}",
-      "client_alias": "esignet-sunbird-partner",
+      "client_id": "${mimoto.oidc.partner.clientid}",
+      "client_alias": "mpartner-default-mimotooidc",
       "scopes_supported": ["sunbird_rc_insurance_vc_ldp"],
       "additional_headers": { "Accept": "application/json" },
       ".well-known": "https://${mosip.esignet.host}/.well-known/openid-credential-issuer",
