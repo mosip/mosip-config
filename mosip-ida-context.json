@@ -28,6 +28,7 @@
       "@id": "https://${mosip.api.public.host}/mosip#gender",
       "@context": {"value": "rdf:value", "lang": "@language"}
     },
+    "registrationType": "mosip:registrationType",
     "residenceStatus": {
       "@id": "https://${mosip.api.public.host}/mosip#residenceStatus",
       "@context": {"value": "rdf:value", "lang": "@language"}
