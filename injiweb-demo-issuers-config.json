@@ -1,13 +1,13 @@
 {
   "issuers": [
     {
-      "credential_issuer": "InsuranceDepartment",
+      "credential_issuer": "MOSIPInsurance",
       "display": [
         {
-          "name": "Insurance Department",
+          "name": "MOSIP Insurance",
           "logo": {
-            "url": "https://imgs.search.brave.com/m_qtRC1Tukm-fxidbwkAdnWgoEjPktSyG-juAd6e8NM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9icmFu/ZGVwcy5jb20vbG9n/by1kb3dubG9hZC9M/L0xJQy1sb2dvLXZl/Y3Rvci0wMS5zdmc.svg",
-            "alt_text": "Lic-Logo"
+            "url": "https://api.qa-inji1.mosip.net/inji/mosip-logo.png",
+            "alt_text": "MOSIP-Logo"
           },
           "title": "Download via LIC",
           "description": "Enter your policy number to download your card.",
@@ -23,7 +23,7 @@
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.injiweb.host}/authorize",
       "authorization_audience": "https://${mosip.esignet.injiweb.host}/v1/esignet/oauth/v2/token",
-      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/InsuranceDepartment",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/MOSIPInsurance",
       "proxy_token_endpoint": "https://${mosip.esignet.injiweb.host}/v1/esignet/oauth/v2/token",
       "credential_endpoint": "https://${mosip.api.public.host}/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "InsuranceCredential", "LifeInsuranceCredential"],
