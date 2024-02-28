@@ -1,5 +1,5 @@
 {
-  "credential_issuer": "InsuranceDepartment",
+  "credential_issuer": "MosipInsurance",
   "credential_endpoint": "https://${mosip.esignet.injiweb.host}/v1/esignet/vci/credential",
   "credentials_supported": [
     {
@@ -21,14 +21,6 @@
           "InsuranceCredential"
         ],
         "credentialSubject": {
-          "policyNumber": {
-            "display": [
-              {
-                "name": "Policy Number",
-                "locale": "en"
-              }
-            ]
-          },
           "fullName": {
             "display": [
               {
@@ -45,10 +37,10 @@
               }
             ]
           },
-          "dob": {
+          "policyNumber": {
             "display": [
               {
-                "name": "Date Of Birth",
+                "name": "Policy Number",
                 "locale": "en"
               }
             ]
@@ -68,19 +60,27 @@
                 "locale": "en"
               }
             ]
+          },
+          "dob": {
+            "display": [
+              {
+                "name": "Date Of Birth",
+                "locale": "en"
+              }
+            ]
           }
         }
       },
       "display": [
         {
-          "name": "Insurance Credential",
+          "name": "MOSIP Insurance",
           "locale": "en",
           "logo": {
-            "url": "https://image.similarpng.com/very-thumbnail/2021/06/Medical-health-care-logo-design-template-on-transparent-background-PNG.png",
+            "url": "https://api.qa-inji1.mosip.net/inji/mosip-logo.png",
             "alt_text": "insurance logo"
           },
-          "background_color": "#76b5c5",
-          "text_color": "#716E6D"
+          "background_color": "#fafcff",
+          "text_color": "#00284d"
         }
       ]
     },
@@ -103,14 +103,6 @@
           "LifeInsuranceCredential"
         ],
         "credentialSubject": {
-          "policyNumber": {
-            "display": [
-              {
-                "name": "Policy Number",
-                "locale": "en"
-              }
-            ]
-          },
           "fullName": {
             "display": [
               {
@@ -127,10 +119,10 @@
               }
             ]
           },
-          "dob": {
+          "policyNumber": {
             "display": [
               {
-                "name": "Date Of Birth",
+                "name": "Policy Number",
                 "locale": "en"
               }
             ]
@@ -150,19 +142,27 @@
                 "locale": "en"
               }
             ]
+          },
+          "dob": {
+            "display": [
+              {
+                "name": "Date Of Birth",
+                "locale": "en"
+              }
+            ]
           }
         }
       },
       "display": [
         {
-          "name": "Life Insurance Credentials",
+          "name": "Sunbird Life Insurance",
           "locale": "en",
           "logo": {
-            "url": "https://image.similarpng.com/very-thumbnail/2021/06/Family-care-logo-template-on-transparent-background-PNG.png",
-            "alt_text": "life insurance logo"
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "Sunbird life insurance logo"
           },
-          "background_color": "#B34622",
-          "text_color": "#FFFFFF"
+          "background_color": "#fefcfa",
+          "text_color": "#7C4616"
         }
       ]
     }
