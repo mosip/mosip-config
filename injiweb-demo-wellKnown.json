@@ -1,5 +1,5 @@
 {
-  "credential_issuer": "Mosip Insurance",
+  "credential_issuer": "MosipInsurance",
   "credential_endpoint": "https://${mosip.esignet.injiweb.host}/v1/esignet/vci/credential",
   "credentials_supported": [
     {
