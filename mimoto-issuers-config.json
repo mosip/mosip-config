@@ -164,7 +164,7 @@
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "شعار مربع لـ MOSIP"
           },
-          "language": "أون",
+          "language": "ar",
           "title": "تحميل بيانات اعتماد التأمين",
           "description": "قم بتنزيل بيانات الاعتماد باستخدام MOSIP UIN"
         },
@@ -174,7 +174,7 @@
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "MOSIP का एक वर्गाकार लोगो"
           },
-          "language": "एन",
+          "language": "hi",
           "title": "बीमा क्रेडेंशियल डाउनलोड करें",
           "description": "MOSIP UIN का उपयोग करके क्रेडेंशियल डाउनलोड करें"
         },
@@ -184,7 +184,7 @@
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "MOSIP ನ ಚದರ ಲೋಗೋ"
           },
-          "language": "en",
+          "language": "kn",
           "title": "ವಿಮಾ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
           "description": "MOSIP UIN ಬಳಸಿಕೊಂಡು ರುಜುವಾತುಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ"
         },
@@ -194,7 +194,7 @@
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "MOSIP இன் சதுர லோகோ"
           },
-          "language": "en",
+          "language": "ta",
           "title": "காப்பீட்டுச் சான்றுகளைப் பதிவிறக்கவும்",
           "description": "MOSIP UIN ஐப் பயன்படுத்தி நற்சான்றிதழ்களைப் பதிவிறக்கவும்"
         },
@@ -204,7 +204,7 @@
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "isang parisukat na logo ng isang MOSIP"
           },
-          "language": "en",
+          "language": "fil",
           "title": "I-download ang Mga Kredensyal ng Seguro",
           "description": "Mag-download ng mga kredensyal gamit ang MOSIP UIN"
         }
