@@ -243,7 +243,7 @@
                     "url": "https://selfservice.explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                     "alt_text": "openg2p-logo"
                 },
-                "title": "Download Beneficiary e-Card",
+                "title": "تحميل البطاقة الإلكترونية للمستفيد",
                 "description": "لبرنامج التحويل النقدي الاجتماعي OpenG2P.",
                 "language": "ar"
             },
@@ -253,7 +253,7 @@
                     "url": "https://selfservice.explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                     "alt_text": "openg2p-लोगो"
                 },
-                "title": "Download Beneficiary e-Card",
+                "title": "लाभार्थी ई-कार्ड डाउनलोड करें",
                 "description": "OpenG2P सोशल कैश ट्रांसफर प्रोग्राम के लिए।",
                 "language": "hi"
             },
@@ -263,7 +263,7 @@
                     "url": "https://selfservice.explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                     "alt_text": "openg2p-ಲೋಗೋ"
                 },
-                "title": "Download Beneficiary e-Card",
+                "title": "ಫಲಾನುಭವಿ ಇ-ಕಾರ್ಡ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
                 "description": "OpenG2P ಸಾಮಾಜಿಕ ನಗದು ವರ್ಗಾವಣೆ ಕಾರ್ಯಕ್ರಮಕ್ಕಾಗಿ.",
                 "language": "kn"
             },
@@ -273,7 +273,7 @@
                     "url": "https://selfservice.explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                     "alt_text": "openg2p-லோகோ"
                 },
-                "title": "Download Beneficiary e-Card",
+                "title": "பயனாளியின் மின் அட்டையைப் பதிவிறக்கவும்",
                 "description": "OpenG2P சமூக பணப் பரிமாற்றத் திட்டத்திற்கு.",
                 "language": "ta"
             },
@@ -283,7 +283,7 @@
                     "url": "https://selfservice.explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                     "alt_text": "open2p-logo"
                 },
-                "title": "Download Beneficiary e-Card",
+                "title": "I-download ang e-Card ng Benepisyaryo",
                 "description": "Para sa OpenG2P Social Cash Transfer Program.",
                 "language": "fil"
             }
