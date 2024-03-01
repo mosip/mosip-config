@@ -223,6 +223,85 @@
       "credential_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "InsuranceCredential"],
       "credential_audience": "https://${mosip.esignet.host}"
+    },
+    {
+        "credential_issuer": "OpenG2PSocialCashTransferProgram",
+        "display": [
+            {
+                "name": "OpenG2PSocialCashTransferProgram",
+                "logo": {
+                    "url": "https://selfservice.explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
+                    "alt_text": "openg2p-logo"
+                },
+                "title": "Download Beneficiary e-Card",
+                "description": "For OpenG2P Social Cash Transfer Programme.",
+                "language": "en"
+            },
+            {
+                "name": "OpenG2PSocialCashTransferProgram",
+                "logo": {
+                    "url": "https://selfservice.explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
+                    "alt_text": "openg2p-logo"
+                },
+                "title": "تحميل البطاقة الإلكترونية للمستفيد",
+                "description": "لبرنامج التحويل النقدي الاجتماعي OpenG2P.",
+                "language": "ar"
+            },
+            {
+                "name": "OpenG2PSocialCashTransferProgram",
+                "logo": {
+                    "url": "https://selfservice.explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
+                    "alt_text": "openg2p-लोगो"
+                },
+                "title": "लाभार्थी ई-कार्ड डाउनलोड करें",
+                "description": "OpenG2P सोशल कैश ट्रांसफर प्रोग्राम के लिए।",
+                "language": "hi"
+            },
+            {
+                "name": "OpenG2PSocialCashTransferProgram",
+                "logo": {
+                    "url": "https://selfservice.explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
+                    "alt_text": "openg2p-ಲೋಗೋ"
+                },
+                "title": "ಫಲಾನುಭವಿ ಇ-ಕಾರ್ಡ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+                "description": "OpenG2P ಸಾಮಾಜಿಕ ನಗದು ವರ್ಗಾವಣೆ ಕಾರ್ಯಕ್ರಮಕ್ಕಾಗಿ.",
+                "language": "kn"
+            },
+            {
+                "name": "OpenG2PSocialCashTransferProgram",
+                "logo": {
+                    "url": "https://selfservice.explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
+                    "alt_text": "openg2p-லோகோ"
+                },
+                "title": "பயனாளியின் மின் அட்டையைப் பதிவிறக்கவும்",
+                "description": "OpenG2P சமூக பணப் பரிமாற்றத் திட்டத்திற்கு.",
+                "language": "ta"
+            },
+            {
+                "name": "OpenG2PSocialCashTransferProgram",
+                "logo": {
+                    "url": "https://selfservice.explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
+                    "alt_text": "open2p-logo"
+                },
+                "title": "I-download ang e-Card ng Benepisyaryo",
+                "description": "Para sa OpenG2P Social Cash Transfer Program.",
+                "language": "fil"
+            }
+        ],
+        "protocol": "OpenId4VCI",
+        "client_id": "${openg2p.mimoto.oidc.partner.clientid}",
+        "client_alias": "mpartner-default-mimotooidc",
+        "scopes_supported": ["openg2p_beneficiary_1_vc_ldp"],
+        "additional_headers": { "Accept": "application/json" },
+        ".well-known": "https://selfservice.explore.openg2p.org/api/v1/vci/.well-known/openid-credential-issuer/OpenG2PSocialCashTransferProgram",
+        "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+        "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
+        "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+        "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/OpenG2PSocialCashTransferProgram",
+        "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+        "credential_endpoint": "https://selfservice.explore.openg2p.org/api/v1/vci/credential",
+        "credential_type": ["VerifiableCredential", "OpenG2PBeneficiaryVerifiableCredential"],
+        "credential_audience": "https://explore.openg2p.org"
     }
   ]
 }
