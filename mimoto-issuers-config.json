@@ -151,78 +151,78 @@
         {
           "name": "Sunbird RC Insurance Verifiable Credential",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "a square logo of a MOSIP"
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "a square logo of a Sunbird"
           },
           "language": "en",
-          "title": "Download Insurance Credentials",
-          "description": "Download credentials using MOSIP UIN"
+          "title": "Download Sunbird Credentials",
+          "description": "Download credentials with your Policy Number"
         },
         {
           "name": "بيانات الاعتماد التي يمكن التحقق منها للتأمين Sunbird RC",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "شعار مربع لـ MOSIP"
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "شعار مربع لطائر الشمس"
           },
           "language": "ar",
-          "title": "تحميل بيانات اعتماد التأمين",
-          "description": "قم بتنزيل بيانات الاعتماد باستخدام MOSIP UIN"
+          "title": "قم بتنزيل بيانات اعتماد Sunbird",
+          "description": "قم بتنزيل بيانات الاعتماد باستخدام رقم السياسة الخاص بك"
         },
         {
           "name": "सनबर्ड आरसी बीमा सत्यापन योग्य क्रेडेंशियल",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "MOSIP का एक वर्गाकार लोगो"
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "सनबर्ड का एक चौकोर लोगो"
           },
           "language": "hi",
-          "title": "बीमा क्रेडेंशियल डाउनलोड करें",
-          "description": "MOSIP UIN का उपयोग करके क्रेडेंशियल डाउनलोड करें"
+          "title": "सनबर्ड क्रेडेंशियल्स डाउनलोड करेंं",
+          "description": "अपने पॉलिसी नंबर के साथ क्रेडेंशियल डाउनलोड करें"
         },
         {
-          "name": "ಸನ್‌ಬರ್ಡ್ ಆರ್‌ಸಿ ವಿಮೆ ಪರಿಶೀಲಿಸಬಹುದಾದ ರುಜುವಾತು",
+          "name": "ಸನ್ಬರ್ಡ್ ಆರ್ಸಿ ವಿಮೆ ಪರಿಶೀಲಿಸಬಹುದಾದ ರುಜುವಾತು",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "MOSIP ನ ಚದರ ಲೋಗೋ"
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "ಸನ್ ಬರ್ಡ್ ನ ಚೌಕಾಕಾರದ ಲೋಗೋ"
           },
           "language": "kn",
-          "title": "ವಿಮಾ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
-          "description": "MOSIP UIN ಬಳಸಿಕೊಂಡು ರುಜುವಾತುಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ"
+          "title": "ಸನ್ಬರ್ಡ್ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
+          "description": "ನಿಮ್ಮ ಪಾಲಿಸಿ ಸಂಖ್ಯೆಯೊಂದಿಗೆ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ"
         },
         {
           "name": "Sunbird RC இன்சூரன்ஸ் சரிபார்க்கக்கூடிய நற்சான்றிதழ்",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "MOSIP இன் சதுர லோகோ"
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "சூரிய பறவையின் சதுர சின்னம்"
           },
           "language": "ta",
-          "title": "காப்பீட்டுச் சான்றுகளைப் பதிவிறக்கவும்",
-          "description": "MOSIP UIN ஐப் பயன்படுத்தி நற்சான்றிதழ்களைப் பதிவிறக்கவும்"
+          "title": "Sunbird சான்றுகளைப் பதிவிறக்கவும்",
+          "description": "உங்கள் பாலிசி எண்ணுடன் நற்சான்றிதழ்களைப் பதிவிறக்கவும்"
         },
         {
           "name": "Kredensyal na Nabe-verify ng Sunbird RC Insurance",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "isang parisukat na logo ng isang MOSIP"
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "isang parisukat na logo ng isang Sunbird"
           },
           "language": "fil",
-          "title": "I-download ang Mga Kredensyal ng Seguro",
-          "description": "Mag-download ng mga kredensyal gamit ang MOSIP UIN"
+          "title": "I-download ang Mga Kredensyal ng Sunbird",
+          "description": "Mag-download ng mga kredensyal gamit ang iyong Numero ng Patakaran"
         }
       ],
       "protocol": "OpenId4VCI",
-      "client_id": "${mimoto.oidc.partner.clientid}",
-      "client_alias": "mpartner-default-mimotooidc",
+      "client_id": "${mimoto.oidc.sunbird.partner.clientid}",
+      "client_alias": "esignet-sunbird-partner",
       "scopes_supported": ["sunbird_rc_insurance_vc_ldp"],
       "additional_headers": { "Accept": "application/json" },
-      ".well-known": "https://esignet-insurance.dev1.mosip.net/.well-known/openid-credential-issuer",
+      ".well-known": "https://${mosip.esignet.mock.host}/.well-known/openid-credential-issuer",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
-      "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
-      "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "authorization_endpoint": "https://${mosip.esignet.mock.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.mock.host}/v1/esignet/oauth/v2/token",
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird",
-      "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
-      "credential_endpoint": "https://esignet-insurance.dev1.mosip.net/v1/esignet/vci/credential",
+      "proxy_token_endpoint": "https://${mosip.esignet.mock.host}/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "https://${mosip.esignet.mock.host}/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "InsuranceCredential"],
-      "credential_audience": "https://${mosip.esignet.host}"
+      "credential_audience": "https://${mosip.esignet.mock.host}"
     }
   ]
 }
