@@ -151,8 +151,8 @@
         {
           "name": "Sunbird RC Insurance Verifiable Credential",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "a square logo of a MOSIP"
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "a square logo of a Sunbird"
           },
           "language": "en",
           "title": "Download Insurance Credentials",
@@ -161,8 +161,8 @@
         {
           "name": "بيانات الاعتماد التي يمكن التحقق منها للتأمين Sunbird RC",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "شعار مربع لـ MOSIP"
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "شعار مربع لـ Sunbird"
           },
           "language": "ar",
           "title": "تحميل بيانات اعتماد التأمين",
@@ -171,8 +171,8 @@
         {
           "name": "सनबर्ड आरसी बीमा सत्यापन योग्य क्रेडेंशियल",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "MOSIP का एक वर्गाकार लोगो"
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "Sunbird का एक वर्गाकार लोगो"
           },
           "language": "hi",
           "title": "बीमा क्रेडेंशियल डाउनलोड करें",
@@ -181,8 +181,8 @@
         {
           "name": "ಸನ್‌ಬರ್ಡ್ ಆರ್‌ಸಿ ವಿಮೆ ಪರಿಶೀಲಿಸಬಹುದಾದ ರುಜುವಾತು",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "MOSIP ನ ಚದರ ಲೋಗೋ"
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "Sunbird ನ ಚದರ ಲೋಗೋ"
           },
           "language": "kn",
           "title": "ವಿಮಾ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
@@ -191,8 +191,8 @@
         {
           "name": "Sunbird RC இன்சூரன்ஸ் சரிபார்க்கக்கூடிய நற்சான்றிதழ்",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "MOSIP இன் சதுர லோகோ"
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "Sunbird இன் சதுர லோகோ"
           },
           "language": "ta",
           "title": "காப்பீட்டுச் சான்றுகளைப் பதிவிறக்கவும்",
@@ -201,8 +201,8 @@
         {
           "name": "Kredensyal na Nabe-verify ng Sunbird RC Insurance",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "isang parisukat na logo ng isang MOSIP"
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "isang parisukat na logo ng isang Sunbird"
           },
           "language": "fil",
           "title": "I-download ang Mga Kredensyal ng Seguro",
