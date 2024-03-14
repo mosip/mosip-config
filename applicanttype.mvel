@@ -186,7 +186,8 @@ def getApplicantType() {
   } else if (itc == Resident && genderType == Others && ageCode == MINOR && !isBioExPresent) {
     return "015";
   }
-  
+
   
   return "000";
 }
+# Made changes as adult and child were given the same applicant type code
