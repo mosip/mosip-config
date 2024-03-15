@@ -190,4 +190,4 @@ def getApplicantType() {
   
   return "000";
 }
-# Made changes as adult and child were given the same applicant type code
+
