@@ -105,25 +105,37 @@ def getApplicantType() {
     return "001";
   } else if (itc == NonResident && genderType == MALE && ageCode == ADULT && !isBioExPresent) {
     return "002";
+  } else if (itc == NonResident && genderType == MALE && ageCode == MINOR && !isBioExPresent) {
+    return "002";
   } else if (itc == Resident && genderType == MALE && ageCode == CHILD && !isBioExPresent) {
     return "003";
   } else if (itc == Resident && genderType == MALE && ageCode == ADULT && !isBioExPresent) {
+    return "004";
+  } else if (itc == Resident && genderType == MALE && ageCode == MINOR && !isBioExPresent) {
     return "004";
   } else if (itc == NonResident && genderType == FEMALE && ageCode == CHILD && !isBioExPresent) {
     return "005";
   } else if (itc == NonResident && genderType == FEMALE && ageCode == ADULT && !isBioExPresent) {
     return "006";
+  } else if (itc == NonResident && genderType == FEMALE && ageCode == MINOR && !isBioExPresent) {
+    return "006";
   } else if (itc == Resident && genderType == FEMALE && ageCode == CHILD && !isBioExPresent) {
     return "007";
   } else if (itc == Resident && genderType == FEMALE && ageCode == ADULT && !isBioExPresent) {
+    return "008";
+  } else if (itc == Resident && genderType == FEMALE && ageCode == MINOR && !isBioExPresent) {
     return "008";
   } else if (itc == NonResident && genderType == Others && ageCode == CHILD && !isBioExPresent) {
     return "005";
   } else if (itc == NonResident && genderType == Others && ageCode == ADULT && !isBioExPresent) {
     return "006";
+  } else if (itc == NonResident && genderType == Others && ageCode == MINOR && !isBioExPresent) {
+    return "006";
   } else if (itc == Resident && genderType == Others && ageCode == CHILD && !isBioExPresent) {
     return "007";
   } else if (itc == Resident && genderType == Others && ageCode == ADULT && !isBioExPresent) {
+    return "008";
+  } else if (itc == Resident && genderType == Others && ageCode == MINOR && !isBioExPresent) {
     return "008";
   } else if (itc == NonResident && genderType == MALE && ageCode == CHILD && isBioExPresent) {
     return "009";
@@ -168,25 +180,6 @@ def getApplicantType() {
   } else if (itc == Resident && genderType == Others && ageCode == MINOR && isBioExPresent) {
     return "015";
   }
-  
-  else if (itc == NonResident && genderType == MALE && ageCode == MINOR && !isBioExPresent) {
-    return "014";
-  } else if (itc == Resident && genderType == MALE && ageCode == MINOR && !isBioExPresent) {
-    return "015";
-  }
-  
-   else if (itc == NonResident && genderType == FEMALE && ageCode == MINOR && !isBioExPresent) {
-    return "014";
-  } else if (itc == Resident && genderType == FEMALE && ageCode == MINOR && !isBioExPresent) {
-    return "015";
-  }
-  
-  else if (itc == NonResident && genderType == Others && ageCode == MINOR && !isBioExPresent) {
-    return "014";
-  } else if (itc == Resident && genderType == Others && ageCode == MINOR && !isBioExPresent) {
-    return "015";
-  }
-  
   
   return "000";
 }
