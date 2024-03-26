@@ -76,7 +76,7 @@
           "name": "MOSIP Insurance",
           "locale": "en",
           "logo": {
-            "url": "https://api.collab.mosip.net/inji/mosip-logo.png",
+            "url": "https://api.qa-inji.mosip.net/inji/mosip-logo.png",
             "alt_text": "insurance logo"
           },
           "background_color": "#fafcff",
