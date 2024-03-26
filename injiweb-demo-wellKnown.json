@@ -1,5 +1,5 @@
 {
-  "credential_issuer": "MosipInsurance",
+  "credential_issuer": "Sunbird",
   "credential_endpoint": "https://${mosip.esignet.injiweb.host}/v1/esignet/vci/credential",
   "credentials_supported": [
     {
@@ -76,7 +76,7 @@
           "name": "MOSIP Insurance",
           "locale": "en",
           "logo": {
-            "url": "https://api.qa-inji1.mosip.net/inji/mosip-logo.png",
+            "url": "https://api.collab.mosip.net/inji/mosip-logo.png",
             "alt_text": "insurance logo"
           },
           "background_color": "#fafcff",

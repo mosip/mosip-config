@@ -6,7 +6,7 @@
         {
           "name": "MOSIP Insurance",
           "logo": {
-            "url": "https://api.qa-inji1.mosip.net/inji/mosip-logo.png",
+            "url": "https://api.collab.mosip.net/inji/mosip-logo.png",
             "alt_text": "MOSIP-Logo"
           },
           "title": "Download via LIC",
@@ -35,7 +35,7 @@
         {
           "name": "MOSIP National ID",
           "logo": {
-            "url": "https://api.qa-inji1.mosip.net/inji/mosip-logo.png",
+            "url": "https://api.collab.mosip.net/inji/mosip-logo.png",
             "alt_text": "MOSIP-Logo"
           },
           "title": "Download via LIC",
