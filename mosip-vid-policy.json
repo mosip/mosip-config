@@ -6,7 +6,7 @@
                 "transactionsAllowed": null,
                 "instancesAllowed": 2,
                 "autoRestoreAllowed": true,
-                "restoreOnAction": "REVOKED"
+                "restoreOnAction": "REGENERATE"
             }
         },
         {
