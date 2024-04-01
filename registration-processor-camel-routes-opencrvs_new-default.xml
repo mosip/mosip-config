@@ -154,7 +154,11 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
 		    <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['EXCEPTION_BIOMETRICS'] == 'LL,LR,LM,LI,LT,RL,RR,RM,RI,RT,LE,RE' &amp;&amp;  @['isValid'] == true &amp;&amp; @['internalError'] == false))]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT')]</jsonpath>
+            <to uri="eventbus://verification-bus-in" />
+         </when>
+		  <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['EXCEPTION_BIOMETRICS'] == 'LL,LR,LM,LI,LT,RL,RR,RM,RI,RT,LE,RE' &amp;&amp;  @['isValid'] == true &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="eventbus://verification-bus-in" />
          </when>
 		  <when>
