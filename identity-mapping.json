@@ -15,17 +15,17 @@
         "age": {
             "value": "age"
         },
-        "introducerRID": {
-            "value": "introducerRID"
+        "parentOrGuardianRID": {
+            "value": "parentOrGuardianRID"
         },
-        "introducerUIN": {
-            "value": "introducerUIN"
+        "parentOrGuardianUIN": {
+            "value": "parentOrGuardianUIN"
         },
-        "introducerVID": {
-            "value": "introducerVID"
+        "parentOrGuardianVID": {
+            "value": "parentOrGuardianVID"
         },
-        "introducerName": {
-            "value": "introducerName"
+        "parentOrGuardianName": {
+            "value": "parentOrGuardianName"
         },
         "phone": {
             "value": "phone"
@@ -42,11 +42,14 @@
         "uin": {
             "value": "UIN"
         },
+        "existingUin": {
+            "value": "existingUin"
+        },
         "individualBiometrics": {
             "value": "individualBiometrics"
         },
-        "introducerBiometrics": {
-            "value": "introducerBiometrics"
+        "parentOrGuardianBiometrics": {
+            "value": "parentOrGuardianBiometrics"
         },
         "individualAuthBiometrics": {
             "value": "individualAuthBiometrics"
@@ -64,28 +67,43 @@
             "value": "preferredLang"
         },
         "locationHierarchyForProfiling": {
-            "value": "preProvince,preZipCode"
+            "value": "permanentState,PermanentPostalcode"
         },
-        "addressLine1": {
-            "value": "addressLine1"
+        "perAddLine1": {
+            "value": "perAddLine1"
         },
-        "addressLine2": {
-            "value": "addressLine2"
+        "perAddLine2": {
+            "value": "perAddLine2"
+        },
+        "perAddLine3": {
+            "value": "perAddLine3"
+        },
+        "perAddLine4": {
+            "value": "perAddLine4"
+        },
+        "perAddLine5": {
+            "value": "perAddLine5"
         },
         "location1": {
-            "value": "preProvince"
+            "value": "permanentState"
         },
         "location2": {
-            "value": "preLocality"
+            "value": "permanentDistrict"
         },
         "location3": {
-            "value": "preMunicipality"
+            "value": "permanentMuncipality"
+        },
+        "location4": {
+            "value": "permanentLocality"
+        },
+        "location5": {
+            "value": "permanentStreet"
         },
         "postalCode": {
-            "value": "preZipCode"
+            "value": "PermanentPostalcode"
         },
         "fullAddress": {
-            "value": "addressLine1,addressLine2,preProvince,preLocality,preMunicipality,preZipCode"
+            "value": "perAddLine1,perAddLine2,permanentState,permanentDistrict,permanentMuncipality,permanentLocality,permanentStreet,PermanentPostalcode"
         }
     },
     "metaInfo": {
@@ -96,7 +114,7 @@
     },
     "documents": {
         "poa": {
-            "value": "proofOfAddress"
+            "value": "proofOfResidency"
         },
         "poi": {
             "value": "proofOfIdentity"
@@ -106,6 +124,9 @@
         },
         "pob": {
             "value": "proofOfDateOfBirth"
+        },
+        "poc": {
+            "value": "proofofConsent"
         },
         "poe": {
             "value": "proofOfException"
