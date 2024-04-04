@@ -30,8 +30,8 @@
         "phone": {
             "value": "phone"
         },
-        "NID": {
-            "value": "NID"
+        "nid": {
+            "value": "nid"
         },
         "phoneNumber": {
             "value": "phone"
