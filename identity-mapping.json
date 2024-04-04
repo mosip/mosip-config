@@ -66,9 +66,6 @@
         "residenceStatus": {
             "value": "residenceStatus"
         },
-        "preferredLanguage": {
-            "value": "preferredLang"
-        },
         "locationHierarchyForProfiling": {
             "value": "permanentState,PermanentPostalcode"
         },
@@ -102,7 +99,7 @@
         "location5": {
             "value": "permanentStreet"
         },
-        "postalCode": {
+        "location6": {
             "value": "PermanentPostalcode"
         },
         "fullAddress": {
@@ -136,7 +133,7 @@
         }
     },
     "attributeUpdateCountLimit": {
-		"firstName": 2,
+		"firstName,lastName": 2,
 		"gender": 2,
 		"dateOfBirth": 2
 	}
