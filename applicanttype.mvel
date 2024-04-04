@@ -186,6 +186,9 @@ def getApplicantType() {
   } else if (itc == Resident && genderType == Others && ageCode == MINOR && !isBioExPresent) {
     return "015";
   }
+  else if ( genderType == MALE && ageCode == ADULT && isBioExPresent) {
+    return "004";
+  }
 
   
   return "000";
