@@ -15,16 +15,16 @@
         "age": {
             "value": "age"
         },
-        "parentOrGuardianRID": {
+        "introducerRID": {
             "value": "parentOrGuardianRID"
         },
-        "parentOrGuardianUIN": {
+        "introducerUIN": {
             "value": "parentOrGuardianUIN"
         },
-        "parentOrGuardianVID": {
+        "introducerVID": {
             "value": "parentOrGuardianVID"
         },
-        "parentOrGuardianName": {
+        "introducerName": {
             "value": "parentOrGuardianName"
         },
         "phone": {
@@ -133,7 +133,7 @@
         }
     },
     "attributeUpdateCountLimit": {
-		"firstName,lastName": 2,
+		"firstName": 2,
 		"gender": 2,
 		"dateOfBirth": 2
 	}
