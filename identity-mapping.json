@@ -3,6 +3,9 @@
         "IDSchemaVersion": {
             "value": "IDSchemaVersion"
         },
+	"selectedHandles" : {
+			"value" : "selectedHandles"
+	},
         "name": {
             "value": "firstName,lastName"
         },
@@ -51,7 +54,7 @@
         "individualBiometrics": {
             "value": "individualBiometrics"
         },
-        "parentOrGuardianBiometrics": {
+        "introducerBiometrics": {
             "value": "parentOrGuardianBiometrics"
         },
         "individualAuthBiometrics": {
@@ -67,7 +70,7 @@
             "value": "residenceStatus"
         },
         "locationHierarchyForProfiling": {
-            "value": "permanentState,PermanentPostalcode"
+            "value": "permanentState,permanentPostalcode"
         },
         "perAddLine1": {
             "value": "perAddLine1"
@@ -100,12 +103,15 @@
             "value": "permanentStreet"
         },
         "location6": {
-            "value": "PermanentPostalcode"
+            "value": "permanentPostalcode"
         },
         "fullAddress": {
-            "value": "perAddLine1,perAddLine2,permanentState,permanentDistrict,permanentMuncipality,permanentLocality,permanentStreet,PermanentPostalcode"
-        }
-    },
+            "value": "perAddLine1,perAddLine2,permanentState,permanentDistrict,permanentMuncipality,permanentLocality,permanentStreet,permanentPostalcode"
+        },
+	"bestTwoFingers": {
+			"value": "bestTwoFingers"
+		}
+    },    
     "metaInfo": {
         "value": "metaInfo"
     },
