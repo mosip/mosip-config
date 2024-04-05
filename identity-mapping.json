@@ -44,10 +44,7 @@
         },
         "uin": {
             "value": "UIN"
-        },
-        "existingid": {
-            "value": "existingid"
-        },
+        },        
         "individualBiometrics": {
             "value": "individualBiometrics"
         },
