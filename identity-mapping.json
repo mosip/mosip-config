@@ -72,19 +72,19 @@
         "locationHierarchyForProfiling": {
             "value": "permanentState,permanentPostalcode"
         },
-        "perAddLine1": {
+        "addressLine1": {
             "value": "perAddLine1"
         },
-        "perAddLine2": {
+        "addressLine2": {
             "value": "perAddLine2"
         },
-        "perAddLine3": {
+        "addressLine3": {
             "value": "perAddLine3"
         },
-        "perAddLine4": {
+        "addressLine4": {
             "value": "perAddLine4"
         },
-        "perAddLine5": {
+        "addressLine5": {
             "value": "perAddLine5"
         },
         "location1": {
