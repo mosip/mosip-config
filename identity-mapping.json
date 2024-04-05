@@ -77,13 +77,7 @@
         },
         "addressLine3": {
             "value": "perAddLine3"
-        },
-        "addressLine4": {
-            "value": "perAddLine4"
-        },
-        "addressLine5": {
-            "value": "perAddLine5"
-        },
+        },        
         "location1": {
             "value": "permanentState"
         },
@@ -95,13 +89,7 @@
         },
         "location4": {
             "value": "permanentLocality"
-        },
-        "Street": {
-            "value": "permanentStreet"
-        },
-        "Postalcode": {
-            "value": "permanentPostalcode"
-        },
+        },        
         "fullAddress": {
             "value": "perAddLine1,perAddLine2,permanentState,permanentDistrict,permanentMuncipality,permanentLocality,permanentStreet,permanentPostalcode"
         },
