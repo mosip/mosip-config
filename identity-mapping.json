@@ -33,9 +33,6 @@
         "phone": {
             "value": "phone"
         },
-        "nid": {
-            "value": "nid"
-        },
         "phoneNumber": {
             "value": "phone"
         },
@@ -99,10 +96,10 @@
         "location4": {
             "value": "permanentLocality"
         },
-        "location5": {
+        "Street": {
             "value": "permanentStreet"
         },
-        "location6": {
+        "Postalcode": {
             "value": "permanentPostalcode"
         },
         "fullAddress": {
