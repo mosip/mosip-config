@@ -1,0 +1,41 @@
+{
+  "issuers": [
+    {
+      "credential_issuer": "Mosip",
+      "display": [
+        {
+          "name": "UIN, VID, AID",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
+            "alt_text": "digits-icon"
+          },
+          "language": "en"
+        }
+      ],
+      "protocol": "OTP"
+    },
+    {
+      "credential_issuer": "ESignet",
+      "display": [
+        {
+          "name": "e-Signet",
+          "logo": {
+            "url": "https://${mosip.esignet.host}/logo.png",
+            "alt_text": "esignet-logo"
+          },
+          "language": "en"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.partner.clientid}",
+      "scopes_supported": ["mosip_identity_vc_ldp"],
+      "additional_headers": { "Accept": "application/json" },
+      ".well-known": null,
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token",
+      "credential_endpoint": "https://${mosip.esignet.host}/v1/esignet/vci/credential",
+      "credential_audience": "https://${mosip.esignet.host}/v1/esignet"
+    }
+  ]
+}
