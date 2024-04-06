@@ -62,7 +62,7 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://esignet.dev1.mosip.net/logo.png",
+            "url": "https://${mosip.api.public.host}/logo.png",
             "alt_text": "esignet-logo"
           },
           "title": "Download via e-Signet",
@@ -72,7 +72,7 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://esignet.dev1.mosip.net/logo.png",
+            "url": "https://${mosip.api.public.host}/logo.png",
             "alt_text": "esignet-logo"
           },
           "title": "e-Signet التنزيل عبر",
@@ -92,7 +92,7 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://esignet.dev1.mosip.net/logo.png",
+            "url": "https://${mosip.api.public.host}/logo.png",
             "alt_text": "esignet-ಲೋಗೋ"
           },
           "title": "ಇ-ಸಿಗ್ನೆಟ್ ಮೂಲಕ ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
@@ -102,7 +102,7 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://esignet.dev1.mosip.net/logo.png",
+            "url": "https://${mosip.api.public.host}/logo.png",
             "alt_text": "esignet-லோகோ"
           },
           "title": "இ-சிக்னெட் மூலம் பதிவிறக்கம் செய்யவும்",
@@ -121,16 +121,16 @@
       },
       ".well-known": null,
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
-      "authorization_endpoint": "https://esignet.dev1.mosip.net/authorize",
+      "authorization_endpoint": "https://${mosip.api.public.host}/authorize",
       "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
-      "proxy_token_endpoint": "https://esignet-mock.dev1.mosip.net/v1/esignet/oauth/token",
+      "proxy_token_endpoint": "https://esignet-mock.tfgov.idecode.link/v1/esignet/oauth/token",
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/ESignet",
-      "credential_endpoint": "https://api-internal.dev1.mosip.net/v1/esignet/vci/credential",
+      "credential_endpoint": "https://api-internal.tfgov.idecode.link/v1/esignet/vci/credential",
       "credential_type": [
         "VerifiableCredential",
         "MOSIPVerifiableCredential"
       ],
-      "credential_audience": "https://esignet.dev1.mosip.net/v1/esignet"
+      "credential_audience": "https://esignet.tfgov.idecode.link/v1/esignet"
     },
     {
       "credential_issuer": "Sunbird",
@@ -155,7 +155,7 @@
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.mock.host}/authorize",
       "authorization_audience": "https://${mosip.esignet.mock.host}/v1/esignet/oauth/v2/token",
-      "proxy_token_endpoint": "https://esignet-mock.dev1.mosip.net/v1/esignet/oauth/token",
+      "proxy_token_endpoint": "https://esignet-mock.tfgov.idecode.link/v1/esignet/oauth/token",
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird",
       "credential_endpoint": "https://${mosip.esignet.mock.host}/v1/esignet/vci/credential",
       "credential_type": [
