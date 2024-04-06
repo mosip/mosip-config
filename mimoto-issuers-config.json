@@ -7,37 +7,37 @@
           "name": "UIN, VID, AID",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
-            "alt_text": "digits-logo"
+            "alt_text": "digits-icon"
           },
           "title": "Download via UIN, VID, AID",
-          "description": "Enter your national ID to download your card.",
+          "description":"Enter your national ID to download your card.",
           "language": "en"
         },
         {
           "name": "UIN, VID, AID",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
-            "alt_text": "أرقام الشعار"
+            "alt_text": "رمز الأرقام"
           },
           "title": "التنزيل عبر UIN, VID, AID",
           "description": "أدخل رقم الهوية الوطنية الخاص بك لتنزيل بطاقتك.",
-          "language": "ar"
+          "language": "en"
         },
         {
           "name": "UIN, VID, AID",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
-            "alt_text": "अंक-लोगो"
+            "alt_text": "अंक-आइकन"
           },
           "title": "UIN, VID, AID के माध्यम से डाउनलोड करे",
-          "description": "अपना कार्ड डाउनलोड करने के लिए अपनी राष्ट्रीय आईडी दर्ज करें।",
+          "description":"अपना कार्ड डाउनलोड करने के लिए अपनी राष्ट्रीय आईडी दर्ज करें।",
           "language": "hi"
         },
         {
           "name": "UIN, VID, AID",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
-            "alt_text": "ಅಂಕೆಗಳು-ಲೋಗೋ"
+            "alt_text": "ಅಂಕಿ-ಐಕಾನ್"
           },
           "title": "UIN, VID, AID ಮೂಲಕ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
           "description": "ನಿಮ್ಮ ಕಾರ್ಡ್ ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ನಿಮ್ಮ ರಾಷ್ಟ್ರೀಯ ID ಅನ್ನು ನಮೂದಿಸಿ.",
@@ -47,11 +47,21 @@
           "name": "UIN, VID, AID",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
-            "alt_text": "இலக்கங்கள்-லோகோ"
+            "alt_text": "இலக்கங்கள்-ஐகான்"
           },
           "title": "UIN, VID, AID மூலம் பதிவிறக்கவும்",
-          "description": "உங்கள் கார்டைப் பதிவிறக்க உங்கள் தேசிய ஐடியை உள்ளிடவும்.",
+          "description":"உங்கள் கார்டைப் பதிவிறக்க உங்கள் தேசிய ஐடியை உள்ளிடவும்.",
           "language": "ta"
+        },
+        {
+          "name": "UIN, VID, AID",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
+            "alt_text": "digits-icon"
+          },
+          "title": "I-download sa pamamagitan ng UIN, VID, AID",
+          "description":"Ilagay ang iyong national ID para i-download ang iyong card.",
+          "language": "fil"
         }
       ],
       "protocol": "OTP"
@@ -62,7 +72,7 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://${mosip.api.public.host}/logo.png",
+            "url": "https://${mosip.esignet.host}/logo.png",
             "alt_text": "esignet-logo"
           },
           "title": "Download via e-Signet",
@@ -72,27 +82,27 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://${mosip.api.public.host}/logo.png",
+            "url": "https://${mosip.esignet.host}/logo.png",
             "alt_text": "esignet-logo"
           },
           "title": "e-Signet التنزيل عبر",
-          "description": "أدخل رقم الهوية الوطنية الخاص بك لتنزيل بطاقتك.",
+          "description": "أدخل رقم الهوية الوطنية الخاص بك لتنزيل بطاقتك." ,
           "language": "ar"
         },
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://esignet.dev1.mosip.net/logo.png",
+            "url": "https://${mosip.esignet.host}/logo.png",
             "alt_text": "esignet-लोगो"
           },
           "title": "ई-हस्ताक्षर के माध्यम से डाउनलोड करें",
-          "description": "अपना कार्ड डाउनलोड करने के लिए अपनी राष्ट्रीय आईडी दर्ज करें।",
+          "description":"अपना कार्ड डाउनलोड करने के लिए अपनी राष्ट्रीय आईडी दर्ज करें।",
           "language": "hi"
         },
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://${mosip.api.public.host}/logo.png",
+            "url": "https://${mosip.esignet.host}/logo.png",
             "alt_text": "esignet-ಲೋಗೋ"
           },
           "title": "ಇ-ಸಿಗ್ನೆಟ್ ಮೂಲಕ ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
@@ -102,67 +112,34 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://${mosip.api.public.host}/logo.png",
+            "url": "https://${mosip.esignet.host}/logo.png",
             "alt_text": "esignet-லோகோ"
           },
           "title": "இ-சிக்னெட் மூலம் பதிவிறக்கம் செய்யவும்",
-          "description": "உங்கள் கார்டைப் பதிவிறக்க உங்கள் தேசிய ஐடியை உள்ளிடவும்.",
+          "description":"உங்கள் கார்டைப் பதிவிறக்க உங்கள் தேசிய ஐடியை உள்ளிடவும்.",
           "language": "ta"
-        }
-      ],
-      "protocol": "OpenId4VCI",
-      "client_id": "7-*****************IWRDAg1x-M",
-      "client_alias": "mpartner-default-mimotooidc",
-      "scopes_supported": [
-        "mosip_identity_vc_ldp"
-      ],
-      "additional_headers": {
-        "Accept": "application/json"
-      },
-      ".well-known": null,
-      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
-      "authorization_endpoint": "https://${mosip.api.public.host}/authorize",
-      "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
-      "proxy_token_endpoint": "https://esignet-mock.tfgov.idecode.link/v1/esignet/oauth/token",
-      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/ESignet",
-      "credential_endpoint": "https://api-internal.tfgov.idecode.link/v1/esignet/vci/credential",
-      "credential_type": [
-        "VerifiableCredential",
-        "MOSIPVerifiableCredential"
-      ],
-      "credential_audience": "https://esignet.tfgov.idecode.link/v1/esignet"
-    },
-    {
-      "credential_issuer": "Sunbird",
-      "display": [
+        },
         {
-          "name": "Sunbird RC Insurance Verifiable Credential",
+          "name": "e-Signet",
           "logo": {
-            "url": "https://sunbird.org/images/sunbird-logo-new.png",
-            "alt_text": "a square logo of a Sunbird"
+            "url": "https://${mosip.esignet.host}/logo.png",
+            "alt_text": "logo-signet"
           },
-          "title": "Download Sunbird Credential",
-          "description": "Enter your Policy Number to download your card.",
-          "language": "en"
+          "title": "I-download sa pamamagitan ng e-Signet",
+          "description":"Ilagay ang iyong national ID para i-download ang iyong card.",
+          "language": "fil"
         }
       ],
       "protocol": "OpenId4VCI",
       "client_id": "${mimoto.oidc.partner.clientid}",
-      "client_alias": "esignet-sunbird-partner",
-      "scopes_supported": ["sunbird_rc_insurance_vc_ldp"],
+      "scopes_supported": ["mosip_identity_vc_ldp"],
       "additional_headers": { "Accept": "application/json" },
       ".well-known": null,
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
-      "authorization_endpoint": "https://${mosip.esignet.mock.host}/authorize",
-      "authorization_audience": "https://${mosip.esignet.mock.host}/v1/esignet/oauth/v2/token",
-      "proxy_token_endpoint": "https://esignet-mock.tfgov.idecode.link/v1/esignet/oauth/token",
-      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird",
-      "credential_endpoint": "https://${mosip.esignet.mock.host}/v1/esignet/vci/credential",
-      "credential_type": [
-        "VerifiableCredential",
-        "InsuranceCredential"
-      ],
-      "credential_audience": "https://${mosip.esignet.mock.host}/v1/esignet"
+      "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token",
+      "credential_endpoint": "https://${mosip.esignet.host}/v1/esignet/vci/credential",
+      "credential_audience": "https://${mosip.esignet.host}"
     }
   ]
 }
