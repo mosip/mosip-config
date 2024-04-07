@@ -6,7 +6,7 @@
         {
           "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://api.dev1.mosip.net/inji/digit-icon.png",
+            "url": "https://api.tfgov.idencode.link/inji/digit-icon.png",
             "alt_text": "digits-logo"
           },
           "language": "en"
@@ -20,7 +20,7 @@
         {
           "name": "e-Signet",
           "logo": {
-            "url": "https://esignet.dev1.mosip.net/logo.png",
+            "url": "https://esignet.tfgov.idencode.link/logo.png",
             "alt_text": "esignet-logo"
           },
           "language": "en"
@@ -32,10 +32,10 @@
       "additional_headers": { "Accept": "application/json" },
       ".well-known": null,
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
-      "authorization_endpoint": "https://esignet.dev1.mosip.net/authorize",
-      "token_endpoint": "https://api.dev1.mosip.net/residentmobileapp/get-token",
-      "credential_endpoint": "https://api-internal.dev1.mosip.net/v1/esignet/vci/credential",
-      "credential_audience": "https://esignet.dev1.mosip.net/v1/esignet"
+      "authorization_endpoint": "https://esignet.tfgov.idencode.link/authorize",
+      "token_endpoint": "https://api.tfgov.idencode.link/residentmobileapp/get-token",
+      "credential_endpoint": "https://api-internal.tfgov.idencode.link/v1/esignet/vci/credential",
+      "credential_audience": "https://esignet.tfgov.idencode.link/v1/esignet"
     }
 
   ]
