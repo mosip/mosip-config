@@ -1,7 +1,7 @@
 {
   "issuers": [
     {
-      "credential_issuer": "MOSIP_IDA",
+      "credential_issuer": "Mosip",
       "display": [
         {
           "name": "MOSIP",
