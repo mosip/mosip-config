@@ -1,6 +1,6 @@
 {
   "credential_issuer": "Sunbird",
-  "credential_endpoint": "https://${mosip.esignet.injiweb.host}/v1/esignet/vci/credential",
+  "credential_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/vci/credential",
   "credentials_supported": [
     {
       "format": "ldp_vc",
