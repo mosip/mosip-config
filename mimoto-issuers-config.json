@@ -1,63 +1,63 @@
 {
   "issuers": [
     {
-      "credential_issuer": "Mosip",
+      "credential_issuer": "MOSIP_IDA",
       "display": [
         {
-          "name": "UIN, VID, AID",
+          "name": "MOSIP",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "mosip logo"
+            "alt_text": "a square logo of MOSIP"
           },
           "title": "Download MOSIP Credentials via OTP",
           "description":"Download credentials by providing UIN, VID or AID",
           "language": "en"
         },
         {
-          "name": "UIN, VID, AID",
+          "name": "موسيب",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "شعار موسيب"
+            "alt_text": "شعار مربع لـ MOSIP"
           },
           "title": "قم بتنزيل بيانات اعتماد MOSIP عبر OTP",
           "description": "قم بتنزيل بيانات الاعتماد من خلال توفير UIN أو VID أو AID",
           "language": "ar"
         },
         {
-          "name": "UIN, VID, AID",
+          "name": "मोसिप",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "मोसिप लोगो"
+            "alt_text": "MOSIP का एक वर्गाकार लोगो"
           },
           "title": "OTP के माध्यम से MOSIP क्रेडेंशियल डाउनलोड करें",
           "description":"यूआईएन, वीआईडी या एआईडी प्रदान करके क्रेडेंशियल डाउनलोड करें",
           "language": "hi"
         },
         {
-          "name": "UIN, VID, AID",
+          "name": "MOSIP",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "mosip ಲೋಗೋ"
+            "alt_text": "MOSIP ನ ಚದರ ಲೋಗೋ"
           },
           "title": "OTP ಮೂಲಕ MOSIP ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
           "description": "UIN, VID ಅಥವಾ AID ಒದಗಿಸುವ ಮೂಲಕ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ",
           "language": "kn"
         },
         {
-          "name": "UIN, VID, AID",
+          "name": "MOSIP",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "mosip சின்னம்"
+            "alt_text": "MOSIP இன் சதுர லோகோ"
           },
           "title": "OTP வழியாக MOSIP சான்றுகளைப் பதிவிறக்கவும்",
           "description":"UIN, VID அல்லது AID ஐ வழங்குவதன் மூலம் நற்சான்றிதழ்களைப் பதிவிறக்கவும்",
           "language": "ta"
         },
         {
-          "name": "UIN, VID, AID",
+          "name": "MOSIP",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "logo ng mosip"
+            "alt_text": "isang parisukat na logo ng MOSIP"
           },
           "title": "I-download ang Mga Kredensyal ng MOSIP sa pamamagitan ng OTP",
           "description":"Mag-download ng mga kredensyal sa pamamagitan ng pagbibigay ng UIN, VID o AID",
@@ -71,60 +71,60 @@
       "credential_issuer": "ESignet",
       "display": [
         {
-          "name": "e-Signet",
+          "name": "MOSIP",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "mosip-logo"
+            "alt_text": "a square logo of MOSIP"
           },
           "title": "Download MOSIP Credentials",
           "description": "Download credentials by providing UIN or VID",
           "language": "en"
         },
         {
-          "name": "e-Signet",
+          "name": "موسيب",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "شعار موسيب"
+            "alt_text": "شعار مربع لـ MOSIP"
           },
           "title": "قم بتنزيل بيانات اعتماد MOSIP",
           "description": "توفير UIN أو VIDقم بتنزيل بيانات الاعتماد عن طريق" ,
           "language": "ar"
         },
         {
-          "name": "e-Signet",
+          "name": "मोसिप",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "मोसिप लोगो"
+            "alt_text": "MOSIP का एक वर्गाकार लोगो"
           },
           "title": "MOSIP क्रेडेंशियल डाउनलोड करेंं",
           "description":"यूआईएन या वीआईडी प्रदान करके क्रेडेंशियल डाउनलोड करें",
           "language": "hi"
         },
         {
-          "name": "e-Signet",
+          "name": "MOSIP",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "mosip ಲೋಗೋ"
+            "alt_text": "MOSIP ನ ಚದರ ಲೋಗೋ"
           },
           "title": "MOSIP ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
           "description": "UIN ಅಥವಾ VID ಒದಗಿಸುವ ಮೂಲಕ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
           "language": "kn"
         },
         {
-          "name": "e-Signet",
+          "name": "MOSIP",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "mosip லோகோ"
+            "alt_text": "MOSIP இன் சதுர லோகோ"
           },
           "title": "MOSIP சான்றுகளைப் பதிவிறக்கவும்",
           "description":"UIN அல்லது VIDஐ வழங்குவதன் மூலம் நற்சான்றிதழ்களைப் பதிவிறக்கவும்",
           "language": "ta"
         },
         {
-          "name": "e-Signet",
+          "name": "MOSIP",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "logo ng mosip"
+            "alt_text": "isang parisukat na logo ng MOSIP"
           },
           "title": "I-download ang Mga Kredensyal ng MOSIP",
           "description":"Mag-download ng mga kredensyal sa pamamagitan ng pagbibigay ng UIN o VID",
@@ -151,7 +151,7 @@
       "credential_issuer": "Sunbird",
       "display": [
         {
-          "name": "Sunbird RC Insurance Verifiable Credential",
+          "name": "Sunbird",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "a square logo of a Sunbird"
@@ -161,7 +161,7 @@
           "description": "Download credentials with your Policy Number"
         },
         {
-          "name": "بيانات الاعتماد التي يمكن التحقق منها للتأمين Sunbird RC",
+          "name": "طائر الشمس",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "شعار مربع لطائر الشمس"
@@ -171,7 +171,7 @@
           "description": "قم بتنزيل بيانات الاعتماد باستخدام رقم السياسة الخاص بك"
         },
         {
-          "name": "सनबर्ड आरसी बीमा सत्यापन योग्य क्रेडेंशियल",
+          "name": "सनबर्ड",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "सनबर्ड का एक चौकोर लोगो"
@@ -181,7 +181,7 @@
           "description": "अपने पॉलिसी नंबर के साथ क्रेडेंशियल डाउनलोड करें"
         },
         {
-          "name": "ಸನ್ಬರ್ಡ್ ಆರ್ಸಿ ವಿಮೆ ಪರಿಶೀಲಿಸಬಹುದಾದ ರುಜುವಾತು",
+          "name": "ಸನ್ ಬರ್ಡ್",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "ಸನ್ ಬರ್ಡ್ ನ ಚೌಕಾಕಾರದ ಲೋಗೋ"
@@ -191,7 +191,7 @@
           "description": "ನಿಮ್ಮ ಪಾಲಿಸಿ ಸಂಖ್ಯೆಯೊಂದಿಗೆ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ"
         },
         {
-          "name": "Sunbird RC இன்சூரன்ஸ் சரிபார்க்கக்கூடிய நற்சான்றிதழ்",
+          "name": "சன்பேர்ட்",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "சூரிய பறவையின் சதுர சின்னம்"
@@ -201,7 +201,7 @@
           "description": "உங்கள் பாலிசி எண்ணுடன் நற்சான்றிதழ்களைப் பதிவிறக்கவும்"
         },
         {
-          "name": "Kredensyal na Nabe-verify ng Sunbird RC Insurance",
+          "name": "Sunbird",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "isang parisukat na logo ng isang Sunbird"
