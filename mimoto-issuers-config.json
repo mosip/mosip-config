@@ -226,6 +226,86 @@
       "credential_type": ["VerifiableCredential", "InsuranceCredential"],
       "credential_audience": "https://${mosip.esignet.insurance.host}",
       "enabled": "true"
-    }
+    },
+{
+      "credential_issuer": "Sunbird 140",
+      "display": [
+        {
+          "name": "Sunbird 140 RC Insurance Verifiable Credential",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "a square logo of a Sunbird"
+          },
+          "language": "en",
+          "title": "Download Sunbird 140 Credentials",
+          "description": "Download credentials with your Policy Number"
+        },
+        {
+          "name": "بيانات الاعتماد التي يمكن التحقق منها للتأمين Sunbird RC",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "شعار مربع لطائر الشمس"
+          },
+          "language": "ar",
+          "title": "قم بتنزيل بيانات اعتماد Sunbird",
+          "description": "قم بتنزيل بيانات الاعتماد باستخدام رقم السياسة الخاص بك"
+        },
+        {
+          "name": "सनबर्ड आरसी बीमा सत्यापन योग्य क्रेडेंशियल",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "सनबर्ड का एक चौकोर लोगो"
+          },
+          "language": "hi",
+          "title": "सनबर्ड क्रेडेंशियल्स डाउनलोड करेंं",
+          "description": "अपने पॉलिसी नंबर के साथ क्रेडेंशियल डाउनलोड करें"
+        },
+        {
+          "name": "ಸನ್ಬರ್ಡ್ ಆರ್ಸಿ ವಿಮೆ ಪರಿಶೀಲಿಸಬಹುದಾದ ರುಜುವಾತು",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "ಸನ್ ಬರ್ಡ್ ನ ಚೌಕಾಕಾರದ ಲೋಗೋ"
+          },
+          "language": "kn",
+          "title": "ಸನ್ಬರ್ಡ್ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
+          "description": "ನಿಮ್ಮ ಪಾಲಿಸಿ ಸಂಖ್ಯೆಯೊಂದಿಗೆ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ"
+        },
+        {
+          "name": "Sunbird RC இன்சூரன்ஸ் சரிபார்க்கக்கூடிய நற்சான்றிதழ்",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "சூரிய பறவையின் சதுர சின்னம்"
+          },
+          "language": "ta",
+          "title": "Sunbird சான்றுகளைப் பதிவிறக்கவும்",
+          "description": "உங்கள் பாலிசி எண்ணுடன் நற்சான்றிதழ்களைப் பதிவிறக்கவும்"
+        },
+        {
+          "name": "Kredensyal na Nabe-verify ng Sunbird RC Insurance",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "isang parisukat na logo ng isang Sunbird"
+          },
+          "language": "fil",
+          "title": "I-download ang Mga Kredensyal ng Sunbird",
+          "description": "Mag-download ng mga kredensyal gamit ang iyong Numero ng Patakaran"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.sunbird.140.partner.clientid}",
+      "client_alias": "esignet-sunbird-140-partner",
+      "scopes_supported": ["sunbird_rc_insurance_vc_ldp"],
+      "additional_headers": { "Accept": "application/json" },
+      ".well-known": "https://${mosip.esignet-140.host}/.well-known/openid-credential-issuer?version=v11",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet-140.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet-140.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird",
+      "proxy_token_endpoint": "https://${mosip.esignet-140.host}/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "https://${mosip.esignet-140.host}/v1/esignet/vci/credential",
+      "credential_type": ["VerifiableCredential", "InsuranceCredential"],
+      "credential_audience": "https://${mosip.esignet-140.host}",
+      "enabled": "true"
+    }    
   ]
 }
