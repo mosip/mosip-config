@@ -79,8 +79,8 @@
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "insurance logo"
           },
-          "background_color": "#fafcff",
-          "text_color": "#00284d"
+          "background_color": "#f2f2f2",
+          "text_color": "#00bcd4"
         }
       ]
     }, 
