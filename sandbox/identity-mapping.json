@@ -77,13 +77,32 @@
 			"value": "zone"
 		},
 		"fullAddress": {
-			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+			"value": "permanentAddressLine1,permanentAddressLine2,presentAddressLine1,city,region,province,postalCode"
 		},
 		"digitalCardAttributes": {
 			"value": "gen,fn,ln,mn,pob,ms,bt,adL1,adL2,adL3,cit,pro,poco,pobProvince,pobCountry,pobCity"
 		},
 		"bestTwoFingers": {
 			"value": "BF"
+		},
+		"birthdate": {
+			"value": "dateOfBirth"
+		},
+		"picture": {
+			"value": "face"
+		},
+		"phone_number": {
+			"value": "phone"
+		},
+		"address": {
+			"value": "permanentAddressLine1,permanentAddressLine2,presentAddressLine1,city,region,province,postalCode"
+		},
+
+		"individual_id": {
+			"value": "individual_id"
+		},
+		"street_address": {
+			"value": "permanentAddressLine1,permanentAddressLine2,presentAddressLine1"
 		}
 	},
 	"metaInfo": {
