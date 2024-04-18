@@ -92,7 +92,7 @@
 			"value": "face"
 		},
 		"phone_number": {
-			"value": "phone"
+			"value": "phone,mobileno"
 		},
 		"address": {
 			"value": "addressLine3,addressLine2,addressLine1,city,region,province,postalCode"
