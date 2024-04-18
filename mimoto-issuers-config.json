@@ -65,7 +65,7 @@
         }
       ],
       "protocol": "OTP",
-      "enabled": "false"
+      "enabled": "true"
     },
     {
       "credential_issuer": "ESignet",
@@ -145,7 +145,7 @@
       "credential_endpoint": "https://${mosip.esignet.host}/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "MOSIPVerifiableCredential"],
       "credential_audience": "https://${mosip.esignet.host}",
-      "enabled": "false"
+      "enabled": "true"
     },
     {
       "credential_issuer": "Sunbird",
@@ -225,7 +225,7 @@
       "credential_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "InsuranceCredential"],
       "credential_audience": "https://${mosip.esignet.insurance.host}",
-      "enabled": "false"
+      "enabled": "true"
     },
 {
       "credential_issuer": "Sunbird140",
@@ -305,7 +305,7 @@
       "credential_endpoint": "https://${mosip.esignet-140.host}/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "InsuranceCredential"],
       "credential_audience": "https://${mosip.esignet-140.host}",
-      "enabled": "false"
+      "enabled": "true"
     }    
   ]
 }
