@@ -296,15 +296,15 @@
       "client_alias": "esignet-sunbird-140-partner",
       "scopes_supported": ["sunbird_rc_insurance_vc_ldp"],
       "additional_headers": { "Accept": "application/json" },
-      ".well-known": "https://${mosip.esignet-140.host}/.well-known/openid-credential-issuer?version=v11",
+      ".well-known": "https://esignet-140.qa-inji.mosip.net/.well-known/openid-credential-issuer?version=v11",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
-      "authorization_endpoint": "https://${mosip.esignet-140.host}/authorize",
-      "authorization_audience": "https://${mosip.esignet-140.host}/v1/esignet/oauth/v2/token",
+      "authorization_endpoint": "https://esignet-140.qa-inji.mosip.net/authorize",
+      "authorization_audience": "https://esignet-140.qa-inji.mosip.net/v1/esignet/oauth/v2/token",
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird140",
-      "proxy_token_endpoint": "https://${mosip.esignet-140.host}/v1/esignet/oauth/v2/token",
-      "credential_endpoint": "https://${mosip.esignet-140.host}/v1/esignet/vci/credential",
+      "proxy_token_endpoint": "https://esignet-140.qa-inji.mosip.net/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "https://esignet-140.qa-inji.mosip.net/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "InsuranceCredential"],
-      "credential_audience": "https://${mosip.esignet-140.host}",
+      "credential_audience": "https://esignet-140.qa-inji.mosip.net",
       "enabled": "true"
     }    
   ]
