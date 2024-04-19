@@ -300,7 +300,7 @@
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://esignet-140.qa-inji.mosip.net/authorize",
       "authorization_audience": "https://esignet-140.qa-inji.mosip.net/v1/esignet/oauth/v2/token",
-      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird140",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird",
       "proxy_token_endpoint": "https://esignet-140.qa-inji.mosip.net/v1/esignet/oauth/v2/token",
       "credential_endpoint": "https://esignet-140.qa-inji.mosip.net/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "InsuranceCredential"],
