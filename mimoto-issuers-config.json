@@ -292,7 +292,7 @@
         }
       ],
       "protocol": "OpenId4VCI",
-      "client_id": "${mimoto.oidc.sunbird.140.partner.clientid}",
+      "client_id": "esignet-sunbird-140-partner",
       "client_alias": "esignet-sunbird-140-partner",
       "scopes_supported": ["sunbird_rc_insurance_vc_ldp"],
       "additional_headers": { "Accept": "application/json" },
