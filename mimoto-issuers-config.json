@@ -148,7 +148,7 @@
       "enabled": "true"
     },
     {
-      "credential_issuer": "Sunbird",
+      "credential_issuer": "Sunbirdtemp",
       "display": [
         {
           "name": "Sunbird RC Insurance Verifiable Credential",
@@ -228,7 +228,7 @@
       "enabled": "true"
     },
 {
-      "credential_issuer": "Sunbird140",
+      "credential_issuer": "Sunbird",
       "display": [
         {
           "name": "Sunbird 140 RC Insurance Verifiable Credential",
