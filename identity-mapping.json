@@ -113,9 +113,6 @@
         "pob": {
             "value": "proofOfDateOfBirth"
         },
-        "poc": {
-            "value": "proofofConsent"
-        },
         "poe": {
             "value": "proofOfException"
         }
