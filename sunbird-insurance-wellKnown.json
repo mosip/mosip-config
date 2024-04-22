@@ -53,7 +53,7 @@
               }
             ]
           },
-          "expiresOn": {
+          "policyExpiresOn": {
             "display": [
               {
                 "name": "Expiry Date",
