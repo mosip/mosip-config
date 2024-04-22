@@ -102,7 +102,7 @@
 			"value": "individual_id"
 		},
 		"street_address": {
-			"value": "permanentAddressLine1,permanentAddressLine2,presentAddressLine1"
+			"value": "addressLine3,addressLine2,addressLine1,permanentAddressLine1,permanentAddressLine2,presentAddressLine1"
 		}
 	},
 	"metaInfo": {
