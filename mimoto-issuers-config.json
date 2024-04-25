@@ -148,7 +148,7 @@
       "enabled": "true"
     },
     {
-      "credential_issuer": "Sunbirdtemp",
+      "credential_issuer": "Sunbird",
       "display": [
         {
           "name": "Sunbird RC Insurance Verifiable Credential",
@@ -220,7 +220,7 @@
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
       "authorization_audience": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
-      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbirdtemp",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird",
       "proxy_token_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
       "credential_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "InsuranceCredential"],
@@ -228,7 +228,7 @@
       "enabled": "true"
     },
 {
-      "credential_issuer": "Sunbird",
+      "credential_issuer": "Sunbird140",
       "display": [
         {
           "name": "Sunbird 140 RC Insurance Verifiable Credential",
@@ -300,12 +300,12 @@
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://esignet-140.qa-inji.mosip.net/authorize",
       "authorization_audience": "https://esignet-140.qa-inji.mosip.net/v1/esignet/oauth/v2/token",
-      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird140",
       "proxy_token_endpoint": "https://esignet-140.qa-inji.mosip.net/v1/esignet/oauth/v2/token",
       "credential_endpoint": "https://esignet-140.qa-inji.mosip.net/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "InsuranceCredential"],
       "credential_audience": "https://esignet-140.qa-inji.mosip.net",
-      "enabled": "true"
+      "enabled": "false"
     }    
   ]
 }
