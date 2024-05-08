@@ -16,20 +16,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <process ref="tokenGenerationProcessor" />
-            <setHeader headerName="CamelHttpMethod">
-               <constant>POST</constant>
-            </setHeader>
-            <setHeader headerName="Content-Type">
-               <constant>application/json</constant>
-            </setHeader>
-            <setHeader headerName="Cookie">
-               <simple>${header.Cookie}</simple>
-            </setHeader>
-            <setBody>
-               <simple>${bodyAs(String)}</simple>
-            </setBody>
-            <to uri="http://regproc-group2.regproc/registrationprocessor/v1/securezone/notification" />
+            <to uri="eventbus://securezone-notification-bus-in" />
          </otherwise>
       </choice>
    </route>
@@ -166,8 +153,21 @@
             <to uri="workflow-cmd://complete-as-rejected" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
-         <otherwise>
+		 <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT')]</jsonpath>
+            <to uri="eventbus://verification-bus-in" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['EXCEPTION_BIOMETRICS'] == 'LL,LR,LM,LI,LT,RL,RR,RM,RI,RT,LE,RE' &amp;&amp;  @['isValid'] == true &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="eventbus://verification-bus-in" />
+         </when>
+		  <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['EXCEPTION_BIOMETRICS'] != 'LL,LR,LM,LI,LT,RL,RR,RM,RI,RT,LE,RE' &amp;&amp; @['isValid'] == true &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="eventbus://uin-generator-bus-in" />
+	 </when>
+         <otherwise>
+           <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
