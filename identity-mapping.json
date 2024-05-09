@@ -7,7 +7,7 @@
 			"value" : "selectedHandles"
 	},
         "name": {
-            "value": "firstName,lastName"
+            "value": "fullName"
         },
         "gender": {
             "value": "gender"
@@ -64,31 +64,25 @@
             "value": "residenceStatus"
         },
         "locationHierarchyForProfiling": {
-            "value": "permanentState,permanentPostalcode"
+            "value": "provience,village"
         },
         "addressLine1": {
-            "value": "perAddLine1"
+            "value": "addressLine"
         },
         "addressLine2": {
-            "value": "perAddLine2"
-        },
-        "addressLine3": {
-            "value": "perAddLine3"
-        },        
+            "value": "addressLine1"
+        },      
         "location1": {
-            "value": "permanentState"
+            "value": "provience"
         },
         "location2": {
-            "value": "permanentDistrict"
+            "value": "city"
         },
         "location3": {
-            "value": "permanentMuncipality"
-        },
-        "location4": {
-            "value": "permanentLocality"
-        },        
+            "value": "village"
+        },       
         "fullAddress": {
-            "value": "perAddLine1,perAddLine2,permanentState,permanentDistrict,permanentMuncipality,permanentLocality,permanentStreet,permanentPostalcode"
+            "value": "addressLine,addressLine1,provience,city,village"
         },
 	"bestTwoFingers": {
 			"value": "bestTwoFingers"
