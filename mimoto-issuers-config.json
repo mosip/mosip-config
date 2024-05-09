@@ -4,7 +4,7 @@
       "credential_issuer": "MosipOtp",
       "display": [
         {
-          "name": "MOSIP",
+          "name": "MOSIP National ID",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "a square logo of MOSIP"
@@ -14,7 +14,7 @@
           "language": "en"
         },
         {
-          "name": "موسيب",
+          "name": "الهوية الوطنية MOSIP",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "شعار مربع لـ MOSIP"
@@ -24,7 +24,7 @@
           "language": "ar"
         },
         {
-          "name": "मोसिप",
+          "name": "एमओसिप राष्ट्रीय आईडी",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "MOSIP का एक वर्गाकार लोगो"
@@ -34,7 +34,7 @@
           "language": "hi"
         },
         {
-          "name": "MOSIP",
+          "name": "MOSIP ರಾಷ್ಟ್ರೀಯ ID",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "MOSIP ನ ಚದರ ಲೋಗೋ"
@@ -44,7 +44,7 @@
           "language": "kn"
         },
         {
-          "name": "MOSIP",
+          "name": "MOSIP தேசிய ஐடி",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "MOSIP இன் சதுர லோகோ"
@@ -54,7 +54,7 @@
           "language": "ta"
         },
         {
-          "name": "MOSIP",
+          "name": "MOSIP National ID",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "isang parisukat na logo ng MOSIP"
@@ -71,7 +71,7 @@
       "credential_issuer": "Mosip",
       "display": [
         {
-          "name": "MOSIP",
+          "name": "MOSIP National ID ",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "a square logo of MOSIP"
@@ -81,7 +81,7 @@
           "language": "en"
         },
         {
-          "name": "موسيب",
+          "name": "الهوية الوطنية MOSIP",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "شعار مربع لـ MOSIP"
@@ -91,7 +91,7 @@
           "language": "ar"
         },
         {
-          "name": "मोसिप",
+          "name": "एमओसिप राष्ट्रीय आईडी",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "MOSIP का एक वर्गाकार लोगो"
@@ -101,7 +101,7 @@
           "language": "hi"
         },
         {
-          "name": "MOSIP",
+          "name": "MOSIP ರಾಷ್ಟ್ರೀಯ ID",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "MOSIP ನ ಚದರ ಲೋಗೋ"
@@ -111,7 +111,7 @@
           "language": "kn"
         },
         {
-          "name": "MOSIP",
+          "name": "MOSIP தேசிய ஐடி",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "MOSIP இன் சதுர லோகோ"
@@ -121,7 +121,7 @@
           "language": "ta"
         },
         {
-          "name": "MOSIP",
+          "name": "MOSIP National ID",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "isang parisukat na logo ng MOSIP"
@@ -151,7 +151,7 @@
       "credential_issuer": "Sunbird",
       "display": [
         {
-          "name": "Sunbird",
+          "name": "Sunbird Insurance",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "a square logo of a Sunbird"
@@ -161,7 +161,7 @@
           "description": "Download credentials with your Policy Number"
         },
         {
-          "name": "طائر الشمس",
+          "name": "التأمين سنبيرد",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "شعار مربع لطائر الشمس"
@@ -171,7 +171,7 @@
           "description": "قم بتنزيل بيانات الاعتماد باستخدام رقم السياسة الخاص بك"
         },
         {
-          "name": "सनबर्ड",
+          "name": "सनबर्ड बीमा",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "सनबर्ड का एक चौकोर लोगो"
@@ -191,7 +191,7 @@
           "description": "ನಿಮ್ಮ ಪಾಲಿಸಿ ಸಂಖ್ಯೆಯೊಂದಿಗೆ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ"
         },
         {
-          "name": "சன்பேர்ட்",
+          "name": "சன்பேர்ட் காப்பீடு",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "சூரிய பறவையின் சதுர சின்னம்"
@@ -201,7 +201,7 @@
           "description": "உங்கள் பாலிசி எண்ணுடன் நற்சான்றிதழ்களைப் பதிவிறக்கவும்"
         },
         {
-          "name": "Sunbird",
+          "name": "Seguro sa Sunbird",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "isang parisukat na logo ng isang Sunbird"
