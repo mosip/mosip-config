@@ -1,6 +1,6 @@
 {
     "@context": "https://w3id.org/security/v2",
-    "id": "http://config-server.config-server/config/*/default/1.1.5_v3/controller.json",
+    "id": "http://mosip-file-server.mosip-file-server/.well-known/controller.json",
     "assertionMethod": [
         "http://mosip-file-server.mosip-file-server/.well-known/public-key.json"
     ]
