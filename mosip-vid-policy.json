@@ -12,10 +12,10 @@
         {
             "vidType": "Temporary",
             "vidPolicy": {
-                "validForInMinutes": 10,
-                "transactionsAllowed": 2,
+                "validForInMinutes": 30,
+                "transactionsAllowed": 1,
                 "instancesAllowed": 20,
-                "autoRestoreAllowed": true,
+                "autoRestoreAllowed": false,
                 "restoreOnAction": "REGENERATE"
             }
         },
