@@ -81,6 +81,16 @@
           "language": "en"
         },
         {
+          "name": "Carte d'identité nationale MOSIP ",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "un logo carré du MOSIP"
+          },
+          "title": "Télécharger les informations d'identification MOSIP",
+          "description": "Téléchargez les informations d'identification en fournissant un UIN ou un VID",
+          "language": "fr"
+        },
+        {
           "name": "الهوية الوطنية MOSIP",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
@@ -159,6 +169,16 @@
           "language": "en",
           "title": "Download Sunbird Credentials",
           "description": "Download credentials with your Policy Number"
+        },
+        {
+          "name": "Assurance Sunbird",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "un logo carré d'un Sunbird"
+          },
+          "language": "fr",
+          "title": "Télécharger les informations d'identification Sunbird",
+          "description": "Téléchargez les informations d'identification avec votre numéro de police"
         },
         {
           "name": "التأمين سنبيرد",
