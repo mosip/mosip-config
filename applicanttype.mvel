@@ -95,7 +95,7 @@ def getApplicantType() {
   
   if( ageCode == 'KER-MSD-151' ) { return "KER-MSD-151"; }
   
-  if(itc == null || genderType == null || ageCode == null || isBioExPresent == null ) { 
+  if( genderType == null || ageCode == null || isBioExPresent == null ) { 
       return isUpdateFlow(identity) ? "000" : "KER-MSD-147";
   }
   
