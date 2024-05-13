@@ -186,6 +186,28 @@ def getApplicantType() {
   } else if (itc == Resident && genderType == Others && ageCode == MINOR && !isBioExPresent) {
     return "015";
   }
+  else if (genderType == MALE && ageCode == CHILD && !isBioExPresent) {
+    return "001";
+  } else if (genderType == MALE && ageCode == ADULT && !isBioExPresent) {
+    return "002";
+  } else if (genderType == MALE && ageCode == MINOR  && !isBioExPresent) {
+    return "003";
+}
+	else if (genderType == FEMALE && ageCode == CHILD && !isBioExPresent) {
+    return "001";
+  } else if (genderType == FEMALE && ageCode == ADULT && !isBioExPresent) {
+    return "002";
+  } else if (genderType == FEMALE && ageCode == MINOR  && !isBioExPresent) {
+    return "003";
+}
+	else if (genderType == Others && ageCode == CHILD && !isBioExPresent) {
+    return "001";
+  } else if (genderType == Others && ageCode == ADULT && !isBioExPresent) {
+    return "002";
+  } else if (genderType == Others && ageCode == MINOR  && !isBioExPresent) {
+    return "003";
+}
+
   
   
   return "000";
