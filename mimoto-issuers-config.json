@@ -304,7 +304,8 @@
       "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
       "credential_endpoint": "https://explore.openg2p.org/api/v1/vci/credential",
       "credential_type": ["VerifiableCredential", "OpenG2PBeneficiaryVerifiableCredential"],
-      "credential_audience": "https://explore.openg2p.org"
+      "credential_audience": "https://explore.openg2p.org",
+      "enabled": "true"
     }
   ]
 }
