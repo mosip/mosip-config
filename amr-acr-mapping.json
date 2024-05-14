@@ -1,20 +1,19 @@
 {
   "amr" : {
-    "PWD" : [{"type" : "PWD" }],
-    "TOTP" : [{"type" : "TOTP" }],
     "PIN" :  [{ "type": "PIN" }],
     "OTP" :  [{ "type": "OTP" }],
-    "Wallet" :  [{ "type": "WLA" }],
+    "Wallet" :  [{ "type": "WALLET" }],
     "L1-bio-device" :  [{ "type": "BIO", "count": 1 }],
-    "Knowledge" : [{"type":"KBA"}]
+    "Knowledge" :  [{ "type": "KBA" }],
+    "Password" :  [{ "type": "PWD" }],
+    "ID-token" :  [{ "type": "IDT" }]
   },
   "acr_amr" : {
-    "mosip:idp:acr:password" : ["PWD"],
     "mosip:idp:acr:static-code" : ["PIN"],
     "mosip:idp:acr:generated-code" : ["OTP"],
     "mosip:idp:acr:linked-wallet" : [ "Wallet" ],
     "mosip:idp:acr:biometrics" : [ "L1-bio-device" ],
-    "mosip:idp:acr:time-generated-code" : [ "TOTP" ],
-     "mosip:idp:acr:knowledge" : ["Knowledge"]
+    "mosip:idp:acr:knowledge" : [ "Knowledge" ],
+    "mosip:idp:acr:id-token" : [ "ID-token" ]
   }
 }
