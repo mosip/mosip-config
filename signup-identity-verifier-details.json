@@ -1,0 +1,11 @@
+{ "identityVerifiers" : [
+  { 
+    "id" : "mock-verifier", 
+    "displayName" : "mock-verifier-label-key", 
+    "logoUrl" : "https://some-domain-logo-url",
+    "processType": "VIDEO-KYC",
+    "active" : true,
+    "retryOnFailure" : true,
+    "retryAttempt" : 2
+  }
+] }
