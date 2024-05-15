@@ -65,7 +65,7 @@
         }
       ],
       "protocol": "OTP",
-      "enabled": "true"
+      "enabled": "false"
     },
     {
       "credential_issuer": "ESignet",
@@ -76,8 +76,8 @@
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "mosip-logo"
           },
-          "title": "Download MOSIP Credentials",
-          "description": "Download credentials by providing UIN or VID",
+          "title": "National Identity Department",
+          "description": "Download MOSIP National / Foundational Identity Credential",
           "language": "en"
         },
         {
@@ -86,8 +86,8 @@
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "شعار موسيب"
           },
-          "title": "قم بتنزيل بيانات اعتماد MOSIP",
-          "description": "توفير UIN أو VIDقم بتنزيل بيانات الاعتماد عن طريق" ,
+          "title": "دائرة الهوية الوطنية",
+          "description": "قم بتنزيل بيانات اعتماد الهوية الوطنية / التأسيسية MOSIP" ,
           "language": "ar"
         },
         {
@@ -96,8 +96,8 @@
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "मोसिप लोगो"
           },
-          "title": "MOSIP क्रेडेंशियल डाउनलोड करेंं",
-          "description":"यूआईएन या वीआईडी प्रदान करके क्रेडेंशियल डाउनलोड करें",
+          "title": "राष्ट्रीय पहचान विभाग",
+          "description":"MOSIP नेशनल/फाउंडेशनल आइडेंटिटी क्रेडेंशियल डाउनलोड करेंं",
           "language": "hi"
         },
         {
@@ -106,8 +106,8 @@
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "mosip ಲೋಗೋ"
           },
-          "title": "MOSIP ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
-          "description": "UIN ಅಥವಾ VID ಒದಗಿಸುವ ಮೂಲಕ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
+          "title": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "description": "MOSIP ರಾಷ್ಟ್ರೀಯ / ಫೌಂಡೇಶನಲ್ ಐಡೆಂಟಿಟಿ ರುಜುವಾತು ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ",
           "language": "kn"
         },
         {
@@ -116,8 +116,8 @@
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "mosip லோகோ"
           },
-          "title": "MOSIP சான்றுகளைப் பதிவிறக்கவும்",
-          "description":"UIN அல்லது VIDஐ வழங்குவதன் மூலம் நற்சான்றிதழ்களைப் பதிவிறக்கவும்",
+          "title": "தேசிய அடையாளத் துறை",
+          "description":"MOSIP தேசிய / அடிப்படை அடையாளச் சான்றிதழைப் பதிவிறக்கவும்",
           "language": "ta"
         },
         {
@@ -126,8 +126,8 @@
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "logo ng mosip"
           },
-          "title": "I-download ang Mga Kredensyal ng MOSIP",
-          "description":"Mag-download ng mga kredensyal sa pamamagitan ng pagbibigay ng UIN o VID",
+          "title": "National Identity Department",
+          "description":"I-download ang MOSIP National / Foundational Identity Credential",
           "language": "fil"
         }
       ],
@@ -151,64 +151,64 @@
       "credential_issuer": "Sunbird",
       "display": [
         {
-          "name": "Sunbird RC Insurance Verifiable Credential",
+          "name": "Veridonia Insurance Company",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "a square logo of a Sunbird"
           },
           "language": "en",
-          "title": "Download Sunbird Credentials",
-          "description": "Download credentials with your Policy Number"
+          "title": "Veridonia Insurance Company",
+          "description": "Download Insurance Credentials using policy details"
         },
         {
-          "name": "بيانات الاعتماد التي يمكن التحقق منها للتأمين Sunbird RC",
+          "name": "شركة فيريدونيا للتأمين",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "شعار مربع لطائر الشمس"
           },
           "language": "ar",
-          "title": "قم بتنزيل بيانات اعتماد Sunbird",
-          "description": "قم بتنزيل بيانات الاعتماد باستخدام رقم السياسة الخاص بك"
+          "title": "شركة فيريدونيا للتأمين",
+          "description": "قم بتنزيل بيانات اعتماد التأمين باستخدام تفاصيل السياسة"
         },
         {
-          "name": "सनबर्ड आरसी बीमा सत्यापन योग्य क्रेडेंशियल",
+          "name": "वेरिडोनिया बीमा कंपनींं",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "सनबर्ड का एक चौकोर लोगो"
           },
           "language": "hi",
-          "title": "सनबर्ड क्रेडेंशियल्स डाउनलोड करेंं",
-          "description": "अपने पॉलिसी नंबर के साथ क्रेडेंशियल डाउनलोड करें"
+          "title": "वेरिडोनिया बीमा कंपनींं",
+          "description": "पॉलिसी विवरण का उपयोग करके बीमा क्रेडेंशियल डाउनलोड करें"
         },
         {
-          "name": "ಸನ್ಬರ್ಡ್ ಆರ್ಸಿ ವಿಮೆ ಪರಿಶೀಲಿಸಬಹುದಾದ ರುಜುವಾತು",
+          "name": "ವೆರಿಡೋನಿಯಾ ವಿಮಾ ಕಂಪನಿ",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "ಸನ್ ಬರ್ಡ್ ನ ಚೌಕಾಕಾರದ ಲೋಗೋ"
           },
           "language": "kn",
-          "title": "ಸನ್ಬರ್ಡ್ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
-          "description": "ನಿಮ್ಮ ಪಾಲಿಸಿ ಸಂಖ್ಯೆಯೊಂದಿಗೆ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ"
+          "title": "ವೆರಿಡೋನಿಯಾ ವಿಮಾ ಕಂಪನಿ",
+          "description": "ಪಾಲಿಸಿ ವಿವರಗಳನ್ನು ಬಳಸಿಕೊಂಡು ವಿಮಾ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ"
         },
         {
-          "name": "Sunbird RC இன்சூரன்ஸ் சரிபார்க்கக்கூடிய நற்சான்றிதழ்",
+          "name": "வெரிடோனியா இன்சூரன்ஸ் நிறுவனம்",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "சூரிய பறவையின் சதுர சின்னம்"
           },
           "language": "ta",
-          "title": "Sunbird சான்றுகளைப் பதிவிறக்கவும்",
-          "description": "உங்கள் பாலிசி எண்ணுடன் நற்சான்றிதழ்களைப் பதிவிறக்கவும்"
+          "title": "வெரிடோனியா இன்சூரன்ஸ் நிறுவனம்",
+          "description": "பாலிசி விவரங்களைப் பயன்படுத்தி காப்பீட்டுச் சான்றுகளைப் பதிவிறக்கவும்"
         },
         {
-          "name": "Kredensyal na Nabe-verify ng Sunbird RC Insurance",
+          "name": "Veridonia Insurance Company",
           "logo": {
             "url": "https://sunbird.org/images/sunbird-logo-new.png",
             "alt_text": "isang parisukat na logo ng isang Sunbird"
           },
           "language": "fil",
-          "title": "I-download ang Mga Kredensyal ng Sunbird",
-          "description": "Mag-download ng mga kredensyal gamit ang iyong Numero ng Patakaran"
+          "title": "Veridonia Insurance Company",
+          "description": "I-download ang Mga Kredensyal ng Seguro gamit ang mga detalye ng patakaran"
         }
       ],
       "protocol": "OpenId4VCI",
@@ -236,8 +236,8 @@
                   "url": "https://explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                   "alt_text": "openg2p-logo"
               },
-              "title": "Download Beneficiary e-Card",
-              "description": "For OpenG2P Social Cash Transfer Programme.",
+              "title": "Social Welfare Department",
+              "description": "Download Beneficiary e-Card for Social Cash Transfer Programme",
               "language": "en"
           },
           {
@@ -246,8 +246,8 @@
                   "url": "https://explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                   "alt_text": "openg2p-logo"
               },
-              "title": "تحميل البطاقة الإلكترونية للمستفيد",
-              "description": "لبرنامج التحويل النقدي الاجتماعي OpenG2P.",
+              "title": "إدارة الرعاية الاجتماعية",
+              "description": "قم بتنزيل البطاقة الإلكترونية للمستفيد لبرنامج التحويلات النقدية الاجتماعية",
               "language": "ar"
           },
           {
@@ -256,8 +256,8 @@
                   "url": "https://explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                   "alt_text": "openg2p-लोगो"
               },
-              "title": "लाभार्थी ई-कार्ड डाउनलोड करें",
-              "description": "OpenG2P सोशल कैश ट्रांसफर प्रोग्राम के लिए।",
+              "title": "समाज कल्याण विभाग",
+              "description": "सामाजिक नकद हस्तांतरण कार्यक्रम के लिए लाभार्थी ई-कार्ड डाउनलोड करें",
               "language": "hi"
           },
           {
@@ -266,8 +266,8 @@
                   "url": "https://explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                   "alt_text": "openg2p-ಲೋಗೋ"
               },
-              "title": "ಫಲಾನುಭವಿ ಇ-ಕಾರ್ಡ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
-              "description": "OpenG2P ಸಾಮಾಜಿಕ ನಗದು ವರ್ಗಾವಣೆ ಕಾರ್ಯಕ್ರಮಕ್ಕಾಗಿ.",
+              "title": "ಸಮಾಜ ಕಲ್ಯಾಣ ಇಲಾಖೆ",
+              "description": "ಸಾಮಾಜಿಕ ನಗದು ವರ್ಗಾವಣೆ ಕಾರ್ಯಕ್ರಮಕ್ಕಾಗಿ ಫಲಾನುಭವಿ ಇ-ಕಾರ್ಡ್ ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ",
               "language": "kn"
           },
           {
@@ -276,8 +276,8 @@
                   "url": "https://explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                   "alt_text": "openg2p-லோகோ"
               },
-              "title": "பயனாளியின் மின் அட்டையைப் பதிவிறக்கவும்",
-              "description": "OpenG2P சமூக பணப் பரிமாற்றத் திட்டத்திற்கு.",
+              "title": "சமூக நலத்துறை",
+              "description": "சமூக பணப் பரிமாற்றத் திட்டத்திற்கான பயனாளிகளின் மின் அட்டையைப் பதிவிறக்கவும்",
               "language": "ta"
           },
           {
@@ -286,8 +286,8 @@
                   "url": "https://explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                   "alt_text": "open2p-logo"
               },
-              "title": "I-download ang e-Card ng Benepisyaryo",
-              "description": "Para sa OpenG2P Social Cash Transfer Program.",
+              "title": "Social Welfare Department",
+              "description": "I-download ang Beneficiary e-Card para sa Social Cash Transfer Program",
               "language": "fil"
           }
       ],
