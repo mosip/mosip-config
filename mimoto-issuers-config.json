@@ -71,7 +71,7 @@
       "credential_issuer": "ESignet",
       "display": [
         {
-          "name": "e-Signet",
+          "name": "National Identity Department",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "mosip-logo"
@@ -81,7 +81,7 @@
           "language": "en"
         },
         {
-          "name": "e-Signet",
+          "name": "دائرة الهوية الوطنية",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "شعار موسيب"
@@ -91,7 +91,7 @@
           "language": "ar"
         },
         {
-          "name": "e-Signet",
+          "name": "राष्ट्रीय पहचान विभाग",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "मोसिप लोगो"
@@ -101,7 +101,7 @@
           "language": "hi"
         },
         {
-          "name": "e-Signet",
+          "name": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "mosip ಲೋಗೋ"
@@ -111,7 +111,7 @@
           "language": "kn"
         },
         {
-          "name": "e-Signet",
+          "name": "தேசிய அடையாளத் துறை",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "mosip லோகோ"
@@ -121,7 +121,7 @@
           "language": "ta"
         },
         {
-          "name": "e-Signet",
+          "name": "National Identity Department",
           "logo": {
             "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
             "alt_text": "logo ng mosip"
@@ -153,8 +153,8 @@
         {
           "name": "Veridonia Insurance Company",
           "logo": {
-            "url": "https://sunbird.org/images/sunbird-logo-new.png",
-            "alt_text": "a square logo of a Sunbird"
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "a Veridonia logo"
           },
           "language": "en",
           "title": "Veridonia Insurance Company",
@@ -163,8 +163,8 @@
         {
           "name": "شركة فيريدونيا للتأمين",
           "logo": {
-            "url": "https://sunbird.org/images/sunbird-logo-new.png",
-            "alt_text": "شعار مربع لطائر الشمس"
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "شعار فيريدونيا"
           },
           "language": "ar",
           "title": "شركة فيريدونيا للتأمين",
@@ -173,8 +173,8 @@
         {
           "name": "वेरिडोनिया बीमा कंपनींं",
           "logo": {
-            "url": "https://sunbird.org/images/sunbird-logo-new.png",
-            "alt_text": "सनबर्ड का एक चौकोर लोगो"
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "एक वेरिडोनिया लोगो"
           },
           "language": "hi",
           "title": "वेरिडोनिया बीमा कंपनींं",
@@ -183,8 +183,8 @@
         {
           "name": "ವೆರಿಡೋನಿಯಾ ವಿಮಾ ಕಂಪನಿ",
           "logo": {
-            "url": "https://sunbird.org/images/sunbird-logo-new.png",
-            "alt_text": "ಸನ್ ಬರ್ಡ್ ನ ಚೌಕಾಕಾರದ ಲೋಗೋ"
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "ವೆರಿಡೋನಿಯಾ ಲೋಗೋ"
           },
           "language": "kn",
           "title": "ವೆರಿಡೋನಿಯಾ ವಿಮಾ ಕಂಪನಿ",
@@ -193,8 +193,8 @@
         {
           "name": "வெரிடோனியா இன்சூரன்ஸ் நிறுவனம்",
           "logo": {
-            "url": "https://sunbird.org/images/sunbird-logo-new.png",
-            "alt_text": "சூரிய பறவையின் சதுர சின்னம்"
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "ஒரு வெரிடோனியா லோகோ"
           },
           "language": "ta",
           "title": "வெரிடோனியா இன்சூரன்ஸ் நிறுவனம்",
@@ -203,8 +203,8 @@
         {
           "name": "Veridonia Insurance Company",
           "logo": {
-            "url": "https://sunbird.org/images/sunbird-logo-new.png",
-            "alt_text": "isang parisukat na logo ng isang Sunbird"
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "isang logo ng Veridonia"
           },
           "language": "fil",
           "title": "Veridonia Insurance Company",
@@ -231,7 +231,7 @@
       "credential_issuer": "OpenG2PSocialCashTransferProgram",
       "display": [
           {
-              "name": "OpenG2PSocialCashTransferProgram",
+              "name": "Social Welfare Department",
               "logo": {
                   "url": "https://explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                   "alt_text": "openg2p-logo"
@@ -241,7 +241,7 @@
               "language": "en"
           },
           {
-              "name": "OpenG2PSocialCashTransferProgram",
+              "name": "إدارة الرعاية الاجتماعية",
               "logo": {
                   "url": "https://explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                   "alt_text": "openg2p-logo"
@@ -251,7 +251,7 @@
               "language": "ar"
           },
           {
-              "name": "OpenG2PSocialCashTransferProgram",
+              "name": "समाज कल्याण विभाग",
               "logo": {
                   "url": "https://explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                   "alt_text": "openg2p-लोगो"
@@ -261,7 +261,7 @@
               "language": "hi"
           },
           {
-              "name": "OpenG2PSocialCashTransferProgram",
+              "name": "ಸಮಾಜ ಕಲ್ಯಾಣ ಇಲಾಖೆ",
               "logo": {
                   "url": "https://explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                   "alt_text": "openg2p-ಲೋಗೋ"
@@ -271,7 +271,7 @@
               "language": "kn"
           },
           {
-              "name": "OpenG2PSocialCashTransferProgram",
+              "name": "சமூக நலத்துறை",
               "logo": {
                   "url": "https://explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                   "alt_text": "openg2p-லோகோ"
@@ -281,7 +281,7 @@
               "language": "ta"
           },
           {
-              "name": "OpenG2PSocialCashTransferProgram",
+              "name": "Social Welfare Department",
               "logo": {
                   "url": "https://explore.openg2p.org/g2p_openid_vci/static/description/icon.png",
                   "alt_text": "open2p-logo"
