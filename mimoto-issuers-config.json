@@ -233,7 +233,7 @@
         {
           "name": "Veridonia Insurance Company",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "url": "https://api.collab.mosip.net/inji/veridonia-logo.png",
             "alt_text": "a Veridonia logo"
           },
           "language": "en",
@@ -243,7 +243,7 @@
         {
           "name": "شركة فيريدونيا للتأمين",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "url": "https://api.collab.mosip.net/inji/veridonia-logo.png",
             "alt_text": "شعار فيريدونيا"
           },
           "language": "ar",
@@ -253,7 +253,7 @@
         {
           "name": "वेरिडोनिया बीमा कंपनींं",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "url": "https://api.collab.mosip.net/inji/veridonia-logo.png",
             "alt_text": "एक वेरिडोनिया लोगो"
           },
           "language": "hi",
@@ -263,7 +263,7 @@
         {
           "name": "ವೆರಿಡೋನಿಯಾ ವಿಮಾ ಕಂಪನಿ",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "url": "https://api.collab.mosip.net/inji/veridonia-logo.png",
             "alt_text": "ವೆರಿಡೋನಿಯಾ ಲೋಗೋ"
           },
           "language": "kn",
@@ -273,7 +273,7 @@
         {
           "name": "வெரிடோனியா இன்சூரன்ஸ் நிறுவனம்",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "url": "https://api.collab.mosip.net/inji/veridonia-logo.png",
             "alt_text": "ஒரு வெரிடோனியா லோகோ"
           },
           "language": "ta",
@@ -283,7 +283,7 @@
         {
           "name": "Veridonia Insurance Company",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "url": "https://api.collab.mosip.net/inji/veridonia-logo.png",
             "alt_text": "isang logo ng Veridonia"
           },
           "language": "fil",
