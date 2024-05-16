@@ -1,1 +1,13 @@
-
+{
+  "terms&Conditions": { "eng" : "" },
+  "errors": {
+               "mock-err-001" : { 
+                                   "eng": "Test error message"
+                                }
+             },
+  "messages": {
+                "mock-msg-001" : {
+                                    "eng": "Test message"
+                                 }
+              }
+}
