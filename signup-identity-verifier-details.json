@@ -1,6 +1,6 @@
 [
   { 
-    "id" : "mock-verifier", 
+    "id" : "mock-identity-verifier", 
     "displayName" : { "eng" : "Mock Identity Verifier", 
                       "fra" : "Vérificateur d'identité fictif", 
                       "ara" : "التحقق من الهوية الوهمية", 
