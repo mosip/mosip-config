@@ -1,7 +1,11 @@
 [
   { 
     "id" : "mock-verifier", 
-    "displayName" : "mock-verifier-label-key", 
+    "displayName" : { "eng" : "Mock Identity Verifier", 
+                      "fra" : "Vérificateur d'identité fictif", 
+                      "ara" : "التحقق من الهوية الوهمية", 
+                      "khm" : "Mock អត្តសញ្ញាណប័ណ្ណ Verifier"
+                    }, 
     "logoUrl" : "https://some-domain-logo-url",
     "processType": "VIDEO",
     "active" : true,
