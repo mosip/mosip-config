@@ -9,6 +9,7 @@
     "ID-token" :  [{ "type": "IDT" }]
   },
   "acr_amr" : {
+    "mosip:idp:acr:password" : ["PWD"],
     "mosip:idp:acr:static-code" : ["PIN"],
     "mosip:idp:acr:generated-code" : ["OTP"],
     "mosip:idp:acr:linked-wallet" : [ "Wallet" ],
