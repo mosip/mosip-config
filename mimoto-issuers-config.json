@@ -225,7 +225,7 @@
       "credential_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "InsuranceCredential"],
       "credential_audience": "https://${mosip.esignet.insurance.host}",
-      "enabled": "false"
+      "enabled": "true"
     },
     {
       "credential_issuer": "Veridonia",
@@ -305,7 +305,7 @@
       "credential_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/vci/credential",
       "credential_type": ["VerifiableCredential", "InsuranceCredential"],
       "credential_audience": "https://${mosip.esignet.insurance.host}",
-      "enabled": "true"
+      "enabled": "false"
     }
   ]
 }
