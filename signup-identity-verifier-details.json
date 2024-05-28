@@ -1,15 +1,86 @@
 [
-  { 
-    "id" : "mock-identity-verifier", 
-    "displayName" : { "eng" : "Mock Identity Verifier", 
-                      "fra" : "Vérificateur d'identité fictif", 
-                      "ara" : "التحقق من الهوية الوهمية", 
-                      "khm" : "Mock អត្តសញ្ញាណប័ណ្ណ Verifier"
-                    }, 
-    "logoUrl" : "https://some-domain-logo-url",
+  {
+    "id": "mock-identity-verifier",
+    "displayName": {
+      "eng": "Mock Identity Verifier",
+      "fra": "Vérificateur d'identité fictif",
+      "ara": "التحقق من الهوية الوهمية",
+      "khm": "Mock អត្តសញ្ញាណប័ណ្ណ Verifier"
+    },
+    "logoUrl": "https://some-domain-logo-url",
     "processType": "VIDEO",
-    "active" : true,
-    "retryOnFailure" : true,
-    "retryAttempt" : 2
+    "active": true,
+    "retryOnFailure": true,
+    "retryAttempt": 2
+  },
+  {
+    "id": "kyc-provider",
+    "displayName": {
+      "eng": "Kyc Provider",
+      "fra": "Vérificateur d'identité fictif",
+      "ara": "التحقق من الهوية الوهمية",
+      "khm": "អ្នកផ្គត់ផ្គង់ Kyc"
+    },
+    "logoUrl": "https://some-domain-logo-url",
+    "processType": "VIDEO",
+    "active": true,
+    "retryOnFailure": true,
+    "retryAttempt": 2
+  },
+  {
+    "id": "identity-verifier",
+    "displayName": {
+      "eng": "Identity Verifier",
+      "fra": "Vérificateur d'identité fictif",
+      "ara": "التحقق من الهوية الوهمية",
+      "khm": "អត្តសញ្ញាណប័ណ្ណ Verifier"
+    },
+    "logoUrl": "https://some-domain-logo-url",
+    "processType": "VIDEO",
+    "active": true,
+    "retryOnFailure": true,
+    "retryAttempt": 2
+  },
+  {
+    "id": "mock-kyc-provider",
+    "displayName": {
+      "eng": "Mock Kyc Provider",
+      "fra": "Vérificateur d'identité fictif",
+      "ara": "التحقق من الهوية الوهمية",
+      "khm": "អ្នកផ្តល់សេវា Mock Kyc"
+    },
+    "logoUrl": "https://some-domain-logo-url",
+    "processType": "VIDEO",
+    "active": true,
+    "retryOnFailure": true,
+    "retryAttempt": 2
+  },
+  {
+    "id": "identity-company-limited",
+    "displayName": {
+      "eng": "Identity Company Limited",
+      "fra": "Vérificateur d'identité fictif",
+      "ara": "التحقق من الهوية الوهمية",
+      "khm": "ក្រុមហ៊ុន Identity Limited"
+    },
+    "logoUrl": "https://some-domain-logo-url",
+    "processType": "VIDEO",
+    "active": true,
+    "retryOnFailure": true,
+    "retryAttempt": 2
+  },
+  {
+    "id": "veridonia-identity-verifier",
+    "displayName": {
+      "eng": "Veridonia Identity Verifier",
+      "fra": "Vérificateur d'identité fictif",
+      "ara": "التحقق من الهوية الوهمية",
+      "khm": "Veridonia អត្តសញ្ញាណប័ណ្ណ Verifier"
+    },
+    "logoUrl": "https://some-domain-logo-url",
+    "processType": "VIDEO",
+    "active": true,
+    "retryOnFailure": true,
+    "retryAttempt": 2
   }
 ]
