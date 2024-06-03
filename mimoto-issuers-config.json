@@ -65,7 +65,7 @@
         }
       ],
       "protocol": "OTP",
-      "enabled": "false"
+      "enabled": "true"
     },
     {
       "credential_issuer": "Mosip",
