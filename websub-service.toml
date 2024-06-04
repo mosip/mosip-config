@@ -39,7 +39,7 @@ MESSAGE_DELIVERY_RETRY_INTERVAL = 3.0
 MESSAGE_DELIVERY_COUNT = 3
 
 # The message delivery timeout
-MESSAGE_DELIVERY_TIMEOUT = 60.0
+MESSAGE_DELIVERY_TIMEOUT = 30.0
 
 # The base URL of IDP
 MOSIP_AUTH_BASE_URL = "${mosip.kernel.authmanager.url}/v1/authmanager"
@@ -70,7 +70,7 @@ INTENT_VERIFICATION_BACKOFF_FACTOR = 2.0
 INTENT_VERIFICATION_MAX_INTERVAL = 20.0
 
 # The maximum retry count
-KAFKA_CONSUMER_MAX_POLL_RECORDS = 50
+KAFKA_CONSUMER_MAX_POLL_RECORDS = 3
 
 # The maximum retry count
 KAFKA_CONSUMER_FETCH_MAX_BYTES = 3145728
@@ -86,6 +86,13 @@ CONSOLIDATOR_BASE_URL = "${mosip.consolidator.url}"
 
 # consolidator health endpoint
 CONSOLIDATOR_HEALTH_ENDPOINT = "/consolidator/actuator/health"
+
+#Encryption key that will be used to encrypt / decrypt the hub secret
+HUB_SECRET_ENCRYPTION_KEY = "${hub.secret.encryption.key}"
+
+# Below config will allow base64-encoded-bytes / alpha-numeric.
+# Recommended to use base64-encoded-bytes since alpha-numeric is considered less secure. This is just given to ensure the backward compatiblity
+HUB_SECRET_ENCRYPTION_KEY_FORMAT = "alpha-numeric"
 
 [ballerina.http.accessLogConfig]
 # Enable printing access logs in console

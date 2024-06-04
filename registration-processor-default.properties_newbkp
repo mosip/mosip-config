@@ -130,6 +130,7 @@ IDREPOCREATEDRAFT=${IDENTITY}/idrepository/v1/identity/draft/create
 IDREPOUPDATEDRAFT=${IDENTITY}/idrepository/v1/identity/draft/update
 IDREPOPUBLISHDRAFT=${IDENTITY}/idrepository/v1/identity/draft/publish
 IDREPOEXTRACTBIOMETRICS=${IDENTITY}/idrepository/v1/identity/draft/extractbiometrics/
+IDREPODISCARDDRAFT=${IDENTITY}/idrepository/v1/identity/draft/discard/
 
 ## Encrypt Services
 KEYMANAGER=${mosip.kernel.keymanager.url}
@@ -290,9 +291,9 @@ registration.processor.reprocess.limit=500
 registration.processor.pause.packets.for.backpressure=true
 # The reprocessor scheduler configurations
 # The elapse time (in sec) beyond which the rids will be considered for reprocessing
-registration.processor.reprocess.elapse.time=900
+registration.processor.reprocess.elapse.time=600
 # The maximum reprocess count. Beyond this the rid will not be considered for reprocessing.
-registration.processor.reprocess.attempt.count=20
+registration.processor.reprocess.attempt.count=5
 registration.processor.reprocess.type=cron
 registration.processor.reprocess.seconds=0
 # TODO: time reduced for testing.  Revert for production.
@@ -490,7 +491,7 @@ mosip.registration.processor.credential.request.service.id=mosip.credential.requ
 mosip.registration.processor.credential.partner-profiles=registration-processor-credential-partners.json
 mosip.registration.processor.credential.default.partner-ids=digitalcardPartner,opencrvsPartner
 mosip.registration.processor.credential.conditional.partner-id-map={'printPartner':'{"14023"} contains postalCode'}
-mosip.registration.processor.credential.conditional.no-match-partner-ids=printPartner
+mosip.registration.processor.credential.conditional.no-match-partner-ids=printPartner2
 
 ## Stage common
 #After this time intervel, message should be considered as expired (In seconds), 
@@ -675,7 +676,6 @@ mosip.regproc.uin.generator.message.expiry-time-limit=${mosip.regproc.common.sta
 mosip.regproc.uin.generator.server.port=8099
 mosip.regproc.uin.generator.eventbus.port=5719
 mosip.regproc.uin.generator.server.servlet.path=/registrationprocessor/v1/uin-generator
-mosip.regproc.uin.generator.trim-whitespaces.simpleType-value=false
 
 # abis-middle-ware-stage
 mosip.regproc.abis.middleware.eventbus.kafka.commit.type=single
@@ -802,7 +802,7 @@ packetmanager.provider.uingenerator.addressLine3=source:REGISTRATION_CLIENT\/pro
 packetmanager.provider.uingenerator.addressLine4=source:REGISTRATION_CLIENT\/process:NEW|UPDATE|LOST,source:RESIDENT\/process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT
 packetmanager.provider.uingenerator.email=source:REGISTRATION_CLIENT\/process:NEW|UPDATE|LOST,source:RESIDENT\/process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT
 packetmanager.provider.uingenerator.czone=source:REGISTRATION_CLIENT\/process:NEW|UPDATE|LOST,source:RESIDENT\/process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT
-packetmanager.provider.uingenerator.dateOfBirth=source:REGISTRATION_CLIENT\/process:NEW|UPDATE|LOST,source:RESIDENT\/process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT
+packetmanager.provider.uingenerator.dateOfBirth=source:REGISTRATION_CLIENT\/process:NEW|UPDATE|LOST|CORRECTION,source:RESIDENT\/process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT
 packetmanager.provider.uingenerator.cpostalCode=source:REGISTRATION_CLIENT\/process:NEW|UPDATE|LOST,source:RESIDENT\/process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT
 packetmanager.provider.uingenerator.ccity=source:REGISTRATION_CLIENT\/process:NEW|UPDATE|LOST,source:RESIDENT\/process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT
 packetmanager.provider.uingenerator.firstName=source:REGISTRATION_CLIENT\/process:NEW|UPDATE|LOST,source:RESIDENT\/process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT
@@ -989,10 +989,10 @@ auth.server.admin.allowed.audience=mosip-regproc-client,mosip-admin-client,mosip
 mosip.regproc.cbeff-validation.mandatory.modalities=Right,Left,Left RingFinger,Left LittleFinger,Right RingFinger,Left Thumb,Left IndexFinger,Right IndexFinger,Right LittleFinger,Right MiddleFinger,Left MiddleFinger,Right Thumb,EXCEPTION_PHOTO
 #updated properties name with the prefix (mosip.regproc)
 mosip.regproc.landing.zone.account.name=landing-zone
-mosip.regproc.landing.zone.type=DMZServer
+mosip.regproc.landing.zone.type=ObjectStore
 
-mosip.regproc.landing.zone.fixed.delay.millisecs=86400000
-mosip.regproc.landing.zone.inital.delay.millisecs=300000
+mosip.regproc.landing.zone.fixed.delay.millisecs=120000
+mosip.regproc.landing.zone.inital.delay.millisecs=120000
 
 registration.processor.lostrid.max.registrationid=5
 mosip.registration.processor.lostrid.max-registration-date-filter-interval=30
@@ -1002,8 +1002,5 @@ uingenerator.lost.packet.allowed.update.fields=phone,email,permanentAddress
 ##timeout in milliseconds for health check registrer
 mosip.regproc.health-check.handler-timeout=2000
 
-
-#New
-mosip.regproc.workflow-manager.instance-beginning-stage=PacketValidatorStage
-mosip.regproc.workflow-manager.instance.api-id=mosip.registration.processor.workflow.create
-mosip.regproc.workflow-manager.instance.version=1.0
+mosip.regproc.uin.generator.trim-whitespaces.simpleType-value=true
+mosip.regproc.demo.dedupe.trim-whitespaces.simpleType-value=true
