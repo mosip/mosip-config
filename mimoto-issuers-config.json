@@ -227,7 +227,7 @@
       "additional_headers": {
         "Accept": "application/json"
       },
-      ".well-known": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer?version=v11",
+      ".well-known": "https://${mosip.esignet.insurance.host}/.well-known/openid-credential-issuer?version=v11",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
       "authorization_audience": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
@@ -238,7 +238,7 @@
         "VerifiableCredential",
         "InsuranceCredential"
       ],
-      "credential_audience": "https://${mosip.injicertify.host}",
+      "credential_audience": "https://${mosip.esignet.insurance.host}",
       "enabled": "true"
     },
     {
@@ -407,6 +407,43 @@
       "proxy_token_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
       "credential_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/vci/credential",
       "credential_audience": "https://${mosip.esignet.insurance.host}",
+      "enabled": "true"
+    },
+    {
+      "credential_issuer": "VeridoniaCertify",
+      "display": [
+        {
+          "name": "Veridonia Insurance Company (Certify)",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "a square logo of a Sunbird"
+          },
+          "language": "en",
+          "title": "Download Veridonia Insurance(Certify) Credentials",
+          "description": "Download credentials with your Policy Number"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.sunbird.partner.clientid}",
+      "client_alias": "esignet-sunbird-partner",
+      "scopes_supported": [
+        "sunbird_rc_insurance_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      ".well-known": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer?version=v11",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/VeridoniaCertify",
+      "proxy_token_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "",
+      "credential_type": [
+        "VerifiableCredential",
+        "InsuranceCredential"
+      ],
+      "credential_audience": "https://${mosip.injicertify.host}",
       "enabled": "true"
     }
   ]
