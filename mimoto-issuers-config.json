@@ -348,6 +348,10 @@
       "additional_headers": {
         "Accept": "application/json"
       },
+      "credential_type": [
+        "VerifiableCredential",
+        "InsuranceCredential"
+      ],
       ".well-known": "https://esignet.qa-inji.mosip.net/.well-known/openid-credential-issuer",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
@@ -391,6 +395,10 @@
           },
           "scope": "vehicle_insurance_vc_ldp"
         }
+      ],
+      "credential_type": [
+        "VerifiableCredential",
+        "InsuranceCredential"
       ],
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
