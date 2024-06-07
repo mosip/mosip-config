@@ -352,7 +352,7 @@
         "VerifiableCredential",
         "InsuranceCredential"
       ],
-      ".well-known": "https://esignet.qa-inji.mosip.net/.well-known/openid-credential-issuer",
+      ".well-known": "https://${mosip.esignet.insurance.host}/.well-known/openid-credential-issuer?version=v11",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
       "authorization_audience": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
