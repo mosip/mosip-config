@@ -388,10 +388,12 @@
           "format": "ldp_vc",
           "id": "VehicleInsuranceCredential",
           "scope": "vehicle_insurance_vc_ldp",
-          "type": [
-            "VerifiableCredential",
-            "VehicleInsuranceCredential"
-          ]
+          "credential_definition": {
+            "type": [
+              "VerifiableCredential",
+              "VehicleInsuranceCredential"
+            ]
+          }
         }
       ],
       "credential_type": [
