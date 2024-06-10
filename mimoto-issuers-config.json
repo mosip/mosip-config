@@ -10,7 +10,7 @@
             "alt_text": "a square logo of MOSIP"
           },
           "title": "Download MOSIP Credentials via OTP",
-          "description":"Download credentials by providing UIN, VID or AID",
+          "description": "Download credentials by providing UIN, VID or AID",
           "language": "en"
         },
         {
@@ -30,7 +30,7 @@
             "alt_text": "MOSIP का एक वर्गाकार लोगो"
           },
           "title": "OTP के माध्यम से MOSIP क्रेडेंशियल डाउनलोड करें",
-          "description":"यूआईएन, वीआईडी या एआईडी प्रदान करके क्रेडेंशियल डाउनलोड करें",
+          "description": "यूआईएन, वीआईडी या एआईडी प्रदान करके क्रेडेंशियल डाउनलोड करें",
           "language": "hi"
         },
         {
@@ -50,7 +50,7 @@
             "alt_text": "MOSIP இன் சதுர லோகோ"
           },
           "title": "OTP வழியாக MOSIP சான்றுகளைப் பதிவிறக்கவும்",
-          "description":"UIN, VID அல்லது AID ஐ வழங்குவதன் மூலம் நற்சான்றிதழ்களைப் பதிவிறக்கவும்",
+          "description": "UIN, VID அல்லது AID ஐ வழங்குவதன் மூலம் நற்சான்றிதழ்களைப் பதிவிறக்கவும்",
           "language": "ta"
         },
         {
@@ -60,7 +60,7 @@
             "alt_text": "isang parisukat na logo ng MOSIP"
           },
           "title": "I-download ang Mga Kredensyal ng MOSIP sa pamamagitan ng OTP",
-          "description":"Mag-download ng mga kredensyal sa pamamagitan ng pagbibigay ng UIN, VID o AID",
+          "description": "Mag-download ng mga kredensyal sa pamamagitan ng pagbibigay ng UIN, VID o AID",
           "language": "fil"
         }
       ],
@@ -87,7 +87,7 @@
             "alt_text": "شعار موسيب"
           },
           "title": "دائرة الهوية الوطنية",
-          "description": "قم بتنزيل بيانات اعتماد الهوية الوطنية / التأسيسية MOSIP" ,
+          "description": "قم بتنزيل بيانات اعتماد الهوية الوطنية / التأسيسية MOSIP",
           "language": "ar"
         },
         {
@@ -97,7 +97,7 @@
             "alt_text": "मोसिप लोगो"
           },
           "title": "राष्ट्रीय पहचान विभाग",
-          "description":"MOSIP नेशनल/फाउंडेशनल आइडेंटिटी क्रेडेंशियल डाउनलोड करेंं",
+          "description": "MOSIP नेशनल/फाउंडेशनल आइडेंटिटी क्रेडेंशियल डाउनलोड करेंं",
           "language": "hi"
         },
         {
@@ -117,7 +117,7 @@
             "alt_text": "mosip லோகோ"
           },
           "title": "தேசிய அடையாளத் துறை",
-          "description":"MOSIP தேசிய / அடிப்படை அடையாளச் சான்றிதழைப் பதிவிறக்கவும்",
+          "description": "MOSIP தேசிய / அடிப்படை அடையாளச் சான்றிதழைப் பதிவிறக்கவும்",
           "language": "ta"
         },
         {
@@ -127,15 +127,19 @@
             "alt_text": "logo ng mosip"
           },
           "title": "National Identity Department",
-          "description":"I-download ang MOSIP National / Foundational Identity Credential",
+          "description": "I-download ang MOSIP National / Foundational Identity Credential",
           "language": "fil"
         }
       ],
       "protocol": "OpenId4VCI",
       "client_id": "${mimoto.oidc.partner.clientid}",
       "client_alias": "mpartner-default-mimotooidc",
-      "scopes_supported": ["mosip_identity_vc_ldp"],
-      "additional_headers": { "Accept": "application/json" },
+      "scopes_supported": [
+        "mosip_identity_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
       ".well-known": "https://${mosip.esignet.host}/.well-known/openid-credential-issuer?version=v11",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
@@ -143,7 +147,10 @@
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Mosip",
       "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
       "credential_endpoint": "https://${mosip.esignet.host}/v1/esignet/vci/credential",
-      "credential_type": ["VerifiableCredential", "MOSIPVerifiableCredential"],
+      "credential_type": [
+        "VerifiableCredential",
+        "MOSIPVerifiableCredential"
+      ],
       "credential_audience": "https://${mosip.esignet.host}",
       "enabled": "true"
     },
@@ -214,17 +221,24 @@
       "protocol": "OpenId4VCI",
       "client_id": "${mimoto.oidc.sunbird.partner.clientid}",
       "client_alias": "esignet-sunbird-partner",
-      "scopes_supported": ["sunbird_rc_insurance_vc_ldp"],
-      "additional_headers": { "Accept": "application/json" },
-      ".well-known": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer?version=v11",
+      "scopes_supported": [
+        "sunbird_rc_insurance_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      ".well-known": "https://${mosip.esignet.insurance.host}/.well-known/openid-credential-issuer?version=v11",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
       "authorization_audience": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Sunbird",
       "proxy_token_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
       "credential_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/vci/credential",
-      "credential_type": ["VerifiableCredential", "InsuranceCredential"],
-      "credential_audience": "https://${mosip.injicertify.host}",
+      "credential_type": [
+        "VerifiableCredential",
+        "InsuranceCredential"
+      ],
+      "credential_audience": "https://${mosip.esignet.insurance.host}",
       "enabled": "true"
     },
     {
@@ -294,8 +308,12 @@
       "protocol": "OpenId4VCI",
       "client_id": "${mimoto.oidc.sunbird.partner.clientid}",
       "client_alias": "esignet-sunbird-partner",
-      "scopes_supported": ["sunbird_rc_insurance_vc_ldp"],
-      "additional_headers": { "Accept": "application/json" },
+      "scopes_supported": [
+        "sunbird_rc_insurance_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
       ".well-known": "https://${mosip.esignet.insurance.host}/.well-known/openid-credential-issuer?version=v11",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
       "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
@@ -303,9 +321,130 @@
       "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Veridonia",
       "proxy_token_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
       "credential_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/vci/credential",
-      "credential_type": ["VerifiableCredential", "InsuranceCredential"],
+      "credential_type": [
+        "VerifiableCredential",
+        "InsuranceCredential"
+      ],
       "credential_audience": "https://${mosip.esignet.insurance.host}",
       "enabled": "false"
+    },
+    {
+      "credential_issuer": "HealthCoverageZ",
+      "display": [
+        {
+          "name": "HealthCoverageZ Verifiable Credential",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "a square logo of a HealthCoverageZ"
+          },
+          "language": "en",
+          "title": "Download HealthCoverageZ Credentials",
+          "description": "Download credentials with your Policy Number"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.sunbird.partner.clientid}",
+      "client_alias": "esignet-sunbird-partner",
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      "credential_type": [
+        "VerifiableCredential",
+        "InsuranceCredential"
+      ],
+      ".well-known": "https://${mosip.esignet.insurance.host}/.well-known/openid-credential-issuer?version=v11",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/HealthCoverageZ",
+      "proxy_token_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
+      "enabled": "true"
+    },
+    {
+      "credential_issuer": "ProtectionPlus+",
+      "display": [
+        {
+          "name": "ProtectionPlus+ Verifiable Credential",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "a square logo of a Sunbird"
+          },
+          "language": "en",
+          "title": "Download ProtectionPlus+ Credentials",
+          "description": "Download credentials with your Policy Number"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.sunbird.partner.clientid}",
+      "client_alias": "esignet-sunbird-partner",
+      "scopes_supported": [
+        "sunbird_rc_insurance_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      "credentials_supported": [
+        {
+          "format": "ldp_vc",
+          "id": "VehicleInsuranceCredential",
+          "scope": "vehicle_insurance_vc_ldp",
+          "credential_definition": {
+            "type": [
+              "VerifiableCredential",
+              "VehicleInsuranceCredential"
+            ]
+          }
+        }
+      ],
+      "credential_type": [
+        "VerifiableCredential",
+        "InsuranceCredential"
+      ],
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/ProtectionPlus+",
+      "proxy_token_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/vci/credential",
+      "credential_audience": "https://${mosip.esignet.insurance.host}",
+      "enabled": "true"
+    },
+    {
+      "credential_issuer": "VeridoniaCertify",
+      "display": [
+        {
+          "name": "Veridonia Insurance Company (Certify)",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "a square logo of a Sunbird"
+          },
+          "language": "en",
+          "title": "Download Veridonia Insurance(Certify) Credentials",
+          "description": "Download credentials with your Policy Number"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.sunbird.partner.clientid}",
+      "client_alias": "esignet-sunbird-partner",
+      "scopes_supported": [
+        "sunbird_rc_insurance_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      ".well-known": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer?version=v11",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/VeridoniaCertify",
+      "proxy_token_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "",
+      "credential_type": [
+        "VerifiableCredential",
+        "InsuranceCredential"
+      ],
+      "credential_audience": "https://${mosip.injicertify.host}",
+      "enabled": "true"
     }
   ]
 }
