@@ -423,6 +423,87 @@
       ],
       "credential_audience": "https://${mosip.injicertify.host}",
       "enabled": "true"
+    },
+    {
+      "credential_issuer": "HealthCoverageZ",
+      "display": [
+        {
+          "name": "HealthCoverageZ Verifiable Credential",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "a square logo of a HealthCoverageZ"
+          },
+          "language": "en",
+          "title": "Download HealthCoverageZ Credentials",
+          "description": "Download credentials with your Policy Number"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.sunbird.partner.clientid}",
+      "client_alias": "esignet-sunbird-partner",
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      "credential_type": [
+        "VerifiableCredential",
+        "InsuranceCredential"
+      ],
+      ".well-known": "https://${mosip.esignet.insurance.host}/.well-known/openid-credential-issuer?version=v11",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/HealthCoverageZ",
+      "proxy_token_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
+      "enabled": "true"
+    },
+    {
+      "credential_issuer": "ProtectionPlus+",
+      "display": [
+        {
+          "name": "ProtectionPlus+ Verifiable Credential",
+          "logo": {
+            "url": "https://sunbird.org/images/sunbird-logo-new.png",
+            "alt_text": "a square logo of a Sunbird"
+          },
+          "language": "en",
+          "title": "Download ProtectionPlus+ Credentials",
+          "description": "Download credentials with your Policy Number"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.sunbird.partner.clientid}",
+      "client_alias": "esignet-sunbird-partner",
+      "scopes_supported": [
+        "sunbird_rc_insurance_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      "credentials_supported": [
+        {
+          "format": "ldp_vc",
+          "id": "VehicleInsuranceCredential",
+          "scope": "vehicle_insurance_vc_ldp",
+          "credential_definition": {
+            "type": [
+              "VerifiableCredential",
+              "VehicleInsuranceCredential"
+            ]
+          }
+        }
+      ],
+      "credential_type": [
+        "VerifiableCredential",
+        "InsuranceCredential"
+      ],
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.insurance.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/ProtectionPlus+",
+      "proxy_token_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "https://${mosip.esignet.insurance.host}/v1/esignet/vci/credential",
+      "credential_audience": "https://${mosip.esignet.insurance.host}",
+      "enabled": "true"
     }
   ]
 }
