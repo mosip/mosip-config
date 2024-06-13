@@ -3,11 +3,8 @@
         "IDSchemaVersion": {
             "value": "IDSchemaVersion"
         },
-	"selectedHandles" : {
-			"value" : "selectedHandles"
-	},
         "name": {
-            "value": "fullName"
+            "value": "firstName,lastName"
         },
         "gender": {
             "value": "gender"
@@ -19,23 +16,20 @@
             "value": "age"
         },
         "introducerRID": {
-            "value": "parentOrGuardianRID"
+            "value": "introducerRID"
         },
         "introducerUIN": {
-            "value": "parentOrGuardianUIN"
+            "value": "introducerUIN"
         },
         "introducerVID": {
-            "value": "parentOrGuardianVID"
+            "value": "introducerVID"
         },
         "introducerName": {
-            "value": "parentOrGuardianName"
+            "value": "introducerName"
         },
         "phone": {
             "value": "phone"
         },
-	"phone_number": {
-	    "value": "phone"
-	},
         "phoneNumber": {
             "value": "phone"
         },
@@ -47,12 +41,12 @@
         },
         "uin": {
             "value": "UIN"
-        },        
+        },
         "individualBiometrics": {
             "value": "individualBiometrics"
         },
         "introducerBiometrics": {
-            "value": "parentOrGuardianBiometrics"
+            "value": "introducerBiometrics"
         },
         "individualAuthBiometrics": {
             "value": "individualAuthBiometrics"
@@ -66,31 +60,34 @@
         "residenceStatus": {
             "value": "residenceStatus"
         },
+        "preferredLanguage": {
+            "value": "preferredLang"
+        },
         "locationHierarchyForProfiling": {
-            "value": "provience,village"
+            "value": "preProvince,preZipCode"
         },
         "addressLine1": {
-            "value": "addressLine"
+            "value": "addressLine1"
         },
         "addressLine2": {
-            "value": "addressLine1"
-        },      
+            "value": "addressLine2"
+        },
         "location1": {
-            "value": "provience"
+            "value": "preProvince"
         },
         "location2": {
-            "value": "city"
+            "value": "preLocality"
         },
         "location3": {
-            "value": "village"
-        },       
-        "fullAddress": {
-            "value": "addressLine,addressLine1,provience,city,village"
+            "value": "preMunicipality"
         },
-	"bestTwoFingers": {
-			"value": "bestTwoFingers"
-		}
-    },    
+        "postalCode": {
+            "value": "preZipCode"
+        },
+        "fullAddress": {
+            "value": "addressLine1,addressLine2,preProvince,preLocality,preMunicipality,preZipCode"
+        }
+    },
     "metaInfo": {
         "value": "metaInfo"
     },
@@ -99,7 +96,7 @@
     },
     "documents": {
         "poa": {
-            "value": "proofOfResidency"
+            "value": "proofOfAddress"
         },
         "poi": {
             "value": "proofOfIdentity"
@@ -115,8 +112,8 @@
         }
     },
     "attributeUpdateCountLimit": {
-		"firstName": 2,
-		"gender": 2,
-		"dateOfBirth": 2
-	}
+        "firstName": 2,
+        "gender": 2,
+        "dateOfBirth": 2
+    }
 }
