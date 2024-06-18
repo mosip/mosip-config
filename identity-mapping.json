@@ -3,6 +3,9 @@
         "IDSchemaVersion": {
             "value": "IDSchemaVersion"
         },
+	    "selectedHandles" : {
+			"value" : "selectedHandles"
+		},
         "name": {
             "value": "firstName,lastName"
         },
