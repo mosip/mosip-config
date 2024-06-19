@@ -165,7 +165,7 @@
     },
     "attributeUpdateCountLimit": {
         "fullName": 2,
-        "gender": 1,
-        "dob": 1
+        "gender": 2,
+        "dateOfBirth": 2
     }
 }
