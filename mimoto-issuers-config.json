@@ -533,5 +533,614 @@
       "credential_audience": "https://${mosip.injicertify.host}",
       "enabled": "true"
     }
+       {
+      "credential_issuer": "test1",
+      "display": [
+        {
+          "name": "KFC",
+          "logo": {
+            "url": "https://seeklogo.com/images/K/kfc-logo-FDCFEC4860-seeklogo.com.png",
+            "alt_text": "KFC-logo"
+          },
+          "title": "National Identity Department (Certify)",
+          "description": "Download MOSIP National / Foundational Identity Credential",
+          "language": "en"
+        },
+        {
+          "name": "دائرة الهوية الوطنية",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "شعار موسيب"
+          },
+          "title": "دائرة الهوية الوطنية",
+          "description": "قم بتنزيل بيانات اعتماد الهوية الوطنية / التأسيسية MOSIP",
+          "language": "ar"
+        },
+        {
+          "name": "राष्ट्रीय पहचान विभाग",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "मोसिप लोगो"
+          },
+          "title": "राष्ट्रीय पहचान विभाग",
+          "description": "MOSIP नेशनल/फाउंडेशनल आइडेंटिटी क्रेडेंशियल डाउनलोड करेंं",
+          "language": "hi"
+        },
+        {
+          "name": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip ಲೋಗೋ"
+          },
+          "title": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "description": "MOSIP ರಾಷ್ಟ್ರೀಯ / ಫೌಂಡೇಶನಲ್ ಐಡೆಂಟಿಟಿ ರುಜುವಾತು ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ",
+          "language": "kn"
+        },
+        {
+          "name": "தேசிய அடையாளத் துறை",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip லோகோ"
+          },
+          "title": "தேசிய அடையாளத் துறை",
+          "description": "MOSIP தேசிய / அடிப்படை அடையாளச் சான்றிதழைப் பதிவிறக்கவும்",
+          "language": "ta"
+        },
+        {
+          "name": "National Identity Department",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "logo ng mosip"
+          },
+          "title": "National Identity Department",
+          "description": "I-download ang MOSIP National / Foundational Identity Credential",
+          "language": "fil"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.partner.clientid}",
+      "client_alias": "mpartner-default-mimotooidc",
+      "scopes_supported": [
+        "mosip_identity_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      ".well-known": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer?version=v11",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/MosipCertify",
+      "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "https://${mosip.injicertify.host}/v1/certify/issuance/vd11/credential",
+      "credential_type": [
+        "VerifiableCredential",
+        "MOSIPVerifiableCredential"
+      ],
+      "credential_audience": "https://${mosip.injicertify.host}",
+      "enabled": "true"
+    } 
+        {
+      "credential_issuer": "test2",
+      "display": [
+        {
+          "name": "DOMINOS",
+          "logo": {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/2048px-Dominos_pizza_logo.svg.png",
+            "alt_text": "DOMINOS-logo"
+          },
+          "title": "National Identity Department (Certify)",
+          "description": "Download MOSIP National / Foundational Identity Credential",
+          "language": "en"
+        },
+        {
+          "name": "دائرة الهوية الوطنية",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "شعار موسيب"
+          },
+          "title": "دائرة الهوية الوطنية",
+          "description": "قم بتنزيل بيانات اعتماد الهوية الوطنية / التأسيسية MOSIP",
+          "language": "ar"
+        },
+        {
+          "name": "राष्ट्रीय पहचान विभाग",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "मोसिप लोगो"
+          },
+          "title": "राष्ट्रीय पहचान विभाग",
+          "description": "MOSIP नेशनल/फाउंडेशनल आइडेंटिटी क्रेडेंशियल डाउनलोड करेंं",
+          "language": "hi"
+        },
+        {
+          "name": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip ಲೋಗೋ"
+          },
+          "title": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "description": "MOSIP ರಾಷ್ಟ್ರೀಯ / ಫೌಂಡೇಶನಲ್ ಐಡೆಂಟಿಟಿ ರುಜುವಾತು ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ",
+          "language": "kn"
+        },
+        {
+          "name": "தேசிய அடையாளத் துறை",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip லோகோ"
+          },
+          "title": "தேசிய அடையாளத் துறை",
+          "description": "MOSIP தேசிய / அடிப்படை அடையாளச் சான்றிதழைப் பதிவிறக்கவும்",
+          "language": "ta"
+        },
+        {
+          "name": "National Identity Department",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "logo ng mosip"
+          },
+          "title": "National Identity Department",
+          "description": "I-download ang MOSIP National / Foundational Identity Credential",
+          "language": "fil"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.partner.clientid}",
+      "client_alias": "mpartner-default-mimotooidc",
+      "scopes_supported": [
+        "mosip_identity_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      ".well-known": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer?version=v11",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/MosipCertify",
+      "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "https://${mosip.injicertify.host}/v1/certify/issuance/vd11/credential",
+      "credential_type": [
+        "VerifiableCredential",
+        "MOSIPVerifiableCredential"
+      ],
+      "credential_audience": "https://${mosip.injicertify.host}",
+      "enabled": "true"
+    }
+        {
+      "credential_issuer": "test3",
+      "display": [
+        {
+          "name": "TACO-BELL",
+          "logo": {
+            "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsWIofPxi5wfvN0udfpHLzCb2lldKGXTiEpQ&s",
+            "alt_text": "TACOBELL-logo"
+          },
+          "title": "National Identity Department (Certify)",
+          "description": "Download MOSIP National / Foundational Identity Credential",
+          "language": "en"
+        },
+        {
+          "name": "دائرة الهوية الوطنية",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "شعار موسيب"
+          },
+          "title": "دائرة الهوية الوطنية",
+          "description": "قم بتنزيل بيانات اعتماد الهوية الوطنية / التأسيسية MOSIP",
+          "language": "ar"
+        },
+        {
+          "name": "राष्ट्रीय पहचान विभाग",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "मोसिप लोगो"
+          },
+          "title": "राष्ट्रीय पहचान विभाग",
+          "description": "MOSIP नेशनल/फाउंडेशनल आइडेंटिटी क्रेडेंशियल डाउनलोड करेंं",
+          "language": "hi"
+        },
+        {
+          "name": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip ಲೋಗೋ"
+          },
+          "title": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "description": "MOSIP ರಾಷ್ಟ್ರೀಯ / ಫೌಂಡೇಶನಲ್ ಐಡೆಂಟಿಟಿ ರುಜುವಾತು ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ",
+          "language": "kn"
+        },
+        {
+          "name": "தேசிய அடையாளத் துறை",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip லோகோ"
+          },
+          "title": "தேசிய அடையாளத் துறை",
+          "description": "MOSIP தேசிய / அடிப்படை அடையாளச் சான்றிதழைப் பதிவிறக்கவும்",
+          "language": "ta"
+        },
+        {
+          "name": "National Identity Department",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "logo ng mosip"
+          },
+          "title": "National Identity Department",
+          "description": "I-download ang MOSIP National / Foundational Identity Credential",
+          "language": "fil"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.partner.clientid}",
+      "client_alias": "mpartner-default-mimotooidc",
+      "scopes_supported": [
+        "mosip_identity_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      ".well-known": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer?version=v11",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/MosipCertify",
+      "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "https://${mosip.injicertify.host}/v1/certify/issuance/vd11/credential",
+      "credential_type": [
+        "VerifiableCredential",
+        "MOSIPVerifiableCredential"
+      ],
+      "credential_audience": "https://${mosip.injicertify.host}",
+      "enabled": "true"
+    }
+        {
+      "credential_issuer": "test4",
+      "display": [
+        {
+          "name": "VW",
+          "logo": {
+            "url": "https://www.freepnglogos.com/uploads/vw-png-logo/brand-volkswagen-png-logo-17.png",
+            "alt_text": "VW-logo"
+          },
+          "title": "National Identity Department (Certify)",
+          "description": "Download MOSIP National / Foundational Identity Credential",
+          "language": "en"
+        },
+        {
+          "name": "دائرة الهوية الوطنية",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "شعار موسيب"
+          },
+          "title": "دائرة الهوية الوطنية",
+          "description": "قم بتنزيل بيانات اعتماد الهوية الوطنية / التأسيسية MOSIP",
+          "language": "ar"
+        },
+        {
+          "name": "राष्ट्रीय पहचान विभाग",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "मोसिप लोगो"
+          },
+          "title": "राष्ट्रीय पहचान विभाग",
+          "description": "MOSIP नेशनल/फाउंडेशनल आइडेंटिटी क्रेडेंशियल डाउनलोड करेंं",
+          "language": "hi"
+        },
+        {
+          "name": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip ಲೋಗೋ"
+          },
+          "title": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "description": "MOSIP ರಾಷ್ಟ್ರೀಯ / ಫೌಂಡೇಶನಲ್ ಐಡೆಂಟಿಟಿ ರುಜುವಾತು ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ",
+          "language": "kn"
+        },
+        {
+          "name": "தேசிய அடையாளத் துறை",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip லோகோ"
+          },
+          "title": "தேசிய அடையாளத் துறை",
+          "description": "MOSIP தேசிய / அடிப்படை அடையாளச் சான்றிதழைப் பதிவிறக்கவும்",
+          "language": "ta"
+        },
+        {
+          "name": "National Identity Department",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "logo ng mosip"
+          },
+          "title": "National Identity Department",
+          "description": "I-download ang MOSIP National / Foundational Identity Credential",
+          "language": "fil"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.partner.clientid}",
+      "client_alias": "mpartner-default-mimotooidc",
+      "scopes_supported": [
+        "mosip_identity_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      ".well-known": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer?version=v11",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/MosipCertify",
+      "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "https://${mosip.injicertify.host}/v1/certify/issuance/vd11/credential",
+      "credential_type": [
+        "VerifiableCredential",
+        "MOSIPVerifiableCredential"
+      ],
+      "credential_audience": "https://${mosip.injicertify.host}",
+      "enabled": "true"
+    }
+        {
+      "credential_issuer": "test5",
+      "display": [
+        {
+          "name": "BMW",
+          "logo": {
+            "url": "https://www.freepnglogos.com/uploads/bmw-brand-logo-0.png",
+            "alt_text": "BMW-logo"
+          },
+          "title": "National Identity Department (Certify)",
+          "description": "Download MOSIP National / Foundational Identity Credential",
+          "language": "en"
+        },
+        {
+          "name": "دائرة الهوية الوطنية",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "شعار موسيب"
+          },
+          "title": "دائرة الهوية الوطنية",
+          "description": "قم بتنزيل بيانات اعتماد الهوية الوطنية / التأسيسية MOSIP",
+          "language": "ar"
+        },
+        {
+          "name": "राष्ट्रीय पहचान विभाग",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "मोसिप लोगो"
+          },
+          "title": "राष्ट्रीय पहचान विभाग",
+          "description": "MOSIP नेशनल/फाउंडेशनल आइडेंटिटी क्रेडेंशियल डाउनलोड करेंं",
+          "language": "hi"
+        },
+        {
+          "name": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip ಲೋಗೋ"
+          },
+          "title": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "description": "MOSIP ರಾಷ್ಟ್ರೀಯ / ಫೌಂಡೇಶನಲ್ ಐಡೆಂಟಿಟಿ ರುಜುವಾತು ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ",
+          "language": "kn"
+        },
+        {
+          "name": "தேசிய அடையாளத் துறை",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip லோகோ"
+          },
+          "title": "தேசிய அடையாளத் துறை",
+          "description": "MOSIP தேசிய / அடிப்படை அடையாளச் சான்றிதழைப் பதிவிறக்கவும்",
+          "language": "ta"
+        },
+        {
+          "name": "National Identity Department",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "logo ng mosip"
+          },
+          "title": "National Identity Department",
+          "description": "I-download ang MOSIP National / Foundational Identity Credential",
+          "language": "fil"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.partner.clientid}",
+      "client_alias": "mpartner-default-mimotooidc",
+      "scopes_supported": [
+        "mosip_identity_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      ".well-known": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer?version=v11",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/MosipCertify",
+      "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "https://${mosip.injicertify.host}/v1/certify/issuance/vd11/credential",
+      "credential_type": [
+        "VerifiableCredential",
+        "MOSIPVerifiableCredential"
+      ],
+      "credential_audience": "https://${mosip.injicertify.host}",
+      "enabled": "true"
+    }
+        {
+      "credential_issuer": "test6",
+      "display": [
+        {
+          "name": "PORSCHE",
+          "logo": {
+            "url": "https://pngimg.com/uploads/porsche_logo/porsche_logo_PNG1.png",
+            "alt_text": "PORSCHE-logo"
+          },
+          "title": "National Identity Department (Certify)",
+          "description": "Download MOSIP National / Foundational Identity Credential",
+          "language": "en"
+        },
+        {
+          "name": "دائرة الهوية الوطنية",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "شعار موسيب"
+          },
+          "title": "دائرة الهوية الوطنية",
+          "description": "قم بتنزيل بيانات اعتماد الهوية الوطنية / التأسيسية MOSIP",
+          "language": "ar"
+        },
+        {
+          "name": "राष्ट्रीय पहचान विभाग",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "मोसिप लोगो"
+          },
+          "title": "राष्ट्रीय पहचान विभाग",
+          "description": "MOSIP नेशनल/फाउंडेशनल आइडेंटिटी क्रेडेंशियल डाउनलोड करेंं",
+          "language": "hi"
+        },
+        {
+          "name": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip ಲೋಗೋ"
+          },
+          "title": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "description": "MOSIP ರಾಷ್ಟ್ರೀಯ / ಫೌಂಡೇಶನಲ್ ಐಡೆಂಟಿಟಿ ರುಜುವಾತು ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ",
+          "language": "kn"
+        },
+        {
+          "name": "தேசிய அடையாளத் துறை",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip லோகோ"
+          },
+          "title": "தேசிய அடையாளத் துறை",
+          "description": "MOSIP தேசிய / அடிப்படை அடையாளச் சான்றிதழைப் பதிவிறக்கவும்",
+          "language": "ta"
+        },
+        {
+          "name": "National Identity Department",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "logo ng mosip"
+          },
+          "title": "National Identity Department",
+          "description": "I-download ang MOSIP National / Foundational Identity Credential",
+          "language": "fil"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.partner.clientid}",
+      "client_alias": "mpartner-default-mimotooidc",
+      "scopes_supported": [
+        "mosip_identity_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      ".well-known": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer?version=v11",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/MosipCertify",
+      "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "https://${mosip.injicertify.host}/v1/certify/issuance/vd11/credential",
+      "credential_type": [
+        "VerifiableCredential",
+        "MOSIPVerifiableCredential"
+      ],
+      "credential_audience": "https://${mosip.injicertify.host}",
+      "enabled": "true"
+    }
+        {
+      "credential_issuer": "test7",
+      "display": [
+        {
+          "name": "LAMBO",
+          "logo": {
+            "url": "https://www.freepnglogos.com/uploads/lamborghini-logo-png/lamborghini-logo-gallery-italian-car-logos-0.png",
+            "alt_text": "LAMBO-logo"
+          },
+          "title": "National Identity Department (Certify)",
+          "description": "Download MOSIP National / Foundational Identity Credential",
+          "language": "en"
+        },
+        {
+          "name": "دائرة الهوية الوطنية",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "شعار موسيب"
+          },
+          "title": "دائرة الهوية الوطنية",
+          "description": "قم بتنزيل بيانات اعتماد الهوية الوطنية / التأسيسية MOSIP",
+          "language": "ar"
+        },
+        {
+          "name": "राष्ट्रीय पहचान विभाग",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "मोसिप लोगो"
+          },
+          "title": "राष्ट्रीय पहचान विभाग",
+          "description": "MOSIP नेशनल/फाउंडेशनल आइडेंटिटी क्रेडेंशियल डाउनलोड करेंं",
+          "language": "hi"
+        },
+        {
+          "name": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip ಲೋಗೋ"
+          },
+          "title": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "description": "MOSIP ರಾಷ್ಟ್ರೀಯ / ಫೌಂಡೇಶನಲ್ ಐಡೆಂಟಿಟಿ ರುಜುವಾತು ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ",
+          "language": "kn"
+        },
+        {
+          "name": "தேசிய அடையாளத் துறை",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip லோகோ"
+          },
+          "title": "தேசிய அடையாளத் துறை",
+          "description": "MOSIP தேசிய / அடிப்படை அடையாளச் சான்றிதழைப் பதிவிறக்கவும்",
+          "language": "ta"
+        },
+        {
+          "name": "National Identity Department",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "logo ng mosip"
+          },
+          "title": "National Identity Department",
+          "description": "I-download ang MOSIP National / Foundational Identity Credential",
+          "language": "fil"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.partner.clientid}",
+      "client_alias": "mpartner-default-mimotooidc",
+      "scopes_supported": [
+        "mosip_identity_vc_ldp"
+      ],
+      "additional_headers": {
+        "Accept": "application/json"
+      },
+      ".well-known": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer?version=v11",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
+      "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/MosipCertify",
+      "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "credential_endpoint": "https://${mosip.injicertify.host}/v1/certify/issuance/vd11/credential",
+      "credential_type": [
+        "VerifiableCredential",
+        "MOSIPVerifiableCredential"
+      ],
+      "credential_audience": "https://${mosip.injicertify.host}",
+      "enabled": "true"
+    }
   ]
 }
