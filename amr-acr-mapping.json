@@ -5,7 +5,7 @@
     "OTP" :  [{ "type": "OTP" }],
     "Wallet" :  [{ "type": "WLA" }],
     "L1-bio-device" :  [{ "type": "BIO", "count": 1 }],
-    "Knowledge" : [{"type":"KBI"}]
+    "Knowledge" : [{"type":"KBA"}]
   },
   "acr_amr" : {
     "mosip:idp:acr:password" : ["PWD"],
