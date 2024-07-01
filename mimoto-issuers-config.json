@@ -533,5 +533,6 @@
       "credential_audience": "https://${mosip.injicertify.host}",
       "enabled": "true"
     }
+    
   ]
 }
