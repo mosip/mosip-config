@@ -7,7 +7,7 @@
       "ara": "التحقق من الهوية الوهمية",
       "khm": "្នកផ្គត់ផ្គង់ Kyc"
     },
-    "logoUrl": "illustration_one.png",
+    "logoUrl": "https://github.com/mosip/artifactory-ref-impl/blob/camdgc/artifacts/src/image/esignet-signup-image/top.png",
     "processType": "VIDEO",
     "active": true,
     "retryOnFailure": true,
@@ -84,7 +84,7 @@
     "retryAttempt": 2
   },
   {
-    "id": "test-Identity Verifier",
+    "id": "test-Identity-Verifier",
     "displayName": {
       "eng": "test-Identity Verifier",
       "fra": "Vérificateur d'identité fictif",
