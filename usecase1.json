@@ -1,5 +1,6 @@
 [
   {"frameNumber" : 0, "stepCode" : "START", "step" : { "code" : "liveness_check", "framesPerSecond" : 3, "durationInSeconds" : 100, "startupDelayInSeconds" : 2, "retryOnTimeout" : false, "retryableErrorCodes" : [] }, "feedback" : null },
+  {"frameNumber" : 0, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "turn_left" } },
   {"frameNumber" : 4, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "turn_left" } },
    {"frameNumber" : 10, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "turn_right" } },
    {"frameNumber" : 20, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "turn_left" } },
