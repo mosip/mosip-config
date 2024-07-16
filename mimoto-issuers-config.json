@@ -71,64 +71,64 @@
       "credential_issuer": "ESignet",
       "display": [
         {
-          "name": "National Identity Department",
+          "name": "Veridonia National ID Department",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "mosip-logo"
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "a square logo of veridonia"
           },
-          "title": "National Identity Department",
-          "description": "Download MOSIP National / Foundational Identity Credential",
+          "title": "Veridonia National ID Department",
+          "description": "Download National ID credential",
           "language": "en"
         },
         {
-          "name": "دائرة الهوية الوطنية",
+          "name": "إدارة الهوية الوطنية فيريدونيا",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "شعار موسيب"
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "شعار مربع من veridonia"
           },
-          "title": "دائرة الهوية الوطنية",
-          "description": "قم بتنزيل بيانات اعتماد الهوية الوطنية / التأسيسية MOSIP" ,
+          "title": "إدارة الهوية الوطنية فيريدونيا",
+          "description": "تحميل بطاقة الهوية الوطنية",
           "language": "ar"
         },
         {
-          "name": "राष्ट्रीय पहचान विभाग",
+          "name": "वेरिडोनिया राष्ट्रीय आईडी विभाग",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "मोसिप लोगो"
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "वेरिडोनिया का एक वर्गाकार लोगो"
           },
-          "title": "राष्ट्रीय पहचान विभाग",
-          "description":"MOSIP नेशनल/फाउंडेशनल आइडेंटिटी क्रेडेंशियल डाउनलोड करेंं",
+          "title": "वेरिडोनिया राष्ट्रीय आईडी विभाग",
+          "description": "राष्ट्रीय आईडी क्रेडेंशियल डाउनलोड करें",
           "language": "hi"
         },
         {
-          "name": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
+          "name": "ವೆರಿಡೋನಿಯಾ ರಾಷ್ಟ್ರೀಯ ID ಇಲಾಖೆ",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "mosip ಲೋಗೋ"
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "ವೆರಿಡೋನಿಯಾದ ಚೌಕಾಕಾರದ ಲೋಗೋ"
           },
-          "title": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
-          "description": "MOSIP ರಾಷ್ಟ್ರೀಯ / ಫೌಂಡೇಶನಲ್ ಐಡೆಂಟಿಟಿ ರುಜುವಾತು ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ",
+          "title": "ವೆರಿಡೋನಿಯಾ ರಾಷ್ಟ್ರೀಯ ID ಇಲಾಖೆ",
+          "description": "ರಾಷ್ಟ್ರೀಯ ID ರುಜುವಾತುಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
           "language": "kn"
         },
         {
-          "name": "தேசிய அடையாளத் துறை",
+          "name": "வெரிடோனியா தேசிய அடையாளத் துறை",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "mosip லோகோ"
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "வெரிடோனியாவின் சதுர லோகோ"
           },
-          "title": "தேசிய அடையாளத் துறை",
-          "description":"MOSIP தேசிய / அடிப்படை அடையாளச் சான்றிதழைப் பதிவிறக்கவும்",
+          "title": "வெரிடோனியா தேசிய அடையாளத் துறை",
+          "description": "தேசிய அடையாளச் சான்றிதழைப் பதிவிறக்கவும்",
           "language": "ta"
         },
         {
-          "name": "National Identity Department",
+          "name": "Département national d'identité de Veridonia",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
-            "alt_text": "logo ng mosip"
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "un logo carré de veridonia"
           },
-          "title": "National Identity Department",
-          "description":"I-download ang MOSIP National / Foundational Identity Credential",
-          "language": "fil"
+          "title": "Département national d'identité de Veridonia",
+          "description": "Télécharger le titre d'identité nationale",
+          "language": "fr"
         }
       ],
       "protocol": "OpenId4VCI",
@@ -151,64 +151,64 @@
       "credential_issuer": "Sunbird",
       "display": [
         {
-          "name": "Veridonia Insurance Company",
+          "name": "StayProtected Insurance",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
-            "alt_text": "a Veridonia logo"
+            "url": "https://raw.githubusercontent.com/tw-mosip/file-server/master/StayProtectedInsurance.png",
+            "alt_text": "a square logo of a StayProtected"
           },
           "language": "en",
-          "title": "Veridonia Insurance Company",
-          "description": "Download Insurance Credentials using policy details"
+          "title": "StayProtected Insurance",
+          "description": "Download insurance credential"
         },
         {
-          "name": "شركة فيريدونيا للتأمين",
+          "name": "تأمين البقاء المحمي",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
-            "alt_text": "شعار فيريدونيا"
+            "url": "https://raw.githubusercontent.com/tw-mosip/file-server/master/StayProtectedInsurance.png",
+            "alt_text": "شعار مربع لـ StayProtected"
           },
           "language": "ar",
-          "title": "شركة فيريدونيا للتأمين",
-          "description": "قم بتنزيل بيانات اعتماد التأمين باستخدام تفاصيل السياسة"
+          "title": "تأمين البقاء المحمي",
+          "description": "تنزيل بيانات اعتماد التأمين"
         },
         {
-          "name": "वेरिडोनिया बीमा कंपनींं",
+          "name": "सुरक्षित रहें बीमा",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
-            "alt_text": "एक वेरिडोनिया लोगो"
+            "url": "https://raw.githubusercontent.com/tw-mosip/file-server/master/StayProtectedInsurance.png",
+            "alt_text": "StayProtected का एक वर्गाकार लोगो"
           },
           "language": "hi",
-          "title": "वेरिडोनिया बीमा कंपनींं",
-          "description": "पॉलिसी विवरण का उपयोग करके बीमा क्रेडेंशियल डाउनलोड करें"
+          "title": "सुरक्षित रहें बीमा",
+          "description": "बीमा क्रेडेंशियल डाउनलोड करें"
         },
         {
-          "name": "ವೆರಿಡೋನಿಯಾ ವಿಮಾ ಕಂಪನಿ",
+          "name": "ಸ್ಟೇ ರಕ್ಷಿತ ವಿಮೆ",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
-            "alt_text": "ವೆರಿಡೋನಿಯಾ ಲೋಗೋ"
+            "url": "https://raw.githubusercontent.com/tw-mosip/file-server/master/StayProtectedInsurance.png",
+            "alt_text": "StayProtected ನ ಚೌಕಾಕಾರದ ಲೋಗೋ"
           },
           "language": "kn",
-          "title": "ವೆರಿಡೋನಿಯಾ ವಿಮಾ ಕಂಪನಿ",
-          "description": "ಪಾಲಿಸಿ ವಿವರಗಳನ್ನು ಬಳಸಿಕೊಂಡು ವಿಮಾ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ"
+          "title": "ಸ್ಟೇ ರಕ್ಷಿತ ವಿಮೆ",
+          "description": "ವಿಮಾ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ"
         },
         {
-          "name": "வெரிடோனியா இன்சூரன்ஸ் நிறுவனம்",
+          "name": "பாதுகாக்கப்பட்ட காப்பீடு",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
-            "alt_text": "ஒரு வெரிடோனியா லோகோ"
+            "url": "https://raw.githubusercontent.com/tw-mosip/file-server/master/StayProtectedInsurance.png",
+            "alt_text": "StayProtected இன் சதுர லோகோ"
           },
           "language": "ta",
-          "title": "வெரிடோனியா இன்சூரன்ஸ் நிறுவனம்",
-          "description": "பாலிசி விவரங்களைப் பயன்படுத்தி காப்பீட்டுச் சான்றுகளைப் பதிவிறக்கவும்"
+          "title": "பாதுகாக்கப்பட்ட காப்பீடு",
+          "description": "காப்பீட்டுச் சான்றிதழைப் பதிவிறக்கவும்"
         },
         {
-          "name": "Veridonia Insurance Company",
+          "name": "Assurance Restez Protégé",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
-            "alt_text": "isang logo ng Veridonia"
+            "url": "https://raw.githubusercontent.com/tw-mosip/file-server/master/StayProtectedInsurance.png",
+            "alt_text": "un logo carré d'un StayProtected"
           },
-          "language": "fil",
-          "title": "Veridonia Insurance Company",
-          "description": "I-download ang Mga Kredensyal ng Seguro gamit ang mga detalye ng patakaran"
+          "language": "fr",
+          "title": "Assurance Restez Protégé",
+          "description": "Télécharger le certificat d'assurance"
         }
       ],
       "protocol": "OpenId4VCI",
@@ -305,7 +305,7 @@
       "credential_endpoint": "https://explore.openg2p.org/api/v1/vci/credential",
       "credential_type": ["VerifiableCredential", "OpenG2PBeneficiaryVerifiableCredential"],
       "credential_audience": "https://explore.openg2p.org",
-      "enabled": "true"
+      "enabled": "false"
     }
   ]
 }
