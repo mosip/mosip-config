@@ -157,7 +157,7 @@
             "alt_text": "a square logo of a StayProtected"
           },
           "language": "en",
-          "title": "Download StayProtected Insurance Credentials",
+          "title": "StayProtected Insurance",
           "description": "Download insurance credential"
         },
         {
@@ -167,7 +167,7 @@
             "alt_text": "شعار مربع لـ StayProtected"
           },
           "language": "ar",
-          "title": "قم بتنزيل بيانات اعتماد التأمين StayProtected",
+          "title": "تأمين البقاء المحمي",
           "description": "تنزيل بيانات اعتماد التأمين"
         },
         {
@@ -177,7 +177,7 @@
             "alt_text": "StayProtected का एक वर्गाकार लोगो"
           },
           "language": "hi",
-          "title": "स्टेप्रोटेक्टेड बीमा क्रेडेंशियल डाउनलोड करें",
+          "title": "सुरक्षित रहें बीमा",
           "description": "बीमा क्रेडेंशियल डाउनलोड करें"
         },
         {
@@ -187,7 +187,7 @@
             "alt_text": "StayProtected ನ ಚೌಕಾಕಾರದ ಲೋಗೋ"
           },
           "language": "kn",
-          "title": "StayProtected ವಿಮಾ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+          "title": "ಸ್ಟೇ ರಕ್ಷಿತ ವಿಮೆ",
           "description": "ವಿಮಾ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ"
         },
         {
@@ -197,7 +197,7 @@
             "alt_text": "StayProtected இன் சதுர லோகோ"
           },
           "language": "ta",
-          "title": "StayProtected இன்சூரன்ஸ் நற்சான்றிதழ்களைப் பதிவிறக்கவும்",
+          "title": "பாதுகாக்கப்பட்ட காப்பீடு",
           "description": "காப்பீட்டுச் சான்றிதழைப் பதிவிறக்கவும்"
         },
         {
@@ -207,7 +207,7 @@
             "alt_text": "un logo carré d'un StayProtected"
           },
           "language": "fr",
-          "title": "Téléchargez les informations d'identification d'assurance StayProtected",
+          "title": "Assurance Restez Protégé",
           "description": "Télécharger le certificat d'assurance"
         }
       ],
