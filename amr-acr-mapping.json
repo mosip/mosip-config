@@ -7,7 +7,7 @@
     "L1-bio-device" :  [{ "type": "BIO", "count": 1 }],
     "knowledge" :  [{ "type": "KBA"}],
     "Password" :  [{ "type": "PWD" }],
-     "ID-token" :  [{ "type": "IDT" }]
+    "ID-token" :  [{ "type": "IDT" }]
   },
   "acr_amr" : {
     "mosip:idp:acr:password" : ["PWD"],
