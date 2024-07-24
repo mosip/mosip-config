@@ -4,8 +4,10 @@
   {"frameNumber" : 4, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "turn_left" } },
    {"frameNumber" : 10, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "turn_right" } },
    {"frameNumber" : 20, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "turn_left" } },
-   {"frameNumber" : 25, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "COLOR", "code" : "#000000" } },
-   {"frameNumber" : 30, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "ERROR", "code" : "low_light" } },
-  {"frameNumber" : 40, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "success_check" } },
-  {"frameNumber" : 41, "stepCode" : "liveness_check", "step" : { "code" : "END", "framesPerSecond" : 0, "durationInSeconds" : 0, "startupDelayInSeconds" : 0, "retryOnTimeout" : false, "retryableErrorCodes" : [] }, "feedback" : null }
+   {"frameNumber" : 25, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "COLOR", "code" : "#0000FF" } },
+    {"frameNumber" : 30, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "COLOR", "code" : "#808080" } },
+    {"frameNumber" : 35, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "COLOR", "code" : "#0000FF" } },
+   {"frameNumber" : 40, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "ERROR", "code" : "low_light" } },
+  {"frameNumber" : 50, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "success_check" } },
+  {"frameNumber" : 51, "stepCode" : "liveness_check", "step" : { "code" : "END", "framesPerSecond" : 0, "durationInSeconds" : 0, "startupDelayInSeconds" : 0, "retryOnTimeout" : false, "retryableErrorCodes" : [] }, "feedback" : null }
 ]
