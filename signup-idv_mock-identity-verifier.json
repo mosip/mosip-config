@@ -23,6 +23,7 @@
   "messages": {
     "turn_left": { "eng" : "Turn your head to Left" },
     "turn_right": { "eng" : "Turn your head to Right" },
+    "sit_straight": {"eng" : "Keep good posture while facing the camera" },
     "success_check": { "eng" : "Liveness check successful" },
     "id_verified": { "eng" : "ID card verification successful" }
   }
