@@ -25,6 +25,18 @@
     "turn_right": { "eng" : "Turn your head to Right" },
     "sit_straight": {"eng" : "Keep good posture while facing the camera" },
     "success_check": { "eng" : "Liveness check successful" },
-    "id_verified": { "eng" : "ID card verification successful" }
+    "id_verified": { "eng" : "ID card verification successful" },
+    "facingcamera": {
+      "eng": "Keep good posture while facing the camera,do follow all the instructions as informed",
+      "khm": "រក្សា​ឥរិយាបថ​ឱ្យ​បានល្អ​ពេល​កំពុង​ប្រឈមមុខ​នឹង​កាមេរ៉ា សូម​ធ្វើ​តាម​ការណែនាំ​ទាំងអស់​ដូច​ដែល​បាន​ជូនដំណឹង"
+    },
+    "facingscreen": {
+      "eng": "please follow instruction to perform eKYC process successfully, keep your internet connected throughout the process",
+      "khm": "សូមធ្វើតាមការណែនាំ ដើម្បីអនុវត្តដំណើរការ eKYC ដោយជោគជ័យ រក្សាអ៊ីនធឺណិតរបស់អ្នកបានភ្ជាប់ពេញដំណើរការ"
+    },
+    "camera_on": {
+      "eng": "please follow instruction to perform eKYC process successfully, keep your internet connected throughout the process",
+      "khm": "សូមធ្វើតាមការណែនាំ ដើម្បីអនុវត្តដំណើរការ eKYC ដោយជោគជ័យ រក្សាអ៊ីនធឺណិតរបស់អ្នកបានភ្ជាប់ពេញដំណើរការ"
+    }
   }
 }
