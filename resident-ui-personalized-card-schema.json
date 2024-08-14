@@ -1,12 +1,12 @@
 {
 	"identity": [
 		{
-			"attributeName": "fullName",
+			"attributeName": "firstName",
 			"maskRequired": false,
 			"formatRequired": true,
 			"defaultFormat":"firstName",
 			"label": {
-				"eng": "Name",
+				"eng": "firstName",
 				"ara": "اسم",
 				"fra":"Nom",
 				"hin":"नाम",
@@ -24,8 +24,8 @@
 				"spa":"Formato de nombre"
 			},
 			"formatOption":{
-				"eng": [{"label":"First Name", "value":"fullName","checked":true}],
-				"ara": [{"label":"الاسم الكامل", "value":"fullName","checked":true}],
+				"eng": [{"label":"First Name", "value":"firstName","checked":true}],
+				"ara": [{"label":"الاسم الكامل", "value":"firstName","checked":true}],
 				"fra": [{"label":"nom et prénom", "value":"fullName","checked":true}],
 				"hin": [{"label":"पूरा नाम", "value":"fullName","checked":true}],
 				"tam": [{"label":"முழு பெயர்", "value":"fullName","checked":true}],
@@ -37,12 +37,12 @@
 			"checked":false
 		},
 		{
-			"attributeName": "fullName",
+			"attributeName": "lastName",
 			"maskRequired": false,
 			"formatRequired": true,
 			"defaultFormat":"lastName",
 			"label": {
-				"eng": "Name",
+				"eng": "lastName",
 				"ara": "اسم",
 				"fra":"Nom",
 				"hin":"नाम",
@@ -60,8 +60,8 @@
 				"spa":"Formato de nombre"
 			},
 			"formatOption":{
-				"eng": [{"label":"last Name", "value":"fullName","checked":true}],
-				"ara": [{"label":"الاسم الكامل", "value":"fullName","checked":true}],
+				"eng": [{"label":"last Name", "value":"lastName","checked":true}],
+				"ara": [{"label":"الاسم الكامل", "value":"lastName","checked":true}],
 				"fra": [{"label":"nom et prénom", "value":"fullName","checked":true}],
 				"hin": [{"label":"पूरा नाम", "value":"fullName","checked":true}],
 				"tam": [{"label":"முழு பெயர்", "value":"fullName","checked":true}],
