@@ -4,7 +4,7 @@
 			"attributeName": "fullName",
 			"maskRequired": false,
 			"formatRequired": true,
-			"defaultFormat":"fullName",
+			"defaultFormat":"firstName",
 			"label": {
 				"eng": "Name",
 				"ara": "اسم",
@@ -24,7 +24,43 @@
 				"spa":"Formato de nombre"
 			},
 			"formatOption":{
-				"eng": [{"label":"Full Name", "value":"fullName","checked":true}],
+				"eng": [{"label":"First Name", "value":"fullName","checked":true}],
+				"ara": [{"label":"الاسم الكامل", "value":"fullName","checked":true}],
+				"fra": [{"label":"nom et prénom", "value":"fullName","checked":true}],
+				"hin": [{"label":"पूरा नाम", "value":"fullName","checked":true}],
+				"tam": [{"label":"முழு பெயர்", "value":"fullName","checked":true}],
+				"kan": [{"label":"ಪೂರ್ಣ ಹೆಸರು", "value":"fullName","checked":true}],
+				"spa": [{"label":"Nombre completo", "value":"fullName","checked":true}]
+			},
+			"displaykeyinsharewithpartner":true,
+			"displaykeyinpersonalisedcard":true,
+			"checked":false
+		},
+		{
+			"attributeName": "fullName",
+			"maskRequired": false,
+			"formatRequired": true,
+			"defaultFormat":"lastName",
+			"label": {
+				"eng": "Name",
+				"ara": "اسم",
+				"fra":"Nom",
+				"hin":"नाम",
+				"tam":"பெயர்",
+				"kan":"ಹೆಸರು",
+				"spa":"Nombre"
+			},
+			"formatOptionLabel":{
+				"eng": "Name Format",
+				"ara": "تنسيق الاسم",
+				"fra":"Format du nom",
+				"hin":"नाम प्रारूप",
+				"tam":"பெயர் வடிவம்",
+				"kan":"ಹೆಸರು ಸ್ವರೂಪ",
+				"spa":"Formato de nombre"
+			},
+			"formatOption":{
+				"eng": [{"label":"last Name", "value":"fullName","checked":true}],
 				"ara": [{"label":"الاسم الكامل", "value":"fullName","checked":true}],
 				"fra": [{"label":"nom et prénom", "value":"fullName","checked":true}],
 				"hin": [{"label":"पूरा नाम", "value":"fullName","checked":true}],
