@@ -1,9 +1,9 @@
 {
     "identity": [
         {
-            "attributeName": "firstName",
+            "attributeName": "fullName",
             "label": {
-                "eng": "firstName",
+                "eng": "fullName",
                 "ara": "اسم",
                 "fra": "Nom",
                 "hin": "नाम",
@@ -23,62 +23,7 @@
             "description": "",
             "labelName": {
                 "eng": [
-                    "Current first Name",
-                    "New Name"
-                ],
-                "ara": [
-                    "الاسم الحالي",
-                    "اسم جديد"
-                ],
-                "fra": [
-                    "Nom actuel",
-                    "Nouveau nom"
-                ],
-                "hin": [
-                    "वर्तमान नाम",
-                    "नया नाम"
-                ],
-                "tam": [
-                    "தற்போதைய பெயர்",
-                    "புதிய பெயர்"
-                ],
-                "kan": [
-                    "ಪ್ರಸ್ತುತ ಹೆಸರು",
-                    "ಹೊಸ ಹೆಸರು"
-                ],
-                "spa": [
-                    "Nombre actual",
-                    "Nuevo nombre"
-                ]
-            },
-            "controlType": "textbox",
-            "tabgroup": "identity",
-            "dataType": "notString"
-        },
-        {
-            "attributeName": "lastName",
-            "label": {
-                "eng": "lastName",
-                "ara": "اسم",
-                "fra": "Nom",
-                "hin": "नाम",
-                "tam": "பெயர்",
-                "kan": "ಹೆಸರು",
-                "spa": "Nombre"
-            },
-            "placeHolder": {
-                "eng": "Enter new name",
-                "ara": "أدخل الاسم الجديد",
-                "fra": "Entrez un nouveau nom",
-                "hin": "नया नाम दर्ज करें",
-                "tam": "புதிய பெயரை உள்ளிடவும்",
-                "kan": "ಹೊಸ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
-                "spa": "Introduce un nuevo nombre"
-            },
-            "description": "",
-            "labelName": {
-                "eng": [
-                    "Current last Name",
+                    "Current Name",
                     "New Name"
                 ],
                 "ara": [
