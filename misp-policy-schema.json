@@ -22,6 +22,5 @@
       "allowAuthRequestDelegation",
       "allowKycRequestDelegation",
       "allowKeyBindingDelegation"
-    ],
-    "additionalProperties": false
-  }
+    ]
+}
