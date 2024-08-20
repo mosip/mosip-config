@@ -27,6 +27,9 @@
         },
         "protocol": {
           "type": "string"
+        },
+        "protocol": {
+          "type": "string"
         }
       },
       "required": [
