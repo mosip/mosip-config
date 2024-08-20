@@ -73,31 +73,19 @@
 			"value": "zone,postalCode"
 		},
 		"addressLine1": {
-			"value": "addressLine1"
-		},
-		"addressLine2": {
-			"value": "addressLine2"
-		},
-		"addressLine3": {
-			"value": "addressLine3"
+			"value": "addressLine"
 		},
 		"location1": {
-			"value": "city"
-		},
-		"location2": {
-			"value": "region"
-		},
-		"location3": {
 			"value": "province"
 		},
-		"postalCode": {
-			"value": "postalCode"
+		"location2": {
+			"value": "district"
 		},
-		"location4": {
-			"value": "zone"
+		"location3": {
+			"value": "constituency"
 		},
 		"fullAddress": {
-			"value": "addressLine1,addressLine2,addressLine3,city,region,province,zone,postalCode"
+			"value": "addressLine,province,district,constituency"
 		},
 		"bestTwoFingers": {
 			"value": "bestTwoFingers"
@@ -109,7 +97,7 @@
 			"value": "face"
 		},
 		"address": {
-			"value": "addressLine1,addressLine2,addressLine3,city,region,province,zone,postalCode"
+			"value": "addressLine,province,district,constituency"
 		},
 		"phone_number": {
 			"value": "phone"
@@ -121,13 +109,10 @@
 			"value":  "addressLine1,addressLine2,addressLine3"
 		},
 		"locality": {
-			"value":  "city"
+			"value":  "constituency"
 		},
 		"region": {
-			"value":  "region"
-		},
-		"postal_code": {
-			"value":  "postalCode"
+			"value":  "district"
 		},
 		"country": {
 			"value":  "province"
