@@ -120,7 +120,7 @@
 		},
 		"attributes": {
 		   "value": "fln,ad1,ad2,ad3,cit,reg,pro,poc,cph,em,ph,gen,dob"
-		},  
+		},
 		"street_address": {
 			"value": "addressLine1,addressLine2,addressLine3"
 		},
@@ -168,7 +168,7 @@
 		"gender": 2,
 		"dateOfBirth": 3
 
-		
-		
+
+
 	}
 }

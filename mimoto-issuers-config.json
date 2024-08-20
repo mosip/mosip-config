@@ -306,6 +306,6 @@
       "credential_type": ["VerifiableCredential", "InsuranceCredential"],
       "credential_audience": "https://esignet-140.qa-inji.mosip.net",
       "enabled": "false"
-    }    
+    }
   ]
 }
