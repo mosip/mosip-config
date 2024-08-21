@@ -16,9 +16,9 @@
         "required":[
           "attributeName"
         ],
-        "additionalProperties": false        
+        "additionalProperties": false
       }
-      
+
     },
     "allowedAuthTypes":{
       "type":"array",
@@ -43,18 +43,18 @@
         ],
         "additionalProperties": false
       }
-      
+
     },
     "authTokenType":{
       "type":"string",
       "enum":["random","partner","policy"]
     },
-	  "kycLanguages": {
-			"type": "array",
-			"items": {
-				"type": "string"
-			}
-		}
+    "kycLanguages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
   },
 
   "required":[
@@ -62,5 +62,5 @@
     "allowedAuthTypes",
     "allowedKycAttributes"
   ],
-  "additionalProperties": false  
+  "additionalProperties": false
 }
