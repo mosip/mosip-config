@@ -10,8 +10,33 @@
                 "trust_framework": {
                     "type": "string"
                 },
-                "process_name": {
+                "verification_process": {
                     "type": "string"
+                },
+                "assurance_level": {
+                    "type": "string"
+                },
+                "time": {
+                    "type": "string"
+                },
+                "assurance_process": {
+                    "type": "object",
+                    "properties": {
+                        "policy": {
+                            "type": "string"
+                        },
+                        "procedure": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "evidence": {
+                    "type": "object",
+                    "properties": {
+                        "method": {
+                            "type": "string"
+                        }
+                    }
                 }
             }
         }
