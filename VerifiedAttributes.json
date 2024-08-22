@@ -12,54 +12,6 @@
                 },
                 "process_name": {
                     "type": "string"
-                },
-                "time": {
-                    "type": "number"
-                },
-                "assurance": {
-                    "type": "object",
-                    "required": [
-                        "level",
-                        "procedure",
-                        "policy"
-                    ],
-                    "properties": {
-                        "level": {
-                            "type": "string"
-                        },
-                        "policy": {
-                            "type": "string"
-                        },
-                        "procedure": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "evidence": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "type": {
-                                "type": "string"
-                            },
-                            "verified_on": {
-                                "type": "number"
-                            },
-                            "verification_method": {
-                                "type": "string"
-                            },
-                            "detail": {
-                                "type": "object",
-                                "additionalProperties": true,
-                                "properties": {
-                                    "document": {
-                                        "type": "string"
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         }
