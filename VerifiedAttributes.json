@@ -20,7 +20,7 @@
                     "type": "string"
                 },
                 "assurance_process": {
-                    "type": "object",
+                    "type": ["object", "null"],
                     "properties": {
                         "policy": {
                             "type": "string"
@@ -31,7 +31,7 @@
                     }
                 },
                 "evidence": {
-                    "type": "object",
+                    "type": ["object", "null"],
                     "properties": {
                         "method": {
                             "type": "string"
