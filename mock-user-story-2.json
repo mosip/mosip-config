@@ -1,21 +1,17 @@
 {
-
-  "flow":[
+  "scenes":[
     {"frameNumber" : 0, "stepCode" : "START", "step" : { "code" : "liveness_check", "framesPerSecond" : 3, "durationInSeconds" : 100, "startupDelayInSeconds" : 2, "retryOnTimeout" : false, "retryableErrorCodes" : [] }, "feedback" : null },
     {"frameNumber" : 0, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "turn_left" } },
-    {"frameNumber" : 4, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "turn_left" } },
     {"frameNumber" : 10, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "turn_right" } },
     {"frameNumber" : 20, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "turn_left" } },
-    {"frameNumber" : 25, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "COLOR", "code" : "#0000FF" } },
     {"frameNumber" : 30, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "COLOR", "code" : "#808080" } },
     {"frameNumber" : 35, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "COLOR", "code" : "#0000FF" } },
     {"frameNumber" : 40, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "ERROR", "code" : "low_light" } },
     {"frameNumber" : 50, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "success_check" } },
     {"frameNumber" : 51, "stepCode" : "liveness_check", "step" : { "code" : "END", "framesPerSecond" : 0, "durationInSeconds" : 0, "startupDelayInSeconds" : 0, "retryOnTimeout" : false, "retryableErrorCodes" : [] }, "feedback" : null }
   ],
-  "verified_claims":[
-    "name","email","gender"
-  ],
-  "trust_framework":"trust_framework_dummy",
-  "process_name":"dummy_process_name"
+  "verifiedResult": {
+    "fullName" : { "trust_framework":"XYZ TF", "process_name":"EKYC" },
+    "phone" : { "trust_framework":"XYZ TF", "process_name":"EKYC" }
+    }
 }
