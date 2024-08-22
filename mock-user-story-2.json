@@ -7,7 +7,7 @@
   ],
   "verifiedResult": {
     "status": "COMPLETED",
-    "verifiedClaims" : {"fullName" : { "trust_framework":"XYZ TF", "process_name":"EKYC" } },
+    "verifiedClaims" : {"fullName" : { "trust_framework":"XYZ TF", "verification_process":"EKYC", "assurance_level": "Gold", "time": "34232432" } },
     "errorCode": null
     }
 }
