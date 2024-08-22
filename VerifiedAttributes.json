@@ -9,21 +9,17 @@
       "items": {
         "type": "object",
         "required": [
-          "trustFramework",
-          "processName",
-          "startedOn"
+          "trust_framework",
+          "process_name"
         ],
         "properties": {
-          "trustFramework": {
+          "trust_framework": {
             "type": "string"
           },
-          "processName": {
+          "process_name": {
             "type": "string"
           },
-          "startedOn": {
-            "type": "number"
-          },
-          "completedOn": {
+          "time": {
             "type": "number"
           },
           "assurance": {
@@ -53,10 +49,10 @@
                 "type": {
                   "type": "string"
                 },
-                "verifiedOn": {
+                "verified_on": {
                   "type": "number"
                 },
-                "verificationMethod": {
+                "verification_method": {
                   "type": "string"
                 },
                 "detail": {
@@ -79,7 +75,7 @@
     "fullName": {
       "$ref": "#/definitions/verificationDetail"
     },
-    "address": {
+    "phone": {
       "$ref": "#/definitions/verificationDetail"
     }
   }
