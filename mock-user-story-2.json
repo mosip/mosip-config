@@ -6,7 +6,8 @@
     {"frameNumber" : 5, "stepCode" : "liveness_check", "step" : { "code" : "END", "framesPerSecond" : 0, "durationInSeconds" : 0, "startupDelayInSeconds" : 0, "retryOnTimeout" : false, "retryableErrorCodes" : [] }, "feedback" : null }
   ],
   "verifiedResult": {
-    "fullName" : { "trust_framework":"XYZ TF", "process_name":"EKYC" },
-    "phone" : { "trust_framework":"XYZ TF", "process_name":"EKYC" }
+    "status": "COMPLETED",
+    "verifiedClaims" : {"fullName" : { "trust_framework":"XYZ TF", "process_name":"EKYC" } },
+    "errorCode": null
     }
 }
