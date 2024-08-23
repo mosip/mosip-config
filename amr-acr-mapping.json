@@ -5,7 +5,7 @@
     "OTP" :  [{ "type": "OTP" }],
     "Wallet" :  [{ "type": "WLA" }],
     "L1-bio-device" :  [{ "type": "BIO", "count": 1 }],
-    "knowledge" :  [{ "type": "KBA"}],
+    "knowledge" :  [{ "type": "KBI"}],
     "Password" :  [{ "type": "PWD" }],
     "ID-token" :  [{ "type": "IDT" }]
   },
