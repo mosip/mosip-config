@@ -9,8 +9,7 @@
       "items": {
         "type": "object",
         "required": [
-          "trustFramework",
-          "processName",
+          "assurance",
           "startedOn"
         ],
         "properties": {
@@ -81,6 +80,9 @@
     },
     "address": {
       "$ref": "#/definitions/verificationDetail"
-    }
+    },
+    "phone": {
+      "$ref": "#/definitions/verificationDetail"
   }
+}
 }
