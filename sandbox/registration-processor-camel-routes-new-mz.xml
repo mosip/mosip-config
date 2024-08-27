@@ -129,7 +129,7 @@
             message="demo-dedupe-->bio-dedupe new route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] != 'CHILD' &amp;&amp; @['isValid'] == true)]</jsonpath>
                 <to uri="eventbus:bio-dedupe-bus-in" />
             </when>
             <when>
@@ -204,7 +204,7 @@
             message="manual-verification-->uin-generation new route ${bodyAs(String)}" />
         <choice>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'CHILD' &amp;&amp; @['isValid'] == true &amp;&amp; @['messageBusAddress']['address'] != 'manual-verification-bus-in' &amp;&amp; @['internalError'] == false)]</jsonpath>
                 <to uri="eventbus:uin-generator-bus-in" />
             </when>
             <when>
