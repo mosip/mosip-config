@@ -10,7 +10,7 @@
     {"frameNumber" : 25, "stepCode" : "liveness_check", "step" : { "code" : "END", "framesPerSecond" : 0, "durationInSeconds" : 0, "startupDelayInSeconds" : 0, "retryOnTimeout" : false, "retryableErrorCodes" : [] }, "feedback" : null }
   ],
   "verifiedResult": {
-    "status": "COMPLETED",
+    "status": "FAILED",
     "verifiedClaims" : {"fullName" : { "trust_framework":"XYZ TF", "verification_process":"EKYC", "assurance_level": "Gold", "time": "34232432" } },
     "errorCode": null
     }
