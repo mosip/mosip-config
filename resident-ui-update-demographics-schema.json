@@ -1,7 +1,7 @@
 {
 	"identity": [
 		{
-			"attributeName": "firstName",
+			"attributeName": "fullName",
 			"label": {
 				"eng": "Name",
 				"ara": "اسم",
@@ -23,8 +23,8 @@
 			"description": "",
 			"labelName": {
 				"eng": [
-					"Current  First Name",
-					"New First Name"
+					"Current Name",
+					"New Name"
 				],
 				"ara": [
 					"الاسم الحالي",
