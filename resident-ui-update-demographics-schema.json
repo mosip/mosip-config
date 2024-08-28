@@ -848,14 +848,7 @@
       },
       "controlType": "textbox",
       "tabgroup": "contact",
-      "dataType": "string",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-zA-Z]{2,})$",
-          "arguments": []
-        }
-      ]
+      "dataType": "string"
     },
     {
       "attributeName": "phone",
@@ -924,14 +917,7 @@
       },
       "controlType": "textbox",
       "tabgroup": "contact",
-      "dataType": "string",
-      "validators": [
-        {
-          "type": "regex",
-          "validator": "^([6-9]{1})([0-9]{9})$",
-          "arguments": []
-        }
-      ]
+      "dataType": "string"
     },
     {
       "attributeName": "preferredLang",
