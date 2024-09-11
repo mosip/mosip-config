@@ -164,8 +164,8 @@
 		}
 	},
 	"attributeUpdateCountLimit": {
-		"fullName": 5,
-		"gender": 2,
+		"fullName": 3,
+		"gender": 3,
 		"dateOfBirth": 3
 
 		
