@@ -1,7 +1,7 @@
 {
   "issuers": [
     {
-      "credential_issuer": "Mosip",
+      "credential_issuer": "MosipOtp",
       "display": [
         {
           "name": "UIN, VID, AID",
@@ -68,7 +68,7 @@
       "enabled": "true"
     },
     {
-      "credential_issuer": "ESignet",
+      "credential_issuer": "Mosip",
       "display": [
         {
           "name": "e-Signet",
