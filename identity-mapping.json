@@ -7,7 +7,7 @@
 			"value" : "selectedHandles"
 		},
         "name": {
-            "value": "firstName,lastName"
+            "value": "fullName"
         },
         "gender": {
             "value": "gender"
@@ -48,6 +48,9 @@
         "uin": {
             "value": "UIN"
         },
+	"vid": {
+		"value": "VID"
+		},
         "individualBiometrics": {
             "value": "individualBiometrics"
         },
@@ -70,7 +73,7 @@
             "value": "preferredLang"
         },
         "locationHierarchyForProfiling": {
-            "value": "preProvince,preZipCode"
+            "value": "zone,postalCode"
         },
         "addressLine1": {
             "value": "addressLine1"
@@ -78,20 +81,26 @@
         "addressLine2": {
             "value": "addressLine2"
         },
+	"addressLine3": {
+	    "value": "addressLine3"
+		},
         "location1": {
-            "value": "preProvince"
+            "value": "city"
         },
         "location2": {
-            "value": "preLocality"
+            "value": "region"
         },
         "location3": {
-            "value": "preMunicipality"
+            "value": "province"
         },
         "postalCode": {
-            "value": "preZipCode"
+            "value": "postalCode"
         },
+	"location4": {
+	    "value": "zone"
+		},    
         "fullAddress": {
-            "value": "addressLine1,addressLine2,preProvince,preLocality,preMunicipality,preZipCode"
+            "value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
         }
     },
     "metaInfo": {
@@ -118,7 +127,7 @@
         }
     },
     "attributeUpdateCountLimit": {
-        "firstName": 2,
+        "fullName": 2,
         "gender": 2,
         "dateOfBirth": 2
     }
