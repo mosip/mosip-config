@@ -48,7 +48,8 @@
     "region": {
       "@id": "https://${mosip.api.public.host}/mosip#region",
       "@context": {"value": "rdf:value", "lang": "@language"}
+    },
+    "face": "mosip:face"
     }
-    
-  }]
+  ]
 }
