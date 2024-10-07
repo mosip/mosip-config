@@ -52,11 +52,11 @@
   },
   "messages": {
     "turn_left": {
-      "eng": "Turn your head to Left",
+      "eng": "Turn your head to left",
       "khm": "បង្វែរក្បាលរបស់អ្នកទៅខាងឆ្វេង"
     },
     "turn_right": {
-      "eng": "Turn your head to Right",
+      "eng": "Turn your head to right",
       "khm": "បង្វែរក្បាលរបស់អ្នកទៅស្តាំ"
     },
     "success_check": {
