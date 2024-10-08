@@ -9,7 +9,7 @@
     },
     "logoUrl": "https://avatars.githubusercontent.com/u/39733477?s=200&v=4",
     "processType": "VIDEO",
-    "active": true,
+    "active": false,
     "retryOnFailure": true,
     "retryAttempt": 2
   },
