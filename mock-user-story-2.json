@@ -5,9 +5,9 @@
     {"frameNumber" : 2, "stepCode" : "liveness_check", "step" : null, "feedback" : {"type" : "MESSAGE", "code" : "turn_right" } },
     {"frameNumber" : 5, "stepCode" : "liveness_check", "step" : { "code" : "END", "framesPerSecond" : 0, "durationInSeconds" : 0, "startupDelayInSeconds" : 0, "retryOnTimeout" : false, "retryableErrorCodes" : [] }, "feedback" : null }
   ],
-  "verifiedResult": {
+  "verificationResult": {
     "status": "COMPLETED",
-    "verificationResult" : {"fullName" : { "trust_framework":"XYZ TF", "verification_process":"EKYC", "assurance_level": "Gold", "time": "34232432" },
+    "verifiedClaims" : {"fullName" : { "trust_framework":"XYZ TF", "verification_process":"EKYC", "assurance_level": "Gold", "time": "34232432" },
     "phone": { "trust_framework":"PQR TF", "verification_process":"EKYC", "assurance_level": "Gold", "time": "34232431" }},
     "errorCode": null
     }
