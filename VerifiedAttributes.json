@@ -81,6 +81,9 @@
     },
     "address": {
       "$ref": "#/definitions/verificationDetail"
-    }
+    },
+    "phone": {
+            "$ref": "#/definitions/verificationDetail"
+        }
 }
 }
