@@ -12,19 +12,5 @@
     "active": true,
     "retryOnFailure": true,
     "retryAttempt": 2
-  },
-  {
-    "id": "kyc-provider",
-    "displayName": {
-      "eng": "Kyc Provider",
-      "fra": "Vérificateur d'identité fictif",
-      "ara": "التحقق من الهوية الوهمية",
-      "khm": "អ្នកផ្គត់ផ្គង់ Kyc"
-    },
-    "logoUrl": "https://avatars.githubusercontent.com/u/39733477?s=200&v=4",
-    "processType": "VIDEO",
-    "active": true,
-    "retryOnFailure": true,
-    "retryAttempt": 2
   }
 ]
