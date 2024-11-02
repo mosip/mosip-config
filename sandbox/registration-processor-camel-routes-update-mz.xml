@@ -211,6 +211,10 @@
 		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tubo' &amp;&amp; @['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
                  <to uri="eventbus:abis-handler-bus-in" />
             </when>
+	    <when>
+                <simple>${bodyAs(String)} contains '"address":"manual-verification-bus-in"'</simple>
+                <to uri="eventbus:manual-verification-bus-in" />
+            </when>
             <when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
                 <to uri="eventbus:retry-bus-in" />
