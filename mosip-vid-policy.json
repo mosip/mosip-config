@@ -4,7 +4,7 @@
             "vidPolicy": {
                 "validForInMinutes": null,
                 "transactionsAllowed": null,
-                "instancesAllowed": 1,
+                "instancesAllowed": 3,
                 "autoRestoreAllowed": true,
                 "restoreOnAction": "REVOKED"
             }
@@ -13,8 +13,8 @@
             "vidType": "Temporary",
             "vidPolicy": {
                 "validForInMinutes": 30,
-                "transactionsAllowed": 2,
-                "instancesAllowed": 5,
+                "transactionsAllowed": 5,
+                "instancesAllowed": 3,
                 "autoRestoreAllowed": false,
                 "restoreOnAction": "REGENERATE"
             }
@@ -23,8 +23,8 @@
             "vidType": "OneTimeUse",
             "vidPolicy": {
                 "validForInMinutes": null,
-                "transactionsAllowed": 2,
-                "instancesAllowed": 5,
+                "transactionsAllowed": 5,
+                "instancesAllowed": 3,
                 "autoRestoreAllowed": false,
                 "restoreOnAction": "REVOKED"
             }
