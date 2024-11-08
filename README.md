@@ -28,5 +28,5 @@ To run config server jar set the following attribute
 ### Run Config Server Jar
 
 ```
-java -jar -Dspring.profiles.active=native  -Dspring.cloud.config.server.native.search-locations=file:C:\mosipcode\mosip-config\sandbox -Dspring.cloud.config.server.accept-empty=true  -Dspring.cloud.config.server.git.force-pull=false -Dspring.cloud.config.server.git.cloneOnStart=false -Dspring.cloud.config.server.git.refreshRate=0 kernel-config-server-1.0.6.jar
+java -jar -Dspring.profiles.active=native  -Dspring.cloud.config.server.native.search-locations=file:C:\mosipcode\mosip-config\sandbox -Dspring.cloud.config.server.accept-empty=true  -Dspring.cloud.config.server.git.force-pull=false -Dspring.cloud.config.server.git.cloneOnStart=false -Dspring.cloud.config.server.git.refreshRate=0 kernel-config-server-<latest_version>.jar
 ```
