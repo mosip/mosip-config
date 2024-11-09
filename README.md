@@ -15,7 +15,7 @@ MOSIP uses Config Server to read the properties files.
 
 1. Download Config server jar [config-server](https://mvnrepository.com/artifact/io.mosip.kernel/kernel-config-server)
 
-2. Clone the Mosip config repo [mosip-config](https://github.com/mosip/mosip-config)
+2. Clone the Mosip config repo for required released version [mosip-config](https://github.com/mosip/mosip-config)
 
 ### Run 
 
