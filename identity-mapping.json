@@ -100,7 +100,7 @@
 			"value": "addressLine,province,district,constituency"
 		},
 		"phone_number": {
-			"value": "phone"
+			"value": "phoneNumber"
 		},
 		"postal_code": {
 			"value": "postalCode"
