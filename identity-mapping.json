@@ -34,7 +34,7 @@
 			"value": "phone"
 		},
 		"phoneNumber": {
-			"value": "phone"
+			"value": "phoneNumber"
 		},
 		"email": {
 			"value": "email"
@@ -101,6 +101,9 @@
 		},
 		"phone_number": {
 			"value": "phone"
+		},
+		"postalCode": {
+			"value": "postalCode"
 		},
 		"individual_id": {
 			"value": "individual_id"
