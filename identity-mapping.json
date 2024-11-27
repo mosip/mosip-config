@@ -105,6 +105,9 @@
 		"postalCode": {
 			"value": "postalCode"
 		},
+		"postal_code": {
+			"value": "postalCode"
+		},
 		"individual_id": {
 			"value": "individual_id"
 		},
