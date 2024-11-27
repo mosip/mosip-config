@@ -102,7 +102,7 @@
 		"phone_number": {
 			"value": "phone"
 		},
-		"postalCode": {
+		"postal_code": {
 			"value": "postalCode"
 		},
 		"individual_id": {
