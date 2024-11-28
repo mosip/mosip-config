@@ -85,5 +85,5 @@
     "phone": {
             "$ref": "#/definitions/verificationDetail"
         }
-}
+} ,   "uniqueItems": true
 }
