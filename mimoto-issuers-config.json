@@ -1,145 +1,221 @@
 {
   "issuers": [
     {
-      "credential_issuer": "Mosip",
+      "credential_issuer": "MosipOtp",
       "display": [
         {
           "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
-            "alt_text": "digits-icon"
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip logo"
           },
-          "title": "Download via UIN, VID, AID",
-          "description":"Enter your national ID to download your card.",
+          "title": "Download MOSIP Credentials via OTP",
+          "description":"Download credentials by providing UIN, VID or AID",
           "language": "en"
         },
         {
           "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
-            "alt_text": "رمز الأرقام"
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "شعار موسيب"
           },
-          "title": "التنزيل عبر UIN, VID, AID",
-          "description": "أدخل رقم الهوية الوطنية الخاص بك لتنزيل بطاقتك.",
-          "language": "en"
-        },
-        {
-          "name": "UIN, VID, AID",
-          "logo": {
-            "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
-            "alt_text": "अंक-आइकन"
-          },
-          "title": "UIN, VID, AID के माध्यम से डाउनलोड करे",
-          "description":"अपना कार्ड डाउनलोड करने के लिए अपनी राष्ट्रीय आईडी दर्ज करें।",
-          "language": "hi"
-        },
-        {
-          "name": "UIN, VID, AID",
-          "logo": {
-            "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
-            "alt_text": "ಅಂಕಿ-ಐಕಾನ್"
-          },
-          "title": "UIN, VID, AID ಮೂಲಕ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
-          "description": "ನಿಮ್ಮ ಕಾರ್ಡ್ ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ನಿಮ್ಮ ರಾಷ್ಟ್ರೀಯ ID ಅನ್ನು ನಮೂದಿಸಿ.",
-          "language": "kn"
-        },
-        {
-          "name": "UIN, VID, AID",
-          "logo": {
-            "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
-            "alt_text": "இலக்கங்கள்-ஐகான்"
-          },
-          "title": "UIN, VID, AID மூலம் பதிவிறக்கவும்",
-          "description":"உங்கள் கார்டைப் பதிவிறக்க உங்கள் தேசிய ஐடியை உள்ளிடவும்.",
-          "language": "ta"
-        },
-        {
-          "name": "UIN, VID, AID",
-          "logo": {
-            "url": "https://${mosip.api.public.host}/inji/digit-icon.png",
-            "alt_text": "digits-icon"
-          },
-          "title": "I-download sa pamamagitan ng UIN, VID, AID",
-          "description":"Ilagay ang iyong national ID para i-download ang iyong card.",
-          "language": "fil"
-        }
-      ],
-      "protocol": "OTP"
-    },
-    {
-      "credential_issuer": "ESignet",
-      "display": [
-        {
-          "name": "e-Signet",
-          "logo": {
-            "url": "https://${mosip.esignet.host}/logo.png",
-            "alt_text": "esignet-logo"
-          },
-          "title": "Download via e-Signet",
-          "description": "Enter your national ID to download your card.",
-          "language": "en"
-        },
-        {
-          "name": "e-Signet",
-          "logo": {
-            "url": "https://${mosip.esignet.host}/logo.png",
-            "alt_text": "esignet-logo"
-          },
-          "title": "e-Signet التنزيل عبر",
-          "description": "أدخل رقم الهوية الوطنية الخاص بك لتنزيل بطاقتك." ,
+          "title": "قم بتنزيل بيانات اعتماد MOSIP عبر OTP",
+          "description": "قم بتنزيل بيانات الاعتماد من خلال توفير UIN أو VID أو AID",
           "language": "ar"
         },
         {
-          "name": "e-Signet",
+          "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://${mosip.esignet.host}/logo.png",
-            "alt_text": "esignet-लोगो"
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "मोसिप लोगो"
           },
-          "title": "ई-हस्ताक्षर के माध्यम से डाउनलोड करें",
-          "description":"अपना कार्ड डाउनलोड करने के लिए अपनी राष्ट्रीय आईडी दर्ज करें।",
+          "title": "OTP के माध्यम से MOSIP क्रेडेंशियल डाउनलोड करें",
+          "description":"यूआईएन, वीआईडी या एआईडी प्रदान करके क्रेडेंशियल डाउनलोड करें",
           "language": "hi"
         },
         {
-          "name": "e-Signet",
+          "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://${mosip.esignet.host}/logo.png",
-            "alt_text": "esignet-ಲೋಗೋ"
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip ಲೋಗೋ"
           },
-          "title": "ಇ-ಸಿಗ್ನೆಟ್ ಮೂಲಕ ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
-          "description": "ನಿಮ್ಮ ಕಾರ್ಡ್ ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ನಿಮ್ಮ ರಾಷ್ಟ್ರೀಯ ID ಅನ್ನು ನಮೂದಿಸಿ.",
+          "title": "OTP ಮೂಲಕ MOSIP ರುಜುವಾತುಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ",
+          "description": "UIN, VID ಅಥವಾ AID ಒದಗಿಸುವ ಮೂಲಕ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್\u200Cಲೋಡ್ ಮಾಡಿ",
           "language": "kn"
         },
         {
-          "name": "e-Signet",
+          "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://${mosip.esignet.host}/logo.png",
-            "alt_text": "esignet-லோகோ"
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "mosip சின்னம்"
           },
-          "title": "இ-சிக்னெட் மூலம் பதிவிறக்கம் செய்யவும்",
-          "description":"உங்கள் கார்டைப் பதிவிறக்க உங்கள் தேசிய ஐடியை உள்ளிடவும்.",
+          "title": "OTP வழியாக MOSIP சான்றுகளைப் பதிவிறக்கவும்",
+          "description":"UIN, VID அல்லது AID ஐ வழங்குவதன் மூலம் நற்சான்றிதழ்களைப் பதிவிறக்கவும்",
           "language": "ta"
         },
         {
-          "name": "e-Signet",
+          "name": "UIN, VID, AID",
           "logo": {
-            "url": "https://${mosip.esignet.host}/logo.png",
-            "alt_text": "logo-signet"
+            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "alt_text": "logo ng mosip"
           },
-          "title": "I-download sa pamamagitan ng e-Signet",
-          "description":"Ilagay ang iyong national ID para i-download ang iyong card.",
+          "title": "I-download ang Mga Kredensyal ng MOSIP sa pamamagitan ng OTP",
+          "description":"Mag-download ng mga kredensyal sa pamamagitan ng pagbibigay ng UIN, VID o AID",
           "language": "fil"
         }
       ],
+      "protocol": "OTP",
+      "enabled": "false"
+    },
+    {
+      "credential_issuer": "Mosip",
+      "display": [
+        {
+          "name": "Veridonia National ID Department",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "a square logo of veridonia"
+          },
+          "title": "Veridonia National ID Department",
+          "description": "Download National ID credential",
+          "language": "en"
+        },
+        {
+          "name": "إدارة الهوية الوطنية فيريدونيا",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "شعار مربع من veridonia"
+          },
+          "title": "إدارة الهوية الوطنية فيريدونيا",
+          "description": "تحميل بطاقة الهوية الوطنية",
+          "language": "ar"
+        },
+        {
+          "name": "वेरिडोनिया राष्ट्रीय आईडी विभाग",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "वेरिडोनिया का एक वर्गाकार लोगो"
+          },
+          "title": "वेरिडोनिया राष्ट्रीय आईडी विभाग",
+          "description": "राष्ट्रीय आईडी क्रेडेंशियल डाउनलोड करें",
+          "language": "hi"
+        },
+        {
+          "name": "ವೆರಿಡೋನಿಯಾ ರಾಷ್ಟ್ರೀಯ ID ಇಲಾಖೆ",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "ವೆರಿಡೋನಿಯಾದ ಚೌಕಾಕಾರದ ಲೋಗೋ"
+          },
+          "title": "ವೆರಿಡೋನಿಯಾ ರಾಷ್ಟ್ರೀಯ ID ಇಲಾಖೆ",
+          "description": "ರಾಷ್ಟ್ರೀಯ ID ರುಜುವಾತುಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+          "language": "kn"
+        },
+        {
+          "name": "வெரிடோனியா தேசிய அடையாளத் துறை",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "வெரிடோனியாவின் சதுர லோகோ"
+          },
+          "title": "வெரிடோனியா தேசிய அடையாளத் துறை",
+          "description": "தேசிய அடையாளச் சான்றிதழைப் பதிவிறக்கவும்",
+          "language": "ta"
+        },
+        {
+          "name": "Département national d'identité de Veridonia",
+          "logo": {
+            "url": "https://${mosip.api.public.host}/inji/veridonia-logo.png",
+            "alt_text": "un logo carré de veridonia"
+          },
+          "title": "Département national d'identité de Veridonia",
+          "description": "Télécharger le titre d'identité nationale",
+          "language": "fr"
+        }
+      ],
       "protocol": "OpenId4VCI",
-      "client_id": "${mimoto.oidc.partner.clientid}",
-      "scopes_supported": ["mosip_identity_vc_ldp"],
-      "additional_headers": { "Accept": "application/json" },
-      ".well-known": null,
+      "client_id": "${mimoto.oidc.mosipid.partner.clientid}",
+      "client_alias": "mpartner-default-mimoto-mosipid-oidc-client",
+      "wellknown_endpoint": "https://${mosip.injicertify.mosipid.host}/v1/certify/issuance/.well-known/openid-credential-issuer",
       "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
-      "authorization_endpoint": "https://${mosip.esignet.host}/authorize",
-      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token",
-      "credential_endpoint": "https://${mosip.esignet.host}/v1/esignet/vci/credential",
-      "credential_audience": "https://${mosip.esignet.host}"
+      "authorization_audience": "https://esignet-mosipid.es-qa.mosip.net/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/Mosip",
+      "proxy_token_endpoint": "https://esignet-mosipid.es-qa.mosip.net/v1/esignet/oauth/v2/token",
+      "qr_code_type": "OnlineSharing",
+      "enabled": "true"
+    },
+    {
+      "credential_issuer": "StayProtected",
+      "display": [
+        {
+          "name": "StayProtected Insurance",
+          "logo": {
+            "url": "https://raw.githubusercontent.com/tw-mosip/file-server/master/StayProtectedInsurance.png",
+            "alt_text": "a square logo of a StayProtected"
+          },
+          "language": "en",
+          "title": "StayProtected Insurance",
+          "description": "Download insurance credential"
+        },
+        {
+          "name": "تأمين البقاء المحمي",
+          "logo": {
+            "url": "https://raw.githubusercontent.com/tw-mosip/file-server/master/StayProtectedInsurance.png",
+            "alt_text": "شعار مربع لـ StayProtected"
+          },
+          "language": "ar",
+          "title": "تأمين البقاء المحمي",
+          "description": "تنزيل بيانات اعتماد التأمين"
+        },
+        {
+          "name": "सुरक्षित रहें बीमा",
+          "logo": {
+            "url": "https://raw.githubusercontent.com/tw-mosip/file-server/master/StayProtectedInsurance.png",
+            "alt_text": "StayProtected का एक वर्गाकार लोगो"
+          },
+          "language": "hi",
+          "title": "सुरक्षित रहें बीमा",
+          "description": "बीमा क्रेडेंशियल डाउनलोड करें"
+        },
+        {
+          "name": "ಸ್ಟೇ ರಕ್ಷಿತ ವಿಮೆ",
+          "logo": {
+            "url": "https://raw.githubusercontent.com/tw-mosip/file-server/master/StayProtectedInsurance.png",
+            "alt_text": "StayProtected ನ ಚೌಕಾಕಾರದ ಲೋಗೋ"
+          },
+          "language": "kn",
+          "title": "ಸ್ಟೇ ರಕ್ಷಿತ ವಿಮೆ",
+          "description": "ವಿಮಾ ರುಜುವಾತುಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ"
+        },
+        {
+          "name": "பாதுகாக்கப்பட்ட காப்பீடு",
+          "logo": {
+            "url": "https://raw.githubusercontent.com/tw-mosip/file-server/master/StayProtectedInsurance.png",
+            "alt_text": "StayProtected இன் சதுர லோகோ"
+          },
+          "language": "ta",
+          "title": "பாதுகாக்கப்பட்ட காப்பீடு",
+          "description": "காப்பீட்டுச் சான்றிதழைப் பதிவிறக்கவும்"
+        },
+        {
+          "name": "Assurance Restez Protégé",
+          "logo": {
+            "url": "https://raw.githubusercontent.com/tw-mosip/file-server/master/StayProtectedInsurance.png",
+            "alt_text": "un logo carré d'un StayProtected"
+          },
+          "language": "fr",
+          "title": "Assurance Restez Protégé",
+          "description": "Télécharger le certificat d'assurance"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.sunbird.partner.clientid}",
+      "client_alias": "esignet-sunbird-partner",
+      "wellknown_endpoint": "https://${mosip.injicertify.insurance.host}/v1/certify/issuance/.well-known/openid-credential-issuer",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "authorization_audience": "https://esignet-sunbird.es-qa.mosip.net/v1/esignet/oauth/v2/token",
+      "token_endpoint": "https://${mosip.api.public.host}/residentmobileapp/get-token/StayProtected",
+      "proxy_token_endpoint": "https://esignet-sunbird.es-qa.mosip.net/v1/esignet/oauth/v2/token",
+      "qr_code_type": "OnlineSharing",
+      "enabled": "true"
     }
   ]
 }
