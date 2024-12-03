@@ -8,7 +8,7 @@
   "verificationResult": {
     "status": "COMPLETED",
     "verifiedClaims" : { "fullName" : { "trust_framework":"XYZ TF", "verification_process":"EKYC", "assurance_level": "Gold" },
-    "dateOfBirth" : { "trust_framework":"ABC TF", "verification_process":"EKYC", "assurance_level": "Silver" }},
+    "phone" : { "trust_framework":"ABC TF", "verification_process":"EKYC", "assurance_level": "Silver" }},
     "errorCode": null
   }
 }
