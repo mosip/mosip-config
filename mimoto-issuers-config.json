@@ -6,7 +6,7 @@
         {
           "name": "National Identity Department",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "url": "https://api.released.mosip.net/inji/mosip-logo.png",
             "alt_text": "mosip-logo"
           },
           "title": "National Identity Department",
@@ -16,7 +16,7 @@
         {
           "name": "دائرة الهوية الوطنية",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "url": "https://api.released.mosip.net/inji/mosip-logo.png",
             "alt_text": "شعار موسيب"
           },
           "title": "دائرة الهوية الوطنية",
@@ -26,7 +26,7 @@
         {
           "name": "राष्ट्रीय पहचान विभाग",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "url": "https://api.released.mosip.net/inji/mosip-logo.png",
             "alt_text": "मोसिप लोगो"
           },
           "title": "राष्ट्रीय पहचान विभाग",
@@ -36,7 +36,7 @@
         {
           "name": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "url": "https://api.released.mosip.net/inji/mosip-logo.png",
             "alt_text": "mosip ಲೋಗೋ"
           },
           "title": "ರಾಷ್ಟ್ರೀಯ ಗುರುತಿನ ಇಲಾಖೆ",
@@ -46,7 +46,7 @@
         {
           "name": "தேசிய அடையாளத் துறை",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "url": "https://api.released.mosip.net/inji/mosip-logo.png",
             "alt_text": "mosip லோகோ"
           },
           "title": "தேசிய அடையாளத் துறை",
@@ -56,7 +56,7 @@
         {
           "name": "National Identity Department",
           "logo": {
-            "url": "https://${mosip.api.public.host}/inji/mosip-logo.png",
+            "url": "https://api.released.mosip.net/inji/mosip-logo.png",
             "alt_text": "logo ng mosip"
           },
           "title": "National Identity Department",
