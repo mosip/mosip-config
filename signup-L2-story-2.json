@@ -9,6 +9,6 @@
     "status": "FAILED",
     "verifiedClaims" : { "fullName" : { "trust_framework":"XYZ TF", "verification_process":"EKYC", "assurance_level": "Gold" },
       "phone" : { "trust_framework":"ABC TF", "verification_process":"EKYC", "assurance_level": "Silver" }},
-    "errorCode": null
+    "errorCode": verification was incomplete due to failed status
   }
 }
