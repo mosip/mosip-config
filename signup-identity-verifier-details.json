@@ -14,7 +14,7 @@
     "retryAttempt": 2
   },
   {
-    "id": "idv_kyc-provider",
+    "id": "kyc-provider",
     "displayName": {
       "eng": "idv kyc Verifier",
       "fra": "Vérificateur d'identité fictif",
