@@ -31,10 +31,10 @@
 			"value": "introducerName"
 		},
 		"phone": {
-			"value": "phone"
+			"value": "phoneNumber"
 		},
 		"phoneNumber": {
-			"value": "phone"
+			"value": "phoneNumber"
 		},
 		"email": {
 			"value": "email"
@@ -109,7 +109,7 @@
 			"value": "face"
 		},
 		"phone_number": {
-			"value": "phone"
+			"value": "phoneNumber"
 		},
 		"address": {
 			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
