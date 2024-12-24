@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$defs": {
+    "langField": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "language",
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "properties": {
+    "individualId": {
+      "type": "string",
+      "pattern": "^\\+855[1-9]\\d{7,8}$"
+    },
+    "fullName": {
+      "allOf": [
+        { "$ref": "#/$defs/langField" },
+        {
+          "items": {
+            "properties": {
+              "value": {
+                "pattern": "^(?:[a-zA-ZÀ-ÿ\\s]{1,40}|[ء-ي\\s-٩ٱ-ڿﹰ-\uFEFF\u0600-ۿ]{1,40})$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "preferredLang": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string",
+      "pattern": "^\\+855[1-9]\\d{7,8}$"
+    },
+    "password": {
+      "type": "string",
+      "pattern": "\\S"
+    }
+  },
+  "required": [
+    "individualId",
+    "fullName",
+    "preferredLang",
+    "phone",
+    "password"
+  ],
+  "additionalProperties": true
+}
