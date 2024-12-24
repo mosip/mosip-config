@@ -41,9 +41,6 @@
         }
       ]
     },
-    "preferredLang": {
-      "type": "string"
-    },
     "phone": {
       "type": "string",
       "pattern": "\\S"
