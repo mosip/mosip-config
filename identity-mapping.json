@@ -168,7 +168,7 @@
 	},
 	"attributeUpdateCountLimit": {
 		"firstName": 5,
-		"lastName":5
+		"lastName":5,
 		"gender": 5,
 		"dateOfBirth": 5
 
