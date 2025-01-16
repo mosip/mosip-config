@@ -7,7 +7,7 @@
 			"value" : "selectedHandles"
 		},
 		"name": {
-			"value": "fullName"
+            "value": "firstName,lastName"
         },
 		"gender": {
 			"value": "gender"
@@ -31,10 +31,10 @@
 			"value": "introducerName"
 		},
 		"phone": {
-			"value": "phone"
+			"value": "phoneNumber"
 		},
 		"phoneNumber": {
-			"value": "phone"
+			"value": "phoneNumber"
 		},
 		"email": {
 			"value": "email"
@@ -73,31 +73,19 @@
 			"value": "zone,postalCode"
 		},
 		"addressLine1": {
-			"value": "addressLine1"
-		},
-		"addressLine2": {
-			"value": "addressLine2"
-		},
-		"addressLine3": {
-			"value": "addressLine3"
+			"value": "addressLine"
 		},
 		"location1": {
-			"value": "city"
-		},
-		"location2": {
-			"value": "region"
-		},
-		"location3": {
 			"value": "province"
 		},
-		"postalCode": {
-			"value": "postalCode"
+		"location2": {
+			"value": "district"
 		},
-		"location4": {
-			"value": "zone"
+		"location3": {
+			"value": "constituency"
 		},
 		"fullAddress": {
-			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+			"value": "addressLine,province,district,constituency"
 		},
 		"bestTwoFingers": {
 			"value": "bestTwoFingers"
@@ -108,36 +96,29 @@
 		"picture": {
 			"value": "face"
 		},
-		
-		"phone_number": {
-			"value": "phone"
-		},
 		"address": {
-			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+			"value": "addressLine,province,district,constituency"
 		},
-		"individual_id": {
-			"value": "individual_id"
-		},
-		"attributes": {
-		   "value": "fln,ad1,ad2,ad3,cit,reg,pro,poc,cph,em,ph,gen,dob"
-		},  
-		"street_address": {
-			"value":  "addressLine1,addressLine2,addressLine3"
-		},
-		"locality": {
-			"value": "city"
-		},
-		"region": {
-			"value": "region"
+		"phone_number": {
+			"value": "phoneNumber"
 		},
 		"postal_code": {
 			"value": "postalCode"
 		},
+		"individual_id": {
+			"value": "individual_id"
+		},
+		"street_address": {
+			"value":  "addressLine1,addressLine2,addressLine3"
+		},
+		"locality": {
+			"value":  "constituency"
+		},
+		"region": {
+			"value":  "district"
+		},
 		"country": {
 			"value":  "province"
-		},
-		"password": {
-			"value": "password"
 		}
 	},
 	"metaInfo": {
@@ -164,8 +145,8 @@
 		}
 	},
 	"attributeUpdateCountLimit": {
-		"fullName": 5,
-		"gender": 2,
+		"firstName": 2,
+		"gender": 4,
 		"dateOfBirth": 3
 	}
 }
