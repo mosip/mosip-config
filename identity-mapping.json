@@ -7,7 +7,7 @@
 			"value" : "selectedHandles"
 		},
 		"name": {
-            "value": "firstName,lastName"
+			"value": "fullName"
         },
 		"gender": {
 			"value": "gender"
@@ -31,10 +31,10 @@
 			"value": "introducerName"
 		},
 		"phone": {
-			"value": "phoneNumber"
+			"value": "phone"
 		},
 		"phoneNumber": {
-			"value": "phoneNumber"
+			"value": "phone"
 		},
 		"email": {
 			"value": "email"
@@ -73,19 +73,31 @@
 			"value": "zone,postalCode"
 		},
 		"addressLine1": {
-			"value": "addressLine"
+			"value": "addressLine1"
+		},
+		"addressLine2": {
+			"value": "addressLine2"
+		},
+		"addressLine3": {
+			"value": "addressLine3"
 		},
 		"location1": {
-			"value": "province"
+			"value": "city"
 		},
 		"location2": {
-			"value": "district"
+			"value": "region"
 		},
 		"location3": {
-			"value": "constituency"
+			"value": "province"
+		},
+		"postalCode": {
+			"value": "postalCode"
+		},
+		"location4": {
+			"value": "zone"
 		},
 		"fullAddress": {
-			"value": "addressLine,province,district,constituency"
+			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
 		},
 		"bestTwoFingers": {
 			"value": "bestTwoFingers"
@@ -96,29 +108,36 @@
 		"picture": {
 			"value": "face"
 		},
-		"address": {
-			"value": "addressLine,province,district,constituency"
-		},
+		
 		"phone_number": {
-			"value": "phoneNumber"
+			"value": "phone"
 		},
-		"postal_code": {
-			"value": "postalCode"
+		"address": {
+			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
 		},
 		"individual_id": {
 			"value": "individual_id"
 		},
+		"attributes": {
+		   "value": "fln,ad1,ad2,ad3,cit,reg,pro,poc,cph,em,ph,gen,dob"
+		},  
 		"street_address": {
 			"value":  "addressLine1,addressLine2,addressLine3"
 		},
 		"locality": {
-			"value":  "constituency"
+			"value": "city"
 		},
 		"region": {
-			"value":  "district"
+			"value": "region"
+		},
+		"postal_code": {
+			"value": "postalCode"
 		},
 		"country": {
 			"value":  "province"
+		},
+		"password": {
+			"value": "password"
 		}
 	},
 	"metaInfo": {
@@ -145,8 +164,8 @@
 		}
 	},
 	"attributeUpdateCountLimit": {
-		"firstName": 2,
-		"gender": 4,
+		"fullName": 5,
+		"gender": 2,
 		"dateOfBirth": 3
 	}
 }
