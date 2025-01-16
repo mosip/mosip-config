@@ -107,7 +107,7 @@
 		},
 		"picture": {
 			"value": "face"
-		},		
+		},	
 		"phone_number": {
 			"value": "phone"
 		},
@@ -133,7 +133,7 @@
 			"value": "postalCode"
 		},
 		"country": {
-			"value":  "province"
+			"value": "province"
 		},
 		"password": {
 			"value": "password"
