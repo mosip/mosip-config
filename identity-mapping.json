@@ -8,7 +8,7 @@
 		},
 		"name": {
 			"value": "fullName"
-        },
+		},
 		"gender": {
 			"value": "gender"
 		},
@@ -107,8 +107,7 @@
 		},
 		"picture": {
 			"value": "face"
-		},
-		
+		},		
 		"phone_number": {
 			"value": "phone"
 		},
@@ -122,7 +121,7 @@
 		   "value": "fln,ad1,ad2,ad3,cit,reg,pro,poc,cph,em,ph,gen,dob"
 		},  
 		"street_address": {
-			"value":  "addressLine1,addressLine2,addressLine3"
+			"value": "addressLine1,addressLine2,addressLine3"
 		},
 		"locality": {
 			"value": "city"
