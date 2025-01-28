@@ -99,6 +99,11 @@ def getApplicantType() {
       return isUpdateFlow(identity) ? "000" : "KER-MSD-147";
   }
   
+  if (!(genderType.equals(MALE) || genderType.equals(FEMALE)) ||
+    !(itc.equals(NonResident) || itc.equals(Resident))) {
+    return "KER-MSD-147";
+  }
+
   System.out.println(itc + " - " + genderType + " - " + ageCode + " - " + isBioExPresent);
 
   if (itc == NonResident && genderType == MALE && ageCode == CHILD && !isBioExPresent) {
