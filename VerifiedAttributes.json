@@ -9,31 +9,26 @@
             "items": {
                 "type": "object",
                 "required": [
-                    "trustFramework",
-                    "processName",
-                    "startedOn"
+                    "trust_framework",
+                    "verification_process"
                 ],
                 "properties": {
-                    "trustFramework": {
-                        "type": "string",
-                        "minLength": 1
+                   "trust_framework": {
+                        "type": "string"
                     },
-                    "processName": {
-                        "type": "string",
-                        "minLength": 1
+                    "verification_process": {
+                        "type": "string"
                     },
-                    "startedOn": {
-                        "type": "number"
+                    "assurance_level": {
+                        "type": "string"
                     },
-                    "completedOn": {
-                        "type": "number"
+                    "time": {
+                        "type": "string"
                     },
-                    "assurance": {
-                        "type": "object",
-                        "required": [
-                            "level",
-                            "procedure",
-                            "policy"
+                    "assurance_process": {
+                        "type": [
+                            "object",
+                            "null"
                         ],
                         "properties": {
                             "level": {
@@ -44,32 +39,6 @@
                             },
                             "procedure": {
                                 "type": "string"
-                            }
-                        }
-                    },
-                    "evidence": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "type": {
-                                    "type": "string"
-                                },
-                                "verifiedOn": {
-                                    "type": "number"
-                                },
-                                "verificationMethod": {
-                                    "type": "string"
-                                },
-                                "detail": {
-                                    "type": "object",
-                                    "additionalProperties": true,
-                                    "properties": {
-                                        "document": {
-                                            "type": "string"
-                                        }
-                                    }
-                                }
                             }
                         }
                     }
