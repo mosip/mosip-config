@@ -12,6 +12,9 @@
 		"gender": {
 			"value": "gender"
 		},
+		"nrcId": {
+			"value": "nrcId"
+		},
 		"dob": {
 			"value": "dateOfBirth"
 		},
