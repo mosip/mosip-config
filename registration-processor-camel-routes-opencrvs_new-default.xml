@@ -1,7 +1,7 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
-   <route id="packet-receiver-->securezone-notification new route">
-      <from uri="eventbus://packet-receiver-new-bus-out" />
-      <log message="packet-receiver-->securezone-notification new ${bodyAs(String)}" />
+   <route id="packet-receiver-->securezone-notification opencrvs_new route">
+      <from uri="eventbus://packet-receiver-opencrvs_new-bus-out" />
+      <log message="packet-receiver-->securezone-notification opencrvs_new ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -20,9 +20,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="securezone-notification-->packet-uploader new route">
-      <from uri="eventbus://securezone-notification-new-bus-out" />
-      <log message="securezone-notification-->packet-uploader new route ${bodyAs(String)}" />
+   <route id="securezone-notification-->packet-uploader opencrvs_new route">
+      <from uri="eventbus://securezone-notification-opencrvs_new-bus-out" />
+      <log message="securezone-notification-->packet-uploader opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -41,9 +41,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="packet-uploader-->packet-validator new route">
-      <from uri="eventbus://packet-uploader-new-bus-out" />
-      <log message="packet-uploader-->packet-validator new route ${bodyAs(String)}" />
+   <route id="packet-uploader-->packet-validator opencrvs_new route">
+      <from uri="eventbus://packet-uploader-opencrvs_new-bus-out" />
+      <log message="packet-uploader-->packet-validator opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -62,9 +62,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="packet-validator-->packet-classifier new route">
-      <from uri="eventbus://packet-validator-new-bus-out" />
-      <log message="packet-validator-->packet-classifier new route ${bodyAs(String)}" />
+   <route id="packet-validator-->packet-classifier opencrvs_new route">
+      <from uri="eventbus://packet-validator-opencrvs_new-bus-out" />
+      <log message="packet-validator-->packet-classifier opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -85,9 +85,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="packet-classifier-->demo-dedupe new route">
-      <from uri="eventbus://packet-classifier-new-bus-out" />
-      <log message="packet-classifier-->introducer-validator/demo-dedupe new route ${bodyAs(String)}" />
+   <route id="packet-classifier-->demo-dedupe opencrvs_new route">
+      <from uri="eventbus://packet-classifier-opencrvs_new-bus-out" />
+      <log message="packet-classifier-->introducer-validator/demo-dedupe opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -112,9 +112,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="introducer-validator-->demo-dedupe new route">
-      <from uri="eventbus://introducer-validator-new-bus-out" />
-      <log message="introducer-validator-->demo-dedupe new route ${bodyAs(String)}" />
+   <route id="introducer-validator-->demo-dedupe opencrvs_new route">
+      <from uri="eventbus://introducer-validator-opencrvs_new-bus-out" />
+      <log message="introducer-validator-->demo-dedupe opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -135,9 +135,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="demo-dedupe-->uin-generator new route">
-      <from uri="eventbus://demo-dedupe-new-bus-out" />
-      <log message="demo-dedupe-->uin-generator new route ${bodyAs(String)}" />
+   <route id="demo-dedupe-->uin-generator opencrvs_new route">
+      <from uri="eventbus://demo-dedupe-opencrvs_new-bus-out" />
+      <log message="demo-dedupe-->uin-generator opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -171,9 +171,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="verification route-->uin-generator new route">
-      <from uri="eventbus://verification-new-bus-out" />
-      <log message="verification route-->uin-generator new route ${bodyAs(String)}" />
+   <route id="verification route-->uin-generator opencrvs_new route">
+      <from uri="eventbus://verification-opencrvs_new-bus-out" />
+      <log message="verification route-->uin-generator opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -194,9 +194,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="uin-generator-->finalization new route">
-      <from uri="eventbus://uin-generator-new-bus-out" />
-      <log message="uin-generator-->finalization new route ${bodyAs(String)}" />
+   <route id="uin-generator-->finalization opencrvs_new route">
+      <from uri="eventbus://uin-generator-opencrvs_new-bus-out" />
+      <log message="uin-generator-->finalization opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -218,9 +218,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="finalization-->printing-stage new route">
-      <from uri="eventbus://finalization-new-bus-out" />
-      <log message="finalization-->printing-stage new route ${bodyAs(String)}" />
+   <route id="finalization-->printing-stage opencrvs_new route">
+      <from uri="eventbus://finalization-opencrvs_new-bus-out" />
+      <log message="finalization-->printing-stage opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -241,9 +241,32 @@
          </otherwise>
       </choice>
    </route>
-   <route id="printing-stage-->new route">
-      <from uri="eventbus://printing-new-bus-out" />
-      <log message="opencrvs-stage--> new route ${bodyAs(String)}" />
+   <route id="printing-stage-->opencrvs-stage opencrvs_new route">
+      <from uri="eventbus://printing-opencrvs_new-bus-out" />
+      <log message="printing-stage-->opencrvs-stage opencrvs_new route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://opencrvs-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <route id="opencrvs-stage--> opencrvs_new route">
+      <from uri="eventbus://opencrvs-opencrvs_new-bus-out" />
+      <log message="opencrvs-stage--> opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
