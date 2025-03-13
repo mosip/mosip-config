@@ -1,6 +1,6 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
    <route id="packet-receiver-->securezone-notification new route">
-      <from uri="eventbus://packet-receiver-crvs_new-bus-out" />
+      <from uri="eventbus://packet-receiver-new-bus-out" />
       <log message="packet-receiver-->securezone-notification new ${bodyAs(String)}" />
       <choice>
          <when>
@@ -22,7 +22,7 @@
    </route>
    <!-- securezone-notification to packet-uploader Route -->
    <route id="securezone-notification-->packet-uploader new route">
-      <from uri="eventbus://securezone-notification-crvs_new-bus-out" />
+      <from uri="eventbus://securezone-notification-new-bus-out" />
       <log message="securezone-notification-->packet-uploader new route ${bodyAs(String)}" />
       <choice>
          <when>
@@ -44,7 +44,7 @@
    </route>
    <!-- packet-uploader to packet-validator Route -->
    <route id="packet-uploader-->packet-validator new route">
-      <from uri="eventbus://packet-uploader-crvs_new-bus-out" />
+      <from uri="eventbus://packet-uploader-new-bus-out" />
       <log message="packet-uploader-->packet-validator new route ${bodyAs(String)}" />
       <choice>
          <when>
@@ -66,7 +66,7 @@
    </route>
    <!-- Packet Validator to Packet classifier Route -->
    <route id="packet-validator-->packet-classifier new route">
-      <from uri="eventbus://packet-validator-crvs_new-bus-out" />
+      <from uri="eventbus://packet-validator-new-bus-out" />
       <log message="packet-validator-->packet-classifier new route ${bodyAs(String)}" />
       <choice>
          <when>
@@ -90,7 +90,7 @@
    </route>
    <!-- Packet Classifier to Quality Classifier Route -->
    <route id="packet-classifier-->cmd-validator new route">
-      <from uri="eventbus://packet-classifier-crvs_new-bus-out" />
+      <from uri="eventbus://packet-classifier-new-bus-out" />
       <log message="packet-classifier-->quality-classifier new route ${bodyAs(String)}" />
       <choice>
          <when>
@@ -113,7 +113,7 @@
       </choice>
    </route>
    <route id="cmd-validator-->operator-validator new route">
-      <from uri="eventbus://c-m-d-validator-crvs_new-bus-out" />
+      <from uri="eventbus://c-m-d-validator-new-bus-out" />
       <log message="cmd-validator-->operator-validator/supervisor-validator new route ${bodyAs(String)}" />
       <choice>
          <when>
@@ -145,7 +145,7 @@
       </choice>
    </route>
   <route id="operator-validator-->supervisor-validator new route">
-   <from uri="eventbus://operator-validator-crvs_new-bus-out" />
+   <from uri="eventbus://operator-validator-new-bus-out" />
    <log message="operator-validator-->supervisor-validator/introducer-validator/demo-dedupe/quality-classifier new route ${bodyAs(String)}" />
    <choice>
       <when>
@@ -181,7 +181,7 @@
    </choice>
 </route>
 <route id="supervisor-validator-->introducer-validator new route">
-   <from uri="eventbus://supervisor-validator-crvs_new-bus-out" />
+   <from uri="eventbus://supervisor-validator-new-bus-out" />
    <log message="supervisor-validator-->introducer-validator/demo-dedupe/quality-classifier new route ${bodyAs(String)}" />
    <choice>
       <when>
@@ -213,7 +213,7 @@
    </choice>
 </route>
 <route id="introducer-validator-->quality-classifier new route">
-   <from uri="eventbus://introducer-validator-crvs_new-bus-out" />
+   <from uri="eventbus://introducer-validator-new-bus-out" />
    <log message="introducer-validator-->quality-classifier/demo-dedupe new route ${bodyAs(String)}" />
    <choice>
       <when>
@@ -241,7 +241,7 @@
    </choice>
 </route>
    <route id="quality-classifier-->demo-dedupe new route">
-      <from uri="eventbus://quality-classifier-crvs_new-bus-out" />
+      <from uri="eventbus://quality-classifier-new-bus-out" />
       <log message="quality-classifier-->demo-dedupe new route ${bodyAs(String)}" />
       <choice>
          <when>
@@ -283,7 +283,7 @@
    </route>
    <!-- MODIFIED ROUTE: Demo-dedupe to UIN Generator (bypassing bio-dedupe) -->
    <route id="demo-dedupe-->uin-generator direct route">
-      <from uri="eventbus://demo-dedupe-crvs_new-bus-out" />
+      <from uri="eventbus://demo-dedupe-new-bus-out" />
       <log message="demo-dedupe-->uin-generator direct route ${bodyAs(String)}" />
       <choice>
          <when>
@@ -304,7 +304,7 @@
    </route>
    <!-- UIN Generator to biometric-extraction Route -->
    <route id="uin-generation route-->biometric-extraction-stage new route">
-      <from uri="eventbus://uin-generator-crvs_new-bus-out" />
+      <from uri="eventbus://uin-generator-new-bus-out" />
       <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
       <choice>
          <when>
@@ -329,7 +329,7 @@
    </route>
    <!-- biometric-extraction to finalization Route -->
    <route id="biometric-extraction route-->finalization-stage new route">
-      <from uri="eventbus://biometric-extraction-crvs_new-bus-out" />
+      <from uri="eventbus://biometric-extraction-new-bus-out" />
       <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
       <choice>
          <when>
@@ -353,7 +353,7 @@
    </route>
    <!-- finalization to Printing Route -->
    <route id="finalization route-->printing-stage new route">
-      <from uri="eventbus://finalization-crvs_new-bus-out" />
+      <from uri="eventbus://finalization-new-bus-out" />
       <log message="finalization-->printing-stage route ${bodyAs(String)}" />
       <choice>
          <when>
@@ -376,7 +376,7 @@
       </choice>
    </route>
    <route id="printing-stage--> new route">
-      <from uri="eventbus://printing-crvs_new-bus-out" />
+      <from uri="eventbus://printing-new-bus-out" />
       <log message="printing-stage--> route ${bodyAs(String)}" />
       <choice>
          <when>
