@@ -114,7 +114,6 @@
 		"address": {
 			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
 		},
-
 		"individual_id": {
 			"value": "individual_id"
 		},
@@ -164,11 +163,8 @@
 		}
 	},
 	"attributeUpdateCountLimit": {
-		"fullName": 3,
-		"gender": 3,
-		"dateOfBirth": 3
-
-		
-		
+		"fullName": 2,
+		"gender": 2,
+		"dateOfBirth": 2
 	}
 }
