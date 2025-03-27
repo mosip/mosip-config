@@ -88,10 +88,10 @@
          </otherwise>
       </choice>
    </route>
-   <!-- Packet Classifier to Quality Classifier Route -->
+   <!-- Packet Classifier to cmd-validator Route -->
    <route id="packet-classifier-->cmd-validator crvs_new route">
       <from uri="eventbus://packet-classifier-crvs_new-bus-out" />
-      <log message="packet-classifier-->quality-classifier crvs_new route ${bodyAs(String)}" />
+      <log message="packet-classifier-->cmd-validator crvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -130,6 +130,12 @@
             <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
+		 <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] != 'INFANT')]</jsonpath>
+			<log message="Rejecting the packet for minor/adult" />
+			<to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
             <to uri="eventbus://operator-validator-bus-in" />
@@ -166,12 +172,13 @@
             <jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-supervisorId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
             <to uri="eventbus://supervisor-validator-bus-in" />
          </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?((@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true') &amp;&amp; @['source'] != 'CRVS1')]</jsonpath>
+		 <!-- Introducer validation is not implemented for CRVS -->
+         <!-- <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT'|| @['tags']['INTRODUCER_AVAILABILITY'] == 'true')]</jsonpath>
             <to uri="eventbus://introducer-validator-bus-in" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://quality-classifier-bus-in" />
+         </when> -->
+		 <otherwise>
+            <to uri="eventbus://demo-dedupe-bus-in" />
          </otherwise>
       </choice>
    </route>
@@ -193,18 +200,19 @@
             <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?((@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true') &amp;&amp; @['source'] != 'CRVS1')]</jsonpath>
+         <!-- Introducer validation is not implemented for CRVS -->
+         <!-- <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT'|| @['tags']['INTRODUCER_AVAILABILITY'] == 'true')]</jsonpath>
             <to uri="eventbus://introducer-validator-bus-in" />
-         </when>
+         </when> -->
          <otherwise>
-            <to uri="eventbus://quality-classifier-bus-in" />
+            <to uri="eventbus://demo-dedupe-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="introducer-validator-->quality-classifier crvs_new route">
+   <route id="introducer-validator-->demo-dedupe crvs_new route">
       <from uri="eventbus://introducer-validator-crvs_new-bus-out" />
-      <log message="packet-classifier-->quality-classifier crvs_new route ${bodyAs(String)}" />
+      <log message="introducer-validator-->demo-dedupe crvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -219,137 +227,20 @@
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://quality-classifier-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
-   <route id="quality-classifier-->demo-dedupe crvs_new route">
-      <from uri="eventbus://quality-classifier-crvs_new-bus-out" />
-      <log message="quality-classifier-->demo-dedupe crvs_new route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['FAILED'] || @['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['REJECTED'])]</jsonpath>
-            <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
-            <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
-            <to uri="workflow-cmd://pause-and-request-additional-info" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Finger'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Face'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'])]</jsonpath>
-            <to uri="eventbus://demo-dedupe-bus-in" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['level-1','level-2','level-3'] || @['tags']['Biometric_Quality-Finger'] in ['level-1','level-2','level-3'] || @['tags']['Biometric_Quality-Face'] in ['level-1','level-2','level-3'])]</jsonpath>
-            <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
-            <!-- PAUSE_FOR is in seconds -->
-            <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
-            <to uri="workflow-cmd://pause-and-request-additional-info" />
-         </when>
-         <otherwise>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </otherwise>
-      </choice>
-   </route>
-   <route id="demo-dedupe-->bio-dedupe crvs_new route">
-      <from uri="eventbus://demo-dedupe-crvs_new-bus-out" />
-      <log message="demo-dedupe-->bio-dedupe crvs_new route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-rejected" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
-            <to uri="eventbus://abis-handler-bus-in" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
-            <to uri="eventbus://manual-adjudication-bus-in" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-rejected" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-		 <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT')]</jsonpath>
-            <to uri="eventbus://verification-bus-in" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://bio-dedupe-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
-   <route id="abis-handler-->abis-middleware crvs_new route">
-      <from uri="eventbus://abis-handler-crvs_new-bus-out" />
-      <log message="abis-handler-->abis-middleware crvs_new route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-          <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-             <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-middle-ware-bus-in')]</jsonpath>
-            <to uri="eventbus://abis-middle-ware-bus-in" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'demo-dedupe-bus-in')]</jsonpath>
-            <to uri="eventbus://demo-dedupe-bus-in" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'bio-dedupe-bus-in')]</jsonpath>
-            <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
 		 <otherwise>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
+            <to uri="eventbus://demo-dedupe-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="bio-dedupe-->uin-generation crvs_new route">
-      <from uri="eventbus://bio-dedupe-crvs_new-bus-out" />
-      <log message="bio-dedupe-->uin-generation crvs_new route ${bodyAs(String)}" />
+   <route id="demo-dedupe-->uin-generator crvs_new route">
+      <from uri="eventbus://demo-dedupe-crvs_new-bus-out" />
+      <log message="demo-dedupe-->uin-generator crvs_new route ${bodyAs(String)}" />
       <choice>
-        <when>
+         <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
             <to uri="workflow-cmd://complete-as-failed" />
-           <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
@@ -357,95 +248,19 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'verification-bus-in')]</jsonpath>
-            <to uri="eventbus://verification-bus-in" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
-            <to uri="eventbus://abis-handler-bus-in" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
-            <to uri="eventbus://manual-adjudication-bus-in" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://uin-generator-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
-   <route id="verification route-->uin-generator crvs_new route">
-      <from uri="eventbus://verification-crvs_new-bus-out" />
-      <log message="verification route-->uin-generator crvs_new route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://uin-generator-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
-   <route id="abis-middleware route-->abis-handler crvs_new route">
-      <from uri="eventbus://abis-middle-ware-crvs_new-bus-out" />
-      <log message="abis-middleware route-->abis-handler crvs_new route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://abis-handler-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
-   <route id="manual-adjudication-->uin-generation crvs_new route">
-      <from uri="eventbus://manual-adjudication-crvs_new-bus-out" />
-      <log message="manual-adjudication-->uin-generation crvs_new route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
-         <otherwise>
-            <to uri="eventbus://uin-generator-bus-in" />
+		 <otherwise>
+           <to uri="eventbus://uin-generator-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <!-- UIN Generator to biometric-extraction Route -->
-   <route id="uin-generation route-->biometric-extraction-stage crvs_new route">
+   <!-- UIN Generator to finalization-stage Route -->
+   <route id="uin-generation route-->finalization-stage crvs_new route">
       <from uri="eventbus://uin-generator-crvs_new-bus-out" />
-      <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
+      <log message="uin-generation-->finalization-stage crvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -462,39 +277,15 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://biometric-extraction-bus-in" />
+             <to uri="eventbus://finalization-bus-in" />
             <to uri="workflow-cmd://anonymous-profile" />
-         </otherwise>
-      </choice>
-   </route>
-   <!-- biometric-extraction to finalization Route -->
-   <route id="biometric-extraction route-->finalization-stage crvs_new route">
-      <from uri="eventbus://biometric-extraction-crvs_new-bus-out" />
-      <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://finalization-bus-in" />
          </otherwise>
       </choice>
    </route>
    <!-- finalization to Printing Route -->
    <route id="finalization route-->printing-stage crvs_new route">
       <from uri="eventbus://finalization-crvs_new-bus-out" />
-      <log message="finalization-->printing-stage route ${bodyAs(String)}" />
+      <log message="finalization-->printing-stage crvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -517,7 +308,7 @@
    </route>
    <route id="printing-stage--> crvs_new route">
       <from uri="eventbus://printing-crvs_new-bus-out" />
-      <log message="printing-stage--> route ${bodyAs(String)}" />
+      <log message="printing-stage--> crvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
