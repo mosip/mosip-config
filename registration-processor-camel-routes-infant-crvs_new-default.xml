@@ -1,51 +1,8 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
-   <route id="packet-receiver-->securezone-notification crvs_new route">
-      <from uri="eventbus://packet-receiver-crvs_new-bus-out" />
-      <log message="packet-receiver-->securezone-notification crvs_new ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://securezone-notification-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
-   <!-- securezone-notification to packet-uploader Route -->
-   <route id="securezone-notification-->packet-uploader crvs_new route">
+   <!-- securezone-notification to packet-validator Route -->
+   <route id="securezone-notification-->packet-validator crvs_new route">
       <from uri="eventbus://securezone-notification-crvs_new-bus-out" />
-      <log message="securezone-notification-->packet-uploader crvs_new route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://packet-uploader-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
-   <!-- packet-uploader to packet-validator Route -->
-   <route id="packet-uploader-->packet-validator crvs_new route">
-      <from uri="eventbus://packet-uploader-crvs_new-bus-out" />
-      <log message="packet-uploader-->packet-validator crvs_new route ${bodyAs(String)}" />
+      <log message="securezone-notification-->packet-validator crvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -132,7 +89,7 @@
          </when>
 		 <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] != 'INFANT')]</jsonpath>
-			<log message="Rejecting the packet for minor/adult" />
+			<log message="INFANT packet is allowed but received the MINOR/ADULT packet hence rejecting the packet" />
 			<to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
