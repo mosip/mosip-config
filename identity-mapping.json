@@ -137,6 +137,15 @@
 		},
 		"password": {
 			"value": "password"
+		},
+		"deceasedDeclarationDate" : {
+			"value": "deceasedDeclarationDate"
+		},
+		"declaredAsDeceased" : {
+			"value" : "declaredAsDeceased"
+		},
+		"typeOfDeath" : {
+			"value" : "typeOfDeath"
 		}
 	},
 	"metaInfo": {
