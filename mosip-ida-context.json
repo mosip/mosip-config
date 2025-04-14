@@ -1,100 +1,180 @@
 {
-  "@context": [{
-    "@version": 1.1
-  },"https://www.w3.org/ns/odrl.jsonld", {
-    "mosip": "https://${mosip.api.public.host}/mosip#",
-    "schema": "http://schema.org/",
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "vcVer": "mosip:vcVer",
-    "UIN": "mosip:UIN",
-    "VID": "mosip:VID",
-    "addressLine1": {
-      "@id": "https://${mosip.api.public.host}/mosip#addressLine1",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "addressLine2": {
-      "@id": "https://${mosip.api.public.host}/mosip#addressLine2",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "addressLine3": {
-      "@id": "https://${mosip.api.public.host}/mosip#addressLine3",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "city": {
-      "@id": "https://${mosip.api.public.host}/mosip#city",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "gender": {
-      "@id": "https://${mosip.api.public.host}/mosip#gender",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "residenceStatus": {
-      "@id": "https://${mosip.api.public.host}/mosip#residenceStatus",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-
-    "dateOfBirth": "mosip:dateOfBirth",
-    "email": "mosip:email",
-    "fullName": {
-      "@id": "https://${mosip.api.public.host}/mosip#fullName",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "phone": "mosip:phone",
-    "postalCode": "mosip:postalCode",
-    "province": {
-      "@id": "https://${mosip.api.public.host}/mosip#province",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "region": {
-      "@id": "https://${mosip.api.public.host}/mosip#region",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-      "bestTwoFingers": {
-      "@id": "https://${mosip.api.public.host}/mosip#bestTwoFingers",
-      "@context": {
-        "id": "@id",
-        "type": "@type",
-        "subType": "https://${mosip.api.public.host}/mosip#subType",
-        "rank": "https://${mosip.api.public.host}/mosip#rank"
-      }
-  },
-    "face": "mosip:face",
-    "dob": "mosip:dob",
-    "fln": {
-      "@id": "https://${mosip.api.public.host}/mosip#fln",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-     "ad1": {
-      "@id": "https://${mosip.api.public.host}/mosip#ad1",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "ad2": {
-      "@id": "https://${mosip.api.public.host}/mosip#ad2",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "ad3": {
-      "@id": "https://${mosip.api.public.host}/mosip#ad3",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "cit": {
-      "@id": "https://${mosip.api.public.host}/mosip#cit",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "gen": {
-      "@id": "https://${mosip.api.public.host}/mosip#gen",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "em": "mosip:em",
-    "ph": "mosip:ph",
-    "poc": "mosip:poc",
-    "pro": {
-      "@id": "https://${mosip.api.public.host}/mosip#pro",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "reg": {
-      "@id": "https://${mosip.api.public.host}/mosip#reg",
-      "@context": {"value": "rdf:value", "lang": "@language"}
-    },
-    "cph": "mosip:cph"
-  }]
+  "@context": {
+    "@version": 1.1,
+    "MosipVerifiableCredential": {
+      "@id": "https://${mosip.api.public.host}/mosip#MosipVerifiableCredential",
+      "@context": [
+        "https://www.w3.org/2018/credentials/v1",
+        {
+          "credentialSubject": {
+            "@id": "https://${mosip.api.public.host}/mosip#MosipVerifiableCredential#credentialSubject",
+            "@type": "@id",
+            "@context": {
+              "@vocab": "https://${mosip.api.public.host}/mosip#MosipVerifiableCredential#credentialSubject#",
+              "vcVer": "vcVer",
+              "UIN": "UIN",
+              "VID": "VID",
+              "fullName": {
+                "@id": "fullName",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "gender": {
+                "@id": "gender",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "dateOfBirth": "dateOfBirth",
+              "email": "email",
+              "phone": "phone",
+              "face": "face",
+              "biometrics": "biometrics",
+              "addressLine1": {
+                "@id": "addressLine1",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "addressLine2": {
+                "@id": "addressLine2",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "addressLine3": {
+                "@id": "addressLine3",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "city": {
+                "@id": "city",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "province": {
+                "@id": "province",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "region": {
+                "@id": "region",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "postalCode": "postalCode",
+              "residenceStatus": {
+                "@id": "residenceStatus",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "bestTwoFingers": {
+                "@id": "bestTwoFingers",
+                "@type": "@id",
+                "@context": {
+                  "id": "@id",
+                  "type": "@type",
+                  "subType": "bestTwoFingers:subType",
+                  "rank": "bestTwoFingers:rank"
+                }
+              },
+              "fln": {
+                "@id": "fullName",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "gen": {
+                "@id": "gender",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "dob": "dateOfBirth",
+              "em": "email",
+              "ph": "phone",
+              "ad1": {
+                "@id": "addressLine1",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "ad2": {
+                "@id": "addressLine2",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "ad3": {
+                "@id": "addressLine3",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "cit": {
+                "@id": "city",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "pro": {
+                "@id": "province",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "reg": {
+                "@id": "region",
+                "@type": "@id",
+                "@context": {
+                  "value": "@value",
+                  "lang": "@language"
+                }
+              },
+              "poc": "postalCode",
+              "cph": "cph"
+            }
+          }
+        }
+      ]
+    }
+  }
 }
