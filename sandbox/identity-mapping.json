@@ -95,7 +95,7 @@
 			"value": "phone,mobileno"
 		},
 		"address": {
-			"value": "addressLine3,addressLine2,addressLine1,city,region,province,postalCode"
+			"value": "addressLine3,addressLine2,addressLine1,presentAddressLine1,city,region,province,postalCode"
 		},
 
 		"individual_id": {
