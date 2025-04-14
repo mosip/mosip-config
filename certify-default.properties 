@@ -1,0 +1,227 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+
+## -------------------------------------- Authentication & Authorization -----------------------------------------------
+
+mosip.certify.security.auth.post-urls={}
+mosip.certify.security.auth.put-urls={}
+mosip.certify.security.auth.get-urls={}
+
+mosip.certify.security.ignore-csrf-urls=${server.servlet.path}/actuator/**,${server.servlet.path}/error,\
+  ${server.servlet.path}/swagger-ui/**,${server.servlet.path}/v3/api-docs/**,\
+  ${server.servlet.path}/issuance/**
+
+mosip.certify.security.ignore-auth-urls=${server.servlet.path}/actuator/**,${server.servlet.path}/error,${server.servlet.path}/swagger-ui/**,\
+  ${server.servlet.path}/v3/api-docs/**, ${server.servlet.path}/issuance/**
+
+
+## ------------------------------------------ Discovery openid-configuration -------------------------------------------
+
+mosip.esignet.domain.url=https://${mosip.esignet.host}
+mosip.certify.domain.url=https://${mosip.injicertify.host}
+mosip.certify.discovery.issuer-id=${mosipbox.public.url}${server.servlet.path}
+
+##----- These are reference to the oauth resource server providing jwk----------------------------------##
+mosip.certify.identifier=${mosip.esignet.domain.url}
+mosip.certify.authn.filter-urls={ '${server.servlet.path}/issuance/credential' }
+
+# Change this if certify is used with different OAUTH2.0 server
+mosip.certify.authn.issuer-uri=${mosip.esignet.domain.url}/v1/esignet
+mosip.certify.authn.jwk-set-uri=${mosip.esignet.domain.url}/v1/esignet/oauth/.well-known/jwks.json
+
+mosip.certify.authn.allowed-audiences={ '${mosip.certify.domain.url}${server.servlet.path}/issuance/credential', '${mosip.esignet.domain.url}/v1/esignet/vci/credential' }
+
+mosip.certify.supported.jwt-proof-alg={'RS256','PS256'}
+mosip.certify.key-values={\
+ 'v11' : {\
+              'credential_issuer': '${mosip.certify.identifier}',   \
+              'credential_endpoint': '${mosip.certify.domain.url}${server.servlet.path}/issuance/credential', \
+              'display': {{'name': 'Insurance', 'locale': 'en'}},\
+              'credentials_supported': {{\
+                      'format': 'ldp_vc',\
+                      'id': 'InsuranceCredential', \
+                      'scope' : 'sunbird_rc_insurance_vc_ldp',\
+                      'cryptographic_binding_methods_supported': {'did:jwk'},\
+                      'cryptographic_suites_supported': {'Ed25519Signature2020'},\
+                      'proof_types_supported': {'jwt'},\
+                      'credential_definition': {\
+                        'type': {'VerifiableCredential','InsuranceCredential'},\
+                        'credentialSubject': {\
+                            'fullName': {'display': {{'name': 'Name','locale': 'en'}}}, \
+                            'mobile': {'display': {{'name': 'Phone Number','locale': 'en'}}},\
+                            'dob': {'display': {{'name': 'Date of Birth','locale': 'en'}}},\
+                            'gender': {'display': {{'name': 'Gender','locale': 'en'}}},\
+                            'benefits': {'display': {{'name': 'Benefits','locale': 'en'}}},\
+                            'email': {'display': {{'name': 'Email Id','locale': 'en'}}},\
+                            'policyIssuedOn': {'display': {{'name': 'Policy Issued On','locale': 'en'}}},\
+                            'policyExpiresOn': {'display': {{'name': 'Policy Expires On','locale': 'en'}}},\
+                            'policyName': {'display': {{'name': 'Policy Name','locale': 'en'}}},\
+                            'policyNumber': {'display': {{'name': 'Policy Number','locale': 'en'}}}\
+                          }},\
+                        'display': {{'name': 'Health Insurance', \
+                                    'locale': 'en', \
+                                    'logo': {'url': 'https://${mosip.api.public.host}/inji/veridonia-logo.png', 'alt_text': 'a square logo of a Veridonia'},\
+                                    'background_color': '#FDFAF9',\
+                                    'text_color': '#7C4616'}},\
+                        'order' : {'fullName','policyName','policyExpiresOn','policyIssuedOn','policyNumber','mobile','dob','gender','benefits','email'}\
+                  },\
+                  {\
+                      'format': 'ldp_vc',\
+                      'id': 'VehicleInsuranceCredential', \
+                      'scope' : 'vehicle_insurance_vc_ldp',\
+                      'cryptographic_binding_methods_supported': {'did:jwk'},\
+                      'cryptographic_suites_supported': {'Ed25519Signature2020'},\
+                      'proof_types_supported': {'jwt'},\
+                      'credential_definition': {\
+                        'type': {'VerifiableCredential','VehicleInsuranceCredential'},\
+                        'credentialSubject': {\
+                            'fullName': {'display': {{'name': 'Owner Name', 'locale': 'en'}}},\
+                            'dob': {'display': {{'name': 'Owner Date of Birth', 'locale': 'en'}}},\
+                            'engineNumber': {'display': {{'name': 'Engine Number', 'locale': 'en'}}},\
+                            'email': {'display': {{'name': 'Email', 'locale': 'en'}}},\
+                            'mobile': {'display': {{'name': 'Mobile', 'locale': 'en'}}},\
+                            'policyExpiresOn': {'display': {{'name': 'Policy Expires On', 'locale': 'en'}}},\
+                            'policyIssuedOn': {'display': {{'name': 'Policy Issued On', 'locale': 'en'}}},\
+                            'invoiceNumber': {'display': {{'name': 'Invoice Number', 'locale': 'en'}}},\
+                            'registrationAuthority': {'display': {{'name': 'Registration Authority', 'locale': 'en'}}},\
+                            'IDV': {'display': {{'name': 'IDV', 'locale': 'en'}}},\
+                            'model': {'display': {{'name': 'Model', 'locale': 'en'}}},\
+                            'typeOfBody': {'display': {{'name': 'Type Of Body', 'locale': 'en'}}},\
+                            'chasisNumber': {'display': {{'name': 'Chasis Number', 'locale': 'en'}}},\
+                            'cubicCapacity': {'display': {{'name': 'Cubic Capacity', 'locale': 'en'}}},\
+                            'registrationNumber': {'display': {{'name': 'Registration Number', 'locale': 'en'}}},\
+                            'policyNumber': {'display': {{'name': 'Policy Number', 'locale': 'en'}}}\
+                          }},\
+                        'display': {{'name': 'Vehicle Insurance', \
+                                    'locale': 'en', \
+                                    'logo': {'url': 'https://${mosip.api.public.host}/inji/veridonia-logo.png', 'alt_text': 'a square logo of a Veridonia'},\
+                                    'background_color': '#FDFAF9',\
+                                    'text_color': '#7C4616'}},\
+                        'order' : {'fullName','dob','policyExpiresOn','policyIssuedOn','policyNumber','engineNumber','mobile','invoiceNumber','registrationAuthority','IDV','model','typeOfBody','chasisNumber','cubicCapacity','registrationNumber'}\
+                  },\
+                  {\
+                      'format': 'ldp_vc',\
+                      'id': 'LifeInsuranceCredential', \
+                      'scope' : 'life_insurance_vc_ldp',\
+                      'cryptographic_binding_methods_supported': {'did:jwk'},\
+                      'cryptographic_suites_supported': {'Ed25519Signature2020'},\
+                      'proof_types_supported': {'jwt'},\
+                      'credential_definition': {\
+                          'type': {'VerifiableCredential', 'LifeInsuranceCredential'},\
+                          'credentialSubject': {\
+                              'fullName': {'display': {{'name': 'Name','locale': 'en'}}}, \
+                              'mobile': {'display': {{'name': 'Phone Number','locale': 'en'}}},\
+                              'dob': {'display': {{'name': 'Date of Birth','locale': 'en'}}},\
+                              'gender': {'display': {{'name': 'Gender','locale': 'en'}}},\
+                              'benefits': {'display': {{'name': 'Benefits','locale': 'en'}}},\
+                              'email': {'display': {{'name': 'Email Id','locale': 'en'}}},\
+                              'policyIssuedOn': {'display': {{'name': 'Policy Issued On','locale': 'en'}}},\
+                              'policyExpiresOn': {'display': {{'name': 'Policy Expires On','locale': 'en'}}},\
+                              'policyName': {'display': {{'name': 'Policy Name','locale': 'en'}}},\
+                              'policyNumber': {'display': {{'name': 'Policy Number','locale': 'en'}}}\
+                       }},\
+                      'display': {{'name': 'Life Insurance', \
+                                    'locale': 'en', \
+                                    'logo': {'url': 'https://${mosip.api.public.host}/inji/veridonia-logo.png','alt_text': 'a square logo of a Veridonia'},\
+                                    'background_color': '#FDFAF9',\
+                                    'text_color': '#7C4616'}},\
+                       'order' : {'fullName','policyName','policyExpiresOn','policyIssuedOn','policyNumber','mobile','dob','gender','benefits','email'}\
+                  }}\
+          },\
+   'latest' : {\
+              'credential_issuer': '${mosip.certify.identifier}',   \
+              'credential_endpoint': '${mosip.certify.domain.url}${server.servlet.path}/issuance/credential', \
+              'display': {{'name': 'Insurance', 'locale': 'en'}},\
+              'credentials_supported' : { \
+                 "InsuranceCredential" : {\
+                    'format': 'ldp_vc',\
+                    'scope' : 'sunbird_rc_insurance_vc_ldp',\
+                    'cryptographic_binding_methods_supported': {'did:jwk'},\
+                    'cryptographic_suites_supported': {'Ed25519Signature2020'},\
+                    'proof_types_supported': {'jwt'},\
+                    'credential_definition': {\
+                      'type': {'VerifiableCredential','InsuranceCredential'},\
+                      'credentialSubject': {\
+                            'fullName': {'display': {{'name': 'Name','locale': 'en'}}}, \
+                            'mobile': {'display': {{'name': 'Phone Number','locale': 'en'}}},\
+                            'dob': {'display': {{'name': 'Date of Birth','locale': 'en'}}},\
+                            'gender': {'display': {{'name': 'Gender','locale': 'en'}}},\
+                            'benefits': {'display': {{'name': 'Benefits','locale': 'en'}}},\
+                            'email': {'display': {{'name': 'Email Id','locale': 'en'}}},\
+                            'policyIssuedOn': {'display': {{'name': 'Policy Issued On','locale': 'en'}}},\
+                            'policyExpiresOn': {'display': {{'name': 'Policy Expires On','locale': 'en'}}},\
+                            'policyName': {'display': {{'name': 'Policy Name','locale': 'en'}}},\
+                            'policyNumber': {'display': {{'name': 'Policy Number','locale': 'en'}}}\
+                      }},\
+                    'display': {{'name': 'Health Insurance', \
+                                  'locale': 'en', \
+                                  'logo': {'url': 'https://${mosip.api.public.host}/inji/veridonia-logo.png','alt_text': 'a square logo of a Veridonia'},\
+                                  'background_color': '#FDFAF9',\
+                                  'text_color': '#7C4616'}},\
+                    'order' : {'fullName','policyName','policyExpiresOn','policyIssuedOn','policyNumber','mobile','dob','gender','benefits','email'}\
+                 },\
+                  "VehicleInsuranceCredential" : {\
+                    'format': 'ldp_vc',\
+                    'scope' : 'vehicle_insurance_vc_ldp',\
+                    'cryptographic_binding_methods_supported': {'did:jwk'},\
+                    'cryptographic_suites_supported': {'Ed25519Signature2020'},\
+                    'proof_types_supported': {'jwt'},\
+                    'credential_definition': {\
+                      'type': {'VerifiableCredential','VehicleInsuranceCredential'},\
+                      'credentialSubject': {\
+                            'fullName': {'display': {{'name': 'Owner Name', 'locale': 'en'}}},\
+                            'dob': {'display': {{'name': 'Owner Date of Birth', 'locale': 'en'}}},\
+                            'engineNumber': {'display': {{'name': 'Engine Number', 'locale': 'en'}}},\
+                            'email': {'display': {{'name': 'Email', 'locale': 'en'}}},\
+                            'mobile': {'display': {{'name': 'Mobile', 'locale': 'en'}}},\
+                            'policyExpiresOn': {'display': {{'name': 'Policy Expires On', 'locale': 'en'}}},\
+                            'policyIssuedOn': {'display': {{'name': 'Policy Issued On', 'locale': 'en'}}},\
+                            'invoiceNumber': {'display': {{'name': 'Invoice Number', 'locale': 'en'}}},\
+                            'registrationAuthority': {'display': {{'name': 'Registration Authority', 'locale': 'en'}}},\
+                            'IDV': {'display': {{'name': 'IDV', 'locale': 'en'}}},\
+                            'model': {'display': {{'name': 'Model', 'locale': 'en'}}},\
+                            'typeOfBody': {'display': {{'name': 'Type Of Body', 'locale': 'en'}}},\
+                            'chasisNumber': {'display': {{'name': 'Chasis Number', 'locale': 'en'}}},\
+                            'cubicCapacity': {'display': {{'name': 'Cubic Capacity', 'locale': 'en'}}},\
+                            'registrationNumber': {'display': {{'name': 'Registration Number', 'locale': 'en'}}},\
+                            'policyNumber': {'display': {{'name': 'Policy Number', 'locale': 'en'}}}\
+                          }},\
+                    'display': {{'name': 'Vehicle Insurance', \
+                                  'locale': 'en', \
+                                  'logo': {'url': 'https://${mosip.api.public.host}/inji/veridonia-logo.png','alt_text': 'a square logo of a Veridonia'},\
+                                  'background_color': '#FDFAF9',\
+                                  'text_color': '#7C4616'}},\
+                    'order' : {'fullName','dob','policyExpiresOn','policyIssuedOn','policyNumber','engineNumber','mobile','invoiceNumber','registrationAuthority','IDV','model','typeOfBody','chasisNumber','cubicCapacity','registrationNumber'}\
+                 },\
+                  "LifeInsuranceCredential":{\
+                      'format': 'ldp_vc',\
+                      'scope' : 'life_insurance_vc_ldp',\
+                      'cryptographic_binding_methods_supported': {'did:jwk'},\
+                      'cryptographic_suites_supported': {'Ed25519Signature2020'},\
+                      'proof_types_supported': {'jwt'},\
+                      'credential_definition': {\
+                          'type': {'VerifiableCredential', 'LifeInsuranceCredential'},\
+                          'credentialSubject': {\
+                              'fullName': {'display': {{'name': 'Name','locale': 'en'}}}, \
+                              'mobile': {'display': {{'name': 'Phone Number','locale': 'en'}}},\
+                              'dob': {'display': {{'name': 'Date of Birth','locale': 'en'}}},\
+                              'gender': {'display': {{'name': 'Gender','locale': 'en'}}},\
+                              'benefits': {'display': {{'name': 'Benefits','locale': 'en'}}},\
+                              'email': {'display': {{'name': 'Email Id','locale': 'en'}}},\
+                              'policyIssuedOn': {'display': {{'name': 'Policy Issued On','locale': 'en'}}},\
+                              'policyExpiresOn': {'display': {{'name': 'Policy Expires On','locale': 'en'}}},\
+                              'policyName': {'display': {{'name': 'Policy Name','locale': 'en'}}},\
+                              'policyNumber': {'display': {{'name': 'Policy Number','locale': 'en'}}}\
+                       }},\
+                      'display': {{'name': 'Life Insurance', \
+                                    'locale': 'en', \
+                                    'logo': {'url': 'https://${mosip.api.public.host}/inji/veridonia-logo.png','alt_text': 'a square logo of a Veridonia'},\
+                                    'background_color': '#FDFAF9',\
+                                    'text_color': '#7C4616'}},\
+                       'order' : {'fullName','policyName','policyExpiresOn','policyIssuedOn','policyNumber','mobile','dob','gender','benefits','email'}\
+              }}\
+   }\
+}
+
