@@ -129,6 +129,9 @@
 		"region": {
 			"value": "region"
 		},
+		"zone": {
+			"value": "zone"
+		},
 		"postal_code": {
 			"value": "postalCode"
 		},
