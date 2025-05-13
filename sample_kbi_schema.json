@@ -1,0 +1,56 @@
+{
+  "schema": [
+    {
+      "id": "individualId",
+      "controlType": "textbox",
+      "label": {
+        "en": "Policy Number"
+      },
+      "validators": [
+        {
+          "type": "regex",
+          "validator": "",
+          "langCode": "en",
+          "errorCode": ""
+        }
+      ],
+      "alignmentGroup": "groupA",
+      "required": true
+    },
+    {
+      "id": "phoneNumber",
+      "controlType": "textbox",
+      "label": {
+        "en": "Phone Number",
+        "km": "លេខទូរស័ព្ទ",
+        "ar": "رقم التليفون"
+      },
+      "validators": [
+        {
+          "type": "regex",
+          "validator": "",
+          "langCode": "en",
+          "errorCode": ""
+        }
+      ],
+      "alignmentGroup": "groupB",
+      "required": true
+    },
+    {
+      "id": "birthDate",
+      "controlType": "date",
+      "type": "date",
+      "label": {
+        "en": "Birth Date"
+      },
+      "alignmentGroup": "groupC",
+      "required": true
+    }
+  ],
+  "mandatoryLanguages": [
+    "en"
+  ],
+  "optionalLanguages": [
+    "km"
+  ]
+}
