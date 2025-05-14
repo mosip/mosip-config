@@ -56,7 +56,8 @@
     },
     "password": {
       "type": "string",
-      "pattern": "\\S"
+      "pattern": "\\S",
+      "nullable": true
     }
   },
   "required": [
