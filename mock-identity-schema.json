@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$defs": {
+    "langField": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "language",
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "properties": {
+    "individualId": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "fullName": {
+      "allOf": [
+        { "$ref": "#/$defs/langField" },
+        {
+          "items": {
+            "properties": {
+              "value": {
+                "pattern": "^(?:[a-zA-ZÀ-ÿ\\s]{1,40}|[ء-ي\\s-٩ٱ-ڿﹰ-\uFEFF\u0600-ۿ]{1,40})$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "givenName": {
+      "allOf": [
+        { "$ref": "#/$defs/langField" },
+        {
+          "items": {
+            "properties": {
+              "value": {
+                "pattern": "^(?:[a-zA-ZÀ-ÿ\\s]{1,40}|[ء-ي\\s-٩ٱ-ڿﹰ-\uFEFF\u0600-ۿ]{1,40})$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "familyName": {
+      "allOf": [
+        { "$ref": "#/$defs/langField" },
+        {
+          "items": {
+            "properties": {
+              "value": {
+                "pattern": "^(?:[a-zA-ZÀ-ÿ\\s]{1,40}|[ء-ي\\s-٩ٱ-ڿﹰ-\uFEFF\u0600-ۿ]{1,40})$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "middleName": {
+      "allOf": [
+        { "$ref": "#/$defs/langField" },
+        {
+          "items": {
+            "properties": {
+              "value": {
+                "pattern": "^(?:[a-zA-ZÀ-ÿ\\s]{1,40}|[ء-ي\\s-٩ٱ-ڿﹰ-\uFEFF\u0600-ۿ]{1,40})$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "nickName": {
+      "allOf": [
+        { "$ref": "#/$defs/langField" },
+        {
+          "items": {
+            "properties": {
+              "value": {
+                "pattern": "^(?:[a-zA-ZÀ-ÿ\\s]{1,40}|[ء-ي\\s-٩ٱ-ڿﹰ-\uFEFF\u0600-ۿ]{1,40})$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "preferredUsername": {
+      "allOf": [
+        { "$ref": "#/$defs/langField" },
+        {
+          "items": {
+            "properties": {
+              "value": {
+                "pattern": "^(?:[a-zA-ZÀ-ÿ\\s]{1,40}|[ء-ي\\s-٩ٱ-ڿﹰ-\uFEFF\u0600-ۿ]{1,40})$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "gender": {
+      "allOf": [
+        { "$ref": "#/$defs/langField" },
+        {
+          "items": {
+            "properties": {
+              "value": {
+                "pattern": "^(?:[a-zA-ZÀ-ÿ\\s]{1,20}|^[ء-ي\\s\\u0621-\\u064A\\u0660-\\u0669\\u0671-\\u06BF\\uFE70-\\uFEFF\\u0600-\\u06FFگچپژیلفقهمو ء-ي]{1,20}$)$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "streetAddress": {
+      "allOf": [
+        { "$ref": "#/$defs/langField" },
+        {
+          "items": {
+            "properties": {
+              "value": {
+                "pattern": "^(?:[a-zA-ZÀ-ÿ0-9\\s.,°№-]{1,200}|[ء-ي\\s-٩ٱ-ڿﹰ-\uFEFF\u0600-ۿ0-9]{1,200})$"
+
+              }
+            }
+          }
+        }
+      ]
+    },
+    "locality": {
+      "allOf": [
+        { "$ref": "#/$defs/langField" },
+        {
+          "items": {
+            "properties": {
+              "value": {
+                "pattern": "^(?:[a-zA-ZÀ-ÿ0-9\\s.,°№-]{1,200}|[ء-ي\\s-٩ٱ-ڿﹰ-\uFEFF\u0600-ۿ0-9]{1,200})$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "region": {
+      "allOf": [
+        { "$ref": "#/$defs/langField" },
+        {
+          "items": {
+            "properties": {
+              "value": {
+                "pattern": "^(?:[a-zA-ZÀ-ÿ0-9\\s.,°№-]{1,200}|[ء-ي\\s-٩ٱ-ڿﹰ-\uFEFF\u0600-ۿ0-9]{1,200})$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "country": {
+      "allOf": [
+        { "$ref": "#/$defs/langField" },
+        {
+          "items": {
+            "properties": {
+              "value": {
+                "pattern": "^(?:[a-zA-ZÀ-ÿ\\s]{1,20}|^[ء-ي\\s\\u0621-\\u064A\\u0660-\\u0669\\u0671-\\u06BF\\uFE70-\\uFEFF\\u0600-\\u06FFگچپژیلفقهمو ء-ي]{1,20}$)$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "pin": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "preferredLang": {
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "postalCode": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "encodedPhoto": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$"
+    },
+    "phone": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "zoneInfo": {
+      "type": "string"
+    },
+    "locale": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "password": {
+      "type": "string",
+      "pattern": "\\S"
+    }
+  },
+  "required": [
+    "individualId",
+    "fullName",
+    "givenName",
+    "familyName",
+    "gender",
+    "streetAddress",
+    "locality",
+    "region",
+    "country",
+    "pin",
+    "dateOfBirth",
+    "postalCode",
+    "encodedPhoto",
+    "email",
+    "phone",
+    "zoneInfo",
+    "password"
+  ],
+  "additionalProperties": false
+}
