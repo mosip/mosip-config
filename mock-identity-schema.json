@@ -235,9 +235,7 @@
     "postalCode",
     "encodedPhoto",
     "email",
-    "phone",
-    "zoneInfo",
-    "password"
+    "phone"
   ],
   "additionalProperties": false
 }
