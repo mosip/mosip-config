@@ -52,7 +52,7 @@
     },
     "phone": {
       "type": "string",
-      "pattern": "^\+?\d{8,13}$"
+      "pattern": "^\\+?\\d{8,13}$"
     },
     "password": {
       "type": "string",
