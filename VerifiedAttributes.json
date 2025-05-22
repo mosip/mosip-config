@@ -1,89 +1,86 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
   "definitions": {
-    "verificationDetail": {
+    "verification_metadata": {
       "additionalProperties": false,
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": [
-          "trustFramework",
-          "processName",
-          "startedOn"
-        ],
-        "properties": {
-          "trustFramework": {
-            "type": "string"
-          },
-          "processName": {
-            "type": "string"
-          },
-          "startedOn": {
-            "type": "number"
-          },
-          "completedOn": {
-            "type": "number"
-          },
-          "assurance": {
-            "type": "object",
-            "required": [
-              "level",
-              "procedure",
-              "policy"
-            ],
-            "properties": {
-              "level": {
-                "type": "string"
-              },
-              "policy": {
-                "type": "string"
-              },
-              "procedure": {
-                "type": "string"
-              }
-            }
-          },
-          "evidence": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string"
-                },
-                "verifiedOn": {
-                  "type": "number"
-                },
-                "verificationMethod": {
-                  "type": "string"
-                },
-                "detail": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "properties": {
-                    "document": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
+      "type": "object",
+      "required": [
+        "trust_framework",
+        "verification_process",
+        "time"
+      ],
+      "properties": {
+        "trust_framework": {
+          "type": "string"
+        },
+        "verification_process": {
+          "type": "string"
+        },
+        "assurance_level": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        },
+        "assurance_process": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "level": {
+              "type": "string"
+            },
+            "policy": {
+              "type": "string"
+            },
+            "procedure": {
+              "type": "string"
             }
           }
         }
       }
     }
   },
+  "required": [
+    "trustFramework",
+    "verificationProcess",
+    "claims",
+    "metadata"
+  ],
   "properties": {
-    "fullName": {
-      "$ref": "#/definitions/verificationDetail"
+    "trustFramework": {
+      "type": "string"
     },
-    "address": {
-      "$ref": "#/definitions/verificationDetail"
+    "verificationProcess": {
+      "type": "string"
     },
-    "phone": {
-            "$ref": "#/definitions/verificationDetail"
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "metadata": {
+      "$ref": "#/definitions/verification_metadata"
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "metadata": {
+          "properties": {
+            "trust_framework": {
+              "const": { "$data": "1/trustFramework" }
+            },
+            "verification_process": {
+              "const": { "$data": "1/verificationProcess" }
+            }
+          }
         }
-}
+      }
+    }
+  ]
 }
