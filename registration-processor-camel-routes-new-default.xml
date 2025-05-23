@@ -60,7 +60,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="eventbus://demo-dedupe-new-bus-out" />
+            <to uri="eventbus://demo-dedupe-new-bus-in" />
          </otherwise>
       </choice>
    </route>
