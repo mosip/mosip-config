@@ -42,14 +42,14 @@
          </otherwise>
       </choice>
    </route>
-	 <route id="packet-uploader-->demo-dedupe new route">
+   <!-- packet-uploader to packet-validator Route -->
+   <route id="packet-uploader-->packet-validator new route">
       <from uri="eventbus://packet-uploader-new-bus-out" />
-      <log message="quality-classifier-->demo-dedupe new route ${bodyAs(String)}" />
+      <log message="packet-uploader-->packet-validator new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
             <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <when>
             <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -58,28 +58,9 @@
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['FAILED'] || @['tags']['BIOMETRIC_CORRECTION_FLOW_STATUS'] in ['REJECTED'])]</jsonpath>
-            <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
-            <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
-            <to uri="workflow-cmd://pause-and-request-additional-info" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Finger'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'] &amp;&amp; @['tags']['Biometric_Quality-Face'] in ['level-4','level-5','level-6','level-7','level-8','level-9','level-10','--Biometrics-Not-Available--'])]</jsonpath>
-            <to uri="eventbus://demo-dedupe-bus-in" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['Biometric_Quality-Iris'] in ['level-1','level-2','level-3'] || @['tags']['Biometric_Quality-Finger'] in ['level-1','level-2','level-3'] || @['tags']['Biometric_Quality-Face'] in ['level-1','level-2','level-3'])]</jsonpath>
-            <setProperty propertyName="ADDITIONAL_INFO_PROCESS"><constant>BIOMETRIC_CORRECTION</constant></setProperty>
-            <!-- PAUSE_FOR is in seconds -->
-            <setProperty propertyName="PAUSE_FOR"><constant>1296000</constant></setProperty>
-            <to uri="workflow-cmd://pause-and-request-additional-info" />
          </when>
          <otherwise>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
+            <to uri="eventbus://demo-dedupe-new-bus-in" />
          </otherwise>
       </choice>
    </route>
@@ -245,7 +226,7 @@
       </choice>
    </route>
    <route id="quality-classifier-->demo-dedupe new route">
-      <from uri="eventbus://quality-classifier-new-bus-out-1" />
+      <from uri="eventbus://quality-classifier-new-bus-out" />
       <log message="quality-classifier-->demo-dedupe new route ${bodyAs(String)}" />
       <choice>
          <when>
