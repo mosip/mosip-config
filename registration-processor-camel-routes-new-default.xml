@@ -60,7 +60,7 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="eventbus://demo-dedupe-new-bus-in" />
+            <to uri="eventbus://c-m-d-validator-bus-in" />
          </otherwise>
       </choice>
    </route>
@@ -108,7 +108,7 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://c-m-d-validator-bus-in" />
+            <to uri="eventbus://c-m-d-validator-bus-in-1" />
          </otherwise>
       </choice>
    </route>
@@ -267,7 +267,7 @@
       </choice>
    </route>
    <route id="demo-dedupe-->bio-dedupe new route">
-      <from uri="eventbus://demo-dedupe-new-bus-out-1" />
+      <from uri="eventbus://demo-dedupe-new-bus-out" />
       <log message="demo-dedupe-->bio-dedupe new route ${bodyAs(String)}" />
       <choice>
          <when>
