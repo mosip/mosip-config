@@ -4,13 +4,13 @@
       "id": "individualId",
       "controlType": "textbox",
       "label": {
-        "en": "Policy Number"
+        "eng": "Policy Number"
       },
       "validators": [
         {
           "type": "regex",
           "validator": "",
-          "langCode": "en",
+          "langCode": "eng",
           "errorCode": ""
         }
       ],
@@ -21,15 +21,15 @@
       "id": "phoneNumber",
       "controlType": "textbox",
       "label": {
-        "en": "Phone Number",
-        "km": "លេខទូរស័ព្ទ",
-        "ar": "رقم التليفون"
+        "eng": "Phone Number",
+        "khm": "លេខទូរស័ព្ទ",
+        "ara": "رقم التليفون"
       },
       "validators": [
         {
           "type": "regex",
           "validator": "",
-          "langCode": "en",
+          "langCode": "eng",
           "errorCode": ""
         }
       ],
@@ -41,16 +41,16 @@
       "controlType": "date",
       "type": "date",
       "label": {
-        "en": "Birth Date"
+        "eng": "Birth Date"
       },
       "alignmentGroup": "groupC",
       "required": true
     }
   ],
   "mandatoryLanguages": [
-    "en"
+    "eng"
   ],
   "optionalLanguages": [
-    "km"
+    "khm"
   ]
 }
