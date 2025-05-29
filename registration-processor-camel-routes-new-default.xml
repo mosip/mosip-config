@@ -60,13 +60,13 @@
             <to uri="workflow-cmd://complete-as-failed" />
          </when>
          <otherwise>
-            <to uri="eventbus://packet-validator-bus-in" />
+            <to uri="eventbus://c-m-d-validator-bus-in" />
          </otherwise>
       </choice>
    </route>
    <!-- Packet Validator to Packet classifier Route -->
    <route id="packet-validator-->packet-classifier new route">
-      <from uri="eventbus://packet-validator-new-bus-out" />
+      <from uri="eventbus://demo-dedupe-new-bus-out" />
       <log message="packet-validator-->packet-classifier new route ${bodyAs(String)}" />
       <choice>
          <when>
