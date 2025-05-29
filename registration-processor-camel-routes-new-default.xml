@@ -66,7 +66,7 @@
    </route>
    <!-- Packet Validator to Packet classifier Route -->
    <route id="packet-validator-->packet-classifier new route">
-      <from uri="eventbus://demo-dedupe-new-bus-out" />
+      <from uri="eventbus://packet-validator-new-bus-out" />
       <log message="packet-validator-->packet-classifier new route ${bodyAs(String)}" />
       <choice>
          <when>
