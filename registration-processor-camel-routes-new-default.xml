@@ -108,7 +108,7 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://c-m-d-validator-bus-in" />
+            <to uri="eventbus://c-m-d-validator-bus-in-1" />
          </otherwise>
       </choice>
    </route>
