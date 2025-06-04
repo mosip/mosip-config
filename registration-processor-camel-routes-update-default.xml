@@ -512,10 +512,10 @@
          </otherwise>
       </choice>
    </route>
-	 <!-- finalization to Printing Route -->
-   <route id="finalization route-->printing-stage update route">
+	 <!-- finalization to credential-requestor Route -->
+   <route id="finalization route-->credential-requestor-stage update route">
       <from uri="eventbus://finalization-update-bus-out" />
-      <log message="finalization-->printing-stage update route ${bodyAs(String)}" />
+      <log message="finalization-->credential-requestor-stage update route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -532,13 +532,19 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://printing-bus-in" />
+            <to uri="eventbus://credential-requestor-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="printing-stage--> update route">
+   <!-- printing-update-bus-out to credential-requestor-update-bus-out Route is kept for backward compatibility. If fresh deployment is done, this route can be removed -->
+   <route id="printing-update-bus-out route-->credential-requestor-update-bus-out new route">
       <from uri="eventbus://printing-update-bus-out" />
-      <log message="printing-stage--> route ${bodyAs(String)}" />
+      <log message="printing-update-bus-out--> credential-requestor-update-bus-out route ${bodyAs(String)}" />
+      <to uri="eventbus://credential-requestor-update-bus-out" />
+   </route>
+   <route id="credential-requestor-stage--> update route">
+      <from uri="eventbus://credential-requestor-update-bus-out" />
+      <log message="credential-requestor-stage--> route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
