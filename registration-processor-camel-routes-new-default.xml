@@ -515,15 +515,17 @@
          </otherwise>
       </choice>
    </route>
-   <!-- printing-stage-in to credential-requestor-stage Route -->
-   <route id="printing-stage-in route-->credential-requestor-stage new route">
+   <!-- printing-bus-in to credential-requestor-bus-in Route is kept for backward compatibility. If fresh deployment is done, this route can be removed -->
+   <route id="printing-bus-in route-->credential-requestor-bus-in new route">
       <from uri="eventbus://printing-bus-in" />
-      <log message="printing-stage-bus-in-->credential-reqestor-stage route ${bodyAs(String)}" />
-      <choice>
-         <otherwise>
-            <to uri="eventbus://credential-requestor-bus-in" />
-         </otherwise>
-      </choice>
+      <log message="printing-bus-in--> credential-requestor-bus-in route ${bodyAs(String)}" />
+      <to uri="eventbus://credential-requestor-bus-in" />
+   </route>
+   <!-- printing-new-bus-out to credential-requestor-new-bus-out Route is kept for backward compatibility. If fresh deployment is done, this route can be removed -->
+   <route id="printing-new-bus-out route-->credential-requestor-new-bus-out new route">
+      <from uri="eventbus://printing-new-bus-out" />
+      <log message="printing-new-bus-out--> credential-requestor-new-bus-out route ${bodyAs(String)}" />
+      <to uri="eventbus://credential-requestor-new-bus-out" />
    </route>
    <route id="credential-requestor-stage--> new route">
       <from uri="eventbus://credential-requestor-new-bus-out" />

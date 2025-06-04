@@ -67,6 +67,12 @@
          </otherwise>
       </choice>
    </route>
+   <!-- printing-res_reprint-bus-out to credential-requestor-res_reprint-bus-out Route is kept for backward compatibility. If fresh deployment is done, this route can be removed -->
+   <route id="printing-res_reprint-bus-out route-->credential-requestor-res_reprint-bus-out new route">
+      <from uri="eventbus://printing-res_reprint-bus-out" />
+      <log message="printing-res_reprint-bus-out--> credential-requestor-res_reprint-bus-out route ${bodyAs(String)}" />
+      <to uri="eventbus://credential-requestor-res_reprint-bus-out" />
+   </route>
    <route id="credential-requestor-stage--> res_reprint route">
       <from uri="eventbus://credential-requestor-res_reprint-bus-out" />
       <log message="credential-requestor-stage--> route ${bodyAs(String)}" />
