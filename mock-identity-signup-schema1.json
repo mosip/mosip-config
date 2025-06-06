@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$defs": {
+    "langField": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "language",
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "properties": {
+    "individualId": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "fullName": {
+      "allOf": [
+        { "$ref": "#/$defs/langField" },
+        {
+          "items": {
+            "properties": {
+              "value": {
+                "pattern": "^(?=.*[^\\s])^(?:[a-zA-ZÀ-ÿ\\s]{1,40}|[ء-ي\\s٩ٱ-ڿﹰ-\uFEFF\u0600-ۿ]{1,40}|[ក-\u17FF᧠-᧿ᨀ-\u1A9F ]{1,40})$"
+              },
+              "language": {
+                "type": "string",
+                "enum": ["khm","eng","fra","ara"]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "preferredLang": {
+        "type": "string",
+        "enum": ["khm","eng","fra","ara"],
+        "nullable": true
+    },
+    "mobile": {
+      "type": "string",
+      "pattern": "^\\+[1-9]\\d{8,13}$"
+    }
+  },
+  "required": [
+    "individualId",
+    "fullName",
+    "mobile",
+    "password"
+  ],
+  "additionalProperties": true
+}
