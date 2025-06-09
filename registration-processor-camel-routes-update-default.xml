@@ -315,7 +315,7 @@
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
             <to uri="eventbus://manual-adjudication-bus-in" />
          </when>
-		 <when>
+         <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT')]</jsonpath>
             <to uri="eventbus://verification-bus-in" />
          </when>
@@ -354,7 +354,7 @@
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'bio-dedupe-bus-in')]</jsonpath>
             <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
-		 <otherwise>
+         <otherwise>
             <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
@@ -385,6 +385,10 @@
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
             <to uri="eventbus://abis-handler-bus-in" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
+            <to uri="eventbus://manual-adjudication-bus-in" />
          </when>
          <otherwise>
             <to uri="eventbus://uin-generator-bus-in" />
@@ -460,7 +464,7 @@
          </otherwise>
       </choice>
    </route>
-	<!-- UIN Generator to biometric-extraction Route -->
+   <!-- UIN Generator to biometric-extraction Route -->
    <route id="uin-generation route-->biometric-extraction-stage update route">
       <from uri="eventbus://uin-generator-update-bus-out" />
       <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
@@ -484,7 +488,7 @@
          </otherwise>
       </choice>
    </route>
- <!-- biometric-extraction to finalization Route -->
+   <!-- biometric-extraction to finalization Route -->
    <route id="biometric-extraction route-->finalization-stage update route">
       <from uri="eventbus://biometric-extraction-update-bus-out" />
       <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
@@ -508,7 +512,7 @@
          </otherwise>
       </choice>
    </route>
-	 <!-- finalization to Printing Route -->
+   <!-- finalization to Printing Route -->
    <route id="finalization route-->printing-stage update route">
       <from uri="eventbus://finalization-update-bus-out" />
       <log message="finalization-->printing-stage update route ${bodyAs(String)}" />
