@@ -145,7 +145,7 @@
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'bio-dedupe-bus-in')]</jsonpath>
             <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
-		 <otherwise>
+         <otherwise>
             <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
@@ -174,7 +174,7 @@
          </otherwise>
       </choice>
    </route>
-	<!-- UIN Generator to biometric-extraction Route -->
+   <!-- UIN Generator to biometric-extraction Route -->
    <route id="uin-generation route-->biometric-extraction-stage res_update route">
       <from uri="eventbus://uin-generator-res_update-bus-out" />
       <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
@@ -198,7 +198,7 @@
          </otherwise>
       </choice>
    </route>
- <!-- biometric-extraction to finalization Route -->
+   <!-- biometric-extraction to finalization Route -->
    <route id="biometric-extraction route-->finalization-stage res_update route">
       <from uri="eventbus://biometric-extraction-res_update-bus-out" />
       <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
@@ -222,7 +222,7 @@
          </otherwise>
       </choice>
    </route>
-	 <!-- finalization to Printing Route -->
+   <!-- finalization to Printing Route -->
    <route id="finalization route-->printing-stage res_update route">
       <from uri="eventbus://finalization-res_update-bus-out" />
       <log message="finalization-->printing-stage res_update route ${bodyAs(String)}" />

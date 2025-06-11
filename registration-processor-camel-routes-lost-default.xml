@@ -267,16 +267,16 @@
       <from uri="eventbus://bio-dedupe-lost-bus-out" />
       <log message="bio-dedupe-->uin-generation lost route ${bodyAs(String)}" />
       <choice>
-        <when>
+         <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
             <to uri="workflow-cmd://complete-as-failed" />
-           <to uri="workflow-cmd://anonymous-profile" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <when>
             <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
             <to uri="workflow-cmd://mark-as-reprocess" />
          </when>
-        <when>
+         <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
             <to uri="workflow-cmd://anonymous-profile" />
@@ -347,7 +347,7 @@
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'bio-dedupe-bus-in')]</jsonpath>
             <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
-		 <otherwise>
+         <otherwise>
             <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
@@ -397,7 +397,7 @@
          </otherwise>
       </choice>
    </route>
-	<!-- UIN Generator to biometric-extraction Route -->
+   <!-- UIN Generator to biometric-extraction Route -->
    <route id="uin-generation route-->biometric-extraction-stage lost route">
       <from uri="eventbus://uin-generator-lost-bus-out" />
       <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
@@ -421,7 +421,7 @@
          </otherwise>
       </choice>
    </route>
- <!-- biometric-extraction to finalization Route -->
+   <!-- biometric-extraction to finalization Route -->
    <route id="biometric-extraction route-->finalization-stage lost route">
       <from uri="eventbus://biometric-extraction-lost-bus-out" />
       <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
@@ -445,7 +445,7 @@
          </otherwise>
       </choice>
    </route>
-	 <!-- finalization to Printing Route -->
+   <!-- finalization to Printing Route -->
    <route id="finalization-lost-->printing-stage lost route">
       <from uri="eventbus://finalization-lost-bus-out" />
       <log message="finalization-lost-->printing-stage lost route ${bodyAs(String)}" />
