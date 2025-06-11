@@ -157,8 +157,8 @@
             <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true')]</jsonpath>
             <to uri="eventbus://introducer-validator-bus-in" />
          </when>
-          <otherwise>
-                 <to uri="workflow-cmd://complete-as-processed" />
+         <otherwise>
+            <to uri="workflow-cmd://complete-as-processed" />
          </otherwise>
       </choice>
    </route>
@@ -182,8 +182,8 @@
             <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT' || @['tags']['AGE_GROUP'] == 'MINOR' || @['tags']['INTRODUCER_AVAILABILITY'] == 'true')]</jsonpath>
             <to uri="eventbus://introducer-validator-bus-in" />
          </when>
-          <otherwise>
-                 <to uri="workflow-cmd://complete-as-processed" />
+         <otherwise>
+            <to uri="workflow-cmd://complete-as-processed" />
          </otherwise>
       </choice>
    </route>
@@ -204,8 +204,8 @@
             <to uri="workflow-cmd://complete-as-rejected" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
-        <otherwise>
-                 <to uri="workflow-cmd://complete-as-processed" />
+         <otherwise>
+            <to uri="workflow-cmd://complete-as-processed" />
          </otherwise>
       </choice>
    </route>
