@@ -109,7 +109,7 @@
          </when>
          <otherwise>
 <!--            <to uri="eventbus://c-m-d-validator-bus-in" />-->
-            eventbus://operator-validator-new-bus-out
+            <to uri="eventbus://operator-validator-bus-in" />
          </otherwise>
       </choice>
    </route>
