@@ -264,7 +264,7 @@
       </choice>
    </route>
    <!-- printing-crvs_new-bus-out to credential-requestor-crvs_new-bus-out Route is kept for backward compatibility. If fresh deployment is done, this route can be removed -->
-   <route id="printing-crvs_new-bus-out route-->credential-requestor-crvs_new-bus-out new route">
+   <route id="printing-crvs_new-bus-out route-->credential-requestor-crvs_new-bus-out crvs_new route">
       <from uri="eventbus://printing-crvs_new-bus-out" />
       <log message="printing-crvs_new-bus-out--> credential-requestor-crvs_new-bus-out route ${bodyAs(String)}" />
       <to uri="eventbus://credential-requestor-crvs_new-bus-out" />

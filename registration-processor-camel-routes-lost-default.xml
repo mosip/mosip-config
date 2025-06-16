@@ -470,7 +470,7 @@
       </choice>
    </route>
    <!-- printing-lost-bus-out to credential-requestor-lost-bus-out Route is kept for backward compatibility. If fresh deployment is done, this route can be removed -->
-   <route id="printing-lost-bus-out route-->credential-requestor-lost-bus-out new route">
+   <route id="printing-lost-bus-out route-->credential-requestor-lost-bus-out lost route">
       <from uri="eventbus://printing-lost-bus-out" />
       <log message="printing-lost-bus-out--> credential-requestor-lost-bus-out route ${bodyAs(String)}" />
       <to uri="eventbus://credential-requestor-lost-bus-out" />

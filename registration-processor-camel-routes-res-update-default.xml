@@ -247,7 +247,7 @@
       </choice>
    </route>
    <!-- printing-res_update-bus-out to credential-requestor-res_update-bus-out Route is kept for backward compatibility. If fresh deployment is done, this route can be removed -->
-   <route id="printing-res_update-bus-out route-->credential-requestor-res_update-bus-out new route">
+   <route id="printing-res_update-bus-out route-->credential-requestor-res_update-bus-out res_update route">
       <from uri="eventbus://printing-res_update-bus-out" />
       <log message="printing-res_update-bus-out--> credential-requestor-res_update-bus-out route ${bodyAs(String)}" />
       <to uri="eventbus://credential-requestor-res_update-bus-out" />
