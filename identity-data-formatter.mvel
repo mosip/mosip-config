@@ -9,7 +9,7 @@ def maskEmail(inputEmailAddr) {
 return inputEmailAddr.replaceAll("(^[^@]{3}|(?!^)\\G)[^@]", "$1*");
 };
 
-def convertToMaskDataFormat(maskData) {
+def convertToMaskData(maskData) {
 	int maskDataLength = 0;
 	char ch = '*';
 	if (maskData.indexOf("@") > 0){

@@ -24,6 +24,9 @@
         },
         "source": {
           "type": "string"
+        },
+        "protocol": {
+          "type": "string"
         }
       },
       "required": [
@@ -39,7 +42,7 @@
       "type": "array",
       "additionalItems": false,
       "items": {
-        "type": "object",        
+        "type": "object",
         "properties": {
           "attributeName": {
             "type": "string"
@@ -58,13 +61,13 @@
                 "filter": {
                   "type": "array",
                   "items": [{
-                      "type": "object",
-                      "properties": {
-                        "type": {
-                          "type": "string"
-                        }
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
                       }
-                    },
+                    }
+                  },
                     {
                       "type": "object",
                       "properties": {
@@ -74,8 +77,8 @@
                         "subType": {
                           "type": "array",
                           "items": [{
-                              "type": "string"
-                            },
+                            "type": "string"
+                          },
                             {
                               "type": "string"
                             }
