@@ -87,6 +87,13 @@ CONSOLIDATOR_BASE_URL = "${mosip.consolidator.url}"
 # consolidator health endpoint
 CONSOLIDATOR_HEALTH_ENDPOINT = "/consolidator/actuator/health"
 
+#Encryption key that will be used to encrypt / decrypt the hub secret
+HUB_SECRET_ENCRYPTION_KEY = "${hub.secret.encryption.key}"
+
+# Below config will allow base64-encoded-bytes / alpha-numeric.
+# Recommended to use base64-encoded-bytes since alpha-numeric is considered less secure. This is just given to ensure the backward compatiblity
+HUB_SECRET_ENCRYPTION_KEY_FORMAT = "alpha-numeric"
+
 [ballerina.http.accessLogConfig]
 # Enable printing access logs in console
 console = true              # Default is false
