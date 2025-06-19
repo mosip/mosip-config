@@ -1,5 +1,5 @@
+<!-- This Camel route file is maintained only for backward compatibility. For fresh environment deployments, this file can be removed.  Ensure to also remove its reference from the 'camel.secure.active.flows.file.names' property in 'registration-processor-default.properties'. -->
 <routes xmlns="http://camel.apache.org/schema/spring">
-   <!-- printing-bus-in to credential-requestor-bus-in Route is kept for backward compatibility. If fresh deployment is done, this route can be removed -->
    <route id="printing-bus-in route-->credential-requestor-bus-in route">
       <from uri="eventbus://printing-bus-in" />
       <log message="printing-bus-in--> credential-requestor-bus-in route ${bodyAs(String)}" />

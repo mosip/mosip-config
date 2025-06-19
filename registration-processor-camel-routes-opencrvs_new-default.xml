@@ -186,12 +186,6 @@
          </otherwise>
       </choice>
    </route>
-   <!-- printing-opencrvs_new-bus-out to credential-requestor-opencrvs_new-bus-out Route is kept for backward compatibility. If fresh deployment is done, this route can be removed -->
-   <route id="printing-opencrvs_new-bus-out route-->credential-requestor-opencrvs_new-bus-out opencrvs_new route">
-      <from uri="eventbus://printing-opencrvs_new-bus-out" />
-      <log message="printing-opencrvs_new-bus-out--> credential-requestor-opencrvs_new-bus-out route ${bodyAs(String)}" />
-      <to uri="eventbus://credential-requestor-opencrvs_new-bus-out" />
-   </route>
    <route id="finalization-->credential-requestor-stage opencrvs_new route">
       <from uri="eventbus://finalization-opencrvs_new-bus-out" />
       <log message="finalization-->credential-requestor-stage opencrvs_new route ${bodyAs(String)}" />
