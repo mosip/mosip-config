@@ -493,9 +493,10 @@
          </otherwise>
       </choice>
    </route>
-   <route id="finalization route-->printing-stage new route">
+   <!-- finalization to credential-requestor Route -->
+   <route id="finalization route-->credential-requestor-stage new route">
       <from uri="eventbus://finalization-new-bus-out" />
-      <log message="finalization-->printing-stage route ${bodyAs(String)}" />
+      <log message="finalization-->credential-requestor-stage route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -512,13 +513,13 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://printing-bus-in" />
+            <to uri="eventbus://credential-requestor-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="printing-stage--> new route">
-      <from uri="eventbus://printing-new-bus-out" />
-      <log message="printing-stage--> route ${bodyAs(String)}" />
+   <route id="credential-requestor-stage--> new route">
+      <from uri="eventbus://credential-requestor-new-bus-out" />
+      <log message="credential-requestor-stage--> route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
