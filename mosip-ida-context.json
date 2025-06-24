@@ -8,6 +8,10 @@
     "vcVer": "mosip:vcVer",
     "UIN": "mosip:UIN",
     "VID": "mosip:VID",
+    "permanentAddress": {
+      "@id": "https://${mosip.api.public.host}/mosip#permanentAddress",
+      "@context": {"value": "rdf:value", "lang": "@language"}
+    },
     "addressLine1": {
       "@id": "https://${mosip.api.public.host}/mosip#addressLine1",
       "@context": {"value": "rdf:value", "lang": "@language"}
