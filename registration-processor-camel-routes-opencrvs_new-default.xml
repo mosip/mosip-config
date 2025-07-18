@@ -218,9 +218,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="finalization-->credential-requestor-stage opencrvs_new route">
+   <route id="finalization-->printing-stage opencrvs_new route">
       <from uri="eventbus://finalization-opencrvs_new-bus-out" />
-      <log message="finalization-->credential-requestor-stage opencrvs_new route ${bodyAs(String)}" />
+      <log message="finalization-->printing-stage opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -237,13 +237,13 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://credential-requestor-bus-in" />
+            <to uri="eventbus://printing-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="credential-requestor-stage-->opencrvs-stage opencrvs_new route">
-      <from uri="eventbus://credential-requestor-opencrvs_new-bus-out" />
-      <log message="credential-requestor-stage-->opencrvs-stage opencrvs_new route ${bodyAs(String)}" />
+   <route id="printing-stage-->opencrvs-stage opencrvs_new route">
+      <from uri="eventbus://printing-opencrvs_new-bus-out" />
+      <log message="printing-stage-->opencrvs-stage opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
