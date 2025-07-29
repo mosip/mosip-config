@@ -60,33 +60,11 @@
             </otherwise>
         </choice>
     </route>
-    <!-- Packet Classifier to Quality Checker Route -->
-    <route id="packet-classifier-->quality-checker update route">
+    <!-- Packet Classifier to Osi Validator Route -->
+    <route id="packet-classifier-->osi-validator update route">
         <from uri="eventbus:packet-classifier-update-bus-out" />
         <log
-            message="packet-classifier-->quality-checker update route ${bodyAs(String)}" />
-        <choice>
-              <when>
-		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Pilar' &amp;&amp; @['isValid'] == true)]</jsonpath>
-                   <to uri="eventbus:quality-checker-bus-in" />
-            </when>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
-                <to uri="eventbus:message-sender-bus-in" />
-            </when>
-            <when>
-                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
-                <to uri="eventbus:retry-bus-in" />
-            </when>
-            <otherwise>
-                <to uri="eventbus:error-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <route id="quality-checker-->osi-validator update route">
-        <from uri="eventbus:quality-checker-update-bus-out" />
-        <log
-            message="quality-checker-->osi-validator update route ${bodyAs(String)}" />
+            message="packet-classifier-->osi-validator update route ${bodyAs(String)}" />
         <choice>
             <when>
 		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tayum' &amp;&amp; @['isValid'] == true)]</jsonpath>
@@ -105,32 +83,11 @@
             </otherwise>
         </choice>
     </route>
-    <route id="osi-validator-->biometric-authentication-stage update route">
+    <!--  OSI Validator to Demo Dedupe -->
+    <route id="osi-validator-stage-->demo-dedupe update route">
         <from uri="eventbus:o-s-i-validator-update-bus-out" />
         <log
-            message="osi-validator-->biometric-authentication-stage update route ${bodyAs(String)}" />
-        <choice>
-            <when>
-		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Lacub' &amp;&amp; @['isValid'] == true)]</jsonpath>
-                <to uri="eventbus:biometric-authentication-bus-in" />
-            </when>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
-                <to uri="eventbus:message-sender-bus-in" />
-            </when>
-            <when>
-                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
-                <to uri="eventbus:retry-bus-in" />
-            </when>
-            <otherwise>
-                <to uri="eventbus:error-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <route id="biometric-authentication-stage-->demo-dedupe update route">
-        <from uri="eventbus:biometric-authentication-update-bus-out" />
-        <log
-                message="biometric-authentication-stage-->demo-dedupe update route ${bodyAs(String)}" />
+                message="osi-validator-stage-->demo-dedupe update route ${bodyAs(String)}" />
         <choice>
             <when>
 		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Bangued (Capital)' &amp;&amp; @['isValid'] == true)]</jsonpath>
