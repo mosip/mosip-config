@@ -16,6 +16,12 @@
 		"dob": {
 			"value": "dateOfBirth"
 		},
+		"pobProvince": {
+			"value": "pobProvince"
+		},
+		"pobCity": {
+			"value": "pobCity"
+		},
 		"age": {
 			"value": "age"
 		},
