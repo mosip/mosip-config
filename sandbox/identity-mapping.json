@@ -82,8 +82,8 @@
 		"location4": {
 			"value": "zone"
 		},
-		"fullAddress": {
-			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+		"address": {
+			"value": "presentAddressLine1,presentAddressLine2,presentAddressLine3,presentAddressLine4,pobProvince,pobCity,permanentAddressLine1,presentCountry"
 		},
 		"dateOfBirth": {
 			"value": "dob"
