@@ -24,6 +24,18 @@
 		"emailId": [
 			"email"
 		],
+		"presentAddressLine1": [
+			"presentAddressLine1"
+		],
+		"pobProvince": [
+			"pobProvince"
+		],
+		"pobCity": [
+			"pobCity"
+		],
+		"presentCountry": [
+			"presentCountry"
+		],
 		"addressLine1": [
 			"presentAddressLine1"
 		],
