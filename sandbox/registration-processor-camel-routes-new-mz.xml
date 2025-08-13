@@ -122,33 +122,11 @@
             </otherwise>
         </choice>
     </route>
-    <!-- Packet Classifier to Quality Checker Route -->
-    <route id="packet-classifier-->quality-checker new route">
+    <!-- Packet Classifier to osi-validator Route -->
+    <route id="packet-classifier-->osi-validator new route">
         <from uri="eventbus:packet-classifier-new-bus-out" />
         <log
-            message="packet-classifier-->quality-checker new route ${bodyAs(String)}" />
-        <choice>
-            <when>
-		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Pilar' &amp;&amp; @['isValid'] == true)]</jsonpath>
-                <to uri="eventbus:quality-checker-bus-in" />
-            </when>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
-                <to uri="eventbus:message-sender-bus-in" />
-            </when>
-            <when>
-                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
-                <to uri="eventbus:retry-bus-in" />
-            </when>
-            <otherwise>
-                <to uri="eventbus:error-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-    <route id="quality-checker-->osi-validator new route">
-        <from uri="eventbus:quality-checker-new-bus-out" />
-        <log
-            message="quality-checker-->osi-validator new route ${bodyAs(String)}" />
+            message="packet-classifier-->osi-validator new route ${bodyAs(String)}" />
         <choice>
             <when>
 		<jsonpath suppressExceptions="true">$.[?(@['tags']['ID_OBJECT-presentCity'] != 'Tayum' &amp;&amp; @['isValid'] == true)]</jsonpath>
