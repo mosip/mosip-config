@@ -15,7 +15,22 @@ SCHEMA.
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		   xmlns="http://standards.iso.org/iso-iec/19785/-3/ed-2/" targetNamespace="http://standards.iso.org/iso-iec/19785/-3/ed-2/" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:element name="BIR" type="BIRType"/>
+    <!-- ===== Add these two types ===== -->
+    <!-- URL-safe Base64 (accepts padded or unpadded; allows interspersed whitespace) -->
+    <xs:simpleType name="base64UrlBinary">
+        <xs:restriction base="xs:string">
+            <!-- Whitespace class in XSD 1.0: space, tab, CR, LF -->
+            <xs:pattern
+                    value="([#x20#x9#xD#xA]*([A-Za-z0-9_-]{4}[#x20#x9#xD#xA]*)*(([A-Za-z0-9_-]{2}[#x20#x9#xD#xA]*==)|([A-Za-z0-9_-]{3}[#x20#x9#xD#xA]*=)|([A-Za-z0-9_-]{2,3}))?[#x20#x9#xD#xA]*)"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Accept either standard Base64 or Base64URL -->
+    <xs:simpleType name="base64BinaryOrUrl">
+        <xs:union memberTypes="xs:base64Binary base64UrlBinary"/>
+    </xs:simpleType>
+    <!-- ================================= -->
+    <xs:element name="BIR" type="BIRType"/>
 	<xs:complexType name="BIRType">
 		<xs:sequence>
 			<xs:element name="Version" type="VersionType" minOccurs="0"/>
@@ -25,8 +40,8 @@ SCHEMA.
 			<xs:element name="BDBInfo" type="BDBInfoType" minOccurs="0"/>
 			<xs:element name="SBInfo" type="SBInfoType" minOccurs="0"/>
 			<xs:element name="BIR" type="BIRType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="BDB" type="xs:base64Binary" minOccurs="0" />
-			<xs:element name="SB" type="xs:base64Binary" minOccurs="0" />
+			<xs:element name="BDB" type="base64BinaryOrUrl" minOccurs="0" />
+			<xs:element name="SB" type="base64BinaryOrUrl" minOccurs="0" />
 			<xs:element name="others" type="OthersListType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -40,7 +55,7 @@ SCHEMA.
 		<xs:sequence>
 			<xs:element name="Creator" type="xs:string" minOccurs="0"/>
 			<xs:element name="Index" type="UUIDType" minOccurs="0"/>
-			<xs:element name="Payload" type="xs:base64Binary" minOccurs="0"/>
+			<xs:element name="Payload" type="base64BinaryOrUrl" minOccurs="0"/>
 			<xs:element name="Integrity" type="xs:boolean"/>
 			<xs:element name="CreationDate" type="xs:dateTime" minOccurs="0"/>
 			<xs:element name="NotValidBefore" type="xs:dateTime" minOccurs="0"/>
@@ -49,7 +64,7 @@ SCHEMA.
 	</xs:complexType>
 	<xs:complexType name="BDBInfoType">
 		<xs:sequence>
-			<xs:element name="ChallengeResponse" type="xs:base64Binary" minOccurs="0"/>
+			<xs:element name="ChallengeResponse" type="base64BinaryOrUrl" minOccurs="0"/>
 			<xs:element name="Index" type="UUIDType" minOccurs="0"/>
 			<xs:element name="Format" type="RegistryIDType" minOccurs="0"/>
 			<xs:element name="Encryption" type="xs:boolean" minOccurs="0"/>
