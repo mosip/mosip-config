@@ -17,13 +17,11 @@ SCHEMA.
 		   xmlns="http://standards.iso.org/iso-iec/19785/-3/ed-2/" targetNamespace="http://standards.iso.org/iso-iec/19785/-3/ed-2/" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<!-- ===== Add these two types ===== -->
 	<!-- URL-safe Base64 (accepts padded or unpadded; allows interspersed whitespace) -->
-	<xs:simpleType name="base64UrlBinary">
-		<xs:restriction base="xs:string">
-			<!-- Whitespace class in XSD 1.0: space, tab, CR, LF -->
-			<xs:pattern
-					value="([#x20#x9#xD#xA]*([A-Za-z0-9_-]{4}[#x20#x9#xD#xA]*)*(([A-Za-z0-9_-]{2}[#x20#x9#xD#xA]*==)|([A-Za-z0-9_-]{3}[#x20#x9#xD#xA]*=)|([A-Za-z0-9_-]{2,3}))?[#x20#x9#xD#xA]*)"/>
-		</xs:restriction>
-	</xs:simpleType>
+    <xs:simpleType name="base64UrlBinary">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z0-9_-]+={0,2}" />
+        </xs:restriction>
+    </xs:simpleType>
 
 	<!-- Accept either standard Base64 or Base64URL -->
 	<xs:simpleType name="base64BinaryOrUrl">
