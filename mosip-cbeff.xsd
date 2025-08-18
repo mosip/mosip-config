@@ -15,20 +15,35 @@ SCHEMA.
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		   xmlns="http://standards.iso.org/iso-iec/19785/-3/ed-2/" targetNamespace="http://standards.iso.org/iso-iec/19785/-3/ed-2/" elementFormDefault="qualified" attributeFormDefault="unqualified">
-    <!-- ===== Add these two types ===== -->
-    <!-- URL-safe Base64 (accepts padded or unpadded; allows interspersed whitespace) -->
+	<!-- ===== Add these two types ===== -->
+	<!-- URL-safe Base64 (accepts padded or unpadded; allows interspersed whitespace) -->
     <xs:simpleType name="base64UrlBinary">
         <xs:restriction base="xs:string">
             <xs:pattern value="[A-Za-z0-9_-]+={0,2}" />
         </xs:restriction>
     </xs:simpleType>
 
-    <!-- Accept either standard Base64 or Base64URL -->
-    <xs:simpleType name="base64BinaryOrUrl">
-        <xs:union memberTypes="xs:base64Binary base64UrlBinary"/>
-    </xs:simpleType>
-    <!-- ================================= -->
-    <xs:element name="BIR" type="BIRType"/>
+	<!-- Accept either standard Base64 or Base64URL -->
+	<xs:simpleType name="base64BinaryOrUrl">
+		<xs:union memberTypes="xs:base64Binary base64UrlBinary"/>
+	</xs:simpleType>
+	<!-- ================================= -->
+	
+	<xs:simpleType name="dateTimeArray">
+		<xs:list>
+			<xs:simpleType>
+				<xs:restriction base="xs:int"/>
+			</xs:simpleType>
+		</xs:list>
+	</xs:simpleType>
+
+	<!-- Accept either 2025-08-17T17:43:17.212Z or [2025,8,17,17,43,17,212000000] -->
+	<xs:simpleType name="dateTimeOrArray">
+		<xs:union memberTypes="xs:dateTime dateTimeArray"/>
+	</xs:simpleType>
+	<!-- ================================= -->
+
+	<xs:element name="BIR" type="BIRType"/>
 	<xs:complexType name="BIRType">
 		<xs:sequence>
 			<xs:element name="Version" type="VersionType" minOccurs="0"/>
@@ -54,10 +69,10 @@ SCHEMA.
 			<xs:element name="Creator" type="xs:string" minOccurs="0"/>
 			<xs:element name="Index" type="UUIDType" minOccurs="0"/>
 			<xs:element name="Payload" type="base64BinaryOrUrl" minOccurs="0"/>
-			<xs:element name="Integrity" type="xs:boolean"/>
-			<xs:element name="CreationDate" type="xs:dateTime" minOccurs="0"/>
-			<xs:element name="NotValidBefore" type="xs:dateTime" minOccurs="0"/>
-			<xs:element name="NotValidAfter" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="Integrity" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="CreationDate" type="dateTimeOrArray" minOccurs="0"/>
+			<xs:element name="NotValidBefore" type="dateTimeOrArray" minOccurs="0"/>
+			<xs:element name="NotValidAfter" type="dateTimeOrArray" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="BDBInfoType">
@@ -66,9 +81,9 @@ SCHEMA.
 			<xs:element name="Index" type="UUIDType" minOccurs="0"/>
 			<xs:element name="Format" type="RegistryIDType" minOccurs="0"/>
 			<xs:element name="Encryption" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="CreationDate" type="xs:dateTime" minOccurs="0"/>
-			<xs:element name="NotValidBefore" type="xs:dateTime" minOccurs="0"/>
-			<xs:element name="NotValidAfter" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="CreationDate" type="dateTimeOrArray" minOccurs="0"/>
+			<xs:element name="NotValidBefore" type="dateTimeOrArray" minOccurs="0"/>
+			<xs:element name="NotValidAfter" type="dateTimeOrArray" minOccurs="0"/>
 			<xs:element name="Type" type="MultipleTypesType" minOccurs="0"/>
 			<xs:element name="Subtype" type="SubtypeType" minOccurs="0"/>
 			<xs:element name="Level" type="ProcessedLevelType" minOccurs="0"/>
@@ -108,25 +123,7 @@ SCHEMA.
 	</xs:complexType>
 	<xs:simpleType name="SingleTypeType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Scent"/>
-			<xs:enumeration value="DNA"/>
-			<xs:enumeration value="Ear "/>
-			<xs:enumeration value="Face"/>
-			<xs:enumeration value="Finger"/>
-			<xs:enumeration value="Foot"/>
-			<xs:enumeration value="HandGeometry"/>
-			<xs:enumeration value="Vein"/>
-			<xs:enumeration value="Iris"/>
-			<xs:enumeration value="Retina"/>
-			<xs:enumeration value="Voice"/>
-			<xs:enumeration value="Gait"/>
-			<xs:enumeration value="Keystroke"/>
-			<xs:enumeration value="LipMovement"/>
-			<xs:enumeration value="SignatureSign"/>
-			<xs:enumeration value="Palm"/>
-			<xs:enumeration value="BackOfHand"/>
-			<xs:enumeration value="Wrist"/>
-			<xs:enumeration value="ExceptionPhoto"/>
+			<xs:pattern value="(?i)(Scent|DNA|Ear|Face|Finger|Foot|HandGeometry|Vein|Iris|Retina|Voice|Gait|Keystroke|LipMovement|SignatureSign|Palm|BackOfHand|Wrist|ExceptionPhoto)"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="MultipleTypesType">
@@ -134,24 +131,12 @@ SCHEMA.
 	</xs:simpleType>
 	<xs:simpleType name="SingleAnySubtypeType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Left"/>
-			<xs:enumeration value="Right"/>
-			<xs:enumeration value="Thumb"/>
-			<xs:enumeration value="IndexFinger"/>
-			<xs:enumeration value="MiddleFinger"/>
-			<xs:enumeration value="RingFinger"/>
-			<xs:enumeration value="LittleFinger"/>
+			<xs:pattern value="(?i)(Left|Right|Thumb|IndexFinger|MiddleFinger|RingFinger|LittleFinger)"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="SingleVeinOnlySubtypeType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="LeftVein"/>
-			<xs:enumeration value="RightVein"/>
-			<xs:enumeration value="Palm"/>
-			<xs:enumeration value="BackOfHand"/>
-			<xs:enumeration value="Wrist"/>
-			<xs:enumeration value="Reserved1"/>
-			<xs:enumeration value="Reserved2"/>
+			<xs:pattern value="(?i)(LeftVein|RightVein|Palm|BackOfHand|Wrist|Reserved1|Reserved2)"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="MultipleAnySubtypesType">
@@ -165,19 +150,12 @@ SCHEMA.
 	</xs:simpleType>
 	<xs:simpleType name="ProcessedLevelType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Raw"/>
-			<xs:enumeration value="Intermediate"/>
-			<xs:enumeration value="Processed"/>
+			<xs:pattern value="(?i)(Raw|Intermediate|Processed)"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="PurposeType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Verify"/>
-			<xs:enumeration value="Identify"/>
-			<xs:enumeration value="Enroll"/>
-			<xs:enumeration value="EnrollVerify"/>
-			<xs:enumeration value="EnrollIdentify"/>
-			<xs:enumeration value="Audit"/>
+			<xs:pattern value="(?i)(Verify|Identify|Enroll|EnrollVerify|EnrollIdentify|Audit)"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="UUIDType">
