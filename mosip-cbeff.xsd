@@ -19,9 +19,7 @@ SCHEMA.
     <!-- URL-safe Base64 (accepts padded or unpadded; allows interspersed whitespace) -->
     <xs:simpleType name="base64UrlBinary">
         <xs:restriction base="xs:string">
-            <!-- Whitespace class in XSD 1.0: space, tab, CR, LF -->
-            <xs:pattern
-                    value="([#x20#x9#xD#xA]*([A-Za-z0-9_-]{4}[#x20#x9#xD#xA]*)*(([A-Za-z0-9_-]{2}[#x20#x9#xD#xA]*==)|([A-Za-z0-9_-]{3}[#x20#x9#xD#xA]*=)|([A-Za-z0-9_-]{2,3}))?[#x20#x9#xD#xA]*)"/>
+            <xs:pattern value="[A-Za-z0-9_-]+={0,2}" />
         </xs:restriction>
     </xs:simpleType>
 
