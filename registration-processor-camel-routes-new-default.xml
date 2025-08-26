@@ -4,15 +4,15 @@
    <log message="packet-receiver-->securezone-notification new ${bodyAs(String)}" />
    <choice>
       <when>
-         <jsonpath>$.[?(@['isValid'] == false && @['internalError'] == true)]</jsonpath>
+         <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
          <to uri="workflow-cmd://complete-as-failed" />
       </when>
       <when>
-         <jsonpath>$.[?(@['isValid'] == true && @['internalError'] == true)]</jsonpath>
+         <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
          <to uri="workflow-cmd://mark-as-reprocess" />
       </when>
       <when>
-         <jsonpath>$.[?(@['isValid'] == false && @['internalError'] == false)]</jsonpath>
+         <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
          <to uri="workflow-cmd://complete-as-failed" />
       </when>
       <otherwise>
