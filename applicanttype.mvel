@@ -82,9 +82,20 @@ def getAgeCode(identity) {
 
 
 def getBioExceptionFlag(identity) {
-    if(!identity.containsKey('isBioException')) { return false; }
-    Object val = identity.getOrDefault('isBioException', null);
-    return (val == 'true') ? true : (( val == 'false' ) ? false : null);
+    if(!identity.containsKey('biometricAvailable')) { 
+      return false; 
+    }
+    Object val = identity.getOrDefault('biometricAvailable', null);
+    if (val instanceof Boolean) {
+        return val; // If it's already a boolean, return as is
+    } else if (val instanceof String) {
+         if (val.equalsIgnoreCase("true")) {
+            return true;
+        } else if (val.equalsIgnoreCase("false")) {
+            return false;
+        }
+    }
+    return "KER-MSD-147";
 }
 
 def getApplicantType() {
@@ -95,15 +106,15 @@ def getApplicantType() {
   
   if( ageCode == 'KER-MSD-151' ) { return "KER-MSD-151"; }
   
-  if(itc == null || genderType == null || ageCode == null || isBioExPresent == null ) { 
+  if(itc == null || genderType == null || ageCode == null || !(isBioExPresent instanceof Boolean) ) { 
       return isUpdateFlow(identity) ? "000" : "KER-MSD-147";
   }
-  
+
   if (!(genderType.equals(MALE) || genderType.equals(FEMALE)) ||
     !(itc.equals(NonResident) || itc.equals(Resident))) {
     return "KER-MSD-147";
   }
-
+  
   System.out.println(itc + " - " + genderType + " - " + ageCode + " - " + isBioExPresent);
 
   if (itc == NonResident && genderType == MALE && ageCode == CHILD && !isBioExPresent) {
