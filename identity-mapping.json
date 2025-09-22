@@ -111,6 +111,9 @@
 		"phone_number": {
 			"value": "phone"
 		},
+		"packetCreatedOn": {
+		"value": "packetCreatedOn"
+	    },
 		"address": {
 			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
 		},
@@ -153,9 +156,6 @@
 	},
 	"audits": {
 		"value": "audits"
-	},
-	"packetCreatedOn": {
-		"value": "packetCreatedOn"
 	},
 	"documents": {
 		"poa": {
