@@ -154,8 +154,8 @@
 	"audits": {
 		"value": "audits"
 	},
-	"createdOn": {
-		"value": "createdOn"
+	"packetCreatedOn": {
+		"value": "packetCreatedOn"
 	},
 	"documents": {
 		"poa": {
