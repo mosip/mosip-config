@@ -17,7 +17,7 @@ WEBSUB_SUBSCRIBERS_TOPIC = "registered-websub-subscribers"
 CONSOLIDATED_WEBSUB_SUBSCRIBERS_TOPIC = "consolidated-websub-subscribers"
 
 # The interval in which Kafka consumers wait for new messages
-POLLING_INTERVAL = 10.0
+POLLING_INTERVAL = 0.25
 
 # The period in which Kafka close method waits to complete
 GRACEFUL_CLOSE_PERIOD = 5.0
@@ -31,3 +31,19 @@ CONSOLIDATOR_PORT = 9192
 
 # consolidator health endpoint
 CONSOLIDATOR_HEALTH_ENDPOINT = "/consolidator/actuator/health"
+
+# --- Kafka consumer tuning ---
+
+# If supported by your connector, set these via env/properties:
+KAFKA_CONSUMER_MAX_POLL_RECORDS = 1000
+KAFKA_CONSUMER_FETCH_MIN_BYTES = 1048576          # 1 MiB
+KAFKA_CONSUMER_FETCH_MAX_BYTES = 10485760         # 10 MiB
+KAFKA_CONSUMER_MAX_PARTITION_FETCH_BYTES = 4194304
+KAFKA_CONSUMER_FETCH_MAX_WAIT_MS = 25
+KAFKA_CONSUMER_SESSION_TIMEOUT_MS = 15000
+KAFKA_CONSUMER_HEARTBEAT_INTERVAL_MS = 3000
+KAFKA_CONSUMER_PARTITION_ASSIGNMENT_STRATEGY = "cooperative-sticky"
+# --- Producer batching for consolidated outputs (if producing) ---
+KAFKA_PRODUCER_LINGER_MS = 10
+KAFKA_PRODUCER_BATCH_SIZE = 131072
+KAFKA_PRODUCER_COMPRESSION_TYPE = "snappy"
