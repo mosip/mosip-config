@@ -92,17 +92,6 @@ HUB_SECRET_ENCRYPTION_KEY = "${hub.secret.encryption.key}"
 # Recommended to use base64-encoded-bytes since alpha-numeric is considered less secure. This is just given to ensure the backward compatiblity
 HUB_SECRET_ENCRYPTION_KEY_FORMAT = "alpha-numeric"
 
-# Optional (if supported by your Ballerina Kafka connector; set via env/props):
-KAFKA_CONSUMER_FETCH_MIN_BYTES = 1048576     # 1 MiB – batch on broker
-KAFKA_CONSUMER_FETCH_MAX_WAIT_MS = 25
-KAFKA_CONSUMER_SESSION_TIMEOUT_MS = 15000
-KAFKA_CONSUMER_HEARTBEAT_INTERVAL_MS = 3000
-KAFKA_CONSUMER_PARTITION_ASSIGNMENT_STRATEGY = "cooperative-sticky"
-# Producer-side (if hub produces events; otherwise set this where producers run):
-KAFKA_PRODUCER_LINGER_MS = 10
-KAFKA_PRODUCER_BATCH_SIZE = 131072           # 128 KiB
-KAFKA_PRODUCER_COMPRESSION_TYPE = "snappy"   # or "lz4"
-
 [ballerina.http.accessLogConfig]
 # Enable printing access logs in console
 console = true              # Default is false
