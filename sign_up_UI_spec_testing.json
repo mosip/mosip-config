@@ -8,8 +8,8 @@
         "km": "ឈ្មោះ​អ្នកប្រើប្រាស់"
       },
       "placeholder": {
-        "eng": "Enter your username",
-        "khm": "សូមបញ្ចូលឈ្មោះអ្នកប្រើប្រាស់"
+        "eng": "Enter your username test",
+        "khm": "សូមបញ្ចូលឈ្មោះអ្នកប្រើប្រាស់ test"
       },
       "validators": [],
       "required": false,
@@ -51,8 +51,8 @@
         }
       ],
       "info": {
-        "en": "Maximum 30 characters allowed with no alphabets or special characters, except space.",
-        "km": "ជាអតិបរមា 30 តួអក្សរត្រូវបានអនុញ្ញាត និងមិនគួរមានលេខ ឬតួអក្សរពិសេសណាមួយឡើយ លើកលែងតែដកឃ្លា។"
+        "en": "Maximum 30 characters allowed with no alphabets or special characters, except space._Test",
+        "km": "ជាអតិបរមា 30 តួអក្សរត្រូវបានអនុញ្ញាត និងមិនគួរមានលេខ ឬតួអក្សរពិសេសណាមួយឡើយ លើកលែងតែដកឃ្លា។_Test"
       },
       "alignmentGroup": "groupB",
       "required": true
@@ -92,7 +92,7 @@
     },
     {
       "id": "consent",
-      "controlType": "checkbox",
+      "controlType": "radio",
       "label": {
         "eng": "I agree to Cambodia’s <b><a href='#'>Terms & Conditions</a></b> and <b><a href='#'>Privacy Policy</a></b>, to store & process my information as required.",
         "khm": "ខ្ញុំយល់ព្រមតាម<b><a href='#'>លក្ខខណ្ឌ</a></b> និង<b><a href='#'>គោលការណ៍ឯកជនភាព</a></b>របស់ប្រទេសកម្ពុជា ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
