@@ -62,11 +62,7 @@
                     "type": "string",
                     "description": "dateOfBirth",
                     "label": {
-                        "tam": "DOB",
-                        "ara": "DOB",
-                        "fra": "DOB",
-                        "kan": "DOB",
-                        "hin": "जन्म तिथि",
+                        "khm": "DOB",
                         "eng": "DOB"
                     },
                     "controlType": "ageDate",
@@ -76,6 +72,49 @@
                         {
                             "type": "regex",
                             "validator": "^(1869|18[7-9][0-9]|19[0-9][0-9]|20[0-9][0-9])/([0][1-9]|1[0-2])/([0][1-9]|[1-2][0-9]|3[01])$"
+                        }
+                    ],
+                    "required": false
+                },
+                {
+                    "id": "phone",
+                    "type": "string",
+                    "description": "phone",
+                    "label": {
+                        "khm": "தொலைபேசி",
+                        "eng": "Phone"
+                    },
+                    "controlType": "textbox",
+                    "fieldType": "default",
+                    "validators": [
+                        {
+                            "type": "regex",
+                            "validator": "^[+]*([0-9]{1})([0-9]{9})$",
+                            "arguments": [],
+                            "langCode": null,
+                            "errorCode": null
+                        }
+                    ],
+                    "required": false
+                },
+                {
+                    "id": "email",
+                    "type": "string",
+                    "description": "email",
+                    "label": {
+                        "khm": "மின்னஞ்சல்",
+                        "eng": "Email"
+                    },
+                    "controlType": "textbox",
+                    "fieldType": "default",
+                    "format": "none",
+                    "validators": [
+                        {
+                            "type": "regex",
+                            "validator": "^[A-Za-z0-9_\\-]+(\\.[A-Za-z0-9_]+)*@[A-Za-z0-9_-]+(\\.[A-Za-z0-9_]+)*(\\.[a-zA-Z]{2,})$",
+                            "arguments": [],
+                            "langCode": null,
+                            "errorCode": null
                         }
                     ],
                     "required": false
