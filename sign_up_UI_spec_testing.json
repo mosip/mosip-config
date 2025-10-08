@@ -89,7 +89,8 @@
             "controlType": "phone",
             "fieldType": "default",
             "prefix": [
-                "+91", "+86"
+                "+91",
+                "+86"
             ],
             "validators": [
                 {
@@ -122,6 +123,23 @@
                 }
             ],
             "required": false
+        },
+        {
+            "id": "qualification",
+            "controlType": "dropdown",
+            "capsLockCheck": true,
+            "label": {
+                "eng": "Qualification",
+                "khm": "វប្បធម៌"
+            },
+            "placeholder": {
+                "eng": "Select your qualification",
+                "khm": "សូមជ្រើសរើសវប្បធម៌"
+            },
+            "info": {
+                "en": "Please select your highest qualification.",
+                "khm": "In Khmer, Please select your highest qualification."
+            }
         },
         {
             "id": "password",
@@ -168,7 +186,28 @@
         }
     ],
     "allowedValues": {
-        "preferredLang": "khm"
+        "preferredLang": "khm",
+        "qualification": {
+            "highSchool": {
+                "eng": "High School",
+                "khm": "សាលាថ្នាក់មធ្យម"
+            },
+            "bachelor": {
+                "en": "Bachelor's Degree",
+                "khm": "បរិញ្ញាបត្រទី១"
+            },
+            "master": {
+                "eng": "Master's Degree",
+                "km": "បរិញ្ញាបត្រទី២"
+            },
+            "phd": {
+                "en": "PhD",
+                "km": "បរិញ្ញាបត្រទី៣"
+            },
+            "secondary": {
+                "km": "Secondary School in khmer"
+            }
+        }
     },
     "errors": {
         "required": {
