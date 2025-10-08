@@ -59,47 +59,48 @@
         },
         {
             "id": "dateOfBirth",
-            "type": "string",
             "description": "dateOfBirth",
             "label": {
                 "khm": "DOB",
                 "eng": "DOB"
             },
-            "controlType": "ageDate",
+            "controlType": "date",
             "fieldType": "default",
             "format": "none",
             "validators": [
                 {
-                    "type": "regex",
-                    "validator": "^(1869|18[7-9][0-9]|19[0-9][0-9]|20[0-9][0-9])/([0][1-9]|1[0-2])/([0][1-9]|[1-2][0-9]|3[01])$"
+                    "regex": "^(1869|18[7-9][0-9]|19[0-9][0-9]|20[0-9][0-9])-([0][1-9]|1[0-2])-([0][1-9]|[1-2][0-9]|3[01])$",
+                    "error": {
+                        "eng": "English only",
+                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
+                    },
+                    "langCode": "en"
                 }
             ],
             "required": false
         },
         {
             "id": "phone",
-            "type": "string",
             "description": "phone",
             "label": {
                 "khm": "தொலைபேசி",
                 "eng": "Phone"
             },
-            "controlType": "textbox",
+            "controlType": "phone",
             "fieldType": "default",
             "validators": [
                 {
-                    "type": "regex",
-                    "validator": "^[+]*([0-9]{1})([0-9]{9})$",
-                    "arguments": [],
-                    "langCode": null,
-                    "errorCode": null
+                    "regex": "^[+]*([0-9]{1})([0-9]{9})$",
+                    "error": {
+                        "eng": "English only",
+                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
+                    }
                 }
             ],
             "required": false
         },
         {
             "id": "email",
-            "type": "string",
             "description": "email",
             "label": {
                 "khm": "மின்னஞ்சல்",
@@ -110,11 +111,11 @@
             "format": "none",
             "validators": [
                 {
-                    "type": "regex",
-                    "validator": "^[A-Za-z0-9_\\-]+(\\.[A-Za-z0-9_]+)*@[A-Za-z0-9_-]+(\\.[A-Za-z0-9_]+)*(\\.[a-zA-Z]{2,})$",
-                    "arguments": [],
-                    "langCode": null,
-                    "errorCode": null
+                    "regex": "^[A-Za-z0-9_\\-]+(\\.[A-Za-z0-9_]+)*@[A-Za-z0-9_-]+(\\.[A-Za-z0-9_]+)*(\\.[a-zA-Z]{2,})$",
+                    "error": {
+                        "eng": "English only",
+                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
+                    }
                 }
             ],
             "required": false
