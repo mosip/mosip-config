@@ -80,7 +80,7 @@
             "required": false
         },
         {
-            "id": "phone",
+            "id": "phoneNum",
             "description": "phone",
             "label": {
                 "khm": "தொலைபேசி",
@@ -88,9 +88,12 @@
             },
             "controlType": "phone",
             "fieldType": "default",
+            "prefix": [
+                "+91", "+86"
+            ],
             "validators": [
                 {
-                    "regex": "^[+]*([0-9]{1})([0-9]{9})$",
+                    "regex": "^([0-9]{1})([0-9]{9})$",
                     "error": {
                         "eng": "English only",
                         "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
