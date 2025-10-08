@@ -55,7 +55,7 @@
                 "km": "ជាអតិបរមា 30 តួអក្សរត្រូវបានអនុញ្ញាត និងមិនគួរមានលេខ ឬតួអក្សរពិសេសណាមួយឡើយ លើកលែងតែដកឃ្លា។_Test"
             },
             "alignmentGroup": "groupB",
-            "required": true
+            "required": false
         },
         {
             "id": "dateOfBirth",
@@ -158,7 +158,7 @@
                 "khm": "ពាក្យសម្ងាត់ត្រូវតែមានយ៉ាងហោចណាស់ ៨ តួអក្សរ មានតួអក្សរធំមួយ តួអក្សរតូចមួយ លេខមួយ និងតួអក្សរពិសេសមួយ។ test"
             },
             "alignmentGroup": "groupC",
-            "required": true
+            "required": false
         },
         {
             "id": "preferredLang",
@@ -181,7 +181,7 @@
                 "eng": "I agree to Cambodia’s <b><a href='#'>Terms & Conditions</a></b> and <b><a href='#'>Privacy Policy</a></b>, to store & process my information as required.",
                 "khm": "ខ្ញុំយល់ព្រមតាម<b><a href='#'>លក្ខខណ្ឌ</a></b> និង<b><a href='#'>គោលការណ៍ឯកជនភាព</a></b>របស់ប្រទេសកម្ពុជា ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
             },
-            "required": true,
+            "required": false,
             "alignmentGroup": "groupD"
         }
     ],
