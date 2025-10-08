@@ -23,41 +23,6 @@
       "alignmentGroup": "groupA"
     },
     {
-      "id": "fullName",
-      "controlType": "textbox",
-      "label": {
-        "eng": "Full Name",
-        "hin": "पूरा नाम",
-        "kan": "ಪೂರ್ಣ ಹೆಸರು",
-        "tam": "முழு பெயர்",
-        "khm": "ឈ្មោះពេញ",
-        "ara": "الاسم الكامل"
-      },
-      "placeholder": {
-        "eng": "Enter Full Name",
-        "hin": "पूरा नाम दर्ज करें",
-        "kan": "ಪೂರ್ಣ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
-        "tam": "முழு பெயரை உள்ளிடவும்",
-        "khm": "ឈ្មោះពេញ",
-        "ara": "الاسم الكامل"
-      },
-      "validators": [
-        {
-          "regex": "^[\\u1780-\\u17FF\\u19E0-\\u19FF\\u1A00-\\u1A9F\\u0020]{1,30}$",
-          "error": {
-            "eng": "Allowed only Khmer characters",
-            "hin": "केवल खमेर वर्णों की अनुमति है",
-            "kan": "ಖಮೇರ್ ಅಕ್ಷರಗಳ ಮಾತ್ರ ಅನುಮತಿಸಲಾಗಿದೆ",
-            "tam": "கம்மர் எழுத்துகள் மட்டுமே அனுமதிக்கப்படும்",
-            "khm": "អនុញ្ញាតតែតួអក្សរខ្មែរ​ប៉ុណ្ណោះ",
-            "ara": "مسموح فقط بالأحرف الخميرية"
-          }
-        }
-      ],
-      "alignmentGroup": "groupB",
-      "required": true
-    },
-    {
       "id": "dob",
       "controlType": "date",
       "label": {
@@ -77,7 +42,7 @@
         "ara": "أدخل تاريخ الميلاد"
       },
       "alignmentGroup": "groupC",
-      "required": false
+      "required": true
     }
   ],
   "errors": {
