@@ -92,7 +92,7 @@
     },
     {
       "id": "consent",
-      "controlType": "radio",
+      "controlType": "checkbox",
       "label": {
         "eng": "I agree to Cambodia’s <b><a href='#'>Terms & Conditions</a></b> and <b><a href='#'>Privacy Policy</a></b>, to store & process my information as required.",
         "khm": "ខ្ញុំយល់ព្រមតាម<b><a href='#'>លក្ខខណ្ឌ</a></b> និង<b><a href='#'>គោលការណ៍ឯកជនភាព</a></b>របស់ប្រទេសកម្ពុជា ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
