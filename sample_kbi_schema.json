@@ -32,7 +32,7 @@
           }
         }
       ],
-      "alignmentGroup": "groupB",
+      "alignmentGroup": "groupA",
       "required": true
     }
   ],
@@ -48,7 +48,7 @@
   },
   "language": {
     "mandatory": [
-      "eng"
+      "khm"
     ],
     "optional": [
       "khm"
