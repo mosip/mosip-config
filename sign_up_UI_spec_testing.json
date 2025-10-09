@@ -26,11 +26,19 @@
             "type": "simpleType",
             "label": {
                 "eng": "Name in Khmer",
-                "khm": "គោត្តនាម-នាម"
+                "khm": "គោត្តនាម-នាម",
+                "hin": "पूरा नाम",
+                "kan": "ಪೂರ್ಣ ಹೆಸರು",
+                "tam": "முழு பெயர்",
+                "ara": "الاسم الكامل"
             },
             "placeholder": {
                 "en": "Full Name in Khmer",
-                "km": "បញ្ចូលគោត្តនាម-នាមជាភាសាខ្មែរ"
+                "km": "បញ្ចូលគោត្តនាម-នាមជាភាសាខ្មែរ",
+                "hin": "पूरा नाम",
+                "kan": "ಪೂರ್ಣ ಹೆಸರು",
+                "tam": "முழு பெயர்",
+                "ara": "الاسم الكامل"
             },
             "validators": [
                 {
@@ -61,8 +69,12 @@
             "id": "dateOfBirth",
             "description": "dateOfBirth",
             "label": {
-                "khm": "DOB",
-                "eng": "DOB"
+                "khm": "ថ្ងៃខែឆ្នាំកំណើត",
+                "eng": "DoB",
+                "hin": "जन्मतिथि",
+                "kan": "ಹುಟ್ಟಿದ ದಿನಾಂಕ",
+                "tam": "பிறந்த தேதி",
+                "ara": "تاريخ الميلاد"
             },
             "controlType": "date",
             "fieldType": "default",
@@ -71,8 +83,12 @@
                 {
                     "regex": "^(1869|18[7-9][0-9]|19[0-9][0-9]|20[0-9][0-9])-([0][1-9]|1[0-2])-([0][1-9]|[1-2][0-9]|3[01])$",
                     "error": {
-                        "eng": "English only",
-                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
+                        "eng": "Date must be in DD-MM-YYYY format between 1869 and 2099",
+                        "khm": "កាលបរិច្ឆេទត្រូវតែមានទម្រង់ DD-MM-YYYY ចន្លោះពីឆ្នាំ 1869 ដល់ 2099",
+                        "hin": "Date must be in DD-MM-YYYY format between 1869 and 2099",
+                        "kan": "Date must be in DD-MM-YYYY format between 1869 and 2099",
+                        "tam": "Date must be in DD-MM-YYYY format between 1869 and 2099",
+                        "ara": "Date must be in DD-MM-YYYY format between 1869 and 2099"
                     },
                     "langCode": "en"
                 }
@@ -96,8 +112,12 @@
                 {
                     "regex": "^([0-9]{1})([0-9]{9})$",
                     "error": {
-                        "eng": "English only",
-                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
+                        "eng": "Please enter a valid 10-digit number",
+                        "khm": "សូមបញ្ចូលលេខដប់ខ្ទង់ត្រឹមត្រូវ។",
+                        "hin": "Please enter a valid 10-digit number",
+                        "kan": "Please enter a valid 10-digit number",
+                        "tam": "Please enter a valid 10-digit number",
+                        "ara": "Please enter a valid 10-digit number"
                     }
                 }
             ],
@@ -117,8 +137,12 @@
                 {
                     "regex": "^[A-Za-z0-9_\\-]+(\\.[A-Za-z0-9_]+)*@[A-Za-z0-9_-]+(\\.[A-Za-z0-9_]+)*(\\.[a-zA-Z]{2,})$",
                     "error": {
-                        "eng": "English only",
-                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
+                        "eng": "Please enter a valid email address",
+                        "khm": "សូមបញ្ចូលអាសយដ្ឋានអ៊ីមែលដែលត្រឹមត្រូវ។",
+                        "hin": "Please enter a valid email address",
+                        "kan": "Please enter a valid email address",
+                        "tam": "Please enter a valid email address",
+                        "ara": "Please enter a valid email address"
                     }
                 }
             ],
