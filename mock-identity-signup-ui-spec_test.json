@@ -3,7 +3,7 @@
     {
       "id": "phone",
       "controlType": "phone",
-      "label": {
+      "labelName": {
         "en": "Username",
         "km": "ឈ្មោះ​អ្នកប្រើប្រាស់"
       },
@@ -22,7 +22,7 @@
       "capsLockCheck": true,
       "controlType": "textbox",
       "type": "simpleType",
-      "label": {
+      "labelName": {
         "eng": "Full Name in Khmer",
         "khm": "គោត្តនាម-នាម"
       },
@@ -59,7 +59,7 @@
       "id": "password",
       "capsLockCheck": true,
       "controlType": "password",
-      "label": {
+      "labelName": {
         "eng": "Password",
         "khm": "ពាក្យសម្ងាត់"
       },
@@ -73,20 +73,6 @@
       },
       "alignmentGroup": "groupC",
       "required": true
-    },
-    {
-      "id": "preferredLang",
-      "controlType": "textbox",
-      "label": {
-        "eng": "Preferred Lang",
-        "khm": "ភាសាដែលចូលចិត្ត"
-      },
-      "info": {
-        "eng": "Preferred Lang",
-        "khm": "ភាសាដែលចូលចិត្ត"
-      },
-      "required": false,
-      "disabled": true
     },
     {
       "id": "photoCapture",
@@ -108,9 +94,23 @@
       "alignmentGroup": "groupF"
     },
     {
+      "id": "preferredLang",
+      "controlType": "textbox",
+      "labelName": {
+        "eng": "Preferred Lang",
+        "khm": "ភាសាដែលចូលចិត្ត"
+      },
+      "info": {
+        "eng": "Preferred Lang",
+        "khm": "ភាសាដែលចូលចិត្ត"
+      },
+      "required": false,
+      "disabled": true
+    },
+    {
       "id": "consent",
       "controlType": "checkbox",
-      "label": {
+      "labelName": {
         "eng": "I agree to <b><a href='#'>Terms & Conditions</a></b> and <b><a href='#'>Privacy Policy</a></b>, to store & process my information as required.",
         "khm": "ខ្ញុំយល់ព្រមតាម<b><a href='#'>លក្ខខណ្ឌ</a></b> និង<b><a href='#'>គោលការណ៍ឯកជនភាព</a></b>របស់ប្រទេសកម្ពុជា ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
       },
