@@ -26,19 +26,11 @@
             "type": "simpleType",
             "label": {
                 "eng": "Name in Khmer",
-                "khm": "គោត្តនាម-នាម",
-                "hin": "पूरा नाम",
-                "kan": "ಪೂರ್ಣ ಹೆಸರು",
-                "tam": "முழு பெயர்",
-                "ara": "الاسم الكامل"
+                "khm": "គោត្តនាម-នាម"
             },
             "placeholder": {
                 "en": "Full Name in Khmer",
-                "km": "បញ្ចូលគោត្តនាម-នាមជាភាសាខ្មែរ",
-                "hin": "पूरा नाम",
-                "kan": "ಪೂರ್ಣ ಹೆಸರು",
-                "tam": "முழு பெயர்",
-                "ara": "الاسم الكامل"
+                "km": "បញ្ចូលគោត្តនាម-នាមជាភាសាខ្មែរ"
             },
             "validators": [
                 {
@@ -63,18 +55,14 @@
                 "km": "ជាអតិបរមា 30 តួអក្សរត្រូវបានអនុញ្ញាត និងមិនគួរមានលេខ ឬតួអក្សរពិសេសណាមួយឡើយ លើកលែងតែដកឃ្លា។_Test"
             },
             "alignmentGroup": "groupB",
-            "required": false
+            "required": true
         },
         {
             "id": "dateOfBirth",
             "description": "dateOfBirth",
             "label": {
-                "khm": "ថ្ងៃខែឆ្នាំកំណើត",
-                "eng": "DoB",
-                "hin": "जन्मतिथि",
-                "kan": "ಹುಟ್ಟಿದ ದಿನಾಂಕ",
-                "tam": "பிறந்த தேதி",
-                "ara": "تاريخ الميلاد"
+                "khm": "DOB",
+                "eng": "DOB"
             },
             "controlType": "date",
             "fieldType": "default",
@@ -83,12 +71,8 @@
                 {
                     "regex": "^(1869|18[7-9][0-9]|19[0-9][0-9]|20[0-9][0-9])-([0][1-9]|1[0-2])-([0][1-9]|[1-2][0-9]|3[01])$",
                     "error": {
-                        "eng": "Date must be in DD-MM-YYYY format between 1869 and 2099",
-                        "khm": "កាលបរិច្ឆេទត្រូវតែមានទម្រង់ DD-MM-YYYY ចន្លោះពីឆ្នាំ 1869 ដល់ 2099",
-                        "hin": "Date must be in DD-MM-YYYY format between 1869 and 2099",
-                        "kan": "Date must be in DD-MM-YYYY format between 1869 and 2099",
-                        "tam": "Date must be in DD-MM-YYYY format between 1869 and 2099",
-                        "ara": "Date must be in DD-MM-YYYY format between 1869 and 2099"
+                        "eng": "English only",
+                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
                     },
                     "langCode": "en"
                 }
@@ -112,12 +96,8 @@
                 {
                     "regex": "^([0-9]{1})([0-9]{9})$",
                     "error": {
-                        "eng": "Please enter a valid 10-digit number",
-                        "khm": "សូមបញ្ចូលលេខដប់ខ្ទង់ត្រឹមត្រូវ។",
-                        "hin": "Please enter a valid 10-digit number",
-                        "kan": "Please enter a valid 10-digit number",
-                        "tam": "Please enter a valid 10-digit number",
-                        "ara": "Please enter a valid 10-digit number"
+                        "eng": "English only",
+                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
                     }
                 }
             ],
@@ -137,12 +117,8 @@
                 {
                     "regex": "^[A-Za-z0-9_\\-]+(\\.[A-Za-z0-9_]+)*@[A-Za-z0-9_-]+(\\.[A-Za-z0-9_]+)*(\\.[a-zA-Z]{2,})$",
                     "error": {
-                        "eng": "Please enter a valid email address",
-                        "khm": "សូមបញ្ចូលអាសយដ្ឋានអ៊ីមែលដែលត្រឹមត្រូវ។",
-                        "hin": "Please enter a valid email address",
-                        "kan": "Please enter a valid email address",
-                        "tam": "Please enter a valid email address",
-                        "ara": "Please enter a valid email address"
+                        "eng": "English only",
+                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
                     }
                 }
             ],
@@ -182,7 +158,7 @@
                 "khm": "ពាក្យសម្ងាត់ត្រូវតែមានយ៉ាងហោចណាស់ ៨ តួអក្សរ មានតួអក្សរធំមួយ តួអក្សរតូចមួយ លេខមួយ និងតួអក្សរពិសេសមួយ។ test"
             },
             "alignmentGroup": "groupC",
-            "required": false
+            "required": true
         },
         {
             "id": "preferredLang",
@@ -205,7 +181,7 @@
                 "eng": "I agree to Cambodia’s <b><a href='#'>Terms & Conditions</a></b> and <b><a href='#'>Privacy Policy</a></b>, to store & process my information as required.",
                 "khm": "ខ្ញុំយល់ព្រមតាម<b><a href='#'>លក្ខខណ្ឌ</a></b> និង<b><a href='#'>គោលការណ៍ឯកជនភាព</a></b>របស់ប្រទេសកម្ពុជា ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
             },
-            "required": false,
+            "required": true,
             "alignmentGroup": "groupD"
         }
     ],
