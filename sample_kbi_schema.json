@@ -48,7 +48,7 @@
       "id": "fullName",
       "controlType": "textbox",
       "label": {
-        "eng": "FullName"
+        "eng": "FullName",
         "khm": "ឈ្មោះពេញ"
       },
       "placeholder": {
