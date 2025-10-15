@@ -4,8 +4,8 @@
       "id": "phone",
       "controlType": "phone",
       "labelName": {
-        "en": "Username",
-        "km": "ឈ្មោះ​អ្នកប្រើប្រាស់"
+        "en": "Phone",
+        "km": "ទូរស័ព្ទ"
       },
       "placeholder": {
         "eng": "Enter your username",
@@ -55,6 +55,15 @@
       "alignmentGroup": "groupB",
       "required": true
     },
+    {
+      "id": "gender",
+      "controlType": "dropdown",
+      "label": {
+        "eng": "Gender",
+        "khm": "ភេទ"
+      },
+      "required": false
+    }
     {
       "id": "password",
       "capsLockCheck": true,
@@ -111,15 +120,25 @@
       "id": "consent",
       "controlType": "checkbox",
       "labelName": {
-        "eng": "I agree to <b><a href='#'>Terms & Conditions</a></b> and <b><a href='#'>Privacy Policy</a></b>, to store & process my information as required.",
-        "khm": "ខ្ញុំយល់ព្រមតាម<b><a href='#'>លក្ខខណ្ឌ</a></b> និង<b><a href='#'>គោលការណ៍ឯកជនភាព</a></b>របស់ប្រទេសកម្ពុជា ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
+        "eng": "I agree to <b><a target='_blank' href='https://www.example.com/'>Terms & Conditions</a></b> and <b><a href='https://www.example.com/'>Privacy Policy</a></b>, to store & process my information as required.",
+        "khm": "ខ្ញុំយល់ព្រមតាម<b><a target='_blank' href='https://www.example.com/'>លក្ខខណ្ឌ</a></b> និង<b><a href='https://www.example.com/'>គោលការណ៍ឯកជនភាព</a></b>របស់ប្រទេសកម្ពុជា ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
       },
       "required": true,
       "alignmentGroup": "groupD"
     }
   ],
   "allowedValues": {
-    "preferredLang": "khm"
+    "preferredLang": "khm",
+    "gender": {
+      "male": {
+        "eng": "Male",
+        "khm": "បុរស"
+      },
+      "female": {
+        "eng": "Female",
+        "khm": "ស្ត្រី"
+      }
+    }
   },
   "i18nValues": {
     "errors": {
