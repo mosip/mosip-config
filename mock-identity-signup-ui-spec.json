@@ -14,7 +14,9 @@
       "validators": [],
       "required": false,
       "disabled": true,
-      "prefix": ["+91"],
+      "prefix": [
+        "+91"
+      ],
       "alignmentGroup": "groupA"
     },
     {
@@ -63,7 +65,7 @@
         "khm": "ភេទ"
       },
       "required": false
-    }
+    },
     {
       "id": "password",
       "capsLockCheck": true,
@@ -201,8 +203,12 @@
     }
   },
   "language": {
-    "mandatory": ["khm"],
-    "optional": ["eng"],
+    "mandatory": [
+      "khm"
+    ],
+    "optional": [
+      "eng"
+    ],
     "langCodeMap": {
       "khm": "km",
       "eng": "en"
