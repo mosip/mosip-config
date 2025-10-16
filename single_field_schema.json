@@ -1,0 +1,52 @@
+{
+  "schema": [
+    {
+      "id": "individualId",
+      "controlType": "textbox",
+      "label": {
+        "eng": "Policy Number",
+        "hin": "पॉलिसी नंबर",
+        "kan": "ಪಾಲಿಸಿ ಸಂಖ್ಯೆ",
+        "tam": "பாலிசி எண்",
+        "khm": "លេខគោលនយោបាយ",
+        "ara": "رقم السياسة"
+      },
+      "placeholder": {
+        "eng": "Enter Policy Number",
+        "hin": "पॉलिसी नंबर डालें",
+        "kan": "ಪಾಲಿಸಿ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
+        "tam": "பாலிசி எண்ணை உள்ளிடவும்",
+        "khm": "បញ្ចូលលេខគោលការណ៍",
+        "ara": "أدخل رقم السياسة"
+      },
+      "required": true,
+      "alignmentGroup": "groupA"
+    }
+  ],
+  "errors": {
+    "required": {
+      "eng": "This field is required",
+      "hin": "यह फ़ील्ड आवश्यक है",
+      "kan": "ಈ ಕ್ಷೇತ್ರ ಕಡ್ಡಾಯವಾಗಿದೆ",
+      "tam": "இந்த புலம் தேவை",
+      "khm": "ត្រូវការបំពេញវាលនេះ",
+      "ara": "هذه الخانة مطلوبه"
+    }
+  },
+  "language": {
+    "mandatory": [
+      "eng"
+    ],
+    "optional": [
+      "khm"
+    ],
+    "langCodeMap": {
+      "eng": "en",
+      "hin": "hi",
+      "ara": "ar",
+      "kan": "kn",
+      "tam": "ta",
+      "khm": "km"
+    }
+  }
+}
