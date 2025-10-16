@@ -1,0 +1,122 @@
+{
+  "schema": [
+    {
+      "id": "individualId",
+      "controlType": "textbox",
+      "label": {
+        "eng": "Policy Number",
+        "hin": "पॉलिसी नंबर",
+        "kan": "ಪಾಲಿಸಿ ಸಂಖ್ಯೆ",
+        "tam": "பாலிசி எண்",
+        "khm": "លេខគោលនយោបាយ",
+        "ara": "رقم السياسة"
+      },
+      "placeholder": {
+        "eng": "Enter Policy Number",
+        "hin": "पॉलिसी नंबर डालें",
+        "kan": "ಪಾಲಿಸಿ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
+        "tam": "பாலிசி எண்ணை உள்ளிடவும்",
+        "khm": "បញ្ចូលលេខគោលការណ៍",
+        "ara": "أدخل رقم السياسة"
+      },
+      "validators": [
+        {
+          "regex": "^\\+91[1-9]\\d{7,8}$",
+          "error": {
+            "eng": "Policy Number is incorrect",
+            "hin": "पॉलिसी नंबर गलत है",
+            "kan": "ಪಾಲಿಸಿ ಸಂಖ್ಯೆ ತಪ್ಪಾಗಿದೆೆ",
+            "tam": "பாலிசி எண் தவறானது",
+            "khm": "លេខគោលនយោបាយមិនត្រឹមត្រូវទេ",
+            "ara": "رقم البوليصة غير صحيح"
+          }
+        }
+      ],
+      "required": true,
+      "alignmentGroup": "groupA"
+    },
+    {
+      "id": "phone",
+      "controlType": "textbox",
+      "label": {
+        "eng": "Phone Number",
+        "hin": "फ़ोन नंबर",
+        "kan": "ದೂರವಾಣಿ ಸಂಖ್ಯೆ",
+        "tam": "தொலைபேசி எண்",
+        "khm": "លេខទូរស័ព្ទ",
+        "ara": "رَقَم الهاتِف"
+      },
+      "placeholder": {
+        "eng": "Enter your phone number",
+        "hin": "अपना फोन नंबर दर्ज करें",
+        "kan": "ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
+        "tam": "உங்கள் தொலைபேசி எண்ணை உள்ளிடவும்",
+        "ara": "أدخل رقم هاتفك",
+        "khm": "បញ្ចូលលេខទូរស័ព្ទរបស់អ្នក"
+      },
+      "validators": [
+        {
+          "regex": "^\\+91[1-9]\\d{7,8}$",
+          "error": {
+            "eng": "Phone number is incorrect",
+            "hin": "फोन नंबर गलत है",
+            "kan": "ಫೋನ್ ಸಂಖ್ಯೆ ತಪ್ಪಾಗಿದೆ",
+            "tam": "தொலைபேசி எண் தவறானது",
+            "ara": "رقم الهاتف غير صحيح",
+            "khm": "លេខទូរស័ព្ទមិនត្រឹមត្រូវ"
+          }
+        }
+      ],
+      "alignmentGroup": "groupB",
+      "required": true
+    },
+    {
+      "id": "fullName",
+      "controlType": "textbox",
+      "label": {
+        "eng": "Full Name",
+        "hin": "पूरा नाम",
+        "kan": "ಪೂರ್ಣ ಹೆಸರು",
+        "tam": "முழு பெயர்",
+        "ara": "الاسم الكامل",
+        "khm": "ឈ្មោះពេញ"
+      },
+      "placeholder": {
+        "eng": "Enter your full name",
+        "hin": "पूरा नाम दर्ज करें",
+        "kan": "ಪೂರ್ಣ ಹೆಸರು ನಮೂದಿಸಿ",
+        "tam": "முழு பெயர் உள்ளிடவும்",
+        "ara": "أدخل اسمك الكامل",
+        "khm": "បញ្ចូលឈ្មោះពេញរបស់អ្នក"
+      },
+      "alignmentGroup": "groupC",
+      "required": true
+    }
+  ],
+  "errors": {
+    "required": {
+      "eng": "This field is required",
+      "hin": "यह फ़ील्ड आवश्यक है",
+      "kan": "ಈ ಕ್ಷೇತ್ರ ಕಡ್ಡಾಯವಾಗಿದೆ",
+      "tam": "இந்த புலம் தேவை",
+      "khm": "ត្រូវការបំពេញវាលនេះ",
+      "ara": "هذه الخانة مطلوبه"
+    }
+  },
+  "language": {
+    "mandatory": [
+      "eng"
+    ],
+    "optional": [
+      "khm"
+    ],
+    "langCodeMap": {
+      "eng": "en",
+      "hin": "hi",
+      "ara": "ar",
+      "kan": "kn",
+      "tam": "ta",
+      "khm": "km"
+    }
+  }
+}
