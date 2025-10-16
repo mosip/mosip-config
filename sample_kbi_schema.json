@@ -23,42 +23,6 @@
       "alignmentGroup": "groupA"
     },
     {
-      "id": "username",
-      "controlType": "textbox",
-      "label": {
-        "eng": "Username",
-        "hin": "उपयोगकर्ता नाम",
-        "kan": "ಬಳಕೆದಾರ ಹೆಸರು",
-        "tam": "பயனர்பெயர்",
-        "khm": "ឈ្មោះអ្នកប្រើប្រាស់",
-        "ara": "اسم المستخدم"
-      },
-      "placeholder": {
-        "eng": "Enter Username",
-        "hin": "उपयोगकर्ता नाम दर्ज करें",
-        "kan": "ಬಳಕೆದಾರ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
-        "tam": "பயனர்பெயரை உள்ளிடவும்",
-        "khm": "បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់",
-        "ara": "أدخل اسم المستخدم"
-      },
-      "required": true,
-      "alignmentGroup": "groupA",
-      ,
-      "validators": [
-        {
-          "regex": "^[\\u1780-\\u17FF\\u19E0-\\u19FF\\u1A00-\\u1A9F\\u0020]{1,30}$",
-          "error": {
-            "eng": "Allowed only Khmer characters",
-            "hin": "केवल खमेर वर्णों की अनुमति है",
-            "kan": "ಖಮೇರ್ ಅಕ್ಷರಗಳ ಮಾತ್ರ ಅನುಮತಿಸಲಾಗಿದೆ",
-            "tam": "கம்மர் எழுத்துகள் மட்டுமே அனுமதிக்கப்படும்",
-            "khm": "អនុញ្ញាតតែតួអក្សរខ្មែរ​ប៉ុណ្ណោះ",
-            "ara": "مسموح فقط بالأحرف الخميرية"
-          }
-        }
-      ],
-    },
-    {
       "id": "fullName",
       "controlType": "textbox",
       "label": {
