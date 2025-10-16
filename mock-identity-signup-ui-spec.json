@@ -58,15 +58,6 @@
       "required": true
     },
     {
-      "id": "gender",
-      "controlType": "dropdown",
-      "label": {
-        "eng": "Gender",
-        "khm": "ភេទ"
-      },
-      "required": false
-    },
-    {
       "id": "password",
       "capsLockCheck": true,
       "controlType": "password",
