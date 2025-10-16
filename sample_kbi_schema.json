@@ -65,6 +65,28 @@
       },
       "alignmentGroup": "groupC",
       "required": true
+    },
+    {
+      "id": "email",
+      "controlType": "textbox",
+      "label": {
+        "eng": "EMAIL",
+        "hin": "EMAIL",
+        "kan": "EMAIL",
+        "tam": "EMAIL",
+        "khm": "ថ្ងៃកំណើត",
+        "ara": "تاريخ الميلاد"
+      },
+      "placeholder": {
+        "eng": "Enter EMAIL",
+        "hin": "जन्म EMAIL करें",
+        "kan": "EMAIL ನಮೂದಿಸಿ",
+        "tam": "பிறந்த தேதியை உள்ளிடவும்",
+        "khm": "បញ្ចូលថ្ងៃកំណើត",
+        "ara": "أدخل تاريخ الميلاد"
+      },
+      "alignmentGroup": "groupD",
+      "required": true
     }
   ],
   "errors": {
