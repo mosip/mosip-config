@@ -12,8 +12,36 @@
       "type": "boolean"
     },
     "allowKeyBindingDelegation": {
+      "type": "boolean"{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "allowAuthRequestDelegation": {
       "type": "boolean"
-    }
+    },
+    "allowKycRequestDelegation": {
+      "type": "boolean"
+    },
+    "trustBindedAuthVerificationToken": {
+      "type": "boolean"
+    },
+    "allowKeyBindingDelegation": {
+      "type": "boolean"
+    },
+        "allowVciRequestDelegation": {
+        "type": "boolean"
+      }
+  },
+  "required": [
+    "allowAuthRequestDelegation",
+    "allowKycRequestDelegation",
+    "allowKeyBindingDelegation"
+  ]
+}
+    },
+        "allowVciRequestDelegation": {
+        "type": "boolean"
+      }
   },
   "required": [
     "allowAuthRequestDelegation",
