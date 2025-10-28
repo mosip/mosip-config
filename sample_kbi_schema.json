@@ -3,7 +3,7 @@
     {
       "id": "individualId",
       "controlType": "textbox",
-      "label": {
+      "labelName": {
         "eng": "Policy Number",
         "hin": "पॉलिसी नंबर",
         "kan": "ಪಾಲಿಸಿ ಸಂಖ್ಯೆ",
@@ -25,7 +25,7 @@
     {
       "id": "phone",
       "controlType": "textbox",
-      "label": {
+      "labelName": {
         "eng": "Username",
         "hin": "पॉलिसी नंबर",
         "kan": "ಪಾಲಿಸಿ ಸಂಖ್ಯೆ",
@@ -47,7 +47,7 @@
     {
       "id": "fullName",
       "controlType": "textbox",
-      "label": {
+      "labelName": {
         "eng": "FullName",
         "khm": "ឈ្មោះពេញ"
       },
@@ -78,7 +78,7 @@
     {
       "id": "dob",
       "controlType": "date",
-      "label": {
+      "labelName": {
         "eng": "Date of Birth",
         "hin": "जन्म तिथि",
         "kan": "ಜನ್ಮ ದಿನಾಂಕ",
