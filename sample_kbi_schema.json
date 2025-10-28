@@ -23,10 +23,10 @@
       "alignmentGroup": "groupA"
     },
     {
-      "id": "phone",
+      "id": "mobile-number",
       "controlType": "textbox",
       "labelName": {
-        "eng": "Username",
+        "eng": "mobile-number",
         "hin": "पॉलिसी नंबर",
         "kan": "ಪಾಲಿಸಿ ಸಂಖ್ಯೆ",
         "tam": "பாலிசி எண்",
@@ -34,7 +34,7 @@
         "ara": "رقم السياسة"
       },
       "placeholder": {
-        "eng": "Enter Username",
+        "eng": "Enter mobile-number",
         "hin": "पॉलिसी नंबर डालें",
         "kan": "ಪಾಲಿಸಿ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
         "tam": "பாலிசி எண்ணை உள்ளிடவும்",
