@@ -20,7 +20,7 @@
             "alignmentGroup": "groupA"
         },
         {
-            "id": "fullName",
+            "id": "FullName",
             "capsLockCheck": true,
             "controlType": "textbox",
             "type": "simpleType",
