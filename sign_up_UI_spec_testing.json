@@ -20,7 +20,7 @@
             "alignmentGroup": "groupA"
         },
         {
-            "id": "FullName",
+            "id": "fullName",
             "capsLockCheck": true,
             "controlType": "textbox",
             "type": "simpleType",
@@ -29,7 +29,7 @@
                 "khm": "គោត្តនាម-នាម"
             },
             "placeholder": {
-                "en": "Full Name in Khmer",
+                "en": "Full Name In Khmer",
                 "km": "បញ្ចូលគោត្តនាម-នាមជាភាសាខ្មែរ"
             },
             "validators": [
