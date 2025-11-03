@@ -3,7 +3,7 @@
         {
             "id": "phone",
             "controlType": "phone",
-            "label": {
+            "labelName": {
                 "en": "Username",
                 "km": "ឈ្មោះ​អ្នកប្រើប្រាស់"
             },
@@ -24,8 +24,8 @@
             "capsLockCheck": true,
             "controlType": "textbox",
             "type": "simpleType",
-            "label": {
-                "eng": "Name in Khmer",
+            "labelName": {
+                "eng": "Name In English",
                 "khm": "គោត្តនាម-នាម"
             },
             "placeholder": {
@@ -60,7 +60,7 @@
         {
             "id": "dateOfBirth",
             "description": "dateOfBirth",
-            "label": {
+            "labelName": {
                 "khm": "DOB",
                 "eng": "DOB"
             },
@@ -82,7 +82,7 @@
         {
             "id": "phoneNum",
             "description": "phone",
-            "label": {
+            "labelName": {
                 "khm": "தொலைபேசி",
                 "eng": "Phone"
             },
@@ -106,7 +106,7 @@
         {
             "id": "email",
             "description": "email",
-            "label": {
+            "labelName": {
                 "khm": "மின்னஞ்சல்",
                 "eng": "Email"
             },
@@ -128,7 +128,7 @@
             "id": "qualification",
             "controlType": "dropdown",
             "capsLockCheck": true,
-            "label": {
+            "labelName": {
                 "eng": "Qualification",
                 "khm": "វប្បធម៌"
             },
@@ -145,7 +145,7 @@
             "id": "password",
             "capsLockCheck": true,
             "controlType": "password",
-            "label": {
+            "labelName": {
                 "eng": "Password",
                 "khm": "ពាក្យសម្ងាត់"
             },
@@ -163,7 +163,7 @@
         {
             "id": "preferredLang",
             "controlType": "textbox",
-            "label": {
+            "labelName": {
                 "eng": "Preferred Lang",
                 "khm": "ភាសាដែលចូលចិត្ត"
             },
@@ -177,7 +177,7 @@
         {
             "id": "consent",
             "controlType": "checkbox",
-            "label": {
+            "labelName": {
                 "eng": "I agree to Cambodia’s <b><a href='#'>Terms & Conditions</a></b> and <b><a href='#'>Privacy Policy</a></b>, to store & process my information as required.",
                 "khm": "ខ្ញុំយល់ព្រមតាម<b><a href='#'>លក្ខខណ្ឌ</a></b> និង<b><a href='#'>គោលការណ៍ឯកជនភាព</a></b>របស់ប្រទេសកម្ពុជា ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
             },
