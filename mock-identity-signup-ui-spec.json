@@ -69,6 +69,14 @@
         "eng": "Enter your password",
         "khm": "សូមបញ្ចូលពាក្យសម្ងាត់"
       },
+      "validators": [
+        {
+          "regex": "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\\x5F\\W])(?=.{8,20})[a-zA-Z0-9\\x5F\\W]{8,20}$",
+          "error": {
+          "eng": "Password does not meet the password policy. Click on \"i\" icon to know the password policy"
+          }
+        }
+      ],
       "info": {
         "eng": "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
         "khm": "ពាក្យសម្ងាត់ត្រូវតែមានយ៉ាងហោចណាស់ ៨ តួអក្សរ មានតួអក្សរធំមួយ តួអក្សរតូចមួយ លេខមួយ និងតួអក្សរពិសេសមួយ។"
