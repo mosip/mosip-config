@@ -21,59 +21,6 @@
             },
             "required": true,
             "alignmentGroup": "groupA"
-        },
-        {
-            "id": "mobile-number",
-            "controlType": "textbox",
-            "labelName": {
-                "eng": "mobile-number",
-                "hin": "पॉलिसी नंबर",
-                "kan": "ಪಾಲಿಸಿ ಸಂಖ್ಯೆ",
-                "tam": "பாலிசி எண்",
-                "khm": "លេខគោលនយោបាយ",
-                "ara": "رقم السياسة"
-            },
-            "placeholder": {
-                "eng": "Enter mobile-number",
-                "hin": "पॉलिसी नंबर डालें",
-                "kan": "ಪಾಲಿಸಿ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
-                "tam": "பாலிசி எண்ணை உள்ளிடவும்",
-                "khm": "បញ្ចូលលេខគោលការណ៍",
-                "ara": "أدخل رقم السياسة"
-            },
-            "required": true,
-            "alignmentGroup": "groupB"
-        },
-        {
-            "id": "fullName",
-            "controlType": "textbox",
-            "labelName": {
-                "eng": "FullName",
-                "khm": "ឈ្មោះពេញ"
-            },
-            "placeholder": {
-                "eng": "Enter Full Name",
-                "hin": "पूरा नाम दर्ज करें",
-                "kan": "ಪೂರ್ಣ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
-                "tam": "முழு பெயரை உள்ளிடவும்",
-                "khm": "ឈ្មោះពេញ",
-                "ara": "الاسم الكامل"
-            },
-            "validators": [
-                {
-                    "regex": "^[\u1780-\u17FF\u19E0-\u19FF\u1A00-\u1A9F\u0020]{1,30}$",
-                    "error": {
-                        "eng": "Allowed only Khmer characters",
-                        "hin": "केवल खमेर वर्णों की अनुमति है",
-                        "kan": "ಖಮೇರ್ ಅಕ್ಷರಗಳ ಮಾತ್ರ ಅನುಮತಿಸಲಾಗಿದೆ",
-                        "tam": "கம்மர் எழுத்துகள் மட்டுமே அனுமதிக்கப்படும்",
-                        "khm": "អនុញ្ញាតតែតួអក្សរខ្មែរ​ប៉ុណ្ណោះ",
-                        "ara": "مسموح فقط بالأحرف الخميرية"
-                    }
-                }
-            ],
-            "alignmentGroup": "groupC",
-            "required": true
         }
     ],
     "errors": {
