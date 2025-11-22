@@ -21,6 +21,70 @@
             },
             "required": true,
             "alignmentGroup": "groupA"
+        },
+        {
+            "id": "gender",
+            "controlType": "dropdown",
+            "labelName": {
+                "eng": "Gender"
+            },
+            "options": [
+                {
+                    "value": "male",
+                    "label": {
+                        "eng": "Male"
+                    }
+                },
+                {
+                    "value": "female",
+                    "label": {
+                        "eng": "Female"
+                    }
+                },
+                {
+                    "value": "other",
+                    "label": {
+                        "eng": "Other"
+                    }
+                }
+            ],
+            "placeholder": {
+                "eng": "Select Gender"
+            },
+            "required": true,
+            "alignmentGroup": "groupA"
+        },
+        {
+            "id": "country",
+            "controlType": "dropdown",
+            "labelName": {
+                "eng": "Country"
+            },
+            "options": [
+                {
+                    "value": "india",
+                    "label": {
+                        "eng": "India"
+                    }
+                },
+                {
+                    "value": "cambodia",
+                    "label": {
+                        "eng": "Cambodia"
+                    }
+                },
+                {
+                    "value": "uae",
+                    "label": {
+                        "eng": "UAE"
+                    }
+                }
+            ],
+            "placeholder": {
+                "eng": "Select Country"
+            },
+            "required": true,
+            "alignmentGroup": "groupA"
         }
     ],
     "errors": {
