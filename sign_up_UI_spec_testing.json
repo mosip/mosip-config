@@ -73,7 +73,7 @@
         {
           "regex": "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\\x5F\\W])(?=.{8,20})[a-zA-Z0-9\\x5F\\W]{8,20}$",
           "error": {
-            "eng": "Password does not meet the password policy. Click on \"i\" icon to know the password policy"
+          "eng": "Password does not meet the password policy. Click on \"i\" icon to know the password policy"
           }
         }
       ],
@@ -126,51 +126,6 @@
       },
       "required": true,
       "alignmentGroup": "groupD"
-    },
-    {
-      "id": "country",
-      "controlType": "dropdown",
-      "labelName": {
-        "eng": "Country",
-        "khm": "ប្រទេស"
-      },
-      "placeholder": {
-        "eng": "Select your country",
-        "khm": "ជ្រើសរើសប្រទេសរបស់អ្នក"
-      },
-      "options": [
-        { "value": "kh", "eng": "Cambodia", "khm": "កម្ពុជា" },
-        { "value": "us", "eng": "United States", "khm": "សហរដ្ឋអាមេរិក" },
-        { "value": "in", "eng": "India", "khm": "ឥណ្ឌា" },
-        { "value": "cn", "eng": "China", "khm": "ចិន" },
-        { "value": "th", "eng": "Thailand", "khm": "ថៃ" }
-      ],
-      "required": true,
-      "alignmentGroup": "groupE"
-    },
-    {
-      "id": "email",
-      "controlType": "textbox",
-      "type": "email",
-      "labelName": {
-        "eng": "Email",
-        "khm": "អ៊ីមែល"
-      },
-      "placeholder": {
-        "eng": "Enter your email",
-        "khm": "បញ្ចូលអ៊ីមែលរបស់អ្នក"
-      },
-      "validators": [
-        {
-          "regex": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
-          "error": {
-            "eng": "Please enter a valid email address",
-            "khm": "សូមបញ្ចូលអាសយដ្ឋានអ៊ីមែលត្រឹមត្រូវ"
-          }
-        }
-      ],
-      "required": true,
-      "alignmentGroup": "groupB"
     }
   ],
   "allowedValues": {
