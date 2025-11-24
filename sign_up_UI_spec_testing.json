@@ -1,6 +1,4 @@
 {
-    "responseTime": "2025-11-24T11:05:23.616Z",
-    "response": {
         "schema": [
             {
                 "id": "phone",
@@ -120,7 +118,6 @@
             {
                 "id": "country",
                 "controlType": "dropdown",
-                "listName": "country",
                 "labelName": {
                     "en": "Country",
                     "km": "ប្រទេស"
@@ -132,11 +129,19 @@
                 "required": true
             },
             {
-                "id": "gender",
+                "id": "sports1",
                 "controlType": "checkbox",
-                "listName": "gender",
                 "labelName": {
-                    "en": "Gender",
+                    "en": "sportsCricket",
+                    "km": "ភេទ"
+                },
+                "required": true
+            },
+            {
+                "id": "sports2",
+                "controlType": "checkbox",
+                "labelName": {
+                    "en": "sportsFootball",
                     "km": "ភេទ"
                 },
                 "required": true
@@ -194,16 +199,6 @@
                 "eng": {
                     "eng": "English",
                     "khm": "ភាសាអង់គ្លេស"
-                }
-            },
-            "gender": {
-                "male": {
-                    "eng": "Male",
-                    "khm": "បុរស"
-                },
-                "female": {
-                    "eng": "Female",
-                    "khm": "ស្ត្រី"
                 }
             },
             "country": {
@@ -282,6 +277,4 @@
             }
         },
         "maxUploadFileSize": 5242880
-    },
-    "errors": []
 }
