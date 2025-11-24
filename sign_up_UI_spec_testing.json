@@ -1,277 +1,285 @@
 {
-  "schema": [
-    {
-      "id": "phone",
-      "controlType": "phone",
-      "labelName": {
-        "en": "Phone",
-        "km": "ទូរស័ព្ទ"
-      },
-      "placeholder": {
-        "eng": "Enter your username",
-        "khm": "សូមបញ្ចូលឈ្មោះអ្នកប្រើប្រាស់"
-      },
-      "validators": [],
-      "required": false,
-      "disabled": true,
-      "prefix": [
-        "+91"
-      ],
-      "alignmentGroup": "groupA"
-    },
-    {
-      "id": "fullName",
-      "capsLockCheck": true,
-      "controlType": "textbox",
-      "type": "simpleType",
-      "labelName": {
-        "eng": "Full Name in Khmer",
-        "khm": "គោត្តនាម-នាម"
-      },
-      "placeholder": {
-        "en": "Enter Full Name in Khmer",
-        "km": "បញ្ចូលគោត្តនាម-នាមជាភាសាខ្មែរ"
-      },
-      "validators": [
-        {
-          "regex": "^[\\u1780-\\u17FF\\u19E0-\\u19FF\\u1A00-\\u1A9F\\u0020]{1,30}$",
-          "error": {
-            "eng": "Full Name has to be in Khmer only",
-            "khm": "គោត្តនាម-នាមត្រូវតែមានតែអក្សរខ្មែរ"
-          },
-          "langCode": "km"
+  "responseTime": "2025-11-24T11:05:23.616Z",
+  "response": {
+    "schema": [
+      {
+        "id": "phone",
+        "controlType": "phone",
+        "labelName": {
+          "en": "Phone",
+          "km": "ទូរស័ព្ទ"
         },
-        {
-          "regex": "^[a-zA-Z][a-zA-Z ]{1,30}$",
-          "error": {
-            "eng": "Full Name has to be in English only",
-            "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
-          },
-          "langCode": "en"
-        }
-      ],
-      "info": {
-        "en": "Maximum 30 characters allowed with no alphabets or special characters, except space.",
-        "km": "ជាអតិបរមា 30 តួអក្សរត្រូវបានអនុញ្ញាត និងមិនគួរមានលេខ ឬតួអក្សរពិសេសណាមួយឡើយ លើកលែងតែដកឃ្លា។"
-      },
-      "alignmentGroup": "groupB",
-      "required": true
-    },
-    {
-      "id": "password",
-      "capsLockCheck": true,
-      "controlType": "password",
-      "labelName": {
-        "eng": "Password",
-        "khm": "ពាក្យសម្ងាត់"
-      },
-      "placeholder": {
-        "eng": "Enter your password",
-        "khm": "សូមបញ្ចូលពាក្យសម្ងាត់"
-      },
-      "validators": [
-        {
-          "regex": "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\\x5F\\W])(?=.{8,20})[a-zA-Z0-9\\x5F\\W]{8,20}$",
-          "error": {
-            "eng": "Password does not meet the password policy. Click on \"i\" icon to know the password policy"
-          }
-        }
-      ],
-      "info": {
-        "eng": "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
-        "khm": "ពាក្យសម្ងាត់ត្រូវតែមានយ៉ាងហោចណាស់ ៨ តួអក្សរ មានតួអក្សរធំមួយ តួអក្សរតូចមួយ លេខមួយ និងតួអក្សរពិសេសមួយ។"
-      },
-      "alignmentGroup": "groupC",
-      "required": true
-    },
-
-    {
-      "id": "email",
-      "controlType": "textbox",
-      "labelName": {
-        "en": "Email",
-        "km": "អ៊ីមែល"
-      },
-      "placeholder": {
-        "en": "Enter your email",
-        "km": "បញ្ចូលអ៊ីមែលរបស់អ្នក"
-      },
-      "validators": [
-        {
-          "regex": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
-          "error": {
-            "en": "Enter a valid email address",
-            "km": "សូមបញ្ចូលអ៊ីមែលដែលត្រឹមត្រូវ"
-          }
-        }
-      ],
-      "required": true
-    },
-
-    {
-      "id": "dob",
-      "controlType": "date",
-      "labelName": {
-        "en": "Date of Birth",
-        "km": "ថ្ងៃខែឆ្នាំកំណើត"
-      },
-      "required": true
-    },
-
-    {
-      "id": "country",
-      "controlType": "dropdown",
-      "labelName": {
-        "en": "Country",
-        "km": "ប្រទេស"
-      },
-      "placeholder": {
-        "en": "Select your country",
-        "km": "ជ្រើសរើសប្រទេស"
-      },
-      "options": [
-        { "id": "IN", "name": "India" },
-        { "id": "KH", "name": "Cambodia" },
-        { "id": "US", "name": "United States" },
-        { "id": "UK", "name": "United Kingdom" },
-        { "id": "CN", "name": "China" },
-        { "id": "JP", "name": "Japan" }
-      ],
-      "required": true
-    },
-
-    {
-      "id": "gender",
-      "controlType": "checkbox",
-      "labelName": {
-        "en": "Gender",
-        "km": "ភេទ"
-      },
-      "options": [
-        {
-          "id": "male",
-          "label": {
-            "en": "Male",
-            "km": "បុរស"
-          },
-          "checked": false
+        "placeholder": {
+          "eng": "Enter your username",
+          "khm": "សូមបញ្ចូលឈ្មោះអ្នកប្រើប្រាស់"
         },
-        {
-          "id": "female",
-          "label": {
-            "en": "Female",
-            "km": "ស្ត្រី"
+        "validators": [],
+        "required": false,
+        "disabled": true,
+        "prefix": [
+          "+91"
+        ],
+        "alignmentGroup": "groupA"
+      },
+      {
+        "id": "fullName",
+        "capsLockCheck": true,
+        "controlType": "textbox",
+        "type": "simpleType",
+        "labelName": {
+          "eng": "Full Name in Khmer language only",
+          "khm": "គោត្តនាម-នាម"
+        },
+        "placeholder": {
+          "en": "Enter Full Name in Khmer",
+          "km": "បញ្ចូលគោត្តនាម-នាមជាភាសាខ្មែរ"
+        },
+        "validators": [
+          {
+            "regex": "^[\\u1780-\\u17FF\\u19E0-\\u19FF\\u1A00-\\u1A9F\\u0020]{1,30}$",
+            "error": {
+              "eng": "Full Name has to be in Khmer only",
+              "khm": "គោត្តនាម-នាមត្រូវតែមានតែអក្សរខ្មែរ"
+            },
+            "langCode": "km"
           },
-          "checked": false
-        }
-      ],
-      "required": true
-    },
-
-    {
-      "id": "encodedPhoto",
-      "controlType": "photo",
-      "labelName": {
-        "eng": "Capture Photo",
-        "khm": "ថតរូប"
+          {
+            "regex": "^[a-zA-Z][a-zA-Z ]{1,30}$",
+            "error": {
+              "eng": "Full Name has to be in English only",
+              "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
+            },
+            "langCode": "en"
+          }
+        ],
+        "info": {
+          "en": "Maximum 30 characters allowed with no alphabets or special characters, except space.",
+          "km": "ជាអតិបរមា 30 តួអក្សរត្រូវបានអនុញ្ញាត និងមិនគួរមានលេខ ឬតួអក្សរពិសេសណាមួយឡើយ លើកលែងតែដកឃ្លា។"
+        },
+        "alignmentGroup": "groupB",
+        "required": true
       },
-      "placeholder": {
-        "eng": "Click to capture photo",
-        "khm": "ចុចដើម្បីថតរូប"
+      {
+        "id": "password",
+        "capsLockCheck": true,
+        "controlType": "password",
+        "labelName": {
+          "eng": "Password",
+          "khm": "ពាក្យសម្ងាត់"
+        },
+        "placeholder": {
+          "eng": "Enter your password",
+          "khm": "សូមបញ្ចូលពាក្យសម្ងាត់"
+        },
+        "validators": [
+          {
+            "regex": "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\\x5F\\W])(?=.{8,20})[a-zA-Z0-9\\x5F\\W]{8,20}$",
+            "error": {
+              "eng": "Password does not meet the password policy. Click on \"i\" icon to know the password policy"
+            }
+          }
+        ],
+        "info": {
+          "eng": "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
+          "khm": "ពាក្យសម្ងាត់ត្រូវតែមានយ៉ាងហោចណាស់ ៨ តួអក្សរ មានតួអក្សរធំមួយ តួអក្សរតូចមួយ លេខមួយ និងតួអក្សរពិសេសមួយ។"
+        },
+        "alignmentGroup": "groupC",
+        "required": true
       },
-      "info": {
-        "eng": "Please click here to capture your photo using your device's camera.",
-        "khm": "សូមចុចទីនេះដើម្បីថតរូបរបស់អ្នកដោយប្រើកាមេរ៉ារបស់ឧបករណ៍របស់អ្នក។"
+      {
+        "id": "email",
+        "controlType": "textbox",
+        "labelName": {
+          "en": "Email",
+          "km": "អ៊ីមែល"
+        },
+        "placeholder": {
+          "en": "Enter your email",
+          "km": "បញ្ចូលអ៊ីមែលរបស់អ្នក"
+        },
+        "validators": [
+          {
+            "regex": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+            "error": {
+              "en": "Enter a valid email address",
+              "km": "សូមបញ្ចូលអ៊ីមែលដែលត្រឹមត្រូវ"
+            }
+          }
+        ],
+        "required": true
       },
-      "acceptedFileTypes": "image/jpeg , image/jpg , image/png , image/webp",
-      "required": true,
-      "alignmentGroup": "groupF"
-    },
-    {
-      "id": "preferredLang",
-      "controlType": "textbox",
-      "labelName": {
-        "eng": "Preferred Lang",
-        "khm": "ភាសាដែលចូលចិត្ត"
+      {
+        "id": "dob",
+        "controlType": "date",
+        "labelName": {
+          "en": "Date of Birth",
+          "km": "ថ្ងៃខែឆ្នាំកំណើត"
+        },
+        "required": true
       },
-      "info": {
-        "eng": "Preferred Lang",
-        "khm": "ភាសាដែលចូលចិត្ត"
+      {
+        "id": "country",
+        "controlType": "dropdown",
+        "labelName": {
+          "en": "Country",
+          "km": "ប្រទេស"
+        },
+        "placeholder": {
+          "en": "Select your country",
+          "km": "ជ្រើសរើសប្រទេស"
+        },
+        "required": true
       },
-      "required": false,
-      "disabled": true
-    },
-    {
-      "id": "consent",
-      "controlType": "checkbox",
-      "labelName": {
-        "eng": "I agree to <b><a target='_blank' href='https://www.example.com/'>Terms & Conditions</a></b> and <b><a href='https://www.example.com/'>Privacy Policy</a></b>, to store & process my information as required.",
-        "khm": "ខ្ញុំយល់ព្រមតាម<b><a target='_blank' href='https://www.example.com/'>លក្ខខណ្ឌ</a></b> និង<b><a href='https://www.example.com/'>គោលការណ៍ឯកជនភាព</a></b>របស់ប្រទេសកម្ពុជា ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
+      {
+        "id": "gender",
+        "controlType": "checkbox",
+        "labelName": {
+          "en": "Gender",
+          "km": "ភេទ"
+        },
+        "required": true
       },
-      "required": true,
-      "alignmentGroup": "groupD"
-    }
-  ],
-  "allowedValues": {
-    "preferredLang": "khm",
-    "gender": {
-      "male": {
-        "eng": "Male",
-        "khm": "បុរស"
+      {
+        "id": "encodedPhoto",
+        "controlType": "photo",
+        "labelName": {
+          "eng": "Capture Photo",
+          "khm": "ថតរូប"
+        },
+        "placeholder": {
+          "eng": "Click to capture photo",
+          "khm": "ចុចដើម្បីថតរូប"
+        },
+        "info": {
+          "eng": "Please click here to capture your photo using your device's camera.",
+          "khm": "សូមចុចទីនេះដើម្បីថតរូបរបស់អ្នកដោយប្រើកាមេរ៉ារបស់ឧបករណ៍របស់អ្នក។"
+        },
+        "acceptedFileTypes": "image/jpeg , image/jpg , image/png , image/webp",
+        "required": true,
+        "alignmentGroup": "groupF"
       },
-      "female": {
-        "eng": "Female",
-        "khm": "ស្ត្រី"
+      {
+        "id": "preferredLang",
+        "controlType": "textbox",
+        "labelName": {
+          "eng": "Preferred Lang",
+          "khm": "ភាសាដែលចូលចិត្ត"
+        },
+        "info": {
+          "eng": "Preferred Lang",
+          "khm": "ភាសាដែលចូលចិត្ត"
+        },
+        "required": false,
+        "disabled": true
+      },
+      {
+        "id": "consent",
+        "controlType": "checkbox",
+        "labelName": {
+          "eng": "I agree to <b><a target='_blank' href='https://www.example.com/'>Terms & Conditions</a></b> and <b><a href='https://www.example.com/'>Privacy Policy</a></b>, to store & process my information as required.",
+          "khm": "ខ្ញុំយល់ព្រមតាម<b><a target='_blank' href='https://www.example.com/'>លក្ខខណ្ឌ</a></b> និង<b><a href='https://www.example.com/'>គោលការណ៍ឯកជនភាព</a></b>របស់ប្រទេសកម្ពុជា ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
+        },
+        "required": true,
+        "alignmentGroup": "groupD"
       }
-    }
-  },
-  "i18nValues": {
+    ],
+    "allowedValues": {
+      "preferredLang": {
+        "khm": {
+          "eng": "Khmer",
+          "khm": "ភាសាខ្មែរ"
+        },
+        "eng": {
+          "eng": "English",
+          "khm": "ភាសាអង់គ្លេស"
+        }
+      },
+      "gender": {
+        "male": {
+          "eng": "Male",
+          "khm": "បុរស"
+        },
+        "female": {
+          "eng": "Female",
+          "khm": "ស្ត្រី"
+        }
+      },
+      "country": {
+        "IN": {
+          "eng": "India",
+          "khm": "ឥណ្ឌា"
+        },
+        "KH": {
+          "eng": "Cambodia",
+          "khm": "កម្ពុជា"
+        },
+        "US": {
+          "eng": "United States",
+          "khm": "សហរដ្ឋអាមេរិក"
+        },
+        "UK": {
+          "eng": "United Kingdom",
+          "khm": "សហរាជអង់គ្លេស"
+        },
+        "CN": {
+          "eng": "China",
+          "khm": "ចិន"
+        },
+        "JP": {
+          "eng": "Japan",
+          "khm": "ជប៉ុន"
+        }
+      }
+    },
+    "i18nValues": {
+      "errors": {
+        "required": {
+          "en": "This field is required",
+          "ara": "هذه الخانة مطلوبه",
+          "km": "វាលនេះត្រូវការទទួលបាន"
+        },
+        "invalidEmail": {
+          "en": "Enter a valid email address",
+          "km": "សូមបញ្ចូលអ៊ីមែលដែលត្រឹមត្រូវ"
+        },
+        "invalidDob": {
+          "en": "Enter a valid date",
+          "km": "សូមបញ្ចូលកាលបរិច្ឆេទត្រឹមត្រូវ"
+        },
+        "invalidCountry": {
+          "en": "Please select a valid country",
+          "km": "សូមជ្រើសរើសប្រទេសត្រឹមត្រូវ"
+        },
+        "genderRequired": {
+          "en": "Please select gender",
+          "km": "សូមជ្រើសរើសភេទ"
+        },
+        "passwordMismatch": {
+          "en": "Passwords do not match",
+          "km": "ពាក្យសម្ងាត់មិនត្រូវគ្នា"
+        }
+      }
+    },
     "errors": {
       "required": {
         "en": "This field is required",
         "ara": "هذه الخانة مطلوبه",
         "km": "វាលនេះត្រូវការទទួលបាន"
-      },
-      "invalidEmail": {
-        "en": "Enter a valid email address",
-        "km": "សូមបញ្ចូលអ៊ីមែលដែលត្រឹមត្រូវ"
-      },
-      "invalidDob": {
-        "en": "Enter a valid date",
-        "km": "សូមបញ្ចូលកាលបរិច្ឆេទត្រឹមត្រូវ"
-      },
-      "invalidCountry": {
-        "en": "Please select a valid country",
-        "km": "សូមជ្រើសរើសប្រទេសត្រឹមត្រូវ"
-      },
-      "genderRequired": {
-        "en": "Please select gender",
-        "km": "សូមជ្រើសរើសភេទ"
-      },
-      "passwordMismatch": {
-        "en": "Passwords do not match",
-        "km": "ពាក្យសម្ងាត់មិនត្រូវគ្នា"
       }
-    }
+    },
+    "language": {
+      "mandatory": [
+        "khm"
+      ],
+      "optional": [
+        "eng"
+      ],
+      "langCodeMap": {
+        "khm": "km",
+        "eng": "en"
+      }
+    },
+    "maxUploadFileSize": 5242880
   },
-  "errors": {
-    "required": {
-      "en": "This field is required",
-      "ara": "هذه الخانة مطلوبه",
-      "km": "វាលនេះត្រូវការទទួលបាន"
-    }
-  },
-  "language": {
-    "mandatory": [
-      "khm"
-    ],
-    "optional": [
-      "eng"
-    ],
-    "langCodeMap": {
-      "khm": "km",
-      "eng": "en"
-    }
-  },
-  "maxUploadFileSize": 5242880
+  "errors": []
 }
