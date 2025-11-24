@@ -1,277 +1,378 @@
 {
-  "schema": [
-    {
-      "id": "phone",
-      "controlType": "phone",
-      "labelName": {
-        "en": "Phone",
-        "km": "ទូរស័ព្ទ"
-      },
-      "placeholder": {
-        "eng": "Enter your username",
-        "khm": "សូមបញ្ចូលឈ្មោះអ្នកប្រើប្រាស់"
-      },
-      "validators": [],
-      "required": false,
-      "disabled": true,
-      "prefix": [
-        "+91"
-      ],
-      "alignmentGroup": "groupA"
-    },
-    {
-      "id": "fullName",
-      "capsLockCheck": true,
-      "controlType": "textbox",
-      "type": "simpleType",
-      "labelName": {
-        "eng": "Full Name in Khmer",
-        "khm": "គោត្តនាម-នាម"
-      },
-      "placeholder": {
-        "en": "Enter Full Name in Khmer",
-        "km": "បញ្ចូលគោត្តនាម-នាមជាភាសាខ្មែរ"
-      },
-      "validators": [
-        {
-          "regex": "^[\\u1780-\\u17FF\\u19E0-\\u19FF\\u1A00-\\u1A9F\\u0020]{1,30}$",
-          "error": {
-            "eng": "Full Name has to be in Khmer only",
-            "khm": "គោត្តនាម-នាមត្រូវតែមានតែអក្សរខ្មែរ"
-          },
-          "langCode": "km"
+  "responseTime": "2022-09-22T08:03:50.287Z",
+  "response": {
+    "schema": [
+      {
+        "id": "username",
+        "controlType": "phone",
+        "labelName": {
+          "en": "Username",
+          "km": "ឈ្មោះ​អ្នកប្រើប្រាស់"
         },
-        {
-          "regex": "^[a-zA-Z][a-zA-Z ]{1,30}$",
-          "error": {
-            "eng": "Full Name has to be in English only",
-            "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
-          },
-          "langCode": "en"
-        }
-      ],
-      "info": {
-        "en": "Maximum 30 characters allowed with no alphabets or special characters, except space.",
-        "km": "ជាអតិបរមា 30 តួអក្សរត្រូវបានអនុញ្ញាត និងមិនគួរមានលេខ ឬតួអក្សរពិសេសណាមួយឡើយ លើកលែងតែដកឃ្លា។"
-      },
-      "alignmentGroup": "groupB",
-      "required": true
-    },
-    {
-      "id": "password",
-      "capsLockCheck": true,
-      "controlType": "password",
-      "labelName": {
-        "eng": "Password",
-        "khm": "ពាក្យសម្ងាត់"
-      },
-      "placeholder": {
-        "eng": "Enter your password",
-        "khm": "សូមបញ្ចូលពាក្យសម្ងាត់"
-      },
-      "validators": [
-        {
-          "regex": "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\\x5F\\W])(?=.{8,20})[a-zA-Z0-9\\x5F\\W]{8,20}$",
-          "error": {
-            "eng": "Password does not meet the password policy. Click on \"i\" icon to know the password policy"
-          }
-        }
-      ],
-      "info": {
-        "eng": "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
-        "khm": "ពាក្យសម្ងាត់ត្រូវតែមានយ៉ាងហោចណាស់ ៨ តួអក្សរ មានតួអក្សរធំមួយ តួអក្សរតូចមួយ លេខមួយ និងតួអក្សរពិសេសមួយ។"
-      },
-      "alignmentGroup": "groupC",
-      "required": true
-    },
-
-    {
-      "id": "email",
-      "controlType": "textbox",
-      "labelName": {
-        "en": "Email",
-        "km": "អ៊ីមែល"
-      },
-      "placeholder": {
-        "en": "Enter your email",
-        "km": "បញ្ចូលអ៊ីមែលរបស់អ្នក"
-      },
-      "validators": [
-        {
-          "regex": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
-          "error": {
-            "en": "Enter a valid email address",
-            "km": "សូមបញ្ចូលអ៊ីមែលដែលត្រឹមត្រូវ"
-          }
-        }
-      ],
-      "required": true
-    },
-
-    {
-      "id": "dob",
-      "controlType": "date",
-      "labelName": {
-        "en": "Date of Birth",
-        "km": "ថ្ងៃខែឆ្នាំកំណើត"
-      },
-      "required": true
-    },
-
-    {
-      "id": "country",
-      "controlType": "dropdown",
-      "labelName": {
-        "en": "Country",
-        "km": "ប្រទេស"
-      },
-      "placeholder": {
-        "en": "Select your country",
-        "km": "ជ្រើសរើសប្រទេស"
-      },
-      "options": [
-        { "id": "IN", "name": "India" },
-        { "id": "KH", "name": "Cambodia" },
-        { "id": "US", "name": "United States" },
-        { "id": "UK", "name": "United Kingdom" },
-        { "id": "CN", "name": "China" },
-        { "id": "JP", "name": "Japan" }
-      ],
-      "required": true
-    },
-
-    {
-      "id": "gender",
-      "controlType": "checkbox",
-      "labelName": {
-        "en": "Gender",
-        "km": "ភេទ"
-      },
-      "options": [
-        {
-          "id": "male",
-          "label": {
-            "en": "Male",
-            "km": "បុរស"
-          },
-          "checked": false
+        "placeholder": {
+          "eng": "Enter your username",
+          "khm": "សូមបញ្ចូលឈ្មោះអ្នកប្រើប្រាស់"
         },
-        {
-          "id": "female",
-          "label": {
-            "en": "Female",
-            "km": "ស្ត្រី"
-          },
-          "checked": false
+        "validators": [],
+        "required": false,
+        "disabled": true,
+        "prefix": ["+855", "+91"],
+        "alignmentGroup": "groupA"
+      },
+      {
+        "id": "fullName",
+        "controlType": "textbox",
+        "capsLockCheck": true,
+        "labelName": {
+          "eng": "Full Name",
+          "khm": "គោត្តនាម-នាម"
+        },
+        "placeholder": {
+          "en": "Enter your full name",
+          "kh": "សូមបញ្ចូលគោត្តនាម-នាម"
+        },
+        "validators": [
+          {
+            "regex": "[A-Z]{6,10}",
+            "error": {
+              "khm": "لا يسمح باستخدام الأحرف الكبيرة",
+              "eng": "No uppercase characters allowed"
+            },
+            "langCode": "khm"
+          }
+        ],
+        "info": {
+          "en": "Please enter your full name as it appears on your official documents.",
+          "km": "In Khmer, Please enter your full name as it appears on your official documents."
+        },
+        "alignmentGroup": "groupB",
+        "required": true
+      },
+      {
+        "id": "password",
+        "capsLockCheck": true,
+        "controlType": "password",
+        "labelName": {
+          "eng": "Password",
+          "khm": "ពាក្យសម្ងាត់"
+        },
+        "placeholder": {
+          "eng": "Enter your password",
+          "khm": "សូមបញ្ចូលពាក្យសម្ងាត់"
+        },
+        "info": {
+          "eng": "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
+          "khm": "ពាក្យសម្ងាត់ត្រូវតែមានយ៉ាងហោចណាស់ ៨ តួអក្សរ មានតួអក្សរធំមួយ តួអក្សរតូចមួយ លេខមួយ និងតួអក្សរពិសេសមួយ។"
+        },
+        "alignmentGroup": "groupC",
+        "required": true
+      },
+      {
+        "id": "dateOfBirth",
+        "controlType": "date",
+        "capsLockCheck": true,
+        "labelName": {
+          "eng": "Birthdate",
+          "khm": "ថ្ងៃខែឆ្នាំកំណើត"
+        },
+        "placeholder": {
+          "eng": "Select your birthdate",
+          "khm": "សូមជ្រើសរើសថ្ងៃខែឆ្នាំកំណើត"
+        },
+        "validators": [
+          {
+            "regex": "^(19|20)\\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$",
+            "error": {
+              "eng": "Invalid date format. Use YYYY-MM-DD.",
+              "khm": "ទម្រង់ថ្ងៃខែឆ្នាំមិនត្រឹមត្រូវ។ ប្រើ YYYY-MM-DD។"
+            },
+            "langCode": "eng"
+          }
+        ],
+        "info": {
+          "eng": "Please enter your birthdate in the format YYYY-MM-DD.",
+          "khm": "សូមបញ្ចូលថ្ងៃខែឆ្នាំកំណើតរបស់អ្នកក្នុងទម្រង់ YYYY-MM-DD។"
+        },
+        "alignmentGroup": "groupD",
+        "required": true
+      },
+      {
+        "id": "qualification",
+        "controlType": "dropdown",
+        "capsLockCheck": true,
+        "labelName": {
+          "eng": "Qualification",
+          "khm": "វប្បធម៌"
+        },
+        "placeholder": {
+          "eng": "Select your qualification",
+          "khm": "សូមជ្រើសរើសវប្បធម៌"
+        },
+        "info": {
+          "en": "Please select your highest qualification.",
+          "khm": "In Khmer, Please select your highest qualification."
         }
-      ],
-      "required": true
-    },
-
-    {
-      "id": "encodedPhoto",
-      "controlType": "photo",
-      "labelName": {
-        "eng": "Capture Photo",
-        "khm": "ថតរូប"
       },
-      "placeholder": {
-        "eng": "Click to capture photo",
-        "khm": "ចុចដើម្បីថតរូប"
+      {
+        "id": "policyno",
+        "controlType": "textbox",
+        "type": "simpleType",
+        "capsLockCheck": true,
+        "labelName": {
+          "eng": "Policy Number",
+          "khm": "លេខគោលនយោបាយ"
+        },
+        "placeholder": {
+          "eng": "Enter your policy number",
+          "khm": "សូមបញ្ចូលលេខគោលនយោបាយ"
+        },
+        "validators": [
+          {
+            "regex": "^[A-Z]{8,12}$",
+            "error": {
+              "eng": "Policy number must be 8 to 12 alphanumeric characters.",
+              "khm": "Policy number must be 8 to 12 alphanumeric characters. in khmer"
+            },
+            "langCode": "eng"
+          },
+          {
+            "regex": "^[0-9]{8,12}$",
+            "error": {
+              "eng": "Policy number must be 8 to 12 digits.",
+              "khm": "Policy number must be 8 to 12 digits. in khmer"
+            },
+            "langCode": "khm"
+          }
+        ],
+        "info": {
+          "eng": "Please enter your policy number. It should be 8 to 12 alphanumeric characters.",
+          "ara": "In arabic, Please enter your policy number. It should be 8 to 12 alphanumeric characters."
+        },
+        "required": true
       },
-      "info": {
-        "eng": "Please click here to capture your photo using your device's camera.",
-        "khm": "សូមចុចទីនេះដើម្បីថតរូបរបស់អ្នកដោយប្រើកាមេរ៉ារបស់ឧបករណ៍របស់អ្នក។"
+      {
+        "id": "consent",
+        "controlType": "checkbox",
+        "labelName": {
+          "eng": "I agree to Cambodia’s <b><a href='#' page>Terms & Conditions</a></b> and <b><a href='#'>Privacy Policy</a></b>, to store & process my information as required.",
+          "khm": "ខ្ញុំយល់ព្រមតាម<b><a href='#'>លក្ខខណ្ឌ</a></b> និង<b><a href='#'>គោលការណ៍ឯកជនភាព</a></b>របស់ប្រទេសកម្ពុជា ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
+        },
+        "required": true,
+        "alignmentGroup": "groupD"
       },
-      "acceptedFileTypes": "image/jpeg , image/jpg , image/png , image/webp",
-      "required": true,
-      "alignmentGroup": "groupF"
-    },
-    {
-      "id": "preferredLang",
-      "controlType": "textbox",
-      "labelName": {
-        "eng": "Preferred Lang",
-        "khm": "ភាសាដែលចូលចិត្ត"
-      },
-      "info": {
-        "eng": "Preferred Lang",
-        "khm": "ភាសាដែលចូលចិត្ត"
-      },
-      "required": false,
-      "disabled": true
-    },
-    {
-      "id": "consent",
-      "controlType": "checkbox",
-      "labelName": {
-        "eng": "I agree to <b><a target='_blank' href='https://www.example.com/'>Terms & Conditions</a></b> and <b><a href='https://www.example.com/'>Privacy Policy</a></b>, to store & process my information as required.",
-        "khm": "ខ្ញុំយល់ព្រមតាម<b><a target='_blank' href='https://www.example.com/'>លក្ខខណ្ឌ</a></b> និង<b><a href='https://www.example.com/'>គោលការណ៍ឯកជនភាព</a></b>របស់ប្រទេសកម្ពុជា ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
-      },
-      "required": true,
-      "alignmentGroup": "groupD"
-    }
-  ],
-  "allowedValues": {
-    "preferredLang": "khm",
-    "gender": {
-      "male": {
-        "eng": "Male",
-        "khm": "បុរស"
-      },
-      "female": {
-        "eng": "Female",
-        "khm": "ស្ត្រី"
+      {
+        "id": "photoCapture",
+        "controlType": "photo",
+        "labelName": {
+          "eng": "Capture Photo",
+          "khm": "ថតរូប"
+        },
+        "placeholder": {
+          "eng": "Click to capture photo",
+          "khm": "ចុចដើម្បីថតរូប"
+        },
+        "info": {
+          "eng": "Please click here to capture your photo using your device's camera.",
+          "khm": "សូមចុចទីនេះដើម្បីថតរូបរបស់អ្នកដោយប្រើកាមេរ៉ារបស់ឧបករណ៍របស់អ្នក។"
+        },
+        "acceptedFileTypes": "image/jpeg , image/jpg , image/png , image/webp",
+        "required": true,
+        "alignmentGroup": "groupF"
       }
-    }
-  },
-  "i18nValues": {
-    "errors": {
-      "required": {
-        "en": "This field is required",
-        "ara": "هذه الخانة مطلوبه",
-        "km": "វាលនេះត្រូវការទទួលបាន"
+    ],
+    "allowedValues": {
+      "qualification": {
+        "highSchool": {
+          "eng": "High School",
+          "khm": "សាលាថ្នាក់មធ្យម"
+        },
+        "bachelor": {
+          "en": "Bachelor's Degree",
+          "khm": "បរិញ្ញាបត្រទី១"
+        },
+        "master": {
+          "eng": "Master's Degree",
+          "km": "បរិញ្ញាបត្រទី២"
+        },
+        "phd": {
+          "en": "PhD",
+          "km": "បរិញ្ញាបត្រទី៣"
+        },
+        "secondary": {
+          "km": "Secondary School in khmer"
+        }
       },
-      "invalidEmail": {
-        "en": "Enter a valid email address",
-        "km": "សូមបញ្ចូលអ៊ីមែលដែលត្រឹមត្រូវ"
+      "POI": {
+        "voterId": {
+          "eng": "Voter ID",
+          "khm": "អត្តសញ្ញាណប័ណ្ណអ្នកឆ្នោត"
+        },
+        "passport": {
+          "eng": "Passport",
+          "khm": "លិខិតឆ្លងដែន"
+        },
+        "nationalId": {
+          "eng": "National ID",
+          "khm": "អត្តសញ្ញាណប័ណ្ណជាតិ"
+        },
+        "driverLicense": {
+          "eng": "Driver's License",
+          "khm": "អត្តសញ្ញាណប័ណ្ណអ្នកបើកបរ"
+        },
+        "birthCertificate": {
+          "eng": "Birth Certificate",
+          "khm": "សញ្ញាប័ត្រកំណើត"
+        },
+        "aadharCard": {
+          "eng": "Aadhaar Card",
+          "khm": "កាតអាដាហា"
+        },
+        "panCard": {
+          "eng": "PAN Card",
+          "khm": "កាត PAN"
+        },
+        "rationCard": {
+          "eng": "Ration Card",
+          "khm": "កាតអាហារសមតុល្យ"
+        }
       },
-      "invalidDob": {
-        "en": "Enter a valid date",
-        "km": "សូមបញ្ចូលកាលបរិច្ឆេទត្រឹមត្រូវ"
+      "POB": {
+        "birthCertificate": {
+          "eng": "Birth Certificate",
+          "khm": "Birth Certificate - Khmer"
+        },
+        "passport": {
+          "eng": "Passport",
+          "khm": "លិខិតឆ្លងដែន"
+        },
+        "madhyamik": {
+          "eng": "Class 10 mark sheet",
+          "khm": "Class 10 mark sheet - Khmer"
+        },
+        "rationCard": {
+          "eng": "Ration Card",
+          "khm": "កាតអាហារសមតុល្យ"
+        }
       },
-      "invalidCountry": {
-        "en": "Please select a valid country",
-        "km": "សូមជ្រើសរើសប្រទេសត្រឹមត្រូវ"
+      "country": {
+        "india": {
+          "eng": "India",
+          "khm": "ឥណ្ឌា"
+        },
+        "cambodia": {
+          "eng": "Cambodia",
+          "khm": "កម្ពុជា"
+        },
+        "uae": {
+          "eng": "UAE",
+          "khm": "អេមីរ៉ាតអារ៉ាប់រួម"
+        }
       },
-      "genderRequired": {
-        "en": "Please select gender",
-        "km": "សូមជ្រើសរើសភេទ"
-      },
-      "passwordMismatch": {
-        "en": "Passwords do not match",
-        "km": "ពាក្យសម្ងាត់មិនត្រូវគ្នា"
+      "gender": {
+        "male": {
+          "eng": "Male",
+          "khm": "បុរស"
+        },
+        "female": {
+          "eng": "Female",
+          "khm": "ស្ត្រី"
+        },
+        "other": {
+          "eng": "Other",
+          "khm": "ផ្សេងទៀត"
+        }
       }
-    }
+    },
+    "i18nValues": {
+      "errors": {
+        "required": {
+          "en": "This field is required",
+          "ara": "هذه الخانة مطلوبه",
+          "km": "វាលនេះត្រូវការទទួលបាន"
+        },
+        "passwordMismatch": {
+          "en": "Passwords is not matching please check your password",
+          "km": "In Khmer, Passwords is not matching please check your password"
+        },
+        "fileNotSupported": {
+          "en": "File type not supported. Please upload a valid file.",
+          "km": "ប្រភេទឯកសារមិនត្រូវបានគាំទ្រ។ សូមបញ្ចូលឯកសារដែលត្រឹមត្រូវ។"
+        },
+        "fileSizeExceeded": {
+          "en": "File size exceeds the maximum limit of 5 MB.",
+          "km": "ទំហំឯកសារលើសកំណត់អតិបរមា ៥ មេហ្គាបៃត៍។"
+        },
+        "permissionDenied_header": {
+          "en": "Camera Access Disabled",
+          "km": "ការអនុញ្ញាតត្រូវបានបដិសេធ។"
+        },
+        "permissionDenied_description": {
+          "en": "Your camera permission has be disabled. Please enable camera permission from your browser settings.",
+          "km": "ការអនុញ្ញាតកាមេរ៉ារបស់អ្នកត្រូវបានបដិសេធ។ សូមអនុញ្ញាតឱ្យចូលដំណើរការកាមេរ៉ាពីការកំណត់របស់កម្មវិធីរុករករបស់អ្នក។"
+        },
+        "notAccessible_header": {
+          "en": "Camera Not Accessible",
+          "km": "កាមេរ៉ាមិនអាចចូលដំណើរការ"
+        },
+        "notAccessible_description": {
+          "en": "Your camera is not accessible. Please check your camera accessibility, some other application is accessing your camera right now.",
+          "km": "កាមេរ៉ារបស់អ្នកមិនអាចចូលដំណើរការ។ សូមពិនិត្យមើលការចូលដំណើរការកាមេរ៉ារបស់អ្នក។ កម្មវិធីផ្សេងទៀតកំពុងចូលដំណើរការកាមេរ៉ារបស់អ្នកនៅពេលនេះ។"
+        }
+      },
+      "labels": {
+        "password_confirm": {
+          "en": "Confirm Password from i18nValues",
+          "km": "Confirm Password from i18nValues- khm"
+        },
+        "capturePhoto": {
+          "en": "Capture Photo",
+          "km": "ថតរូប"
+        },
+        "clickToUpload": {
+          "en": "Click to upload",
+          "km": "ចុចដើម្បីបញ្ចូលឬថតរូប"
+        },
+        "docType": {
+          "eng": "Document Type",
+          "khm": "Document Type - Khmer"
+        },
+        "docRef": {
+          "eng": "Document Ref Id",
+          "khm": "Document Ref Id - Khmer"
+        },
+        "proofOfDoc": {
+          "eng": "Proof of Document",
+          "khm": "Proof of Document - Khmer"
+        }
+      },
+      "placeholders": {
+        "password_confirm": {
+          "eng": "Enter your confirm password from i18nValues",
+          "khm": "Enter your confirm password from i18nValues- khmer"
+        },
+        "docType": {
+          "eng": "Select an option",
+          "khm": "Select an option - Khmer"
+        },
+        "docRef": {
+          "eng": "Enter Ref Id here",
+          "khm": "Enter Ref Id here - Khmer"
+        },
+        "proofOfDoc": {
+          "eng": "Click to upload or drag and drop",
+          "khm": "Click to upload or drag and drop - Khmer"
+        }
+      }
+    },
+    "language": {
+      "mandatory": ["eng"],
+      "optional": ["khm"],
+      "langCodeMap": {
+        "khm": "km",
+        "eng": "en"
+      }
+    },
+    "maxUploadFileSize": 5242880
   },
-  "errors": {
-    "required": {
-      "en": "This field is required",
-      "ara": "هذه الخانة مطلوبه",
-      "km": "វាលនេះត្រូវការទទួលបាន"
-    }
-  },
-  "language": {
-    "mandatory": [
-      "khm"
-    ],
-    "optional": [
-      "eng"
-    ],
-    "langCodeMap": {
-      "khm": "km",
-      "eng": "en"
-    }
-  },
-  "maxUploadFileSize": 5242880
+  "errors": null
 }
