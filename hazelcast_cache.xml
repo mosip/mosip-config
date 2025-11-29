@@ -20,7 +20,7 @@
         <join>
             <multicast enabled="false">
                 <multicast-group>224.2.2.3</multicast-group>
-                <multicast-port>${mosip.database.port.override:5432}7</multicast-port>
+                <multicast-port>54327</multicast-port>
             </multicast>
             <tcp-ip enabled="false">
                 <interface>127.0.0.1</interface>
