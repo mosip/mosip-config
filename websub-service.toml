@@ -39,7 +39,7 @@ MESSAGE_DELIVERY_RETRY_INTERVAL = 3.0
 MESSAGE_DELIVERY_COUNT = 3
 
 # The message delivery timeout
-MESSAGE_DELIVERY_TIMEOUT = 30.0
+MESSAGE_DELIVERY_TIMEOUT = 60.0
 
 # The base URL of IDP
 MOSIP_AUTH_BASE_URL = "${mosip.kernel.authmanager.url}/v1/authmanager"
@@ -54,8 +54,6 @@ DISK_SPACE_THRESHOLD = 10485760
 # The token validation URL of IDP
 PARTNER_USER_ID_PREFIX = "service-account-"
 
-
-#CURRENT_WORKING_DIR = "user.dir"
 
 # The period between retry requests
 INTENT_VERIFICATION_RETRY_INTERVAL = 3.0
