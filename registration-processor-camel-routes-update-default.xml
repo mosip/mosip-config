@@ -308,19 +308,28 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['EXCEPTION_BIOMETRICS'] != 'LL,LR,LM,LI,LT,RL,RR,RM,RI,RT,LE,RE' &amp;&amp; @['isValid'] == true &amp;&amp; @['messageBusAddress']['address'] == 'abis-handler-bus-in' &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="eventbus://abis-handler-bus-in" />
          </when>
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
             <to uri="eventbus://manual-adjudication-bus-in" />
          </when>
-		 <when>
+		  <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT')]</jsonpath>
             <to uri="eventbus://verification-bus-in" />
          </when>
-         <otherwise>
+		  <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['EXCEPTION_BIOMETRICS'] == 'LL,LR,LM,LI,LT,RL,RR,RM,RI,RT,LE,RE' &amp;&amp;  @['isValid'] == true &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="eventbus://verification-bus-in" />
+         </when>
+		  <when>
+            <jsonpath suppressExceptions="true">$.[?(@['tags']['EXCEPTION_BIOMETRICS'] != 'LL,LR,LM,LI,LT,RL,RR,RM,RI,RT,LE,RE' &amp;&amp; @['isValid'] == true &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="eventbus://bio-dedupe-bus-in" />
+         </when>
+         <otherwise>
+            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
@@ -385,6 +394,10 @@
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
             <to uri="eventbus://abis-handler-bus-in" />
+         </when>
+         <when>
+            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
+            <to uri="eventbus://manual-adjudication-bus-in" />
          </when>
          <otherwise>
             <to uri="eventbus://uin-generator-bus-in" />
@@ -508,10 +521,10 @@
          </otherwise>
       </choice>
    </route>
-	 <!-- finalization to Printing Route -->
-   <route id="finalization route-->printing-stage update route">
+	 <!-- finalization to credential-requestor Route -->
+   <route id="finalization route-->credential-requestor-stage update route">
       <from uri="eventbus://finalization-update-bus-out" />
-      <log message="finalization-->printing-stage update route ${bodyAs(String)}" />
+      <log message="finalization-->credential-requestor-stage update route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -528,13 +541,13 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://printing-bus-in" />
+            <to uri="eventbus://credential-requestor-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="printing-stage--> update route">
-      <from uri="eventbus://printing-update-bus-out" />
-      <log message="printing-stage--> route ${bodyAs(String)}" />
+   <route id="credential-requestor-stage--> update route">
+      <from uri="eventbus://credential-requestor-update-bus-out" />
+      <log message="credential-requestor-stage--> route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
