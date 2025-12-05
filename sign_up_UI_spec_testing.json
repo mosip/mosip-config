@@ -75,8 +75,8 @@
                     {
                         "regex": "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\\x5F\\W])(?=.{8,20})[a-zA-Z0-9\\x5F\\W]{8,20}$",
                         "error": {
-                        "eng": "Password does not meet the password policy. Click on \"i\" icon to know the password policy",
-                        "khm": "ជាអតិបរមា 30 តួអក្សរត្រូវបានអនុញ្ញាត និងមិនគួរមានលេខ ឬតួអក្សរពិសេសណាមួយឡើយ លើកលែងតែដកឃ្លា។"
+                            "eng": "Password does not meet the password policy. Click on \"i\" icon to know the password policy",
+                            "khm": "ពាក្យ nសម្ងាត់ មិន ត្រូវ តាម គោលការណ៍ លេខ សម្ងាត់ ទេ។ ចុចលើរូបតំណាង \"i\" ដើម្បីដឹងពីគោលការណ៍ពាក្យសម្ងាត់"
                         }
                     }
                 ],
