@@ -114,13 +114,12 @@
 		"address": {
 			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
 		},
-
 		"individual_id": {
 			"value": "individual_id"
 		},
 		"attributes": {
 		   "value": "fln,ad1,ad2,ad3,cit,reg,pro,poc,cph,em,ph,gen,dob"
-		},  
+		},
 		"street_address": {
 			"value": "addressLine1,addressLine2,addressLine3"
 		},
@@ -138,6 +137,15 @@
 		},
 		"password": {
 			"value": "password"
+		},
+		"deceasedDeclarationDate" : {
+			"value": "deceasedDeclarationDate"
+		},
+		"declaredAsDeceased" : {
+			"value" : "declaredAsDeceased"
+		},
+		"typeOfDeath" : {
+			"value" : "typeOfDeath"
 		}
 	},
 	"metaInfo": {
@@ -164,8 +172,8 @@
 		}
 	},
 	"attributeUpdateCountLimit": {
-		"fullName": 2,
+		"fullName": 5,
 		"gender": 2,
-		"dateOfBirth": 2
+		"dateOfBirth": 3
 	}
 }
