@@ -20,6 +20,29 @@
             "alignmentGroup": "groupA"
         },
         {
+            "id": "email",
+            "controlType": "textbox",
+            "labelName": {
+                "eng": "Email",
+                "khm": "អ៊ីមែល"
+            },
+            "placeholder": {
+                "eng": "Enter your email",
+                "khm": "បញ្ចូលអ៊ីមែលរបស់អ្នក"
+            },
+            "validators": [
+                {
+                    "regex": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
+                    "error": {
+                        "eng": "Please enter a valid email address",
+                        "khm": "សូមបញ្ចូលអាសយដ្ឋានអ៊ីមែលត្រឹមត្រូវ"
+                    }
+                }
+            ],
+            "required": false,
+            "alignmentGroup": "groupA"
+        },
+        {
             "id": "fullName",
             "capsLockCheck": true,
             "controlType": "textbox",
