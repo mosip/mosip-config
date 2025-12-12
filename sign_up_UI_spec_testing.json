@@ -8,7 +8,7 @@
                 "km": "ទូរស័ព្ទ"
             },
             "placeholder": {
-                "eng": "Enter your username",
+                "eng": "Enter your username for signup form in esignet",
                 "khm": "សូមបញ្ចូលឈ្មោះអ្នកប្រើប្រាស់"
             },
             "validators": [],
@@ -39,6 +39,38 @@
                     }
                 }
             ],
+            "required": false,
+            "alignmentGroup": "groupA"
+        },
+        {
+            "id": "emailDropdown",
+            "controlType": "dropdown",
+            "labelName": {
+                "eng": "Email Type",
+                "khm": "ប្រភេទអ៊ីមែល"
+            },
+            "placeholder": {
+                "eng": "Select",
+                "khm": "ជ្រើសរើស"
+            },
+            "allowedValues": {
+                "personal": {
+                    "eng": "Personal",
+                    "khm": "ផ្ទាល់ខ្លួន"
+                },
+                "work": {
+                    "eng": "Work",
+                    "khm": "ការងារ"
+                },
+                "other": {
+                    "eng": "Other",
+                    "khm": "ផ្សេងៗ"
+                },
+                "none": {
+                    "eng": "Prefer not to say",
+                    "khm": "មិនចង់បញ្ជាក់"
+                }
+            },
             "required": false,
             "alignmentGroup": "groupA"
         },
