@@ -1,32 +1,22 @@
 # MOSIP Configuration
 
-## Configuration properties
+## Overview
 
-MOSIP uses Spring Cloud Config Server to read the properties files. So, to use the properties files in this repo, please update the IP addresses, keys and passwords and then point to this repo in spring cloud config in kernel module.
+The **mosip-config** repository is the central configuration repository for the MOSIP platform.
+It contains the configuration files required for various MOSIP modules.
 
-## Config server 
+This repository works in conjunction with the **Spring Cloud Config Server**, enabling MOSIP services to fetch their configuration dynamically at runtime without requiring application rebuilds.
 
-Local Config Server Installation Guide
+For setup and startup instructions for config server, refer to the  [MOSIP Config Server Setup Guide](https://docs.mosip.io/1.2.0/modules/registration-processor/registration-processor-developers-guide#environment-setup).
 
-### Overview
-MOSIP uses Config Server to read the properties files. 
+## Contribution & Community
 
-### Download 
+• To learn how you can contribute code to this application, [click here](https://docs.mosip.io/1.2.0/community/code-contributions).
 
-1. Download Config server jar [config-server](https://mvnrepository.com/artifact/io.mosip.kernel/kernel-config-server)
+• If you have questions or encounter issues, visit the [MOSIP Community](https://community.mosip.io/) for support.
 
-2. Clone the Mosip config repo for required released version [mosip-config](https://github.com/mosip/mosip-config)
+• For any GitHub issues: [Report here](https://github.com/mosip/mosip-config/issues)
 
-### Run 
+## License
 
-To run config server jar set the following attribute 
-
-```
--Dspring.cloud.config.server.native.search-locations = point to mosip-config repo location
-```
-
-### Run Config Server Jar
-
-```
-java -jar -Dspring.profiles.active=native  -Dspring.cloud.config.server.native.search-locations=file:C:\mosipcode\mosip-config\sandbox -Dspring.cloud.config.server.accept-empty=true  -Dspring.cloud.config.server.git.force-pull=false -Dspring.cloud.config.server.git.cloneOnStart=false -Dspring.cloud.config.server.git.refreshRate=0 kernel-config-server-<latest_version>.jar
-```
+This project is licensed under the [Mozilla Public License 2.0](LICENSE).
