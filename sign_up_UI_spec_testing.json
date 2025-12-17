@@ -25,11 +25,11 @@
             "controlType": "textbox",
             "type": "simpleType",
             "labelName": {
-                "eng": "Full Name in Khmer",
+                "eng": "Full Name In English & Khmer",
                 "khm": "គោត្តនាម-នាម"
             },
             "placeholder": {
-                "en": "Enter Full Name in Khmer",
+                "en": "Enter Full Name In English",
                 "km": "បញ្ចូលគោត្តនាម-នាមជាភាសាខ្មែរ"
             },
             "validators": [
@@ -105,7 +105,7 @@
             "controlType": "dropdown",
             "capsLockCheck": true,
             "labelName": {
-                "eng": "Qualification",
+                "eng": "Select Your Qualification",
                 "khm": "វប្បធម៌"
             },
             "placeholder": {
