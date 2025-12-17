@@ -8,7 +8,7 @@
                 "km": "ទូរស័ព្ទ"
             },
             "placeholder": {
-                "eng": "Enter your username",
+                "eng": "Enter Your Phone Number",
                 "khm": "សូមបញ្ចូលឈ្មោះអ្នកប្រើប្រាស់"
             },
             "validators": [],
@@ -57,40 +57,12 @@
             "alignmentGroup": "groupB",
             "required": true
         },
-        {
-            "id": "password",
-            "capsLockCheck": true,
-            "controlType": "password",
-            "labelName": {
-                "eng": "Password",
-                "khm": "ពាក្យសម្ងាត់"
-            },
-            "placeholder": {
-                "eng": "Enter your password",
-                "khm": "សូមបញ្ចូលពាក្យសម្ងាត់"
-            },
-            "validators": [
-                {
-                    "regex": "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\\x5F\\W])(?=.{8,20})[a-zA-Z0-9\\x5F\\W]{8,20}$",
-                    "error": {
-                        "eng": "Password does not meet the password policy. Click on \"i\" icon to know the password policy",
-                        "khm": "ពាក្យសម្ងាត់មិនបំពេញតាមគោលការណ៍ពាក្យសម្ងាត់ទេ។ ចុចលើរូបតំណាង \"i\" ដើម្បីដឹងពីគោលការណ៍ពាក្យសម្ងាត់"
-                    }
-                }
-            ],
-            "info": {
-                "eng": "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
-                "khm": "ពាក្យសម្ងាត់ត្រូវតែមានយ៉ាងហោចណាស់ ៨ តួអក្សរ មានតួអក្សរធំមួយ តួអក្សរតូចមួយ លេខមួយ និងតួអក្សរពិសេសមួយ។"
-            },
-            "alignmentGroup": "groupC",
-            "required": true
-        },
 		{
             "id": "dateOfBirth",
             "description": "dateOfBirth",
             "labelName": {
                 "khm": "ថ្ងៃខែឆ្នាំកំណើត",
-                "eng": "Select your DOB"
+                "eng": "Select Your DOB"
             },
             "controlType": "date",
             "fieldType": "default",
@@ -112,7 +84,7 @@
             "description": "email",
             "labelName": {
                 "khm": "អ៊ីមែល",
-                "eng": "Enter your Email"
+                "eng": "Enter Your Email"
             },
             "controlType": "textbox",
             "fieldType": "default",
@@ -149,11 +121,11 @@
             "id": "encodedPhoto",
             "controlType": "photo",
             "labelName": {
-                "eng": "Capture Photo",
+                "eng": "Capture Your Photo",
                 "khm": "ថតរូប"
             },
             "placeholder": {
-                "eng": "Click to capture photo",
+                "eng": "Click to capture your photo",
                 "khm": "ចុចដើម្បីថតរូប"
             },
             "info": {
@@ -178,6 +150,34 @@
             "required": false,
             "disabled": true
         },
+		{
+            "id": "password",
+            "capsLockCheck": true,
+            "controlType": "password",
+            "labelName": {
+                "eng": "Password",
+                "khm": "ពាក្យសម្ងាត់"
+            },
+            "placeholder": {
+                "eng": "Enter your password",
+                "khm": "សូមបញ្ចូលពាក្យសម្ងាត់"
+            },
+            "validators": [
+                {
+                    "regex": "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\\x5F\\W])(?=.{8,20})[a-zA-Z0-9\\x5F\\W]{8,20}$",
+                    "error": {
+                        "eng": "Password does not meet the password policy. Click on \"i\" icon to know the password policy",
+                        "khm": "ពាក្យសម្ងាត់មិនបំពេញតាមគោលការណ៍ពាក្យសម្ងាត់ទេ។ ចុចលើរូបតំណាង \"i\" ដើម្បីដឹងពីគោលការណ៍ពាក្យសម្ងាត់"
+                    }
+                }
+            ],
+            "info": {
+                "eng": "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
+                "khm": "ពាក្យសម្ងាត់ត្រូវតែមានយ៉ាងហោចណាស់ ៨ តួអក្សរ មានតួអក្សរធំមួយ តួអក្សរតូចមួយ លេខមួយ និងតួអក្សរពិសេសមួយ។"
+            },
+            "alignmentGroup": "groupC",
+            "required": true
+        },
         {
             "id": "consent",
             "controlType": "checkbox",
@@ -191,25 +191,14 @@
     ],
     "allowedValues": {
         "preferredLang": "khm",
-        "qualification": {
-            "highSchool": {
-                "eng": "High School",
-                "khm": "សាលាថ្នាក់មធ្យម"
+        "gender": {
+            "male": {
+                "eng": "Male",
+                "khm": "បុរស"
             },
-            "bachelor": {
-                "en": "Bachelor's Degree",
-                "khm": "បរិញ្ញាបត្រទី១"
-            },
-            "master": {
-                "eng": "Master's Degree",
-                "km": "បរិញ្ញាបត្រទី២"
-            },
-            "phd": {
-                "en": "PhD",
-                "km": "បរិញ្ញាបត្រទី៣"
-            },
-            "secondary": {
-                "km": "Secondary School in khmer"
+            "female": {
+                "eng": "Female",
+                "khm": "ស្ត្រី"
             }
         }
     },
