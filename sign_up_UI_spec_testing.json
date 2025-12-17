@@ -5,7 +5,7 @@
             "controlType": "phone",
             "labelName": {
                 "en": "Username",
-                "km": "ឈ្មោះ​អ្នកប្រើប្រាស់"
+                "km": "ឈ្មោះ អ្នកប្រើប្រាស់"
             },
             "placeholder": {
                 "eng": "Enter your username test",
@@ -45,7 +45,7 @@
                     "regex": "^[a-zA-Z][a-zA-Z ]{1,30}$",
                     "error": {
                         "eng": "English only",
-                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
+                        "khm": "ឈ្មោះ ពេញ ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
                     },
                     "langCode": "en"
                 }
@@ -61,8 +61,8 @@
             "id": "dateOfBirth",
             "description": "dateOfBirth",
             "labelName": {
-                "khm": "DOB",
-                "eng": "DOB"
+                "khm": "ថ្ងៃខែឆ្នាំកំណើត",
+                "eng": "Select your DOB"
             },
             "controlType": "date",
             "fieldType": "default",
@@ -72,33 +72,9 @@
                     "regex": "^(1869|18[7-9][0-9]|19[0-9][0-9]|20[0-9][0-9])-([0][1-9]|1[0-2])-([0][1-9]|[1-2][0-9]|3[01])$",
                     "error": {
                         "eng": "English only",
-                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
+                        "khm": "ឈ្មោះ ពេញ ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
                     },
                     "langCode": "en"
-                }
-            ],
-            "required": false
-        },
-        {
-            "id": "phoneNum",
-            "description": "phone",
-            "labelName": {
-                "khm": "தொலைபேசி",
-                "eng": "Phone"
-            },
-            "controlType": "phone",
-            "fieldType": "default",
-            "prefix": [
-                "+91",
-                "+86"
-            ],
-            "validators": [
-                {
-                    "regex": "^([0-9]{1})([0-9]{9})$",
-                    "error": {
-                        "eng": "English only",
-                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
-                    }
                 }
             ],
             "required": false
@@ -107,8 +83,8 @@
             "id": "email",
             "description": "email",
             "labelName": {
-                "khm": "மின்னஞ்சல்",
-                "eng": "Email"
+                "khm": "អ៊ីមែល",
+                "eng": "Enter your Email"
             },
             "controlType": "textbox",
             "fieldType": "default",
@@ -118,7 +94,7 @@
                     "regex": "^[A-Za-z0-9_\\-]+(\\.[A-Za-z0-9_]+)*@[A-Za-z0-9_-]+(\\.[A-Za-z0-9_]+)*(\\.[a-zA-Z]{2,})$",
                     "error": {
                         "eng": "English only",
-                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
+                        "khm": "ឈ្មោះ ពេញ ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
                     }
                 }
             ],
