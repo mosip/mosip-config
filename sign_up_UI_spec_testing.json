@@ -86,6 +86,66 @@
             "required": true
         },
         {
+            "id": "dateOfBirth",
+            "description": "dateOfBirth",
+            "labelName": {
+                "khm": "ថ្ងៃខែឆ្នាំកំណើត",
+                "eng": "Select your DOB"
+            },
+            "controlType": "date",
+            "fieldType": "default",
+            "format": "none",
+            "validators": [
+                {
+                    "regex": "^(1869|18[7-9][0-9]|19[0-9][0-9]|20[0-9][0-9])-([0][1-9]|1[0-2])-([0][1-9]|[1-2][0-9]|3[01])$",
+                    "error": {
+                        "eng": "English only",
+                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
+                    },
+                    "langCode": "en"
+                }
+            ],
+            "required": false
+        },
+        {
+            "id": "email",
+            "description": "email",
+            "labelName": {
+                "khm": "អ៊ីមែល",
+                "eng": "Enter your Email"
+            },
+            "controlType": "textbox",
+            "fieldType": "default",
+            "format": "none",
+            "validators": [
+                {
+                    "regex": "^[A-Za-z0-9_\\-]+(\\.[A-Za-z0-9_]+)*@[A-Za-z0-9_-]+(\\.[A-Za-z0-9_]+)*(\\.[a-zA-Z]{2,})$",
+                    "error": {
+                        "eng": "English only",
+                        "khm": "ឈ្មោះ​ពេញ​ត្រូវតែសរសេរជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ"
+                    }
+                }
+            ],
+            "required": false
+        },
+        {
+            "id": "qualification",
+            "controlType": "dropdown",
+            "capsLockCheck": true,
+            "labelName": {
+                "eng": "Qualification",
+                "khm": "វប្បធម៌"
+            },
+            "placeholder": {
+                "eng": "Select your qualification",
+                "khm": "សូមជ្រើសរើសវប្បធម៌"
+            },
+            "info": {
+                "en": "Please select your highest qualification.",
+                "khm": "In Khmer, Please select your highest qualification."
+            }
+        },
+        {
             "id": "encodedPhoto",
             "controlType": "photo",
             "labelName": {
