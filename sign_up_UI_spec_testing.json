@@ -85,7 +85,7 @@
             "alignmentGroup": "groupC",
             "required": true
         },
-        {
+		{
             "id": "dateOfBirth",
             "description": "dateOfBirth",
             "labelName": {
@@ -107,7 +107,7 @@
             ],
             "required": false
         },
-        {
+		{
             "id": "email",
             "description": "email",
             "labelName": {
@@ -191,14 +191,25 @@
     ],
     "allowedValues": {
         "preferredLang": "khm",
-        "gender": {
-            "male": {
-                "eng": "Male",
-                "khm": "បុរស"
+        "qualification": {
+            "highSchool": {
+                "eng": "High School",
+                "khm": "សាលាថ្នាក់មធ្យម"
             },
-            "female": {
-                "eng": "Female",
-                "khm": "ស្ត្រី"
+            "bachelor": {
+                "en": "Bachelor's Degree",
+                "khm": "បរិញ្ញាបត្រទី១"
+            },
+            "master": {
+                "eng": "Master's Degree",
+                "km": "បរិញ្ញាបត្រទី២"
+            },
+            "phd": {
+                "en": "PhD",
+                "km": "បរិញ្ញាបត្រទី៣"
+            },
+            "secondary": {
+                "km": "Secondary School in khmer"
             }
         }
     },
