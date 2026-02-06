@@ -1,5 +1,6 @@
 {
   "schema": [
+
     {
       "id": "phone",
       "controlType": "phone",
@@ -75,7 +76,7 @@
       "required": true
     },
     {
-      "id": "photoCapture",
+     "id": "photoCapture",
       "controlType": "photo",
       "labelName": {
         "eng": "Capture Photo",
@@ -94,25 +95,16 @@
       "alignmentGroup": "groupF"
     },
     {
-      "id": "dateOfBirth",
-      "controlType": "datepicker",
+      "id": "dob",
+      "controlType": "date",
       "labelName": {
         "eng": "Date of Birth",
         "khm": "ថ្ងៃខែឆ្នាំកំណើត"
-     },
-     "placeholder": {
-       "eng": "Select date of birth",
-       "khm": "ជ្រើសរើសថ្ងៃខែឆ្នាំកំណើត"
-     },
-     "format": "YYYY-MM-DD",
-     "maxDate": "TODAY",
-     "minDate": "1900-01-01",
-     "required": true,
-     "alignmentGroup": "groupB",
-     "info": {
-       "eng": "Please select your date of birth",
-       "khm": "សូមជ្រើសរើសថ្ងៃខែឆ្នាំកំណើតរបស់អ្នក"
-     }
+       },
+       "maxAge": 0,
+       "alignmentGroup": "groupE",
+       "required": true,
+       "format": "yyyy/MM/dd"
     },
     {
       "id": "preferredLang",
