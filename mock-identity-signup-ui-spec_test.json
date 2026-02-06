@@ -56,6 +56,27 @@
       "required": true
     },
     {
+      "id": "dateOfBirth",
+      "controlType": "datepicker",
+      "labelName": {
+        "eng": "Date of Birth",
+        "khm": "ថ្ងៃខែឆ្នាំកំណើត"
+      },
+      "placeholder": {
+        "eng": "Select date of birth",
+        "khm": "ជ្រើសរើសថ្ងៃខែឆ្នាំកំណើត"
+      },
+      "format": "YYYY-MM-DD",
+      "minDate": "1900-01-01",
+      "maxDate": "TODAY",
+      "required": true,
+      "alignmentGroup": "groupB",
+      "info": {
+        "eng": "Please select your date of birth",
+        "khm": "សូមជ្រើសរើសថ្ងៃខែឆ្នាំកំណើតរបស់អ្នក"
+      }
+    },
+    {
       "id": "password",
       "capsLockCheck": true,
       "controlType": "password",
@@ -112,7 +133,7 @@
       "controlType": "checkbox",
       "labelName": {
         "eng": "I agree to <b><a target='_blank' href='https://www.example.com/'>Terms & Conditions</a></b> and <b><a target='_blank' href='https://www.example.com/'>Privacy Policy</a></b>, to store & process my information as required.",
-        "khm": "ខ្ញុំយល់ព្រមតាម<b><a target='_blank' href='https://www.example.com/'>លក្ខខណ្ឌ</a></b> និង<b><a target='_blank' href='https://www.example.com/'>គោលការណ៍ឯកជនភាព</a></b>របស់ប្រទេសកម្ពុជា ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
+        "khm": "ខ្ញុំយល់ព្រមតាម<b><a target='_blank' href='https://www.example.com/'>លក្ខខណ្ឌ</a></b> និង<b><a target='_blank' href='https://www.example.com/'>គោលការណ៍ឯកជនភាព</a></b> ដើម្បីរក្សាទុក និងដំណើរការព័ត៌មានរបស់ខ្ញុំតាមតម្រូវការ។"
       },
       "required": true,
       "alignmentGroup": "groupD"
@@ -144,41 +165,6 @@
         "en": "File size exceeds the maximum limit of 5 MB.",
         "km": "ទំហំឯកសារលើសកំណត់អតិបរមា ៥ មេហ្គាបៃត៍។"
       }
-    },
-    "labels": {
-      "password_confirm": {
-        "en": "Confirm Password",
-        "km": "បញ្ជាក់លេខសម្ងាត់"
-      },
-      "capturePhoto": {
-        "en": "Capture Photo",
-        "km": "ថតរូប"
-      },
-      "clickToUpload": {
-        "en": "Click to upload",
-        "km": "ចុចដើម្បីបញ្ចូលឬថតរូប"
-      }
-    },
-    "placeholders": {
-      "password_confirm": {
-        "eng": "Enter your password again",
-        "khm": "បញ្ចូលលេខសម្ងាត់របស់អ្នកម្ដងទៀត"
-      }
-    }
-  },
-  "errors": {
-    "required": {
-      "en": "This field is required",
-      "ara": "هذه الخانة مطلوبه",
-      "km": "វាលនេះត្រូវការទទួលបាន"
-    },
-    "passwordMismatch": {
-      "en": "Passwords is not matching please check your password",
-      "km": "ពាក្យសម្ងាត់មិនត្រូវគ្នាទេ សូមពិនិត្យពាក្យសម្ងាត់របស់អ្នក"
-    },
-    "capsLock": {
-      "en": "Caps Lock is on",
-      "km": "Caps Lock កំពុងបើក"
     }
   },
   "language": {
