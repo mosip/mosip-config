@@ -298,8 +298,7 @@
          </when>
 		  <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['EXCEPTION_BIOMETRICS'] != 'LL,LR,LM,LI,LT,RL,RR,RM,RI,RT,LE,RE' &amp;&amp; @['isValid'] == true &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <!-- <to uri="eventbus://bio-dedupe-bus-in" /> -->
-			   <to uri="eventbus://uin-generator-bus-in" />
+            <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
 		 <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT')]</jsonpath>
