@@ -84,7 +84,9 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://packet-classifier-bus-in" />
+            <!-- <to uri="eventbus://packet-classifier-bus-in" /> -->
+			<to uri="workflow-cmd://complete-as-processed" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
