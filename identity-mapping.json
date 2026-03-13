@@ -39,6 +39,9 @@
 		"email": {
 			"value": "email"
 		},
+		"packetCreatedOn": {
+			"value": "packetCreatedOn"
+		},
 		"emailId": {
 			"value": "email"
 		},
