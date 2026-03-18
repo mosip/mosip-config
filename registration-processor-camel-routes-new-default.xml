@@ -423,7 +423,7 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://abis-handler-bus-in" />
+            <to uri="eventbus://bio-dedupe-bus-in" />
          </otherwise>
       </choice>
    </route>
