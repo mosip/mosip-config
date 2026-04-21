@@ -16,7 +16,10 @@
       },
       "allowVciRequestDelegation": {
         "type": "boolean"
-      }
+      },
+      "allowOTPRequestDelegation": {
+          "type": "boolean"
+      } 
     },
     "required": [
       "allowAuthRequestDelegation",
