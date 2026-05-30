@@ -171,7 +171,7 @@
             <to uri="eventbus://introducer-validator-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://create-draft-bus-in" />
+            <to uri="eventbus://quality-classifier-bus-in" />
          </otherwise>
       </choice>
    </route>
@@ -198,36 +198,13 @@
             <to uri="eventbus://introducer-validator-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://create-draft-bus-in" />
+            <to uri="eventbus://quality-classifier-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="introducer-validator-->create-draft new route">
+   <route id="introducer-validator-->quality-classifier new route">
       <from uri="eventbus://introducer-validator-new-bus-out" />
-      <log message="introducer-validator-->create-draft new route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://create-draft-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
-   <route id="create-draft-->quality-classifier new route">
-      <from uri="eventbus://create-draft-new-bus-out" />
-      <log message="create-draft-->quality-classifier new route ${bodyAs(String)}" />
+      <log message="packet-classifier-->quality-classifier new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
