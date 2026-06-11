@@ -1,8 +1,8 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
     <!-- securezone-notification to packet-validator Route -->
-    <route id="securezone-notification-->packet-validator crvs_update route">
-        <from uri="eventbus://securezone-notification-crvs_update-bus-out" />
-        <log message="securezone-notification-->packet-validator crvs_update route ${bodyAs(String)}" />
+    <route id="securezone-notification-->packet-validator crvs_new route">
+        <from uri="eventbus://securezone-notification-crvs_new-bus-out" />
+        <log message="securezone-notification-->packet-validator crvs_new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -22,9 +22,9 @@
         </choice>
     </route>
     <!-- Packet Validator to Packet classifier Route -->
-    <route id="packet-validator-->packet-classifier crvs_update route">
-        <from uri="eventbus://packet-validator-crvs_update-bus-out" />
-        <log message="packet-validator-->packet-classifier crvs_update route ${bodyAs(String)}" />
+    <route id="packet-validator-->packet-classifier crvs_new route">
+        <from uri="eventbus://packet-validator-crvs_new-bus-out" />
+        <log message="packet-validator-->packet-classifier crvs_new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -46,9 +46,9 @@
         </choice>
     </route>
     <!-- Packet Classifier to cmd-validator Route -->
-    <route id="packet-classifier-->cmd-validator crvs_update route">
-        <from uri="eventbus://packet-classifier-crvs_update-bus-out" />
-        <log message="packet-classifier-->cmd-validator crvs_update route ${bodyAs(String)}" />
+    <route id="packet-classifier-->cmd-validator crvs_new route">
+        <from uri="eventbus://packet-classifier-crvs_new-bus-out" />
+        <log message="packet-classifier-->cmd-validator crvs_new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -69,9 +69,9 @@
             </otherwise>
         </choice>
     </route>
-    <route id="cmd-validator-->operator-validator crvs_update route">
-        <from uri="eventbus://c-m-d-validator-crvs_update-bus-out" />
-        <log message="cmd-validator-->operator-validator/supervisor-validator crvs_update route ${bodyAs(String)}" />
+    <route id="cmd-validator-->operator-validator crvs_new route">
+        <from uri="eventbus://c-m-d-validator-crvs_new-bus-out" />
+        <log message="cmd-validator-->operator-validator/supervisor-validator crvs_new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -89,8 +89,8 @@
             </when>
             <when>
                 <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] != 'INFANT')]</jsonpath>
-                <log message="Rejecting non-infant CRVS_UPDATE packet RID=${id}" />
-                <to uri="workflow-cmd://complete-as-rejected" />
+                <log message="INFANT packet is allowed but received the MINOR/ADULT packet hence rejecting the packet" />
+                <to uri="workflow-cmd://complete-as-failed" />
                 <to uri="workflow-cmd://anonymous-profile" />
             </when>
             <when>
@@ -107,9 +107,9 @@
             </otherwise>
         </choice>
     </route>
-    <route id="operator-validator-->supervisor-validator crvs_update route">
-        <from uri="eventbus://operator-validator-crvs_update-bus-out" />
-        <log message="operator-validator-->supervisor-validator/introducer-validator/demo-dedupe crvs_update route ${bodyAs(String)}" />
+    <route id="operator-validator-->supervisor-validator crvs_new route">
+        <from uri="eventbus://operator-validator-crvs_new-bus-out" />
+        <log message="operator-validator-->supervisor-validator/introducer-validator/demo-dedupe crvs_new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -139,9 +139,9 @@
             </otherwise>
         </choice>
     </route>
-    <route id="supervisor-validator-->introducer-validator crvs_update route">
-        <from uri="eventbus://supervisor-validator-crvs_update-bus-out" />
-        <log message="supervisor-validator-->introducer-validator/demo-dedupe crvs_update route ${bodyAs(String)}" />
+    <route id="supervisor-validator-->introducer-validator crvs_new route">
+        <from uri="eventbus://supervisor-validator-crvs_new-bus-out" />
+        <log message="supervisor-validator-->introducer-validator/demo-dedupe crvs_new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -167,9 +167,9 @@
             </otherwise>
         </choice>
     </route>
-    <route id="introducer-validator-->demo-dedupe crvs_update route">
-        <from uri="eventbus://introducer-validator-crvs_update-bus-out" />
-        <log message="introducer-validator-->demo-dedupe crvs_update route ${bodyAs(String)}" />
+    <route id="introducer-validator-->demo-dedupe crvs_new route">
+        <from uri="eventbus://introducer-validator-crvs_new-bus-out" />
+        <log message="introducer-validator-->demo-dedupe crvs_new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -190,9 +190,9 @@
             </otherwise>
         </choice>
     </route>
-    <route id="demo-dedupe-->uin-generator crvs_update route">
-        <from uri="eventbus://demo-dedupe-crvs_update-bus-out" />
-        <log message="demo-dedupe-->uin-generator crvs_update route ${bodyAs(String)}" />
+    <route id="demo-dedupe-->uin-generator crvs_new route">
+        <from uri="eventbus://demo-dedupe-crvs_new-bus-out" />
+        <log message="demo-dedupe-->uin-generator crvs_new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -215,9 +215,9 @@
         </choice>
     </route>
     <!-- UIN Generator to finalization-stage Route -->
-    <route id="uin-generation route-->finalization-stage crvs_update route">
-        <from uri="eventbus://uin-generator-crvs_update-bus-out" />
-        <log message="uin-generation-->finalization-stage crvs_update route ${bodyAs(String)}" />
+    <route id="uin-generation route-->finalization-stage crvs_new route">
+        <from uri="eventbus://uin-generator-crvs_new-bus-out" />
+        <log message="uin-generation-->finalization-stage crvs_new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -240,9 +240,9 @@
         </choice>
     </route>
     <!-- finalization to credential-requestor Route -->
-    <route id="finalization route-->credential-requestor-stage crvs_update route">
-        <from uri="eventbus://finalization-crvs_update-bus-out" />
-        <log message="finalization-->credential-requestor-stage crvs_update route ${bodyAs(String)}" />
+    <route id="finalization route-->credential-requestor-stage crvs_new route">
+        <from uri="eventbus://finalization-crvs_new-bus-out" />
+        <log message="finalization-->credential-requestor-stage crvs_new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -263,9 +263,9 @@
             </otherwise>
         </choice>
     </route>
-    <route id="credential-requestor-stage--> crvs_update route">
-        <from uri="eventbus://credential-requestor-crvs_update-bus-out" />
-        <log message="credential-requestor-stage--> crvs_update route ${bodyAs(String)}" />
+    <route id="credential-requestor-stage--> crvs_new route">
+        <from uri="eventbus://credential-requestor-crvs_new-bus-out" />
+        <log message="credential-requestor-stage--> crvs_new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
