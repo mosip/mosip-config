@@ -90,7 +90,7 @@
             </when>
             <when>
                 <jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
-                <to uri="eventbus:demo-dedupe-crvs_new-bus-in" />
+                <to uri="eventbus:demo-dedupe-bus-in" />
             </when>
             <otherwise>
                 <to uri="eventbus:error-bus-in" />
@@ -119,52 +119,13 @@
             </otherwise>
         </choice>
     </route>
-    <!-- UIN Generator to finalization-stage Route -->
-    <route id="uin-generation route-->finalization-stage crvs_new route">
+    <!-- UIN Generator to printing -->
+    <route id="uin-generation route-->printing- crvs_new route">
         <from uri="eventbus:uin-generator-crvs_new-bus-out" />
-        <log message="uin-generation-->finalization-stage crvs_new route ${bodyAs(String)}" />
+        <log message="uin-generation-->printing- crvs_new route ${bodyAs(String)}" />
         <choice>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:finalization-bus-in" />
-            </when>
-            <when>
-                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
-                <to uri="eventbus:retry-bus-in" />
-            </when>
-            <otherwise>
-                <to uri="eventbus:error-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-
-    <!-- finalization to credential-requestor Route -->
-    <route id="finalization route-->credential-requestor-stage crvs_new route">
-        <from uri="eventbus:finalization-crvs_new-bus-out" />
-        <log message="finalization-->credential-requestor-stage crvs_new route ${bodyAs(String)}" />
-        <choice>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:credential-requestor-bus-in" />
-            </when>
-            <when>
-                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
-                <to uri="eventbus:retry-bus-in" />
-            </when>
-            <otherwise>
-                <to uri="eventbus:error-bus-in" />
-            </otherwise>
-        </choice>
-    </route>
-
-    <!-- credential-requestor final Route -->
-    <route id="credential-requestor-stage--> crvs_new route">
-        <from uri="eventbus:credential-requestor-crvs_new-bus-out" />
-        <log message="credential-requestor-stage--> crvs_new route ${bodyAs(String)}" />
-        <choice>
-            <when>
-                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="eventbus:message-sender-bus-in" />
                 <to uri="eventbus:printing-bus-in" />
             </when>
             <when>
@@ -176,5 +137,4 @@
             </otherwise>
         </choice>
     </route>
-
 </routes>
