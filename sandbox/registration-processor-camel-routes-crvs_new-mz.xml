@@ -84,7 +84,7 @@
             </when>
             <when>
                 <!-- Only INFANT packets allowed for CRVS_NEW; reject MINOR/ADULT -->
-                <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] != 'INFANT')]</jsonpath>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] != 'CHILD')]</jsonpath>
                 <log message="INFANT packet is allowed but received the MINOR/ADULT packet hence rejecting the packet" />
                 <to uri="eventbus:error-bus-in" />
             </when>
