@@ -171,7 +171,7 @@
             <to uri="eventbus://introducer-validator-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://quality-classifier-bus-in" />
+            <to uri="eventbus://create-draft-bus-in" />
          </otherwise>
       </choice>
    </route>
@@ -198,11 +198,11 @@
             <to uri="eventbus://introducer-validator-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://quality-classifier-bus-in" />
+            <to uri="eventbus://create-draft-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="introducer-validator-->quality-classifier update route">
+   <route id="introducer-validator-->create-draft update route">
       <from uri="eventbus://introducer-validator-update-bus-out" />
       <log message="introducer-validator-->quality-classifier update route ${bodyAs(String)}" />
       <choice>
@@ -218,6 +218,30 @@
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://create-draft-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <!-- create-draft to quality-classifier Route -->
+   <route id="create-draft-->quality-classifier update route">
+      <from uri="eventbus://create-draft-update-bus-out" />
+      <log message="create-draft-->quality-classifier update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
@@ -289,7 +313,7 @@
          </otherwise>
       </choice>
    </route>
-   <route id="demo-dedupe-->bio-dedupe update update route">
+   <route id="demo-dedupe-->bio-dedupe update route">
       <from uri="eventbus://demo-dedupe-update-bus-out" />
       <log message="demo-dedupe-->bio-dedupe update route ${bodyAs(String)}" />
       <choice>
