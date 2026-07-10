@@ -171,7 +171,7 @@
             <to uri="eventbus://introducer-validator-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://quality-classifier-bus-in" />
+            <to uri="eventbus://create-draft-bus-in" />
          </otherwise>
       </choice>
    </route>
@@ -198,11 +198,11 @@
             <to uri="eventbus://introducer-validator-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://quality-classifier-bus-in" />
+            <to uri="eventbus://create-draft-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <route id="introducer-validator-->quality-classifier update route">
+   <route id="introducer-validator-->create-draft update route">
       <from uri="eventbus://introducer-validator-update-bus-out" />
       <log message="introducer-validator-->quality-classifier update route ${bodyAs(String)}" />
       <choice>
@@ -218,6 +218,30 @@
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://create-draft-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <!-- create-draft to quality-classifier Route -->
+   <route id="create-draft-->quality-classifier update route">
+      <from uri="eventbus://create-draft-update-bus-out" />
+      <log message="create-draft-->quality-classifier update route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
@@ -289,7 +313,7 @@
          </otherwise>
       </choice>
    </route>
-   <route id="demo-dedupe-->bio-dedupe update update route">
+   <route id="demo-dedupe-->bio-dedupe update route">
       <from uri="eventbus://demo-dedupe-update-bus-out" />
       <log message="demo-dedupe-->bio-dedupe update route ${bodyAs(String)}" />
       <choice>
@@ -315,15 +339,15 @@
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
             <to uri="eventbus://manual-adjudication-bus-in" />
          </when>
-         <when>
+		  <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT')]</jsonpath>
             <to uri="eventbus://verification-bus-in" />
          </when>
-         <when>
+		  <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['EXCEPTION_BIOMETRICS'] == 'LL,LR,LM,LI,LT,RL,RR,RM,RI,RT,LE,RE' &amp;&amp;  @['isValid'] == true &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="eventbus://verification-bus-in" />
          </when>
-         <when>
+		  <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['EXCEPTION_BIOMETRICS'] != 'LL,LR,LM,LI,LT,RL,RR,RM,RI,RT,LE,RE' &amp;&amp; @['isValid'] == true &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
@@ -363,7 +387,7 @@
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'bio-dedupe-bus-in')]</jsonpath>
             <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
-         <otherwise>
+		 <otherwise>
             <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
@@ -473,7 +497,7 @@
          </otherwise>
       </choice>
    </route>
-   <!-- UIN Generator to biometric-extraction Route -->
+	<!-- UIN Generator to biometric-extraction Route -->
    <route id="uin-generation route-->biometric-extraction-stage update route">
       <from uri="eventbus://uin-generator-update-bus-out" />
       <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
@@ -497,7 +521,7 @@
          </otherwise>
       </choice>
    </route>
-   <!-- biometric-extraction to finalization Route -->
+ <!-- biometric-extraction to finalization Route -->
    <route id="biometric-extraction route-->finalization-stage update route">
       <from uri="eventbus://biometric-extraction-update-bus-out" />
       <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
@@ -521,7 +545,7 @@
          </otherwise>
       </choice>
    </route>
-   <!-- finalization to credential-requestor Route -->
+	 <!-- finalization to credential-requestor Route -->
    <route id="finalization route-->credential-requestor-stage update route">
       <from uri="eventbus://finalization-update-bus-out" />
       <log message="finalization-->credential-requestor-stage update route ${bodyAs(String)}" />
