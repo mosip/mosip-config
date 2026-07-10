@@ -89,7 +89,7 @@
             </when>
             <when>
                 <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] != 'INFANT')]</jsonpath>
-                <setHeader name="rid">
+                <setHeader headerName="rid">
                     <jsonpath suppressExceptions="true">$.rid</jsonpath>
                 </setHeader>
                 <log message="INFANT packet is allowed but received the MINOR/ADULT packet hence rejecting the CRVS_UPDATE packet for RID=${header.rid}" />
