@@ -89,7 +89,7 @@
             </when>
             <when>
                 <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] != 'INFANT')]</jsonpath>
-                <log message="INFANT packet is allowed but received the MINOR/ADULT packet hence rejecting the CRVS_UPDATE packet for RID=${id}" />
+                <log message="INFANT packet is allowed but received the MINOR/ADULT packet hence rejecting the CRVS_UPDATE packet for RID=${jsonpath('$.rid')}" />
                 <to uri="workflow-cmd://complete-as-rejected" />
                 <to uri="workflow-cmd://anonymous-profile" />
             </when>
