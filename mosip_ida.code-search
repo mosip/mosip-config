@@ -1,0 +1,22 @@
+# Query: mosip_ida
+# ContextLines: 1
+
+4 results - 2 files
+
+sandbox/id-authentication-lts.properties:
+   44  javax.persistence.jdbc.driver=org.postgresql.Driver
+   45: javax.persistence.jdbc.url=jdbc:postgresql://${mosip.ida.database.hostname}:${mosip.ida.database.port}/mosip_ida_120
+   46  javax.persistence.jdbc.user=${mosip.ida.database.user}
+
+  503  keymanager.persistence.jdbc.driver=org.postgresql.Driver
+  504: keymanager_database_url=jdbc:postgresql://${mosip.ida.database.hostname}:${mosip.ida.database.port}/mosip_ida_120
+  505  keymanager_database_username=${mosip.ida.database.user}
+
+sandbox/id-authentication-mz.properties:
+   21  javax.persistence.jdbc.driver=org.postgresql.Driver
+   22: javax.persistence.jdbc.url=jdbc:postgresql://${mosip.ida.database.hostname}:${mosip.ida.database.port}/mosip_ida
+   23  javax.persistence.jdbc.user=${mosip.ida.database.user}
+
+  585  keymanager.persistence.jdbc.driver=org.postgresql.Driver
+  586: keymanager_database_url=jdbc:postgresql://${mosip.ida.database.hostname}:${mosip.ida.database.port}/mosip_ida
+  587  keymanager_database_username=${mosip.ida.database.user}
