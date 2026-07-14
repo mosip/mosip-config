@@ -2254,7 +2254,7 @@ index 45e1553..0000000
 -#---------------------------------------kernel common properties-----------------------
 -# Inside Kubernetes services are exposed on port 80 (most of them)
 -# For external connection to postgres, nodePort must be used.
--mosip.kernel.database.hostname=13.233.33.252
+-mosip.kernel.database.hostname=13.232.129.62
 -mosip.kernel.database.port=5432
 -
 -#---------------------------------------Sync Data service-------------------------------
