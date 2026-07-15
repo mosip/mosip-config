@@ -119,13 +119,14 @@
             </otherwise>
         </choice>
     </route>
-    <!-- UIN Generator to printing -->
-    <route id="uin-generation route-->printing- crvs_new route">
+    <!-- UIN Generator to printing  and Message Sender Route -->
+    <route id="uin-generation route-->printing- crvs_new -->message-sender crvs_new route route">
         <from uri="eventbus:uin-generator-crvs_new-bus-out" />
-        <log message="uin-generation-->printing- crvs_new route ${bodyAs(String)}" />
+        <log message="uin-generation-->printing- crvs_new and message-sender-stage ${bodyAs(String)}" />
         <choice>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                 <to uri="eventbus:message-sender-bus-in" />
                 <to uri="eventbus:printing-bus-in" />
             </when>
             <when>
