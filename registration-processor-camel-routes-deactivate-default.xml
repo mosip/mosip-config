@@ -42,10 +42,10 @@
          </otherwise>
       </choice>
    </route>
-   <!-- Packet uploader to uin-generator Route -->
-   <route id="packet-uploader-->uin-generator deactivated route">
+   <!-- Packet uploader to create-draft Route -->
+   <route id="packet-uploader-->create-draft deactivated route">
       <from uri="eventbus://packet-uploader-deactivated-bus-out" />
-      <log message="packet-uploader-->uin-generator deactivated route ${bodyAs(String)}" />
+      <log message="packet-uploader-->create-draft deactivated route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -62,13 +62,13 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://uin-generator-bus-in" />
+            <to uri="eventbus://create-draft-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <!-- UIN Generator to biometric-extraction Route -->
-   <route id="uin-generation route-->biometric-extraction-stage deactivated route">
-      <from uri="eventbus://uin-generator-deactivated-bus-out" />
+   <!-- Create Draft to biometric-extraction Route -->
+   <route id="create-draft route-->biometric-extraction-stage deactivated route">
+      <from uri="eventbus://create-draft-deactivated-bus-out" />
       <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
       <choice>
          <when>
@@ -90,7 +90,7 @@
          </otherwise>
       </choice>
    </route>
- <!-- biometric-extraction to finalization Route -->
+   <!-- biometric-extraction to finalization Route -->
    <route id="biometric-extraction route-->finalization-stage deactivated route">
       <from uri="eventbus://biometric-extraction-deactivated-bus-out" />
       <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
@@ -114,7 +114,7 @@
          </otherwise>
       </choice>
    </route>
-	 <!-- finalization to deactivated Route -->
+   <!-- finalization to deactivated Route -->
    <route id="finalization route--> deactivated route">
       <from uri="eventbus://finalization-deactivated-bus-out" />
       <log message="finalization--> deactivated route ${bodyAs(String)}" />
@@ -135,7 +135,7 @@
          </when>
          <otherwise>
             <to uri="workflow-cmd://complete-as-processed" />
-			<to uri="workflow-cmd://anonymous-profile" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
