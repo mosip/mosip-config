@@ -69,7 +69,7 @@
    <!-- Create Draft to biometric-extraction Route -->
    <route id="create-draft route-->biometric-extraction-stage deactivated route">
       <from uri="eventbus://create-draft-deactivated-bus-out" />
-      <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
+      <log message="create-draft-->biometric-extraction-stage deactivated route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
