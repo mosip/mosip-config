@@ -43,12 +43,10 @@ This repo is intentionally flat — there are no subdirectories of source code, 
 ## Development Workflow
 
 - This repo has **no CI workflows** (`.github/workflows` does not exist) — nothing here is built, tested, or linted automatically on push.
-- Multiple long-lived branches exist in parallel (`dev`, `develop`, several `release-*`/version branches, and many environment- or contributor-specific branches). **`dev` is the actively maintained integration branch** (most recent commits land there); `develop` and other branches track different service/environment lines and lag behind. Confirm which branch a target environment's `spring.cloud.config.label` actually points at before assuming `dev` is correct for your change.
 - Because a config-server deployment pins to a specific branch (`label`), a change only affects services whose config client is configured with that branch as its label — check which environments/services actually consume the branch you're changing before assuming a fix is "live" everywhere.
 
 ## Pull Request Guidelines
 
-- Target the branch that matches the environment/release line your change is meant for (see Development Workflow above) — don't default to `develop` here the way you might in a service repo.
 - Never introduce a literal secret, password, or client credential value into a `*-default.properties` file — follow the existing `${...}` + environment-variable-override pattern documented above.
 - If a property is renamed or removed, check whether any other file in this repo cross-references it (e.g. shared kernel properties referenced from multiple service files) before merging.
 - Sign off commits (`git commit -s`) per MOSIP contribution conventions.
@@ -57,4 +55,3 @@ This repo is intentionally flat — there are no subdirectories of source code, 
 
 - This is a **data repository, not a code repository** — there is no `pom.xml`, `package.json`, or build pipeline. "Correctness" here means valid syntax (properties/JSON/XML/TOML parse cleanly) and values consistent with what the consuming service actually expects, not passing tests.
 - Because many services (`kernel`, `id-authentication`, `registration-processor`, etc.) have very large property files (tens of thousands of lines), search for the specific property key you intend to change rather than reading the whole file, and double-check you're editing the correct service's file — several services share similarly named properties.
-- `.idea/` and `.claude/settings.local.json` are local tooling artifacts, not part of the served configuration.
