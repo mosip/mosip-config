@@ -50,7 +50,7 @@ This repo is intentionally flat — there are no subdirectories of source code, 
 
 - Sign off every commit (`git commit -s`) per MOSIP's contribution conventions.
 - Base PRs on this repo's own contribution guide: [MOSIP code-contribution docs](https://docs.mosip.io/1.2.0/community/code-contributions).
-- Target the correct base branch — this repo has many long-lived environment/release branches (`dev`, `develop`, `release-*`, `qa-*`, etc.); confirm which one the maintainers expect before opening the PR rather than assuming `develop`.
+- Target the correct base branch — this repo has many long-lived environment/release branches (`dev`, `develop`, `release-*`, `qa-*`, etc.); confirm which one the maintainers expect before opening the PR.
 - There is no CI here to catch mistakes, so a reviewer must manually confirm: the file parses (valid properties/JSON/XML/TOML syntax), no literal secret was introduced, and the change targets the correct service's file.
 - File issues or ask questions via the [mosip-config issue tracker](https://github.com/mosip/mosip-config/issues) or the [MOSIP Community](https://community.mosip.io/).
 
