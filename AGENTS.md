@@ -36,7 +36,7 @@ This repo is intentionally flat — there are no subdirectories of source code, 
 - `registration-processor-default.properties` + `registration-processor-camel-routes-*-default.xml` + `registration-processor-*.json` — Registration Processor and its packet-processing Camel routes
 - `idp-default.properties`, `idp-binding-default.properties`, `idp-claims-mapping.json`, `esignet-default.properties`, `signup-default.properties` — identity provider / eSignet / signup services
 - `resident-default.properties` + `resident-ui-*-schema.json` — Resident services and Resident UI form schemas
-- `partner-management-default.properties`, `pms-migration-utility-default.properties` + `auth-policy-schema.json`, `data-share-policy-schema.json`, `misp-policy-schema.json` — partner-management-services config and policy schema definitions
+- `partner-management-default.properties`, `pms-migration-utility-default.properties` + `auth-policy-schema.json`, `data-share-policy-schema.json`, `misp-policy-schema.json`, `mosip-vid-policy-schema.json`, `mosip-vid-policy.json`, `registration-processor-credential-partners.json` — partner-management-services config and the policy/credential-partner schema definitions it and registration-processor consume
 - `compliance-toolkit-default.properties` — overrides for the mosip-compliance-toolkit backend
 - `mock-abis-default.properties`, `mock-identity-system-default.properties`, `mock-mv-default.properties` — mock/test-double services used in dev and CI environments
 - `websub-consolidator.toml`, `websub-service.toml` — websub pub/sub service config
@@ -46,16 +46,9 @@ This repo is intentionally flat — there are no subdirectories of source code, 
 - This repo has **no CI workflows** (`.github/workflows` does not exist) — nothing here is built, tested, or linted automatically on push.
 - Because a config-server deployment pins to a specific branch (`label`), a change only affects services whose config client is configured with that branch as its label — check which environments/services actually consume the branch you're changing before assuming a fix is "live" everywhere.
 
-## Pull Request Guidelines
-
-- Sign off every commit (`git commit -s`) per MOSIP's contribution conventions.
-- Base PRs on this repo's own contribution guide: [MOSIP code-contribution docs](https://docs.mosip.io/1.2.0/community/code-contributions).
-- There is no CI here to catch mistakes, so a reviewer must manually confirm: the file parses (valid properties/JSON/XML/TOML syntax), no literal secret was introduced, and the change targets the correct service's file.
-- File issues or ask questions via the [mosip-config issue tracker](https://github.com/mosip/mosip-config/issues) or the [MOSIP Community](https://community.mosip.io/).
-
 ## Repository-Specific Considerations
 
-This is a **data repository, not a code repository** — there is no `pom.xml`, `package.json`, or build pipeline. "Correctness" here means valid syntax (properties/JSON/XML/TOML parse cleanly) and values consistent with what the consuming service actually expects, not passing tests.
+This is a **data repository, not a code repository** — there is no `pom.xml`, `package.json`, or build pipeline. "Correctness" here means valid syntax (properties/JSON/XML/TOML parse cleanly) and values consistent with what the consuming service actually expects, not passing tests. Base PRs on MOSIP's general [code-contribution docs](https://docs.mosip.io/1.2.0/community/code-contributions); file issues or questions via the [mosip-config issue tracker](https://github.com/mosip/mosip-config/issues) or the [MOSIP Community](https://community.mosip.io/).
 
 ## Agent rules
 
