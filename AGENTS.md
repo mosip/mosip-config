@@ -36,8 +36,8 @@ This repo is intentionally flat — there are no subdirectories of source code, 
 - `registration-processor-default.properties` + `registration-processor-camel-routes-*-default.xml` + `registration-processor-*.json` — Registration Processor and its packet-processing Camel routes
 - `idp-default.properties`, `idp-binding-default.properties`, `idp-claims-mapping.json`, `esignet-default.properties`, `signup-default.properties` — identity provider / eSignet / signup services
 - `resident-default.properties` + `resident-ui-*-schema.json` — Resident services and Resident UI form schemas
-- `partner-management-default.properties`, `pms-migration-utility-default.properties` + `auth-policy-schema.json`, `data-share-policy-schema.json`, `misp-policy-schema.json`, `mosip-vid-policy-schema.json`, `mosip-vid-policy.json`, `registration-processor-credential-partners.json` — [partner-management-services](https://github.com/mosip/partner-management-services) config and the policy/credential-partner schema definitions it and registration-processor consume
-- `compliance-toolkit-default.properties` — overrides for the [mosip-compliance-toolkit](https://github.com/mosip/mosip-compliance-toolkit) backend
+- `partner-management-default.properties`, `pms-migration-utility-default.properties` + `auth-policy-schema.json`, `data-share-policy-schema.json`, `misp-policy-schema.json`, `mosip-vid-policy-schema.json`, `mosip-vid-policy.json`, `registration-processor-credential-partners.json` — partner-management-services config and the policy/credential-partner schema definitions it and registration-processor consume
+- `compliance-toolkit-default.properties` — overrides for the mosip-compliance-toolkit backend
 - `mock-abis-default.properties`, `mock-identity-system-default.properties`, `mock-mv-default.properties` — mock/test-double services used in dev and CI environments
 - `websub-consolidator.toml`, `websub-service.toml` — websub pub/sub service config
 
@@ -46,13 +46,21 @@ This repo is intentionally flat — there are no subdirectories of source code, 
 - This repo has **no CI workflows** (`.github/workflows` does not exist) — nothing here is built, tested, or linted automatically on push.
 - Because a config-server deployment pins to a specific branch (`label`), a change only affects services whose config client is configured with that branch as its label — check which environments/services actually consume the branch you're changing before assuming a fix is "live" everywhere.
 
-## Pull Request Guidelines
-
-- Never introduce a literal secret, password, or client credential value into a `*-default.properties` file — follow the existing `${...}` + environment-variable-override pattern documented above.
-- If a property is renamed or removed, check whether any other file in this repo cross-references it (e.g. shared kernel properties referenced from multiple service files) before merging.
-- Sign off commits (`git commit -s`) per MOSIP contribution conventions.
-
 ## Repository-Specific Considerations
 
-- This is a **data repository, not a code repository** — there is no `pom.xml`, `package.json`, or build pipeline. "Correctness" here means valid syntax (properties/JSON/XML/TOML parse cleanly) and values consistent with what the consuming service actually expects, not passing tests.
-- Because many services (`kernel`, `id-authentication`, `registration-processor`, etc.) have very large property files (tens of thousands of lines), search for the specific property key you intend to change rather than reading the whole file, and double-check you're editing the correct service's file — several services share similarly named properties.
+This is a **data repository, not a code repository** — there is no `pom.xml`, `package.json`, or build pipeline. "Correctness" here means valid syntax (properties/JSON/XML/TOML parse cleanly) and values consistent with what the consuming service actually expects, not passing tests.
+
+## Agent rules
+
+### Do
+
+1. Reference secrets as `${...}` and document via a comment that the real value is injected as an environment variable at the config-server/helm level — follow the pattern already used across `*-default.properties`.
+2. Check whether any other file in this repo cross-references a property (e.g. shared kernel properties referenced from multiple service files) before renaming or removing it.
+3. Sign off commits (`git commit -s`) per MOSIP contribution conventions.
+4. Search for the specific property key you intend to change rather than reading a whole large file (`kernel`, `id-authentication`, `registration-processor`, etc. run to tens of thousands of lines), and confirm you're editing the correct service's file — several services share similarly named properties.
+
+### Do not
+
+1. Introduce a literal secret, password, or client credential value into a `*-default.properties` file.
+2. Assume a change is "live" everywhere once merged — only services whose config client is configured with the changed branch as its label pick it up.
+3. Treat a syntactically valid file as automatically correct — values must also match what the consuming service actually expects; there is no test suite here to catch a mismatch.
