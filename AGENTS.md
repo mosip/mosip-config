@@ -36,6 +36,7 @@ This repo is intentionally flat — there are no subdirectories of source code, 
 - `registration-processor-default.properties` + `registration-processor-camel-routes-*-default.xml` + `registration-processor-*.json` — Registration Processor and its packet-processing Camel routes
 - `idp-default.properties`, `idp-binding-default.properties`, `idp-claims-mapping.json`, `esignet-default.properties`, `signup-default.properties` — identity provider / eSignet / signup services
 - `resident-default.properties` + `resident-ui-*-schema.json` — Resident services and Resident UI form schemas
+- `partner-management-default.properties`, `pms-migration-utility-default.properties` + `auth-policy-schema.json`, `data-share-policy-schema.json`, `misp-policy-schema.json`, `mosip-vid-policy-schema.json`, `mosip-vid-policy.json`, `registration-processor-credential-partners.json` — [partner-management-services](https://github.com/mosip/partner-management-services) config and the policy/credential-partner schema definitions it and registration-processor consume
 - `compliance-toolkit-default.properties` — overrides for the [mosip-compliance-toolkit](https://github.com/mosip/mosip-compliance-toolkit) backend
 - `mock-abis-default.properties`, `mock-identity-system-default.properties`, `mock-mv-default.properties` — mock/test-double services used in dev and CI environments
 - `websub-consolidator.toml`, `websub-service.toml` — websub pub/sub service config
