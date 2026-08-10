@@ -46,6 +46,14 @@ This repo is intentionally flat — there are no subdirectories of source code, 
 - This repo has **no CI workflows** (`.github/workflows` does not exist) — nothing here is built, tested, or linted automatically on push.
 - Because a config-server deployment pins to a specific branch (`label`), a change only affects services whose config client is configured with that branch as its label — check which environments/services actually consume the branch you're changing before assuming a fix is "live" everywhere.
 
+## Pull Request Guidelines
+
+- Sign off every commit (`git commit -s`) per MOSIP's contribution conventions.
+- Base PRs on this repo's own contribution guide: [MOSIP code-contribution docs](https://docs.mosip.io/1.2.0/community/code-contributions).
+- Target the correct base branch — this repo has many long-lived environment/release branches (`dev`, `develop`, `release-*`, `qa-*`, etc.); confirm which one the maintainers expect before opening the PR rather than assuming `develop`.
+- There is no CI here to catch mistakes, so a reviewer must manually confirm: the file parses (valid properties/JSON/XML/TOML syntax), no literal secret was introduced, and the change targets the correct service's file.
+- File issues or ask questions via the [mosip-config issue tracker](https://github.com/mosip/mosip-config/issues) or the [MOSIP Community](https://community.mosip.io/).
+
 ## Repository-Specific Considerations
 
 This is a **data repository, not a code repository** — there is no `pom.xml`, `package.json`, or build pipeline. "Correctness" here means valid syntax (properties/JSON/XML/TOML parse cleanly) and values consistent with what the consuming service actually expects, not passing tests.
