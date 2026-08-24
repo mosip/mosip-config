@@ -400,7 +400,7 @@
             <to uri="eventbus://manual-adjudication-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://uin-generator-bus-in" />
+            <to uri="eventbus://biometric-extraction-bus-in" />
          </otherwise>
       </choice>
    </route>
