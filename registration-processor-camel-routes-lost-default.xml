@@ -263,6 +263,30 @@
          </otherwise>
       </choice>
    </route>
+   <!-- Create Draft to bio-dedupe Route -->
+   <route id="create-draft-->bio-dedupe lost route">
+      <from uri="eventbus://create-draft-lost-bus-out" />
+      <log message="create-draft-->bio-dedupe lost route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://bio-dedupe-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
    <route id="bio-dedupe-lost-->biometric-extraction lost route">
       <from uri="eventbus://bio-dedupe-lost-bus-out" />
       <log message="bio-dedupe-->biometric-extraction lost route ${bodyAs(String)}" />
@@ -394,30 +418,6 @@
          </when>
          <otherwise>
             <to uri="eventbus://biometric-extraction-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
-	<!-- Create Draft to bio-dedupe Route -->
-   <route id="create-draft-->bio-dedupe lost route">
-      <from uri="eventbus://create-draft-lost-bus-out" />
-      <log message="create-draft-->bio-dedupe lost route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://bio-dedupe-bus-in" />
          </otherwise>
       </choice>
    </route>
