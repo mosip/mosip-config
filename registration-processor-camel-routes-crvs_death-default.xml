@@ -102,7 +102,7 @@
     </route>
     <route id="operator-validator-->supervisor-validator crvs_death route">
         <from uri="eventbus://operator-validator-crvs_death-bus-out" />
-        <log message="operator-validator-->supervisor-validator/introducer-validator/uin-generator crvs_death route ${bodyAs(String)}" />
+        <log message="operator-validator-->supervisor-validator/introducer-validator/create-draft crvs_death route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -125,13 +125,13 @@
             <otherwise>
                 <!-- Introducer validation not implemented for CRVS -->
                 <!-- <to uri="eventbus://introducer-validator-bus-in" />  -->
-                <to uri="eventbus://uin-generator-bus-in" />
+                <to uri="eventbus://create-draft-bus-in" />
             </otherwise>
         </choice>
     </route>
     <route id="supervisor-validator-->introducer-validator crvs_death route">
         <from uri="eventbus://supervisor-validator-crvs_death-bus-out" />
-        <log message="supervisor-validator-->introducer-validator/uin-generator-stage crvs_death route ${bodyAs(String)}" />
+        <log message="supervisor-validator-->introducer-validator/create-draft-stage crvs_death route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -150,13 +150,13 @@
             <otherwise>
                 <!-- Introducer validation not implemented for CRVS -->
                 <!-- <to uri="eventbus://introducer-validator-bus-in" />  -->
-                <to uri="eventbus://uin-generator-bus-in" />
+                <to uri="eventbus://create-draft-bus-in" />
             </otherwise>
         </choice>
     </route>
-    <route id="introducer-validator-->uin-generator crvs_death route">
+    <route id="introducer-validator-->create-draft crvs_death route">
         <from uri="eventbus://introducer-validator-crvs_death-bus-out" />
-        <log message="introducer-validator-->uin-generator crvs_death route ${bodyAs(String)}" />
+        <log message="introducer-validator-->create-draft crvs_death route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -173,14 +173,14 @@
                 <to uri="workflow-cmd://anonymous-profile" />
             </when>
             <otherwise>
-                <to uri="eventbus://uin-generator-bus-in" />
+                <to uri="eventbus://create-draft-bus-in" />
             </otherwise>
         </choice>
     </route>
-    <!-- UIN Generator to finalization Route -->
-    <route id="uin-generation route-->finalization-stage crvs_death route">
-        <from uri="eventbus://uin-generator-crvs_death-bus-out" />
-        <log message="uin-generation-->finalization-stage crvs_death route ${bodyAs(String)}" />
+    <!-- Create draft to finalization Route -->
+    <route id="create-draft-->finalization-stage crvs_death route">
+        <from uri="eventbus://create-draft-crvs_death-bus-out" />
+        <log message="create-draft-->finalization-stage crvs_death route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>

@@ -42,10 +42,10 @@
          </otherwise>
       </choice>
    </route>
-   <!-- Packet uploader to uin-generator Route -->
-   <route id="packet-uploader-->uin-generator activated route">
+   <!-- Packet uploader to create-draft Route -->
+   <route id="packet-uploader-->create-draft activated route">
       <from uri="eventbus://packet-uploader-activated-bus-out" />
-      <log message="packet-uploader-->uin-generator activated route ${bodyAs(String)}" />
+      <log message="packet-uploader-->create-draft activated route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -63,14 +63,14 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://uin-generator-bus-in" />
+            <to uri="eventbus://create-draft-bus-in" />
          </otherwise>
       </choice>
    </route>
-   <!-- UIN Generator to biometric-extraction Route -->
-   <route id="uin-generation route-->biometric-extraction-stage activated route">
-      <from uri="eventbus://uin-generator-activated-bus-out" />
-      <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
+   <!-- Create Draft to biometric-extraction Route -->
+   <route id="create-draft route-->biometric-extraction-stage activated route">
+      <from uri="eventbus://create-draft-activated-bus-out" />
+      <log message="create-draft-->biometric-extraction-stage activated route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
