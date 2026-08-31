@@ -88,9 +88,10 @@
          </otherwise>
       </choice>
    </route>
-   <route id="create-draft-->demo-dedupe res_update route">
+   <!-- create-draft to demo-dedupe Route -->
+   <route id="create-draft route-->demo-dedupe-stage res_update route">
       <from uri="eventbus://create-draft-res_update-bus-out" />
-      <log message="create-draft-->demo-dedupe res_update route ${bodyAs(String)}" />
+      <log message="create-draft-->demo-dedupe-stage route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -111,9 +112,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="demo-dedupe-->bio-dedupe res_update route">
+   <route id="demo-dedupe-->biometric-extraction res_update route">
       <from uri="eventbus://demo-dedupe-res_update-bus-out" />
-      <log message="demo-dedupe-->bio-dedupe res_update route ${bodyAs(String)}" />
+      <log message="demo-dedupe-->biometric-extraction res_update route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -132,41 +133,6 @@
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
             <to uri="eventbus://abis-handler-bus-in" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
-            <to uri="eventbus://manual-adjudication-bus-in" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://bio-dedupe-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
-   <route id="bio-dedupe-->biometric-extraction res_update route">
-      <from uri="eventbus://bio-dedupe-res_update-bus-out" />
-      <log message="bio-dedupe-->biometric-extraction res_update route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-rejected" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
-            <to uri="eventbus://abis-handler-bus-in" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
-            <to uri="eventbus://manual-adjudication-bus-in" />
          </when>
          <otherwise>
             <to uri="eventbus://biometric-extraction-bus-in" />
@@ -203,7 +169,7 @@
             <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'bio-dedupe-bus-in')]</jsonpath>
             <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
-		 <otherwise>
+         <otherwise>
             <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
@@ -227,7 +193,7 @@
             <to uri="workflow-cmd://complete-as-rejected" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
-         <otherwise>
+		 <otherwise>
             <to uri="eventbus://biometric-extraction-bus-in" />
          </otherwise>
       </choice>

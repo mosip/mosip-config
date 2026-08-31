@@ -266,9 +266,10 @@
          </otherwise>
       </choice>
    </route>
-   <route id="create-draft-->demo-dedupe new route">
+   <!-- Create draft to demo-dedupe Route -->
+   <route id="create-draft route-->demo-dedupe-stage new route">
       <from uri="eventbus://create-draft-new-bus-out" />
-      <log message="create-draft-->demo-dedupe new route ${bodyAs(String)}" />
+      <log message="create-draft-->demo-dedupe-stage route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -401,6 +402,7 @@
          </when>
          <otherwise>
             <to uri="eventbus://biometric-extraction-bus-in" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
@@ -424,6 +426,7 @@
          </when>
          <otherwise>
             <to uri="eventbus://biometric-extraction-bus-in" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
@@ -470,6 +473,7 @@
          </when>
          <otherwise>
             <to uri="eventbus://biometric-extraction-bus-in" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>

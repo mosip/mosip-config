@@ -190,7 +190,8 @@
             </otherwise>
         </choice>
     </route>
-    <route id="create-draft-->demo-dedupe crvs_update route">
+    <!-- Create draft to demo-dedupe-stage Route -->
+    <route id="create-draft route-->demo-dedupe crvs_update route">
         <from uri="eventbus://create-draft-crvs_update-bus-out" />
         <log message="create-draft-->demo-dedupe crvs_update route ${bodyAs(String)}" />
         <choice>
@@ -213,7 +214,7 @@
             </otherwise>
         </choice>
     </route>
-    <route id="demo-dedupe-->finalization crvs_update route">
+    <route id="demo-dedupe-->finalization-stage crvs_update route">
         <from uri="eventbus://demo-dedupe-crvs_update-bus-out" />
         <log message="demo-dedupe-->finalization crvs_update route ${bodyAs(String)}" />
         <choice>
@@ -223,16 +224,18 @@
                 <to uri="workflow-cmd://anonymous-profile" />
             </when>
             <when>
-                <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-                <to uri="workflow-cmd://mark-as-reprocess" />
+                <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+                <to uri="workflow-cmd://complete-as-rejected" />
+                <to uri="workflow-cmd://anonymous-profile" />
             </when>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-                <to uri="workflow-cmd://complete-as-failed" />
+                <to uri="workflow-cmd://complete-as-rejected" />
                 <to uri="workflow-cmd://anonymous-profile" />
             </when>
             <otherwise>
                 <to uri="eventbus://finalization-bus-in" />
+                <to uri="workflow-cmd://anonymous-profile" />
             </otherwise>
         </choice>
     </route>

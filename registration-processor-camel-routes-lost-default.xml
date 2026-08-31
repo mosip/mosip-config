@@ -264,9 +264,9 @@
       </choice>
    </route>
    <!-- Create Draft to bio-dedupe Route -->
-   <route id="create-draft-->bio-dedupe lost route">
+   <route id="create-draft route-->bio-dedupe-stage lost route">
       <from uri="eventbus://create-draft-lost-bus-out" />
-      <log message="create-draft-->bio-dedupe lost route ${bodyAs(String)}" />
+      <log message="create-draft-->bio-dedupe-stage route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>

@@ -102,7 +102,7 @@
     </route>
     <route id="operator-validator-->supervisor-validator crvs_death route">
         <from uri="eventbus://operator-validator-crvs_death-bus-out" />
-        <log message="operator-validator-->supervisor-validator/create-draft crvs_death route ${bodyAs(String)}" />
+        <log message="operator-validator-->supervisor-validator/introducer-validator/create-draft crvs_death route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -131,7 +131,7 @@
     </route>
     <route id="supervisor-validator-->introducer-validator crvs_death route">
         <from uri="eventbus://supervisor-validator-crvs_death-bus-out" />
-        <log message="supervisor-validator-->create-draft crvs_death route ${bodyAs(String)}" />
+        <log message="supervisor-validator-->introducer-validator/create-draft-stage crvs_death route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -177,9 +177,10 @@
             </otherwise>
         </choice>
     </route>
-    <route id="create-draft-->finalization crvs_death route">
+    <!-- Create draft to finalization Route -->
+    <route id="create-draft-->finalization-stage crvs_death route">
         <from uri="eventbus://create-draft-crvs_death-bus-out" />
-        <log message="create-draft-->finalization crvs_death route ${bodyAs(String)}" />
+        <log message="create-draft-->finalization-stage crvs_death route ${bodyAs(String)}" />
         <choice>
             <when>
                 <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>

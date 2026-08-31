@@ -85,9 +85,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="packet-classifier-->demo-dedupe opencrvs_new route">
+   <route id="packet-classifier-->create-draft opencrvs_new route">
       <from uri="eventbus://packet-classifier-opencrvs_new-bus-out" />
-      <log message="packet-classifier-->introducer-validator/demo-dedupe opencrvs_new route ${bodyAs(String)}" />
+      <log message="packet-classifier-->introducer-validator/create-draft opencrvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -187,9 +187,10 @@
 		  <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['EXCEPTION_BIOMETRICS'] != 'LL,LR,LM,LI,LT,RL,RR,RM,RI,RT,LE,RE' &amp;&amp; @['isValid'] == true &amp;&amp; @['internalError'] == false)]</jsonpath>
             <to uri="eventbus://finalization-bus-in" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-             <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://complete-as-failed" />
             <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
@@ -214,6 +215,7 @@
          </when>
          <otherwise>
             <to uri="eventbus://finalization-bus-in" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>

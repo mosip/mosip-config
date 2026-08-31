@@ -109,7 +109,7 @@
    </route>
    <route id="operator-validator-->supervisor-validator crvs_new route">
       <from uri="eventbus://operator-validator-crvs_new-bus-out" />
-      <log message="operator-validator-->supervisor-validator/introducer-validator/demo-dedupe crvs_new route ${bodyAs(String)}" />
+      <log message="operator-validator-->supervisor-validator/introducer-validator/create-draft crvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -141,7 +141,7 @@
    </route>
    <route id="supervisor-validator-->introducer-validator crvs_new route">
       <from uri="eventbus://supervisor-validator-crvs_new-bus-out" />
-      <log message="supervisor-validator-->introducer-validator/demo-dedupe crvs_new route ${bodyAs(String)}" />
+      <log message="supervisor-validator-->introducer-validator/create-draft crvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -190,7 +190,8 @@
          </otherwise>
       </choice>
    </route>
-   <route id="create-draft-->demo-dedupe crvs_new route">
+   <!-- Create draft to demo-dedupe Route -->
+   <route id="create-draft route-->demo-dedupe crvs_new route">
       <from uri="eventbus://create-draft-crvs_new-bus-out" />
       <log message="create-draft-->demo-dedupe crvs_new route ${bodyAs(String)}" />
       <choice>
@@ -213,13 +214,18 @@
          </otherwise>
       </choice>
    </route>
-   <route id="demo-dedupe-->finalization crvs_new route">
+   <route id="demo-dedupe-->finalization-stage crvs_new route">
       <from uri="eventbus://demo-dedupe-crvs_new-bus-out" />
       <log message="demo-dedupe-->finalization crvs_new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
             <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-rejected" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <when>
