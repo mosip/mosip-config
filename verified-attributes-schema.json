@@ -7,6 +7,8 @@
       "additionalProperties": false,
       "type": "object",
       "required": [
+        "trust_framework",
+        "verification_process",
         "time"
       ],
       "properties": {
@@ -43,6 +45,8 @@
     }
   },
   "required": [
+    "trustFramework",
+    "verificationProcess",
     "claims",
     "metadata"
   ],
