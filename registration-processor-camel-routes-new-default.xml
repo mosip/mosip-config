@@ -286,7 +286,8 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://demo-dedupe-bus-in" />
+<!--            <to uri="eventbus://demo-dedupe-bus-in" />-->
+            <to uri="workflow-cmd://mark-as-reprocess" />
          </otherwise>
       </choice>
    </route>
