@@ -286,7 +286,8 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://biometric-authentication-bus-in" />
+            <to uri="workflow-cmd://mark-as-reprocess" />
+<!--            <to uri="eventbus://biometric-authentication-bus-in" />-->
          </otherwise>
       </choice>
    </route>
