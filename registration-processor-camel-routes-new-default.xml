@@ -497,7 +497,8 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-            <to uri="eventbus://finalization-bus-in" />
+            <to uri="workflow-cmd://mark-as-reprocess" />
+<!--            <to uri="eventbus://finalization-bus-in" />-->
          </otherwise>
       </choice>
    </route>
