@@ -425,7 +425,6 @@
          </when>
          <otherwise>
             <to uri="eventbus://biometric-extraction-bus-in" />
-            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
@@ -449,7 +448,6 @@
          </when>
          <otherwise>
             <to uri="eventbus://biometric-extraction-bus-in" />
-            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
@@ -496,7 +494,6 @@
          </when>
          <otherwise>
             <to uri="eventbus://biometric-extraction-bus-in" />
-            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>
