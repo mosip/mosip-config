@@ -1,0 +1,67 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+
+    <!-- packet-receiver to securezone-notification DMZ Route -->
+    <route id="packet-reciever-->securezone-notification crvs_new route">
+        <from uri="eventbus:packet-receiver-crvs_new-bus-out" />
+        <log message="packet-reciever-->securezone-notification crvs_new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <process ref="tokenGenerationProcessor"/>
+                <setHeader headerName="CamelHttpMethod">
+                    <constant>POST</constant>
+                </setHeader>
+                <setHeader headerName="Content-Type">
+                    <constant>application/json</constant>
+                </setHeader>
+                <setHeader headerName="Cookie">
+                    <simple>${header.Cookie}</simple>
+                </setHeader>
+                <setBody>
+                    <simple>${bodyAs(String)}</simple>
+                </setBody>
+                <to uri="http://mz.ingress:30080/registrationprocessor/v1/securezone/notification" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+
+    <!-- securezone-notification HTTP reprocess Route -->
+    <route id="securezone-notification-->securezone-notification HTTP crvs_new process route">
+        <from uri="eventbus:securezone-notification-crvs_new-bus-in" />
+        <log message="securezone-notification-->securezone-notification HTTP crvs_new process route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <process ref="tokenGenerationProcessor"/>
+                <setHeader headerName="CamelHttpMethod">
+                    <constant>POST</constant>
+                </setHeader>
+                <setHeader headerName="Content-Type">
+                    <constant>application/json</constant>
+                </setHeader>
+                <setHeader headerName="Cookie">
+                    <simple>${header.Cookie}</simple>
+                </setHeader>
+                <setBody>
+                    <simple>${bodyAs(String)}</simple>
+                </setBody>
+                <to uri="http://mz.ingress:30080/registrationprocessor/v1/securezone/notification" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+
+</routes>

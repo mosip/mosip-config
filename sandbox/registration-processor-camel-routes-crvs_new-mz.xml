@@ -1,0 +1,141 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+
+    <!-- securezone-notification to packet-validator Route -->
+    <route id="securezone-notification-->packet-validator crvs_new route">
+        <from uri="eventbus:securezone-notification-crvs_new-bus-out" />
+        <log message="securezone-notification-->packet-validator crvs_new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:packet-validator-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+
+    <!-- Packet Validator to Packet Classifier Route -->
+    <route id="packet-validator-->packet-classifier crvs_new route">
+        <from uri="eventbus:packet-validator-crvs_new-bus-out" />
+        <log message="packet-validator-->packet-classifier crvs_new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:packet-classifier-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+
+    <!-- Packet Classifier to osi-validator Route -->
+    <route id="packet-classifier-->osi-validator crvs_new route">
+        <from uri="eventbus:packet-classifier-crvs_new-bus-out" />
+        <log message="packet-classifier-->osi-validator crvs_new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                <to uri="eventbus:o-s-i-validator-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:message-sender-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+
+    <!-- OSI-validator to demo-dedupe Route -->
+    <route id="osi-validator-->demo-dedupe crvs_new route">
+        <from uri="eventbus:o-s-i-validator-crvs_new-bus-out" />
+        <log message="osi-validator-->demo-dedupe crvs_new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:error-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true' and ${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:error-bus-in" />
+            </when>
+            <when>
+                <!-- Only INFANT packets allowed for CRVS_NEW; reject MINOR/ADULT -->
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] != 'CHILD')]</jsonpath>
+                <log message="INFANT packet is allowed but received the MINOR/ADULT packet hence rejecting the packet" />
+                <to uri="eventbus:error-bus-in" />
+            </when>
+            <when>
+                <jsonpath suppressExceptions="true">$.[?(@['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '' &amp;&amp; @['tags']['META_INFO-OPERATIONS_DATA-officerId'] != '--TAG_VALUE_NOT_AVAILABLE--')]</jsonpath>
+                <to uri="eventbus:demo-dedupe-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <!-- demo-dedupe to uin-generator Route -->
+    <route id="demo-dedupe-->uin-generator crvs_new route">
+        <from uri="eventbus:demo-dedupe-crvs_new-bus-out" />
+        <log message="demo-dedupe-->uin-generator crvs_new route ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:error-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
+                <to uri="eventbus:error-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:uin-generator-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+    <!-- UIN Generator to printing  and Message Sender Route -->
+    <route id="uin-generation route-->printing- crvs_new -->message-sender crvs_new route route">
+        <from uri="eventbus:uin-generator-crvs_new-bus-out" />
+        <log message="uin-generation-->printing- crvs_new and message-sender-stage ${bodyAs(String)}" />
+        <choice>
+            <when>
+                <simple>${bodyAs(String)} contains '"isValid":true'</simple>
+                 <to uri="eventbus:message-sender-bus-in" />
+                <to uri="eventbus:printing-bus-in" />
+            </when>
+            <when>
+                <simple>${bodyAs(String)} contains '"internalError":true'</simple>
+                <to uri="eventbus:retry-bus-in" />
+            </when>
+            <otherwise>
+                <to uri="eventbus:error-bus-in" />
+            </otherwise>
+        </choice>
+    </route>
+</routes>

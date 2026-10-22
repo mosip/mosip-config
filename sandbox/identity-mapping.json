@@ -85,10 +85,6 @@
 		"address": {
 			"value": "presentAddressLine1,presentAddressLine2,presentAddressLine3,presentAddressLine4,pobProvince,pobCity,permanentAddressLine1,presentCountry"
 		},
-		"dateOfBirth": {
-			"value": "dob"
-		}
-		,
 		"digitalCardAttributes": {
 			"value": "gen,fn,ln,mn,pob,ms,bt,adL1,adL2,adL3,cit,pro,poco,pobProvince,pobCountry,pobCity"
 		},
