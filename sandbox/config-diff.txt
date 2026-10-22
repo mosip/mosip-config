@@ -857,7 +857,7 @@ index ae07e05..8b8926a 100644
 +
  #----------------------------------REST-services ----------------------------------------------------------#
  IDREPOGETIDBYID=http://idrepo-identity-service/idrepository/v1/identity/idvid
- mosip.data.share.protocol=http
+ mosip.data.share.protocol=https
 @@ -304,8 +295,8 @@ KEYBASEDTOKENAPI=http://kernel-auth-service/v1/authmanager/authenticate/clientid
  KEYMANAGER_JWTSIGN=http://kernel-keymanager-service/v1/keymanager/jwtSign
  KEYMANAGER_ENCRYPT_PIN=http://kernel-keymanager-service/v1/keymanager/encryptWithPin
