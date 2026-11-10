@@ -90,7 +90,7 @@
          <when>
             <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] != 'INFANT')]</jsonpath>
             <log message="INFANT packet is allowed but received the MINOR/ADULT packet hence rejecting the packet" />
-            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://complete-as-rejected" />
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <when>
