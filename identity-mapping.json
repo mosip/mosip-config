@@ -149,6 +149,9 @@
 		},
 		"typeOfDeath" : {
 			"value" : "typeOfDeath"
+		},
+		"verifiedAttributes" : {
+			"value" : "verifiedAttributes"
 		}
 	},
 	"metaInfo": {
